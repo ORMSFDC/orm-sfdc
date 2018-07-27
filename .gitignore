@@ -59,3 +59,17 @@ typings/
 
 # next.js build output
 .next
+
+#SFDC stuff
+.sfdx
+.vim-force.com
+.vscode
+config
+mdapipkg
+force-app
+logs
+scripts
+.forceignore
+
+#MacOS stuff
+.DS_Store
