@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- IsActive --></label>
+        <name>IsActive__c</name>
+    </fields><fields>
+        <label><!-- ProcessVideoHeader --></label>
+        <name>ProcessVideoHeader__c</name>
+    </fields><fields>
+        <label><!-- ProcessVideoImage --></label>
+        <name>ProcessVideoImage__c</name>
+    </fields><fields>
+        <label><!-- ProcessVideoURL --></label>
+        <name>ProcessVideoURL__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Process Video</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Process Videos</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Process Video Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

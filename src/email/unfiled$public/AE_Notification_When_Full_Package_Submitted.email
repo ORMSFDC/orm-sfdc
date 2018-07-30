@@ -1,0 +1,8 @@
+Hello {!Loan_New__c.Related_Partner__c.Account_Executive_Name__c}, 
+
+Client Name   :-  {!Loan_New__c.Client_Name__c},
+Loan Officer   :-  {!Loan_New__c.LoanOfficer__c},
+Loan ID          :-  {!Loan_New__c.Name}
+
+Thank you. 
+-ORMS Support Team

@@ -1,0 +1,13 @@
+Hello ORM Portal User, 
+
+A Note has been posted for Loan: {!Note__c.Loan_Id__c}. Please find the following information: 
+
+Title : {!Note__c.Name}
+Note : {!Note__c.Body__c}
+Client Name: {!Note__c.Related_Client_Name__c}
+Loan Id : {!Note__c.Loan_Id__c} 
+Created by : {!Note__c.CreatedBy} 
+CreatedDate : {!Note__c.CreatedDate} 
+
+Thank you. 
+ORMS Support Team

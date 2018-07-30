@@ -1,0 +1,23 @@
+<aura:component controller="PartnerResourcesController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="FAQ" type="FAQ__c" />
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+     <form class="slds-form--stacked">
+         <div class="table table-bordered">
+       		 <table class="table table-striped">
+                 <br/>
+                           <tr></tr>
+                <aura:iteration items="{!v.FAQ}" var="Content"> 
+                    <tr><td>
+                        <td><b style="color:#2081bf; font-size: 1.375em">{!Content.Name}</b> </td>
+                        </td></tr>
+                   
+                    <tr><td style="font-size: 18px;"><ui:outputRichText aura:id="outputRT" value="{!Content.FAQ_Detail__c}"/>
+                   </td></tr>
+                     <tr><td><br></br></td></tr>
+                    
+                </aura:iteration>
+         	 </table>
+         </div>
+    </form>
+</aura:component>

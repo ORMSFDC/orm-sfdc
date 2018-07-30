@@ -1,0 +1,39 @@
+<aura:component description="paginator">
+    <aura:attribute name="pages" type="integer" default="0" access="private"/>
+    <aura:attribute name="navButtons" type="String[]"  access="private"/>
+
+    <aura:attribute name="page" type="integer" default="1"/>
+    <aura:attribute name="total" type="integer" default="0"/>
+    <aura:attribute name="records" type="sObject[]" />
+    <aura:attribute name="pageSize" type="String" default="3" />
+    <aura:attribute name="maxPages" type="String" default="3" />
+
+  <aura:handler name="init" value="this" action="{!c.reCalculate}"/>
+  
+    <aura:handler name="change" value="{!v.total}" action="{!c.reCalculate}"/>
+    <aura:registerEvent name="pageChangeAction" type="c:PageChangeEvent"/>
+
+
+   <!-- <div class="slds">-->
+
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size--1-of-2">
+                <div class="slds-text-align--left">&nbsp; {!v.total} records • page {!v.page} / {!v.pages} &nbsp;</div>
+            </div>
+            <div class="slds-form-element slds-size--1-of-2">
+                <div class="slds-text-align--right" style="padding-right: 12px;">
+                <lightning:button class="slds-button--neutral" iconName="utility:chevronleft" onclick="{!c.previousPage}" disabled="{!v.page &lt;= 1}">Previous</lightning:button>
+                <aura:iteration items="{!v.navButtons}" var="pageNum">
+                    <lightning:button class="{! 'slds-button--neutral' + ' ' + (pageNum == v.page ? 'slds-button--brand' : '')}" value="{!pageNum}" onclick="{!c.goToPage}">
+                        <span class="{! '' + ' ' + (pageNum == v.page ? 'selectedButton' : '')}">  {!pageNum}</span>
+                    </lightning:button>
+                </aura:iteration>
+                <lightning:button class="slds-button--neutral"  onclick="{!c.nextPage}" disabled="{!v.page >= v.pages}"> Next > </lightning:button>
+                </div>
+            </div>
+        </div>
+        <!--   <div class="slds-form-element">
+
+           </div>-->
+    <!--</div>-->
+</aura:component>

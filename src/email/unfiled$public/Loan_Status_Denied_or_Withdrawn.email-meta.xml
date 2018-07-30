@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Loan Status Denied or Withdrawn</name>
+    <style>none</style>
+    <subject>Adverse Action Letter Request Loan #{!Loan_New__c.LoanNumber__c}, Loan ID: {!Loan_New__c.Name}, Client: {!Loan_New__c.Client_Name__c}.</subject>
+    <textOnly>Loan has been Denied or Withdrawn. To be in compliance, mail the Adverse Action letter to the client’s mailing address today.
+
+Regards,
+ORMS Support Team.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

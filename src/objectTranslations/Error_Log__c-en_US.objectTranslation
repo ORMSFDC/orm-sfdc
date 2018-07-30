@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Action Name --></label>
+        <name>Action_Name__c</name>
+    </fields><fields>
+        <label><!-- Entity Name --></label>
+        <name>Entity_Name__c</name>
+    </fields><fields>
+        <label><!-- Exception Message --></label>
+        <name>Exception_Message__c</name>
+    </fields><fields>
+        <label><!-- Exception type --></label>
+        <name>Exception_type__c</name>
+    </fields><fields>
+        <label><!-- Running User --></label>
+        <name>Running_User__c</name>
+        <relationshipLabel><!-- Error Logs --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Error Log</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Error Logs</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

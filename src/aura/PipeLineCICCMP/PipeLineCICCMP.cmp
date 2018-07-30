@@ -1,0 +1,327 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="CICController"  >
+    <aura:attribute name="CICFeeData" type="Object[]"/> 
+    <aura:attribute name="CICData" type="ChangeInCircumstances__c" default="{'sobjectType': 'ChangeInCircumstances__c'}"/>
+    <aura:attribute name="LoanNumberId" type="String" default="a0Q29000002d6sPEAQ"/>
+    <aura:attribute name="Count" type="Integer" default="1" />
+    <aura:attribute name="showError" type="Boolean" default="false" />
+    <aura:attribute name="DBConditionCount" type="Integer" default="1" />
+    <aura:attribute name="disabledClass" type="string" default="btncls" /> 
+     <aura:registerEvent name="loadMyEvent" type="c:Event_CICSave_CloseModal"/>
+     <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open " >
+            <div class="slds-modal__container slds-mymodal MadalLayout"   >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                
+                <div class="slds-modal__header" >  
+                      <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.CLOSECIC}">
+            X
+            <span class="slds-assistive-text">Close</span>
+            </button>
+                    <h2 id="header99"  style="color:#2081bf; margin-bottom: 0 !important;" class="slds-text-heading--large">
+                        Submit a Change in Circumstance
+                    </h2>                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--large"  >
+                    
+              
+        <!--###### MODAL BOX Part END Here ######-->
+     <div class="slds-grid slds-wrap slds-grid_pull-padded">
+        
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1
+                    slds-large-size_1-of-1" style="padding-left:3% !important">
+          <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="RESPA"  value="{!v.CICData.CIC_RESPA__c}" />
+                
+               <span> &nbsp; Information has been obtained regarding the client’s loan, which will result
+                    in changed circumstance under RESPA Section 3500.2
+                    <div id="desclamerError" class="DivStyle"></div>
+            </span>
+        </div>
+    </div>
+   
+    
+   <!-- <b>The change circumstance occured on:*</b>
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="padding-left:2% !important">
+        
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3
+                    slds-large-size_1-of-3">
+          <ui:inputDate aura:id="CICdate"
+                                  class="slds-input Datecontrolwidth"                                                             
+                                  label=""
+                                  value="{!v.CICData.change_circumstance_occurred_on__c}" required=""
+                                  format="MM/dd/yyyy" displayDatePicker="true"
+                                  />
+        </div>
+    </div>-->
+    
+    
+    
+    <!--Nausad-->
+    <br></br>
+    <b>Description of changed circumstances (fee change possible)</b>
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="padding-left:2% !important">
+        
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="AddNBS"  value="{!v.CICData.Add_a_Non_Borrowing_Spouse__c}" />
+          <span> &nbsp; Add a Non Borrowing Spouse</span>
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="ROF"  value="{!v.CICData.Reduce_Origination_Fee__c}" />
+             <span> &nbsp;Reduce Origination Fee</span>
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="TFR"  value="{!v.CICData.Title_Fees_Received__c}" />
+           <span> &nbsp;Title Fees Received</span>
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="ARB"  value="{!v.CICData.AddRemove_Borrowe__c}" />
+          <span> &nbsp;Add/Remove Borrower</span>
+        </div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="AOG"  value="{!v.CICData.Act_of_God__c}" />
+           <span> &nbsp;Act of God, war, disaster or other emergency</span>
+            
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="AR"  value="{!v.CICData.Appraisal_Received__c}" />
+        <span> &nbsp;Appraisal Received</span>
+            
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="OCT"  value="{!v.CICData.Other_Circumstance_Client_or_Transaction__c}" />
+           <span> &nbsp;Other circumstance that is particular to the client or transaction</span>
+            
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="ONT"  value="{!v.CICData.Other_Information_to_Client_Transaction__c}" />
+          <span>  &nbsp;Other New information particular to the client or transaction</span>
+            
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="Other"  value="{!v.CICData.Other__c}" />
+           <span> &nbsp;Other</span>
+            
+        </div>
+         <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="IICT"  value="{!v.CICData.Inaccurate_Information__c}" />
+           <span> &nbsp;Inaccurate information about the client or transaction</span>
+            
+        </div>
+         <div class="slds-m-top--small"></div>
+        
+        
+    </div>
+    <!-- nausad-->
+    <br></br>
+    <b>Explanation</b>
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="padding-left:2% !important">
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputTextArea label="" aura:id="DescFee"
+                              value="{!v.CICData.Fee_Change_Explanation__c}" 
+                              class="slds-input DesTextLenght "/> 
+        </div>
+        
+    </div>
+    <br></br>
+    <b>Fees changing as a Result of the Client-Requested Change of Changed Circumstance</b>
+  
+         
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="padding-left:2% !important">
+         
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+             <br></br><ui:inputCheckbox class="myCheckbox Disblck" label="" change="{!c.NoFeeChk}" aura:id="NFC"  value="{!v.CICData.No_fee_changes__c}" />
+           <span> &nbsp;No Fee Change</span>
+        </div>
+        
+    </div>
+     <br></br>
+    <fieldset class="slds-theme--default slds-container--xx-large" style="padding-left:1.5% !important">
+        
+        <table  >
+            
+            <tbody>
+                <tr>
+                    <td>
+                        <div >
+                            <ui:inputText label="Fee Name"  aura:id="FeeName" maxlength="160"
+                                          class="slds-input" disabled="false" value=""/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-col--padded">
+                            <ui:inputCurrency label="Previous Amount" disabled="false" aura:id="OldVal" value="" class="slds-input" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-col--padded">
+                            <ui:inputCurrency label="New Amount" disabled="false" aura:id="NewVal" value="" class="slds-input" />
+                        </div>
+                    </td>
+                </tr>
+                
+                
+            </tbody>
+        </table></fieldset>
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="text-align: right !important; padding-right: 4.5% !important;">
+        <div class="slds-p-horizontal_small slds-size_1-of-1
+                    slds-medium-size_1-of-1 slds-large-size_1-of-1"
+             style="text-align: right !important; ">
+            <br></br>
+                <lightning:button aura:id="AddFee"  class="{!v.disabledClass}"
+                             label="Add Fee Change"  disabled="false"  onclick="{!c.AddFeeData}" />
+                                        
+          
+        </div>
+    </div>
+     <div id="FeeError" class="DivStyle"></div>                
+    <br></br>
+    <fieldset class="slds-theme--default slds-container--xx-large">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    
+                    <th scope="col">
+                        <div class="slds-col--padded" title="Fee Name">Fee Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-col--padded" title="Previous Amount">Previous Amount</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-col--padded" title="New Amount">New Amount</div>
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.CICFeeData}" var="CICFeeData">
+                    <tr>
+                        
+                        <td>
+                            <div class="slds-col--padded">
+                                <ui:outputText value="{!CICFeeData.FeeName}" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-col--padded">
+                                <lightning:formattedNumber value="{!CICFeeData.OldAmount}" style="currency" />
+                                
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-col--padded">
+                                <lightning:formattedNumber value="{!CICFeeData.NewAmount}" style="currency" />
+                                
+                            </div>
+                        </td>
+                        <td style="padding-right: 0px !important">
+                            <div class="slds-col--padded">
+                                
+                                <a id="{!CICFeeData.FeeIndex}" onclick="{!c.DeleteRow}">
+                                    <lightning:icon variant="error" title="Delete" 
+                                                    iconName="utility:delete" class="slds-icon slds-icon_small" 
+                                                    size="small" alternativeText="{!CICFeeData.FeeIndex}"/>
+                                </a>  
+                                
+                            </div>
+                           <div class="slds-col--padded" >
+                               <!-- <ui:outputText value="{!CICFeeData.FeeIndex}" />-->
+                            </div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </fieldset>
+    <br></br>
+    
+    <b>Additional Loan changes Request:</b>
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="padding-left:2% !important">
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="AddNBR"  value="{!v.CICData.Adding_a_non_borrowing_resident__c}" />
+           <span> &nbsp; Adding a non-borrowing resident</span>
+        </div>
+          <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="CE"  value="{!v.CICData.Change_in_Employment__c}" />
+            <span> &nbsp;Change in Employment</span>
+        </div>
+          <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="CLO"  value="{!v.CICData.Change_in_Loan_Officer__c}" />
+          <span>&nbsp; Change in Loan Officer</span>
+        </div>
+          <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="CRPL"  value="{!v.CICData.Change_in_Requested_Payment_Plan__c}" />
+            <span> &nbsp;Change in Requested Payment Plan</span>
+        </div>
+          <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="BFC"  value="{!v.CICData.Bring_Optional_Funds_to_Closing__c}" />
+           <span> &nbsp; Bring Optional Funds to Closing</span>
+        </div>
+          <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="Withdraw"  value="{!v.CICData.Withdraw__c}" />
+          <span> &nbsp; Withdraw</span>
+        </div>
+          <div class="slds-m-top--small"></div>
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="OtherChange"  value="{!v.CICData.Other_Change__c}" />
+           <span> &nbsp;Other Change</span>
+        </div>
+          <div class="slds-m-top--small"></div>
+        
+        
+        
+    </div>
+    <br></br>
+    <b>Explanation:</b>
+    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="padding-left:2% !important">
+        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-2">
+            <ui:inputTextArea label="" aura:id="DescLoanChange"
+                              value="{!v.CICData.Additional_Loan_Explanation__c}" class="slds-input DesTextLenght "
+                              /> 
+        </div>
+    </div>
+    
+    <br></br>
+    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+           <!-- <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="Desclamer"  value="" />-->
+           <span style="font-size:10px !important">
+        The portal user certifies that the information relating to the event above was received within 24 hours prior to the submission of this request to Lender. The undersigned represents that a re-disclosed GFE (and Settlement Service Provider List) has not been provided to the client(s), and acknowledges that One Reverse Mortgage will, at its sole discretion, determine whether a re-disclosure GFE should be issued. Re-disclosed documents will be posted to the ORMS Portal for your records.
+        </span>
+       
+        </div> 
+                     
+                     
+             
+   
+    
+    
+    
+                      </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <div align="left"> <aura:if isTrue="{!v.showError}">                            
+                                <ui:message title="Error" severity="error" >
+                                    Please review all errors.
+                                </ui:message>                            
+                            </aura:if></div>
+                          
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.CLOSECIC}" >Cancel</button>
+                     <button style ="color:white" class="slds-button slds-button--brand btncls "  onclick="{!c.AddCIC}" >Submit Change in Circumtances</button>
+             
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+</aura:component>

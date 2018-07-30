@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Mailing Address --></label>
+        <name>Address_Mailing__c</name>
+    </fields><fields>
+        <label><!-- Address_Same_As_SubjectProperty --></label>
+        <name>Address_Same_As_SubjectProperty__c</name>
+    </fields><fields>
+        <help><!-- If this checkbox is checked then the next address, state, city and zip fields need not be filled on the page; otherwise they must be filled --></help>
+        <label><!-- Mailing Address equals Present Address --></label>
+        <name>Check_if_Mailing_Address_is_similar_to_P__c</name>
+    </fields><fields>
+        <label><!-- Mailing City --></label>
+        <name>City_Mailing__c</name>
+    </fields><fields>
+        <label><!-- Current City --></label>
+        <name>City__c</name>
+    </fields><fields>
+        <label><!-- Client_Address_Same_As_Primary_Client --></label>
+        <name>Client_Address_Same_As_Primary_Client__c</name>
+    </fields><fields>
+        <label><!-- Current State --></label>
+        <name>Client_State__c</name>
+    </fields><fields>
+        <label><!-- Client has Email Address? --></label>
+        <name>Client_has_Email_Address__c</name>
+    </fields><fields>
+        <label><!-- Date of Birth --></label>
+        <name>DOB__c</name>
+    </fields><fields>
+        <label><!-- Client Email Address --></label>
+        <name>Email_Optional__c</name>
+    </fields><fields>
+        <label><!-- FHA Insured Loan --></label>
+        <name>FHA_Insured_Loan__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields><fields>
+        <label><!-- Home Phone --></label>
+        <name>Home_Phone__c</name>
+    </fields><fields>
+        <label><!-- If yes, Name of POA --></label>
+        <name>If_yes_Name_of_POA__c</name>
+    </fields><fields>
+        <label><!-- Is Non-Borrowing Spouse Available? --></label>
+        <name>IsNBSAvaliable__c</name>
+    </fields><fields>
+        <label><!-- Is Client Validated? --></label>
+        <name>Is_Client_Validated__c</name>
+    </fields><fields>
+        <label><!-- Is Non Borrowing Resident Filled ? --></label>
+        <name>Is_Non_Borrowing_Resident__c</name>
+    </fields><fields>
+        <label><!-- Is Non Borrowing Spouse Filled ? --></label>
+        <name>Is_Non_Borrowing_Spouse_Filled__c</name>
+    </fields><fields>
+        <label><!-- Is there a POA? --></label>
+        <name>Is_there_a_POA__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields><fields>
+        <label><!-- LoanId --></label>
+        <name>LoanId__c</name>
+        <relationshipLabel><!-- ClientDetails --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Marital Status --></label>
+        <name>Marital_Status__c</name>
+        <picklistValues>
+            <masterLabel>Married</masterLabel>
+            <translation><!-- Married --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Separated</masterLabel>
+            <translation><!-- Separated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unmarried</masterLabel>
+            <translation><!-- Unmarried --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Middle Name --></label>
+        <name>Middle_Name__c</name>
+    </fields><fields>
+        <label><!-- Monthly Income --></label>
+        <name>Monthly_Income__c</name>
+    </fields><fields>
+        <label><!-- Non-Borrowing Spouse Date of Birth --></label>
+        <name>Non_Borrowing_Date_of_Birth__c</name>
+    </fields><fields>
+        <label><!-- Non-Borrower Relationship --></label>
+        <name>Non_Borrowing_Relation__c</name>
+        <picklistValues>
+            <masterLabel>Married</masterLabel>
+            <translation><!-- Married --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Non-Borrowing Resident --></label>
+        <name>Non_Borrowing_Resident__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Non-Borrowing Spouse Address --></label>
+        <name>Non_Borrowing_Spouse_Addres__c</name>
+    </fields><fields>
+        <label><!-- Non-Borrowing Spouse City --></label>
+        <name>Non_Borrowing_Spouse_City__c</name>
+    </fields><fields>
+        <label><!-- Non-Borrowing Spouse Name --></label>
+        <name>Non_Borrowing_Spouse_Name__c</name>
+    </fields><fields>
+        <help><!-- must be in phone format, should not accept 0 as starting number and should not take all continuous same digits like 7777777777 --></help>
+        <label><!-- Non-Borrowing Spouse Phone Number --></label>
+        <name>Non_Borrowing_Spouse_Phone_Number__c</name>
+    </fields><fields>
+        <label><!-- Non-Borrowing Spouse State --></label>
+        <name>Non_Borrowing_Spouse_State__c</name>
+    </fields><fields>
+        <label><!-- Non-Borrowing Spouse Zip --></label>
+        <name>Non_Borrowing_Spouse_Zip__c</name>
+    </fields><fields>
+        <label><!-- Non-Borrowing Spouse --></label>
+        <name>Non_Borrowing_Spouse__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Number of years --></label>
+        <name>Number_of_years__c</name>
+    </fields><fields>
+        <label><!-- Mobile Phone --></label>
+        <name>Phone_Number__c</name>
+    </fields><fields>
+        <label><!-- Place of Celebration --></label>
+        <name>Place_of_Celebration__c</name>
+    </fields><fields>
+        <label><!-- Primary Client for the Loan --></label>
+        <name>Primary_Client_for_the_Loan__c</name>
+    </fields><fields>
+        <label><!-- Property type --></label>
+        <name>Property_type__c</name>
+        <picklistValues>
+            <masterLabel>2 to 4 Unit property</masterLabel>
+            <translation><!-- 2 to 4 Unit property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Co-op</masterLabel>
+            <translation><!-- Co-op --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condo-Attached</masterLabel>
+            <translation><!-- Condo-Attached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condo-Detached</masterLabel>
+            <translation><!-- Condo-Detached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condo-Site</masterLabel>
+            <translation><!-- Condo-Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PUD detached</masterLabel>
+            <translation><!-- PUD detached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Family</masterLabel>
+            <translation><!-- Single Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Townhouse - Attached PUD</masterLabel>
+            <translation><!-- Townhouse - Attached PUD --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Residence --></label>
+        <name>Residence__c</name>
+        <picklistValues>
+            <masterLabel>Own</masterLabel>
+            <translation><!-- Own --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rent</masterLabel>
+            <translation><!-- Rent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rent Free</masterLabel>
+            <translation><!-- Rent Free --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Social Security Number --></label>
+        <name>Social_Security_Number__c</name>
+    </fields><fields>
+        <label><!-- Spouse_Mailing_Address_same_as_client --></label>
+        <name>Spouse_Mailing_Address_same_as_client__c</name>
+    </fields><fields>
+        <label><!-- Mailing State --></label>
+        <name>State_Mailing__c</name>
+    </fields><fields>
+        <label><!-- Current State --></label>
+        <name>State__c</name>
+    </fields><fields>
+        <label><!-- Current Address --></label>
+        <name>Street_Address__c</name>
+    </fields><fields>
+        <label><!-- Mailing Zip --></label>
+        <name>Zip_Mailing__c</name>
+    </fields><fields>
+        <label><!-- Current Zip --></label>
+        <name>Zip__c</name>
+    </fields><fields>
+        <label><!-- is Active --></label>
+        <name>is_Active__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Client</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Clients</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Client Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Non-Borrower Information --></label>
+            <section>Non-Borrower Information</section>
+        </sections>
+    </layouts><sharingReasons>
+        <label><!-- Loan Processor --></label>
+        <name>LoanProcessor</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Loan Officer --></label>
+        <name>Loan_Officer</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Origination Loan Officer --></label>
+        <name>Origination_Loan_Officer</name>
+    </sharingReasons></CustomObjectTranslation>

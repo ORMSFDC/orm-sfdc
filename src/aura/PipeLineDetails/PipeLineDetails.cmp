@@ -1,0 +1,246 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global"
+                controller="PipeLineController" >
+    <aura:attribute name="LoanNumber" type="String" />
+    <aura:attribute name="CurrentStatus" type="String"  default=''/>
+    <aura:attribute name="LoanStatusValue" type="String" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="loanD" type="Object" />
+    <aura:attribute name="loanStatus" type="Object" />
+    <aura:attribute name="showPopup" type="boolean" default="false" />
+    <!--<aura:attribute name="showDates" type="boolean" default="false" />-->
+    <ltng:require scripts="{!$Resource.jquery}" ></ltng:require>
+    <ltng:require scripts="{!$Resource.bootstrap}"/> 
+    
+    <link href='/resource/1500478644000/Boot/bootstrap-sf1-0.1.0-beta.16/dist/css/bootstrap.min.css' rel="stylesheet"/>
+    
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeDeleteModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b class="loanDetails">
+                        Current Status:{!v.CurrentStatus}
+                        </b>
+                    </p>           
+                    
+                    <br></br>
+                    <p><b class="loanDetails">
+                        Status History:
+                        </b>
+                    </p>  
+                    <table class="slds-table_bordered slds-table_cell-buffer loanDetails">
+                        <tbody>
+                            <aura:iteration items="{!v.loanStatus}" var="loanStatus">
+                                
+                                <tr >
+                                    <td data-label="Name" >
+                                        <div class="slds-truncate" ><b>Change from '{!loanStatus.LoanPrevioustatus}' to '{!loanStatus.LoanCurrentStatus}' </b></div>
+                                    </td>
+                                    <td data-label="Name" >
+                                        <div class="slds-truncate" ><b>{!loanStatus.LoanStatusChangeDate} </b></div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.closeDeleteModel}">Cancel</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    <div class="container-fluid" 
+         style="background-color: white !important">
+        <div class="row">
+            <div class="col-lg-12" >      
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                    <tbody>
+                        
+                        <tr>
+                            
+                            <td data-label="Loan Number">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Loan Number:
+                                    </b></div>                                
+                            </td>
+                            
+                            <td data-label="Loan Number" class="loanDetailsData">
+                                {!v.loanD.LoanNumberDetails}
+                                <!--<div class="slds-cell-buffer_left" title="Index">{!v.loanD.LoanNumberDetails}</div>-->
+                            </td>
+                            <td data-label="Loan date">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Application Requested Date:
+                                    </b></div>
+                            </td>
+                            <td data-label="Loan date" class="loanDetailsData">
+                                {!v.loanD.LoanDate}
+                            </td>
+                            
+                            
+                            <td data-label="Loan Status">
+                                <!--onmouseover="{!c.display}"-->
+                                <div class="slds-form-element__icon  .slds-nubbin--left-top loanDetails"  >
+                                    <button class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Click to get Status History"
+                                            onclick="{!c.display}" >
+                                        <lightning:helptext content="Click to get Status History" />
+                                        <!--<lightning:icon iconName="utility:info" size="xx-small" alternativeText="Click to get Status History"/>
+                                       <span class="slds-assistive-text">Click to get Status History</span>-->
+                                    </button> 
+                                    <b>Loan Status:
+                                    </b></div>
+                            </td>
+                            
+                            <td data-label="Loan Status" class="loanDetailsData">
+                                {!v.loanD.LoanStatus}
+                                <!-- <div class="slds-cell-buffer_left" title="Index">{!v.loanD.LoanStatus}</div>-->
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-label="Client Name">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Client Name:
+                                    </b></div>
+                            </td>
+                            <td data-label="Client Name" class="loanDetailsData">
+                                {!v.loanD.FullName}
+                            </td>  
+                            <td>
+                                <div class="slds-truncate loanDetails">
+                                    <b>Date of Birth:
+                                    </b></div>
+                            </td>
+                            <td class="loanDetailsData">
+                                {!v.loanD.DOB}
+                            </td>
+                            
+                            <td>
+                                <div class="slds-truncate loanDetails">
+                                    <b>Phone Number:
+                                    </b></div>
+                            </td>
+                            <td class="loanDetailsData">
+                                <ui:outputPhone aura:id="phone" value="{!v.loanD.CPhone}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td data-label="Email">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Email Address:
+                                    </b></div>
+                            </td>
+                            <td data-label="" class="loanDetailsData">
+                                {!v.loanD.Email}
+                            </td>
+                            <td data-label="Property Address">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Property Address: 
+                                    </b></div>
+                            </td>
+                            <td data-label="Property Address" class="loanDetailsData">
+                                <ui:outputTextArea value="{!v.loanD.Address}"></ui:outputTextArea> 
+                            </td>
+                            <td data-label="Email">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Title Contact Email:
+                                    </b></div>
+                            </td>
+                            <td data-label=""  class="loanDetailsData">
+                                {!v.loanD.ContactEmail}
+                            </td>
+                        </tr> 
+                        <tr>
+                            
+                            <td data-label="Account Executive">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Account Executive:
+                                    </b></div>
+                            </td>
+                            <td data-label="Close Date" class="loanDetailsData">
+                                {!v.loanD.CreatedBy}
+                            </td>
+                            <td data-label="Office">
+                                <div class="slds-truncate loanDetails">
+                                    <b>Office Number:
+                                    </b></div>
+                            </td>
+                            <td data-label="Office" class="loanDetailsData">
+                                <ui:outputPhone aura:id="phone1" value="{!v.loanD.Phone}" />
+                                
+                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                            
+                            
+                        </tr> 
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    <div class="container-fluid" style="background-color: white !important">
+        
+        <div class="row">
+            <div class="col-xs-3">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a data-toggle="pill" href="#home">Loan Summary</a></li>
+                    <li id="email" ><a data-toggle="pill" href="#menu1">I want to</a></li>
+                    <li><a data-toggle="pill" href="#menu2">Documents </a></li>
+                    <li><a data-toggle="pill" href="#menu3">Notes</a></li>
+                    <li><a data-toggle="pill" href="#menu4" >Important Dates</a></li>
+                    <li><a data-toggle="pill" href="#menu5">Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-9">
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <c:PipeLineLoanSummary LoanId="{!v.LoanNumber}"></c:PipeLineLoanSummary>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <c:PipelineEmail LoanId="{!v.LoanNumber}" ></c:PipelineEmail>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                        <c:PipeLineDocuments LoanId="{!v.LoanNumber}"></c:PipeLineDocuments> 
+                    </div>
+                    <div id="menu3" class="tab-pane fade">
+                        <c:PipelineNotesCMP Loan="{!v.LoanNumber}"></c:PipelineNotesCMP>  
+                    </div>
+                    <!--<aura:if isTrue="{!v.showDates}"></aura:if>-->
+                        <div id="menu4" class="tab-pane fade">
+                            <c:PipeLineDates LoanId="{!v.LoanNumber}"></c:PipeLineDates>  
+                        </div>
+                    
+                    <div id="menu5" class="tab-pane fade">
+                        <c:PipeLineConditionCMP LoanId="{!v.LoanNumber}"></c:PipeLineConditionCMP>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</aura:component>

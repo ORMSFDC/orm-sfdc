@@ -1,0 +1,69 @@
+<apex:page id="loginPage" controller="SiteLoginController" standardStylesheets="false" showHeader="false" title="{!$Label.site.site_login}">
+    
+   <apex:includeLightning />
+ 
+    <html>
+        <head>
+            <link charset="utf-8" href="{!$Resource.AuthCss}" media="screen" rel="stylesheet" type="text/css"></link>
+        <link charset="utf-8" href="{!$Resource.GlobalCss}" media="screen" rel="stylesheet" type="text/css"></link>
+    <title>Sign-in - ORM Services</title>
+   
+    
+</head>
+
+<body id="category_sign_in" class="signed_out">
+     
+ 
+     <div id="lightning" />
+
+    <script>
+        $Lightning.use("c:Browser_detection", function() {
+          
+        });
+    </script>
+    <c:PartnerCoreHeader ></c:PartnerCoreHeader>
+      <div style="background-color: #2081BF !important;height: 43px !important;text-align: right;padding-left: 45px !important;width: 1348px;margin-left: -178px;">
+          <div style="padding-top: 9px;">
+          
+              <apex:outputLink value="/apex/PartnerwithUs" id="theLink"  style="color: white;font-size: 12px;padding-top: 12px;margin-right: 188px;text-decoration: none;">PARTNER WITH US</apex:outputLink>
+                <!--<apex:actionSupport event="onclick" action="{!ExistingUserLogin}"/>-->
+        </div>
+        </div>
+    <div class="ql-main ql-content"><div class="ql-v1-style-wrapper"><div class="authentication_wrapper" id="sign_in">
+        
+        <h2 class="marginBottom">Sign in</h2>
+        <apex:form id="loginForm" forceSSL="true">
+            <fieldset>
+                <legend>Sign in below</legend>
+                <apex:outputPanel layout="block">
+                    <apex:pageMessages id="error"/>
+                    
+                    
+                    <dl id="signinname_list">
+                        <dt id="signinname_label"><label for="signinname">Username:</label></dt>
+                        <dd id="signinname_field"><!-- mask:begin --> <apex:inputText id="username" value="{!username}"/>
+                            <!-- mask:end --></dd>
+                    </dl>
+                    <dl id="password_list">
+                        <dt id="password_label"><label for="password">Password:</label></dt>
+                        <dd id="password_field"><!-- mask:begin -->
+                            <apex:inputSecret id="password" value="{!password}"/><!-- mask:end --></dd>
+                    </dl>
+                    <!-- mask:begin -->
+                    <apex:commandButton styleclass="button standard floatLeft" action="{!login}" 
+                                        value="{!$Label.site.login_button}" id="loginButton" disabled="{!IF($Label.Login_Disabled=='True',true,false)}"/>
+                </apex:outputPanel>
+            </fieldset>
+        </apex:form>
+        <p>Having trouble signing in? <span>  <apex:outputLink value="{!$Page.PartnerForgotPassword}"> {!$Label.site.forgot_your_password_q}</apex:outputLink></span></p>
+        </div>
+        </div></div>
+  <c:PartnerCoreFooter ></c:PartnerCoreFooter>
+  <apex:outputPanel rendered="{!IF($Label.Login_Disabled=='True',true,false)}">
+   <c:Login_popup />
+   </apex:outputPanel>
+</body>
+</html>
+<!-- Page Generation Time: 0.077861070632935ms -->
+
+</apex:page>

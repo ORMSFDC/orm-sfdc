@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Account Number --></label>
+        <name>Account_Number__c</name>
+    </fields><fields>
+        <label><!-- Additional Remarks --></label>
+        <name>Additional_Remarks__c</name>
+    </fields><fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields><fields>
+        <label><!-- Alimony Type --></label>
+        <name>Alimony_Type__c</name>
+        <picklistValues>
+            <masterLabel>Alimony</masterLabel>
+            <translation><!-- Alimony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child Support</masterLabel>
+            <translation><!-- Child Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Separation Maintenance</masterLabel>
+            <translation><!-- Separation Maintenance --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields><fields>
+        <label><!-- Annual Hazard Insurance --></label>
+        <name>Annual_Hazard_Insurance__c</name>
+    </fields><fields>
+        <label><!-- Check If Title is also Held As --></label>
+        <name>Check_If_Title_is_also_Held_As__c</name>
+        <picklistValues>
+            <masterLabel>Living Trust</masterLabel>
+            <translation><!-- Living Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revocable Trust</masterLabel>
+            <translation><!-- Revocable Trust --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields><fields>
+        <label><!-- Condominium FHA Approved --></label>
+        <name>Condominium_FHA_Approved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- County --></label>
+        <name>County__c</name>
+    </fields><fields>
+        <label><!-- Foreclosure --></label>
+        <name>Foreclosure__c</name>
+    </fields><fields>
+        <label><!-- Gross_Rental_Income --></label>
+        <name>Gross_Rental_Income__c</name>
+    </fields><fields>
+        <label><!-- HOA Monthly Dues --></label>
+        <name>HOA_Monthly_Dues__c</name>
+    </fields><fields>
+        <label><!-- Insurance_Taxes_etc --></label>
+        <name>Insurance_Taxes_etc__c</name>
+    </fields><fields>
+        <label><!-- IsJoint --></label>
+        <name>IsJoint__c</name>
+    </fields><fields>
+        <label><!-- Is Liability Validated? --></label>
+        <name>Is_Liability_Validated__c</name>
+    </fields><fields>
+        <label><!-- Job Expense Type --></label>
+        <name>Job_Expense_Type__c</name>
+        <picklistValues>
+            <masterLabel>Job related Expense</masterLabel>
+            <translation><!-- Job related Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other expense</masterLabel>
+            <translation><!-- Other expense --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Job Related Expenses --></label>
+        <name>Job_Related_Expenses__c</name>
+    </fields><fields>
+        <label><!-- Legal Description of Property --></label>
+        <name>Legal_Description_of_Property__c</name>
+    </fields><fields>
+        <label><!-- Category --></label>
+        <name>Liability_Category__c</name>
+        <picklistValues>
+            <masterLabel>Alimony</masterLabel>
+            <translation><!-- Alimony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Job Expense</masterLabel>
+            <translation><!-- Job Expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liability</masterLabel>
+            <translation><!-- Liability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Schedule</masterLabel>
+            <translation><!-- Real Estate Schedule --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Monthly Payment --></label>
+        <name>Liability_Monthly_Payment__c</name>
+    </fields><fields>
+        <label><!-- Type --></label>
+        <name>Liability_Type__c</name>
+        <picklistValues>
+            <masterLabel>Child Support</masterLabel>
+            <translation><!-- Child Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collections/Judgements/Liens</masterLabel>
+            <translation><!-- Collections/Judgements/Liens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Divorce</masterLabel>
+            <translation><!-- Divorce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Equity Line of Credit</masterLabel>
+            <translation><!-- Home Equity Line of Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installment</masterLabel>
+            <translation><!-- Installment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Job Related Expenses</masterLabel>
+            <translation><!-- Job Related Expenses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lease Payments</masterLabel>
+            <translation><!-- Lease Payments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechnic Lien</masterLabel>
+            <translation><!-- Mechnic Lien --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loans</masterLabel>
+            <translation><!-- Mortgage Loans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open 30 day Charge Accounts</masterLabel>
+            <translation><!-- Open 30 day Charge Accounts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other expense</masterLabel>
+            <translation><!-- Other expense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property</masterLabel>
+            <translation><!-- Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Taxes</masterLabel>
+            <translation><!-- Property Taxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revolving</masterLabel>
+            <translation><!-- Revolving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Separate Maintenance.</masterLabel>
+            <translation><!-- Separate Maintenance. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxes</masterLabel>
+            <translation><!-- Taxes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Unpaid Balance --></label>
+        <name>Liability_Unpaid_Balance__c</name>
+    </fields><fields>
+        <help><!-- Check this checkbox if the Liability will be paid by closing this alimony --></help>
+        <label><!-- Liability wil be closed by Payin Alimony --></label>
+        <name>Liability_willBeClosed_by_paying__c</name>
+    </fields><fields>
+        <help><!-- Check this checkbox if Liability will be closed by paying the RES money. --></help>
+        <label><!-- Liability will be closed by Paying RES --></label>
+        <name>Liability_will_be_closed_by_Paying_RES__c</name>
+    </fields><fields>
+        <help><!-- Check this checkbox if the liability will be closed by paying this expense --></help>
+        <label><!-- Liability will be closed by Paying this --></label>
+        <name>Liability_will_be_closed_by_payingThis__c</name>
+    </fields><fields>
+        <help><!-- Please check this box if the Liability will be closed by paying this --></help>
+        <label><!-- Liability will be closed by Paying --></label>
+        <name>Liability_will_be_closed_by_paying__c</name>
+    </fields><fields>
+        <label><!-- Monthly Flood Insurance Premium --></label>
+        <name>Monthly_Flood_Insurance_Premium__c</name>
+    </fields><fields>
+        <label><!-- Monthly Ground Rents Amount --></label>
+        <name>Monthly_Ground_Rents_Amount__c</name>
+    </fields><fields>
+        <label><!-- Monthly PUD Fees Amount --></label>
+        <name>Monthly_PUD_Fees_Amount__c</name>
+    </fields><fields>
+        <label><!-- Mortgage &amp; Liens --></label>
+        <name>Mortgage_Liens__c</name>
+    </fields><fields>
+        <label><!-- Mortgage Payments --></label>
+        <name>Mortgage_Payments__c</name>
+    </fields><fields>
+        <label><!-- Name of Company --></label>
+        <name>Name_of_Company__c</name>
+    </fields><fields>
+        <label><!-- Net Rental Income --></label>
+        <name>Net_Rental_Income_RealEstate__c</name>
+    </fields><fields>
+        <label><!-- Other_Expense --></label>
+        <name>Other_Expense__c</name>
+    </fields><fields>
+        <label><!-- Payments Owed to --></label>
+        <name>Payments_Owed_to__c</name>
+    </fields><fields>
+        <label><!-- Present Market Value --></label>
+        <name>Present_Mortgage_Value__c</name>
+    </fields><fields>
+        <label><!-- Property_Address2 --></label>
+        <name>Property_Address2__c</name>
+    </fields><fields>
+        <label><!-- Property_Address --></label>
+        <name>Property_Address__c</name>
+    </fields><fields>
+        <label><!-- Property_City --></label>
+        <name>Property_City__c</name>
+    </fields><fields>
+        <label><!-- Property County --></label>
+        <name>Property_County__c</name>
+    </fields><fields>
+        <label><!-- Property Held as --></label>
+        <name>Property_Held_as__c</name>
+        <picklistValues>
+            <masterLabel>Fee Simple</masterLabel>
+            <translation><!-- Fee Simple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leasehold</masterLabel>
+            <translation><!-- Leasehold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Estate</masterLabel>
+            <translation><!-- Life Estate --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Property_State --></label>
+        <name>Property_State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois Indiana</masterLabel>
+            <translation><!-- Illinois Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana Nebraska</masterLabel>
+            <translation><!-- Montana Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania Rhode Island</masterLabel>
+            <translation><!-- Pennsylvania Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Property_State --></label>
+        <name>Property_States__c</name>
+    </fields><fields>
+        <label><!-- Property Status --></label>
+        <name>Property_Status__c</name>
+        <picklistValues>
+            <masterLabel>2nd Home/Vacation</masterLabel>
+            <translation><!-- 2nd Home/Vacation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Co-signor</masterLabel>
+            <translation><!-- Co-signor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Listed For Sale</masterLabel>
+            <translation><!-- Listed For Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Sale</masterLabel>
+            <translation><!-- Pending Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rental</masterLabel>
+            <translation><!-- Rental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sold</masterLabel>
+            <translation><!-- Sold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subject Property</masterLabel>
+            <translation><!-- Subject Property --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Property Title is Held in These Names --></label>
+        <name>Property_Title_is_Held_in_These_Names__c</name>
+    </fields><fields>
+        <label><!-- Property_Type --></label>
+        <name>Property_Type__c</name>
+        <picklistValues>
+            <masterLabel>Co-operative</masterLabel>
+            <translation><!-- Co-operative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial – Non-Residential</masterLabel>
+            <translation><!-- Commercial – Non-Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condominium</masterLabel>
+            <translation><!-- Condominium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Farm</masterLabel>
+            <translation><!-- Farm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home and Business Combined</masterLabel>
+            <translation><!-- Home and Business Combined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Land</masterLabel>
+            <translation><!-- Land --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufactured/Mobile Home</masterLabel>
+            <translation><!-- Manufactured/Mobile Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mixed Use – Residential</masterLabel>
+            <translation><!-- Mixed Use – Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multifamily (more than 4 units)</masterLabel>
+            <translation><!-- Multifamily (more than 4 units) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property</masterLabel>
+            <translation><!-- Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Family</masterLabel>
+            <translation><!-- Single Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Townhouse</masterLabel>
+            <translation><!-- Townhouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Two-to-four unit property</masterLabel>
+            <translation><!-- Two-to-four unit property --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Property_ZIP --></label>
+        <name>Property_ZIP__c</name>
+    </fields><fields>
+        <label><!-- Real_Estate_Schedule (RES) Type --></label>
+        <name>Real_Estate_Liability__c</name>
+    </fields><fields>
+        <label><!-- Real Estate Taxes - Monthly --></label>
+        <name>Real_Estate_Taxes_Monthly__c</name>
+    </fields><fields>
+        <label><!-- RelatedClient --></label>
+        <name>RelatedClient__c</name>
+        <relationshipLabel><!-- Liabilities --></relationshipLabel>
+    </fields><fields>
+        <label><!-- RelatedLoan --></label>
+        <name>RelatedLoan__c</name>
+        <relationshipLabel><!-- Liabilities --></relationshipLabel>
+    </fields><fields>
+        <label><!-- RemainingMonths --></label>
+        <name>RemainingMonths__c</name>
+    </fields><fields>
+        <label><!-- Remaining months --></label>
+        <name>Remaining_months__c</name>
+    </fields><fields>
+        <label><!-- Square Footage --></label>
+        <name>Square_Footage__c</name>
+    </fields><fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields><fields>
+        <label><!-- Liability Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Collections/Judgments/Liens</masterLabel>
+            <translation><!-- Collections/Judgments/Liens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Equity Line of Credit</masterLabel>
+            <translation><!-- Home Equity Line of Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installment</masterLabel>
+            <translation><!-- Installment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lease Payments</masterLabel>
+            <translation><!-- Lease Payments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanic Lien</masterLabel>
+            <translation><!-- Mechanic Lien --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loans</masterLabel>
+            <translation><!-- Mortgage Loans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open 30 day Charge Accounts</masterLabel>
+            <translation><!-- Open 30 day Charge Accounts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Taxes</masterLabel>
+            <translation><!-- Property Taxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revolving</masterLabel>
+            <translation><!-- Revolving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxes</masterLabel>
+            <translation><!-- Taxes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Year Built --></label>
+        <name>Year_Built__c</name>
+    </fields><fields>
+        <help><!-- Must have only digits or can have one hyphen(-) --></help>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields><fields>
+        <label><!-- isActive --></label>
+        <name>isActive__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Liability</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Liabilities</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Liability Layout</layout>
+        <sections>
+            <label><!-- Alimony --></label>
+            <section>Alimony</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Job Expenses --></label>
+            <section>Job Expenses</section>
+        </sections>
+        <sections>
+            <label><!-- Liability --></label>
+            <section>Liability</section>
+        </sections>
+        <sections>
+            <label><!-- Real Estate Schedule --></label>
+            <section>Real Estate Schedule</section>
+        </sections>
+    </layouts><sharingReasons>
+        <label><!-- Loan Processor --></label>
+        <name>LoanProcessor</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Loan Officer --></label>
+        <name>Loan_Officer</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Origination Loan Officer --></label>
+        <name>Origination_Loan_Officer</name>
+    </sharingReasons><validationRules>
+        <errorMessage><!-- Address mandatory for this category --></errorMessage>
+        <name>Address_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Amount must be greater than 0 --></errorMessage>
+        <name>Amount_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Mandatory for this category --></errorMessage>
+        <name>City_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- County is mandatory for this category --></errorMessage>
+        <name>County_validations</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Value must be greater than 0 --></errorMessage>
+        <name>Gross_Rental_Income_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Value must be greater than 0 --></errorMessage>
+        <name>Insurance_Taxes_etc_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Value must be greater than 0 --></errorMessage>
+        <name>Job_Related_Expenses_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Liability Monthly Payment value must be greater than 0 --></errorMessage>
+        <name>Liability_Monthly_Payment_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Unpaid balance must be greater than 0 --></errorMessage>
+        <name>Liability_Unpaid_Balance_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Must be greater than 0 --></errorMessage>
+        <name>Mortgage_Liens_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Value must be greater than 0 --></errorMessage>
+        <name>Mortgage_Payments_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Value must be greater than 0 --></errorMessage>
+        <name>Net_Rental_Income_RealEstate_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Value must be greater than 0 --></errorMessage>
+        <name>Present_Mortgage_Value_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Must be greater than 0 --></errorMessage>
+        <name>Remaining_months_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Zip Can  contain numbers and hypen(-) --></errorMessage>
+        <name>Zip_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Mandatory for this category --></errorMessage>
+        <name>Zip_validation_for_mandatory</name>
+    </validationRules></CustomObjectTranslation>

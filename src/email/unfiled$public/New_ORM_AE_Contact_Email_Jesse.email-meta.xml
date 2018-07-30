@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>New ORM AE Contact Email - Jesse</name>
+    <style>none</style>
+    <subject>Your New ORMS AE - Jesse Hanson</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Happy 2018! As a new year dawns, I would like to reach out to you today to introduce myself as your new account executive for One Reverse Mortgage Services. My name is Jesse Hanson, and I have been in the reverse industry for 10 years. I am looking forward to helping facilitate your client’s reverse mortgage needs with us. If you have any questions, you can reach out to me via email at jessehanson@onereverse.com, or you can call me directly at 858 261-6707. Looking forward to making 2018 a very successful year for you!
+
+{!User.Name}
+{!User.Email}
+{!User.Title}
+{!User.Phone}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

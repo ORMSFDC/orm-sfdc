@@ -1,0 +1,29 @@
+.THIS {
+    font-family: 'LatoFont'  !important;
+}
+  
+/* latin */
+@font-face {
+  font-family: 'LatoFont';
+   
+   src: url(/resource/LatoFont);
+}
+.THIS .customFont{
+     color:#2081BF;
+     font-family: 'LatoFont'  !important;     
+    font-size: 22px !important;
+    font-weight:bold  !important; 
+}
+.THIS .customBody{
+     color:Black;
+     font-family: 'LatoFont'  !important;     
+    font-size: 16px !important;
+   
+}
+
+.THIS a {
+    color:#2481BF  ;
+}
+.THIS a:visited { 
+    color: #0C4569 ;
+}

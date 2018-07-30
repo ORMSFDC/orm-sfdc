@@ -1,0 +1,37 @@
+<!--
+ Author: Enrico Murru (http://enree.co, @enreeco)
+ -->
+<aura:component >
+    <ltng:require scripts="{!$Resource.jquery}"/>
+            <ltng:require scripts="{!$Resource.bootstrap}"/> 
+            
+    <ltng:require styles="{!$Resource.BootstrapCSSFILE}" />
+               <ltng:require scripts="/resource/typeahead" 
+                  
+                  afterScriptsLoaded="{!c.initTypeahead}" />
+    
+    <aura:registerEvent name="inputLookupEvent" type="c:InputLookupEvt" />
+	<aura:handler name="inputLookupEvent" action="{!c.handleInputLookupEvt}"/>
+
+ 	
+    <aura:attribute name="type" type="String" description="Sobject Type" required="true"/>
+    <aura:attribute name="value" type="String" description="Source / Destination value" />
+    <aura:attribute name="className" type="String" description="class name of the input object" />
+    <!-- PRIVATE ATTRS -->
+    <aura:attribute name="nameValue" type="String" description="Name of the current lookup 'name' field: loaded by controller" 
+                    access="PUBLIC"/>
+    <aura:attribute name="isLoading" type="Boolean" description="Loading component" default="true"
+                    access="PRIVATE"/>
+    
+    <div class="has-feedback">
+        <ui:inputText value="{!v.value}" 
+                                          class="form-control"
+                                          placeholder="  id value"/>
+        <ui:inputText value="{!v.nameValue}" 
+                                          class="form-control"
+                                          placeholder="Change id value"/>
+	    <input id="{!globalId+'_typeahead'}" type="text" class="{!v.className}" 
+    	        readonly="{!v.isLoading}" />
+		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+	</div>
+</aura:component>

@@ -1,0 +1,1396 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Account Number --></label>
+        <name>Account_Number__c</name>
+    </fields><fields>
+        <label><!-- Actual Funding Date* --></label>
+        <name>Actual_Funding_Date__c</name>
+    </fields><fields>
+        <label><!-- Adjusted Discount Value --></label>
+        <name>Adjusted_Discount__c</name>
+    </fields><fields>
+        <label><!-- Advanced Fee disclosures --></label>
+        <name>Advanced_Fee_disclosures__c</name>
+    </fields><fields>
+        <label><!-- Alternate Contact Name --></label>
+        <name>Alternate_Contact_Name__c</name>
+    </fields><fields>
+        <label><!-- Alternate Contact Phone number --></label>
+        <name>Alternate_Contact_Phone_number__c</name>
+    </fields><fields>
+        <label><!-- Alternate Contact full address --></label>
+        <name>Alternate_Contact_full_address__c</name>
+    </fields><fields>
+        <label><!-- Amount Of Other Funds --></label>
+        <name>Amount_Of_Other_Funds__c</name>
+    </fields><fields>
+        <label><!-- Anticipated Closing Date* --></label>
+        <name>Anticipated_Closing_Date__c</name>
+    </fields><fields>
+        <label><!-- Application Requested Date* --></label>
+        <name>Application_Date__c</name>
+    </fields><fields>
+        <label><!-- Application Req Date --></label>
+        <name>Application_Requested_Date__c</name>
+    </fields><fields>
+        <label><!-- Application Signed Date --></label>
+        <name>Application_Signed_Date__c</name>
+    </fields><fields>
+        <help><!-- Please check this box for &apos;YES&apos; --></help>
+        <label><!-- Client Waived Appraisal Delivery Period --></label>
+        <name>Appraisal_Delivery__c</name>
+    </fields><fields>
+        <label><!-- Appraisal Effective Date* --></label>
+        <name>Appraisal_Effective_Date__c</name>
+    </fields><fields>
+        <label><!-- Appraisal Expiration Date --></label>
+        <name>Appraisal_Expiration_Date__c</name>
+    </fields><fields>
+        <label><!-- Appraisal Ordered Date* --></label>
+        <name>Appraisal_Ordered_Date__c</name>
+    </fields><fields>
+        <label><!-- Appraisal Received Date* --></label>
+        <name>Appraisal_Received_Date__c</name>
+    </fields><fields>
+        <label><!-- Appraisal Scheduled Date* --></label>
+        <name>Appraisal_Scheduled_Date__c</name>
+    </fields><fields>
+        <label><!-- Appraisal sent to Client Date* --></label>
+        <name>Appraisal_sent_to_Client_Date__c</name>
+    </fields><fields>
+        <label><!-- Assets Amount --></label>
+        <name>Assets_Amount__c</name>
+    </fields><fields>
+        <label><!-- Awaiting Closing Date --></label>
+        <name>Awaiting_Closing_Date__c</name>
+    </fields><fields>
+        <label><!-- BayDocsOrderNumber --></label>
+        <name>BayDocsOrderNumber__c</name>
+    </fields><fields>
+        <label><!-- Total Compensation --></label>
+        <name>BrokerCompensation__c</name>
+    </fields><fields>
+        <label><!-- BrokerOrigination* --></label>
+        <name>BrokerOrigination__c</name>
+    </fields><fields>
+        <label><!-- Broker Origination --></label>
+        <name>Broker_Origination__c</name>
+    </fields><fields>
+        <label><!-- CashAvaliabletoClient* --></label>
+        <name>CashAvaliabletoClient__c</name>
+    </fields><fields>
+        <label><!-- Check If Title is also Held As Trust --></label>
+        <name>Check_If_Title_is_also_Held_As__c</name>
+        <picklistValues>
+            <masterLabel>Living Trust</masterLabel>
+            <translation><!-- Living Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revocable Trust</masterLabel>
+            <translation><!-- Revocable Trust --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Children Under the age of 6 living in th --></label>
+        <name>Children_Under_the_age_of_6_living_in_th__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Client Name* --></label>
+        <name>Client_Name__c</name>
+    </fields><fields>
+        <label><!-- Client&apos;s credit score --></label>
+        <name>Client_s_credit_score__c</name>
+    </fields><fields>
+        <label><!-- Closed – Awaiting Funding Date --></label>
+        <name>Closed_Awaiting_Funding_Date__c</name>
+    </fields><fields>
+        <label><!-- Actual Closing Date* --></label>
+        <name>Closing_Date__c</name>
+    </fields><fields>
+        <label><!-- Cond Approved Days --></label>
+        <name>Cond_Approved_Days__c</name>
+    </fields><fields>
+        <label><!-- Condition --></label>
+        <name>Condition__c</name>
+        <relationshipLabel><!-- Loans --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Conditionally Approved Date --></label>
+        <name>Conditionally_Approved_Date__c</name>
+    </fields><fields>
+        <label><!-- Condominium FHA Approved --></label>
+        <name>Condominium_FHA_Approved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Condominium Name --></label>
+        <name>Condominium_Name__c</name>
+    </fields><fields>
+        <label><!-- Confirm Credit Reference Number --></label>
+        <name>Confirm_Credit_Reference_Number__c</name>
+    </fields><fields>
+        <label><!-- Contact Email --></label>
+        <name>Contact_Email__c</name>
+    </fields><fields>
+        <label><!-- Contact Name --></label>
+        <name>Contact_Name__c</name>
+    </fields><fields>
+        <label><!-- Contact Phone Number LoanDetails* --></label>
+        <name>Contact_Phone_Number_LoanDetails__c</name>
+    </fields><fields>
+        <label><!-- Contract Closing Date --></label>
+        <name>Contract_Closing_Date__c</name>
+    </fields><fields>
+        <label><!-- Contract Date --></label>
+        <name>Contract_Date__c</name>
+    </fields><fields>
+        <label><!-- Cooling Off Notice Signed Date --></label>
+        <name>Cooling_Off_Notice_Signed_Date__c</name>
+    </fields><fields>
+        <label><!-- Counseling Date* --></label>
+        <name>Counseling_Date__c</name>
+    </fields><fields>
+        <label><!-- Counseling Expiration Date --></label>
+        <name>Counseling_Expiration_Date__c</name>
+    </fields><fields>
+        <label><!-- Credit Indicator --></label>
+        <name>Credit_Indicator__c</name>
+        <picklistValues>
+            <masterLabel>Pull New Credit</masterLabel>
+            <translation><!-- Pull New Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reissue Credit</masterLabel>
+            <translation><!-- Reissue Credit --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Credit Reference Number --></label>
+        <name>Credit_Reference_Number__c</name>
+    </fields><fields>
+        <label><!-- Credit Reissue Vendor --></label>
+        <name>Credit_Reissue_Vendor__c</name>
+        <picklistValues>
+            <masterLabel>CredStar</masterLabel>
+            <translation><!-- CredStar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credco</masterLabel>
+            <translation><!-- Credco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equifax</masterLabel>
+            <translation><!-- Equifax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FundingSuite</masterLabel>
+            <translation><!-- FundingSuite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KFD</masterLabel>
+            <translation><!-- KFD --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Credit Report Date* --></label>
+        <name>Credit_Report_Date__c</name>
+    </fields><fields>
+        <label><!-- Credit Report type --></label>
+        <name>Credit_Report_type__c</name>
+        <picklistValues>
+            <masterLabel>Individual</masterLabel>
+            <translation><!-- Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joint</masterLabel>
+            <translation><!-- Joint --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Credit to Borrower --></label>
+        <name>Credit_to_Borrower__c</name>
+    </fields><fields>
+        <help><!-- To check whether the PCS assigned is the current user, for giving a list view --></help>
+        <label><!-- Current User is Assigned PCS? --></label>
+        <name>Current_User_is_Assigend_PCS__c</name>
+    </fields><fields>
+        <label><!-- Denied Date --></label>
+        <name>Denied_Date__c</name>
+    </fields><fields>
+        <label><!-- Discounted Value --></label>
+        <name>Discounted_Value__c</name>
+    </fields><fields>
+        <help><!-- This link cannot be edited - &quot;it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support&quot;. --></help>
+        <label><!-- DocViewer Link --></label>
+        <name>DocViewer_Link__c</name>
+    </fields><fields>
+        <label><!-- Driver License and Social Security Card --></label>
+        <name>Driver_License_and_Social_Security_Card__c</name>
+    </fields><fields>
+        <label><!-- Earnest Money Deposit --></label>
+        <name>Earnest_Money_Deposit__c</name>
+    </fields><fields>
+        <label><!-- Estimate of Appraised Value --></label>
+        <name>Estimate_of_Appraised_Value__c</name>
+    </fields><fields>
+        <label><!-- ExpectedInterestRate* --></label>
+        <name>ExpectedInterestRate__c</name>
+    </fields><fields>
+        <label><!-- Extend Application Time --></label>
+        <name>Extend_Application_Time__c</name>
+    </fields><fields>
+        <label><!-- FHACaseNumber* --></label>
+        <name>FHACaseNumber__c</name>
+    </fields><fields>
+        <label><!-- FHA Case Number Date* --></label>
+        <name>FHA_Case_Number_Date__c</name>
+    </fields><fields>
+        <label><!-- FHA Case Number Expiration Date --></label>
+        <name>FHA_Case_Number_Expiration__c</name>
+    </fields><fields>
+        <label><!-- Final Goals Call Date --></label>
+        <name>Final_Goals_Call_Date__c</name>
+    </fields><fields>
+        <label><!-- Final Goals Call --></label>
+        <name>Final_Goals_Call__c</name>
+    </fields><fields>
+        <label><!-- FinancialAssessmentResult* --></label>
+        <name>FinancialAssessmentResult__c</name>
+        <picklistValues>
+            <masterLabel>Borrower Elected LESA</masterLabel>
+            <translation><!-- Borrower Elected LESA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full LESA</masterLabel>
+            <translation><!-- Full LESA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No LESA</masterLabel>
+            <translation><!-- No LESA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial LESA</masterLabel>
+            <translation><!-- Partial LESA --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Flood Ordered Date* --></label>
+        <name>Flood_Ordered_Date__c</name>
+    </fields><fields>
+        <label><!-- Flood Received Date* --></label>
+        <name>Flood_Received_Date__c</name>
+    </fields><fields>
+        <label><!-- FollowUp Call Date --></label>
+        <name>FollowUp_Call_Date__c</name>
+    </fields><fields>
+        <label><!-- FollowUp Call --></label>
+        <name>FollowUp_Call__c</name>
+    </fields><fields>
+        <label><!-- Full Application Received Incomplete Dat --></label>
+        <name>Full_Application_Received_Incomplete_Dat__c</name>
+    </fields><fields>
+        <label><!-- Full Package Received Date --></label>
+        <name>Full_Package_Received_Date__c</name>
+    </fields><fields>
+        <label><!-- Fully Signed Application Package --></label>
+        <name>Fully_Signed_Application_Package__c</name>
+    </fields><fields>
+        <label><!-- Funded Date --></label>
+        <name>Funded_Date__c</name>
+    </fields><fields>
+        <label><!-- FundtoClose* --></label>
+        <name>FundtoClose__c</name>
+    </fields><fields>
+        <label><!-- Gift Amount --></label>
+        <name>Gift_Amount__c</name>
+    </fields><fields>
+        <label><!-- Gross Rental Income --></label>
+        <name>Gross_Rental_Income__c</name>
+    </fields><fields>
+        <label><!-- Gross Value --></label>
+        <name>Gross_Value__c</name>
+    </fields><fields>
+        <label><!-- HECM Counseling Certificate --></label>
+        <name>HECM_Counseling_Certificate__c</name>
+    </fields><fields>
+        <label><!-- HOA Monthly Dues --></label>
+        <name>HOA_Monthly_Dues__c</name>
+    </fields><fields>
+        <label><!-- Monthly HOA, PUD, Condo Fees --></label>
+        <name>HOA_PUD_Condo_Fees__c</name>
+    </fields><fields>
+        <label><!-- HOI Effective Date --></label>
+        <name>HOI_Effective_Date__c</name>
+    </fields><fields>
+        <label><!-- Annual Hazard Insurance --></label>
+        <name>Hazard_Insurance__c</name>
+    </fields><fields>
+        <label><!-- Household Members --></label>
+        <name>Household_Members__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- If yes, Name of POA --></label>
+        <name>If_yes_Name_of_POA__c</name>
+    </fields><fields>
+        <label><!-- In Processing Date --></label>
+        <name>In_Processing_Date__c</name>
+    </fields><fields>
+        <label><!-- Income and Asset Documentation --></label>
+        <name>Income_and_Asset_Documentation__c</name>
+    </fields><fields>
+        <label><!-- Incomplete Date --></label>
+        <name>Incomplete_Date__c</name>
+    </fields><fields>
+        <label><!-- InitialInterestRate* --></label>
+        <name>InitialInterestRate__c</name>
+    </fields><fields>
+        <label><!-- InitialUnpaidPrincipalBalance* --></label>
+        <name>InitialUnpaidPrincipalBalance__c</name>
+    </fields><fields>
+        <label><!-- Initial Call Date --></label>
+        <name>Initial_Call_Date__c</name>
+    </fields><fields>
+        <label><!-- Initial Call --></label>
+        <name>Initial_Call__c</name>
+    </fields><fields>
+        <label><!-- Insurance Binder Ordered Date* --></label>
+        <name>Insurance_Binder_Ordered_Date__c</name>
+    </fields><fields>
+        <label><!-- Insurance Binder Received Date* --></label>
+        <name>Insurance_Binder_Received_Date__c</name>
+    </fields><fields>
+        <label><!-- Interview Date --></label>
+        <name>Interview_Date__c</name>
+    </fields><fields>
+        <label><!-- IsActive --></label>
+        <name>IsActiveFlag__c</name>
+    </fields><fields>
+        <label><!-- IsAssetsFilled_Flag_ForTab --></label>
+        <name>IsAssetsFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsClientFilled_Flag_ForTab --></label>
+        <name>IsClientFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsCreditInfoFilled_Flag_ForTab --></label>
+        <name>IsCreditInfoFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsDeclarationFilled_Flag_ForTab --></label>
+        <name>IsDeclarationFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsEmploymentFilled_Flag_ForTab --></label>
+        <name>IsEmploymentFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsIncomeFilled_Flag_ForTab --></label>
+        <name>IsIncomeFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsLaibilitiesFilled_Flag_ForTab --></label>
+        <name>IsLaibilitiesFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsLoanContactFilled_Flag --></label>
+        <name>IsLoanContactFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsLoanCreatedByLoanProcessor --></label>
+        <name>IsLoanCreatedByLoanProcessor__c</name>
+    </fields><fields>
+        <label><!-- IsLoanDetailsFilled_Flag_ForTab --></label>
+        <name>IsLoanDetailsFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsLoanFilled_Flag_ForTab --></label>
+        <name>IsLoanFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- IsOrderAppraisalFlag --></label>
+        <name>IsOrderAppraisalFlag__c</name>
+    </fields><fields>
+        <label><!-- IsSubjectPropertyFilled_Flag_ForTab --></label>
+        <name>IsSubjectPropertyFilled_Flag__c</name>
+    </fields><fields>
+        <label><!-- Is Application Filled Flag --></label>
+        <name>Is_Application_Filled_Flag__c</name>
+    </fields><fields>
+        <label><!-- Is CashFlow Viewed --></label>
+        <name>Is_CashFlow_Viewed__c</name>
+    </fields><fields>
+        <label><!-- Is Client Exist --></label>
+        <name>Is_Client_Exist__c</name>
+    </fields><fields>
+        <label><!-- Is Loan Created Manually? --></label>
+        <name>Is_Loan_Created_Manually__c</name>
+    </fields><fields>
+        <label><!-- Is there a POA? (Name, Representing and --></label>
+        <name>Is_there_a_POA_Name_Representing_and__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Legal Description of Property --></label>
+        <name>Legal_Description_of_Property__c</name>
+    </fields><fields>
+        <label><!-- Lien Balance* --></label>
+        <name>Lien_Balance__c</name>
+    </fields><fields>
+        <label><!-- Lien Creditor --></label>
+        <name>Lien_Creditor__c</name>
+    </fields><fields>
+        <label><!-- Life Expectancy* --></label>
+        <name>Life_Expectancy__c</name>
+    </fields><fields>
+        <label><!-- LineOfCreditAfterFirstYear* --></label>
+        <name>LineOfCreditAfterFirstYear__c</name>
+    </fields><fields>
+        <label><!-- LoanCompleteFlag --></label>
+        <name>LoanCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- LoanNumber* --></label>
+        <name>LoanNumber__c</name>
+    </fields><fields>
+        <label><!-- Loan Officer* --></label>
+        <name>LoanOfficer__c</name>
+        <relationshipLabel><!-- Loans (Loan Officer*) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- LoanStatus* --></label>
+        <name>LoanStatus__c</name>
+        <picklistValues>
+            <masterLabel>Application Requested</masterLabel>
+            <translation><!-- Application Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Closing</masterLabel>
+            <translation><!-- Awaiting Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Awaiting Funding</masterLabel>
+            <translation><!-- Closed - Awaiting Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditionally Approved</masterLabel>
+            <translation><!-- Conditionally Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Application Received - Incomplete</masterLabel>
+            <translation><!-- Full Application Received - Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Package Received</masterLabel>
+            <translation><!-- Full Package Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funded</masterLabel>
+            <translation><!-- Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Processing</masterLabel>
+            <translation><!-- In Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sandbox</masterLabel>
+            <translation><!-- Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting Clear to Close</masterLabel>
+            <translation><!-- Underwriting Clear to Close --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Full Package</masterLabel>
+            <translation><!-- Waiting for Full Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Loan Number --></label>
+        <name>Loan_Number__c</name>
+    </fields><fields>
+        <label><!-- Loan Origination Company Identifier --></label>
+        <name>Loan_Origination_Company_Identifier__c</name>
+    </fields><fields>
+        <label><!-- Loan Origination Company’s Address --></label>
+        <name>Loan_Origination_Company_s_AddressNew__c</name>
+    </fields><fields>
+        <label><!-- Loan Origination Company’s City --></label>
+        <name>Loan_Origination_Company_s_CityNew__c</name>
+    </fields><fields>
+        <label><!-- Loan Origination Company’s Name --></label>
+        <name>Loan_Origination_Company_s_NameNew__c</name>
+    </fields><fields>
+        <label><!-- Loan Origination Company’s State --></label>
+        <name>Loan_Origination_Company_s_StateNew__c</name>
+    </fields><fields>
+        <label><!-- Loan Origination Company’s Zip Code --></label>
+        <name>Loan_Origination_Company_s_Zip_CodeNew__c</name>
+    </fields><fields>
+        <label><!-- Loan Origination Fee_Calculation --></label>
+        <name>Loan_Origination_Fee_Calculation__c</name>
+        <picklistValues>
+            <masterLabel>Calculate Maximum Fee</masterLabel>
+            <translation><!-- Calculate Maximum Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enter Fee Value ($0 - $6,000)</masterLabel>
+            <translation><!-- Enter Fee Value ($0 - $6,000) --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Loan Origination Fee --></label>
+        <name>Loan_Origination_Fee__c</name>
+    </fields><fields>
+        <label><!-- Loan Originator Identifier --></label>
+        <name>Loan_Originator_Identifier__c</name>
+    </fields><fields>
+        <label><!-- Loan Originator’s First Name --></label>
+        <name>Loan_Originator_s_First_NameNew__c</name>
+    </fields><fields>
+        <label><!-- Loan Originator’s First Name --></label>
+        <name>Loan_Originator_s_First_Name__c</name>
+    </fields><fields>
+        <label><!-- Loan Originator’s Last Name --></label>
+        <name>Loan_Originator_s_Last_NameNew__c</name>
+    </fields><fields>
+        <label><!-- Loan Originator’s Last Name --></label>
+        <name>Loan_Originator_s_Last_Name__c</name>
+    </fields><fields>
+        <label><!-- Loan Originator’s Phone Number --></label>
+        <name>Loan_Originator_s_Phone_NumberNew__c</name>
+    </fields><fields>
+        <label><!-- Loan_Payment_Plan_Term --></label>
+        <name>Loan_Payment_Plan_Term__c</name>
+    </fields><fields>
+        <label><!-- Loan Processor --></label>
+        <name>Loan_Processor__c</name>
+        <relationshipLabel><!-- Loans (Loan Processor) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Loan Status Change Date --></label>
+        <name>Loan_Status_Change_Date__c</name>
+    </fields><fields>
+        <label><!-- Mandatory Obligations* --></label>
+        <name>MandatoryObligations__c</name>
+    </fields><fields>
+        <label><!-- Margin* --></label>
+        <name>Margin__c</name>
+        <picklistValues>
+            <masterLabel>1.750</masterLabel>
+            <translation><!-- 1.750 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1.875</masterLabel>
+            <translation><!-- 1.875 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.000</masterLabel>
+            <translation><!-- 2.000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.125</masterLabel>
+            <translation><!-- 2.125 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.250</masterLabel>
+            <translation><!-- 2.250 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.375</masterLabel>
+            <translation><!-- 2.375 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.500</masterLabel>
+            <translation><!-- 2.500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.625</masterLabel>
+            <translation><!-- 2.625 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.750</masterLabel>
+            <translation><!-- 2.750 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.875</masterLabel>
+            <translation><!-- 2.875 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.000</masterLabel>
+            <translation><!-- 3.000 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- MonthlyPaymentavailabletoClient* --></label>
+        <name>MonthlyPaymentavailabletoClient__c</name>
+    </fields><fields>
+        <label><!-- Monthly Flood Insurance Premium --></label>
+        <name>Monthly_Flood_Insurance_Premium__c</name>
+    </fields><fields>
+        <label><!-- Monthly Ground Rents Amount --></label>
+        <name>Monthly_Ground_Rents_Amount__c</name>
+    </fields><fields>
+        <label><!-- Monthly Mortgage Payment --></label>
+        <name>Monthly_Mortgage_Payment__c</name>
+    </fields><fields>
+        <label><!-- Monthly PUD Fees Amount --></label>
+        <name>Monthly_PUD_Fees_Amount__c</name>
+    </fields><fields>
+        <label><!-- Mortgage Applied for --></label>
+        <name>Mortgage_Applied_for__c</name>
+        <picklistValues>
+            <masterLabel>FHA Traditional HECM</masterLabel>
+            <translation><!-- FHA Traditional HECM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HECM for Purchase</masterLabel>
+            <translation><!-- HECM for Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HECM to HECM Refinance</masterLabel>
+            <translation><!-- HECM to HECM Refinance --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Mortgage and Liens --></label>
+        <name>Mortgage_and_Liens__c</name>
+    </fields><fields>
+        <label><!-- Name of Company --></label>
+        <name>Name_of_Company__c</name>
+    </fields><fields>
+        <label><!-- Net Rental Income --></label>
+        <name>Net_Rental_Income__c</name>
+    </fields><fields>
+        <label><!-- Next Tax Due Date* --></label>
+        <name>Next_Tax_Due_Date__c</name>
+    </fields><fields>
+        <label><!-- No of Units --></label>
+        <name>No_of_Units__c</name>
+    </fields><fields>
+        <label><!-- ORMS AE --></label>
+        <name>ORMS_AE__c</name>
+    </fields><fields>
+        <label><!-- Originating Loan Officer --></label>
+        <name>Originating_Loan_Officer__c</name>
+        <relationshipLabel><!-- Loans (Originating Loan Officer) --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Title, Closing &amp; Recording Fees PDF --></help>
+        <label><!-- Other Closing Costs URL --></label>
+        <name>Other_Closing_Costs_URL__c</name>
+    </fields><fields>
+        <help><!-- Title, Closing &amp; Recording Fees --></help>
+        <label><!-- Other Closing Costs --></label>
+        <name>Other_Closing_Costs__c</name>
+    </fields><fields>
+        <help><!-- This field gets cleared after saving the record. To view the details and reason, please go into the ReDisclosure History related list. --></help>
+        <label><!-- Other ReDisclosure Reason --></label>
+        <name>Other_ReDisclosure_Reason__c</name>
+    </fields><fields>
+        <label><!-- Other Relationship Alternative Contact --></label>
+        <name>Other_Relationship_Alternative_Contact__c</name>
+    </fields><fields>
+        <label><!-- Other Source Of Funds --></label>
+        <name>Other_Source_Of_Funds__c</name>
+    </fields><fields>
+        <help><!-- PCS at loan level can be different from PCS at Partner level --></help>
+        <label><!-- PCS at Loan Level --></label>
+        <name>PCS_at_Loan_Level__c</name>
+        <relationshipLabel><!-- Loans (PCS at Loan Level) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- PCS at Partner Level --></label>
+        <name>PCS_at_Partner_Level__c</name>
+    </fields><fields>
+        <help><!-- Paid any fees to the partner for any services, excluding third party services --></help>
+        <label><!-- Paid any fees to the partner --></label>
+        <name>Paid_any_fees_to_the_partner__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Partner State --></label>
+        <name>Partner_State__c</name>
+    </fields><fields>
+        <label><!-- Payoff Expiration Date --></label>
+        <name>Payoff_Expiration_Date__c</name>
+    </fields><fields>
+        <label><!-- Payoff Order Date* --></label>
+        <name>Payoff_Order_Date__c</name>
+    </fields><fields>
+        <label><!-- PipeLine_BestContactTime* --></label>
+        <name>PipeLine_BestContactTime__c</name>
+    </fields><fields>
+        <label><!-- PipeLine_BestContact* --></label>
+        <name>PipeLine_BestContact__c</name>
+    </fields><fields>
+        <label><!-- PipeLineOtherContactFlag --></label>
+        <name>PipeLine_OtherContactFlag__c</name>
+    </fields><fields>
+        <label><!-- Post Suspense Call Date --></label>
+        <name>Post_Suspense_Call_Date__c</name>
+    </fields><fields>
+        <label><!-- Post Suspense Call --></label>
+        <name>Post_Suspense_Call__c</name>
+    </fields><fields>
+        <label><!-- Preferred Contact Name --></label>
+        <name>Preferred_Contact_Name__c</name>
+    </fields><fields>
+        <label><!-- Preferred Contact Type --></label>
+        <name>Preferred_Contact_Type__c</name>
+        <picklistValues>
+            <masterLabel>Loan Officer</masterLabel>
+            <translation><!-- Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Processor</masterLabel>
+            <translation><!-- Loan Processor --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Present Market Value --></label>
+        <name>Present_Market_Value__c</name>
+    </fields><fields>
+        <label><!-- PrincipalLimit* --></label>
+        <name>PrincipalLimit__c</name>
+    </fields><fields>
+        <label><!-- ProceedsAvailableFirstYear* --></label>
+        <name>ProceedsAvailableFirstYear__c</name>
+    </fields><fields>
+        <label><!-- PropertyAppraisalValue* --></label>
+        <name>PropertyAppraisalValue__c</name>
+    </fields><fields>
+        <label><!-- Property Charge Payment History Result --></label>
+        <name>Property_Charge_Payment_History_Result__c</name>
+    </fields><fields>
+        <label><!-- Property Held as --></label>
+        <name>Property_Held_as__c</name>
+        <picklistValues>
+            <masterLabel>Fee Simple</masterLabel>
+            <translation><!-- Fee Simple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leasehold</masterLabel>
+            <translation><!-- Leasehold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Estate</masterLabel>
+            <translation><!-- Life Estate --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Property Title is Held in These Names --></label>
+        <name>Property_Title_is_Held_in_These_Names__c</name>
+    </fields><fields>
+        <label><!-- Property Expenses As Percent Of Income --></label>
+        <name>Property__c</name>
+    </fields><fields>
+        <label><!-- Purchase Price --></label>
+        <name>Purchase_Price__c</name>
+    </fields><fields>
+        <help><!-- User can select more than one option. Please hold the Ctrl button on the keyboard to select more than one option. --></help>
+        <label><!-- Purpose of Loan --></label>
+        <name>Purpose_of_Loan__c</name>
+        <picklistValues>
+            <masterLabel>Additional Income</masterLabel>
+            <translation><!-- Additional Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extinguish Forward Mortgage</masterLabel>
+            <translation><!-- Extinguish Forward Mortgage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Improvement</masterLabel>
+            <translation><!-- Home Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leisure</masterLabel>
+            <translation><!-- Leisure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical</masterLabel>
+            <translation><!-- Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment of Insurance</masterLabel>
+            <translation><!-- Payment of Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment of Taxes</masterLabel>
+            <translation><!-- Payment of Taxes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Rate Type --></label>
+        <name>Rate_Type__c</name>
+        <picklistValues>
+            <masterLabel>ARM</masterLabel>
+            <translation><!-- ARM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed</masterLabel>
+            <translation><!-- Fixed --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Fixed Rate --></label>
+        <name>Rate__c</name>
+    </fields><fields>
+        <help><!-- This field gets cleared after saving the record. To view the details and reason, please go into the ReDisclosure History related list. --></help>
+        <label><!-- ReDisclosure Reason* --></label>
+        <name>ReDisclosure_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Act of God, war, disaster or other emergency</masterLabel>
+            <translation><!-- Act of God, war, disaster or other emergency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Add Borrower</masterLabel>
+            <translation><!-- Add Borrower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Add a Non-Borrowing Spouse</masterLabel>
+            <translation><!-- Add a Non-Borrowing Spouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appraisal Received</masterLabel>
+            <translation><!-- Appraisal Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inaccurate information about the client or transaction</masterLabel>
+            <translation><!-- Inaccurate information about the client or transaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other New information particular to the client or transaction</masterLabel>
+            <translation><!-- Other New information particular to the client or transaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other circumstance that is particular to the client or transaction</masterLabel>
+            <translation><!-- Other circumstance that is particular to the client or transaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reduce Origination Fee</masterLabel>
+            <translation><!-- Reduce Origination Fee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remove Borrower</masterLabel>
+            <translation><!-- Remove Borrower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Title Fees Received</masterLabel>
+            <translation><!-- Title Fees Received --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Re-disclosure Date* --></label>
+        <name>Re_disclosure_Date__c</name>
+    </fields><fields>
+        <label><!-- Monthly Real Estate Taxes --></label>
+        <name>Real_Estate_Taxes__c</name>
+    </fields><fields>
+        <help><!-- To view the Re-disclosure history, please see the Re-disclosure History section under Related. --></help>
+        <label><!-- Recent Re-disclosure Date --></label>
+        <name>Recent_Re_disclosure_Date__c</name>
+    </fields><fields>
+        <label><!-- Related Individual --></label>
+        <name>Related_Individual__c</name>
+        <relationshipLabel><!-- Loans --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Related Partner --></label>
+        <name>Related_Partner__c</name>
+        <relationshipLabel><!-- Loans --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Relationship to Alternative Contact --></label>
+        <name>Relationship_to_Alternative_Contact__c</name>
+        <picklistValues>
+            <masterLabel>Aunt</masterLabel>
+            <translation><!-- Aunt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother</masterLabel>
+            <translation><!-- Brother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child</masterLabel>
+            <translation><!-- Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Father</masterLabel>
+            <translation><!-- Father --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend</masterLabel>
+            <translation><!-- Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandchild</masterLabel>
+            <translation><!-- Grandchild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother</masterLabel>
+            <translation><!-- Mother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephew</masterLabel>
+            <translation><!-- Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niece</masterLabel>
+            <translation><!-- Niece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister</masterLabel>
+            <translation><!-- Sister --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncle</masterLabel>
+            <translation><!-- Uncle --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Remove Dups Loans --></label>
+        <name>Remove_Dups_Loans__c</name>
+    </fields><fields>
+        <label><!-- RepairEstimate* --></label>
+        <name>RepairEstimate__c</name>
+    </fields><fields>
+        <label><!-- RepairSetAside* --></label>
+        <name>RepairSetAside__c</name>
+    </fields><fields>
+        <label><!-- Residence Type --></label>
+        <name>Residence_Type__c</name>
+        <picklistValues>
+            <masterLabel>Investment</masterLabel>
+            <translation><!-- Investment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary</masterLabel>
+            <translation><!-- Primary --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Residual l Income Required* --></label>
+        <name>Residential_Income_Required__c</name>
+    </fields><fields>
+        <label><!-- Percent Of Residual Income Fulfilled* --></label>
+        <name>Residual_Income_Fulfilled__c</name>
+    </fields><fields>
+        <label><!-- Sale Date --></label>
+        <name>Sale_Date__c</name>
+    </fields><fields>
+        <label><!-- Sale Proceeds --></label>
+        <name>Sale_Proceeds__c</name>
+    </fields><fields>
+        <label><!-- Scheduled Closing Date* --></label>
+        <name>Scheduled_Closing_Date__c</name>
+    </fields><fields>
+        <label><!-- Selected Loan Payment Plan --></label>
+        <name>Selected_Loan_Payment_Plan__c</name>
+        <picklistValues>
+            <masterLabel>Line of Credit</masterLabel>
+            <translation><!-- Line of Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modified Tenure</masterLabel>
+            <translation><!-- Modified Tenure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modified Term</masterLabel>
+            <translation><!-- Modified Term --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Lump Sum</masterLabel>
+            <translation><!-- Single Lump Sum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Lump Sum (Fixed)</masterLabel>
+            <translation><!-- Single Lump Sum (Fixed) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tenure</masterLabel>
+            <translation><!-- Tenure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Term</masterLabel>
+            <translation><!-- Term --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undecided</masterLabel>
+            <translation><!-- Undecided --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Source Of Funds --></label>
+        <name>Source_Of_Funds__c</name>
+        <picklistValues>
+            <masterLabel>Assets</masterLabel>
+            <translation><!-- Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gift</masterLabel>
+            <translation><!-- Gift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sale Of Other Property</masterLabel>
+            <translation><!-- Sale Of Other Property --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Square Footage --></label>
+        <name>Square_Footage__c</name>
+    </fields><fields>
+        <label><!-- Status Of Current Address --></label>
+        <name>Status_Of_Current_Address__c</name>
+        <picklistValues>
+            <masterLabel>Currently Renting</masterLabel>
+            <translation><!-- Currently Renting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>For Sale</masterLabel>
+            <translation><!-- For Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keeping Property</masterLabel>
+            <translation><!-- Keeping Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sold</masterLabel>
+            <translation><!-- Sold --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- SubjectPropertyFlag --></label>
+        <name>SubjectPropertyFlag__c</name>
+    </fields><fields>
+        <label><!-- Subject Property Address* --></label>
+        <name>Subject_Property_Address__c</name>
+    </fields><fields>
+        <label><!-- Subject Property City --></label>
+        <name>Subject_Property_City__c</name>
+    </fields><fields>
+        <label><!-- Subject Property County --></label>
+        <name>Subject_Property_County__c</name>
+    </fields><fields>
+        <label><!-- Subject Property State --></label>
+        <name>Subject_Property_State__c</name>
+    </fields><fields>
+        <label><!-- Subject Property Type --></label>
+        <name>Subject_Property_Type__c</name>
+        <picklistValues>
+            <masterLabel>Co-operative</masterLabel>
+            <translation><!-- Co-operative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial - Non-Residential</masterLabel>
+            <translation><!-- Commercial - Non-Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condominium</masterLabel>
+            <translation><!-- Condominium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Farm</masterLabel>
+            <translation><!-- Farm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home and Business Combined</masterLabel>
+            <translation><!-- Home and Business Combined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Land</masterLabel>
+            <translation><!-- Land --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufactured/Mobile Home</masterLabel>
+            <translation><!-- Manufactured/Mobile Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mixed Use – Residential</masterLabel>
+            <translation><!-- Mixed Use – Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multifamily (more than 4 units)</masterLabel>
+            <translation><!-- Multifamily (more than 4 units) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Family</masterLabel>
+            <translation><!-- Single Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Townhouse</masterLabel>
+            <translation><!-- Townhouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Two-to-four unit property</masterLabel>
+            <translation><!-- Two-to-four unit property --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Subject Property Zip Code --></label>
+        <name>Subject_Property_Zip_Code__c</name>
+    </fields><fields>
+        <label><!-- Suspended Date --></label>
+        <name>Suspended_Date__c</name>
+    </fields><fields>
+        <help><!-- Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name) --></help>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+    </fields><fields>
+        <label><!-- Tell the story --></label>
+        <name>Tell_the_story__c</name>
+    </fields><fields>
+        <label><!-- This application was taken by --></label>
+        <name>This_application_was_taken_by__c</name>
+        <picklistValues>
+            <masterLabel>By the applicant and submitted by fax or mail</masterLabel>
+            <translation><!-- By the applicant and submitted by fax or mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>By the applicant and submitted via email or the Internet</masterLabel>
+            <translation><!-- By the applicant and submitted via email or the Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Face to Face</masterLabel>
+            <translation><!-- Face to Face --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone Interview</masterLabel>
+            <translation><!-- Telephone Interview --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Title Company --></label>
+        <name>Title_Company__c</name>
+    </fields><fields>
+        <label><!-- Title Ordered Date* --></label>
+        <name>Title_Ordered_Date__c</name>
+    </fields><fields>
+        <label><!-- Title Received Date* --></label>
+        <name>Title_Received_Date__c</name>
+    </fields><fields>
+        <label><!-- TotalLesa* --></label>
+        <name>TotalLesa__c</name>
+    </fields><fields>
+        <label><!-- Total Assets --></label>
+        <name>Total_Asset__c</name>
+    </fields><fields>
+        <label><!-- Total Assets --></label>
+        <name>Total_Assets__c</name>
+    </fields><fields>
+        <label><!-- Total Expenses* --></label>
+        <name>Total_Expenses__c</name>
+    </fields><fields>
+        <label><!-- Total Income For Each Client* --></label>
+        <name>Total_Income__c</name>
+    </fields><fields>
+        <label><!-- Total Monthly Property Charges --></label>
+        <name>Total_Monthly_Property_Charge__c</name>
+    </fields><fields>
+        <label><!-- Total Monthly Property Charges --></label>
+        <name>Total_Monthly_Property_Charges__c</name>
+    </fields><fields>
+        <label><!-- Total Property Charges --></label>
+        <name>Total_Property_Charges__c</name>
+    </fields><fields>
+        <label><!-- Underwriting clear to close date --></label>
+        <name>Underwriting_clear_to_close_date__c</name>
+    </fields><fields>
+        <help><!-- Using AmRock as the Closing Agent/Escrow Officer and Title Company? --></help>
+        <label><!-- Using AmRock as the Closing Agent --></label>
+        <name>Using_Title_Source_as_the_Closing_Agent__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Waiting for Full App Date --></label>
+        <name>Waiting_for_Full_App_Date__c</name>
+    </fields><fields>
+        <label><!-- Waiting for Full Package Date --></label>
+        <name>Waiting_for_Full_Package_Date__c</name>
+    </fields><fields>
+        <label><!-- Withdrawn Date --></label>
+        <name>Withdrawn_Date__c</name>
+    </fields><fields>
+        <label><!-- Year Built --></label>
+        <name>Year_Built__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Loan</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Loans</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Loan Layout</layout>
+        <sections>
+            <label><!-- Additional Loan information --></label>
+            <section>Additional Loan information</section>
+        </sections>
+        <sections>
+            <label><!-- Client Information --></label>
+            <section>Client Information</section>
+        </sections>
+        <sections>
+            <label><!-- Credit Info --></label>
+            <section>Credit Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Important Dates --></label>
+            <section>Important Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Latest Loan Status Dates --></label>
+            <section>Latest Loan Status Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Loan Details --></label>
+            <section>Loan Details</section>
+        </sections>
+        <sections>
+            <label><!-- Loan Information --></label>
+            <section>Loan Information</section>
+        </sections>
+        <sections>
+            <label><!-- Loan Originator information --></label>
+            <section>Loan Originator information</section>
+        </sections>
+        <sections>
+            <label><!-- Preferred Contact --></label>
+            <section>Preferred Contact</section>
+        </sections>
+        <sections>
+            <label><!-- Purchase Information --></label>
+            <section>Purchase Information</section>
+        </sections>
+        <sections>
+            <label><!-- Related People --></label>
+            <section>Related People</section>
+        </sections>
+        <sections>
+            <label><!-- Subject Property Information --></label>
+            <section>Subject Property Information</section>
+        </sections>
+        <sections>
+            <label><!-- Submit Full Application --></label>
+            <section>Submit Full Application</section>
+        </sections>
+    </layouts><quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task2</name>
+    </quickActions><quickActions>
+        <label><!-- Request Title Fees --></label>
+        <name>Request_Title_Fees</name>
+    </quickActions><sharingReasons>
+        <label><!-- Executive --></label>
+        <name>Executive</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Loan Processor --></label>
+        <name>LoanProcessor</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Loan Officer --></label>
+        <name>Loan_Officer</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Loan Processor --></label>
+        <name>Loan_Processor</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Manager --></label>
+        <name>Manager</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Origination Loan Officer --></label>
+        <name>Origination_Loan_Officer</name>
+    </sharingReasons><validationRules>
+        <errorMessage><!-- The Closing Date cannot be within 3 days of the current Re-disclosure Date. --></errorMessage>
+        <name>Closing_and_ReDisclosure_dates</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- This loan has not yet been submitted. Once the application is submitted, the Loan Status will change to Proposal and the loan will become editable. --></errorMessage>
+        <name>Loan_Cannot_Update_If_LS_Incomplete</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Loan origination fee cannot be more than $6000 --></errorMessage>
+        <name>Loan_Origination_fee_greater_than_6000</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Loan Status cannot be changed until 8 days after the Counseling Date. --></errorMessage>
+        <name>Loan_Status_and_Counseling_Date</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting &apos;Other&apos; in the picklist. --></errorMessage>
+        <name>Must_fill_ReDisclosure_change_reason</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- If &apos;Other&apos; is selected in the ReDisclosure picklist, then the &apos;Other ReDisclosure Reason&apos; text box must be filled. --></errorMessage>
+        <name>ReDiscloure_Other_Reason_fill_textbox</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date --></errorMessage>
+        <name>closing_and_appraisal_sent_to_clientDate</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Account Number should be a valid number --></errorMessage>
+        <name>validateAccountNumber</name>
+    </validationRules><webLinks>
+        <label><!-- Export_Excel --></label>
+        <name>Export_Excel</name>
+    </webLinks><webLinks>
+        <label><!-- Export_to_XML --></label>
+        <name>Export_to_XML</name>
+    </webLinks></CustomObjectTranslation>

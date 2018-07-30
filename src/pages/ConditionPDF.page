@@ -1,0 +1,128 @@
+<!-- Code created for Story No: 1088 by developer 3 -->
+<apex:page tabstyle="Account" renderAs="pdf" controller="PipelineConditionPDFController" applyHtmlTag="false" showHeader="false">
+    <head>
+        <style>
+            .headerRow .TableTitle {
+            background-color: #2980B9 !important;
+            background-image: none !important;
+            color: #F2F3F4 !important; 
+            font-size:100% !important; 
+            width:1024px !important;
+            height:50px;
+            padding-left:10px;
+            }
+            
+        </style>
+        <style type="text/css" media="print">
+            @page {
+            margin-bottom: 3cm;
+            
+            @bottom-center {
+            content: element(footer);
+            }
+            }
+            
+            div.footer {
+            display: block;
+            padding: 10px;
+            position: running(footer);
+            }
+            
+        </style>
+    </head>
+    <apex:pageblock > 
+        <apex:repeat value="{!Conditiondetails}" var="item">
+            <table>
+                <tr>
+                    <td><apex:outputText value="{!item.ClientName}'s  " /> conditions as of
+                    </td>
+                    <td style="padding-right:10px;">
+                        <apex:outputText value="{!item.TodaysDate}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       {!item.LoanNumberorId}
+                    </td>
+                    <td style="padding-right:10px;">
+                        <apex:outputText value="{!item.Id}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Application Date:
+                    </td>
+                    <td style="padding-right:10px;">
+                        <apex:outputText value="{!item.ApplicationDate}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Loan Status:
+                    </td>
+                    <td style="padding-right:10px;">
+                        <apex:outputText value="{!item.Status}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Partner Care Specialist:
+                    </td>
+                    <td style="padding-right:10px;">
+                        <apex:outputText value="{!item.PCS_Name}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Phone Number:
+                    </td>
+                    <td style="padding-right:10px;">
+                        <apex:outputText value="{!item.PhoneNumber}" />
+                    </td>
+                </tr>
+            </table>
+        </apex:repeat>
+        <apex:pageblocktable value="{!data}"  var="accdet">
+            <apex:column headerValue="{!accdet.Index}">
+                <br/>
+                <apex:pageblocktable value="{!accdet.DescText}" var="tm">
+                    <span>                        
+                        <apex:column headerClass="TableTitle" colspan="2">
+                            <apex:facet name="header">
+                                <table  style="width:100% !important;">
+                                    <tr>
+                                        <td>{!accdet.Index}
+                                        </td>
+                                        <td style="text-align:right; padding-right:10px;">
+                                            Status:{!accdet.Status}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Created Date:{!accdet.CreatedDate}
+                                        </td>
+                                        <td style="text-align:right; padding-right:10px;">Status Date:{!accdet.StatusDate}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </apex:facet><br/>
+                            <span  style=" padding-left: 0px !important;display: list-item; text-align:justify !important;  list-style-type: disc;    list-style-position: inside;">
+                            <apex:outputtext style="text-align:justify !important; padding-left: 0px "
+                                                                             
+ 
+                                             value="{!tm}"/></span><br/>
+                        </apex:column>
+                        <br/>                        
+                        <br/>
+                    </span>
+                </apex:pageblocktable>
+            </apex:column>
+            
+        </apex:pageblocktable>
+        <div class="footer" name="footer" style="text-align:center">
+            <Div style=" border-bottom: 1px solid #ccc;padding-bottom:10px">This is Not a Loan Approval.</Div>
+         <div style="padding-top:10px">
+             
+            </div>
+            <img id="theImage" src="{!$Label.EmailTemplateLogoUrl}"  alt="Description of image here"/> 
+            
+        </div>
+        
+    </apex:pageblock>
+</apex:page>
+<!-- End of Code change -->

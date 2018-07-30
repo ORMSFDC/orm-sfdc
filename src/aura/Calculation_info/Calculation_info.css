@@ -1,0 +1,16 @@
+.THIS {
+    font-family: 'LatoFont'  ;
+}  
+
+.THIS.customFont16{    
+     
+    font-size: 16px !important;
+    font-weight:regular !important;
+}
+ 
+/* latin */
+@font-face {
+  font-family: 'LatoFont';
+   
+   src: url(/resource/LatoFont);
+}

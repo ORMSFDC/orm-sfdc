@@ -1,0 +1,25 @@
+.THIS {
+    color:black !important;
+}
+
+.THIS .block{
+    height: 40 em;
+    width: 40 em;
+}
+
+.THIS .errorclr{
+    color:red !Important;
+}
+.THIS .NoteBorder{
+    border:1px solid grey !Important;
+   
+}
+
+.THIS .header{
+    font-family: 'LatoFont'  !important; 
+}
+
+@font-face {
+  font-family: 'LatoFont';   
+   src: url(/resource/LatoFont);
+}

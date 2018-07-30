@@ -1,0 +1,9 @@
+Hi {!$Label.Request_Calculator_Package_Email_UserName},
+
+
+
+{!User.Name} has requested for Calculator Package.
+
+
+Regards,
+ORM Support Team

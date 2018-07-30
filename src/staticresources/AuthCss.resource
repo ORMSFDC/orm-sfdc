@@ -1,0 +1,1 @@
+legend{display:none}form,form dl{margin-bottom:1em}form dt{display:block;font-weight:700}form dd input{-webkit-appearance:none;border-radius:5px;background-color:#FFF;border:2px solid #DDD;max-width:30.0625em;padding:.5em;width:100%}#signed_out_message{font-weight:bold;font-style:italic}

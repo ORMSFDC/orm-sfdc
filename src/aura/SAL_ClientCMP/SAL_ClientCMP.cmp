@@ -1,0 +1,919 @@
+<aura:component controller="SAL_ClientController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <!--declare attributes--> 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>   
+    
+    <aura:attribute name="newformeraddress" type="boolean" default="false"/>
+    <aura:attribute name="selectedRecord" type="Client__c" default="{'sobjectType':'Client__c'}" />    
+    <!--  <aura:attribute name="selectedRecordNBS" type="Client__c" default="{'sobjectType':'Client__c'}" /> -->   
+    
+    <aura:attribute name="jumpto_last" type="boolean" default="true"/>
+    
+    <aura:attribute name="LoanId" type="String" default="a0Q29000002oKMdEAM" />
+    
+    <aura:attribute name="ClientName" type="String" />
+    <aura:attribute name="clientLoanIdforAddress" type="String" />
+    <aura:attribute name="clientRecords" type="Client__c[]" />
+    
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="Message" type="String" default="Search Result.."/>
+    <aura:attribute name="RESTError" type="String" default=""/>
+    <aura:attribute name="newclient" type="boolean" default="false" />
+    <aura:attribute name="showModal" type="boolean" default="false" />
+    <aura:attribute name="showEmail" type="boolean" default="false" />
+    <aura:attribute name="isZipValid" type="boolean" default="true" />
+    <aura:attribute name="nextOpt" type="boolean"/>
+    <aura:attribute name="nextDecOpt" type="boolean"/>
+    <aura:attribute name="currentOpt" type="boolean"/>
+    <aura:attribute name="prevOpt" type="boolean"/>
+    <aura:attribute name="Heading" type="String" default="" />
+    <aura:attribute name="HeadingFormerAddress" type="String" default="" />
+    
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showWarning" type="boolean" default="false"/>
+    <!--Flag to skip steps in incompete form -->
+    
+    <aura:attribute name="clientIncomplete" type="boolean"  />
+    <aura:attribute name="wasClicked" type="boolean" />
+    <aura:attribute name="Incomplete" type="boolean" default="false"/>
+    <aura:handler name="change" value="{!v.clientIncomplete}" action="{!c.next}"/>
+    <!--Flag for new application-->
+    <aura:attribute name="NewStartLoan" type="boolean"/>
+    <!--Flag for new application-->
+    <aura:attribute name="SPAddress" type="String" />
+    <aura:attribute name="SPCity" type="String" />
+    <aura:attribute name="SPState" type="String" />
+    <aura:attribute name="SPZip" type="String" />
+    <aura:attribute name="manual" type="Boolean" default="true"/>
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    
+    <!--Flag for new application-->
+    <!--Primary Client Details-->
+    <aura:attribute name="primaryClientName" type="String" default=""/>
+    <aura:attribute name="primaryClientAddress" type="String" default=""/>
+    <aura:attribute name="primaryClientCity" type="String" default=""/>
+    <aura:attribute name="primaryClientState" type="String" default=""/>
+    <aura:attribute name="primaryClientZip" type="String" default=""/>
+    <aura:attribute name="ClientAddressSameAsPrimaryClient" type="boolean" default="false"/>
+    <aura:attribute name="CheckifMailingAddressSameAsPresentAddress" type="boolean" default="false"/>
+    <aura:attribute name="primaryClientMailingAddress" type="String" default=""/>
+    <aura:attribute name="primaryClientMailingCity" type="String" default=""/>
+    <aura:attribute name="primaryClientMailingState" type="String" default=""/>
+    <aura:attribute name="primaryClientMailingZip" type="String" default=""/>
+    
+    <aura:attribute name="subjectPropertyAddress" type="String" default=""/>
+    <aura:attribute name="subjectPropertyCity" type="String" default=""/>
+    <aura:attribute name="subjectPropertyState" type="String" default=""/>
+    <aura:attribute name="subjectPropertyZip" type="String" default=""/>
+    
+    <aura:attribute name="clientNumberofYears" type="String" default=""/>
+    <aura:attribute name="opt2" type="boolean"  />
+    
+    <!-- Flag for declaration status -->
+    <aura:attribute name="DeclarationStatus" type="boolean" default="false" description="This flag checks whether declarations are complete or not" />
+    
+    <aura:attribute name="clientLoanId" type="String"  />
+    <aura:attribute name="idIs" type="String" default="" />		
+    <aura:attribute name="deleteitemId" type="String" default="" />		
+    <aura:attribute name="showDeletePopup" type="boolean" default="false" />		
+    <aura:attribute name="socialnumber" type="String" default="" />
+    <aura:attribute name="itemsClicked" type="String" />
+    <!--Event that fires the method which turn tab red-->
+    
+    <aura:registerEvent name="PillsEvent" type="c:NavPillsEvent"/>
+    <aura:attribute name="IsClientValidated" type="boolean" default="false"/>
+    <aura:attribute name="IsClientValidatedPopup" type="boolean" default="false"/>
+    <aura:attribute name="YesNoList" type="List" default="[
+                                                          {'label': 'Yes', 'value': 'Yes'},
+                                                          {'label': 'No', 'value': 'No'}
+                                                          ]"/>  
+    <aura:attribute name="YesNoListNBR" type="List" default="[
+                                                             {'label': 'Yes', 'value': 'Yes'},
+                                                             {'label': 'No', 'value': 'No'}
+                                                             ]"/> 
+     <aura:attribute name="POAoptions" type="List" default="[
+                                                        {'label': 'Yes', 'value': 'Yes'},
+                                                        {'label': 'No', 'value': 'No'}
+                                                        ]"/>
+     <aura:attribute name="MortgageAppliedForValue" type="String" />
+     <aura:attribute name="MortgageAppliedForValueDiv" type="boolean" default="false" />
+     
+    <aura:if isTrue="{!v.showDeletePopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.close_modelPopup}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Do you really want to Delete?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.close_modelPopup}" label="Cancel"></ui:button>&nbsp;&nbsp;
+                    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.do_deleteitem}" label="Ok"></ui:button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    
+    <div style="display:none"> 
+        <ui:inputText aura:id="secret"  value="{!v.selectedRecord.Id}"/>
+    </div>
+    <!--declare events hendlers-->  
+    <aura:handler name="oSelectedAccountEvent" event="c:selectedAccountEvent" action="{!c.handleComponentEvent}"/>
+    
+    <aura:attribute name="showPopup" type="boolean" default="flase" />
+    
+    <fieldset class="slds-box slds-theme--default slds-container--large">
+        <div class="slds-form slds-form_compound">
+            
+            <fieldset class="slds-form-element">
+                
+                <div class="slds-form-element__group">
+                    
+                    <div class="slds-page-header">
+                        <p class="slds-page-header__title slds-truncate" title="">
+                            
+                        </p>
+                        <div class="slds-grid slds-grid--align-end"> 
+                            <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addEmp" label="Add Client"  press="{!c.addClient}" />                            
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-1" > 
+                            <table class="slds-table_bordered slds-table_cell-buffer ">
+                                <thead>
+                                    <tr style= "background-color:#2877bd">
+                                          <th></th>
+                                        <th style= "color:white;">Client Name</th>
+                                        <th style= "color:white">Phone</th>                                            
+                                        <th style= "color:white">Address</th> 
+                                        
+                                        <th style= "color:white">Edit</th>
+                                        <th style= "color:white">Delete</th>
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.clientRecords}" var="clients">
+                                        <tr>
+                                             <td style="text-align:center;padding-right:10px;">
+                                                <aura:if isTrue="{!clients.Is_Client_Validated__c}">
+                                                <aura:set attribute="else">
+                                                    <LAbel style="color:red;padding-right:2px;font-size: 25px;">&#33;</LAbel>
+                                                </aura:set>
+                                                </aura:if>
+                                            </td>
+                                            <td data-label="Status" style="width:270px;">
+                                                <p style="width:250px; /* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                                    
+                                                    
+                                                    {!clients.Name}
+                                                </p>
+                                                 
+                                                
+                                            </td> 
+                                            <td data-label="Status">
+                                                <div style="margin-bottom:3%; " class="slds-truncate" >{!clients.Home_Phone__c}
+                                                </div>
+                                            </td>                                             
+                                            <td data-label="Status">
+                                                <div style="margin-bottom:3%; " class="slds-truncate">
+                                                    <p style="width:120px; /* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                                        {!clients.Street_Address__c}
+                                                    </p></div>
+                                            </td>  
+                                            
+                                            <td data-label="Edit">
+                                                <div class="slds-truncate" title="Margin"><b>
+                                                    <a id = "{!clients.Id}"   onclick="{!c.EditClient}">Edit</a> </b></div>
+                                            </td>
+                                            <td data-label="Delete">
+                                                <div class="slds-truncate" title="Margin"><b>
+                                                    <a id = "{!clients.Id}"   onclick="{!c.DeleteClientbyId}">Delete</a></b></div>
+                                            </td>
+                                           
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div></div>                    
+                </div>
+            </fieldset>
+        </div> 
+    </fieldset>
+    
+    <!-- New NBS and NBR-->
+    <!--By Nausad-->
+    <aura:attribute name="TotalCLient" type="Integer" default="0" />
+    <aura:attribute name="SelectedClients" type="Object[]" />
+    
+    <!--By Nausad-->
+    
+    <aura:attribute name="showErrorNBS" type="boolean" default="false" /> 
+    <aura:attribute name="showSpouseDetails" type="boolean" default="false" />
+    <aura:attribute name="showNBR" type="boolean" default="false" />  
+    <aura:attribute name="clientList" type="List" />
+    <aura:attribute name="ClientID" type="String" default="null" />
+    <aura:attribute name="disabledClass" type="string" default="btncls" /> 
+    <aura:attribute name="NBSData" type="Object[]"/> 
+    
+    <aura:attribute name="NBRData" type="Object[]"/> 
+    <aura:attribute name="IsMainControlDeleted" type="boolean" default="false" />
+    <aura:attribute name="ClientCount" type="Integer" default="" />
+    <aura:attribute name="IndividualClientCount" type="Integer" default="1" />
+    <aura:attribute name="IsClientCountLoan" type="integer" default="1"/>
+    <aura:attribute name="NBSYesNo" type="string" default="No"/>
+    <aura:attribute name="ChkNBSYesNoFromDataBase" type="string" default="No"/>
+    <aura:attribute name="IsClientSameForNBS" type="boolean" default="false" />
+    <aura:attribute name="ChkNBRYesNoFromDataBase" type="string" default="No"/>
+    <aura:attribute name="IsNBSPassed" type="boolean" default="true" />
+    <aura:attribute name="IsNBRPassed" type="boolean" default="true" />    
+    <aura:attribute name="NBRYesNo" type="string" default="No"/>
+    <aura:attribute name="IsSpinner" type="boolean" default="false" />
+    
+    <br></br>
+    <div id="NBSNBR" style="display:none">
+        <div   class="slds-grid"  >
+         
+            <div  class="slds-col" style="width:410px !important">
+                
+                <div class="slds-p-horizontal_small slds-size_1-of-1">
+                    <!--Astik(25/01/2018)Add space before (NBS) and Remove space between (NBS) and ? -->
+                    <span class="Label">Is there a Non-Borrowing Spouse (NBS)?</span>
+                    <!--value="{! v.selectedRecord.Non_Borrowing_Spouse__c}"-->
+                    <lightning:radioGroup aura:id="inputClientSpouseFieldNBS"
+                                          name="radioButtonGroup_ClientSpouse"
+                                          
+                                          options="{! v.YesNoList}"
+                                          
+                                          value="{!v.NBSYesNo}"
+                                          onchange="{!c.showSpouse}"
+                                          />
+                </div>
+                <div id="showSpouseDetails" style="display:none">
+                    <div class="slds-p-horizontal_small slds-size_1-of-1">
+                        
+                        
+                        <fieldset class="slds-form-element">                                                
+                            <div class="slds-form-element__group">
+                                <div class="slds-form-element__row">
+                                    
+                                    <aura:iteration items="{!v.NBSData}" var="NBSData" indexVar="index">
+                                        
+                                        <div  class="slds-form-element slds-size_1-of-1" >
+                                            
+                                            <!--<span  class="Label"> Which borrower is the NBS Married to? </span>-->
+                                            
+                                            <lightning:select name="{!'pickClientIndex_'+index}" 
+                                                              aura:id="pickClient_Value"
+                                                              value="{!NBSData.ClientId}"  
+                                                              required="true"
+                                                              label="Which borrower is the NBS Married to?"
+                                                              onchange="{!c.onSelectChange}">
+                                                
+                                                <aura:iteration items="{!v.clientList}" var="pOptions">
+                                                    <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                                </aura:iteration>
+                                            </lightning:select>
+                                            
+                                        </div> 
+                                        <div style="height:10px"  id="{!'pickClient_BlankDivNBS_'+index}"></div>
+                                        <div style="display:none;padding-top: 7px;
+                                                    padding-bottom: 10px;" id="{!'pickClient_ClienteRRORNBS_'+index}">
+                                            <label id="{!'pickClient_ValueLabelNBS_'+index}" class="DivStyle"></label>
+                                        </div>
+                                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                            
+                                            <ui:inputText label="Non-Borrowing Spouse Name " maxlength="100"  aura:id="inputNBSpouseName_Value" value="{!NBSData.NonborrowingSpouseName}"
+                                                          class="slds-input" required="true"/>                 
+                                        </div>
+                                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                            <ui:inputPhone value="{!NBSData.NonborrowingSpousePhone}" required="true"  
+                                                           maxlength="10" 
+                                                          
+                                                           label="Non-Borrowing Spouse Phone Number " 
+                                                           aura:id="inputNBSpousePhone_Value" class="slds-input" 
+                                                           requiredIndicatorClass="{!index}"
+                                                           keypress="{!c.FormatDynamicBorrowPhoneStartwithzero}"
+                                                           keyup="{!c.FormatDynamicBorrowPhoneStartwithzero}"
+                                                           keydown="{!c.FormatDynamicBorrowPhoneStartwithzero}"
+                                                           blur="{!c.FormatDynamicBorrowPhone}"
+                                                           updateOn="keypress, keyup, keydown"
+                                                           />
+                                        </div>
+                                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                            <ui:inputDate required="true" value="{!NBSData.NonborrowingSpouseDOB}" 
+                                                          format="MM/dd/yyyy" displayDatePicker="true"    
+                                                          label="Non-Borrowing Spouse Date of Birth "
+                                                        	requiredIndicatorClass="{!index}"
+                                                          aura:id="inputNBSpouseDOB_Value" class="slds-input"  />
+                                        </div>
+                                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                            <ui:inputCurrency required="true"  label="Monthly Income" aura:id="inputNBSMonthlyIncome" value="{!NBSData.NonborrowingSpouseMonthlyIncome}" class="slds-input" />
+                         				 </div>
+                                        
+                                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                            
+                                            <ui:inputSelect required="true" 
+                                                            label="Non-Borrower Relationship "
+                                                            aura:id="inputNBSpouseMaritalStatus_Value" 
+                                                            value="{!NBSData.NonborrowingSpouseRelation}" multiple="false">
+                                                <ui:inputSelectOption text="Married" label="Married"   value="true"/>
+                                                </ui:inputSelect>
+                                        </div> 
+                                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                            
+                                                <ui:inputtext required="true" label="Place of Celebration" 
+                                                  maxlength="250" value="{!NBSData.PlaceofCelebration}"
+                                                  aura:id="inputNBSPlaceofCelebration_Value" 
+                                                             
+                                                              class="slds-input"  />
+                                            </div>
+                                        
+                                        <div  id="CheckSubjectPropertyAddressDIV_NBS"  class="slds-form-element slds-size_1-of-1">
+                                            <label class="uiLabel-right form-element__label uiLabel" style="margin-left:40px">
+                                                <span Class="Label">Please check if Non Borrowing Spouse lives at subject property</span>
+                                            </label>
+                                            <ui:inputCheckbox class="NBS" 
+                                                              
+                                                              name="{!'showSpouseAddressNBS_'+index}"
+                                                              aura:id="CheckSubjectPropertyAddressNBS_Value" 
+                                                              value="{!NBSData.NonborrowingSpouseAddressSameAs}"
+                                                              change="{!c.GetNBSSubjectPro_Iteration}"
+                                                              label=""
+                                                              />
+                                            
+                                            
+                                        </div> 
+                                        <br></br>
+                                        <div id="{!'showSpouseAddressNBS_'+index}" style="display:None">
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                            
+                                                <ui:inputtext required="true" label="Non-Borrowing Spouse Address " 
+                                                              maxlength="100" aura:id="inputNBSpouseAddress_Value" 
+                                                              value="{!NBSData.NonborrowingSpouseAddress}" class="slds-input"  />
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                            
+                                                <ui:inputtext required="true"  label="Non-Borrowing Spouse City " maxlength="100" 
+                                                              aura:id="inputNBSpouseCity_Value" value="{!NBSData.NonborrowingSpouseCity}" class="slds-input"  />
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputSelect required="true"  
+                                                                aura:id="inputNBSpouseState_Value"  value="{!NBSData.NonborrowingSpouseState}" 
+                                                                class="slds-input" multiple="false" label="Non-Borrowing Spouse State ">                                                                
+                                                    <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                                    <ui:inputSelectOption text="Alabama" label="Alabama" />
+                                                    <ui:inputSelectOption text="Alaska" label="Alaska" />
+                                                    <ui:inputSelectOption text="Arizona" label="Arizona" />
+                                                    <ui:inputSelectOption text="Arkansas" label="Arkansas" />
+                                                    <ui:inputSelectOption text="California" label="California" />
+                                                    <ui:inputSelectOption text="Colorado" label="Colorado" />
+                                                    <ui:inputSelectOption text="Connecticut" label="Connecticut" />
+                                                    <ui:inputSelectOption text="Delaware" label="Delaware" />
+                                                    <ui:inputSelectOption text="Florida" label="Florida" />
+                                                    <ui:inputSelectOption text="Georgia" label="Georgia" />
+                                                    <ui:inputSelectOption text="Hawaii" label="Hawaii" />
+                                                    <ui:inputSelectOption text="Idaho" label="Idaho" />
+                                                    <ui:inputSelectOption text="Illinois" label="Illinois" />
+                                                    <ui:inputSelectOption text="Indiana" label="Indiana" />
+                                                    <ui:inputSelectOption text="Iowa" label="Iowa" />
+                                                    <ui:inputSelectOption text="Kansas" label="Kansas" />
+                                                    <ui:inputSelectOption text="Kentucky" label="Kentucky" />
+                                                    <ui:inputSelectOption text="Louisiana" label="Louisiana" />
+                                                    <ui:inputSelectOption text="Maine" label="Maine" />
+                                                    <ui:inputSelectOption text="Maryland" label="Maryland" />
+                                                    <ui:inputSelectOption text="Massachusetts" label="Massachusetts" />
+                                                    <ui:inputSelectOption text="Michigan" label="Michigan" />
+                                                    <ui:inputSelectOption text="Minnesota" label="Minnesota" />
+                                                    <ui:inputSelectOption text="Mississippi" label="Mississippi" />
+                                                    <ui:inputSelectOption text="Missouri" label="Missouri" />
+                                                    <ui:inputSelectOption text="Montana" label="Montana" />
+                                                    <ui:inputSelectOption text="Nebraska" label="Nebraska" />
+                                                    <ui:inputSelectOption text="Nevada" label="Nevada" />
+                                                    <ui:inputSelectOption text="New Hampshire" label="New Hampshire" />
+                                                    <ui:inputSelectOption text="New Jersey" label="New Jersey" />
+                                                    <ui:inputSelectOption text="New Mexico" label="New Mexico" />
+                                                    <ui:inputSelectOption text="New York" label="New York" />
+                                                    <ui:inputSelectOption text="North Carolina" label="North Carolina" />
+                                                    <ui:inputSelectOption text="North Dakota" label="North Dakota" />
+                                                    <ui:inputSelectOption text="Ohio" label="Ohio" />
+                                                    <ui:inputSelectOption text="Oklahoma" label="Oklahoma" />
+                                                    <ui:inputSelectOption text="Oregon" label="Oregon" />
+                                                    <ui:inputSelectOption text="Pennsylvania" label="Pennsylvania" />
+                                                    <ui:inputSelectOption text="Rhode Island" label="Rhode Island" />
+                                                    <ui:inputSelectOption text="South Carolina" label="South Carolina" />
+                                                    <ui:inputSelectOption text="South Dakota" label="South Dakota" />
+                                                    <ui:inputSelectOption text="Tennessee" label="Tennessee" />
+                                                    <ui:inputSelectOption text="Texas" label="Texas" />
+                                                    <ui:inputSelectOption text="Utah" label="Utah" />
+                                                    <ui:inputSelectOption text="Vermont" label="Vermont" />
+                                                    <ui:inputSelectOption text="Virginia" label="Virginia" />
+                                                    <ui:inputSelectOption text="Washington" label="Washington" />
+                                                    <ui:inputSelectOption text="West Virginia" label="West Virginia" />
+                                                    <ui:inputSelectOption text="Wisconsin" label="Wisconsin" />
+                                                    <ui:inputSelectOption text="Wyoming" label="Wyoming" />
+                                                </ui:inputSelect>
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; " 
+                                                 class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputtext label="Non-Borrowing Spouse Zip " 
+                                                              maxlength="10" 
+                                                              aura:id="ClientNonBorrowingSpousezipNBS_Value" value="{!NBSData.NonborrowingSpouseZip}" class="slds-input"
+                                                              required="true" />
+                                            </div>
+                                        </div>
+                                        <br></br><br></br>
+                                        <div id="{!'DeleteIteration'+index}" style="margin-left:12px !important">
+                                            <lightning:button name="{!index}"  aura:id="DeleteIterationData"  class="btncls" 
+                                                              label="Delete" 
+                                                              disabled="false"  onclick="{!c.DeleteNBSIteration}" />
+                                        </div>
+                                        
+                                    </aura:iteration>
+                                    <!-- <div  >
+                                        <lightning:button aura:id="DeleteIterationData"  class="btncls"
+                                                          label="Delete client" 
+                                                          disabled="false" 
+                                                          onclick="{!c.DeleteClientFromNBS}" />
+                                    </div>-->
+                                    <br></br>
+                                    <div id="showSpouseAdd" style="margin-left:12px !important">
+                                        <lightning:button aura:id="ADDNBS"  class="{!v.disabledClass}"
+                                                          label="Add Another Non-Borrowing Spouse" 
+                                                          disabled="false"  onclick="{!c.AddNBSOnClick}" />
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-right:80px"></div>
+            
+            <div class="slds-col" style="width:410px !important">
+                <div class="slds-p-horizontal_small slds-size_1-of-1" style="margin-left: -14px; !important">
+                    <!--Astik(25/01/2018)Add space before (NBR) and Remove space between (NBR) and ? -->
+                    <span class="Label">Is there a Non-Borrowing Resident (NBR)?</span> 
+                    <lightning:radioGroup aura:id="inputNBR"
+                                          name="radioButtonGroup_ClientNBR"
+                                          
+                                          options="{! v.YesNoListNBR }"
+                                          value="{! v.NBRYesNo }"
+                                          onchange="{!c.showNBRDiv}"
+                                          /></div>
+                
+                
+                
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div id="showNBRDetails" style="display:none">
+                            <div class="slds-form-element__row">
+                                <aura:iteration items="{!v.NBRData}" var="NBRData" indexVar="index">
+                                    <div style="display:none">  {!NBRData.RecordId}</div>
+                                    <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                            
+                                        <ui:inputText label="Name of NBR "
+                                                      maxlength="100"  aura:id="inputNameNBR" value="{!NBRData.NonborrowingResidentName}"
+                                                      class="slds-input" required="true"/>                 
+                                    </div>
+                                    <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                        <ui:inputSelect required="true" aura:id="inputRelationNBR"  value="{!NBRData.NonborrowingResidentRelation}" 
+                                                        class="slds-input"  multiple="false" label="Relationship to Client">                                                                
+                                            <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                            <ui:inputSelectOption text="Mother" label="Mother" />
+                                            <ui:inputSelectOption text="Father" label="Father" />
+                                            <ui:inputSelectOption text="Child" label="Child" />
+                                            <ui:inputSelectOption text="Sister" label="Sister" />
+                                            <ui:inputSelectOption text="Brother" label="brother" />
+                                            <ui:inputSelectOption text="Aunt" label="Aunt" />
+                                            <ui:inputSelectOption text="Uncle" label="Uncle" />
+                                            <ui:inputSelectOption text="Niece" label="Niece" />
+                                            <ui:inputSelectOption text="Nephew" label="Nephew" />
+                                            <ui:inputSelectOption text="Friend" label="Friend" />
+                                            <ui:inputSelectOption text="Grandchild" label="Grandchild" />
+                                            <ui:inputSelectOption text="Other" label="Other" />
+                                        </ui:inputSelect>
+                                    </div>
+                                    
+                                    <!--<div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                <ui:inputPhone value="{!NBRData.NonborrowingResidentPhone}" required="true"   maxlength="10" label="Non-Borrowing Spouse Phone Number " 
+                                               aura:id="inputPhoneNBR" class="slds-input" 
+                                                 requiredIndicatorClass="{!index}"
+                                                       keypress="{!c.FormatDynamicBorrowPhoneStartwithzero}"
+                                                       keyup="{!c.FormatDynamicBorrowPhoneStartwithzero}"
+                                                       keydown="{!c.FormatDynamicBorrowPhoneStartwithzero}"
+                                                       blur="{!c.FormatDynamicBorrowPhone}"
+                                                       updateOn="keypress, keyup, keydown"
+                                               />
+                            </div>-->
+                                    
+                                    <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                        <ui:inputDate required="true" value="{!NBRData.NonborrowingResidentDOB}" 
+                                                      format="MM/dd/yyyy" displayDatePicker="true"   
+                                                      label="Date of Birth " aura:id="inputDOBNBR" class="slds-input"  />
+                                    </div>                                                
+                                    
+                                    
+                                    <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">    
+                                        <ui:inputCurrency required="true"  label="Monthly Income" aura:id="inputMonthlyIncomeNBR" value="{!NBRData.NonborrowingResidentMonthlyIncome}" class="slds-input" />
+                                        
+                                    </div>
+                                    <div id="{!'DeleteIterationNBR'+index}" style="margin-bottom:3%;margin-left:12px; !important " >
+                                        <lightning:button name="{!index}"  aura:id="DeleteIterationNBRData"  class="btncls"
+                                                          label="Delete" 
+                                                          disabled="false"  onclick="{!c.DeleteNBRIteration}" />
+                                    </div>
+                                </aura:iteration>
+                                <br></br>
+                                <div style="margin-left:12px; !important">
+                                <lightning:button aura:id="ADDNBR"  class="{!v.disabledClass}"
+                                                  label="Add Another Non-Borrowing Resident" 
+                                                  disabled="false"  onclick="{!c.AddNBROnClick}" />
+                                    </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+            </div>
+            
+        </div>
+    </div>
+    <!--- END NBS NBR-->
+    
+    
+    
+    <fieldset class="slds-box slds-theme--default slds-container--large">
+        <aura:if isTrue="{!v.newclient}">
+            
+            <!--###### MODAL BOX Start From Here ######--> 
+            <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                <div class="slds-modal__container">
+                    <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                    <div class="slds-modal__header">
+                        <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeClientModel}">
+                            X
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </div>
+                    <!--###### MODAL BOX BODY Part Start From Here ######-->
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div>
+                            <div id="clientdiv">
+                                <fieldset class="slds-form-element">
+                                    <div class="slds-modal__header"><h3 style="color:#2081bf;">{!v.Heading}</h3></div>
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">
+                                             <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                
+                                                <ui:inputText label="First Name "  aura:id="inputFName" value="{!v.selectedRecord.First_Name__c}"
+                                                              class="slds-input" maxlength="100" required="true" keypress="{!c.validateWhitespaceFirstName}" 
+                                                              keyup="{!c.validateWhitespaceFirstName}" keydown="{!c.validateWhitespaceFirstName}"  updateOn="keypress, keyup, keydown" />
+                                            </div>
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputText label="Middle Name" aura:id="inputMName" value="{!v.selectedRecord.Middle_Name__c}"
+                                                              class="slds-input" maxlength="100" required="False" keypress="{!c.validateWhitespaceMiddleName}" 
+                                                              keyup="{!c.validateWhitespaceMiddleName}" keydown="{!c.validateWhitespaceMiddleName}"  updateOn="keypress, keyup, keydown"/>
+                                            </div>
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputText label="Last Name "  
+                                                              aura:id="inputLName" maxlength="100"  value="{!v.selectedRecord.Last_Name__c}"  class="slds-input" required="true"
+                                                              keypress="{!c.validateWhitespaceLastName}" 
+                                                              keyup="{!c.validateWhitespaceLastName}" keydown="{!c.validateWhitespaceLastName}"  updateOn="keypress, keyup, keydown"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="slds-form-element">
+                                    
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">
+                                            
+                                            <div style="margin-bottom:3%; display:none" id="CheckSubjectPropertyAddressDIV"  class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputCheckbox class="myCheckbox" label="" aura:id="CheckSubjectPropertyAddress" value="{!v.selectedRecord.Address_Same_As_SubjectProperty__c}" change="{!c.GetSubjectAddressDetails}"/>
+                                                &nbsp;
+                                                <label class="uiLabel-right form-element__label uiLabel">
+                                                    <span>Current Address and address information same as Subject Property</span>
+                                                </label>
+                                            </div>                                            
+                                            
+                                            <div style="margin-bottom:3%; display:none" id="CheckPrimaryClientAddress"  class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputCheckbox class="myCheckbox" label="" aura:id="CheckPrimaryClientMailingAddress"  value="{!v.selectedRecord.Client_Address_Same_As_Primary_Client__c}" change="{!c.fillPrimaryAddressDetails}"/>
+                                                &nbsp;
+                                                <label class="uiLabel-right form-element__label uiLabel">
+                                                    <span>Current Address and address information same as {!v.primaryClientName}</span>
+                                                </label>
+                                            </div>                                            
+                                            
+                                            <div style="margin-bottom:3%; "  class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputCheckbox class="myCheckbox" label="" aura:id="CheckMailingAddress"  
+                                                                  value="{!v.selectedRecord.Check_if_Mailing_Address_is_similar_to_P__c}" change="{!c.showMailingAddressDetails}"/>
+                                                &nbsp;
+                                                <label class="uiLabel-right form-element__label uiLabel">
+                                                    <span>Mailing Address same as Current Address</span>
+                                                </label>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div id="showCurrentAddress" style="display:block">
+                                            <div style="margin-bottom:3%; " class="slds-size_1-of-1">
+                                                <ui:inputText label="Current Address " required="true"  value="{!v.selectedRecord.Street_Address__c}"  aura:id="clientCurrentAddress" 
+                                                              class="slds-input" maxlength="100" />
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; margin-top:3% " class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputtext label="Current City " maxlength="80" required="true" aura:id="clientCurrentcity" value="{!v.selectedRecord.City__c}" class="slds-input" />
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; " class="slds-size_1-of-1">
+                                                <ui:inputSelect aura:id="clientCurrentState" required="true" value="{!v.selectedRecord.Client_State__c}" class="slds-input" multiple="false" label="Current State ">
+                                                    <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                                    <ui:inputSelectOption text="Alabama" label="Alabama" />
+                                                    <ui:inputSelectOption text="Alaska" label="Alaska" />
+                                                    <ui:inputSelectOption text="Arizona" label="Arizona" />
+                                                    <ui:inputSelectOption text="Arkansas" label="Arkansas" />
+                                                    <ui:inputSelectOption text="California" label="California" />
+                                                    <ui:inputSelectOption text="Colorado" label="Colorado" />
+                                                    <ui:inputSelectOption text="Connecticut" label="Connecticut" />
+                                                    <ui:inputSelectOption text="Delaware" label="Delaware" />
+                                                    <ui:inputSelectOption text="Florida" label="Florida" />
+                                                    <ui:inputSelectOption text="Georgia" label="Georgia" />
+                                                    <ui:inputSelectOption text="Hawaii" label="Hawaii" />
+                                                    <ui:inputSelectOption text="Idaho" label="Idaho" />
+                                                    <ui:inputSelectOption text="Illinois" label="Illinois" />
+                                                    <ui:inputSelectOption text="Indiana" label="Indiana" />
+                                                    <ui:inputSelectOption text="Iowa" label="Iowa" />
+                                                    <ui:inputSelectOption text="Kansas" label="Kansas" />
+                                                    <ui:inputSelectOption text="Kentucky" label="Kentucky" />
+                                                    <ui:inputSelectOption text="Louisiana" label="Louisiana" />
+                                                    <ui:inputSelectOption text="Maine" label="Maine" />
+                                                    <ui:inputSelectOption text="Maryland" label="Maryland" />
+                                                    <ui:inputSelectOption text="Massachusetts" label="Massachusetts" />
+                                                    <ui:inputSelectOption text="Michigan" label="Michigan" />
+                                                    <ui:inputSelectOption text="Minnesota" label="Minnesota" />
+                                                    <ui:inputSelectOption text="Mississippi" label="Mississippi" />
+                                                    <ui:inputSelectOption text="Missouri" label="Missouri" />
+                                                    <ui:inputSelectOption text="Montana" label="Montana" />
+                                                    <ui:inputSelectOption text="Nebraska" label="Nebraska" />
+                                                    <ui:inputSelectOption text="Nevada" label="Nevada" />
+                                                    <ui:inputSelectOption text="New Hampshire" label="New Hampshire" />
+                                                    <ui:inputSelectOption text="New Jersey" label="New Jersey" />
+                                                    <ui:inputSelectOption text="New Mexico" label="New Mexico" />
+                                                    <ui:inputSelectOption text="New York" label="New York" />
+                                                    <ui:inputSelectOption text="North Carolina" label="North Carolina" />
+                                                    <ui:inputSelectOption text="North Dakota" label="North Dakota" />
+                                                    <ui:inputSelectOption text="Ohio" label="Ohio" />
+                                                    <ui:inputSelectOption text="Oklahoma" label="Oklahoma" />
+                                                    <ui:inputSelectOption text="Oregon" label="Oregon" />
+                                                    <ui:inputSelectOption text="Pennsylvania" label="Pennsylvania" />
+                                                    <ui:inputSelectOption text="Rhode Island" label="Rhode Island" />
+                                                    <ui:inputSelectOption text="South Carolina" label="South Carolina" />
+                                                    <ui:inputSelectOption text="South Dakota" label="South Dakota" />
+                                                    <ui:inputSelectOption text="Tennessee" label="Tennessee" />
+                                                    <ui:inputSelectOption text="Texas" label="Texas" />
+                                                    <ui:inputSelectOption text="Utah" label="Utah" />
+                                                    <ui:inputSelectOption text="Vermont" label="Vermont" />
+                                                    <ui:inputSelectOption text="Virginia" label="Virginia" />
+                                                    <ui:inputSelectOption text="Washington" label="Washington" />
+                                                    <ui:inputSelectOption text="West Virginia" label="West Virginia" />
+                                                    <ui:inputSelectOption text="Wisconsin" label="Wisconsin" />
+                                                    <ui:inputSelectOption text="Wyoming" label="Wyoming" />
+                                                </ui:inputSelect>
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputText label="Current Zip " value="{!v.selectedRecord.Zip__c}" 
+                                                              aura:id="ClientCurrentZip" class="slds-input" maxlength="10" required="true"  />
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="slds-form-element__row">                                            
+                                            
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                
+                                                <ui:inputtext maxlength="2" label="Number of Years in Current Address " aura:id="ClientNumberYears" 
+                                                              value="{!v.selectedRecord.Number_of_years__c}"
+                                                              keypress="{!c.NumberOnly}" keyup="{!c.NumberOnly}"
+                                                              keydown="{!c.NumberOnly}"  updateOn="keypress, keyup, keydown" 
+                                                              class="slds-input" required="true"  />
+                                            </div>
+                                            
+                                            
+                                            <div style="margin-bottom:3%; " aura:id="DivEmail" class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputEmail label="Client Email Address " aura:id="inputClientEmail"  value="{!v.selectedRecord.Email_Optional__c}" />
+                                            </div>
+                                            <!-- </aura:if>-->
+                                            <div style="margin-bottom:3%; margin-top:3%; " class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputPhone value="{!v.selectedRecord.Home_Phone__c}"    maxlength="10" 
+                                                               label="Preferred Phone" required="true" aura:id="inputHomePhone" class="slds-input" blur="{!c.FormatHomePhone}"
+                                                               keypress="{!c.RestrictZeroInHomePhoneFirstTime}" keyup="{!c.RestrictZeroInHomePhoneFirstTime}"
+                                                               keydown="{!c.RestrictZeroInHomePhoneFirstTime}"  updateOn="keypress, keyup, keydown"/>
+                                            </div>
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1" >
+                                                <ui:inputPhone value="{!v.selectedRecord.Phone_Number__c}"    maxlength="10"
+                                                               label="Secondary Phone" aura:id="inputMPhone" class="slds-input" blur="{!c.FormatMobilePhone}" 
+                                                               keypress="{!c.RestrictZeroInMobilePhoneFirstTime}" keyup="{!c.RestrictZeroInMobilePhoneFirstTime}"
+                                                               keydown="{!c.RestrictZeroInMobilePhoneFirstTime}"  updateOn="keypress, keyup, keydown"/>
+                                            </div>
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                  <ui:inputDate value="{!v.selectedRecord.DOB__c}" required="true" format="MM/dd/yyyy" 
+                                                              displayDatePicker="true"  label="Date of Birth " aura:id="ClientInputDOB" 
+                                                              keypress="{!c.validateDOB}" keyup="{!c.validateDOB}"
+                                                               keydown="{!c.validateDOB}"  updateOn="keypress, keyup, keydown"
+                                                              class="slds-input" />
+                                            
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                <ui:inputtext maxlength="11" label="Social Security Number " required="true" aura:id="ssn" 
+                                                              value="{!v.selectedRecord.Social_Security_Number__c}" 
+                                                              keyup="{!c.FormatClientSSNNumber}" updateOn="keyup" class="slds-input"  />
+                                            </div>
+                                            
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                
+                                                <ui:inputSelect label="Marital Status" aura:id="MaritalStatus" value="{!v.selectedRecord.Marital_Status__c}" multiple="false">
+                                                    <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                                    <ui:inputSelectOption text="Married" label="Married"/>
+                                                    <ui:inputSelectOption text="Unmarried" label="Unmarried"/> 
+                                                    <ui:inputSelectOption text="Separated" label="Separated"/>                                                    
+                                                </ui:inputSelect>
+                                            </div> 
+                                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">                                                
+                                                
+                                             <lightning:radioGroup aura:id="POA"
+                                                                   label="Is there a POA?"
+                                                                   required="True"
+                                                                    value="{!v.selectedRecord.Is_there_a_POA__c}" 
+                                      name="POA"
+                                      options="{! v.POAoptions }"                                      
+                                      onchange="{! c.handleChange }" /> 
+                                                 </div> 
+                                            
+                                            <div style="margin-bottom:3%;display:None" class="slds-form-element slds-size_1-of-1" id="Name_of_POA_Control_Div">                                                            
+                                                <ui:inputText label="Name of POA" maxlength="100"  aura:id="POA_Name" 
+                                                              value="{!v.selectedRecord.If_yes_Name_of_POA__c}" 
+                                                              class="slds-input" required="true"/>                 
+                                            </div>
+                                            <aura:if isTrue="{!v.MortgageAppliedForValueDiv}">
+                                                <ui:message title="Warning" severity="warning" closable="false">
+                                                    POA's are not permitted on Purchase loans. Exceptions may be made if the POA is being used because the client is physically unable to sign, but is mentally competent.
+                                                </ui:message> 
+                                            </aura:if>
+                                            <div id="showMailingAddress" style="display:block">
+                                                <div style="margin-bottom:3%; " class="slds-size_1-of-1">
+                                                    <ui:inputtext label="Mailing Address " maxlength="100" required="true" aura:id="ClientMailingddress" value="{!v.selectedRecord.Address_Mailing__c}" class="slds-input"  />
+                                                </div>
+                                                <div style="margin-bottom:3%; "  class="slds-size_1-of-1">
+                                                    <ui:inputtext label="Mailing City " maxlength="80" required="true" aura:id="ClientMailingcity" value="{!v.selectedRecord.City_Mailing__c}" class="slds-input"  />
+                                                </div>
+                                                <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                    <ui:inputSelect aura:id="ClientMailingstate"  required="true" value="{!v.selectedRecord.State_Mailing__c}" 
+                                                                    class="slds-input" multiple="false" label="Mailing State ">
+                                                        <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                                        <ui:inputSelectOption text="Alabama" label="Alabama" />
+                                                        <ui:inputSelectOption text="Alaska" label="Alaska" />
+                                                        <ui:inputSelectOption text="Arizona" label="Arizona" />
+                                                        <ui:inputSelectOption text="Arkansas" label="Arkansas" />
+                                                        <ui:inputSelectOption text="California" label="California" />
+                                                        <ui:inputSelectOption text="Colorado" label="Colorado" />
+                                                        <ui:inputSelectOption text="Connecticut" label="Connecticut" />
+                                                        <ui:inputSelectOption text="Delaware" label="Delaware" />
+                                                        <ui:inputSelectOption text="Florida" label="Florida" />
+                                                        <ui:inputSelectOption text="Georgia" label="Georgia" />
+                                                        <ui:inputSelectOption text="Hawaii" label="Hawaii" />
+                                                        <ui:inputSelectOption text="Idaho" label="Idaho" />
+                                                        <ui:inputSelectOption text="Illinois" label="Illinois" />
+                                                        <ui:inputSelectOption text="Indiana" label="Indiana" />
+                                                        <ui:inputSelectOption text="Iowa" label="Iowa" />
+                                                        <ui:inputSelectOption text="Kansas" label="Kansas" />
+                                                        <ui:inputSelectOption text="Kentucky" label="Kentucky" />
+                                                        <ui:inputSelectOption text="Louisiana" label="Louisiana" />
+                                                        <ui:inputSelectOption text="Maine" label="Maine" />
+                                                        <ui:inputSelectOption text="Maryland" label="Maryland" />
+                                                        <ui:inputSelectOption text="Massachusetts" label="Massachusetts" />
+                                                        <ui:inputSelectOption text="Michigan" label="Michigan" />
+                                                        <ui:inputSelectOption text="Minnesota" label="Minnesota" />
+                                                        <ui:inputSelectOption text="Mississippi" label="Mississippi" />
+                                                        <ui:inputSelectOption text="Missouri" label="Missouri" />
+                                                        <ui:inputSelectOption text="Montana" label="Montana" />
+                                                        <ui:inputSelectOption text="Nebraska" label="Nebraska" />
+                                                        <ui:inputSelectOption text="Nevada" label="Nevada" />
+                                                        <ui:inputSelectOption text="New Hampshire" label="New Hampshire" />
+                                                        <ui:inputSelectOption text="New Jersey" label="New Jersey" />
+                                                        <ui:inputSelectOption text="New Mexico" label="New Mexico" />
+                                                        <ui:inputSelectOption text="New York" label="New York" />
+                                                        <ui:inputSelectOption text="North Carolina" label="North Carolina" />
+                                                        <ui:inputSelectOption text="North Dakota" label="North Dakota" />
+                                                        <ui:inputSelectOption text="Ohio" label="Ohio" />
+                                                        <ui:inputSelectOption text="Oklahoma" label="Oklahoma" />
+                                                        <ui:inputSelectOption text="Oregon" label="Oregon" />
+                                                        <ui:inputSelectOption text="Pennsylvania" label="Pennsylvania" />
+                                                        <ui:inputSelectOption text="Rhode Island" label="Rhode Island" />
+                                                        <ui:inputSelectOption text="South Carolina" label="South Carolina" />
+                                                        <ui:inputSelectOption text="South Dakota" label="South Dakota" />
+                                                        <ui:inputSelectOption text="Tennessee" label="Tennessee" />
+                                                        <ui:inputSelectOption text="Texas" label="Texas" />
+                                                        <ui:inputSelectOption text="Utah" label="Utah" />
+                                                        <ui:inputSelectOption text="Vermont" label="Vermont" />
+                                                        <ui:inputSelectOption text="Virginia" label="Virginia" />
+                                                        <ui:inputSelectOption text="Washington" label="Washington" />
+                                                        <ui:inputSelectOption text="West Virginia" label="West Virginia" />
+                                                        <ui:inputSelectOption text="Wisconsin" label="Wisconsin" />
+                                                        <ui:inputSelectOption text="Wyoming" label="Wyoming" />
+                                                    </ui:inputSelect>
+                                                </div>
+                                                <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                                    <ui:inputtext label="Mailing Zip " required="true" maxlength="10"
+                                                                  aura:id="ClientMailingzip"
+                                                                  value="{!v.selectedRecord.Zip_Mailing__c}" 
+                                                                  class="slds-input"  />
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        
+                                        <div class="slds-form-element__row"  id="savebtn">                                            
+                                            <div class="slds-form-element slds-size_1-of-1">                                                
+                                                <b style="color:red"><ui:outputText value="{!v.ErrorMsg}"/></b>                                                
+                                            </div>
+                                            <div class="slds-form-element slds-size_1-of-1">
+                                            </div>                                            
+                                        </div>                                        
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                    <div class="slds-modal__footer">
+                        <div align="left"><aura:if isTrue="{!v.showError}">                            
+                            <ui:message title="Error" severity="error" closable="false">
+                                Please review all errors before moving to next page
+                            </ui:message>                                
+                            </aura:if></div>
+                        <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeClientModel}"></ui:button>&nbsp;&nbsp;
+                        <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.FormatValidations}"></ui:button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+            <!--###### MODAL BOX Part END Here ######-->
+        </aura:if>
+    </fieldset>   
+    <div align="left"><aura:if isTrue="{!v.showWarning}"> 
+        <ui:message title="Warning" severity="warning" closable="false">
+            Please create at least one client to proceed.
+        </ui:message>
+        </aura:if></div>
+    <div align="left"><aura:if isTrue="{!v.IsClientValidatedPopup}"> 
+        <ui:message title="Warning" severity="warning" closable="false">
+            Please review client's information.
+        </ui:message>
+        </aura:if></div>
+    <div align="left"><aura:if isTrue="{!v.showErrorNBS}">                            
+        <ui:message title="Error" severity="error" closable="false">
+            Please review all errors before moving to next page
+        </ui:message>                                
+        </aura:if></div>
+   
+    <br></br>
+    <div style="margin-left:13px !important">
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addSubjectProperty" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addEmployment" label="Save and Continue" press="{!c.next}" />
+        </div>
+    <!-- <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addEmployment" label="Test NBS" press="{!c.TestNBS}" />-->
+    <aura:if isTrue="{!v.IsSpinner}">
+                                                        <div class="slds-spinner_container">
+                                                            <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                                                                <div class="slds-spinner__dot-a"></div>
+                                                                <div class="slds-spinner__dot-b"></div>
+                                                            </div>
+                                                        </div>
+                                                    </aura:if>
+    
+</aura:component>

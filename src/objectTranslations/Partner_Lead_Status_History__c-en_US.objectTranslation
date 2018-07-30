@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- New Partner Lead Status --></label>
+        <name>New_Partner_Lead_Status_del__c</name>
+    </fields><fields>
+        <label><!-- Old Partner Lead Status --></label>
+        <name>Old_Partner_Lead_Status__c</name>
+    </fields><fields>
+        <label><!-- Related Partner --></label>
+        <name>Related_Partner__c</name>
+        <relationshipLabel><!-- Partner Lead Status History --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Partner Lead Status History</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Partner Lead Status History</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

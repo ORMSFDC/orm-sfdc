@@ -1,0 +1,18 @@
+.THIS {
+    font-family: 'LatoFont'  !important;
+}
+@font-face {
+  font-family: 'LatoFont';   
+   src: url(/resource/LatoFont);
+}
+.THIS .HeaderText{
+    color:#2081BF;
+    font-size: 22px  !important;
+    font-family: 'LatoFont'  !important ;
+    line-height: 0.263158em;
+}
+.THIS .bodyText{
+    
+    font-size: 16px !important;
+    font-family: 'LatoFont'  !important; 
+}

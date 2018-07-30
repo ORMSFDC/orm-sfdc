@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Client_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides><fields>
+        <fullName>Address_Mailing__c</fullName>
+        <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
+        <externalId>false</externalId>
+        <label>Mailing Address</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Address_Same_As_SubjectProperty__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Address_Same_As_SubjectProperty</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Check_if_Mailing_Address_is_similar_to_P__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this checkbox is checked then the next address, state, city and zip fields need not be visible on the page; otherwise they must be filled</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this checkbox is checked then the next address, state, city and zip fields need not be filled on the page; otherwise they must be filled</inlineHelpText>
+        <label>Mailing Address equals Present Address</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>City_Mailing__c</fullName>
+        <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
+        <externalId>false</externalId>
+        <label>Mailing City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>Current City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Client_Address_Same_As_Primary_Client__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Client_Address_Same_As_Primary_Client</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Client_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Current State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields><fields>
+        <fullName>Client_has_Email_Address__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Client has Email Address?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>DOB__c</fullName>
+        <description>Cannot be the Future date</description>
+        <externalId>false</externalId>
+        <label>Date of Birth</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Email_Optional__c</fullName>
+        <externalId>false</externalId>
+        <label>Client Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FHA_Insured_Loan__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Insured Loan</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Home_Phone__c</fullName>
+        <description>Validate it to phone format -10 digits, not starting with 0 and must not accept all same digits like 4444444444</description>
+        <externalId>false</externalId>
+        <label>Home Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields><fields>
+        <fullName>If_yes_Name_of_POA__c</fullName>
+        <externalId>false</externalId>
+        <label>If yes, Name of POA</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>IsNBSAvaliable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>field data will true if nbs is added into client at client level</description>
+        <externalId>false</externalId>
+        <label>Is Non-Borrowing Spouse Available?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Is_Client_Validated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Make true when edit and save from Start new loan tab</description>
+        <externalId>false</externalId>
+        <label>Is Client Validated?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Is_Non_Borrowing_Resident__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Non Borrowing Resident Filled ?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Is_Non_Borrowing_Spouse_Filled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>At Loan Level</description>
+        <externalId>false</externalId>
+        <label>Is Non Borrowing Spouse Filled ?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Is_there_a_POA__c</fullName>
+        <externalId>false</externalId>
+        <label>Is there a POA?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>LoanId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>LoanId</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipLabel>ClientDetails</relationshipLabel>
+        <relationshipName>Clients</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Marital_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Marital Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Married</fullName>
+                    <default>false</default>
+                    <label>Married</label>
+                </value>
+                <value>
+                    <fullName>Separated</fullName>
+                    <default>false</default>
+                    <label>Separated</label>
+                </value>
+                <value>
+                    <fullName>Unmarried</fullName>
+                    <default>false</default>
+                    <label>Unmarried</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Middle_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Middle Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Monthly_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Non_Borrowing_Date_of_Birth__c</fullName>
+        <description>Can't be the future date</description>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Spouse Date of Birth</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Non_Borrowing_Relation__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Borrower Relationship</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Married</fullName>
+                    <default>false</default>
+                    <label>Married</label>
+                </value>
+                <value>
+                    <fullName>Separated</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Separated</label>
+                </value>
+                <value>
+                    <fullName>Unmarried</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Unmarried</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Non_Borrowing_Resident__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Resident</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Non_Borrowing_Spouse_Addres__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Spouse Address</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Non_Borrowing_Spouse_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Spouse City</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Non_Borrowing_Spouse_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Spouse Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Non_Borrowing_Spouse_Phone_Number__c</fullName>
+        <description>Must be filled in the UI and mandatory in the backend if the Non-Borrowing spouse picklist is marked as yes, otherwise this section must be hidden in the UI</description>
+        <externalId>false</externalId>
+        <inlineHelpText>must be in phone format, should not accept 0 as starting number and should not take all continuous same digits like 7777777777</inlineHelpText>
+        <label>Non-Borrowing Spouse Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields><fields>
+        <fullName>Non_Borrowing_Spouse_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Spouse State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields><fields>
+        <fullName>Non_Borrowing_Spouse_Zip__c</fullName>
+        <description>Can have only numbers and one - (Hyphen)</description>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Spouse Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Non_Borrowing_Spouse__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Borrowing Spouse</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Number_of_years__c</fullName>
+        <description>Must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Number of years</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields><fields>
+        <fullName>Place_of_Celebration__c</fullName>
+        <externalId>false</externalId>
+        <label>Place of Celebration</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Primary_Client_for_the_Loan__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Primary Client for the Loan</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Property_type__c</fullName>
+        <externalId>false</externalId>
+        <label>Property type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Family</fullName>
+                    <default>false</default>
+                    <label>Single Family</label>
+                </value>
+                <value>
+                    <fullName>Condo-Attached</fullName>
+                    <default>false</default>
+                    <label>Condo-Attached</label>
+                </value>
+                <value>
+                    <fullName>Condo-Detached</fullName>
+                    <default>false</default>
+                    <label>Condo-Detached</label>
+                </value>
+                <value>
+                    <fullName>Condo-Site</fullName>
+                    <default>false</default>
+                    <label>Condo-Site</label>
+                </value>
+                <value>
+                    <fullName>PUD detached</fullName>
+                    <default>false</default>
+                    <label>PUD detached</label>
+                </value>
+                <value>
+                    <fullName>2 to 4 Unit property</fullName>
+                    <default>false</default>
+                    <label>2 to 4 Unit property</label>
+                </value>
+                <value>
+                    <fullName>Townhouse - Attached PUD</fullName>
+                    <default>false</default>
+                    <label>Townhouse - Attached PUD</label>
+                </value>
+                <value>
+                    <fullName>Co-op</fullName>
+                    <default>false</default>
+                    <label>Co-op</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Residence__c</fullName>
+        <externalId>false</externalId>
+        <label>Residence</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Own</fullName>
+                    <default>false</default>
+                    <label>Own</label>
+                </value>
+                <value>
+                    <fullName>Rent</fullName>
+                    <default>false</default>
+                    <label>Rent</label>
+                </value>
+                <value>
+                    <fullName>Rent Free</fullName>
+                    <default>false</default>
+                    <label>Rent Free</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Social_Security_Number__c</fullName>
+        <description>Validate it to be a proper Social security number; Try to mask it with * if possible</description>
+        <externalId>false</externalId>
+        <label>Social Security Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Spouse_Mailing_Address_same_as_client__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether the spouse mailing address is same as client</description>
+        <externalId>false</externalId>
+        <label>Spouse_Mailing_Address_same_as_client</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>State_Mailing__c</fullName>
+        <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
+        <externalId>false</externalId>
+        <label>Mailing State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields><fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>Current State</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Zip_Mailing__c</fullName>
+        <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
+        <externalId>false</externalId>
+        <label>Mailing Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>is Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Client</label><nameField>
+        <label>Client Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Clients</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>Last_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Home_Phone__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Street_Address__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>State__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Last_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Home_Phone__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Street_Address__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>State__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Last_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Home_Phone__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Street_Address__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>State__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Last_Name__c</searchFilterFields>
+        <searchFilterFields>Home_Phone__c</searchFilterFields>
+        <searchFilterFields>Street_Address__c</searchFilterFields>
+        <searchFilterFields>City__c</searchFilterFields>
+        <searchFilterFields>State__c</searchFilterFields>
+        <searchResultsAdditionalFields>Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Home_Phone__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Street_Address__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>State__c</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><sharingReasons>
+        <fullName>LoanProcessor__c</fullName>
+        <label>Loan Processor</label>
+    </sharingReasons><sharingReasons>
+        <fullName>Loan_Officer__c</fullName>
+        <label>Loan Officer</label>
+    </sharingReasons><sharingReasons>
+        <fullName>Origination_Loan_Officer__c</fullName>
+        <label>Origination Loan Officer</label>
+    </sharingReasons></CustomObject>

@@ -1,0 +1,47 @@
+.THIS {
+    font-family: 'LatoFont'  !important;
+}
+  
+/* latin */
+@font-face {
+  font-family: 'LatoFont';
+   
+   src: url(/resource/LatoFont);
+}
+.THIS .customFont{
+     color:#2081BF;
+    font-family: 'LatoFont'  !important;
+    font-size: 22px !important;
+    font-weight:bold  !important; 
+}
+ 
+.THIS.white {
+    color:#000EEE !important;
+}
+.THIS .HeaderText{
+    color:#2081BF;
+    font-size: 22px  !important;
+    font-family: Quatro Slab;
+   font-family: 'LatoFont'  !important;
+}
+.THIS .bodyText{
+    font-size: 16px !important;
+   font-family: 'LatoFont'  !important;
+    color:black !important;
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.THIS .linkText{
+   text-decoration: underline;
+    color:#2481BF !important ;
+}
+.THIS a {
+    color:#2481BF  !important;
+}
+.THIS a:hover {
+    color:#2481BF  !important;
+}
+.THIS a:visited { 
+    color: #0C4569 !important;
+}

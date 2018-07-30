@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Open Lead</fullName>
+        <default>false</default>
+        <label>Open Lead</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Attempted to Contact</fullName>
+        <default>false</default>
+        <label>Attempted to Contact</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted</fullName>
+        <default>false</default>
+        <label>Contacted</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Presented</fullName>
+        <default>false</default>
+        <label>Presented</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Interested</fullName>
+        <default>false</default>
+        <label>Not Interested</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Qualified</fullName>
+        <default>false</default>
+        <label>Not Qualified</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Run Scenario</fullName>
+        <default>false</default>
+        <label>Run Scenario</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Saved Scenario</fullName>
+        <default>true</default>
+        <label>Saved Scenario</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Scenario Converted</fullName>
+        <default>false</default>
+        <label>Scenario Converted</label>
+        <converted>true</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Qualified</fullName>
+        <default>false</default>
+        <label>Qualified</label>
+        <converted>true</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>QL Lead</fullName>
+        <default>false</default>
+        <label>QL Lead</label>
+        <converted>false</converted>
+    </standardValue>
+</StandardValueSet>

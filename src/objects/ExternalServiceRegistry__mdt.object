@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>ExternalServiceClass__c</fullName>
+        <description>External Service Class - Instantiated dynamically at runtime</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>External Service Class</inlineHelpText>
+        <label>External Service Class</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>NamedCredential__c</fullName>
+        <description>The Named Credential connection parameters to use for this External Service.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The Named Credential connection parameters to use for this External Service.</inlineHelpText>
+        <label>Named Credential</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><description>Entries represent control parameters for External Services.  Referenced by the ServiceName__c field of ExternalService__c records, and used within ExternalServiceDispatcher.cls</description><label>ExternalServiceRegistry</label><pluralLabel>ExternalServiceRegistries</pluralLabel><visibility>Public</visibility></CustomObject>

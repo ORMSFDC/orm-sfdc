@@ -1,0 +1,160 @@
+<aura:component controller="SAL_CreditInfoController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="Year" type="List" />
+    <aura:attribute name="PullNewCredit" type="boolean" default="false" />
+    <aura:attribute name="PullNewCreditNoJoint" type="boolean" default="false" />
+    <aura:attribute name="ReIssueCredit" type="boolean" default="false" />
+    <aura:attribute name="LoanId" type="String" />
+    <aura:attribute name="NewCredit" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
+    <aura:attribute name="ClientName" type="string"  />
+    
+    <aura:attribute name="showError_Decla" type="boolean" default="false"/>
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showSuccess" type="boolean" default="false"/>
+    <aura:attribute name="currentOpt" type="boolean"/>
+    <aura:attribute name="prevOpt" type="boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="showPopup_2" type="boolean" default="false" />
+    
+    <aura:attribute name="disabledClass" type="string" default="defaultCls" />
+    <aura:attribute name="manual" type="Boolean" default="true"/>
+    <aura:attribute name="SubmitbtnDisabled" type="Boolean" default="true"/>
+    <aura:attribute name="TabErrorMsg" type="boolean" default="false" />
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>		
+    
+    <aura:if isTrue="{!v.showPopup_2}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Would you like to submit the application request?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style="color:white" class="slds-button slds-button--brand" onclick="{!c.closeModel}" >No</button>
+                    <button style="color:white" class="slds-button slds-button--brand" onclick="{!c.doAction}">Yes</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if> 
+    <fieldset class="slds-box slds-theme--default slds-container--large">
+        <form>
+            <div class="slds-size_1-of-2">
+                <!--<ui:inputNumber label="Client's credit score" aura:id="CreditScore" value="{!v.NewCredit.Client_s_credit_score__c}" class="slds-input" required="true" />-->
+            </div>
+            <div class="slds-size_1-of-2">
+                <ui:inputSelect label="Credit Indicator" required="true" aura:id="SelectNewCredit" value="{!v.NewCredit.Credit_Indicator__c}" change="{!c.CreditindicatorFunc}">
+                    <ui:inputSelectOption text="" label="---Select Option---" value="true" />
+                    <ui:inputSelectOption text="Pull New Credit" label="Pull New Credit" />
+                    <ui:inputSelectOption text="Reissue Credit" label="Reissue Credit" />
+                </ui:inputSelect>
+                
+            </div>
+            <aura:if isTrue="{!v.PullNewCredit}">
+                <br/>
+                <div class="slds-size_1-of-2">
+                    <ui:inputSelect value="{!v.NewCredit.Credit_Report_type__c}"   required="true" aura:id="CreditReportType" label="Credit Report Type" change="{!c.CreditReportFunc}">
+                        <ui:inputSelectOption text="" label="---Select Option---" value="true" />
+                        <ui:inputSelectOption text="Individual" label="Individual"/>
+                        <ui:inputSelectOption text="Joint" label="Joint"  />
+                    </ui:inputSelect>
+                    
+                    <div id="CreditReportTypeError" style="color:red;"></div>
+                    <br />
+                    
+                    <!-- <div class="slds-size_1-of-2">
+                        <ui:InputText label="Client Name" aura:id="ClientName" value="{!v.ClientName}" class="slds-input" disabled="true"/>
+                    </div>-->
+                    
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.PullNewCreditNoJoint}">
+                <br/>
+                <div class="slds-size_1-of-2">
+                    <ui:inputSelect value="{!v.NewCredit.Credit_Report_type__c}"  required="true" aura:id="CreditReportType" label="Credit Report Type">
+                        
+                        <ui:inputSelectOption text="Individual" label="Individual"/>
+                        
+                    </ui:inputSelect>
+                    
+                    <div id="CreditReportTypeError" style="color:red;"></div>
+                    <br />
+                    
+                    <!--<div class="slds-size_1-of-2">
+                        <ui:InputText label="Client Name" aura:id="ClientName" value="{!v.ClientName}" class="slds-input" disabled="true"/>
+                    </div>-->
+                    
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!v.ReIssueCredit}">
+                <br/>
+                <div class="slds-size_1-of-2">
+                    <ui:inputText label="Credit Reference Number "   aura:id="CreditRefNumber" value="{!v.NewCredit.Credit_Reference_Number__c}" class="slds-input" required="true" blur="{!c.FormatRefNumber}"/>
+                    <div id="CreditRefNumberError" style="color:red;"></div>  
+                </div>
+                <br />
+                <div class="slds-size_1-of-2">
+                    <ui:inputText label="Confirm Credit Reference Number " aura:id="ConCreditRefNumber" value="{!v.NewCredit.Confirm_Credit_Reference_Number__c}" class="slds-input" required="true" blur="{!c.FormatRefNumber}"/>
+                    <div id="ConCreditRefNumberError" style="color:red;"></div>
+                </div>
+                <br />
+                <div class="slds-size_1-of-2">
+                    <ui:inputSelect aura:id="CreditReissueVendor" label="Credit Reissue Vendor" value="{!v.NewCredit.Credit_Reissue_Vendor__c}">
+                        <ui:inputSelectOption text="Credco" label="Credco" value="true"/>
+                    </ui:inputSelect>
+                    
+                    <div id="CreditReissueVendorError" style="color:red;"></div>
+                    <p>&nbsp;</p>
+                    <!--<ui:inputSelectOption text="" label="Select Option" />
+                    <ui:inputSelectOption text="KFD" label="KFD"/>
+                    <ui:inputSelectOption text="CredStar" label="CredStar"/>
+     <ui:inputSelectOption text="Equifax" label="Equifax"/>
+                    <ui:inputSelectOption text="FundingSuite" label="FundingSuite"/>-->
+                </div>
+            </aura:if>
+            <br/>
+            <aura:if isTrue="{!v.showError}">                            
+                <ui:message title="Error" severity="error" closable="false">
+                    Please review all errors before submitting your application
+                </ui:message>                                
+            </aura:if>
+            <aura:if isTrue="{!v.showError_Decla}">                            
+                <ui:message title="Error" severity="error" closable="false">
+                    Please review Declarations for all tabs.
+                </ui:message>                                
+            </aura:if>
+            <aura:if isTrue="{!v.showSuccess}">                            
+                <ui:message title="Information" severity="confirm" closable="false">
+                    Credit Info Saved Successfully.
+                </ui:message>                                
+            </aura:if>
+            <aura:if isTrue="{!v.TabErrorMsg}">                            
+                <ui:message title="Error" severity="error" closable="false">
+                    Please review all tabs before requesting an application.</ui:message>                                
+            </aura:if>
+            <div class="slds-grid slds-grid--align-left">
+                <ui:button class="slds-button slds-button--brand" aura:id="addLoanDetails" label="Previous" press="{!c.previous}" /> &nbsp;&nbsp;
+                <lightning:button aura:id="BtnApplicationSubmit"  class="{!v.disabledClass}" 
+                                  label="Request Application" disabled="{!v.SubmitbtnDisabled}" onclick="{!c.CIFormatValidations}" />
+                
+                
+            </div>
+            <br/>
+            
+        </form>
+    </fieldset>
+    
+</aura:component>

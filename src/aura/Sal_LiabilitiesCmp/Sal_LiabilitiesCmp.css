@@ -1,0 +1,42 @@
+increaseFont.THIS {
+    font-size:57px;
+}
+.THIS .Step_color{
+    color:green !Important;
+}
+.THIS .errorclr{
+    color:red !Important;
+}
+
+.THIS .btnclr{
+    color:white !Important;
+    background:#337ab7 !Important;
+}
+
+.THIS .bordererr{
+    
+    border:1px solid red!important;
+}
+
+.THIS .tabdisplay{
+    
+    display:none;
+}
+.THIS .myCheckbox{
+  display: inline-block;
+  float: left;
+}
+.THIS .DivStyle
+{
+    font-size:0.75rem;color:rgb(194, 57, 52) !important;
+}
+.THIS {
+}
+.THIS .errorComponent
+{
+    border:1px solid red !important;
+}
+
+.THIS .myBtn{
+    background-color:#2877bd !important;
+}

@@ -1,0 +1,41 @@
+.THIS {
+}
+.THIS .errorComponent
+{
+    box-shadow: rgb(194, 57, 52) 0 0 0 1px inset !important;
+}
+.THIS .DivStyle
+{
+    font-size:0.75rem;color:rgb(194, 57, 52) !important;
+}
+.THIS .DivStyle .Hide
+{
+    display: none !important;
+}
+.THIS .LabelDiv
+{
+    color: rgb(105, 105, 105) !important;
+    line-height: 1.5 !important ;
+    margin-bottom: .25rem !important;
+    font-weight: bold !important;
+}
+.THIS .boldLabel{
+    font-weight: bold !important;
+}
+.THIS .TransperantIconGreen svg{
+    fill: green !important;
+    background-color :transparent !important;
+}
+.THIS .TransperantIconGreen1 {
+    fill: green !important;
+    background-color :transparent !important;
+}
+
+.THIS .TransperantIconRed svg{
+    fill: red !important;
+    background-color :transparent !important;
+}
+.THIS .TransperantIconRed1 {
+    fill: red !important;
+    background-color :transparent !important;
+}

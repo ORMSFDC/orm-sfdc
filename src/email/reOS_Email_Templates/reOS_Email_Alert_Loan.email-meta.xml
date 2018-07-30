@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>reOS Email Alert - Outbound External Service called for Loan X</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>reOS_Email_Alert_Loan</name>
+    <style>none</style>
+    <subject>reOS Email Alert - Outbound External Service called for {!Loan_New__c.Loan_Number__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

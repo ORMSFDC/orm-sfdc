@@ -1,0 +1,93 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes"
+                controller="DisplayTaskController">
+	<aura:attribute name="taskList" type="List"/>
+    <aura:attribute name="taskStatusList" type="List"/>
+    <aura:attribute name="selectStatus" type="String"/>
+    <aura:attribute name="options" type="List" />
+
+    <aura:attribute name="arrowDirection" type="string" default="arrowup" description="Use for change arrow sign direction on header based on click"/>
+    <aura:attribute name="isAsc" type="boolean" default="true" description="boolean flag for pass sorting condition to apex class"/>
+    <aura:attribute name="selectedTabsoft" type="string" default="DueDate" description="Use for show/hide arraow sign on header based on conditions"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+
+    <aura:handler event="force:navigateToSObject" action="{!c.navigateToRecord}"/>
+
+    <lightning:card title="My Tasks">
+        <table style="width: 100%; table-layout:fixed;" class="slds-table slds-table_bordered slds-table_cell-buffer slds-max-medium-table_stacked-horizontal slds-cell-wrap">
+            <thead>
+                <tr class="slds-text-heading--label">
+                    <th class="" style = "width: 30%;" scope="col">Subject</th>
+                
+                    <th class="" style = "width: 20%;" scope="col"  onclick="{!c.sortDueDate}">
+                    	<a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                            <span class="slds-assistive-text">Sort</span>
+                            <span class="slds-truncate" title="Name">Created Date</span>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'DueDate') }">&nbsp;  &#9660; </aura:if>
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'DueDate') }"> &nbsp;  &#9650; </aura:if>
+                        </a>
+                    </th>
+                    
+					<!--Added New -->                   
+                    <th class="" style = "width: 20%;" scope="col"  onclick="{!c.sortDueDate2}">
+                    	<a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                            <span class="slds-assistive-text">Sort</span>
+                            <span class="slds-truncate" title="Name">Due Date</span>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'DueDate') }">&nbsp;  &#9660; </aura:if>
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'DueDate') }"> &nbsp;  &#9650; </aura:if>
+                        </a>
+                    </th>
+                    
+                    
+                    <th class="" style = "width: 15%;" scope="col">Status</th>
+					<th class="" style = "width: 20%;" scope="col">Name </th>
+                    <th class="" style = "width: 20%;" scope="col">Related To </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.taskList}" var="task">
+                    <tr class="slds-hint-parent slds-cell-wrap">
+                        <td data-label="Subject" class="slds-cell-wrap" >
+                            <a onclick="{!c.navigateToRecord}" style="width:100%;" data-index="{!task.Id}">{!task.Subject}</a>
+                        </td>
+
+                        <td data-label="Created Date" class="slds-cell-wrap" >  
+                            <ui:outputDate value="{!task.Created_DateTime__c}" format="MM/dd/YYYY, hh:mm A"></ui:outputDate>                           
+                        </td> 
+						
+                        <!--Added New -->
+                        <td data-label="Due Date" class="slds-cell-wrap" >  
+                            <ui:outputDate value="{!task.ActivityDate}" format="MM/dd/YYYY"></ui:outputDate>                           
+                        </td> 
+						
+                        <td data-label="Status" data-taskId="{!task.Id}" id="tdId" class="tdclass">
+                            <lightning:select name="{!task.Id}" label="" aura:id="{!task.Id}" value="{!task.Status}"
+                                              variant="label-hidden" onchange="{!c.saveTaskStatusFun}">
+                                <aura:iteration items="{!v.taskStatusList}" var="itemStatus">
+                                    <option text="{!itemStatus}" value="{!itemStatus}" />
+                                 </aura:iteration>
+                            </lightning:select>
+
+                            <lightning:input aura:id="taskId" label="taskId" name="taskId"
+                                                    type="text" value="{!task.Id}"  class="slds-hide"/>
+                        </td>
+                        <td data-label="Name" class="slds-cell-wrap" >
+                            <a onclick="{!c.navigateToRecord}" style="width:100%;" data-index="{!task.WhoId}">{!task.Who.Name}</a>
+                        </td>
+                        <td data-label="Related to" class="slds-cell-wrap" >
+                            <a onclick="{!c.navigateToRecord}" style="width:100%;" data-index="{!task.WhatId}">{!task.What.Name}</a>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+       <table style="width: 100%; table-layout:fixed;" class="slds-table slds-table_bordered slds-table_cell-buffer slds-max-medium-table_stacked-horizontal slds-cell-wrap">
+        <th class="" scope="col"></th>
+            <td data-label="View All" class="slds-cell-wrap" >
+              <a onclick="{!c.navigateToViewAll}" style="width:100%;">View All</a>
+            </td> 
+       </table>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,27 @@
+<aura:component controller="PartnerResourcesController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <ltng:require styles="/resource/SLDS0122/assets/styles/salesforce-lightning-design-system.min.css"/>
+    
+     <link href="assets/styles/salesforce-lightning-design-system-vf.css" rel="stylesheet"/>
+     <aura:attribute name="ReverseContent" type="ReverseVideoContents__c" />
+  
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+     
+     <form class="slds-form--stacked">
+         <div class="table table-bordered">
+       		 <table class="table table-striped">
+            	 <tr><td><br></br></td></tr>
+                <aura:iteration items="{!v.ReverseContent}" var="Content"> 
+                    <tr><td>
+                        <td><b style="color:#2081bf; font-size:1.375em" >{!Content.Name}</b> </td>
+                        </td></tr>
+                    
+                    <tr><td style="font-size: 18px;"><ui:outputRichText aura:id="outputRT" value="{!Content.Details__c}"/>
+                   </td></tr><tr><td></td></tr>
+                    
+                </aura:iteration>
+         	 </table>
+         </div>
+    </form>
+    
+</aura:component>

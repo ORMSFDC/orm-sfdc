@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata"><labels>
+        <fullName>Average_Growth_Rate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario HeaderAverage Growth Rate</shortDescription>
+        <value>Average Growth Rate</value>
+    </labels><labels>
+        <fullName>BrokerPricingDateText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BrokerPricingDateText</shortDescription>
+        <value>7/24-7/30 (margins and pricing are subject to change at any time). Once a margin is selected, you cannot raise the margin at a later time.</value>
+    </labels><labels>
+        <fullName>CIC_Email_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CIC Email Url</shortDescription>
+        <value>https://ormmortgageservices.lightning.force.com/source=aloha#/sObject/</value>
+    </labels><labels>
+        <fullName>Con_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Con_Id</shortDescription>
+        <value>0033900002FKBGd</value>
+    </labels><labels>
+        <fullName>Conactuslabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Conactuslabel</shortDescription>
+        <value>Contact Us - One Reverse Mortgage Services</value>
+    </labels><labels>
+        <fullName>ContactPhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContactPhone</shortDescription>
+        <value>(888) 980-2898</value>
+    </labels><labels>
+        <fullName>ContactUs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContactUs</shortDescription>
+        <value>Contact Us</value>
+    </labels><labels>
+        <fullName>EmailError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailError</shortDescription>
+        <value>ravaddanki@galaxe.com</value>
+    </labels><labels>
+        <fullName>EmailTemplateLogoUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailTemplateLogoUrl</shortDescription>
+        <value>https://ormmortgageservices--QaSandbox--c.cs23.content.force.com/servlet/servlet.ImageServer?id=01518000000GuL9&amp;oid=00D180000001hlU&amp;lastMod=1513662955000</value>
+    </labels><labels>
+        <fullName>EnviormentURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EnviormentURL</shortDescription>
+        <value>https://ormmortgageservices.force.com/s/startnewloan</value>
+    </labels><labels>
+        <fullName>FannieParserApiKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FannieParserApiKey</shortDescription>
+        <value>nOQoMKvEhQ5uzKuAYIRqL7HxbDG0oZdH2JqmdqDu</value>
+    </labels><labels>
+        <fullName>FannieParserEndpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FannieParserEndpoint</shortDescription>
+        <value>https://om0wgadksg.execute-api.us-east-1.amazonaws.com/test/parse-ten-oh-three</value>
+    </labels><labels>
+        <fullName>ForgotPasswordConfirm</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ForgotPasswordConfirm</shortDescription>
+        <value>An Email has been sent to you with your temporary password.</value>
+    </labels><labels>
+        <fullName>HelpDescription</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HelpDescription</shortDescription>
+        <value>Please enter the Meeting ID provided by your One Reverse Mortgage Services Client Care Specialist and click the "Submit" button. Your One Reverse Mortgage Services Client Care Specialist will be able to view your desktop but will not be able to take any action. If you feel you have viewed this page in error, please click cancel.</value>
+    </labels><labels>
+        <fullName>HomePageContactUsHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HomePageContactUsHeading</shortDescription>
+        <value>Contact us</value>
+    </labels><labels>
+        <fullName>HomePageContentHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HomePageContentHeading</shortDescription>
+        <value>Welcome to ORMS</value>
+    </labels><labels>
+        <fullName>HomePageLinksHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HomePageLinksHeading</shortDescription>
+        <value>Find it Now</value>
+    </labels><labels>
+        <fullName>Home_DocumentPkg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home_DocumentPkg</shortDescription>
+        <value>Document Package Request</value>
+    </labels><labels>
+        <fullName>Home_DocumentPkgValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home_DocumentPkgValue</shortDescription>
+        <value>8.00am-4.30pm PST</value>
+    </labels><labels>
+        <fullName>Home_ImpAddresTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home_ImpAddresTitle</shortDescription>
+        <value>Important Addresses</value>
+    </labels><labels>
+        <fullName>Home_SupportHoursTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home_SupportHoursTitle</shortDescription>
+        <value>Support Hours</value>
+    </labels><labels>
+        <fullName>Home_SupportHoursValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home_SupportHoursValue</shortDescription>
+        <value>7.30am-5.00pm PST</value>
+    </labels><labels>
+        <fullName>Login_Disabled</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login_Disabled</shortDescription>
+        <value>False</value>
+    </labels><labels>
+        <fullName>Need_Guideline</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Need Guideline</shortDescription>
+        <value>https://ormmortgageservices.my.salesforce.com/sfc/p/390000004ayX/a/390000015ANL/FxwyybXKdQ2GNurSDysI1JplfYo9pWOzVSWlCdj8eq8</value>
+    </labels><labels>
+        <fullName>ORM_Partners</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ORM Partners</shortDescription>
+        <value>ORM Partners</value>
+    </labels><labels>
+        <fullName>Orm_support</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Orm_support</shortDescription>
+        <value>0D21g0000004CIK</value>
+    </labels><labels>
+        <fullName>Orm_support1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Orm_support1</shortDescription>
+        <value>ormssupport@onereverse.com</value>
+    </labels><labels>
+        <fullName>Pagenotfound</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pagenotfound</shortDescription>
+        <value>Page not found.Please try later.</value>
+    </labels><labels>
+        <fullName>PartenrZoomMeetingIdLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartenrZoomMeetingIdLabel</shortDescription>
+        <value>Meeting ID</value>
+    </labels><labels>
+        <fullName>PartnerAppDateLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerAppDateLabel</shortDescription>
+        <value>Application Date</value>
+    </labels><labels>
+        <fullName>PartnerCancelLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerCancelLabel</shortDescription>
+        <value>Cancel</value>
+    </labels><labels>
+        <fullName>PartnerCompleteReg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerCompleteRegLabel</shortDescription>
+        <value>Complete Registration</value>
+    </labels><labels>
+        <fullName>PartnerContactUs</fullName>
+        <categories>https://ormmortgageservices.force.com/PartnerContactUs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerContactUs</shortDescription>
+        <value>mailto:joshevink@onereverse.com</value>
+    </labels><labels>
+        <fullName>PartnerCoreSignOut</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerCoreSignOut</shortDescription>
+        <value>Welcome to the ORMS Portal!</value>
+    </labels><labels>
+        <fullName>PartnerDelLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerDelLabel</shortDescription>
+        <value>Delete</value>
+    </labels><labels>
+        <fullName>PartnerIncompleteAppDescLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerIncompleteAppDescLabel</shortDescription>
+        <value>You have an incomplete application. You must complete the registration process TODAY in order
+                    for the proper disclosures to be sent to the client.</value>
+    </labels><labels>
+        <fullName>PartnerIncompleteAppLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerIncompleteAppLabel</shortDescription>
+        <value>Incomplete Applications</value>
+    </labels><labels>
+        <fullName>PartnerIncompleteRegLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerIncompleteRegLabel</shortDescription>
+        <value>Start a New Loan</value>
+    </labels><labels>
+        <fullName>PartnerLenderURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerLenderURL</shortDescription>
+        <value>#</value>
+    </labels><labels>
+        <fullName>PartnerLoginURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerLoginURL</shortDescription>
+        <value>/PartnerLoginPage?startURL=%2Fs%2F%3Ft%3D1500881821229</value>
+    </labels><labels>
+        <fullName>PartnerNeedHelp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerNeedHelp</shortDescription>
+        <value>Need help? Contact us at</value>
+    </labels><labels>
+        <fullName>PartnerNeedHelpLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerNeedHelpLabel</shortDescription>
+        <value>Need Some Help?</value>
+    </labels><labels>
+        <fullName>PartnerOpenSaveIncLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerOpenSaveIncLabel</shortDescription>
+        <value>Open a Saved Incomplete Application</value>
+    </labels><labels>
+        <fullName>PartnerSaveLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerSaveLabel</shortDescription>
+        <value>Start Application</value>
+    </labels><labels>
+        <fullName>PartnerSubmitAppDescLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerSubmitAppDescLabel</shortDescription>
+        <value>Submit Application for Findings and Loan Registration</value>
+    </labels><labels>
+        <fullName>PartnerTelNo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerTelNo.</shortDescription>
+        <value>tel:8889802898</value>
+    </labels><labels>
+        <fullName>PartnerTelNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerTelNumber</shortDescription>
+        <value>(888) 980-2898</value>
+    </labels><labels>
+        <fullName>PartnerTermUs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerTermUs</shortDescription>
+        <value>https://www.onereversemortgage.com/terms-of-use/</value>
+    </labels><labels>
+        <fullName>PartnerUnder62</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerUnder62</shortDescription>
+        <value>Under 18</value>
+    </labels><labels>
+        <fullName>PartnerUnder62Alert1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerUnder62Alert1</shortDescription>
+        <value>Please enter a date of birth so that the borrower is greater than 18 years old.</value>
+    </labels><labels>
+        <fullName>PartnerUnder62Alert2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerUnder62Alert2</shortDescription>
+        <value>To qualify for the reverse mortgage program, at least one borrower must be 62 years or older.</value>
+    </labels><labels>
+        <fullName>PartnerUploadLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerUploadLabel</shortDescription>
+        <value>Uploading...</value>
+    </labels><labels>
+        <fullName>PartnerZoomShareLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerZoomShareLabel</shortDescription>
+        <value>Zoom Meeting - Share Your Screen With Us</value>
+    </labels><labels>
+        <fullName>PartnerwithusEmail_JoshEvink</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerwithusEmail_JoshEvink</shortDescription>
+        <value>joshevink@onereverse.com</value>
+    </labels><labels>
+        <fullName>PartnerwithusName_JoshEvink</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerwithusName_JoshEvink</shortDescription>
+        <value>Josh Evink</value>
+    </labels><labels>
+        <fullName>PleaseAE_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PleaseAE_Label</shortDescription>
+        <value>Please contact your account executive if you have questions.</value>
+    </labels><labels>
+        <fullName>Prospective_Partner_User_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prospective Partner User Label</shortDescription>
+        <value>Prospective Partner User</value>
+    </labels><labels>
+        <fullName>Request_Calculator_Package_EmailID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request Calculator Package EmailID</shortDescription>
+        <value>ormssupport@onereverse.com</value>
+    </labels><labels>
+        <fullName>Request_Calculator_Package_Email_UserName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request Calculator Package Email UserName</shortDescription>
+        <value>ORM Support</value>
+    </labels><labels>
+        <fullName>Scenario_CashFlow_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_CashFlow_URL</shortDescription>
+        <value>https://api.rockfin.com/orms/nu62/CashFlow</value>
+    </labels><labels>
+        <fullName>Scenario_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario HeaderMargin</shortDescription>
+        <value>Margin</value>
+    </labels><labels>
+        <fullName>Scenario_Header1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1</shortDescription>
+        <value>Your Line of Credit Could Enhance Your Retirement!</value>
+    </labels><labels>
+        <fullName>Scenario_Header1_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1_1</shortDescription>
+        <value>Based on the information you provided in this calculator, you are</value>
+    </labels><labels>
+        <fullName>Scenario_Header1_2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1_2</shortDescription>
+        <value>years old and own a home that is worth</value>
+    </labels><labels>
+        <fullName>Scenario_Header1_3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1_3</shortDescription>
+        <value>. You indicated that you still owe</value>
+    </labels><labels>
+        <fullName>Scenario_Header1_4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1_4</shortDescription>
+        <value>on your mortgage. Your reverse mortgage will first pay off your existing mortgage, leaving you with</value>
+    </labels><labels>
+        <fullName>Scenario_Header1_5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1_5</shortDescription>
+        <value>of available funds in your line of credit. If you simply pay your closing costs to open the line of credit and do not take any of the remaining</value>
+    </labels><labels>
+        <fullName>Scenario_Header1_6</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1_6</shortDescription>
+        <value>, this amount of available funds will increase over time based on Moody’s Analytics. For example,</value>
+    </labels><labels>
+        <fullName>Scenario_Header1_7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header1_7</shortDescription>
+        <value>years from now, your available funds could grow to</value>
+    </labels><labels>
+        <fullName>Scenario_Header2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2</shortDescription>
+        <value>Figuring Out the Numbers</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_1</shortDescription>
+        <value>To figure out your borrowing potential, we use your interest rate plus your mortgage insurance premium (MIP). This is considered your "growth rate." The unused line of credit grows at the growth rate, which is the same rate that is applied to your reverse mortgage's outstanding balance to calculate your interest and MIP each month. Your growth rate predicts how much money you will have available in the future. Remember, the line of credit is an adjustable rate loan, so the rate can change. There are three components to determine the growth rate: 1) the current index value 2) the margin and 3) since this line of credit product is insured, it also includes a</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_10</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_10</shortDescription>
+        <value>. The</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_11</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_11</shortDescription>
+        <value>is compounded monthly by the average growth rate of</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_12</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_12</shortDescription>
+        <value>to determine the estimated amount of money</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_13</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_13</shortDescription>
+        <value>years after the line is started. For you, this equates to approximately</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_14</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_14</shortDescription>
+        <value>of available funds when you are age</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_15</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_15</shortDescription>
+        <value>While there is interest and ongoing MIP associated with a small unpaid balance and upfront closing costs, in the end, it is worth it. The growth occurs yearly and compounds over time delivering a much larger amount of available funds that can be accessed at any time and used for anything.</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_5</shortDescription>
+        <value>annual MIP which is paid to FHA. In your case, your initial growth rate is</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_6</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_6</shortDescription>
+        <value>and equates as follows:</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_7</shortDescription>
+        <value>Now that we have the initial growth rate, we need to determine the average growth rate over</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_8</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_8</shortDescription>
+        <value>years. We use Moody’s Analytics to determine the projected growth rate, and then we average it over</value>
+    </labels><labels>
+        <fullName>Scenario_Header2_9</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header2_9</shortDescription>
+        <value>years. Your average growth rate is</value>
+    </labels><labels>
+        <fullName>Scenario_Header3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header3</shortDescription>
+        <value>*Please consult your financial advisor.</value>
+    </labels><labels>
+        <fullName>Scenario_Header4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario Header4</shortDescription>
+        <value>**This scenario is for our annual adjustable HECM Line of Credit and is based on the values you have provided and the 1-Year LIBOR index as of 7-10-2017. The index can change at any time. APR is 4.383. The unused line of credit funds will compound at the current market growth rate throughout the life of the loan. Results may vary. The interest rate is variable and may change subject to a 2% limit at any one time and it will never increase by more than 5% (Lifetime cap).</value>
+    </labels><labels>
+        <fullName>Scenario_Header5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario HeaderIndex</shortDescription>
+        <value>Index</value>
+    </labels><labels>
+        <fullName>Scenario_HeaderInitial_Growth_Rate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario HeaderInitial Growth Rate</shortDescription>
+        <value>Initial Growth Rate</value>
+    </labels><labels>
+        <fullName>Scenario_HeaderMIP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario HeaderMIP</shortDescription>
+        <value>MIP</value>
+    </labels><labels>
+        <fullName>Scenario_LineChart_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_LineChart_URL</shortDescription>
+        <value>https://api.rockfin.com/orms/nu62/LineOfCredit/PartialCalculator</value>
+    </labels><labels>
+        <fullName>Scenario_LineChart_URL_New</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_LineChart_URL_New</shortDescription>
+        <value>https://api.rockfin.com/orms/nu62/LineOfCredit/FullCalculator</value>
+    </labels><labels>
+        <fullName>Scenario_calculate_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_calculate_1</shortDescription>
+        <value>&lt;p&gt;Want to calculate a purchase scenario? We are working to update our calculator to allow you to review these scenarios, but in the meantime, here is a workaround: 
+Enter your youngest client’s date of birth as usual. In the “home value” field, enter the purchase price of the new home. Enter $0 for the mortgage balance, interest rate, and mortgage payment. 
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;Select your margin and see the results. To get the estimated down payment needed, subtract the amount available after lien payoff from the purchase price. 
+&lt;/p&gt;
+&lt;br/&gt;
+For example : &lt;br/&gt;
+Purchase price: $400,000&lt;br/&gt;
+Amount available after lien payoff: $183,500 &lt;br/&gt;
+$400,000 - $183,500 = $216,500&lt;br/&gt;&lt;br/&gt;
+
+The estimated down payment the client will need to bring to the table is $216,500.&lt;br/&gt;&lt;br/&gt;
+Please call your account executive with any questions or if you need assistance!</value>
+    </labels><labels>
+        <fullName>Scenario_client_id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_client_id</shortDescription>
+        <value>938e8937efbd422c9430a28d16fa75e6</value>
+    </labels><labels>
+        <fullName>Scenario_client_id_label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_client_id_label</shortDescription>
+        <value>client_id</value>
+    </labels><labels>
+        <fullName>Scenario_client_secret</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_client_secret</shortDescription>
+        <value>38715d1755a24F3BA509b2BD0600Ae2e</value>
+    </labels><labels>
+        <fullName>Scenario_client_secret_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_client_secret_Label</shortDescription>
+        <value>client_secret</value>
+    </labels><labels>
+        <fullName>Scenario_margin</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario_margin</shortDescription>
+        <value>https://api.rockfin.com/orms/nu62/Pricing/PricingCalculator</value>
+    </labels><labels>
+        <fullName>SignIn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SignIn</shortDescription>
+        <value>Sign In Page</value>
+    </labels><labels>
+        <fullName>ZoomInfoLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ZoomInfoLabel</shortDescription>
+        <value>After entering your code, please check your download location for the Zoom setup file.</value>
+    </labels><labels>
+        <fullName>homepage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>homepage</shortDescription>
+        <value>Home Page</value>
+    </labels><labels>
+        <fullName>partnerCopyright</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerCopyRight</shortDescription>
+        <value>2000-2018 One Reverse Mortgage, LLC. All rights reserved.Lending services provided by One Reverse Mortgage, LLC used under license.</value>
+    </labels><labels>
+        <fullName>partnerTermsOfUse</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>partnerTermsOfUse</shortDescription>
+        <value>Terms Of Use</value>
+    </labels><labels>
+        <fullName>passcode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>passcode</shortDescription>
+        <value>lR7i61T74c3h0746Q8S7zC2Nt1DF1m16</value>
+    </labels><labels>
+        <fullName>scenario</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>scenario</shortDescription>
+        <value>https://www.baydocs.net/retail/CalcsSvcJSON.php</value>
+    </labels><labels>
+        <fullName>usercode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>usercode</shortDescription>
+        <value>4738</value>
+    </labels></CustomLabels>

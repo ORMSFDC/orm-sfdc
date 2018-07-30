@@ -1,0 +1,10 @@
+Hello {!Account.QLMS_First_Name__c},
+<P>
+Your partner, {!Account.Name}, has been denied by ORMS. This does not impact the approval with QLMS.
+<P>
+Sincerely,
+<P>
+{!Account.OwnerFullName}<br />
+{!Account.OwnerTitle}<br />
+{!Account.OwnerPhone}<br />
+{!Account.OwnerEmail}<br />

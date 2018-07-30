@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email - After First Call</name>
+    <style>none</style>
+    <subject>Hello Test Email</subject>
+    <textOnly>Hello {!Contact.FirstName},
+&lt;P&gt;
+As a current QLMS partner, you are only a few steps away from being able to offer a reverse mortgage solution to your clients with One Reverse Mortgage Services. We do the heavy lifting! Our qualified team can help you through the entire loan process from registration to the closing. I would like to speak to you about becoming part of this exciting opportunity, You can contact me at {!User.Phone} or simply reply to this email to schedule a time for our discussion. 
+&lt;P&gt;
+{!User.Name}&lt;br /&gt;
+{!User.Title}&lt;br /&gt;
+{!User.Phone}&lt;br /&gt;</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

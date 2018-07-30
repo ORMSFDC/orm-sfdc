@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lead: Myth Busters</name>
+    <style>none</style>
+    <subject>4 Things You Probably Didn&apos;t Know</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Below are a few of the common misconceptions your clients may have heard about the reverse mortgage product.
+
+Myth #1: The lender will own your home.
+FALSE. You still own your home. Just like any other mortgage, your name remains on the title.
+
+Myth #2: You can&apos;t get a reverse mortgage if you already have a mortgage on the home.
+FALSE. You can get a reverse mortgage if you already have a mortgage. In fact, many people get a reverse mortgage to pay off their existing mortgage! While you are still responsible for paying property taxes, homeowners insurance, and home maintenance costs, you are not required to make a monthly mortgage payment with a reverse mortgage
+
+Myth #3: Your children will be responsible for the repayment of the loan.
+FALSE. Your heirs have a few options. They can sell the home to pay off the loan and keep any remaining money from the sale or they can keep the home. If they decide to keep the home, they can pay the lesser of the loan balance or 95% of the appraised value of the home.
+
+Myth #4: I need good credit to get a reverse mortgage.
+FALSE. To qualify for a reverse mortgage, you need to be at least 62 and have enough equity in your home. There is no credit score requirement to get a reverse mortgage. Throughout the loan process, we review your credit history to determine if there are additional requirements.
+
+So what are the facts?
+* If multiple clients, only one has to be 62 or older.
+* If over 50% there is a chance to bring funds to close, feel free to present a reverse mortgage option.
+* Condos need to be on the FHA Approved list.
+* No Minimum FICO score.
+* No maximum debt to income ratio. Give me a call today to get more information.
+
+Best,
+
+{!User.Name} | {!User.Title}
+Phone: {!User.Phone}
+Email: {!User.Email}
+Web: &lt;a href=&quot;http://www.OneReverseMortgageServices.com/&quot;&gt;OneReverseMortgageServices.com&lt;/a&gt;
+
+Our mailing address is:
+4445 Eastgate Mall, Ste 320, San Diego, CA 92121
+&lt;a href=&quot;mailto:mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}&quot;&gt;Unsubscribe&lt;/a&gt;
+Equal Housing Lender. Licensed in all 50 states.  NMLS #2052</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

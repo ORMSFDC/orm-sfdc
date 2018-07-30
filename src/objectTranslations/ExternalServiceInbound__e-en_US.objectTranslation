@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- External Service ID --></label>
+        <name>ExternalServiceID__c</name>
+    </fields><fields>
+        <label><!-- Payload --></label>
+        <name>Payload__c</name>
+    </fields><fields>
+        <label><!-- Service Name --></label>
+        <name>ServiceName__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>External Service Inbound</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>External Service Inbound</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

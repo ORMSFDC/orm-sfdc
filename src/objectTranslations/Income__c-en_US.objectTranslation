@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Alimony/Child Support Income --></label>
+        <name>Alimony_ChildSupport_Income__c</name>
+    </fields><fields>
+        <label><!-- Automobile/Expense Account Income --></label>
+        <name>Automobile_Expense_Income__c</name>
+    </fields><fields>
+        <label><!-- Base Employment Income --></label>
+        <name>Base_Employment_Income__c</name>
+    </fields><fields>
+        <label><!-- Boarder Income --></label>
+        <name>Boarder_Income__c</name>
+    </fields><fields>
+        <label><!-- Bonus Income --></label>
+        <name>Bonus_Income__c</name>
+    </fields><fields>
+        <label><!-- Capital Gains --></label>
+        <name>Capital_Gains__c</name>
+    </fields><fields>
+        <label><!-- Commissions Income --></label>
+        <name>Commissions_Income__c</name>
+    </fields><fields>
+        <label><!-- Disability Income --></label>
+        <name>Disability_Income__c</name>
+    </fields><fields>
+        <label><!-- Dividend/Interest Income --></label>
+        <name>Dividents_Interest_Income__c</name>
+    </fields><fields>
+        <label><!-- Foster Care --></label>
+        <name>Foster_Care_Income__c</name>
+    </fields><fields>
+        <label><!-- Military Base Pay --></label>
+        <name>Military_Base_Pay__c</name>
+    </fields><fields>
+        <label><!-- Military Clothes Allowance --></label>
+        <name>Military_Clothes_Allowance__c</name>
+    </fields><fields>
+        <label><!-- Military Combat Pay --></label>
+        <name>Military_Combat_Pay__c</name>
+    </fields><fields>
+        <label><!-- Military Flight Pay --></label>
+        <name>Military_Flight_Pay__c</name>
+    </fields><fields>
+        <label><!-- Military Hazard Pay --></label>
+        <name>Military_Hazard_Pay__c</name>
+    </fields><fields>
+        <label><!-- Military Overseas Pay --></label>
+        <name>Military_Overseas_Pay__c</name>
+    </fields><fields>
+        <label><!-- Military Prop Pay --></label>
+        <name>Military_Prop_Pay__c</name>
+    </fields><fields>
+        <label><!-- Military Quarters Allowance --></label>
+        <name>Military_Quarters_Allowance__c</name>
+    </fields><fields>
+        <label><!-- Military Rations Allowance --></label>
+        <name>Military_Rations_Allowance__c</name>
+    </fields><fields>
+        <label><!-- Military Variable Housing allowance --></label>
+        <name>Military_Variable_Housing_allowance__c</name>
+    </fields><fields>
+        <label><!-- Mortgage Credit Certificate --></label>
+        <name>Mortgage_Credit_Certificate__c</name>
+    </fields><fields>
+        <label><!-- Mortgage Differential --></label>
+        <name>Mortgage_Differential_Certificate__c</name>
+    </fields><fields>
+        <label><!-- Net Rental Income --></label>
+        <name>Net_Rental_Income__c</name>
+    </fields><fields>
+        <label><!-- Notes Receivable/Installment --></label>
+        <name>Notes_Receivable_Installment__c</name>
+    </fields><fields>
+        <label><!-- Other types of Income --></label>
+        <name>Other_Income__c</name>
+    </fields><fields>
+        <label><!-- Pension/Retirement Income --></label>
+        <name>OverTime_Income__c</name>
+    </fields><fields>
+        <label><!-- Pension/Retirement Income --></label>
+        <name>Pension_Retirement_Income__c</name>
+    </fields><fields>
+        <label><!-- Real Estate/Mortgage Differential --></label>
+        <name>Real_Estate_Mortgage_Differential__c</name>
+    </fields><fields>
+        <label><!-- RelatedClient --></label>
+        <name>RelatedClient__c</name>
+        <relationshipLabel><!-- Incomes Old --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Related Loan --></label>
+        <name>Related_Loan__c</name>
+        <relationshipLabel><!-- Incomes Old --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Social Security Income --></label>
+        <name>Social_Security_Disability_Income__c</name>
+    </fields><fields>
+        <label><!-- Subject Property Net Cash Flow --></label>
+        <name>SubjectProperty_Income__c</name>
+    </fields><fields>
+        <label><!-- Temporary Leave income --></label>
+        <name>Temporary_Leave_income__c</name>
+    </fields><fields>
+        <label><!-- Trailing Co-borrower Income --></label>
+        <name>Trailing_Co_borrower_Income__c</name>
+    </fields><fields>
+        <label><!-- Trust Income --></label>
+        <name>Trust_Income__c</name>
+    </fields><fields>
+        <label><!-- Unemployment/Welfare Income --></label>
+        <name>Unemployment_Welfare_Income__c</name>
+    </fields><fields>
+        <label><!-- VA Benefits (non-education) --></label>
+        <name>VA_Benefits_non_education__c</name>
+    </fields><fields>
+        <label><!-- isActive --></label>
+        <name>isActive__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Income Old</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Incomes Old</value>
+    </caseValues><startsWith>Vowel</startsWith><layouts>
+        <layout>Income Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

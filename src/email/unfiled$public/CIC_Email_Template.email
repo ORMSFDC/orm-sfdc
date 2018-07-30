@@ -1,0 +1,22 @@
+Hello,
+<p>
+A task has been created for a Change in Circumstance submitted on  #ClientName 's loan by #BusinessIndividualName. 
+</p>
+<p>
+Please visit the task for more details. </p>
+<p>
+Loan ID : #LoanId <br/>
+
+Client Name : #ClientName <br/>
+
+Business Individual who submitted the CIC : #BusinessIndividualName<br/>
+
+Date & Time : #Date<br/>
+
+Link : #Link<br/>
+</p>
+
+<p>
+Thank You,<br/>
+- ORMS Support Team 
+</p>

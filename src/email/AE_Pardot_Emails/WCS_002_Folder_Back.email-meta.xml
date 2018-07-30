@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>No Activity Last 7 Days After Broker App Out</name>
+    <style>none</style>
+    <subject>We Do the Heavy Lifting!</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+I sent you a partner application last week, but have not received it back. Once we have your application, we&apos;ll move quickly to get you approved and ready to start uploading loans. Remember, our process is simple, with our specialists available to assist every step of the way. We do all the heavy lifting, so you and your client can have the best experience possible. Are you ready to get started? Send us your application today so we can get to work.
+
+If you have any questions, call me at {!User.Phone} or reply to this email.
+
+
+Best,
+
+{!User.Name} | {!User.Title}
+Phone: {!User.Phone}
+Email: {!User.Email}
+Web: &lt;a href=&quot;http://www.OneReverseMortgageServices.com/&quot;&gt;OneReverseMortgageServices.com&lt;/a&gt;
+
+Our mailing address is:
+4445 Eastgate Mall, Ste 320, San Diego, CA 92121
+&lt;a href=&quot;mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}&quot;&gt;Unsubscribe&lt;/a&gt;
+Equal Housing Lender. Licensed in all 50 states.  NMLS #2052</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

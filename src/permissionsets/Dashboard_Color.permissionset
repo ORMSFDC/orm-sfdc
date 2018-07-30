@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>To enable coloring Dashboard, Updated under System Permissions</description><hasActivationRequired>false</hasActivationRequired><label>Dashboard Color</label><userPermissions>
+        <enabled>true</enabled>
+        <name>ChangeDashboardColors</name>
+    </userPermissions></PermissionSet>

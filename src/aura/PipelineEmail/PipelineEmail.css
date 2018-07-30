@@ -1,0 +1,73 @@
+.THIS {
+}
+
+
+.THIS .defaultCls { 
+   padding-left: 1rem !important;
+     padding-top: 0.1rem !important;
+      padding-bottom: 0.1rem !important;
+    padding-right: 1rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    
+}
+
+.THIS .disabledcls { 
+    padding-left: 1rem !important;
+      padding-top: 0.3rem !important;
+      padding-bottom: 0.3rem !important;
+    padding-right: 1rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    cursor: not-allowed !important;
+}
+
+.THIS .disabledGreenColorcls { 
+    padding-left: 1rem !important;
+      padding-top: 0.3rem !important;
+      padding-bottom: 0.3rem !important;
+    padding-right: 1rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    
+}
+.THIS .Enableddisabledcls { 
+   
+    cursor: pointer !important;
+    
+}
+.THIS .MadalLayout
+{
+    width: 80% !important; 
+    max-width: 50rem !important; 
+    min-width: 20rem !important;  
+}
+.THIS .modalLabel
+{
+    color:#7F8C8D;
+    font-size:15px;
+    font-weight:normal;
+}
+
+.THIS .border
+{
+    padding: 0;
+	border: none;
+	background-color: none;
+}
+
+.THIS .defaultButton { 
+    text-align: center !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important; 
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Enable_Debug__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enable Debug</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enable Debug</inlineHelpText>
+        <label>Enable Debug</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Enable_Exceptions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enable Exceptions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enable Exceptions</inlineHelpText>
+        <label>Enable Exceptions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><customSettingsType>Hierarchy</customSettingsType><description>Logging Settings</description><enableFeeds>false</enableFeeds><label>Logging Settings</label><visibility>Public</visibility></CustomObject>

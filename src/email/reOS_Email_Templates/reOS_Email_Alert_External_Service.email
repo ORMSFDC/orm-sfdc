@@ -1,0 +1,11 @@
+reOS Email Alert - Inbound External Service received for {!ExternalService__c.Name}
+
+Source Id: {!ExternalService__c.SourceID__c}
+
+Request Payload
+{!ExternalService__c.RequestPayload__c}
+
+Response Payload
+{!ExternalService__c.ResponsePayload__c}
+
+Link {!ExternalService__c.Link}

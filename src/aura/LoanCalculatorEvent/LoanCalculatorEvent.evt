@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION">
+   <aura:attribute name="DOBE" type="string" />
+    <aura:attribute name="EHVE" type="Integer"  />
+     <aura:attribute name="CMBE" type="integer" />
+    <aura:attribute name="CMIRE" type="integer" />
+    <aura:attribute name="MMPE" type="integer" />
+</aura:event>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>Enable Dialer Outbound calling functionality</description><hasActivationRequired>false</hasActivationRequired><label>Dialer_Outbound</label><license>VoiceOutboundPsl</license><userPermissions>
+        <enabled>true</enabled>
+        <name>VoiceOutbound</name>
+    </userPermissions></PermissionSet>

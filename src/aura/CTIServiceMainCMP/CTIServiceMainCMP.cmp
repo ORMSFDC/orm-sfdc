@@ -1,0 +1,43 @@
+<aura:component description="The container component that houses the UI of the adapter.">
+    <aura:attribute name="showSpinner" type="Boolean" default="false" />
+    <aura:attribute name="settings" type="Object" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="renderPanel" action="{!c.renderPanel}" />
+    <aura:handler name="editPanel" action="{!c.editPanel}" />
+    <aura:handler name="getSettings" action="{!c.getSettings}" />
+    <aura:registerEvent name="renderPanel" type="c:renderPanel" />
+    <aura:registerEvent name="editPanel" type="c:editPanel" />
+    <aura:registerEvent name="getSettings" type="c:getSettings" />
+    <aura:attribute name="Messagealerttext" type="string" default="" />
+    <aura:attribute name="showAlert" type="Boolean" default="false" />
+     <aura:handler name="Alert" action="{!c.messaggeAlert}" />
+    <aura:registerEvent name="Alert" type="c:Alert" />
+       <aura:if isTrue="{!v.showAlert}">           
+        <div class="demo-only" style="height: 4rem; width: 23.7rem">        
+  <div class="slds-region_narrow slds-is-relative">
+    <div class="slds-notify_container slds-is-absolute">
+      <div class="slds-notify slds-notify_toast slds-theme_success" role="alert">
+        <span class="slds-assistive-text">info</span>
+        <div class="slds-notify__content">
+          <h2 class="slds-text-heading_small">{!v.Messagealerttext}</h2>
+        </div>
+        <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+             
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    </aura:if>
+    
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="slds-spinner_container">
+            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+	{!v.body}
+</aura:component>

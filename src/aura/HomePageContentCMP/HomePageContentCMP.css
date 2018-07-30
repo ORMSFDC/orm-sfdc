@@ -1,0 +1,38 @@
+.THIS {
+    font-family: 'LatoFont'  !important;
+}
+@font-face {
+  font-family: 'LatoFont';   
+   src: url(/resource/LatoFont);
+}
+p.THIS{  
+    margin-bottom: 0 !important;
+}
+.THIS .line
+{
+    display: block !important;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+.THIS .MainHeaderText{
+  	color:#0C4569;
+   font-family: 'LatoFont'  !important;
+    font-size:32px;
+    line-height: 1.26em !important;
+   
+}
+ 
+.THIS .HeaderText{
+    color:#2081BF;
+    font-size: 22px  !important;
+    font-family: 'LatoFont'  !important;
+   
+}
+.THIS .bodyText{
+    color: #222222;
+    font-size: 16px !important;
+   font-family: 'LatoFont'  !important;
+}

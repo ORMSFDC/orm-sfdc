@@ -1,0 +1,13 @@
+Hello,
+<p>
+#BusinessPartnerName has been Approved on #date at #time.
+<br/>
+</p>
+<p>
+Link : #Link<br/>
+</p>
+
+<p>
+Thank You,<br/>
+#AEName
+</p>

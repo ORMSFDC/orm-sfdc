@@ -1,0 +1,40 @@
+<aura:component controller="PartnerHomeAfterLoginController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <ltng:require styles="/resource/SLDS0122/assets/styles/salesforce-lightning-design-system.min.css"/>
+    
+  
+
+    <link href="assets/styles/salesforce-lightning-design-system-vf.css" rel="stylesheet"/>
+    
+      <link rel="stylesheet" href="https://use.typekit.net/rsv2pxm.css"/> 
+    <aura:attribute name="HomePageContent" type="HomePageContent__c" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <form class="slds-form--stacked" style="margin-left: 120px;">
+        <div class="table table-bordered">
+            <table class="table table-striped">
+                <tr><td><h3 class="MainHeaderText"><b>{!$Label.c.HomePageContentHeading}</b></h3>
+                    <div class="line"></div>
+                    </td></tr>
+              
+                <tr><td><br></br></td></tr>
+                <aura:iteration items="{!v.HomePageContent}" var="Content"> 
+                    <tr>
+                        <td><h3 style="margin-top: -23px;line-height:1.285714em !important;"><b  class="HeaderText">{!Content.Name}</b></h3>
+                            
+                        </td>
+                        
+                    </tr>
+                    
+                    <tr>
+                        
+                        <td class="bodyText"><ui:outputRichText aura:id="outputRT" value="{!Content.DetailText__c}"/>
+                        </td>
+                    </tr><tr><td><br></br></td></tr><tr><td><br></br></td></tr>
+                </aura:iteration>
+            </table>
+        </div>
+    </form>
+    
+</aura:component>

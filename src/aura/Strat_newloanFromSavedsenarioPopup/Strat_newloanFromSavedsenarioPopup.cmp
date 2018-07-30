@@ -1,0 +1,157 @@
+<aura:component controller="CreateLoanFromScenario">
+    <aura:attribute name="render_popup" type="Boolean" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="isOpen_c1" type="boolean" default="false"/>
+    <aura:attribute name="isOpen_c" type="boolean" default="false"/>
+    <aura:attribute name="fileupload" type="boolean" default="false"/>
+    <aura:attribute name="showLoan" type="boolean" />
+    <aura:attribute name="showLoanId" type="String" />
+      <aura:attribute name="displayTab" type="Boolean" />
+        <aura:attribute name="LRateType" type="String" />
+        <aura:attribute name="LMortgageAppliedFor" type="String" />
+     <aura:attribute name="showSpinnerLoan" type="boolean" default="false"/>
+ 
+    <aura:attribute name="datepick" type="String"/>
+    <aura:attribute name="senario_id" type="String"/>
+    <aura:attribute name="isDisabled" type="Boolean" default="true"/>
+    <aura:registerEvent name="nav" type="c:NavigatetoLoanMenu"/>
+    <aura:attribute name="ApplicationDate" type="String"/>
+    <aura:attribute name="text" type="String"/>
+    <aura:attribute name="myBool" type="Boolean" default="false"/>
+
+    <aura:handler name="change" value="{!v.myBool}" action="{!c.populateLoanid}"/>
+ 
+    <aura:if isTrue="{!v.render_popup}">
+	<div class="demo-only" style="height: 640px;width:900px">
+  	<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+      <header class="slds-modal__header">
+        <button onclick="{!c.close}" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+        X
+            <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"></h2>
+      </header>
+      <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+       <!-- <p>
+          You are about to proceed to start a new loan application! When you land on the Start a New Loan landing page, please select the application date &amp; agree to the terms &amp; conditions. Then, you have two options:
+          
+          </p>
+          <br/><br/>-->
+          
+         <!--   <div class = "container">
+               
+                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" 
+                           label="{!$Label.c.PartnerSaveLabel}" aura:id="btn" press="{!c.save}" disabled="{!v.fileupload}"  />
+
+                
+               
+            </div>-->
+     <div>
+        
+        <h1 style="font-weight:bold;">{!$Label.c.PartnerAppDateLabel}</h1>  
+        
+        <form class="slds-form--inline">
+<aura:if isTrue="{!v.showSpinnerLoan}"><!--{!v.showSpinnerLoan}-->
+   								 <lightning:spinner variant="brand" size="large"/>
+   							 </aura:if>
+            <div style="margin-bottom:3%; " class="slds-size_1-of-3">
+                <ui:inputSelect aura:id="LoanMortgageAppliedFor" required="true" label="Mortgage Applied for " value="{!v.LMortgageAppliedFor}"
+                    class="fontCss">
+            
+                    <ui:inputSelectOption text="FHA Traditional HECM" label="FHA Traditional HECM" />
+                    <!--<ui:inputSelectOption text="FHA Refinance HECM" label="FHA Refinance HECM"/>-->
+                    <ui:inputSelectOption text="HECM to HECM Refinance" label="HECM to HECM Refinance" />
+                    <ui:inputSelectOption text="HECM for Purchase" label="HECM for Purchase" />
+                </ui:inputSelect>
+            
+            </div>
+            
+            <div style="margin-bottom:3%; " class="slds-size_1-of-3">
+                <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.LRateType}">
+            
+            
+                    <ui:inputSelectOption text="ARM" label="ARM" />
+                    <ui:inputSelectOption text="Fixed" label="Fixed" />
+                </ui:inputSelect>
+            
+            
+            </div>
+            
+            <div class="slds-form-element__control">
+                <input type = "hidden" id = "secret"/>
+                <ui:inputDate aura:id="expname" 
+                              change="{!c.myAction}"
+                              labelClass="slds-form-element__label"
+                              value="{!v.datepick}"
+                              required="true"
+                              displayDatePicker="true"
+                              format="MM/dd/yyyy" updateon="change"
+                              />
+                <label id = "error" style = "color:red"/>
+            </div>
+            
+            <div class="slds-form-element">
+                <!--      <ui:button label="submit"  press="{!c.LoanMenu}"/> -->
+                
+            </div>
+            
+            <div>
+                <ui:outputText class="t" value="{!v.text}"/>
+            </div> 
+        </form>
+        
+        <aura:if isTrue="{!v.isOpen}">
+            <!-- <div class = "slds-form-element">
+               <ui:inputCheckbox aura:id="checkbox" value="{!v.isOpen_c}" change="{!c.openchk}" /> prsn 
+                
+                <ui:outputText value="By checking the box I acknowledge that this is the date that I collected the required pieces of information considered to be an application"/>
+            </div> -->
+            <div class = "slds-form-element">
+             <!--   <ui:inputCheckbox aura:id="checkbox1" value="{!v.isOpen_c1}"  change="{!c.openchk1}"/> prsn -->
+                <br/>
+                <ui:outputText value="By entering the application date, I certify that this is the date that I collected the required pieces of information considered to be an application and that One Reverse will prepare and send a Good Faith Estimate (GFE) package directly to the client. I am aware this will occur whether I finish the registration process or not."/>
+            </div>
+            <br/>
+            <br/>
+            
+            <div class = "container" >
+                <div style="display:none">
+                    <textarea id="inputtxt" ></textarea>
+                </div>
+            
+                 <p>If you have a Fannie Mae 3.2 file, please upload it and click “Start Application”. If you do not have a 3.2 file, please just click “Start Application” to manually enter your loan information.
+          </p>  <br></br>
+                <!--<input type="file" class="file" label="Upload your client's 1003 file (FNMA 3.2 format)" 
+                       aura:id="file" id="fileInput" name="fileInput" multiple="false"   onchange="{!c.BindData}"
+                       accept=".FNM" disabled="{!v.fileupload}" /> prsn -->
+                
+                <input type="file" class="file" label="Upload your client's 1003 file (FNMA 3.2 format)" 
+                       aura:id="file" id="fileInput" name="fileInput" multiple="false"   onchange="{!c.BindData}"
+                       accept=".FNM"  />
+                
+                <!--<ui:button label="try" press="{!c.save1}"/> 
+                </div>
+         <div><img src="" alt="Image preview..."/> -->
+            </div>
+    
+            <br/><br/>      
+         </aura:if>      
+          <div style="text-align:center"> 
+              <br/><br/>   
+              <button class="slds-button slds-button_brand" onclick="{!c.close}">Cancel</button>
+ 		     <!-- <button disabled="{!v.isDisabled}" class="slds-button slds-button_brand" onclick="{!c.start_newloan}" >Proceed</button> -->
+              <button disabled="{!v.isDisabled}" class="slds-button slds-button_brand" onclick="{!c.start_newloan}" >Proceed</button>
+      	  
+        </div>
+        </div>
+		</div> 
+      <footer class="slds-modal__footer">
+      </footer>
+         </div> 
+  </section>
+       </div>
+  <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+     
+</aura:component>

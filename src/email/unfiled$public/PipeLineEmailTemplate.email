@@ -1,0 +1,15 @@
+Hi ORM Support
+
+Loan Number: {!01I0q0000000GQZ.00N0q000000IE0k}
+
+Borrower Name: {!ClientInfo__c.Name} +' '+{!ClientInfo__c.Last_Name__c}
+
+Phone Number: {!ClientInfo__c.Phone_Number__c}
+
+Contact time: {!01I0q0000000GQZ.CreatedDate}
+
+Partner Name: Userinfo.getName();
+
+Loan Officer Name: {!01I0q0000000GQZ.00N0q000000HtIT}
+
+Thanks,

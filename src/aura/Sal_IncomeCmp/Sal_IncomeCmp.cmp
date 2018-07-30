@@ -1,0 +1,1080 @@
+<aura:component controller="Sal_IncomeController"
+                implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="IncomeLoanId" type="String" />
+    <aura:attribute name="LoanId" type="String"
+                    default="a0M0q000000ARqJEAW" />
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+    <aura:attribute name="Heading" type="String" />
+    <aura:attribute name="currentValue" type="String" />
+    
+    <aura:attribute name="recordSaved" type="Boolean" default="false" />
+    <aura:attribute name="enableSave" type="Boolean" default="false" /> 
+    <aura:attribute name="enableAddIncome" type="Boolean" default="false" />
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showSuccess" type="boolean" default="false"/>
+    
+    <!-- Div control for hiding and showing -->
+    <aura:attribute name="divAlimony" type="Boolean" default="false" />
+    <aura:attribute name="divAutomobile" type="Boolean" default="false" />
+    <aura:attribute name="divBoarder" type="Boolean" default="false" />
+    <aura:attribute name="divCapitalGains" type="Boolean" default="false" />
+    <aura:attribute name="divDisability" type="Boolean" default="false" />
+    <aura:attribute name="divFaosterCare" type="Boolean" default="false" />
+    <aura:attribute name="divOverTime" type="Boolean" default="false" />
+    <aura:attribute name="divBonus" type="Boolean" default="false" />
+    
+    <aura:attribute name="divMilitaryBasePay" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryClothAllowance" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryCombatPay" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryFlightPay" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryHazardPay" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryOverseasPay" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryPropPay" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryQuartersAllowance" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryRationsAllowance" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMilitaryVariableHousigAllowance"
+                    type="Boolean" default="false" />
+    <aura:attribute name="divMortgageCreditCertificate" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divMortgageDifferentialCertificate"
+                    type="Boolean" default="false" />
+    <aura:attribute name="divNotesRecievableInstallment" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divOtherTypeOfIncome" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divPensionRetirement" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divSocialSecurity" type="Boolean" default="false" />
+    <aura:attribute name="divSubjectProperty" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divTemporaryDisability" type="Boolean"
+                    default="false" />
+    <aura:attribute name="divTemporaryLeave" type="Boolean" default="false" />
+    <aura:attribute name="divTrust" type="Boolean" default="false" />
+    <aura:attribute name="divUnemployment" type="Boolean" default="false" />
+    <aura:attribute name="divVABenefits" type="Boolean" default="false" />
+    <aura:attribute name="divDividend" type="Boolean" default="false" />
+    <aura:attribute name="divBase" type="Boolean" default="false" />
+    <aura:attribute name="divNetRental" type="Boolean" default="false" />
+    <aura:attribute name="divAccessory" type="Boolean" default="false" />
+    <aura:attribute name="divEmployment" type="Boolean" default="false" />
+    <aura:attribute name="divForeign" type="Boolean" default="false" />
+    <aura:attribute name="divHousing" type="Boolean" default="false" />
+    <aura:attribute name="divNonBorrower" type="Boolean" default="false" />
+    <aura:attribute name="divRoyalty" type="Boolean" default="false" />
+    <aura:attribute name="divSeasonal" type="Boolean" default="false" />
+    <aura:attribute name="divTip" type="Boolean" default="false" />
+    
+    
+    <aura:attribute name="clientList" type="List" />
+    <aura:attribute name="incomeOptions" type="List" />
+    <aura:attribute name="IncomeList" type="Income__c"  />
+    <aura:attribute name="nextOpt" type="boolean" />
+    <aura:attribute name="currentOpt" type="boolean" />
+    <aura:attribute name="prevOpt" type="boolean" />
+    <aura:attribute name="total" type="Double" default="0.00" />
+    <aura:attribute name="ClientIncome" type="Double" default="0.00" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="showPopup" type="boolean" default="false" />
+    <aura:attribute name="showTable" type="boolean" default="false" />
+    <!--Control Id for Validation-->
+    <aura:attribute name="CntrlId" type="string" default="" />
+    <aura:attribute name="ClientID" type="String" default="null" />
+    
+    <!--Confirmation popup to delete -->
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Do you really want to Delete?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">                    
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.closeModel}" label="Cancel"></ui:button>
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.DeleteRecord}" label="Ok"></ui:button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    
+    
+    <div class="slds-form slds-form_compound">        
+        <h4>Clients</h4>
+        <lightning:select aura:id="pickClient" name="selClient"
+                          onchange="{!c.onClientSelectChange}">
+            <aura:iteration items="{!v.clientList}" var="pOptions">
+                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+            </aura:iteration>
+        </lightning:select>
+        
+    </div>
+    <br />
+    <aura:if isTrue="{!v.showTable}">
+        <table class="slds-table_bordered slds-table_cell-buffer ">
+            <thead >
+                <tr style="background-color: #2877bd">
+                    <th scope="col" style="width:1%;color: white;">
+                        Income Description/Category
+                    </th>
+                    <th scope="col" style="text-align:right;width:41%;color: white;">
+                        Income Value
+                    </th>
+                    
+                    <th scope="col">
+                        <!--<h6 style="font-weight:bold;">Edit</h6>-->
+                    </th>
+                    <!--<th >
+                    <h6 style="font-weight:bold;">Delete</h6>
+                </th>-->
+                </tr>
+            </thead>
+            <tbody>
+                <tr id = "SocialIncome">
+                    <td>Social Security Income</td>
+                    <!--<td style="text-align:right;">${!v.IncomeList.Social_Security_Disability_Income__c}</td>-->
+                    <td style="text-align:right;">
+                        <ui:outputCurrency aura:id="curr" value="{!v.IncomeList.Social_Security_Disability_Income__c}"></ui:outputCurrency>
+                    </td>                
+                    <td style="text-align:right;">
+                        <a id = "{!v.IncomeList.Id}"  Title="socialIncome" name="divSocialSecurity" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                    </td>
+                    
+                </tr>
+                <tr id = "PensionIncome">
+                    <td>Pension/Retirement Income</td>
+                    <!--<td style="text-align:right;">${!v.IncomeList.Pension_Retirement_Income__c}</td>-->
+                    <div class="slds-truncate" style="text-align:right;">
+                        <ui:outputCurrency aura:id="curr" value="{!v.IncomeList.Pension_Retirement_Income__c}"></ui:outputCurrency>
+                    </div>
+                    <td style="text-align:right;" >
+                        <a id = "{!v.IncomeList.Id}" Title="pensionIncome" name="divPensionRetirement" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                    </td>
+                </tr>
+                <tr id = "DividendIncome">
+                    <td>Dividend/Interest Income</td>
+                    <!--<td style="text-align:right;">${!v.IncomeList.Dividents_Interest_Income__c}</td>-->
+                    <div class="slds-truncate" style="text-align:right;">
+                        <ui:outputCurrency aura:id="curr" value="{!v.IncomeList.Dividents_Interest_Income__c}"></ui:outputCurrency>
+                    </div>
+                    <td style="text-align:right;">
+                        <a id = "{!v.IncomeList.Id}" Title="dividendIncome" name="divDividend" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                    </td>
+                </tr>
+                <tr id = "BaseEmpIncome">
+                    <td>Employment Income</td>
+                    <!--<td style="text-align:right;">${!v.IncomeList.Base_Employment_Income__c}</td>-->
+                    <div class="slds-truncate" style="text-align:right;">
+                        <ui:outputCurrency aura:id="curr" value="{!v.IncomeList.Base_Employment_Income__c}"></ui:outputCurrency>
+                    </div>
+                    <td style="text-align:right;">
+                        <a id = "{!v.IncomeList.Id}"  Title="baseIncome" name="divBase" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                    </td>
+                </tr>
+                <tr id = "NetRentalIncome">
+                    <td>Net Rental Income</td>
+                    <!--<td style="text-align:right;">${!v.IncomeList.Net_Rental_Income__c}</td>-->
+                    <div class="slds-truncate" style="text-align:right;">
+                        <ui:outputCurrency aura:id="curr" value="{!v.IncomeList.Net_Rental_Income__c}"></ui:outputCurrency>
+                    </div>
+                    <td style="text-align:right;" >
+                        <a id = "{!v.IncomeList.Id}" Title="netRentalIncome" name="divNetRental" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                    </td>
+                </tr>
+                
+                <!--<aura:iteration items="{!v.IncomeList}" var="p">--> 
+                
+                
+                <aura:if isTrue="{!v.IncomeList.Alimony_ChildSupport_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Alimony/Child Support Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currAlimony" value="{!v.IncomeList.Alimony_ChildSupport_Income__c}"></ui:outputCurrency>
+                                </div>
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="AlimonyChildSupport" name="divAlimony" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" name="Alimony_ChildSupport_Income__c" onclick="{!c.DeleteConfirm}">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Automobile_Expense_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Automobile Expense Amount</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currAutomobile" value="{!v.IncomeList.Automobile_Expense_Income__c}"></ui:outputCurrency>
+                                </div>
+                            </td>                   
+                            <td style="text-align:right;"  >
+                                <a id = "{!v.IncomeList.Id}" Title="AutomobileExpance" name="divAutomobile" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Boarder_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Boarder Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currBoarder" value="{!v.IncomeList.Boarder_Income__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="BorderIncome" name="divBoarder" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Capital_Gains__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Capital Gains</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currCapital" value="{!v.IncomeList.Capital_Gains__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;"  >
+                                <a id = "{!v.IncomeList.Id}" Title="CapitalGain" name="divCapitalGains" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Disability_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Disability Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currDisability" value="{!v.IncomeList.Disability_Income__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;"  >
+                                <a id = "{!v.IncomeList.Id}" Title="DisabilityIncome" name="divDisability" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Foster_Care_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Foster Care</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currFoster" value="{!v.IncomeList.Foster_Care_Income__c}"></ui:outputCurrency>
+                                </div>                         
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="FosterCare" name="divFaosterCare" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Base_Pay__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Base Pay</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMBase" value="{!v.IncomeList.Military_Base_Pay__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MBasePay" name="divMilitaryBasePay" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Clothes_Allowance__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Clothes Allowance</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMCloth" value="{!v.IncomeList.Military_Clothes_Allowance__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MClothAllow" name="divMilitaryClothAllowance" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Combat_Pay__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Combat Pay</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMCombat" value="{!v.IncomeList.Military_Combat_Pay__c}"></ui:outputCurrency>
+                                </div>                         
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MCombatPay" name="divMilitaryCombatPay" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Flight_Pay__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Flight Pay</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMFlight" value="{!v.IncomeList.Military_Flight_Pay__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MFlightPay" name="divMilitaryFlightPay" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Hazard_Pay__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Hazard Pay</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMHazard" value="{!v.IncomeList.Military_Hazard_Pay__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;">
+                                <a id = "{!v.IncomeList.Id}" Title="MHazardPay" name="divMilitaryHazardPay" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Overseas_Pay__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Overseas Pay</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMOverseas" value="{!v.IncomeList.Military_Overseas_Pay__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MoverseaPay" name="divMilitaryOverseasPay" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Prop_Pay__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Prop Pay</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMProp" value="{!v.IncomeList.Military_Prop_Pay__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;">
+                                <a id = "{!v.IncomeList.Id}" Title="MpropPay" name="divMilitaryPropPay" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Quarters_Allowance__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Quarters Allowance</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currQAllowance" value="{!v.IncomeList.Military_Quarters_Allowance__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MQuaterAllow" name="divMilitaryQuartersAllowance" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Rations_Allowance__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Rations Allowance</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currRations" value="{!v.IncomeList.Military_Rations_Allowance__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MrationAllow" name="divMilitaryRationsAllowance" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Military_Variable_Housing_allowance__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Military Variable Housing Allowance</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currVHousing" value="{!v.IncomeList.Military_Variable_Housing_allowance__c}"></ui:outputCurrency>
+                                </div>
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MVHousingAllow" name="divMilitaryVariableHousigAllowance" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Mortgage_Credit_Certificate__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Mortgage Credit Certificate</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMCcertificate" value="{!v.IncomeList.Mortgage_Credit_Certificate__c}"></ui:outputCurrency>
+                                </div>
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MortgageCreditCertificate" name="divMortgageCreditCertificate" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Mortgage_Differential_Certificate__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Mortgage Differential</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currMDiffCertificate" value="{!v.IncomeList.Mortgage_Differential_Certificate__c}"></ui:outputCurrency>
+                                </div> 
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="MDiffCertificate" name="divMortgageDifferentialCertificate" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Notes_Receivable_Installment__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Notes Receivable/Installment</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currNrecieve" value="{!v.IncomeList.Notes_Receivable_Installment__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="NotesRecevIns" name="divNotesRecievableInstallment" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Other_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Other Type Of Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currOtherIncome" value="{!v.IncomeList.Other_Income__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;"  >
+                                <a id = "{!v.IncomeList.Id}" Title="OTI" name="divOtherTypeOfIncome" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <!--<aura:if isTrue="{!v.IncomeList.OverTime_Income__c == null }">                    
+                <aura:set attribute="else">
+                    <tr>
+                        <td>Overtime Income</td>
+                        <td style="text-align:right;">                        
+                            <div class="slds-truncate" >
+                                <ui:outputCurrency aura:id="currOvertime" value="{!v.IncomeList.OverTime_Income__c}"></ui:outputCurrency>
+                            </div>                        
+                        </td>                   
+                        <td  style="text-align:right;" >
+                            <a id = "{!v.IncomeList.Id}" Title="OvertimeIncome" name="divOverTime" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                        </td>
+                    </tr>            
+                </aura:set>
+            </aura:if>
+            <aura:if isTrue="{!v.IncomeList.Bonus_Income__c == null }">                    
+                <aura:set attribute="else">
+                    <tr>
+                        <td>Bonus Income</td>
+                        <td style="text-align:right;">                        
+                            <div class="slds-truncate" >
+                                <ui:outputCurrency aura:id="currBonus" value="{!v.IncomeList.Bonus_Income__c}"></ui:outputCurrency>
+                            </div>                        
+                        </td>                   
+                        <td style="text-align:right;" >
+                            <a id = "{!v.IncomeList.Id}" Title="BonusIncome" name="divBonus" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                           <a id = "{!v.IncomeList.Id}" onclick="">Delete</a>
+                        </td>
+                    </tr>            
+                </aura:set>
+            </aura:if>-->
+                <aura:if isTrue="{!v.IncomeList.SubjectProperty_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Subject Property Net Cash Flow</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currSubject" value="{!v.IncomeList.SubjectProperty_Income__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="SubpronetCash" name="divSubjectProperty" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Temporary_Leave_income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Temporary Leave Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currTempLeave" value="{!v.IncomeList.Temporary_Leave_income__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="TempLeave" name="divTemporaryLeave" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Trust_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Trust Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currTrust" value="{!v.IncomeList.Trust_Income__c}"></ui:outputCurrency>
+                                </div>                         
+                            </td>                   
+                            <td  style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="Trust" name="divTrust" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Unemployment_Welfare_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Unemployment/Public Assistance Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currUnemployment" value="{!v.IncomeList.Unemployment_Welfare_Income__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td  style="text-align:right;"  >
+                                <a id = "{!v.IncomeList.Id}" Title="Unempasst" name="divUnemployment" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.VA_Benefits_non_education__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>VA Benefits (Non Educational)</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currVA" value="{!v.IncomeList.VA_Benefits_non_education__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="VABenifit" name="divVABenefits" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+				<aura:if isTrue="{!v.IncomeList.Accessory_Unit_Income__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Accessory Unit Income</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currAccessory" value="{!v.IncomeList.Accessory_Unit_Income__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="AccessoryUnit" name="divAccessory" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!v.IncomeList.Employment_Related_Assets__c == null }">                    
+                    <aura:set attribute="else">
+                        <tr>
+                            <td>Employment Related Assets</td>
+                            <td style="text-align:right;">                        
+                                <div class="slds-truncate" >
+                                    <ui:outputCurrency aura:id="currEmployment" value="{!v.IncomeList.Employment_Related_Assets__c}"></ui:outputCurrency>
+                                </div>                        
+                            </td>                   
+                            <td style="text-align:right;" >
+                                <a id = "{!v.IncomeList.Id}" Title="EmploymentAssets" name="divEmployment" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                                <!--<a id = "{!v.IncomeList.Id}" onclick="">Delete</a>-->
+                            </td>
+                        </tr>            
+                    </aura:set>
+                </aura:if>
+                                
+                <tr style="background-color:lightgray;">
+                    
+                    <td  style="text-align:right;">
+                        <span style="font-weight:bold;">Total &nbsp;</span>
+                    </td>
+                    <td data-label="Value" style="text-align:right;">
+                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="totalID" value="{!v.total}"/></span>
+                    </td>
+                    <td></td>
+                </tr> 
+                <br />
+                
+                <!--<tr style="background-color:lightgray;">
+                    <td style="text-align:right;">
+                        <span style="font-weight:bold;">Total Client's Income &nbsp;</span>
+                    </td>
+                    <td data-label="Value" style="text-align:right;">
+                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="totalClient" value="{!v.ClientIncome}"/></span>
+                    </td>
+                    <td></td>
+                </tr>-->
+                
+            </tbody>
+        </table>
+    </aura:if>
+    
+    <br />
+    <div>
+        <div id="TotalDiv" style="display:block">
+            <table class="slds-table_bordered slds-table_cell-buffer ">
+                <tbody>
+                    <tr style="background-color:lightgray;">
+                        
+                        <td style="text-align:left;">
+                            <span style="font-weight:bold;">Total Client's Income &nbsp;</span>
+                        </td>
+                        <td data-label="Value" style="text-align:left;">
+                            <span style="font-weight:bold;"><ui:outputCurrency aura:id="totalClient1" value="{!v.ClientIncome}"/></span>
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>  
+        </div>
+        <br />
+        <div  id="maindiv" style="display:none">            
+            
+            <!--Drop down options based UI starts from here 
+******************************************************************************** -->
+            
+            <aura:if isTrue="{!v.isOpen}">
+                <!--###### MODAL BOX Start From Here ######-->
+                <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                    <div class="slds-modal__container">
+                        <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 style="color:#2081bf;" id="header43" class="slds-text-heading--medium">{!v.Heading}</h2>
+                        </div>
+                        <!--###### MODAL BOX BODY Part Start From Here ######-->
+                        
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <aura:if isTrue="{!v.divPensionRetirement}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Pension Retirement" aura:id="pensionIncome"
+                                                      value="{!v.IncomeList.Pension_Retirement_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divSocialSecurity}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Social Security Income" aura:id="socialIncome"
+                                                      value="{!v.IncomeList.Social_Security_Disability_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divDividend}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Dividend Income" aura:id="dividendIncome"
+                                                      value="{!v.IncomeList.Dividents_Interest_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divBase}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Base Employment Income" aura:id="baseIncome"
+                                                      value="{!v.IncomeList.Base_Employment_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divNetRental}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Net Rental Income" aura:id="netRentalIncome"
+                                                      value="{!v.IncomeList.Net_Rental_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divAlimony}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">                                
+                                    <ui:inputCurrency label="Alimony Child Support Income" aura:id="AlimonyChildSupport"
+                                                      value="{!v.IncomeList.Alimony_ChildSupport_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divAutomobile}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Automobile Expense Amount" aura:id="AutomobileExpance"
+                                                      value="{!v.IncomeList.Automobile_Expense_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divBoarder}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Boarder Income"  aura:id="BorderIncome" 
+                                                      value="{!v.IncomeList.Boarder_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divCapitalGains}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    <ui:inputCurrency label="Capital Gains" aura:id="CapitalGain" 
+                                                      value="{!v.IncomeList.Capital_Gains__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divDisability}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    <ui:inputCurrency label="Disability Income" aura:id="DisabilityIncome" 
+                                                      value="{!v.IncomeList.Disability_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divFaosterCare}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Foster Care" aura:id="FosterCare" 
+                                                      value="{!v.IncomeList.Foster_Care_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryBasePay}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Base Pay" aura:id="MBasePay"
+                                                      value="{!v.IncomeList.Military_Base_Pay__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryClothAllowance}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Clothes Allowance" aura:id="MClothAllow"
+                                                      value="{!v.IncomeList.Military_Clothes_Allowance__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryCombatPay}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Combat Pay" aura:id="MCombatPay"
+                                                      value="{!v.IncomeList.Military_Combat_Pay__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryFlightPay}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Flight Pay" aura:id="MFlightPay"
+                                                      value="{!v.IncomeList.Military_Flight_Pay__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryHazardPay}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Hazard Pay" aura:id="MHazardPay"
+                                                      value="{!v.IncomeList.Military_Hazard_Pay__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryOverseasPay}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Overseas Pay" aura:id="MoverseaPay"
+                                                      value="{!v.IncomeList.Military_Overseas_Pay__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryPropPay}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Prop Pay" aura:id="MpropPay"
+                                                      value="{!v.IncomeList.Military_Prop_Pay__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryQuartersAllowance}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Quarters Allowance" aura:id="MQuaterAllow"
+                                                      value="{!v.IncomeList.Military_Quarters_Allowance__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryRationsAllowance}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Rations Allowance" aura:id="MrationAllow"
+                                                      value="{!v.IncomeList.Military_Rations_Allowance__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMilitaryVariableHousigAllowance}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Military Variable Housing Allowance" aura:id="MVHousingAllow"
+                                                      value="{!v.IncomeList.Military_Variable_Housing_allowance__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMortgageCreditCertificate}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Mortgage Credit Certificate" aura:id="MortgageCreditCertificate"
+                                                      value="{!v.IncomeList.Mortgage_Credit_Certificate__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divMortgageDifferentialCertificate}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Mortgage Differential" aura:id="MDiffCertificate"
+                                                      value="{!v.IncomeList.Mortgage_Differential_Certificate__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divNotesRecievableInstallment}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Notes Receivable/Installment" aura:id="NotesRecevIns"
+                                                      value="{!v.IncomeList.Notes_Receivable_Installment__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divOtherTypeOfIncome}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Other Type Of Income" aura:id="OTI" 
+                                                      value="{!v.IncomeList.Other_Income__c}" />
+                                    
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divOverTime}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Overtime Income" aura:id="OvertimeIncome" 
+                                                      value="{!v.IncomeList.OverTime_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divBonus}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Bonus Income" aura:id="BonusIncome" 
+                                                      value="{!v.IncomeList.Bonus_Income__c}" />
+                                </div>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.divSubjectProperty}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Subject Property Net Cash Flow" aura:id="SubpronetCash"
+                                                      value="{!v.IncomeList.SubjectProperty_Income__c}" />
+                                </div>
+                            </aura:if>
+                            
+                            <aura:if isTrue="{!v.divTemporaryLeave}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Temporary Leave Income" aura:id="TempLeave"
+                                                      value="{!v.IncomeList.Temporary_Leave_income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divTrust}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Trust" aura:id="Trust" 
+                                                      value="{!v.IncomeList.Trust_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divUnemployment}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Unemployment/Public Assistance Income" aura:id="Unempasst"
+                                                      value="{!v.IncomeList.Unemployment_Welfare_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divVABenefits}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="VA Benefits (Non Educational)" aura:id="VABenifit"
+                                                      value="{!v.IncomeList.VA_Benefits_non_education__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divAccessory}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Accessory Unit Income" aura:id="AccessoryUnit"
+                                                      value="{!v.IncomeList.Accessory_Unit_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divEmployment}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Employment Related Assets" aura:id="EmploymentAssets"
+                                                      value="{!v.IncomeList.Employment_Related_Assets__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divForeign}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Foreign Income" aura:id="ForeignIncome"
+                                                      value="{!v.IncomeList.Foreign_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divHousing}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Housing Choice Voucher" aura:id="HousingVoucher"
+                                                      value="{!v.IncomeList.Housing_Choice_Voucher__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divNonBorrower}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Non Borrower Household Income" aura:id="NBHouseHold"
+                                                      value="{!v.IncomeList.NB_Household_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divRoyalty}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Royalty Payment" aura:id="RoyaltyPayment"
+                                                      value="{!v.IncomeList.Royalty_Payment__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divSeasonal}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Seasonal Income" aura:id="SeasonalIncome"
+                                                      value="{!v.IncomeList.Seasonal_Income__c}" />
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.divTip}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-2">
+                                    
+                                    <ui:inputCurrency label="Tip Income" aura:id="TipIncome"
+                                                      value="{!v.IncomeList.Tip_Income__c}" />
+                                </div>
+                            </aura:if>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <div align="left">  <aura:if isTrue="{!v.showError}">                            
+                                <ui:message title="Error" severity="error" >
+                                    Please review all errors before moving to next page
+                                </ui:message>                                
+                                </aura:if>
+                            </div>
+                            <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}"/>
+                            <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.FormatValidations}"/>
+                            
+                        </div>
+                        
+                        <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                    </div>
+                </div>
+                <div class="slds-backdrop slds-backdrop--open"></div>
+                <!--###### MODAL BOX Part END Here ######-->
+            </aura:if>
+            
+            <br></br>
+            
+            <!--Drop down  starts from here  -->
+            <label for="LoanMortgageAppliedFor" class="control-label"></label>
+            <div class="slds-combobox_container slds-size_medium">
+                
+                <ui:inputSelect aura:id="incomePicklist" label="Other forms of income" value="" change="{!c.PickChange}">
+                    <ui:inputSelectOption value="true" text="---Select option---" label="---Select option---" />
+                    <aura:iteration items="{!v.incomeOptions}" var="iOptions">
+                        <ui:inputSelectOption text="{!iOptions.value}" label="{!iOptions.value}"/>
+                    </aura:iteration>
+                    
+                </ui:inputSelect>
+            </div>
+            <br />
+            
+            <aura:if isTrue="{!v.enableAddIncome}">
+                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                           aura:id="AddIncome" label="Add Income" press="{!c.AddRecord}" />
+            </aura:if>
+            
+            <aura:if isTrue="{!v.showError}">                            
+                <ui:message title="Error" severity="error" closable="false">
+                    Please review all errors and save again.
+                </ui:message>                                
+            </aura:if>
+            <aura:if isTrue="{!v.showSuccess}">                            
+                <ui:message title="Information" severity="confirm" closable="false">
+                    Income Saved Successfully.
+                </ui:message>                                
+            </aura:if>
+            
+            <br></br>            
+            
+        </div>        
+        <br></br>
+        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                   aura:id="addSubjectProperty" label="Previous" press="{!c.previous}" />
+        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                   label="Next" press="{!c.MoveNext}"></ui:button>
+    </div>
+    
+</aura:component>

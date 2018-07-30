@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>LoanId__c</fullName>
+        <description>The ID of the completed loan.</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>LoanId</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><deploymentStatus>Deployed</deploymentStatus><description>Event raised when a loan application has been submitted.</description><eventType>StandardVolume</eventType><label>Loan Application Submitted</label><pluralLabel>Loan Application Submitted</pluralLabel></CustomObject>

@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION">
+<aura:attribute name="LoanId" type="String" />
+<aura:attribute name="File" type="Loan_New__c" />
+</aura:event>

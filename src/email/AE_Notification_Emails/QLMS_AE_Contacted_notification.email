@@ -1,0 +1,10 @@
+Hello {!Lead.QLMS_First_Name__c},
+<P>
+ORMS has attempted to contact your partner, {!Lead.Name}. <br/>
+<P>
+Sincerely,
+<P>
+{!User.Name}<br />
+{!User.Title}<br />
+{!User.Phone}<br />
+{!User.Email}<br />

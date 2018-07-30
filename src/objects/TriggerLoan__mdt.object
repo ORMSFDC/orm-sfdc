@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Enable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enable</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enable</inlineHelpText>
+        <label>Enable</label>
+        <type>Checkbox</type>
+    </fields><description>Controls (enables/disables) individual methods within TriggerHandlerLoan.cls</description><label>TriggerLoan</label><pluralLabel>TriggerLoan</pluralLabel><visibility>Public</visibility></CustomObject>

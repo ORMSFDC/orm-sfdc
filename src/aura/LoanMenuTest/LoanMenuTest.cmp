@@ -1,0 +1,842 @@
+<aura:component controller="LoanMenuController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="css" type="String"  />
+    <aura:handler name="render" action="{!c.onLoad}" value="{!this}" />
+    <aura:attribute name="loan" type="Loan__c" />
+    <aura:attribute name="tab" type="Integer" default="0"/>
+    <aura:attribute name="val" type="String" />
+    <aura:attribute name="client_borrowering_spouse" type="boolean" default="false"/>
+    <aura:attribute name="client_borrowering_resident" type="boolean" default="true"/>
+    <aura:attribute name="name" type="string" default="true"/>
+    <aura:attribute name="toggle" type="string" default="#Loan"/>
+    
+    
+    
+    
+    <html>
+        <head> <!--head starts -->
+            
+            <title>Sample</title>
+            <!-- <ltng:require styles= /> -->
+            <ltng:require scripts="{!$Resource.jquery}"/>
+            <ltng:require scripts="{!$Resource.bootstrap}"/> 
+            
+            
+            <link rel="stylesheet" type="text/css" href="{!$Resource.bootstrapiso}"/>
+            
+            
+            
+        </head>
+        
+        
+        <body> <!--body starts -->
+            <div class="bootstrap-iso">
+                
+                
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="nav nav-pills nav-stacked" id= "parent">
+                                <li><a class = "step" id = "step1" data-toggle="collapse" data-parent="#parent" href="#p1" onclick = "{!c.click_step1}"><span class = "steptext">Step1</span></a>
+                                    <ul class="nav nav-pills nav-stacked collapse"  id = "p1" style="font-size:10px">
+                                        <li id = "l1"><a data-toggle="pill"   href="#Loan">Loan</a> </li>
+                                        <li id = "l2"><a  data-toggle="pill"  href="#subject">Subject Property</a></li>
+                                        <li id = "l3"><a  data-toggle="pill"  href="#client">Client</a></li>
+                                        <li id = "l4"><a  data-toggle="pill"  href="#employment">Employment</a></li>
+                                        <li id = "l5"><a  data-toggle="pill"  href="#income">Income</a></li>
+                                        <li id = "l6"><a  data-toggle="pill"  href="#assets">Assets</a></li>
+                                        <li id = "l7"><a  data-toggle="pill"  href="#liabilities">Liabilities</a></li>
+                                        <li id = "l8"><a  data-toggle="pill"  href="#declarations">Declarations</a></li>
+                                        <li class="nav-divider"></li>
+                                        
+                                    </ul>
+                                    
+                                </li>
+                                <li><a class =  "step" id = "step2" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}"><Span class = "steptext">Step2</Span></a></li>
+                                <ul class="nav nav-pills nav-stacked collapse out clc" id="p2" style="font-size:10px">
+                                    <li><a  data-toggle="pill" href="#LoanDetails">Loan Details</a></li>
+                                    <li><a data-toggle="pill" href="#CreditInfo">Credit Info</a></li>
+                                    <li><a  data-toggle="pill" href="#LoanContacts">Loan Contacts</a></li>
+                                    <li class="nav-divider"></li>
+                                    
+                                </ul>
+                                <!--<li><a data-toggle="pill" href="#menu2" onclick = "{!c.click_step3}">Step 3</a></li> -->
+                                
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="tab-content">
+                              <!-- <div id="home" class="tab-pane fade in active">
+                                  <h3>Hiii</h3>  
+                                </div> -->
+                                
+                                <!-- Reverse Loan starts -->
+                                <div name = "l1" id="Loan" class="tab-pane fade in active">
+                                    
+                                    
+                                    <h3>Reverse Loan</h3> 
+                                    <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+                                    <div class="tag-box tag-box-v2">
+                                        <form>
+                                            <div class="form-group"> <!-- State Button -->
+                                                <label for="mortgage" class="control-label">Mortgage Applied for</label>
+                                                <select class="form-control" id="mortgage" >
+                                                    <option value="T">FHA Traditional HECM</option>
+                                                    <option value="R">FHA Refinance HECM</option>
+                                                </select>					
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                
+                                                <label class="col-md-4 control-label" for="rolename">Purpose of Loan</label>
+                                                
+                                                <!--<div class="col-md-4">-->
+                                                
+                                                <select id="multi_select-ui" class="multiselect-ui form-control" multiple="multiple">
+                                                    
+                                                    <option value="AI">Additional Income</option>
+                                                    
+                                                    <option value="HI">Home Improvement</option>
+                                                    
+                                                    <option value="PT">Payment of Taxes</option>
+                                                    
+                                                    <option value="PI">Payment of Insurance</option>
+                                                    
+                                                    <option value="L">Leisure</option>
+                                                    
+                                                    <option value="M">Medical</option>
+                                                    
+                                                    <option value="EFM">Extingish Forward Mortgage</option>
+                                                    
+                                                    <option value="O">Other</option>
+                                                    
+                                                </select>
+                                                
+                                            </div>
+                                            
+                                            
+                                            
+                                            
+                                            <div class="form-group"> <!-- Street 1 -->
+                                                <label for="Loan_originated_fee_id" class="control-label">Loan Origination Fee</label>
+                                                <input type="text" class="form-control" id="Loan_originated_fee_id" name="Loan_originated_fee"/>
+                                            </div>					
+                                            
+                                            <div class="form-group"> <!-- Street 2 -->
+                                                <label for="Estimate_of_Appraisaed_Value_id" class="control-label">Estimate of Appraisaed Value</label>
+                                                <input type="text" class="form-control" id="Estimate_of_Appraisaed_Value_id" name="Estimate_of_Appraisaed_Value" />
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- State Button -->
+                                                <label for="application_taken_by_id" class="control-label">Application Taken By</label>
+                                                <select class="form-control" id="application_taken_by_id" >
+                                                    <option value="F2F">Face to Face</option>
+                                                    <option value="T">Telephone Interview</option>
+                                                    <option value="Fax">By the applicant and submitted by fax or mail</option>
+                                                    <option value="Email">By the applicant and submitted via email or the Internet</option>
+                                                </select>					
+                                            </div>
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="Loan_Originator_Name_id" class="control-label">Loan Originator’s Name</label>
+                                                <input type="text" class="form-control"  id="Loan_Originator_Name_id" name="Loan_Originator_Name" />
+                                            </div>									
+                                            
+                                            
+                                            <div class="form-group"> <!-- Zip Code-->
+                                                <label for="Interview_Date_id" class="control-label">Interview Date</label>
+                                                <input type="date" class="form-control" id="Interview_Date_id" name="Interview_Date"/>
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="Loan_Originator_Phone_Number_id" class="control-label">Loan Originator’s Phone Number</label>
+                                                <input type="text" class="form-control"  id="Loan_Originator_Phone_Number_id" name="Loan_Originator_Phone_Number" placeholder="+1 (999) 999 9999" />
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="Loan_Origination_Company_Name_id" class="control-label">Loan Origination Company’s Name</label>
+                                                <input type="text" class="form-control"  id="Loan_Origination_Company_Name_id" name="Loan_Origination_Company_Name" />
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="Loan_Origination_Company_Address_id" class="control-label">Loan Origination Company’s Address</label>
+                                                <input type="text" class="form-control"  id="Loan_Origination_Company_Address_id" name="Loan_Origination_Company_Address" />
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="Loan_Originator_Identifier_id" class="control-label">Loan Originator Identifier</label>
+                                                <input type="text" class="form-control"  id="Loan_Originator_Identifier_id" name="Loan_Originator_Identifier" />
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="Loan_Origination_Company_Identifer_id" class="control-label">Loan Origination Company Identifer</label>
+                                                <input type="text" class="form-control"  id="Loan_Origination_Company_Identifer_id" name="Loan_Origination_Company_Identifer" />
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="HouseHold_Members_id" class="control-label">HouseHold Members</label>
+                                                <input type="text" class="form-control"  id="HouseHold_Members_id" name="HouseHold_Members" />
+                                            </div>	
+                                            
+                                            <div class="form-group"> <!-- State Button -->
+                                                <label for="Children_id" class="control-label">Children Under the age of 6 living in the home? </label>
+                                                <select class="form-control" id="Children_id" >
+                                                    <option value="True">True</option>
+                                                    <option value="False">False</option>
+                                                </select>					
+                                            </div>
+                                            
+                                            <div class="form-group"> <!-- State Button -->
+                                                <label for="POA_id" class="control-label">Is there a POA? (Name, Representing and Reason) </label>
+                                                <select class="form-control" id="POA_id" >
+                                                    <option value="True">True</option>
+                                                    <option value="False">False</option>
+                                                </select>					
+                                            </div>
+                                            
+                                            <div class="form-group"> <!-- City-->
+                                                <label for="Sqaure_Footage_id" class="control-label">Sqaure Footage</label>
+                                                <input type="text" class="form-control"  id="Sqaure_Footage_id" name="Sqaure_Footage" />
+                                            </div>
+                                            
+                                            <div class = "form-group">
+                                                <label for="Alternate Contact (Name, Address, Phone)" class="control-label">Alternate Contact (Name, Address, Phone)</label>
+                                            </div>
+                                            <form>
+                                                
+                                                <div class="form-group panel panel-default"> 
+                                                    
+                                                    
+                                                    <input type="text" class="form-control"  id="alternate_name_id" name="Sqaure_Footage" placeholder="Name" />
+                                                    <input type="text" class="form-control"  id="alternate_address_id" name="Sqaure_Footage" placeholder = "Address" />
+                                                    <input type="text" class="form-control"  id="alternate_phone__id" name="Sqaure_Footage" placeholder = "Phone"/>
+                                                    
+                                                    
+                                                </div>
+                                            </form>
+                                            
+                                            <div>
+                                                <a data-toggle = "pill" href="#subject" class="btn btn-default" onclick = "{!c.Loan_Next}">Next</a>
+                                            </div>
+                                            
+                                            
+                                        </form>	
+                                    </div>
+                                </div>
+                                
+                                <!-- MENU1 -->
+                                
+                                
+                                <div id="menu1" class="tab-pane fade">
+                                    <h3>Menu 1</h3>
+                                    <form method="post">
+                                        <div class="form-group ">
+                                            <label class="control-label " for="name">
+                                                Hi!!!
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <div id="subject" class="tab-pane fade">
+                                    <h3>Subject Property</h3>
+                                    <form method="post">
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Subject_Property_Address_id">
+                                                Subject Property Address
+                                            </label>
+                                            <input class="form-control" id="Subject_Property_Address_id" name="Subject_Property_Address" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Legal_Description_of_Property_id">
+                                                Legal Description of Property
+                                            </label>
+                                            <input class="form-control" id="Legal_Description_of_Property_id" name="Legal_Description_of_Property_id" type="text"/>
+                                        </div>
+                                        
+                                        <div class="form-group"> <!-- State Button -->
+                                            <label for="Resident_Type_id" class="control-label">Residence Type</label>
+                                            <select class="form-control" id="Resident_Type_id" >
+                                                <option value="Primary">Primary</option>
+                                                <option value="Investment">Investment</option>
+                                            </select>					
+                                        </div>
+                                        
+                                        <div class="form-group ">
+                                            <label class="control-label " for="No_of_Units_id">
+                                                No of Units
+                                            </label>
+                                            <input class="form-control" id="No_of_Units_id" name="No_of_Units"  type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Year_Built_id">
+                                                Year Built
+                                            </label>
+                                            <input class="form-control" id="Year_Built_id" name="Year_Built" type="text"/>
+                                        </div>
+                                        
+                                        <div class="form-group"> <!-- State Button -->
+                                            <label for="Property_Held_as_id" class="control-label">Property Held as</label>
+                                            <select class="form-control" id="Property_Held_as_id" >
+                                                <option value="TBD">TBD</option>
+                                                <option value="TBD">TBD</option>
+                                            </select>					
+                                        </div>
+                                        
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Property_Title_id">
+                                                Property Title is Held in These Names
+                                            </label>
+                                            <input class="form-control" id="Property_Title_id" name="Property_Title" type="text"/>
+                                        </div>
+                                        
+                                        <div class="form-group"> <!-- State Button -->
+                                            <label for="Title_Held_as_id" class="control-label">Check If Title is also Held As</label>
+                                            <select class="form-control" id="Title_Held_as_id" >
+                                                <option value="Living Trust">Living Trust</option>
+                                                <option value="irrevocable">If Yes - Irrevocable Trust</option>
+                                                <option value="Revocable Trust">Revocable Trust</option>
+                                            </select>					
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Real_Estate_Taxes_id">
+                                                Real Estate Taxes
+                                            </label>
+                                            <input class="form-control" id="Real_Estate_Taxes_id" name="Real_Estate_Taxes" type="number"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Hazard_Insurance_id">
+                                                Hazard Insurance
+                                            </label>
+                                            <input class="form-control" id="Hazard Insurance_id" name="Hazard Insurance" type="number"/>
+                                        </div>
+                                        
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Property_Title_id">
+                                                HOA, PUD, Condo Fees
+                                            </label>
+                                            <input class="form-control" id="HOA_PUD_Condo_Fees_id" name="HOA_PUD_Condo_Fees" type="number"/>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div>
+                                                <div>
+                                                    <a data-toggle = "pill" href="#Loan" class="btn btn-default" onclick = "{!c.Subject_Prev}">Prev</a>
+                                                    <a data-toggle = "pill" href="#client" class="btn btn-default" onclick = "{!c.Subject_Next}">Next</a>
+                                                </div>                    
+                                                
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <div id="assets" class="tab-pane fade">
+                                    <h3>Assets</h3>
+                                    <form method="post">
+                                        <div class="form-group ">
+                                            <label class="control-label " for="number">
+                                                Total Assets
+                                            </label>
+                                            <input class="form-control" id="number" name="number" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text">
+                                                Name of Institution
+                                            </label>
+                                            <input class="form-control" id="text" name="text" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text1">
+                                                Address of Institution
+                                            </label>
+                                            <input class="form-control" id="text1" name="text1" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text2">
+                                                Account Number
+                                            </label>
+                                            <input class="form-control" id="text2" name="text2" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text3">
+                                                Cash or Market Value
+                                            </label>
+                                            <input class="form-control" id="text3" name="text3" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text4">
+                                                Total Assets
+                                            </label>
+                                            <input class="form-control" id="text4" name="text4" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="textarea">
+                                                Schedule of REO Property Address
+                                            </label>
+                                            <textarea class="form-control" cols="40" id="textarea" name="textarea" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text5">
+                                                Present Market Value
+                                            </label>
+                                            <input class="form-control" id="text5" name="text5" type="text"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <div>
+                                                    <a data-toggle = "pill" href="#income" class="btn btn-default" onclick = "{!c.Assets_Prev}">Prev</a>
+                                                    <a data-toggle = "pill" href="#liabilities" class="btn btn-default" onclick = "{!c.Assets_Next}">Next</a>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <div id="income" class="tab-pane fade">
+                                    <h3>Income</h3>
+                                    <form method="post">
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text">
+                                                Total Gross Monthly Income
+                                            </label>
+                                            <input class="form-control" id="text" name="text" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="textarea">
+                                                Describe Other Income
+                                            </label>
+                                            <textarea class="form-control" cols="40" id="textarea" name="textarea" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text1">
+                                                Monthly Income
+                                            </label>
+                                            <input class="form-control" id="text1" name="text1" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text2">
+                                                Gross Rental Income
+                                            </label>
+                                            <input class="form-control" id="text2" name="text2" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text3">
+                                                Net Rental Income
+                                            </label>
+                                            <input class="form-control" id="text3" name="text3" type="text"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <a data-toggle = "pill" href="#employment" class="btn btn-default" onclick = "{!c.Income_Prev}">Prev</a>
+                                                <a data-toggle = "pill" href="#assets" class="btn btn-default" onclick = "{!c.Income_Next}">Next</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>    
+                                
+                                <div id="employment" class="tab-pane fade">
+                                    <h3>Employment</h3>
+                                    <form method="post">
+                                        <div class="form-group ">
+                                            <label class="control-label " for="name">
+                                                Name
+                                            </label>
+                                            <input class="form-control" id="name" name="name" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text">
+                                                Street Address1
+                                            </label>
+                                            <input class="form-control" id="text" name="text" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text">
+                                                Street Address2
+                                            </label>
+                                            <input class="form-control" id="text" name="text" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text1">
+                                                City
+                                            </label>
+                                            <input class="form-control" id="text1" name="text1" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text2">
+                                                State
+                                            </label>
+                                            <input class="form-control" id="text2" name="text2" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="select">
+                                                Self Employed
+                                            </label>
+                                            <select class="select form-control" id="select" name="select">
+                                                <option value="Yes">
+                                                    Yes
+                                                </option>
+                                                <option value="No">
+                                                    No
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="tel">
+                                                Business Phone
+                                            </label>
+                                            <input class="form-control" id="tel" name="tel" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="date">
+                                                Date (From)
+                                            </label>
+                                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="date1">
+                                                Date (To)
+                                            </label>
+                                            <input class="form-control" id="date1" name="date1" placeholder="MM/DD/YYYY" type="text"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <div>
+                                                <a data-toggle = "pill" href="#client" class="btn btn-default" onclick = "{!c.Emp_Prev}">Prev</a>
+                                                <a data-toggle = "pill" href="#income" class="btn btn-default" onclick = "{!c.Emp_Next}">Next</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                
+                                <div id="client" class="tab-pane fade">
+                                    <h3>Client</h3>
+                                    <form method="post">
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Borrowers_name_id">
+                                                Borrowers Name
+                                            </label>
+                                            <input class="form-control" id="Borrowers_name_id" name="Borrowers_name" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="SSN_id" >
+                                                Social Security Number
+                                            </label>
+                                            <input class="form-control" id="SSN_id" name="SSN" type="text" maxlength = "11" placeholder="###-##-####"  onkeypress = "{!c.ssn_validate}" onchange = "{!c.ssn_validate_change}" />
+                                            
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="dob_id">
+                                                Date of Birth
+                                            </label>
+                                            <input class="form-control" id="dob_id" name="dob" placeholder="MM/DD/YYYY" type="date"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text">
+                                                Street Address1
+                                            </label>
+                                            <input class="form-control" id="text" name="text" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text">
+                                                Street Address2
+                                            </label>
+                                            <input class="form-control" id="text" name="text" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text1">
+                                                City
+                                            </label>
+                                            <input class="form-control" id="text1" name="text1" type="text"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="control-label " for="text2">
+                                                State
+                                            </label>
+                                            <input class="form-control" id="text2" name="text2" type="text"/>
+                                        </div>
+                                        
+                                        <div class="form-group ">
+                                            <label class="control-label " for="Years_present_address">
+                                                Years of Residence at Present Address
+                                            </label>
+                                            <input class="form-control" id="Years_present_address_id" name="Years_present_address" type="number"/>
+                                        </div>
+                                        
+                                        <aura:if isTrue="{!v.client_borrowering_spouse}">
+                                            <div class="form-group ">
+                                                <label class="control-label " for="Name">
+                                                    Non Borrowering Spouse Name
+                                                </label>
+                                                <input class="form-control" id="Name_id" name="Name" type="text"/>
+                                            </div>
+                                            
+                                            <div class="form-group ">
+                                                <label class="control-label " for="phone">
+                                                    Non Borrowering Spouse Phone
+                                                </label>
+                                                <input class="form-control" id="phone_id" name="phone" type="text" placeholder = "+1 (999)(999)(9999)" />
+                                            </div>
+                                            
+                                            <div class="form-group ">
+                                                <label class="control-label " for="dob">
+                                                    Non Borrowering Spouse Date of Birth
+                                                </label>
+                                                <input class="form-control" id="dob" name="dob" type="date"/>
+                                            </div>
+                                            
+                                            <div class="form-group"> 
+                                                <label for="Relationship_id" class="control-label">Non Borrowering Spouse Relationship</label>
+                                                <select class="form-control" id="Relationship_id" >
+                                                    <option value="Married">Married</option>
+                                                    <option value="Separated">Separated</option>
+                                                    
+                                                </select>					
+                                            </div>
+                                            
+                                        </aura:if>
+                                        
+                                        
+                                        <aura:if isTrue="{!v.client_borrowering_resident}">
+                                            <div class="form-group ">
+                                                <label class="control-label " for="Name">
+                                                    Non Borrowering Resident Name
+                                                </label>
+                                                <input class="form-control" id="Name_id" name="Name" type="text"/>
+                                            </div>
+                                            
+                                            <div class="form-group ">
+                                                <label class="control-label " for="phone">
+                                                    Non Borrowering Resident Phone
+                                                </label>
+                                                <input class="form-control" id="phone_id" name="phone" type="text" placeholder = "+1 (999)(999)(9999)" />
+                                            </div>
+                                            
+                                            <div class="form-group ">
+                                                <label class="control-label " for="dob">
+                                                    Non Borrowering Resident Date of Birth
+                                                </label>
+                                                <input class="form-control" id="dob" name="dob" type="date"/>
+                                            </div>
+                                            
+                                            <div class="form-group"> 
+                                                <label for="Relationship_id" class="control-label">Non Borrowering Resident Relationship</label>
+                                                <select class="form-control" id="Relationship_id" >
+                                                    <option value="Married">Married</option>
+                                                    <option value="Separated">Separated</option>
+                                                    
+                                                </select>					
+                                            </div>
+                                            
+                                        </aura:if>
+                                        
+                                        <div class="form-group">
+                                            <div>
+                                                
+                                                <a data-toggle = "pill" href="#subject" class="btn btn-default" onclick = "{!c.Client_Prev}">Prev</a>
+                                                <a data-toggle = "pill" href="#employment" class="btn btn-default" onclick = "{!c.Client_Next}">Next</a>
+                                                
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <div id="liabilities" class="tab-pane fade">
+                                    <h3>Liabilities</h3>
+                                    <form method="post">
+                                        
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Alimony/Child Support</label>
+                                            <input type="text" class="form-control"  id="alimony_id" name="alimony" />
+                                        </div>	
+                                        
+                                        <div class="form-group"> 
+                                            <label for="job_related_id" class="control-label">Job Related</label>
+                                            <input type="text" class="form-control"  id="job_related_id" name="job_related" />
+                                        </div>
+                                        
+                                        <div class="form-group"> 
+                                            <label for="mortgage_amount_id" class="control-label">Amounts of Liens and Mortgages</label>
+                                            <input type="text" class="form-control"  id="mortgage_amount_id" name="mortgage_amount" />
+                                        </div>
+                                        
+                                        <div class="form-group"> 
+                                            <label for="Mortgage_Payments_id" class="control-label">Mortgage Payments</label>
+                                            <input type="text" class="form-control"  id="Mortgage_Payments_id" name="Mortgage_Payments" />
+                                        </div>
+                                        
+                                        <div class="form-group"> 
+                                            <label for="taxes_id" class="control-label">Ins. Maintainance, Taxes</label>
+                                            <input type="text" class="form-control"  id="taxes_id" name="taxes" />
+                                        </div>
+                                        
+                                        <div class="form-group"> 
+                                            <label for="combined_monthly_debt_id" class="control-label">Combined Monthly Debt</label>
+                                            <input type="text" class="form-control"  id="combined_monthly_debt_id" name="combined_monthly_debt" />
+                                        </div>
+                                        
+                                        <div>
+                                            <a data-toggle = "pill" href="#assets" class="btn btn-default" onclick = "{!c.Liab_Prev}">Prev</a>
+                                            <a data-toggle = "pill" href="#declarations" class="btn btn-default" onclick = "{!c.Liab_Next}">Next</a>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                
+                                <!--Declaration code to be added -->
+                                <div id="declarations" class="tab-pane fade">
+                                    <h3>Declarations</h3>
+                                    <form method="post">
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Are there any outstanding judgments against you?</label>
+                                            <ui:inputRadio text="Yes" name="oj" aura:id="oj1" label="Yes" />
+                                            <ui:inputRadio text="No" name="oj" aura:id="oj2" label="No" />
+                                            <br/>
+                                        </div>
+                                        
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Have you had property foreclosed upon or given title or deed in lieu thereof in the last 7 years?</label>
+                                            <ui:inputRadio text="Yes" name="pf" aura:id="pf1" label="Yes" />
+                                            <ui:inputRadio text="No" name="pf" aura:id="pf2" label="No" />
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Are you a party to a lawsuit?</label>
+                                            <ui:inputRadio text="Yes" name="pl" aura:id="pl1" label="Yes" />
+                                            <ui:inputRadio text="No" name="pl" aura:id="pl2" label="No" />
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Is any part of the down payment borrowed?</label>
+                                            <ui:inputRadio text="Yes" name="dp" aura:id="dp1" label="Yes" />
+                                            <ui:inputRadio text="No" name="dp" aura:id="dp2" label="No" />
+                                            <br/>
+                                        </div>    
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Are you a co-maker or!</label>
+                                            <ui:inputRadio text="Yes" name="cm" aura:id="cm1" label="Yes" />
+                                            <ui:inputRadio text="No" name="cm" aura:id="cm2" label="No" />
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Are you a U.S. citizen?k. Are you a permanent resident alien?</label>
+                                            <ui:inputRadio text="Yes" name="usc" aura:id="usc1" label="Yes" />
+                                            <ui:inputRadio text="No" name="usc" aura:id="usc2" label="No" />
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Do you intend to occupy…</label>
+                                            <ui:inputRadio text="Yes" name="io" aura:id="io1" label="Yes" />
+                                            <ui:inputRadio text="No" name="io" aura:id="io2" label="No" />
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Declaration: Have you filed for any bankruptcy that has not yet been resolved?</label> 
+                                            <ui:inputRadio text="Yes" name="br" aura:id="br1" label="Yes" />
+                                            <ui:inputRadio text="No" name="br" aura:id="br2" label="No" />    
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Declaration: Do you intend to use the Reverse Mortgage to purchase or invest in financial products such as Insurance, Mutual Funds or annuities?</label> 
+                                            <ui:inputRadio text="Yes" name="rm" aura:id="rm1" label="Yes" />
+                                    
+                                            
+                                            <ui:inputRadio text="No" name="rm" aura:id="rm2" label="No" />    
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Declarations:  Do you have an existing FHA insured loan?</label> 
+                                            <ui:inputRadio text="Yes" name="fha" aura:id="fha1" label="Yes" />
+                                            <ui:inputRadio text="No" name="fha" aura:id="fha2" label="No" />    
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Ethnicity ?</label> 
+                                            <ui:inputRadio text="Yes" name="hl" aura:id="hl1" label="Hispanic or Latino" />
+                                            <ui:inputRadio text="No" name="hl" aura:id="hl2" label="Not Hispanic or Latino" />    
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Race</label> 
+                                            <select id="multi_select-ui" class="multiselect-ui form-control" multiple="multiple">
+                                                
+                                                <option value="AIAN">American Indian or Alaska Native</option>
+                                                
+                                                <option value="Asian">Asian</option>
+                                                
+                                                <option value="BAA">Black or Africian American</option>
+                                                
+                                                <option value="NHPI">Native Hawaiian or Other Pacific Islander</option>
+                                                
+                                                <option value="White">White</option>
+                                                
+                                            </select>    
+                                            <br/>
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="alimony_id" class="control-label">Sex</label> 
+                                            <ui:inputRadio name="sex" text="Male" aura:id="s1" label="Male" />
+                                            <ui:inputRadio name="sex" text="Female" aura:id="s2" label="Female" />    
+                                            <br/>
+                                            <div>
+                                                <a data-toggle = "pill" href="#liabilities" class="btn btn-default" onclick = "{!c.Dec_Prev}">Prev</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <!--Loan Details code to be added -->
+                                <div id="LoanDetails" class="tab-pane fade">
+                                    <div style="color:blue; font-bold:true; font-size:x-Large;">
+                                        Credit Information
+                                    </div>
+                                    <br/>
+                                    <div style="color:black; font-bold:true; font-size:Large;">
+                                        Client's Credit Score
+                                    </div>
+                                    <input type="text" class="form-control"  id="clienr_credit_score" name="clienr_credit_score" />
+                                    <br/>
+                                    <div style="color:black; font-bold:true; font-size:Large;">
+                                        Client's Credit Score
+                                    </div>
+                                    <div class="form-group"> 
+                                        <ui:inputRadio name="credit" text="Pull_New_Credit" aura:id="c1" label="Pull New Credit" />
+                                        <ui:inputRadio name="credit" text="Reissue_Credit" aura:id="c2" label="Reissue Credit" />    
+                                        <br/>
+                                    </div>
+                                    <div style="color:blue; font-bold:true; font-size:x-Large;">
+                                        Alice Firstimer Credit Report
+                                    </div>
+                                    <br/>
+                                    <div style="color:black; font-bold:true; font-size:Large;">
+                                        Report Type
+                                        <br/>
+                                        <div class="form-group"> 
+                                            <ui:inputRadio name="rpt" text="Individual" aura:id="c1" label="Individual" />
+                                            
+                                            <br/>
+                                        </div>   
+                                    </div>
+                                    <div style="color:black; font-bold:true; font-size:x-Large;">
+                                        Client:
+                                    </div>
+                                    <div style="color:black; font-bold:true; font-size:Large;">
+                                        Alice Firstimer
+                                    </div>
+                                </div>                            
+                                
+                                <div id="menu3" class="tab-pane fade">
+                                    <h3>Menu 3</h3>
+                                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+        </body></html>
+    
+    
+</aura:component>

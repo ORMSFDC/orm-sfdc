@@ -1,0 +1,73 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="ConditionController"  >
+	 <aura:attribute name="ConditionData" type="Object[]"/> 
+     <aura:attribute name="ConditionId" type="String"/> 
+    <aura:attribute name="CreateBy" type="String"/> 
+     <aura:attribute name="ModifyBy" type="String"/> 
+     <aura:attribute name="CreateDate" type="String"/> 
+    <aura:attribute name="ModifyDate" type="String"/>
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+<thead>
+<tr class="slds-text-title_caps">
+<th scope="col">
+<div class="slds-truncate" title="  Status Date">  Status Date</div>
+</th>
+<th scope="col">
+<div class="slds-truncate" title="Status">Status</div>
+</th>
+<th scope="col">
+<div class="slds-truncate" title="Description">Description </div>
+</th>  
+</tr>
+</thead>
+<tbody>
+     <aura:iteration items="{!v.ConditionData}" var="ConditionData">
+<tr>
+ 
+<td data-label="Status Date">
+<div class="slds-truncate" title="Status Date"> {!ConditionData.StatusDate}</div>
+</td>
+<td data-label="Status">
+<div class="slds-truncate" title="Status"> {!ConditionData.Status}</div>
+</td>
+<td data-label="Description">
+<div class="slds-truncate" title="Description">
+    
+     <p style="/* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+    {!ConditionData.DescText}
+         </p>
+    </div>
+</td> 
+</tr> 
+           </aura:iteration> 
+</tbody>
+</table>
+    <br></br>
+      <fieldset class="slds-theme--default slds-container--xx-large">
+                       
+                            <div class="slds-grid slds-grid--pull-padded">                                
+                                
+                                <div class="slds-col--padded">
+                                    <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Created By</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                  {!v.CreateBy} on  {!v.CreateDate}
+                                    </div>
+                                <div class="slds-col--padded">
+                                    <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Last Modifyed By</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                {!v.ModifyBy} On {!v.ModifyDate}
+                                      </div>
+                            </div>  
+                           
+                                 <!--  <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+               press="{!c.SaveEditCondition}" label="Save"></ui:button>-->
+                    </fieldset>
+        
+       
+</aura:component>

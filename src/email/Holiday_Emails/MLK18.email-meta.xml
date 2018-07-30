@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>MLK18</name>
+    <style>none</style>
+    <subject>Martin Luther King Jr. Day Holiday Hours</subject>
+    <textOnly>One Reverse Mortgage Services will be observing Martin Luther King Jr. Day this Monday. Our offices will close at 5 p.m. today, and business will resume on Tuesday, January 16 at 8 a.m.
+
+{!User.Name}
+{!User.Title}
+{!User.Phone}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

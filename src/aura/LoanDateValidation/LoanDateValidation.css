@@ -1,0 +1,54 @@
+.THIS {
+    font-family: 'LatoFont'  !important;
+}
+  
+/* latin */
+@font-face {
+  font-family: 'LatoFont';
+   
+   src: url(/resource/LatoFont);
+}
+.THIS .fontCss{
+    
+    font-family: 'LatoFont'  !important; 
+}
+.THIS .t{
+    color:red;
+    font-family: 'LatoFont'  !important; 
+}
+
+.THIS .slds-button{
+    color:#ffffff;
+    font-family: 'LatoFont'  !important; 
+    
+}
+.THIS .slds-button--neutral{
+    color:#ffffff;
+    font-family: 'LatoFont'  !important; 
+    
+}
+
+.THIS .font_white{
+    color:white !important;
+    font-family: 'LatoFont'  !important; 
+}
+.THIS .uiInput--default .form-element__label {
+    
+    font-size: 16px;
+    color: black;
+    font-family: 'LatoFont'  !important; 
+}
+
+.THIS .uploadButton{
+   
+    background-color: #81AD4D !important; 
+    color:blue !important;
+     width: 94px !important;
+    height: 42px !important;
+
+}
+.THIS .tex{
+    font-size: 16px;
+color: black;
+
+}

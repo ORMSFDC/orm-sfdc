@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lead: HECM at a Glance</name>
+    <style>none</style>
+    <subject>A Guide for You and Your Clients</subject>
+    <textOnly>HECM AT A GLANCE The basics you need to know
+
+Hello {!Contact.FirstName},
+
+I want you to feel confident discussing the reverse with your client, so I&apos;ve included the basic information you&apos;ll need to explain the loan and answer any initial questions your client may have.
+
+What is a reverse mortgage?
+
+Also known as a Home Equity Conversion Mortgage (HECM) the reverse mortgage is a loan that allows your client to borrow money based on the equity in their home. HECMs have added protection because these loans must meet HUD guidelines and also are insured by the federal government.
+
+Just like any loan, the borrower still owns the home and has requirements and obligations that are written into the loan agreement.
+
+What are the qualifications for both the borrower &amp; the property?
+
+The borrowers must be 62 or older, own their home (be on title), and their home must be their primary residence. After completing a loan application and counseling, they will also undergo a financial assessment. This is performed by their underwriter to ensure the borrower can uphold the responsibilities of the loan.
+
+The property, which is the collateral for the loan and the only required asset used to pay back the loan, must be a single-family residence, FHA approved condominium or a 2-4 unit, owner occupied property.
+
+Counseling by a HUD approved counselor is required
+
+All borrowers, non-borrowing spouses, guardians, conservators, and power of attorneys are required to be counseled by a third party, HUD-approved counselor. This can be done over the phone or face to face, in compliance with state regulations. The signed and dated counseling certificate is required before loan processing can begin.
+
+What are the borrower responsibilities with the Reverse Mortgage?
+
+Remain current on property taxes.
+Continue to pay homeowners insurance.
+Maintain the property.
+Reside in the home.
+
+What are the benefits of the Reverse Mortgage?
+
+There are no required monthly mortgage payments, but the client must pay their property taxes, homeowners insurance, and home maintenance costs.
+This is a non-recourse loan.
+There are no pre-payment penalties.
+There are flexible pay out options.
+
+When is the loan due and payable?
+
+When the home is sold, vacated or abandoned.
+When the last borrower either passes away or moves from the home for 12 consecutive months.
+If the client fails to uphold any of the borrower responsibilities, including staying current on their taxes and insurance and maintaining their home.
+
+Please feel free to contact me anytime about this document.
+
+Best,
+
+{!User.Name} | {!User.Title}
+Phone: {!User.Phone}
+Email: {!User.Email}
+Web: &lt;a href=&quot;http://www.OneReverseMortgageServices.com/&quot;&gt;OneReverseMortgageServices.com&lt;/a&gt;
+
+Our mailing address is:
+4445 Eastgate Mall, Ste 320, San Diego, CA 92121
+&lt;a href=&quot;mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}&quot;&gt;Unsubscribe&lt;/a&gt;
+Equal Housing Lender. Licensed in all 50 states.  NMLS #2052</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

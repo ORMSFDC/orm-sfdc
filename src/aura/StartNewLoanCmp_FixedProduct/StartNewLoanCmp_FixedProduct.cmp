@@ -1,0 +1,354 @@
+<aura:component controller="SAL_LoanController"  implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <!-- <ltng:require scripts="{!$Resource.bootstrap}"  />-->
+    <ltng:require scripts="{!$Resource.bootstrap}" afterScriptsLoaded="{!c.activatePills}" /> 
+    <link rel="stylesheet" type="text/css" href="{!$Resource.bootstrapiso}" />    
+    
+    <aura:attribute name="LoanId" type="String" />
+    <aura:attribute name="ApplicationDate" type="Date" />
+     <aura:attribute name="LoanMortgageAppliedFor" type="String" />
+     <aura:attribute name="RateType" type="String" />
+    <aura:attribute name="opt1" type="boolean" default="true" />
+    <aura:attribute name="opt2" type="boolean" default="false" />
+    <aura:attribute name="opt3" type="boolean" default="false"/>
+    <aura:attribute name="opt4" type="boolean" default="false"/>
+    <aura:attribute name="opt5" type="boolean" default="false"/>
+    <aura:attribute name="opt6" type="boolean" default="false"/>
+    <aura:attribute name="opt7" type="boolean" default="false"/>
+    <aura:attribute name="opt8" type="boolean" default="false"/>
+    <aura:attribute name="opt9" type="boolean" default="false"/>
+    <aura:attribute name="opt10" type="boolean" default="false"/>  
+    <aura:attribute name="opt11" type="boolean" default="false"/> 
+    <aura:attribute name="opt12" type="boolean" default="false"/>
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    <aura:attribute name="jumpto_last" type="boolean" default="true"/>
+    <!--Is Pills Validation Required -->
+    <aura:handler event="c:NavPillsEvent" action="{!c.ValidatePills}"/>
+    <aura:attribute name="itemsClicked" type="String" default="opt1"/>
+    <aura:handler name="change" value="{!v.itemsClicked}" action="{!c.itemsChange}"/>
+    <!--For first load-->
+    <aura:attribute name="manual" type="boolean" default="true"/>
+    <!--Flag for new application-->
+    <aura:attribute name="NewStartLoan" type="boolean" default="true"/>    
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doint}"/> -->
+    <aura:attribute name="LoanErr" type="boolean" default="false"/>
+    <aura:attribute name="Incomplete" type="boolean" default="true"/>
+    
+    <!--Flag to check whether this is a new application-->
+    <!--<aura:attribute name="NewStartLoan" type="false"/>-->
+    
+    <!--Assumes that subject property is incomplete-->
+    <aura:attribute name="subIncomplete" type="boolean" default="true"/>
+    
+    <!--Assumes that client is incomplete-->
+    <aura:attribute name="clientIncomplete" type="boolean" default="true"/>
+    <aura:attribute name="clientClicked" type="boolean" default="false"/>
+    
+    <!--Assumes that declaration is incomplete-->
+    <aura:attribute name="decIncomplete" type="boolean" default="true"/>
+    
+    <!--Assumes that loan details is incomplete-->
+    <aura:attribute name="loanDetIncomplete" type="boolean" default="true"/>    
+    <aura:handler name="change" value="{!v.LoanErr}" action="{!c.handleValueChange}"/>
+   
+    <!--Remove-->
+    <aura:attribute name="NewLoan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}"/>
+    <div id="startnewloan">
+        <div style="display:none">
+            <ui:inputText aura:id="secret"   />
+            <input type="hidden" id = "hdate"/>
+        </div>
+        <div class="bootstrap-iso">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3" style="width:20%" id="menudiv">
+                        
+                        <ul class="nav nav-pills nav-stacked" id= "parent" style="position: fixed;
+                                                                                  width: 214px;
+                                                                                  overflow-y: scroll;
+                                                                                  overflow-x: hidden;
+                                                                                  top: 210px;
+                                                                                  bottom: 20px;">
+                            <li >
+                                <a id = "step1" data-toggle="collapse" style="background-color:#191970 !important" data-parent="#parent" href="#p1" >
+                                    <span style="color:white;font-size:150% !important">Step 1</span>
+                                </a>
+                                <ul class="nav nav-pills nav-stacked collapse in" id = "p1">
+                                    <li id = "l1" class = "active">
+                                        <a data-toggle="tab" href="#Loan" id="loantab" onclick = "{!c.openOpt1}">
+                                            <span style="font-size:110%">Loan</span>
+                                            
+                                        </a>
+                                    </li>
+                                    <li id = "l2">
+                                        <a data-toggle="tab"  id="SPTab"   href="#subject" onclick = "{!c.openOpt2}" >
+                                            <span style="font-size:110%">Subject Property</span>
+                                        </a>                                        
+                                    </li>
+                                    <li id = "l3">
+                                        <a id="clientOption"  data-toggle="tab" href="#client" onclick = "{!c.openOpt3}" >
+                                            <span style="font-size:110%">Client</span>
+                                        </a>
+                                    </li>
+                                    <!--<li id = "l4">
+                                        <a data-toggle="tab" href="#employment" onclick = "{!c.openOpt4}" >
+                                            <span style="font-size:110%">Employment</span>
+                                        </a>
+                                    </li>-->
+                                    <li id = "l5">
+                                        <a data-toggle="tab" id="IncomeTab" href="#income" onclick = "{!c.openOpt5}">
+                                            <span style="font-size:110%">Income</span>
+                                        </a>
+                                    </li>
+                                    <li id = "l6">
+                                        <a data-toggle="tab" id="AssetsTab" href="#assets" onclick = "{!c.openOpt6}" >
+                                            <span style="font-size:110%">Assets</span>
+                                        </a>
+                                    </li>
+                                    <li id = "l7">
+                                        <a data-toggle="tab" id="LaibilityTab" href="#liabilities" onclick = "{!c.openOpt7}">
+                                            <span style="font-size:110%">Liabilities</span>
+                                        </a>
+                                    </li>
+                                    <li id = "l8">
+                                        <a data-toggle="tab" id="DeclarationTab" href="#declarations" onclick = "{!c.openOpt8}">
+                                            <span style="font-size:110%">Declarations</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-divider"></li>
+                                    
+                                    <aura:if isTrue="{!v.fromPopup}">
+                                        <li id = "step2Lock">
+                                            <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
+                                                <span style="color:white;font-size:150%">Step 2 </span>
+                                            </a>
+                                        </li>  
+                                        <li id = "l9" class="p2 " style="display:none">
+                                            <a data-toggle="tab" id="loandeatailclk" href="#LoanDetails" onclick = "{!c.openOpt9}">
+                                                <span style="font-size:110%">Loan Details</span>
+                                            </a>
+                                        </li>
+                                        <li id = "l10" class="p2 " style="display:none">
+                                            
+                                            <a data-toggle="tab" id="CapacityTab" href="#Capacity" onclick = "{!c.openOpt10}">
+                                                <span style="font-size:110%">Capacity Test</span>
+                                            </a>
+                                        </li>
+                                        <li id = "l11" class="p2 " style="display:none">
+                                            <a data-toggle="tab" id="LoanContactTab" href="#LoanContact" onclick = "{!c.openOpt11}">
+                                                <span style="font-size:110%">Loan Contacts</span>
+                                            </a>
+                                        </li>
+                                        <li id = "l12" class="p2 " style="display:none">
+                                            <a data-toggle="tab" id="CreditInfoTab" href="#CreditInfo" onclick = "{!c.openOpt12}">
+                                                <span style="font-size:110%">Credit Info</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-divider"></li>
+                                    </aura:if>
+                                </ul>
+                            </li>
+                            <br/>
+                            <aura:if isTrue="{!!v.fromPopup}">
+                                <li id = "step2Lock">
+                                    <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
+                                        <span style="color:white;font-size:150%">Step 2 </span>
+                                    </a>
+                                    
+                                    <ul class="nav nav-pills nav-stacked collapse out clc" id="p2">
+                                        <li id = "l9">
+                                            <a data-toggle="tab" id="loandeatailclk" href="#LoanDetails" onclick = "{!c.openOpt9}">
+                                                <span style="font-size:110%">Loan Details</span>
+                                            </a>
+                                        </li>
+                                        <li id = "l10">
+                                            
+                                            <a data-toggle="tab" id="CapacityTab" href="#Capacity" onclick = "{!c.openOpt10}">
+                                                <span style="font-size:110%">Capacity Test</span>
+                                            </a>
+                                        </li>
+                                        <li id = "l11">
+                                            <a data-toggle="tab" id="LoanContactTab" href="#LoanContact" onclick = "{!c.openOpt11}">
+                                                <span style="font-size:110%">Credit Info</span>
+                                            </a>
+                                        </li>
+                                        <!--  <li id = "l12">
+                                        <a data-toggle="tab" href="#CreditInfo" onclick = "{!c.openOpt12}">
+                                            <span style="font-size:110%">Credit Info</span>
+                                        </a>
+                                    </li>-->
+                                        <li class="nav-divider"></li>
+                                    </ul> </li>
+                            </aura:if>
+                            <!--<li><a data-toggle="pill" href="#menu2" onclick = "{!c.click_step3}">Step 3</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane fade">
+                                <h3>Welcome</h3>
+                            </div>
+                             <h3 class="h3Css" id="lblLoanID"></h3>
+                            <!-- Reverse Loan starts  LoanContact-->
+                            <aura:if isTrue="{!v.opt1}">
+                                
+                                <div name = "l1" id="Loan" class="tab-pane fade in active" >
+                                    <h4 class="h4Css">Reverse Loan </h4>
+                                    <c:SAL_Loan_FixedProduct itemsClicked="{!v.itemsClicked}" popupLoanId="{!v.LoanId}" NewStartLoan="{!v.NewStartLoan}" LoanMortgageAppliedFor="{!v.LoanMortgageAppliedFor}" RateType="{!v.RateType}" ApplicationDate="{!v.ApplicationDate}" Incomplete="{!v.Incomplete}" LoanId="{!v.LoanId}" LoanErr="{!v.LoanErr}" NuLoan="{!v.NewLoan}" nextOpt="{!v.opt2}" currentOpt="{!v.opt1}"/>
+                                    
+                                    <!--<c:SAL_LoanMainCMP ApplicationDateOnLoanCMP="{!v.ApplicationDate}" NewStartLoan="{!v.NewStartLoan}" Incomplete="{!v.Incomplete}" ChildParentNewLoanId="{!v.LoanId}" LoanErr="{!v.LoanErr}" NewLoan="{!v.NewLoan}" nextOpt="{!v.opt2}" currentOpt="{!v.opt1}"/>-->
+                                </div>
+                            </aura:if>  
+                            <aura:if isTrue="{!v.opt2}">
+                                
+                                <div id="subject" class="tab-pane fade in active">
+                                   <h4 class="h4Css">Subject Property</h4>
+                                    <!--      <c:SAL_SubjectProperty />-->
+                                    <c:SAL_SubjectProperty jumpto_last="{!v.jumpto_last}" fromPopup="{!v.fromPopup}" manual="{!v.manual}" itemsClicked="{!v.itemsClicked}" NewStartLoan="{!v.NewStartLoan}" subIncomplete="{!v.subIncomplete}" subjectPropertyLoanId="{!v.LoanId}" nextOpt="{!v.opt3}" currentOpt="{!v.opt2}" prevOpt="{!v.opt1}" subjectProperty='{!v.NewLoan}'/>
+                                    
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.opt3}">
+                                
+                                
+                                <div id="client" class="tab-pane fade in active">
+                                    <h4 class="h4Css">Client(s)</h4>
+                                    <aura:if isTrue="{!v.opt3}">
+                                        <!-- <c:SAL_ClientN jumpto_last="{!v.jumpto_last}" fromPopup="{!v.fromPopup}" manual="{!v.manual}" opt2="{!v.opt2}" itemsClicked="{!v.itemsClicked}"  NewStartLoan="{!v.NewStartLoan}" clientIncomplete="{!v.clientIncomplete}" clientLoanId="{!v.LoanId}" nextOpt="{!v.opt5}" currentOpt="{!v.opt3}" prevOpt="{!v.opt2}" nextDecOpt="{!v.opt9}" wasClicked="{!v.clientClicked}"/>-->
+                                        <c:SAL_ClientCMP jumpto_last="{!v.jumpto_last}" fromPopup="{!v.fromPopup}" manual="{!v.manual}" opt2="{!v.opt2}" itemsClicked="{!v.itemsClicked}"  NewStartLoan="{!v.NewStartLoan}" clientIncomplete="{!v.clientIncomplete}" clientLoanId="{!v.LoanId}" nextOpt="{!v.opt5}" currentOpt="{!v.opt3}" prevOpt="{!v.opt2}" nextDecOpt="{!v.opt9}" wasClicked="{!v.clientClicked}"/>
+                                    </aura:if>
+                                </div>
+                            </aura:if>
+                            <!--<div id="employment" class="tab-pane fade">
+                                <h3>Employment</h3>
+                                <aura:if isTrue="{!v.opt4}">
+                                    <c:SAL_Employment EmploymentLoanId="{!v.LoanId}" nextOpt="{!v.opt5}" currentOpt="{!v.opt4}" prevOpt="{!v.opt3}"></c:SAL_Employment>
+                                </aura:if>
+                            </div>-->
+                            <aura:if isTrue="{!v.opt5}">   
+                                
+                                <div id="income" class="tab-pane fade in active">
+                                    <h4 class="h4Css">Income - Monthly</h4>
+                                    <aura:if isTrue="{!v.opt5}">   
+                                        <c:Sal_NewIncomeCmp manual="{!v.manual}" fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" IncomeLoanId="{!v.LoanId}" nextOpt="{!v.opt6}" currentOpt="{!v.opt5}" prevOpt="{!v.opt3}"/>
+                                        <!--<c:TestIncome manual="{!v.manual}" fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" IncomeLoanId="{!v.LoanId}" nextOpt="{!v.opt6}" currentOpt="{!v.opt5}" prevOpt="{!v.opt3}"/>-->
+                                        <!--  <c:Sal_IncomeCmp IncomeLoanId="{!v.LoanId}" nextOpt="{!v.opt6}" currentOpt="{!v.opt5}" prevOpt="{!v.opt4}"/>-->
+                                    </aura:if>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.opt6}">   
+                                
+                                <div id="assets" class="tab-pane fade in active">
+                                   <h4 class="h4Css">Assets</h4>
+                                    <aura:if isTrue="{!v.opt6}">
+                                        <c:SAL_Assets fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" assetLoanId="{!v.LoanId}" nextOpt="{!v.opt7}" currentOpt="{!v.opt6}" prevOpt="{!v.opt5}"/>
+                                    </aura:if>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.opt7}">
+                                
+                                <div id="liabilities" class="tab-pane fade in active">
+                                   <h4 class="h4Css">Liabilities</h4>
+                                    <!--<c:LiabilitiesCmp />-->
+                                    <aura:if isTrue="{!v.opt7}">
+                                        <c:Sal_LiabilitiesCmp fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" LiaLoanId="{!v.LoanId}" nextOpt="{!v.opt8}" currentOpt="{!v.opt7}" prevOpt="{!v.opt6}" />
+                                    </aura:if>
+                                </div>
+                            </aura:if> 
+                            <!--Declaration code to be added -->
+                            <aura:if isTrue="{!v.opt8}">
+                                
+                                <div id="declarations" class="tab-pane fade in active">
+                                   <h4 class="h4Css">Declarations</h4>
+                                    <aura:if isTrue="{!v.opt8}">  
+                                        <c:SAL_DeclarationCMP fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" DecLoanId="{!v.LoanId}" nextOpt="{!v.opt9}" currentOpt="{!v.opt8}" prevOpt="{!v.opt7}" />
+                                    </aura:if>
+                                    
+                                    <!--<aura:if isTrue="{!v.opt8}"> 
+ <c:sal_declarationcmp /></aura:if>
+-->
+                                </div>
+                            </aura:if>
+                            <!--Loan Details code to be added -->
+                            <aura:if isTrue="{!v.opt9}">
+                                
+                                <div id="LoanDetails" class="tab-pane fade in active">
+                                   <h4 class="h4Css">Loan Details</h4>
+                                    <!-- <c:SAL_LoanDetails LoanId="{!v.LoanId}" nextOpt="{!v.opt10}" currentOpt="{!v.opt9}" prevOpt="{!v.opt8}"/>-->
+                                    
+                                    <c:SAL_LoanDetails fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" LoanId="{!v.LoanId}" nextOpt="{!v.opt10}" currentOpt="{!v.opt9}" prevOpt="{!v.opt8}" manual="{!v.manual}"/>
+                                    <!--<c:TestLoanDetails fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" LoanId="{!v.LoanId}" nextOpt="{!v.opt10}" currentOpt="{!v.opt9}" prevOpt="{!v.opt8}" manual="{!v.manual}"/>-->
+                                </div>
+                            </aura:if>  
+                            <aura:if isTrue="{!v.opt10}">
+                                
+                                <div id="Capacity" class="tab-pane fade in active">
+                                   <h4 class="h4Css">Capacity Test</h4>
+                                    <c:SAL_CashFlowCapacity fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" LoanId="{!v.LoanId}" nextOpt="{!v.opt11}" currentOpt="{!v.opt10}" prevOpt="{!v.opt9}" manual="{!v.manual}"/>
+                                    
+                                    <!-- <c:SAL_LoanContacts LoanId="{!v.LoanId}" nextOpt="{!v.opt11}" currentOpt="{!v.opt10}" prevOpt="{!v.opt9}" manual="{!v.manual}"/>-->
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.opt11}">
+                                
+                                <div id="LoanContact" class="tab-pane fade in active">
+                                    <!--Code Started for Story No:- ORMSFDC-1275 by Dev4-->
+                                   <h4 class="h4Css">Credit Info</h4>
+                                    <c:SAL_CreditInfo fromPopup="{!v.fromPopup}" LoanId="{!v.LoanId}" currentOpt="{!v.opt11}" prevOpt="{!v.opt10}" manual="{!v.manual}"/>
+                                    
+                                    
+                                    <!-- <c:SAL_CreditInfo LoanId="{!v.LoanId}" currentOpt="{!v.opt11}" prevOpt="{!v.opt10}" manual="{!v.manual}"/>-->
+                                </div>
+                            </aura:if>
+                            <!--   <aura:if isTrue="{!v.opt12}">
+                             
+                            <div id="CreditInfo" class="tab-pane fade in active">
+                                <h3>Credit Information</h3>
+                          <c:SAL_LoanContacts fromPopup="{!v.fromPopup}" itemsClicked="{!v.itemsClicked}" LoanId="{!v.LoanId}" currentOpt="{!v.opt11}" prevOpt="{!v.opt10}" nextOpt="{!v.opt12}" manual="{!v.manual}"/>  </div>
+                            </aura:if>-->
+                            <!--Code Ended for Story No:- ORMSFDC-1275 by Dev4-->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="thnksdiv" style="display:none">
+        <div class="container">
+            <div class="slds-form slds-form_Compound"  >
+                
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-2">     
+                                <div style= "color:blue">
+                                    <h3><b>Start a New Loan -- Application Submission Success</b></h3>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-form-element__group">
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-2">     
+                                    
+                                    <h5><b>Thank you! Your application request has been successfully submitted. We are reviewing the application and will be sending you the complete application package for signature.</b></h5>   
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+            </div>
+        </div>
+    </div>
+    <div style="display:none">
+        <label id="targetID" >Blank</label>
+        <label id="SubjectPropertyLbl" >Move</label>
+        <label id="ClentLbl" >Move</label>
+        <label id="loanD" >Move</label>
+        <label id="CapacityLbl" >Move</label>
+        <label id="LoanContactLbl" >Move</label>
+    </div>
+</aura:component>

@@ -1,0 +1,16 @@
+Hi,
+
+A new note has been posted on a Loan for which you are the ORM Account Executive. 
+
+The following are the details:
+Note Title: {!Note__c.Name}
+Note Content: {!Note__c.Body__c}
+Loan ID: {!Note__c.Loan_Id__c}
+Client name: {!Note__c.Related_Client_Name__c}
+Created By: {!Note__c.CreatedBy}
+Date & Time: {!Note__c.CreatedDate}
+
+Use the link {!Note__c.Link} to check the new Note.
+
+Thanks,
+ORMS Support

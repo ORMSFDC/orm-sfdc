@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <!-- Facebook sharing information tags -->
+	<meta property="og:title" content="{!EmailMessage.Subject}" />
+
+    <title>{!EmailMessage.Subject}</title>
+</head>
+
+<body bgcolor="#FAFAFA" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100% !important; width: 100% !important; background-color: #FAFAFA; margin: 0; padding: 0;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" id="bodyTable" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #FAFAFA; border-collapse: collapse !important; height: 100% !important; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; width: 100% !important" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" id="bodyCell" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 100% !important; width: 100% !important; border-top-width: 4px; border-top-color: #dddddd; border-top-style: solid; margin: 0; padding: 20px;" valign="top"><!-- BEGIN TEMPLATE // -->
+			<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; width: 600px; border: 1px solid #dddddd;">
+				<tbody>
+					<tr>
+						<td align="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top"><!-- BEGIN BODY // -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateBody" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #FFFFFF; border-bottom-color: #CCCCCC; border-bottom-style: solid; border-bottom-width: 1px; border-collapse: collapse !important; border-top-color: #FFFFFF; border-top-style: solid; border-top-width: 1px; mso-table-lspace: 0pt; mso-table-rspace: 0pt" width="100%">
+							<tbody>
+								<tr>
+									<td align="left" class="preheaderContent" pardot-region="preheader_content00" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #808080; font-family: Helvetica; font-size: 10px; line-height: 12.5px; text-align: left; padding: 10px 20px; background-color: #2080bd;" valign="top">
+									<div style="text-align: center;"><img alt="" border="0" height="34" src="http://go.pardot.com/l/476012/2018-01-28/7svvp/476012/25824/ORMS_Logo.png" style="width: 231px; height: 34px; border-width: 0px; border-style: solid;" width="231"></div>
+									</td>
+								</tr>
+								<tr>
+									<td align="left" class="headerContent" pardot-region="header_image" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; background-color: #2080bd; mso-table-rspace: 0pt; color: #FFFFFF; font-family: Helvetica; font-size: 20px; font-weight: bold; line-height: 20px; text-align: left; vertical-align: middle; padding: 10px 20px;" valign="top">
+									<div style="text-align: center;">ORMS Pricing<br>
+									<span style="font-size:12px;"></span></div>
+									</td>
+								</tr>
+								<tr>
+									<td align="left" class="headerContent" pardot-region="header_image" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; background-color: #2080bd; mso-table-rspace: 0pt; color: #FFFFFF; font-family: Helvetica; font-size: 20px; font-weight: bold; line-height: 20px; text-align: left; vertical-align: middle; padding: 10px 20px;" valign="top">
+										<table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; height: 100% !important; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; width: 100% !important" width="100%">
+											<tr>
+												<td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; background-color: #2080bd; mso-table-rspace: 0pt; color: #FFFFFF; font-family: Helvetica; font-size: 20px; font-weight: bold; line-height: 20px; text-align: left; vertical-align: middle; padding: 10px 20px;">&nbsp;</td>
+												<td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; background-image: url(http://bookoforms.com/wp-content/uploads/2018/06/Calendar.png); mso-table-rspace: 0pt; width: 75px; padding-top: 23px; padding-bottom: 12px;text-align: left;">&nbsp;&nbsp;&nbsp;<span style="font-size: 20px; color: #434854;">July<br>&nbsp;&nbsp;&nbsp;&nbsp;31</span></td>
+												<td style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; background-color: #2080bd; mso-table-rspace: 0pt; color: #FFFFFF; font-family: Helvetica; font-size: 20px; font-weight: bold; line-height: 20px; text-align: left; vertical-align: middle; padding: 10px 20px;">&nbsp;</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="left" class="bodyContent" pardot-region="body_content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #505050; font-family: Helvetica; font-size: 14px; line-height: 21px; text-align: left; padding: 20px;" valign="top">
+										Hi {!Contact.FirstName},
+										<br><br>
+										Attached is our most current product and price sheet. 
+										<br><br>
+										Have you had the opportunity to run a client through a scenario? It is really easy. If you have any questions about it, please watch our video no how to generate a scenario for a client to see what reverse mortgage option works best for them.
+										<br><br>
+										<a href="https://www.youtube.com/watch?v=R13qaTex-Ao"><img src="http://bookoforms.com/wp-content/uploads/2018/07/Run-A-Scenario.png" width="470" height="267"></a>
+										<br><br>
+										It is always best to run clients who are 62+ through our <a href="https://www.onereversemortgageservices.com/s/loan-calculator">scenario calculator</a> to see what they could qualify for. If you do not have access to the portal yet, please attend a training session by clicking on a link below. 
+										<br><br>
+										Please reach out if you have any questions. I am here to help!
+										<br><br>
+										<strong>Current Turn Times:</strong>
+										<br>
+										<strong>New Registration:</strong> 30 minutes * May increase based on volume levels
+										<br>
+										<strong>Submit to UW for Conditional Approval:</strong> 24 hours
+										<br>
+										<strong>Conditions Review:</strong> 24 hours
+										<br>
+										<strong>Clear to Close:</strong> 24 hours
+										<br>
+										<strong>Docs to Closing Agent:</strong> 24 hours. * From Final HUD Approval
+										<br><br>
+										<strong>On Demand Reverse Mortgage Training:</strong>
+										<br><br>
+										<strong>Portal Tour:</strong> Self-paced webinar designed to get you familiar with our site. Here, you can run scenarios to see if a client qualifies for a reverse mortgage and access marketing collateral and more in-depth training. <a href="https://attendee.gotowebinar.com/register/8760851864460942595?source=Rate+Sheet+tracking">Register Here</a>.
+										<br><br>
+										<strong>Reverse Mortgage 101:</strong> Self-paced webinar designed to get you familiar with reverse mortgage eligibility requirements and all the basics you need to begin originating loans today. <a href="https://attendee.gotowebinar.com/register/743977235745086977?source=Rate+Sheet+tracking+portal">Register Here</a>.
+										<br><br>
+										Thank you for your business!
+										<br><br>
+Best,<br>
+{!Contact.OwnerFullName}<br>
+{!Contact.OwnerEmail}<br>
+{!Contact.OwnerTitle}<br>
+{!Contact.OwnerPhone}<br>
+										<br>
+										Follow us on <a href="https://www.facebook.com/onereverseservices/">Facebook</a> &amp; <a href="https://twitter.com/official_ORMS">Twitter</a>!
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // END BODY --></td>
+					</tr>
+					<tr>
+						<td align="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top"><!-- BEGIN FOOTER // --></td>
+						<!-- // END FOOTER --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // END TEMPLATE --></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+
+</body>
+</html>

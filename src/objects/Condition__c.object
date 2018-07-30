@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Comment</label>
+        <length>131070</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields><fields>
+        <fullName>Condition_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Condition Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2 Year Tax Return</fullName>
+                    <default>false</default>
+                    <label>2 Year Tax Return</label>
+                </value>
+                <value>
+                    <fullName>Alternate Address Clarification</fullName>
+                    <default>false</default>
+                    <label>Alternate Address Clarification</label>
+                </value>
+                <value>
+                    <fullName>Bank statements</fullName>
+                    <default>false</default>
+                    <label>Bank statements</label>
+                </value>
+                <value>
+                    <fullName>Client(s) to provide</fullName>
+                    <default>false</default>
+                    <label>Client(s) to provide</label>
+                </value>
+                <value>
+                    <fullName>Copy of Divorce Decree and/or Settlement Agreement</fullName>
+                    <default>false</default>
+                    <label>Copy of Divorce Decree and/or Settlement Agreement</label>
+                </value>
+                <value>
+                    <fullName>Copy of Each Client's Social Security Card</fullName>
+                    <default>false</default>
+                    <label>Copy of Each Client's Social Security Card</label>
+                </value>
+                <value>
+                    <fullName>Credit Report Inquiries Requiring Explanation</fullName>
+                    <default>false</default>
+                    <label>Credit Report Inquiries Requiring Explanation</label>
+                </value>
+                <value>
+                    <fullName>Driver's License for all clients</fullName>
+                    <default>false</default>
+                    <label>Driver's License for all clients</label>
+                </value>
+                <value>
+                    <fullName>Electric Bills (Occupancy Clarification)</fullName>
+                    <default>false</default>
+                    <label>Electric Bills (Occupancy Clarification)</label>
+                </value>
+                <value>
+                    <fullName>Occupancy Status</fullName>
+                    <default>false</default>
+                    <label>Occupancy Status</label>
+                </value>
+                <value>
+                    <fullName>Paystubs-30 days most recent</fullName>
+                    <default>false</default>
+                    <label>Paystubs-30 days most recent</label>
+                </value>
+                <value>
+                    <fullName>Pension Award Letter</fullName>
+                    <default>false</default>
+                    <label>Pension Award Letter</label>
+                </value>
+                <value>
+                    <fullName>Please provide a copy of your current mortgage statement</fullName>
+                    <default>false</default>
+                    <label>Please provide a copy of your current mortgage statement</label>
+                </value>
+                <value>
+                    <fullName>Power of Attorney</fullName>
+                    <default>false</default>
+                    <label>Power of Attorney</label>
+                </value>
+                <value>
+                    <fullName>Proof of assets in the amount  needed for funds to close</fullName>
+                    <default>false</default>
+                    <label>Proof of assets in the amount  needed for funds to close</label>
+                </value>
+                <value>
+                    <fullName>Proof of Social Security Income</fullName>
+                    <default>false</default>
+                    <label>Proof of Social Security Income</label>
+                </value>
+                <value>
+                    <fullName>Self-Employed 2 years Tax Returns</fullName>
+                    <default>false</default>
+                    <label>Self-Employed 2 years Tax Returns</label>
+                </value>
+                <value>
+                    <fullName>Trust Agreement</fullName>
+                    <default>false</default>
+                    <label>Trust Agreement</label>
+                </value>
+                <value>
+                    <fullName>Utility Bill (Occupancy Clarification)</fullName>
+                    <default>false</default>
+                    <label>Utility Bill (Occupancy Clarification)</label>
+                </value>
+                <value>
+                    <fullName>W-2 Form</fullName>
+                    <default>false</default>
+                    <label>W-2 Form</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Proof of assets in the amount needed for funds to close</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Proof of assets in the amount needed for funds to close</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Loan_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan Id</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipLabel>Condition</relationshipLabel>
+        <relationshipName>Condition</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Outstanding</fullName>
+                    <default>true</default>
+                    <label>Outstanding</label>
+                </value>
+                <value>
+                    <fullName>Revision Requested</fullName>
+                    <default>false</default>
+                    <label>Revision Requested</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Cleared</fullName>
+                    <default>false</default>
+                    <label>Cleared</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>rvxId__c</fullName>
+        <externalId>false</externalId>
+        <label>rvxId</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ReadWrite</externalSharingModel><label>Condition</label><nameField>
+        <displayFormat>C-{0}</displayFormat>
+        <label>Condition</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>Conditions</pluralLabel><searchLayouts /><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility></CustomObject>

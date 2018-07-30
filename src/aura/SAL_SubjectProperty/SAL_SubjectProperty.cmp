@@ -1,0 +1,290 @@
+<aura:component controller="SAL_LoanController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="UsState" type="List"/>
+    <aura:attribute name="LicenseState" type="boolean" default="false"/>
+    <aura:attribute name="LicenseError" type="string"/>
+    <aura:attribute name="LoanId" type="String" default="a0M0q000000ASzEEAW"/>
+    <aura:attribute name="Number" type="List"/>
+    <aura:attribute name="subjectProperty" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
+    <aura:attribute name="subjectProperty_new" type="Loan_New__c" />
+    <aura:attribute name="manual" type="Boolean" default="true"/>
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    <aura:attribute name="jumpto_last" type="boolean" default="true"/>   
+    <aura:attribute name="nextOpt" type="boolean"/>
+    <aura:attribute name="currentOpt" type="boolean"/>
+    <aura:attribute name="prevOpt" type="boolean"/>
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="isZipExist" type="boolean" default="false"/>
+    <aura:attribute name="requiredZip" type="boolean" default="false"/>    
+    <aura:attribute name="itemsClicked" type="String" />
+   
+    <aura:attribute name="myBool" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'Yes', 'value': 'Yes'},
+                                                        {'label': 'No', 'value': 'No'}
+                                                        ]"/>
+    <!--Flag for new application-->
+    <aura:attribute name="NewStartLoan" type="boolean" />
+    <aura:attribute name="DoValidation" type="boolean" default="false"/>   
+    
+    <!--Flag to skip steps in incompete form -->
+    <aura:attribute name="subIncomplete" type="boolean" />
+    
+    <aura:attribute name="Incomplete" type="boolean" default="false"/>
+    <!--Event that fires the method which turn tab red-->
+    <aura:registerEvent name="PillsEvent" type="c:NavPillsEvent"/>
+    
+    <!--remove-->
+    <aura:attribute name="NuLoan" type="Loan_New__c" />
+    <!--<aura:handler name="displayLoanId" event="c:SAL_ShareLoanId" action="{!c.handleAppEvent}" />-->
+    <aura:attribute name="subjectPropertyLoanId" type="String"  />
+      <aura:attribute name="LoanOfficerList" type="object[]" />
+     <aura:attribute name="IsLoanCreatedByLoanOfficer" type="boolean"/>
+      <aura:attribute name="LOID" type="string"   />
+    <aura:handler name="change" value="{!v.subIncomplete}" action="{!c.FormatValidations}"/>
+    <div >
+        <div class="slds-form slds-form_compound">
+            <fieldset class="slds-form-element">
+                <div class="slds-form-element__group">
+                    <!-- Main Div tag -->
+                    <div  class="slds-form-element slds-size_1-of-1" >
+                        
+                        <div style="margin-bottom:0%; display:none" class="slds-form-element slds-size_1-of-2" >
+                            <ui:outputText value="{!v.subjectPropertyLoanId}" />
+                        </div>
+                          <div style="margin-bottom:3%;display:none; " class="slds-size_1-of-2" id="LoanOfficerDiv">
+                            <ui:inputSelect aura:id="loanOfficerID" required="true" label="Originating Loan Officer" value="{!v.subjectProperty.Originating_Loan_Officer__c}" >
+                                 <ui:inputSelectOption value="true" text="" label="---Select Option---"/>
+                                <aura:iteration items="{!v.LoanOfficerList}" var="pOptions">
+                                        <ui:inputSelectOption text="{!pOptions.Id}" label="{!pOptions.LoanofficerName}"  />
+                                    </aura:iteration>
+                             </ui:inputSelect>
+                        </div>
+                       
+                        <div style="margin-bottom:3%; margin-top:1%;" class="slds-size_1-of-2" >
+                            <ui:inputText label="Subject Property Address "  aura:id="SP_Address" maxlength="160"
+                                          class="slds-input" value="{!v.subjectProperty.Subject_Property_Address__c}" required="true"/>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Subject Property Zip Code "   aura:id="SP_Zip" class="slds-input"  value="{!v.subjectProperty.Subject_Property_Zip_Code__c}"  required="true"
+                                          keyup="{!c.getZipDetail}" 
+                                          
+                                          updateOn="keyup" maxlength="5"
+                                          />
+                            <aura:if isTrue='{!v.isZipExist}'>
+                                <h6 style="color:red;">Please enter correct zip code.</h6>
+                            </aura:if>
+                            <aura:if isTrue='{!v.requiredZip}'>
+                                <h6 style="color:red;">Loans can not be originated in this state.
+                                    Please enter a different ZIP code</h6>
+                            </aura:if>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Subject Property City "  aura:id="SP_City" required="true"
+                                          class="slds-input" value="{!v.subjectProperty.Subject_Property_City__c}"/>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Subject Property State "  aura:id="State" disabled="true"
+                                          class="slds-input" value="{!v.subjectProperty.Subject_Property_State__c}"/>
+                            <aura:if isTrue='{!v.LicenseState}'>
+                                <h6 style="color:red;">You are not licensed to apply for a loan in this state.
+                                    Please contact your Account Executive for more information.</h6>
+                            </aura:if>
+                            <!--<ui:inputSelect label="Subject Property State *" aura:id="State" value="{!v.subjectProperty.Subject_Property_State__c}">
+                                <aura:iteration items="{!v.UsState}" var="pOptions">
+                                    <ui:inputSelectOption value="true" text="{!pOptions.text}" label="{!pOptions.text}"/>
+                                </aura:iteration>
+                            </ui:inputSelect>-->
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Subject Property County "  aura:id="SP_County" required="true"
+                                          class="slds-input" value="{!v.subjectProperty.Subject_Property_County__c}"/>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Legal Description of Property"  aura:id="legalDesProp" value="{!v.subjectProperty.Legal_Description_of_Property__c}" 
+                                          class="slds-input" />
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Present Market Value" aura:id="PresentMarketId" value="{!v.subjectProperty.Present_Market_Value__c}" class="slds-input" />
+                            <div id="PresentMarketError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Mortgage and Liens" aura:id="MortLiensId" value="{!v.subjectProperty.Mortgage_and_Liens__c}" class="slds-input" />
+                            <div id="MortLiensError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>                            
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Name of Company" aura:id="NameCompanyId" value="{!v.subjectProperty.Name_of_Company__c}" class="slds-input" />
+                            <div id="NameCompanyError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Account Number" aura:id="AccNumberId" value="{!v.subjectProperty.Account_Number__c}" class="slds-input" 
+                                          keypress="{!c.validateAccountNumber}"  keyup="{!c.validateAccountNumber}" keydown="{!c.validateAccountNumber}"  updateOn="keypress, keyup, keydown"/>
+                            <div id="AccNumberError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Gross Rental Income" aura:id="GrossRentalIncomeId" value="{!v.subjectProperty.Gross_Rental_Income__c}" class="slds-input" />
+                            <div id="GrossRentalIncomeError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Monthly Mortgage Payment" aura:id="MonthlyMortPaymentId" value="{!v.subjectProperty.Monthly_Mortgage_Payment__c}" class="slds-input" required="false"/>
+                            <div id="MonthlyMortPaymentError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <!--<div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Monthly Insurance,Taxes,etc." aura:id="InsTaxesId" value="{!v.subjectProperty.Monthly_Insurance_Taxes_etc__c}" class="slds-input" required="true"/>
+                            <div id="InsTaxesError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>-->
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Net Rental Income" aura:id="NetRentalIncmId" value="{!v.subjectProperty.Net_Rental_Income__c}" class="slds-input" />
+                            <div id="NetRentalIncmError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <div class="slds-size_1-of-2" >
+                            <ui:inputSelect aura:id="auraPropertyType" label="Property Type " value="{!v.subjectProperty.Subject_Property_Type__c}" change="{!c.showNumberofUnits}" required="true">                            
+                               <ui:inputSelectOption value="true" text="" label="Select Option" />
+                                <ui:inputSelectOption text="Single Family" label="Single Family" />
+                                <ui:inputSelectOption text="Condominium" label="Condominium" />
+                                <ui:inputSelectOption text="Townhouse" label="Townhouse" />
+                                <ui:inputSelectOption text="Co-operative" label="Co-operative" />
+                                <ui:inputSelectOption text="Two-to-four unit property" label="Two-to-four unit property" />
+                                <ui:inputSelectOption text="Multifamily (more than 4 units)" label="Multifamily (more than 4 units)" />
+                                <ui:inputSelectOption text="Manufactured/Mobile Home" label="Manufactured/Mobile Home" />
+                                <ui:inputSelectOption text="Commercial – Non-Residential" label="Commercial – Non-Residential" />
+                                <ui:inputSelectOption text="Mixed Use – Residential" label="Mixed Use – Residential" />
+                                <ui:inputSelectOption text="Farm" label="Farm" />
+                                <ui:inputSelectOption text="Home and Business Combined" label="Home and Business Combined" />
+                                <ui:inputSelectOption text="Land" label="Land" />
+
+                            </ui:inputSelect>
+                        </div>
+                        <div id="Check_Condominium" style="display:none">
+                            <br/>
+                            <div class="slds-size_1-of-1 LabelDiv"> 
+                                 <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Condominium Name "  aura:id="CondominiumName" value="{!v.subjectProperty.Condominium_Name__c}" class="slds-input"/>
+                        </div>
+                                <div class="Label">
+                                    <span style="color:rgb(194, 57, 52)">*</span> Is the Condominium FHA Approved?<br></br>
+                                    Please visit this link to confirm.<a href="https://entp.hud.gov/idapp/html/condlook.cfm" target="blank"> https://entp.hud.gov/idapp/html/condlook.cfm</a>
+                                </div>
+                            </div>
+                            
+                            <div class="slds-size_1-of-2">
+                                <lightning:radioGroup aura:id="Condominium"
+                                                      name="radioButtonGroupCondominium_d"
+                                                      options="{! v.options }"
+                                                      value="{!v.subjectProperty.Condominium_FHA_Approved__c}"/>
+                                <label id="lbl_FHAapproved" class="lblRemarkStyle"></label> 
+                            </div>
+                            
+                        </div>
+                        <br/>
+                        <div style="margin-bottom:3%;display:none" class="slds-size_1-of-2" id="UnitsNumberDiv">
+                            <ui:inputText label="No of Units *"  aura:id="NoUnitId" 
+                                          value="{!v.subjectProperty.No_of_Units__c}"
+                                          keypress="{!c.validateNoOfUnit}" keyup="{!c.validateNoOfUnit}" 
+                                          keydown="{!c.validateNoOfUnit}"  updateOn="keypress, keyup, keydown"
+                                          class="slds-input" />
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputNumber label="Year Built " maxlength="4" aura:id="YearBuiltId" value="{!v.subjectProperty.Year_Built__c}" keypress="{!c.validateYearBuilt}" keyup="{!c.validateYearBuilt}" keydown="{!c.validateYearBuilt}"  updateOn="keypress, keyup, keydown" 
+                                            format="" class="slds-input" required="true"  />
+                            <div id="YearBuiltError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Square Footage " required="true"  aura:id="SqFootage" value="{!v.subjectProperty.Square_Footage__c}" class="slds-input" keypress="{!c.validateSquareFootage}" keyup="{!c.validateSquareFootage}" keydown="{!c.validateSquareFootage}"  updateOn="keypress, keyup, keydown"/>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputSelect label="Property Held as" aura:id="PropertyHeldId" value="{!v.subjectProperty.Property_Held_as__c}" required="true">
+                                
+                                <ui:inputSelectOption value="true" text="" label="---Select option---"/> 
+                                <ui:inputSelectOption text="Fee Simple" label="Fee Simple"/> 
+                                <ui:inputSelectOption text="Leasehold" label="Leasehold"/> 
+                                <ui:inputSelectOption text="Life Estate" label="Life Estate"/> 
+                                
+                            </ui:inputSelect>
+                            
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputText label="Property Title is Held in These Names"  aura:id="PTHeldNameId" maxlength="160" value="{!v.subjectProperty.Property_Title_is_Held_in_These_Names__c}"
+                                          class="slds-input" />
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputSelect label="Check If Title is also Held As" aura:id="checkTitleAlsoId" value="{!v.subjectProperty.Check_If_Title_is_also_Held_As__c}" >
+                                <ui:inputSelectOption text="" label="---Select Option---" value="true"/>
+                                <ui:inputSelectOption text="Living Trust" label="Living Trust" />
+                                <ui:inputSelectOption text="Revocable Trust" label="Revocable Trust" />
+                            </ui:inputSelect>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Real Estate Taxes - Monthly " aura:id="RETaxes" value="{!v.subjectProperty.Real_Estate_Taxes__c}" class="slds-input" required="true"/>
+                            <div id="RETaxesError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Annual Hazard Insurance " aura:id="HazardInsuranceId" value="{!v.subjectProperty.Hazard_Insurance__c}" class="slds-input" required="true"/>
+                            <div id="HazardInsuranceError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <!--Code Added/Modified by Dev4 for ORMSFDC-1423-->
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="HOA Monthly Dues" aura:id="HOAId" value="{!v.subjectProperty.HOA_Monthly_Dues__c}" class="slds-input" />
+                            <div id="HOAError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Monthly PUD Fees Amount" aura:id="PUDId" value="{!v.subjectProperty.Monthly_PUD_Fees_Amount__c}" class="slds-input" />
+                            <div id="PUDError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Monthly Ground Rents Amount" aura:id="GroundRentsId" value="{!v.subjectProperty.Monthly_Ground_Rents_Amount__c}" class="slds-input" />
+                            <div id="GroundRentsError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Monthly Flood Insurance Premium" aura:id="FloodInsuranceId" value="{!v.subjectProperty.Monthly_Flood_Insurance_Premium__c}" class="slds-input" />
+                            <div id="FloodInsuranceError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>
+                        
+                        <!--<div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputCurrency label="Miscellaneous (HOA, PUD, Condo Fees, Other Insurances) - Monthly" aura:id="HOAPUDCondoId" value="{!v.subjectProperty.HOA_PUD_Condo_Fees__c}" class="slds-input" />
+                            <div id="HOAPUDCondoError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                        </div>-->
+                        <!--Code Ended by Dev4 for ORMSFDC-1423-->
+                        <div class = "nextSteps">
+                            <aura:if isTrue="{!v.LicenseState}">                            
+                                <ui:message title="Error" severity="error" >
+                                    {!v.LicenseError}
+                                </ui:message>                            
+                            </aura:if>
+                            <aura:if isTrue="{!v.showError}">                            
+                                <ui:message title="Error" severity="error" >
+                                    Please review all errors before moving to next page
+                                </ui:message>                            
+                            </aura:if>
+                            <div style="margin-bottom:3%; " class="slds-grid slds-grid--align-left">
+                                <br></br>
+                                <ui:button class="myBtn slds-button slds-button--brand" aura:id="addSubjectPrev" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+                                <ui:button class="myBtn slds-button slds-button--brand" aura:id="addSubjectProperty" label="Save and Continue" press="{!c.SAveAndNewTab}"   />
+                                <!-- Please use FormatValidations as a framework for validations and resulting actions -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</aura:component>

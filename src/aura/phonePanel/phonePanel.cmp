@@ -1,0 +1,19 @@
+<aura:component description="Panel that is showing a toolbar and a search bar, and can toggle a dial pad or search results"
+    implements="c:panel">
+    <aura:attribute name="showDialPad" type="Boolean" default="false" description="when True, show dial pad"/>
+    <aura:attribute name="callDisabled" type="Boolean" default="true" description="when True, Call button is disabled"/>
+    <aura:attribute name="inputValue" type="String" description="Value of the input field, can be phone number of search term"/>
+    <aura:attribute name="presence" type="String" default="Available" description="Could be Available, Busy or Unavailable"/>
+    <aura:attribute name="searchResults" type="Object[]" description="Array of contact records"/>
+    <aura:attribute name="message" type="String" default="Click on Phone/Mobile number to make a call." description="message that is shown on the screen"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <div class="slds-panel">
+          <aura:if isTrue="{! and(v.searchResults.length == 0, ! v.showDialPad) }">
+            <div aura:id="message"
+                class="messageBody slds-p-around--xx-large slds-align--absolute-center slds-text-heading">{!v.message}</div>
+        </aura:if>
+        
+        
+    </div>
+    <aura:attribute name="showHistoryConditionPopup" type="Boolean" default="false" />
+</aura:component>

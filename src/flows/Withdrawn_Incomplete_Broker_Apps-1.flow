@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>myUniquelyDummyAssignment</name>
+        <label>myUniquelyDummyAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myUniquelyDummyVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>fakeVal</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Eliminate Incomplete Broker Apps after 30 days</description>
+    <interviewLabel>Withdrawn_Incomplete_Broker_Apps-1_InterviewLabel</interviewLabel>
+    <label>Withdrawn Incomplete Broker Apps</label>
+    <processType>InvocableProcess</processType>
+    <startElementReference>myUniquelyDummyAssignment</startElementReference>
+    <variables>
+        <name>myUniquelyDummyVariable</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

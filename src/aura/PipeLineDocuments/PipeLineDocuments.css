@@ -1,0 +1,15 @@
+.THIS {
+}
+.THIS.btn {
+    width:300px !important;
+    height:270px !important;
+}
+
+.THIS .header{
+    font-family: 'LatoFont'  !important; 
+}
+
+@font-face {
+  font-family: 'LatoFont';   
+   src: url(/resource/LatoFont);
+}

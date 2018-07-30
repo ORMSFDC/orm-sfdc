@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Event fired by a panel to trigger softphone panel editing, i.e. setting softphone panel label.">
+	<aura:attribute name="label" type="String" description="The label of panel to set"/>
+</aura:event>

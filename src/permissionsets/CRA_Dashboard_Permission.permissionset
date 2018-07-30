@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>This permission is to give access to CRA Dashboard</description><hasActivationRequired>false</hasActivationRequired><label>CRA Dashboard Permission</label><license>Salesforce</license><tabSettings>
+        <tab>CRA_Dashboard</tab>
+        <visibility>Visible</visibility>
+    </tabSettings></PermissionSet>

@@ -1,0 +1,353 @@
+<apex:component controller="ContactController" access="global">
+    <apex:attribute name="ContId" type="id" description="Id of the contact" assignTo="{!contactId }"/>
+
+    <html>
+<head>
+<meta charset="UTF-8">
+<title>QL Hot Transfer Status Email</title>
+    
+<style>
+body {
+    background-color: #FFFFFF;
+}
+
+h1 {
+    color: #000000;
+    font-family: "Arial Black", "sans-serif";
+    font-size: 32px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    color: #000000;
+    font-family: "Arial Black", "sans-serif";
+    font-size: 18px;
+}
+
+h3 {
+    color: #000000;
+    font-family: "Arial Black", "sans-serif";
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+strong {
+    color: #385725;
+}
+
+table.snapshottable {
+    border: 1px solid #385725;
+    font-family: Arial;
+    font-size: 36px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+#snapshot {
+    color: #385725;
+    font-family: Arial, "sans-serif";
+    font-size: 18px;
+    font-style:italic;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+    
+p {
+    font-family: arial;
+    font-size: 16px;
+}   
+
+tr.grey {
+    background-color: #eeeeee;
+}   
+td.grey {
+    background-color: #eeeeee;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+td.detailsnap {
+    background-color: #385725;
+    font-family: arial;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 10px; 
+    text-align: center;
+}
+td.details {
+    background-color: #2d3190;
+    font-family: arial;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 10px; 
+    text-align: center;
+}
+
+table.detailtable {
+    font-family: arial;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid black;
+}
+    
+    
+</style>
+</meta>
+</head>
+
+<body>
+<TABLE WIDTH="600" border="0" CELLSPACING="0" CALLPADDING="0" ALIGN="center">
+    <TR>
+        <TD>
+            <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="100%">
+                <TR>
+                    <TD WIDTH="110" valign="bottom"><IMG SRC="http://bookoforms.com/wp-content/uploads/2017/12/logo.png" WIDTH="110" HEIGHT="45"></img></TD>
+                    <TD valign="bottom" align="center"><H1>TRANSFER STATUS</H1></TD>
+                    <TD WIDTH="120"><IMG SRC="http://bookoforms.com/wp-content/uploads/2017/12/ormtoons.png" WIDTH="120" HEIGHT="101"></img></TD>
+                </TR>
+                <TR>
+                    <TD colspan="3"><hr></hr></TD>
+                </TR>
+            </TABLE>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            
+       <H2>HELLO {!recordWrapper.ContactName}</H2>  <!-- to get recipient Name (used wrapper class)     -->
+            
+            <p>
+                Your clients benefit your business whether they close with QL or ORM. Below is a snapshot and the details of the clients you have transferred to One Reverse Mortgage. Remember when they "Folder" <strong>you earn Referral Folder Credit</strong> and when they "Close" <strong>you earn $1,000.</strong></p><br />
+        </TD>
+    </TR>
+    <TR class="grey">
+        <TD>
+            <H2>&nbsp;&nbsp;HERE'S THE SNAPSHOT OF YOUR TRANSFERS:</H2></TD>
+    </TR>
+    <TR>
+        <TD>
+            <TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0">
+                <TR>
+                    <TD ROWSPAN="3" valign="middle" width="25%" align="center"><IMG SRC="http://bookoforms.com/wp-content/uploads/2017/12/2017burst.png"></IMG></TD>
+                    <TD align="center" width="25%">
+                        <TABLE WIDTH="90%" align="center" class="snapshottable" CELLPADDING="0" CELLSPACING="0">
+                            <TR>
+                                <TD class="detailsnap">Transfers</TD>
+                            </TR>                               
+                            <TR>
+                                <TD align="center">{!Transfer}</TD>
+                            </TR>                               
+                        </TABLE>
+                    </TD>
+                    <TD align="center" width="25%">
+                        <TABLE WIDTH="90%" align="center" class="snapshottable" CELLPADDING="0" CELLSPACING="0">
+                            <TR>
+                                <TD class="detailsnap">Folders</TD>
+                            </TR>                               
+                            <TR>
+                                <TD align="center">{!Folder}</TD>
+                            </TR>                               
+                        </TABLE>
+                    </TD>
+                    <TD align="center" width="25%">
+                        <TABLE WIDTH="90%" align="center" class="snapshottable" CELLPADDING="0" CELLSPACING="0">
+                            <TR>
+                                <TD class="detailsnap">Closed</TD>
+                            </TR>                               
+                            <TR>
+                                <TD align="center">{!Closed}</TD>
+                            </TR>                               
+                        </TABLE>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>&nbsp;</TD>
+                    <TD><p id="snapshot" align="center">Referral Credit</p></TD>
+                    <TD><p id="snapshot" align="center">${!closedmoney}</p></TD>
+                </TR>
+            </TABLE>
+            <br />
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            <TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0">
+                <TR>
+                    <TD ROWSPAN="3" valign="middle" width="25%" align="center"><IMG SRC="http://bookoforms.com/wp-content/uploads/2018/02/2018burst.png"></IMG></TD>
+                    <TD align="center" width="25%">
+                        <TABLE WIDTH="90%" align="center" class="snapshottable" CELLPADDING="0" CELLSPACING="0">
+                            <TR>
+                                <TD class="detailsnap">Transfers</TD>
+                            </TR>                               
+                            <TR>
+                                <TD align="center">{!Transfer2}</TD>
+                            </TR>                               
+                        </TABLE>
+                    </TD>
+                    <TD align="center" width="25%">
+                        <TABLE WIDTH="90%" align="center" class="snapshottable" CELLPADDING="0" CELLSPACING="0">
+                            <TR>
+                                <TD class="detailsnap">Folders</TD>
+                            </TR>                               
+                            <TR>
+                                <TD align="center">{!Folder2}</TD>
+                            </TR>                               
+                        </TABLE>
+                    </TD>
+                    <TD align="center" width="25%">
+                        <TABLE WIDTH="90%" align="center" class="snapshottable" CELLPADDING="0" CELLSPACING="0">
+                            <TR>
+                                <TD class="detailsnap">Closed</TD>
+                            </TR>                               
+                            <TR>
+                                <TD align="center">{!Closed2}</TD>
+                            </TR>                               
+                        </TABLE>
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>&nbsp;</TD>
+                    <TD><p id="snapshot" align="center">Referral Credit</p></TD>
+                    <TD><p id="snapshot" align="center">${!closedmoney2}</p></TD>
+                </TR>
+            </TABLE>
+            <br />
+        </TD>
+    </TR>
+    <TR class="grey">
+        <TD>
+            <H2>&nbsp;&nbsp;HERE'S THE DETAILS OF YOUR ACTIVE TRANSFERS:</H2></TD>
+    </TR>
+    <TR>
+        <TD>
+            <TABLE Border= "1" WIDTH="100%" cellpadding="0" cellspacing="3" class="detailtable">
+                <TR>
+                    <TD class="details">ORM Loan Number</TD>
+                    <TD class="details">QL Loan Number</TD>
+                    <TD class="details">ORM Banker</TD>
+                    <TD class="details">ORM App Date</TD>
+                    <TD class="details">ORM Folder Date</TD>
+                  <!--  <TD class="details">Closed Date</TD> -->
+                </TR>
+                <apex:repeat value="{!leads}" var="l">
+                <tr>    
+                    <td>{!l.ORM_Loan_Number__c}</td>
+                    <TD class="grey" >&nbsp;{!l.QL_Loan_Number__c }</TD>
+                    <TD>&nbsp;{!l.ORM_Banker__c }</TD>
+                    <TD class="grey">&nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}"> <!-- Used this to change the date format, which excludes time  -->
+                        <apex:param value="{!l.ORM_App_Date__c}" /> 
+                        </apex:outputText>
+                    </TD>
+                    <TD>&nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!l.Orm_Folder_Date__c}" /> 
+                        </apex:outputText>
+                    </TD>
+                   <!-- <TD class="grey">&nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!l.Closed_Date__c}" /> 
+                        </apex:outputText>
+                    </TD>
+                    -->
+                                  
+                                
+                </TR>
+                </apex:repeat>                                
+            </TABLE>
+        </TD>
+    </TR>
+    
+    <TR class="grey">
+        <TD>
+            <H2>&nbsp;&nbsp;HERE'S THE WITHDRAWN/DENIED LEADS: LAST 30 DAYS</H2>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            <TABLE Border= "1" WIDTH="100%" cellpadding="0" cellspacing="3" class="detailtable">
+                <TR>
+                    <TD class="details">ORM Loan Number</TD>
+                    <TD class="details">QL Loan Number</TD>
+                    <TD class="details">ORM Banker</TD>
+                    <TD class="details">ORM App Date</TD>
+                    <TD class="details">ORM Folder Date</TD>
+                    <TD class="details">Closed Date</TD>
+                </TR>
+                <apex:repeat value="{!leads2}" var="l">
+                <tr>    
+                    <td><Font color = "Red"> {!l.ORM_Loan_Number__c} </font> </td>
+                    <TD class="grey" ><Font color = "Red">&nbsp;{!l.QL_Loan_Number__c }</font></TD>
+                    <TD><Font color = "Red">&nbsp;{!l.ORM_Banker__c }</Font></TD>
+                    <TD class="grey"><Font color = "Red">
+                        &nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}"> <!-- Used this to change the date format, which excludes time  -->
+                        <apex:param value="{!l.ORM_App_Date__c}" /> 
+                        </apex:outputText></Font>
+                    </TD>
+                    <TD><Font color = "Red">
+                        &nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!l.Orm_Folder_Date__c}" /> 
+                        </apex:outputText> </Font>
+                    </TD>
+                    <TD class="grey"><Font color = "Red">
+                        &nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!l.Closed_Date__c}" /> 
+                        </apex:outputText> </Font>
+                    </TD>                    
+                                
+                </TR>
+                </apex:repeat>                                
+            </TABLE>
+        </TD>
+    </TR>        
+    
+    <TR class="grey" >
+        <TD>
+            <H2>&nbsp;&nbsp;TRANSFERS THAT HAVE CLOSED AND FOLDER DATE</H2>
+        </TD>
+    </TR>
+    <TR>
+        <TD>
+            <TABLE Border= "1" WIDTH="100%" cellpadding="0" cellspacing="3" class="detailtable">
+                <TR>
+                    <TD class="details">ORM Loan Number</TD>
+                    <TD class="details">QL Loan Number</TD>
+                    <TD class="details">ORM Banker</TD>
+               <!-- <TD class="details">ORM App Date</TD> -->
+                    <TD class="details">ORM Folder Date</TD>
+                    <TD class="details">Closed Date</TD>
+                    <TD class="details">Killed?</TD>                    
+                </TR>
+                <apex:repeat value="{!leads3}" var="l">
+                <tr>    
+                    <td><Font color = "Red"> {!l.ORM_Loan_Number__c} </font> </td>
+                    <TD class="grey" ><Font color = "Red">&nbsp;{!l.QL_Loan_Number__c }</font></TD>
+                    <TD><Font color = "Red">&nbsp;{!l.ORM_Banker__c }</Font></TD>
+                <!--<TD class="grey"><Font color = "Red">
+                        &nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}"> 
+                        <apex:param value="{!l.ORM_App_Date__c}" /> 
+                        </apex:outputText></Font>
+                    </TD>
+                 -->
+                    <TD class="grey"><Font color = "Red">
+                        &nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}"> <!-- Used this to change the date format, which excludes time  -->
+                        <apex:param value="{!l.Orm_Folder_Date__c}" /> 
+                        </apex:outputText> </Font>
+                    </TD>
+                    <TD><Font color = "Red">
+                        &nbsp; <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                        <apex:param value="{!l.Closed_Date__c}" /> 
+                        </apex:outputText> </Font>
+                    </TD>                    
+                    <TD class="grey" ><Font color = "Red">&nbsp;{!l.Killed_Lead__c }</font></TD>
+                                
+                </TR>
+                </apex:repeat>                                
+            </TABLE>
+        </TD>
+    </TR>        
+    
+</TABLE>
+    
+</body>
+</html>
+           
+</apex:component>

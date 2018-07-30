@@ -1,0 +1,30 @@
+.THIS {
+}
+.THIS .buttonMenuCss{
+    margin-top: -2.875rem;
+}
+.THIS.menu{
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+.THIS .wdt{
+    width:24em  !important;   
+    
+}
+.THIS .wdts{
+    width:10em  !important
+} 
+.THIS .wrapper {
+  
+  background: #eaeaea;
+  max-width: 400px;
+   
+}
+  
+.THIS .demo-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

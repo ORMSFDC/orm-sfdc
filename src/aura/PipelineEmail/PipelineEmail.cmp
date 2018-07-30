@@ -1,0 +1,385 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global"  
+                controller="PipeLineController">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="loan" type="object" />
+    <aura:attribute name="CICErrorMsg" type="Boolean" default="true" />
+    <aura:handler event="c:Event_CICSave_CloseModal" action="{!c.getModalValue}"/>
+    <aura:handler event="c:Event_PackageSave_CloseModal" action="{!c.getModalStatus}"/>
+    
+    <aura:attribute name="showNext" type="boolean" default="false"/>
+    <aura:attribute name="showPackagePopup" type="boolean" default="false"/>
+    <aura:attribute name="showCICPopup" type="Boolean" default="false" />    
+    <aura:attribute name="LoanId" type="String" default="" />
+    <aura:attribute name="Client_Name__c" type="String" default="" />
+    <aura:attribute name="Related_Individual__c" type="String" default="" />
+    <aura:attribute name="LoanOfficer" type="String" default="" />
+    <aura:attribute name="AccountExecutive" type="String" default="" />
+    <aura:attribute name="disabledClass" type="string" default="defaultCls" />
+    <aura:attribute name="disabledSubmitClass" type="string" default="defaultCls" /> 
+    <aura:attribute name="mailmessage" type="String" default="Mail is already send." />
+    <aura:attribute name="OldContacTime" type="String" default="" />
+    <aura:attribute name="OldContactName" type="String" default="" />
+    <aura:attribute name="showDiv1" type="boolean" default="true" />
+    <aura:attribute name="showDiv2" type="boolean" default="flase" />
+    <fieldset class="slds-box slds-theme--default slds-container--large">  
+        <div class="slds-form slds-form_compound">            
+            <!--<fieldset class="slds-form-element">                
+                <div class="slds-form-element__group">
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-1" >                                 
+                            <table class="slds-table slds-table_bordered slds-table_cell-buffer"  >                                
+                                <tbody>                                      
+                                    <tr >                                        
+                                       
+                                        <td data-label="BCT">
+                                            <div class="slds-truncate" title="Index">
+                                                <b>
+                                                    Best Contact Time: 
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td data-label="BCT"  >
+                                            <ui:inputText label="" aura:id="inputFName" maxlength="150"
+                                                          keypress="{!c.validateWhitespace}" 
+                                                          keyup="{!c.validateWhitespace}" keydown="{!c.validateWhitespace}" 
+                                                          updateOn="keypress, keyup, keydown" 
+                                                          value="{!v.loan.ContactTime}" class="slds-input" />
+                                            
+                                         
+                                        </td> 
+                                        <td data-label="PN">
+                                            <div class="slds-truncate" title="Index">
+                                                <b>
+                                                    Partner Name: 
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td data-label="PN"  >
+                                            <div class="slds-truncate" title="Index">
+                                                {!v.loan.partnerName}
+                                            </div>
+                                        </td>                                        
+                                    </tr> 
+                                    <tr>                                        
+                                        <td data-label="BC">
+                                            <div class="slds-truncate" title="Index">
+                                                <b>
+                                                    Best Contact: 
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td data-label="BC" >
+                                            <ui:inputSelect label="" aura:id="Contact"  value="{!v.loan.BestContact}" change="{!c.ContactChange}">
+                                                <ui:inputSelectOption value="true" text="" label="Select option"/>
+                                                <aura:iteration items="{!v.loan.BestContactList}" var="pOptions" >
+                                                    <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}"/>
+                                                </aura:iteration>                                                 
+                                            </ui:inputSelect>                                            
+                                        </td>       
+                                        <td data-label="LO">
+                                            <div class="slds-truncate" title="Index">
+                                                <b>
+                                                    Loan Officer Name: 
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td data-label="LO" >
+                                            <div class="slds-truncate" title="Index">
+                                                {!v.loan.LoanOfficerName}
+                                            </div>
+                                        </td>                                        
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>                        
+                    </div>
+                </div>            
+              <div class="slds-form slds-form_compound" id="other" style="display:none">
+                    <fieldset class="slds-form-element">
+                        <div class="slds-form-element__group">                            
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-2" >               
+                                    <ui:inputText label="New/Other Contact Name" aura:id="OtherContactName" required="true" maxlength="100"
+                                                  value="{!v.loan.OtherContactName}" class="slds-input" />                                                           
+                                </div>                                        
+                                <div class="slds-form-element slds-size_1-of-2" >                                        
+                                    <ui:inputPhone label="New/Other Contact Number" maxlength="10" aura:id="OtherContactPhone" blur="{!c.FormatPhone}" 
+                                                   keypress="{!c.RestrictZeroInEmployerPhoneFirstTime}" keyup="{!c.RestrictZeroInEmployerPhoneFirstTime}"
+                                                   keydown="{!c.RestrictZeroInEmployerPhoneFirstTime}"  updateOn="keypress, keyup, keydown"
+                                                   required="true" value="{!v.loan.OtherContactPhone}" class="slds-input" />
+                                </div>                                
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="slds-form-element slds-size_1-of-1" >
+                    <div id="MSGSave"  style="margin-left: 0%;display:none">
+                        <ui:message title="Confirmation"  severity="confirm" closable="false">
+                            Best Contact Time and Contact Name Saved Successfully.
+                        </ui:message>
+                    </div>                     
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">                                           
+                            <lightning:button variant="brand"
+                                              onclick="{!c.Save}" label="Save">
+                            </lightning:button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>  <br/>-->
+            
+            <fieldset class="slds-form-element">
+                <div class="slds-form-element__group">
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-1"   > 
+                            
+                            <table class="slds-table_cell-buffer">
+                                <thead>
+                                    <tr style= "background-color:#2877bd">
+                                        <th  style= "color:white">
+                                            Order Appraisal
+                                        </th>  
+                                        <th colspan="4"></th>
+                                        
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody style="font-size:13px">
+                                    <tr>
+                                        <td colspan="5" style="padding-right: 0rem !important">
+                                            
+                                            <br/>
+                                            <p style="font-size: 17px;">
+                                                Order an Appraisal for this Loan.
+                                                <br/>
+                                            </p>
+                                            <br/>
+                                        </td>
+                                    </tr>
+                                    <tr>  
+                                        <td data-label="BCT" style="width:200px">
+                                            
+                                            <b>
+                                                Best Contact Time: 
+                                            </b>
+                                            
+                                        </td>
+                                        <td data-label="BCT"  >
+                                            <ui:inputText label="" disabled="true" aura:id="inputFName" maxlength="150"
+                                                          keypress="{!c.validateWhitespace}" 
+                                                          keyup="{!c.validateWhitespace}" keydown="{!c.validateWhitespace}" 
+                                                          updateOn="keypress, keyup, keydown" 
+                                                          value="{!v.loan.ContactTime}" class="slds-input" />
+                                            
+                                            <!--<div class="slds-truncate" title="Index">{!v.loan.ContactTime}</div>-->
+                                        </td> 
+                                        <td style="width:50px"></td>
+                                        <td data-label="PN">
+                                            <div class="slds-truncate" title="Index">
+                                                <b>
+                                                    Partner Name: 
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td data-label="PN"  >
+                                            <div class="slds-truncate" title="Index">
+                                                {!v.loan.partnerName}
+                                            </div>
+                                        </td>                                        
+                                    </tr> 
+                                    <tr>                                        
+                                        <td data-label="BC">
+                                            <div class="slds-truncate" title="Index">
+                                                <b>
+                                                    Best Contact: 
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td data-label="BC" >
+                                            <ui:inputSelect label="" aura:id="Contact" disabled="true"  value="{!v.loan.BestContact}" change="{!c.ContactChange}">
+                                                <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                                <aura:iteration items="{!v.loan.BestContactList}" var="pOptions" >
+                                                    <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}"/>
+                                                </aura:iteration>                                                 
+                                            </ui:inputSelect>                                            
+                                        </td> 
+                                        <td style="width:50px"></td>
+                                        <td data-label="LO">
+                                            <div class="slds-truncate" title="Index">
+                                                <b>
+                                                    Loan Officer Name: 
+                                                </b>
+                                            </div>
+                                        </td>
+                                        <td data-label="LO" >
+                                            <div class="slds-truncate" title="Index">
+                                                {!v.loan.LoanOfficerName}
+                                            </div>
+                                        </td> </tr>
+                                    <!--<tr>
+                                        <td colspan="4" style="padding-right: 0rem !important">                                        
+                                            <div id="msg" style="margin-left: 0%;">
+                                                <ui:message title="Confirmation"  severity="confirm" closable="false">
+                                                    One Reverse Mortgage will request your appraisal after the case number has been issued. <br/> You will receive an email link to make your appraisal payment.  Please contact your PCS with any questions.  Thank you!
+                                                </ui:message>
+                                            </div>
+                                            <div id="mailsend" style="display:none ;margin-left: 0%;" >
+                                                <ui:message title="Confirmation"  severity="confirm" closable="false">
+                                                    Order Appraisal Mail was sent already.
+                                                </ui:message>                                       
+                                            </div>
+                                            
+                                            
+                                        </td>
+                                    </tr>-->
+                                </tbody>
+                            </table>
+                            <br/>
+                            <!--<table class="slds-table_cell-buffer">
+                                  <tr>
+                                        <td colspan="4" style="padding-right: 0rem !important">                                        
+                                            <div id="msg" style="margin-left: 0%;">
+                                                <ui:message title="Confirmation"  severity="confirm" closable="false">
+                                                    One Reverse Mortgage will request your appraisal after the case number has been issued. <br/> You will receive an email link to make your appraisal payment.  Please contact your PCS with any questions.  Thank you!
+                                                </ui:message>
+                                            </div>
+                                            <div id="mailsend" style="display:none ;margin-left: 0%;" >
+                                                <ui:message title="Confirmation"  severity="confirm" closable="false">
+                                                    Order Appraisal Mail was sent already.
+                                                </ui:message>                                       
+                                            </div>
+                                            <br></br>
+                                            <aura:if isTrue="{!v.showDiv1}">
+                                                <div class="row">                                                  
+                                                    <div id="AppText"  class="col-md-8">                                             
+                                                        Order an Appraisal for this Loan.                                          
+                                                    </div>
+                                                    <div class="col-md-4 text-right">                                            
+                                                        <lightning:button aura:id="BtnMail"   class="{!v.disabledClass}"
+                                                                          label="Order" disabled="true" onclick="{!c.SendMail}" />
+                                                    </div>
+                                                </div>
+                                            </aura:if>
+                                           <aura:if isTrue="{!v.showDiv2}">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-right">
+                                                        <lightning:button aura:id="BtnMail"   class="{!v.disabledClass}"
+                                                                          label="Order" disabled="true" onclick="{!c.SendMail}" />
+                                                    </div>
+                                                </div>
+                                            </aura:if>
+                                            
+                                        </td>
+                                    </tr>
+                            </table>-->
+                            
+                            <div class="slds-form slds-form_compound" id="other" style="display:none">
+                                <fieldset class="slds-form-element">
+                                    <div class="slds-form-element__group">                            
+                                        <div class="slds-form-element__row">
+                                            
+                                            <div class="slds-form-element slds-size_1-of-2" >               
+                                                <ui:inputText label="New/Other Contact Name"  aura:id="OtherContactName" required="true" maxlength="100"
+                                                              value="{!v.loan.OtherContactName}" class="slds-input" />                                                           
+                                            </div>                                        
+                                            <div class="slds-form-element slds-size_1-of-2" >                                        
+                                                <ui:inputPhone label="New/Other Contact Number"  maxlength="10" aura:id="OtherContactPhone" blur="{!c.FormatPhone}" 
+                                                               keypress="{!c.RestrictZeroInEmployerPhoneFirstTime}" keyup="{!c.RestrictZeroInEmployerPhoneFirstTime}"
+                                                               keydown="{!c.RestrictZeroInEmployerPhoneFirstTime}"  updateOn="keypress, keyup, keydown"
+                                                               required="true" value="{!v.loan.OtherContactPhone}" class="slds-input" />
+                                            </div>                                
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-1">
+                                <div id="msg" style="margin-left: 0%;">
+                                    <ui:message title="Confirmation"  severity="confirm" closable="false">
+                                        One Reverse Mortgage will request your appraisal after the case number has been issued. <br/> You will receive an email link to make your appraisal payment.  Please contact your PCS with any questions.  Thank you!
+                                    </ui:message>
+                                </div>
+                                <div id="mailsend" style="display:none ;margin-left: 0%;" >
+                                    <ui:message title="Confirmation"  severity="confirm" closable="false">
+                                        Order Appraisal Mail was sent already.
+                                    </ui:message>                                       
+                                </div>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-1" >
+                                
+                                <div class="row">
+                                    
+                                    <div class="col-md-12 text-right" style="padding-right: 24px;">
+                                        <lightning:button aura:id="BtnMail"   class="{!v.disabledClass}"
+                                                          label="Order" disabled="true" onclick="{!c.SendMail}" />
+                                    </div>
+                                    
+                                </div>
+                                <br/>
+                            </div>
+                            
+                            <!-- Change for Storty No :- 1449 by Dev3-->
+                            <table class="slds-table_cell-buffer">
+                                <thead>
+                                    <tr style= "background-color:#2877bd">
+                                        <th style= "color:white">
+                                            Submit a Full Application Package 
+                                        </th>                                        
+                                    </tr>
+                                </thead>
+                                <br></br>
+                                <tr style="font-size:17px">
+                                    <td style="padding-right: 0rem !important">
+                                        <div class="row">                                                  
+                                            <div id="package"  class="col-md-8">                                             
+                                                Submit the full package for this loan. 
+                                            </div>
+                                            <div class="col-md-4 text-right">                                            
+                                                <lightning:button aura:id="BtnPackage"   class="{!v.disabledClass}" onclick="{!c.ShowPopUp}"
+                                                                  label="Next" disabled="{!v.showNext}" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <!--<End for Story-->
+                            
+                            <table class="slds-table_cell-buffer">
+                                <thead>
+                                    <tr style= "background-color:#2877bd">
+                                        <th style= "color:white">
+                                            Submit a Loan Change
+                                        </th>                                        
+                                    </tr>
+                                </thead>
+                                <br></br>
+                                <tr style="font-size:17px">
+                                    <td style="padding-right: 0rem !important">
+                                        <div class="row">                                                  
+                                            <div id="CIC"  class="col-md-8">                                             
+                                                Submit a Request for a Change in Circumstance or other Loan Change.                                          
+                                            </div>
+                                            <div class="col-md-4 text-right">                                            
+                                                <lightning:button aura:id="BtnCIC"   class="defaultCls"
+                                                                  label="Next" disabled="false" onclick="{!c.ShowCIC}" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </fieldset>
+    <aura:if isTrue="{!v.showCICPopup}">        
+        <c:PipeLineCICCMP LoanNumberId="{!v.LoanId}"/>
+    </aura:if>
+    
+    <!-- Code added for Story No :- 1449 by Dev3-->
+    <aura:if isTrue="{!v.showPackagePopup}">
+       <c:PipeLinePackageCMP LoanNumberId="{!v.LoanId}" ClientName="{!v.Client_Name__c}" IndividualId="{!v.Related_Individual__c}" LoanOfficer="{!v.LoanOfficer}" AccountExecutive="{!v.AccountExecutive}" />
+    </aura:if>
+    <!-- Code Ended -->
+</aura:component>

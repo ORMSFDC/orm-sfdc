@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- New CRA Status --></label>
+        <name>New_CRA_Status__c</name>
+    </fields><fields>
+        <label><!-- Old CRA Status --></label>
+        <name>Old_CRA_Status__c</name>
+    </fields><fields>
+        <label><!-- Partner Name --></label>
+        <name>Partner_Name__c</name>
+        <relationshipLabel><!-- Partner CRA Status History --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Partner CRA Status History</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Partner CRA Status History</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Partner CRA Status History Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

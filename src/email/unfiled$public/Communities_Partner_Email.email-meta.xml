@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Communities Partner Email</name>
+    <style>none</style>
+    <subject>Subject</subject>
+    <textOnly>Hello #First_Name #Last_Name,
+
+Thank you for using the ORMS portal! Your loan application request has been successfully submitted. The loan ID is #Loan_Id. We are reviewing the application and will be sending you the complete application package for signature.
+
+If you need any assistance, please feel free to contact us at the phone number or email address below:
+
+
+ORMSSupport@Onereverse.com
+(888) 980-2898
+Thank You,
+- The ORMS Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

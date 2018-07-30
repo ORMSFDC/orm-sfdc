@@ -1,0 +1,42 @@
+/*toggleCss.css*/
+.THIS.toggle {
+    display: none;
+}
+.THIS.btnheight {
+    height: 37px !important;
+}
+
+.THIS .myCheckbox{
+  display: inline-block;
+  float: left;
+}
+  .THIS .btncls { 
+    padding-left: 1rem !important;
+      
+    padding-right: 1rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    
+}
+.THIS .disabledcls { 
+    padding-left: 1rem !important;
+    
+    padding-right: 1rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    cursor: not-allowed !important;
+}
+.THIS .DivStyle
+{
+    font-size:0.75rem;color:rgb(194, 57, 52) !important;
+}
+.THIS .DivStyle .Hide
+{
+    display: none !important;
+}

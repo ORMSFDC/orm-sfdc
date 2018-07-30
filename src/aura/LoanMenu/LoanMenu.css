@@ -1,0 +1,21 @@
+.THIS .Step_color{
+    color:green !Important;
+}
+.THIS .errorclr{
+    color:red !Important;
+}
+
+.THIS .btnclr{
+    color:white !Important;
+    background:#337ab7 !Important;
+}
+
+.THIS .bordererr{
+    
+    border:1px solid red!important;
+}
+
+.THIS .tabdisplay{
+    
+    display:none;
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Entity__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Entity</label>
+        <referenceTo>EntityDefinition</referenceTo>
+        <relationshipLabel>Trigger_Handler</relationshipLabel>
+        <relationshipName>Trigger_Handler</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Skip_Trigger_Execution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Skip Trigger Execution</label>
+        <type>Checkbox</type>
+    </fields><label>Trigger Handler</label><pluralLabel>Trigger Handler</pluralLabel><visibility>Public</visibility></CustomObject>

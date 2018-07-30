@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+                access="global">
+    
+     <aura:handler name="init" action="{!c.doIn}" value="{!this}" />
+		<aura:attribute name="loan" type="Object" />
+    <aura:attribute name="loanP" type="Object" />
+     <aura:attribute name="loanU" type="Object" />
+     <aura:attribute name="loanS" type="Object" />
+     <aura:attribute name="loanCl" type="Object" />
+     <aura:attribute name="loanF" type="Object" />
+     <aura:attribute name="loanC" type="Object" />
+    <aura:registerEvent name="navigate" type="c:NavigatetoPipeLineMenu"/>
+      <div class="slds-form slds-form_Compound"  >
+            <div id="divOrigination">  
+            <fieldset class="slds-form-element">
+          
+            <div class="slds-form-element__group">
+			<div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_1-of-2">     
+                        <div style= "color:blue">
+                  <h3><b>Start a New Loan -- Application Submission Success</b></h3>   
+                        </div>
+                                </div>
+    </div>
+                <div class="slds-form-element__group">
+			<div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_1-of-2">     
+                       
+                  <h5><b>Thank you! Your application request has been successfully submitted. we are reviewing the application and will get back to you about next steps as soon as possible.</b></h5>   
+                       
+                                </div>
+    </div>
+                </div>
+                </div>
+          </fieldset>
+                </div>
+    </div>
+</aura:component>

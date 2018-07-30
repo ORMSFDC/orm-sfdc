@@ -1,0 +1,173 @@
+<aura:component controller="Pricing" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="IsSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="BrokerPricingContent" type="Object" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <form class="slds-form--stacked" style="margin-left: 5%;margin-right: 5%;">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'></link>
+        <div  >
+            
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer" 
+                   style="border-top:0px solid red !important">
+                <thead>
+                    
+                    <tr class="slds-text-title_caps">
+                        <th> <div class="slds-truncate" ></div></th>
+                        <th scope="col" colspan="10" style="text-align:center;background-color: rgb(40, 119, 189)">
+                            <div class="slds-truncate" title="Utilization" 
+                                 style="color: antiquewhite;font-size: 18px  !important; !important">
+                                <!--color: #2081BF;-->
+                                Utilization </div>
+                        </th> 
+                    </tr>
+                    <tr class="slds-text-title_caps" >
+                        
+                        <th scope="col" style="background-color: rgb(40, 119, 189)">
+                            <div class="slds-truncate" title="Margin" 
+                                 style="color: antiquewhite; text-align:center; 
+                                        font-weight: bold;font-size: 1.3em !important;">
+                                Margin
+                            </div>
+                        </th>
+                        <th scope="col" class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title=""  >
+                                0-10%
+                            </div>
+                        </th>
+                        <th scope="col"  class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title=""  >
+                                10.01-20%
+                            </div>
+                        </th>
+                        <th scope="col"  class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title=""  >
+                                20.01-30%	
+                            </div>
+                        </th>
+                        <th scope="col"   class="HeaderCss">
+                            <div class="slds-truncate  FontText" title=""  >
+                                30.01-40% 
+                            </div>
+                        </th>
+                        <th scope="col"   class="HeaderCss">
+                            <div class="slds-truncate  FontText" title=""  >
+                                40.01-50%	
+                            </div>
+                        </th>
+                        <th scope="col"  class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title=""  >
+                                50.01-60%	
+                            </div>
+                        </th>
+                        <th scope="col"  class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title=""  >
+                                60.01-70%	
+                            </div>
+                        </th>
+                        <th scope="col"   class="HeaderCss">
+                            <div class="slds-truncate  FontText" title=""  >
+                                70.01-80%	
+                            </div>
+                        </th>
+                        <th scope="col"  class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title=""  >
+                                80.01-90%	
+                            </div>
+                        </th>
+                        <th scope="col"  class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title=""  >
+                                90.01-100%
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.BrokerPricingContent}" var="BrokerPricingContent">
+                        <tr>
+                            <td data-label="Margin" style="background-color: rgb(40, 119, 189)">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin}"
+                                     style="color: antiquewhite;  text-align:center; "> 
+                                    {!BrokerPricingContent.Margin}
+                                </div>
+                            </td>
+                            <td data-label="0-10%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x0_to_10}"
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x0_to_10}
+                                </div>
+                            </td>
+                            <td data-label="10.01-20%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x10_to_20}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x10_to_20} 
+                                </div>
+                            </td>
+                            <td data-label="20.01-30%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x20_to_30}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x20_to_30}
+                                </div>
+                            </td>
+                            <td data-label="30.01-40%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x30_to_40}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x30_to_40}
+                                </div>
+                            </td>
+                            <td data-label="40.01-50%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x40_to_50}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x40_to_50}
+                                </div>
+                            </td>
+                            <td data-label="50.01-60%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x50_to_60}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x50_to_60}
+                                </div>
+                            </td>
+                            <td data-label="60.01-70%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x60_to_70}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x60_to_70} </div>
+                            </td>
+                            <td data-label="70.01-80%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x70_to_80}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x70_to_80} 
+                                </div>
+                            </td>
+                            <td data-label="80.01-90%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x80_to_90}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x80_to_90} 
+                                </div>
+                            </td>
+                            <td data-label="90.01-100%">
+                                <div class="slds-truncate customFont16" title="{!'Margin: '+BrokerPricingContent.Margin +'; Utilization: '+ BrokerPricingContent.x90_to_100}"  
+                                     style="text-align:center;color: #222222;">
+                                    {!BrokerPricingContent.x90_to_100} 
+                                </div>
+                            </td>
+                            
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+            <div style="color: #222222;" class="customFont16"> 
+                <br/>
+                
+                <b> Effective Date: </b> {!$Label.c.BrokerPricingDateText}
+            </div>
+            <aura:if isTrue="{!v.IsSpinner}">
+                <div class="slds-spinner_container">
+                    <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </aura:if>  
+        </div>
+    </form>
+    
+</aura:component>

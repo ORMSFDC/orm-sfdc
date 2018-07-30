@@ -1,0 +1,7 @@
+Hello {!Contact.FirstName},
+
+As a current QLMS partner, you are only a few steps away from being able to offer a reverse mortgage solution to your clients with One Reverse Mortgage Services. We do the heavy lifting! Our qualified team can help you through the entire loan process from registration to the closing. I would like to speak to you about becoming part of this exciting opportunity, You can contact me at {!User.Phone} or simply reply to this email to schedule a time for our discussion.
+
+{!User.Name}
+{!User.Title}
+{!User.Phone}

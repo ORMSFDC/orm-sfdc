@@ -1,0 +1,26 @@
+<apex:component >
+  <!-- Begin Default Content REMOVE THIS -->
+  <footer class="ql-footer">
+        <ul id="navigation_reference">
+            <li><span> 
+                <a href="{!$Label.PartnerContactUs}" target="_top">{!$Label.ContactUs}</a>
+                 </span>
+            
+            </li>
+            <li><a target="_Blank" href="{!$Label.PartnerTermUs}">{!$Label.partnerTermsOfUse}</a></li>
+        </ul>
+        
+        <div class="ql-row">
+            <div class="ql-col-fifth"><a href="{!$Page.PartnerZoomscreenShare}"><img id="quick-share" src="{!$Resource.QuickShare}" 
+            alt="Zoom logo" title="Share your screen with Zoom." /></a></div>
+            <div class="ql-col-three-fifth">
+                <p class="ql-copyright">&copy; {!$Label.partnerCopyright}</p>
+            </div>
+            <div  >
+                <a target="_blank"   href="{!$Label.PartnerLenderURL}" title="One Reverse Mortgage is an Equal Housing Lender">
+                    <img  src="{!$Resource.Lender}" alt="Lender" title="One Reverse Mortgage is an Equal Housing Lender" style="padding-left:51px" /></a>
+            </div>
+        </div>
+    </footer>
+  <!-- End Default Content REMOVE THIS -->
+</apex:component>

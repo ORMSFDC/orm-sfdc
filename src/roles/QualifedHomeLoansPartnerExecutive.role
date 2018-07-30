@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Loan Solutions Marketing, Inc. dba Qualified Home Loans Partner Executive</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Loan Solutions Marketing, Inc. dba Qualified Home Loans Partner Executive</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Account_Executive_Lead</parentRole>
+</Role>

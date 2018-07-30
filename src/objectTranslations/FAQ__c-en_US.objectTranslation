@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- FAQ Detail --></label>
+        <name>FAQ_Detail__c</name>
+    </fields><fields>
+        <label><!-- FAQ Sequence --></label>
+        <name>FAQ_Sequence__c</name>
+    </fields><fields>
+        <label><!-- IsActive --></label>
+        <name>IsActive__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>FAQ</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>FAQs</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>FAQ Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

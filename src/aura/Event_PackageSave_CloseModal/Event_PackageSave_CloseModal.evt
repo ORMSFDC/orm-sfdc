@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION">
+   <aura:attribute name="ModalStatus" type="Boolean" />
+   <aura:attribute name="statusValue" type="Boolean" />
+</aura:event>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Portal Survey</name>
+    <style>none</style>
+    <subject>Tell us about your experience</subject>
+    <textOnly>Partner Portal Survey
+
+Hi {!Contact.FirstName},
+
+We are always looking for ways to make our partnership better - and we need your help. We know you have recently logged into our portal and want to get your feedback. Please take a moment to fill out this &lt;A HREF=&quot;https://www.surveymonkey.com/r/ORMS-PARTNER-SURVEY&quot;&gt;short, 10-question survey&lt;/a&gt; about your experience using the portal so far. We&apos;ll use this information to make improvements and updates that can benefit you and your clients.
+
+Thank you for your time.
+
+Let&apos;s get started!
+Contact us at (888) 980-2898</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

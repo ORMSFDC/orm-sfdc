@@ -1,0 +1,832 @@
+<aura:component controller="Sal_LiabilitiesController" implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="Heading" type="String"/>
+    <aura:attribute name="ClientIDEdit" type="String" default=""/>
+    <aura:attribute name="liabilityCategory" type="String"/>
+    <aura:attribute name="liabilityType" type="String"/>
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    <aura:attribute name="LoanId" type="String" default="a0M0q000000ARqJEAW"/>
+    <aura:attribute name="propertyState" type="List"/>
+    <aura:attribute name="liabilityState" type="List"/>
+    <aura:attribute name="propertyStatusList" type="List"/>
+    <aura:attribute name="SP" type="String"/>
+    <aura:attribute name="LiaLoanId" type="String"/>
+    <!-- Category and Type Control -->
+    <aura:attribute name="categoryPicklist" type="Object"/>
+    <aura:attribute name="categoryOptions" type="List"/>
+    <aura:attribute name="typePicklist" type="Object"/>
+    <aura:attribute name="typeOptions" type="List"/>
+    <aura:attribute name="pickClient" type="Object"/>
+    <aura:attribute name="disabledPick" type="Boolean" default="true"/>
+    <aura:attribute name="enableCategory" type="Boolean" default="false"/>
+    <aura:attribute name="enableType" type="Boolean" default="true"/>
+    <aura:attribute name="enableButton" type="Boolean" default="true"/>
+    <aura:attribute name="enableClient" type="Boolean" default="false"/>
+    <!-- Controls for Grid and Client DropDown -->
+    <aura:attribute name="clientList" type="List"/>
+    <aura:attribute name="pClientList" type="List"/>
+    <aura:attribute name="clientCount" type="Integer"/>
+    <aura:attribute name="clientListHeader" type="List"/>
+    <aura:attribute name="LiabRealList" type="Liability__c[]"/>
+    <aura:attribute name="LiabOtherList" type="Liability__c[]"/>
+    <aura:attribute name="total" type="Double" default="0.00" />
+    <aura:attribute name="totalBalance" type="Double" default="0.00" />    
+    <aura:attribute name="totalRealEstate" type="Double" default="0.00" />
+    <aura:attribute name="totalBalanceRealEstate" type="Double" default="0.00" />    
+    <aura:attribute name="totalRealMonthlyPayment" type="Double" default="0.00" />    
+    <!-- Div control for hiding and showing -->
+    <aura:attribute name="divAlimony" type="Boolean" default="false"/>
+    <aura:attribute name="divJob" type="Boolean" default="false"/>
+    <aura:attribute name="divLiability" type="Boolean" default="false"/>
+    <aura:attribute name="divRealEstate" type="Boolean" default="false"/>
+    <aura:attribute name="showClient" type="Boolean" default="true"/>
+    <aura:attribute name="showPrimaryClient" type="Boolean" default="true"/>
+    <aura:attribute name="nextOpt" type="boolean"/>
+    <aura:attribute name="IsdisabledClient" type="Boolean" default="false"/>    
+    <aura:attribute name="currentOpt" type="boolean"/>
+    <aura:attribute name="prevOpt" type="boolean"/>
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showPropertyWarning" type="boolean" default="false"/>    
+    <!-- Saving the record -->
+    <aura:attribute name="recordSaved" type="boolean" default="false"/>  
+    <!-- Controls for closing and opening Div -->
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <!-- Attribute for Database use -->
+    <aura:attribute name="client" type="Liability__c" default="{'sobjectType':'Liability__c'}" />
+    <!--<aura:attribute name="disabledButton" type="Boolean" default="true"/>-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="idIs" type="String" default="null" />
+    <aura:attribute name="showPopup" type="boolean" default="false" />    
+    <aura:attribute name="idIs_2" type="String" default="null" />
+    <aura:attribute name="showPopup_2" type="boolean" default="false" />	
+    <aura:attribute name="ClientID" type="String" default="null" />
+    <aura:attribute name="subjectPropertyAddress" type="String" default=""/>
+    <aura:attribute name="subjectPropertyCity" type="String" default=""/>
+    <aura:attribute name="subjectPropertyState" type="String" default=""/>
+    <aura:attribute name="subjectPropertyZip" type="String" default=""/>
+    <aura:attribute name="itemsClicked" type="String" />   
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'Yes', 'value': 'Yes'},
+                                                        {'label': 'No', 'value': 'No'}
+                                                        ]"/>
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeDeleteModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Do you really want to Delete?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">                    
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.closeDeleteModel}" >Cancel</button>
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.doAction}">Ok</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>    
+    <aura:if isTrue="{!v.showPopup_2}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel_helper}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Do you really want to Delete?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style ="color:white" class="slds-button slds-button--neutral" onclick="{!c.closeModel_helper}" >Cancel</button>
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.doAction_helper}">Ok</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if> 
+    <h4><u>Real Estate Schedule</u></h4>
+    <div class="slds-scrollable" id="NoRealEstate" style=" width: 54rem;display:none">
+        <table id="RealEstatetableNoResult" class="slds-table slds-table_bordered slds-table_cell-buffer " >
+            <thead>
+                <tr style="background-color: #2877bd !important">               
+                    <th style="color: white;width:20px; background-color: #2877bd !important">
+                        Address
+                    </th>
+                    <th style="text-align:right;color: white;width:20px ;background-color: #2877bd !important">
+                        Present Market Value
+                    </th>
+                    
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Monthly Payment
+                    </th>
+                    <th style="text-align:right;color: white;width:2px; background-color: #2877bd !important">
+                        
+                    </th>
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Balance
+                    </th>
+                    
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <th style="text-align:right;color: white;width:20px ;background-color: #2877bd; !important"> {!pOptions.Name}</th>
+                        
+                    </aura:iteration>
+                    <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5">No Real Estate Schedule have been added.</td>
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <td></td>
+                    </aura:iteration>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+    <div class="slds-scrollable" id="RealEstate" style=" width: 54rem;display:none">
+        <table id="RealEstatetable" class="slds-table slds-table_bordered slds-table_cell-buffer " >
+            <thead>
+                <tr style="background-color: #2877bd !important">
+                     <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                    <th style="color: white;width:20px; background-color: #2877bd !important">
+                        Address
+                    </th>
+                    <th style="text-align:right;color: white;width:20px ;background-color: #2877bd !important">
+                        Present Market Value
+                    </th>
+                    
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Monthly Payment
+                    </th>
+                    <th style="text-align:right;color: white;width:2px; background-color: #2877bd !important">
+                    </th>
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Balance
+                    </th>
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <th style="text-align:right;color: white;width:20px ;background-color: #2877bd; !important"> {!pOptions.Name}</th>
+                    </aura:iteration>              
+                    <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                    <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.LiabRealList}" var="p">
+                    <tr>
+                        <td data-label=""  style="text-align:center;padding-right:20px;">
+                            <aura:if isTrue="{!p.Is_Liability_Validated__c}">
+                                <aura:set attribute="else">
+                                    <LAbel style="color:red;padding-right:2px;font-size: 25px;">&#33;</LAbel>
+                                </aura:set>
+                            </aura:if>
+                        </td>
+                        <td >
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Real Estate Schedule')}">
+                                <div class="slds-truncate">
+                                    <p style="width:100px; /* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                        {!p.Property_Address__c }  
+                                    </p>                               
+                                </div>
+                            </aura:if>
+                        </td>
+                        <td style="text-align:right;padding-right:1%">
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Real Estate Schedule')}">
+                                <div class="slds-truncate">
+                                    <ui:outputCurrency value="{!p.Present_Mortgage_Value__c}"></ui:outputCurrency>
+                                </div>
+                            </aura:if>                          
+                        </td>
+                        <td style="text-align:right;padding-right:1%">   
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Real Estate Schedule')}">
+                                <div class="slds-truncate">
+                                    <ui:outputCurrency value="{!p.Mortgage_Payments__c}"></ui:outputCurrency>
+                                </div>
+                            </aura:if>
+                        </td>
+                        <td style="width:2px"></td>
+                        <td style="text-align:right;padding-right:1%">   
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Real Estate Schedule')}">
+                                <div class="slds-truncate">
+                                    <ui:outputCurrency value="{!p.Mortgage_Liens__c}"></ui:outputCurrency>
+                                </div>
+                            </aura:if>
+                        </td>
+                        
+                        <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                            <td style="color:green;font-weight: bold;Text-align:center">
+                                
+                            </td>
+                            
+                        </aura:iteration>
+                        <td colspan="2" style="text-align:right;">
+                            <a id = "{!p.Id}" onclick="{!c.EditRecord}">View</a>&nbsp; &nbsp;
+                            <!--<a id = "{!p.Id}" onclick="{!c.Delete}">Delete</a>-->
+                        </td>
+                        
+                    </tr>
+                </aura:iteration>
+                <tr style="background-color:lightgray;">  
+                    <td></td>
+                    <td colspan="2" style="text-align:right;">
+                        <span style="font-weight:bold;">Total   &nbsp;</span>
+                    </td>
+                    <td style="text-align:right;padding-right:1%">
+                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="curr44" value="{!v.totalRealEstate}"/></span>
+                    </td>
+                    <td style="width:2px"></td>
+                    <td style="text-align:right;padding-right:1%">  
+                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="curr88" value="{!v.totalBalanceRealEstate}"/></span>
+                    </td>
+                    
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <td style="color:green;font-weight: bold;Text-align:center">                              
+                        </td>               
+                    </aura:iteration>                 
+                    <td></td>
+                    <td></td>   
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <br />    
+    <h4><u>Liabilities</u></h4>
+   <div class="slds-scrollable" id="LiabNoResult" style=" width: 54rem;display:none">
+        <table id="mytableLiabilityNoResult" class="slds-table slds-table_bordered slds-table_cell-buffer ">
+            <thead>
+                <tr  style="background-color: #2877bd !important">
+                    <th style="color: white;width:20px; background-color: #2877bd !important">
+                        Category
+                    </th>
+                    <th style="padding-left:5%;text-align:left;color: white;width:20px; background-color: #2877bd !important">
+                        Type
+                    </th>
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Monthly Payment
+                    </th>
+                    <th style="text-align:right;color: white;width:2px; background-color: #2877bd !important">
+                        
+                    </th>
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Balance
+                    </th>
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <th style="text-align:right;color: white;width:20px ;background-color: #2877bd !important"> {!pOptions.Name}</th>
+                    </aura:iteration>
+                    <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5">No Liabilities have been added.</td>
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <td></td>
+                    </aura:iteration>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="slds-scrollable" id="LiabResult" style=" width: 54rem;display:none">
+        <table id="mytableLiability" class="slds-table slds-table_bordered slds-table_cell-buffer ">
+            <thead>
+                <tr  style="background-color: #2877bd !important">
+                    <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                    <th style="color: white;width:20px; background-color: #2877bd !important">
+                        Category
+                    </th>
+                    <th style="padding-left:5%;text-align:left;color: white;width:20px; background-color: #2877bd !important">
+                        Type
+                    </th>
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Monthly Payment
+                    </th>
+                    <th style="text-align:right;color: white;width:2px; background-color: #2877bd !important">
+                        
+                    </th>
+                    <th style="text-align:right;color: white;width:20px; background-color: #2877bd !important">
+                        Balance
+                    </th>
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <th style="text-align:right;color: white;width:20px ;background-color: #2877bd !important"> {!pOptions.Name}</th>
+                    </aura:iteration>
+                    <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                    <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.LiabOtherList}" var="p">
+                    <tr>
+                          <td data-label=""  style="text-align:center;padding-right:20px;">
+                            <aura:if isTrue="{!p.Is_Liability_Validated__c}">
+                                <aura:set attribute="else">
+                                    <LAbel style="color:red;padding-right:2px;font-size: 25px;">&#33;</LAbel>
+                                </aura:set>
+                            </aura:if>
+                        </td>
+                        
+                        <td style="padding-left:2%" id = "categoryId">{!p.Liability_Category__c}</td>
+                        <td style="padding-left:5%">{!p.Liability_Type__c}</td>
+                        <td style="text-align:right;padding-right:1%">
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Alimony')}">
+                                <div class="slds-truncate">
+                                    <ui:outputCurrency aura:id="curr1" value="{!p.Amount__c}"></ui:outputCurrency>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Job Expense')}">
+                                <div class="slds-truncate">
+                                    <ui:outputCurrency aura:id="curr2" value="{!p.Job_Related_Expenses__c}"></ui:outputCurrency>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Liability')}">
+                                <div class="slds-truncate">
+                                    <ui:outputCurrency aura:id="curr3" value="{!p.Liability_Monthly_Payment__c}"></ui:outputCurrency>
+                                </div>
+                            </aura:if>
+                        </td>
+                        <td style="width:2px"></td>
+                        <td style="text-align:right;padding-right:1%">
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Alimony')}">
+                                <div class="slds-truncate">
+                                    <span >$0</span>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Job Expense')}">
+                                <div class="slds-truncate">
+                                    <span >$0</span>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!(p.Liability_Category__c == 'Liability')}">
+                                <div class="slds-truncate">
+                                    <ui:outputCurrency aura:id="curr8" value="{!p.Liability_Unpaid_Balance__c}"/>
+                                </div>
+                            </aura:if>
+                        </td>
+                        <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                            <td style="color:green;font-weight: bold;Text-align:center">                              
+                            </td>               
+                        </aura:iteration>
+                        <td colspan="2" style="text-align:right;">
+                            <a id = "{!p.Id}" onclick="{!c.EditRecord}">Edit</a>&nbsp; &nbsp;
+                            <a id = "{!p.Id}" onclick="{!c.Delete}">Delete</a>
+                        </td>
+                      
+                    </tr>
+                </aura:iteration>
+                
+                <tr style="background-color:lightgray;">   
+                    <td></td> 
+                    <td colspan="2" style="text-align:right;">
+                        <span style="font-weight:bold;">Total   &nbsp;</span>
+                    </td>
+                    <td style="text-align:right;padding-right:1%">
+                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="curr4" value="{!v.total}"/></span>
+                    </td>
+                    <td style="width:2px"></td>
+                    <td style="text-align:right;padding-right:1%">  
+                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="curr8" value="{!v.totalBalance}"/></span>
+                    </td>
+                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                        <td style="color:green;font-weight: bold;Text-align:center">                              
+                        </td>               
+                    </aura:iteration>                 
+                    <td></td> 
+                    <td></td> 
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <br />
+    <h4>Add New Liability or Real Estate Owned (Optional)</h4>
+    <div>
+        <div style="margin-bottom:2%; " class="slds-combobox_container slds-size_small">
+            <label for="LoanMortgageAppliedFor" class="control-label"></label>
+            
+            <ui:inputSelect aura:id="categoryPicklist" label="Category" value="{!v.client.Liability_Category__c}" change="{!c.categoryChange}" disabled="{!v.enableCategory}">
+                <ui:inputSelectOption value="true" text="Select Option" label="Select Option" />
+                <aura:iteration items="{!v.categoryOptions}" var="pOptions">
+                    <ui:inputSelectOption text="{!pOptions.value}" label="{!pOptions.value}"/>
+                </aura:iteration>                
+            </ui:inputSelect>
+            
+        </div>
+        <!-- Do Not Delete -->
+        <div style="margin-bottom:2%; " class="slds-combobox_container slds-size_small">
+            <label for="LoanMortgageAppliedFor" class="control-label"></label>
+            
+            <ui:inputSelect aura:id="typePicklist" label="Type" value="{!v.client.Liability_Type__c}" change="{!c.typeChange}" disabled="{!v.enableType}">
+                <ui:inputSelectOption value="true" text="Select Option" label="Select Option" />
+                <aura:iteration items="{!v.typeOptions}" var="dOptions">
+                    <ui:inputSelectOption text="{!dOptions.value}" label="{!dOptions.value}"/>
+                </aura:iteration>                
+            </ui:inputSelect>
+            
+        </div>
+        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addLiability" label="Add" press="{!c.AddRecord}" disabled="{!v.enableButton}"  />
+    </div>
+    <aura:if isTrue="{!v.isOpen}">
+        <!--###### MODAL BOX Start From Here ######-->
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container">
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 style="color:#2081bf;" id="header43" class="slds-text-heading--medium">{!v.Heading}</h2>
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <!--## Adding Client-->
+                <!--<aura:if isTrue="{!v.showClient}"></aura:if>-->
+                    <div id="clientAll" class="slds-p-around--medium" style="background-color:white">
+                        <lightning:select aura:id="pickClient" label="Client *" name="selclient" onchange="{!c.onClientSelectChange}" disabled="{!v.enableClient}">
+                            <aura:iteration items="{!v.clientList}" var="pOptions">
+                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                            </aura:iteration>
+                        </lightning:select>                    
+                        <div id="ClientError" class="DivStyle"></div> 
+                    </div>
+                <!--<aura:if isTrue="{!v.showPrimaryClient}"></aura:if>-->
+                    <div id="clientPrimary" class="slds-p-around--medium" style="background-color:white; display:none">
+                        <lightning:select aura:id="ReClient" label="Client *" name="selclient" onchange="{!c.onClientSelectChange}" disabled="{!v.enableClient}">
+                            <aura:iteration items="{!v.pClientList}" var="pOptions">
+                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                
+                <aura:if isTrue="{!v.divAlimony}">
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div id="alimony" display = "{!v.divAlimony}">
+                            <ui:inputText label="Category" value="{!v.client.Liability_Category__c}" disabled="true"/>
+                            
+                            <br/>
+                            <ui:inputText label="Type" value="{!v.client.Liability_Type__c}" disabled="true"/>
+                            
+                            <br/>                            
+                            <ui:inputText maxlength="100" 
+                                          aura:id="Payments_Owed_to" label="Payments Owed to" value="{!v.client.Payments_Owed_to__c}"/>
+                            <br/>
+                            <ui:inputCurrency aura:id="Amount" required="true"
+                                              label="Monthly Amount" value="{!v.client.Amount__c}"/>
+                            
+                            <div id="nameadrccError" class="DivStyle"></div>
+                            
+                            <br />
+                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                <ui:inputCheckbox label="" class="myCheckbox" aura:id="liabilityPaid"  value="{!v.client.Liability_willBeClosed_by_paying__c}" />
+                                &nbsp;
+                                <label class="uiLabel-right form-element__label uiLabel">
+                                    <span>Liability will be paid by closing</span>
+                                </label>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <div align="left">  <aura:if isTrue="{!v.showError}">                            
+                            <ui:message title="Error" severity="error" >
+                                Please review all errors before moving to next page
+                            </ui:message>                                
+                            </aura:if>
+                        </div>
+                        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}"/>
+                        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.FormatValidations}"/>
+                    </div>
+                </aura:if>
+                
+                <aura:if isTrue="{!v.divJob}">
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div id="job" display = "{!v.divJob}">
+                            <ui:inputText label="Category" value="{!v.client.Liability_Category__c}" disabled="true"/>
+                            <br/>
+                            
+                            <ui:inputText label="Type" value="{!v.client.Liability_Type__c}" disabled="true"/>                          
+                            <br/>
+                            
+                            <ui:inputCurrency aura:id="JobRelatedExpenses" 
+                                              label="Monthly Job Related Expenses " required="true" value="{!v.client.Job_Related_Expenses__c}"/>
+                            <br/>
+                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                <ui:inputCheckbox label="" class="myCheckbox" aura:id="liabilityPaid"  
+                                                  value="{!v.client.Liability_will_be_closed_by_payingThis__c}" /> 
+                                &nbsp;
+                                <label class="uiLabel-right form-element__label uiLabel">
+                                    <span>Liability will be paid by closing</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        
+                        <div align="left">    <aura:if isTrue="{!v.showError}">                            
+                            <ui:message title="Error" severity="error" >
+                                Please review all errors before moving to next page
+                            </ui:message>                                
+                            </aura:if></div>
+                        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}"/>
+                        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.validateJob}"/>
+                        
+                        <!--<button class="" onclick="{!c.saveLiability}">Save</button>
+                                            <button class="" onclick="{!c.closeModel}" >Cancel</button>-->
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.divLiability}">
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div id="liability" display = "{!v.divLiability}">
+                            <ui:inputText label="Category" value="{!v.client.Liability_Category__c}" disabled="true"/>
+                            <br/>
+                            
+                            <ui:inputText label="Type" value="{!v.client.Liability_Type__c}" disabled="true"/>                          
+                            <br/>
+                            
+                            <ui:inputText maxlength="100" label="Name of Company" 
+                                          value="{!v.client.Name_of_Company__c}"/>
+                            <br />
+                            
+                            <ui:inputText label="Address" maxlength="100" value="{!v.client.Address__c}"/>
+                            <br />
+                            
+                            <ui:inputText maxlength="80" label="City" 
+                                          value="{!v.client.City__c}"/>
+                            <br />
+                            <ui:inputSelect aura:id="" label="State" value="{!v.client.State__c}">
+                                
+                                <aura:iteration items="{!v.liabilityState}" var="pOptions">
+                                    <ui:inputSelectOption text="{!pOptions.value}" label="{!pOptions.value}"/>
+                                </aura:iteration>                
+                            </ui:inputSelect>
+                            
+                            <br />
+                            
+                            <ui:inputText label="Zip"
+                                          maxlength="10" aura:id="liabilityZip" value="{!v.client.Zip__c}"/>
+                            <br />
+                            <ui:inputText maxlength="80" label="Account Number" 
+                                          value="{!v.client.Account_Number__c}"/>
+                            <br />
+                            
+                            <ui:inputCurrency label="Monthly Payment " required="true"
+                                              aura:id="monthlyPayment" value="{!v.client.Liability_Monthly_Payment__c}"/>
+                            <br />
+                            
+                            
+                            <ui:inputCurrency label="Unpaid Balance " required="true"
+                                              aura:id="unpaidBalance" value="{!v.client.Liability_Unpaid_Balance__c}"/>
+                            <br />
+                            
+                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                <ui:inputCheckbox label="" class="myCheckbox" aura:id="liabilityPaid"  
+                                                  value="{!v.client.Liability_will_be_closed_by_paying__c}" />
+                                &nbsp;
+                                <label class="uiLabel-right form-element__label uiLabel">
+                                    <span>Liability will be paid by closing</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <div align="left">   <aura:if isTrue="{!v.showError}">                            
+                            <ui:message title="Error" severity="error" >
+                                Please review all errors before moving to next page
+                            </ui:message>                                
+                            </aura:if></div>
+                        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}"/>
+                        <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.validateLiability}"/>
+                        
+                        <!--<button class="" onclick="{!c.saveLiability}">Save</button>
+                                            <button class="" onclick="{!c.closeModel}" >Cancel</button>-->
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.divRealEstate}">
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div id="realState" display = "{!v.divRealEstate}" >
+                            <ui:inputText label="Category" value="{!v.client.Liability_Category__c}" 
+                                          aura:id="realCategory" disabled="true"/>
+                            <br/>
+                            
+                            <ui:inputText label="Type" value="{!v.client.Liability_Type__c}" 
+                                          aura:id="realType" disabled="true"/>                          
+                            <br/>
+                            
+                            <ui:inputText maxlength="100" required="true" label="Property Address " 
+                                          aura:id="propertyAddress" value="{!v.client.Property_Address__c}"/>
+                            <br />
+                            
+                            <ui:inputText maxlength="100" label="Property Address 2" aura:id="propertyAddress2" 
+                                          value="{!v.client.Property_Address2__c}"/>
+                            <br />
+                            
+                            
+                            <ui:inputText maxlength="25" required="true" label="City " aura:id="realCity" 
+                                          value="{!v.client.Property_City__c}"/>
+                            <br />
+                            
+                            <ui:inputSelect aura:id="propertyState1" label="State" 
+                                            value="{!v.client.Property_States__c}">
+                                <aura:iteration items="{!v.liabilityState}" var="pOptions">
+                                    <ui:inputSelectOption text="{!pOptions.value}" label="{!pOptions.value}"/>
+                                </aura:iteration>                
+                            </ui:inputSelect>                            
+                            <br />
+                            <ui:inputText maxlength="25" label="County " aura:id="realCounty" required="true" 
+                                          value="{!v.client.Property_County__c}"/>
+                            <br />
+                              <ui:inputText maxlength="100" aura:id="legalDescProperty" label="Legal Description of Property" 
+                                          value="{!v.client.Legal_Description_of_Property__c}"/>
+                             <br />
+                            <ui:inputText maxlength="10" label="Zip" 
+                                          aura:id="realZip" value="{!v.client.Property_ZIP__c}"/>
+                            <br />
+                            
+                            <ui:inputCurrency label="Present Market Value"
+                                              aura:id="presentMarketValue" value="{!v.client.Present_Mortgage_Value__c}"/>
+                            <br />
+                            
+                            <ui:inputCurrency label="Mortgage and Liens" 
+                                              aura:id="mortgageNliens" value="{!v.client.Mortgage_Liens__c}"/>
+                            <br />
+                            
+                            <ui:inputText maxlength="100" label="Name of Company" 
+                                          aura:id="companyName" value="{!v.client.Name_of_Company__c}"/>
+                            
+                            <br />                            
+                            <ui:inputText maxlength="30" label="Account Number" value="{!v.client.Account_Number__c}" 
+                                          aura:id="accountNumber"
+                                          keypress="{!c.NumberAccountNumbers}" keyup="{!c.NumberAccountNumbers}"
+                                          keydown="{!c.NumberAccountNumbers}"  updateOn="keypress, keyup, keydown" />
+                            
+                            <br />
+                            <ui:inputCurrency label="Gross Rental Income"
+                                              aura:id="grossRentalIncome" value="{!v.client.Gross_Rental_Income__c}"/>
+                            
+                            <br />                            
+                            <ui:inputCurrency label="Monthly Mortgage Payment"
+                                              aura:id="monthlyMortgagePayment" value="{!v.client.Mortgage_Payments__c}"/>
+                            
+                            <br />     
+                             <ui:inputCurrency label="Real Estate Taxes - Monthly" required="true" 
+                                              aura:id="RealEStateTax" value="{!v.client.Real_Estate_Taxes_Monthly__c}"/>
+                            
+                            <br /> 
+                           
+                            <ui:inputCurrency label="Annual Hazard Insurance"
+                                              aura:id="annualHazardInsurance" value="{!v.client.Annual_Hazard_Insurance__c}"/>
+                            
+                            <br />
+                            <ui:inputCurrency label="HOA Monthly Dues"
+                                              aura:id="HoaMonthlyDues" value="{!v.client.HOA_Monthly_Dues__c}"/>
+                            
+                            <br />
+                            <ui:inputCurrency label="Monthly PUD Fees Amount"
+                                              aura:id="MonthlyPUDFeesAmount" value="{!v.client.Monthly_PUD_Fees_Amount__c}"/>
+                            
+                            <br />
+                            <ui:inputCurrency label="Monthly Grounds Rent Amount"
+                                              aura:id="MonthlyGroundsRentAmount" value="{!v.client.Monthly_Ground_Rents_Amount__c}"/>
+                            
+                            <br />
+                            <ui:inputCurrency label="Monthly Flood Insurance Premium"
+                                              aura:id="MonthlyFloodInsurancePremium" value="{!v.client.Monthly_Flood_Insurance_Premium__c}"/>
+                            
+                            <br />
+                                                       
+                            <ui:inputCurrency label="Net Rental Income"
+                                              aura:id="NetRentalIncome" value="{!v.client.Net_Rental_Income_RealEstate__c}"/>
+                            <br />                            
+                            <ui:inputSelect aura:id="PropertyType" label="Property Type" value="{!v.client.Property_Type__c}" >                            
+                           <ui:inputSelectOption value="true" text="" label="Select Option" />
+                                <ui:inputSelectOption text="Single Family" label="Single Family" />
+                                <ui:inputSelectOption text="Condominium" label="Condominium" />
+                                <ui:inputSelectOption text="Townhouse" label="Townhouse" />
+                                <ui:inputSelectOption text="Co-operative" label="Co-operative" />
+                                <ui:inputSelectOption text="Two-to-four unit property" label="Two-to-four unit property" />
+                                <ui:inputSelectOption text="Multifamily (more than 4 units)" label="Multifamily (more than 4 units)" />
+                                <ui:inputSelectOption text="Manufactured/Mobile Home" label="Manufactured/Mobile Home" />
+                                <ui:inputSelectOption text="Commercial – Non-Residential" label="Commercial – Non-Residential" />
+                                <ui:inputSelectOption text="Mixed Use – Residential" label="Mixed Use – Residential" />
+                                <ui:inputSelectOption text="Farm" label="Farm" />
+                                <ui:inputSelectOption text="Home and Business Combined" label="Home and Business Combined" />
+                                <ui:inputSelectOption text="Land" label="Land" />
+
+                                <ui:inputSelectOption text="Property" label="Property" />
+                            </ui:inputSelect>
+                            <br/>
+                           
+                         <ui:inputNumber label="Year Built " maxlength="4" aura:id="YearBuiltId" value="{!v.client.Year_Built__c}" 
+                                         keypress="{!c.validateYearBuilt}" keyup="{!c.validateYearBuilt}" 
+                                         keydown="{!c.validateYearBuilt}"  updateOn="keypress, keyup, keydown" 
+                                            format="" class="slds-input" required="true"  />
+                            <div id="YearBuiltError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
+                             <br />
+                             <ui:inputText maxlength="30" label="Square Footage" required="true" aura:id="SQFootage"
+                                          value="{!v.client.Square_Footage__c}" keypress="{!c.validateSquareFootage}" keyup="{!c.validateSquareFootage}"
+                                          keydown="{!c.validateSquareFootage}"  updateOn="keypress, keyup, keydown" />
+                             <br />
+                            <ui:inputSelect label="Property Held as" aura:id="PropertyHeldId" value="{!v.client.Property_Held_as__c}" required="true">
+                                
+                                <ui:inputSelectOption value="true" text="" label="---Select option---"/> 
+                                <ui:inputSelectOption text="Fee Simple" label="Fee Simple" /> 
+                                <ui:inputSelectOption text="Leasehold" label="Leasehold"/> 
+                                <ui:inputSelectOption text="Life Estate" label="Life Estate"/> 
+                                
+                            </ui:inputSelect>
+                            <br />
+                              <ui:inputText label="Property Title is Held in These Names" aura:id="PTHeldNameId" 
+                                            maxlength="160" value="{!v.client.Property_Title_is_Held_in_These_Names__c}"
+                                            class="slds-input" />
+                             <br />
+                               <ui:inputSelect label="Check If Title is also Held As" aura:id="checkTitleAlsoId" value="{!v.client.Check_If_Title_is_also_Held_As__c}" >
+                                <ui:inputSelectOption text="" label="---Select Option---" value="true"/>
+                                <ui:inputSelectOption text="Living Trust" label="Living Trust" />
+                                <ui:inputSelectOption text="Revocable Trust" label="Revocable Trust" />
+                            </ui:inputSelect>
+                             <br />
+                            
+                            <ui:inputSelect aura:id="propertyStatus" label="Property Status" 
+                                            value="{!v.client.Property_Status__c}" required="true" change="{!c.propertyStatus}">                            
+                                
+                                <aura:iteration items="{!v.propertyStatusList}" var="pOptions">   
+                                    <aura:if isTrue="{!pOptions.text == 'Subject Property'}" > 
+                                        <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.label}" value="{!pOptions.value}" disabled="true"/>
+                                        <aura:set attribute="else">
+                                            <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.label}" value="{!pOptions.value}" />
+                                        </aura:set>
+                                    </aura:if>                                    
+                                </aura:iteration> 
+                            </ui:inputSelect>
+                            <br/>
+                            
+                            <div id = 'divRemarks' style="margin-bottom:3%; display:none" class="slds-form-element slds-size_1-of-1">
+                                <ui:inputText maxlength="100" label="Additional Remarks" required="true" aura:id="additionalRemarks" 
+                                              value="{!v.client.Additional_Remarks__c}"/>
+                            </div>
+                            
+                            <br />
+                            <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                                <ui:inputCheckbox label="" class="myCheckbox" aura:id="liabilityPaid" 
+                                                  value="{!v.client.Liability_will_be_closed_by_Paying_RES__c}" />
+                                &nbsp;
+                                <label class="uiLabel-right form-element__label uiLabel">
+                                    <span>Liability will be paid by closing</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <div align="left">    <aura:if isTrue="{!v.showPropertyWarning}">                            
+                            
+                            <ui:message title="Information" severity="info" >
+                                Above address will be override with Subject Property Addess
+                            </ui:message>    
+                            
+                            </aura:if></div>
+                        <div align="left">   <aura:if isTrue="{!v.showError}">                            
+                            <ui:message title="Error" severity="error" >
+                                Please review all errors before moving to next page
+                            </ui:message>                                
+                            </aura:if></div>
+                        <div>
+                        <ui:button aura:id="ReCancel" class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}"/>
+                        
+                        <ui:button aura:id="ReSave" disabled="true" class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.validateRealEstate}"/>
+                        </div>                        
+        
+                    </div>
+                </aura:if>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if> <br></br>
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Previous" press="{!c.previous}"></ui:button> &nbsp;&nbsp;
+    
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Next" press="{!c.next}"></ui:button>
+</aura:component>

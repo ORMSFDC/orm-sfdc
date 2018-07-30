@@ -1,0 +1,46 @@
+<aura:component controller="getClientfromDeclaration" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="LoanId" type="String" default="a0M0q000000AUPkEAO"/>
+   
+    <aura:attribute name="clientRecords" type="Object[]" /> 
+     <fieldset class="slds-box slds-theme--default slds-container--large">
+        <div class="slds-form slds-form_compound">
+            
+            <fieldset class="slds-form-element">
+                
+                <div class="slds-form-element__group">
+	 <div class="slds-form-element__row">
+                        <div class="slds-size_1-of-1" > 
+                            <table class="slds-table slds-table_bordered slds-table_cell-buffer"  >
+                                <thead>
+                                    <tr style= "background-color:#2877bd">
+                                        <th style= "color:white">Client Name</th>
+                                        <th style= "color:white">Client Declaration Status</th>                                            
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.clientRecords}" var="pOptions">
+                                        <tr>
+                                            <td data-label="Status">
+                                                <div class="slds-truncate" ><b>{!pOptions.ClientLastName},&nbsp;{!pOptions.ClientFirstName}
+                                                    </b></div>
+                                            </td> 
+                                            <td data-label="Status">
+                                                <div style="margin-bottom:3%; " class="slds-truncate" ><b>{!pOptions.ClientDeclarationStatus}
+                                                    </b></div>
+                                            </td> 
+                                            
+                                            
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+         </div>
+    </fieldset>
+</aura:component>

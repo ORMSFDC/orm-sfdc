@@ -1,0 +1,22 @@
+<aura:component >
+	<div style="color: #222222;" class="customFont16">
+        <br/>
+Want to calculate a purchase scenario?  We are working to update our calculator to allow you to review these scenarios, but in the meantime, here is a workaround:
+ <br/>
+Enter your youngest client’s date of birth as usual. In the “home value” field, enter the purchase price of the new home.  Enter $0 for the mortgage balance, interest rate, and mortgage payment.  
+ <br/>
+Select your margin and see the results. To get the estimated down payment needed, subtract the amount available after lien payoff from the purchase price.
+ <br/><br/>
+For example :  <br/>                      
+Purchase price:  $400,000<br/>
+Amount available after lien payoff: $183,500
+<br/>
+$400,000 - $183,500 = $216,500<br/><br/>
+ <p>
+The estimated down payment the client will need to bring to the table is $216,500.
+ </p><br/>
+ <p>
+Please call your account executive with any questions or if you need assistance!
+</p>
+</div>
+</aura:component>

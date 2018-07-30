@@ -1,0 +1,68 @@
+<aura:component >
+     <aura:attribute name="Age" type="Integer" />
+    <aura:attribute name="EHomeValue" type="Integer" />
+    <aura:attribute name="VisibleDefaultDiv" type="boolean" default="true"/>
+    <aura:attribute name="ErrorDiv" type="boolean" default="false"/>
+    <aura:attribute name="ClientDiv" type="boolean" default="false"/>
+    <aura:attribute name="ErrorMsg" type="boolean" default=""/>
+    
+    
+	 <div class="slds-form slds-form_compound">
+    <fieldset class="slds-form-element">
+      
+      <div class="slds-form-element__group">
+          <div class="slds-form-element__row" style="color:red">
+          <b><ui:outputText value="{!v.ErrorMsg}"/></b>
+          </div>
+        <div class="slds-form-element__row">
+            <div class="slds-form-element slds-size_1-of-1">
+            
+              <ui:inputText label="Estimated Home Value" aura:id="inputEstHomeValue" 
+                            class="slds-input" required="true"/>
+          </div>
+          <div class="slds-form-element slds-size_1-of-2">
+            
+              <ui:inputText label="Date Of Birth" aura:id="inputDOB" class="slds-input" required="true"/>
+          </div>
+          <div class="slds-form-element slds-size_1-of-2">
+           
+              <ui:inputText label="Current Mortgage Balance" aura:id="inputCurrMortBalance" class="slds-input" required="true"/>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="slds-form-element">
+      
+      <div class="slds-form-element__group">
+          <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-1">
+            
+              <ui:inputText label="Current Mortgage Interest Rate" aura:id="inputCurrmortIntRate" 
+                            class="slds-input" required="true"/>
+          </div>
+          </div>
+      </div>
+    </fieldset>
+         <fieldset class="slds-form-element">
+      
+      <div class="slds-form-element__group">
+          <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-1">
+            
+              <ui:inputText label="Monthly Motgage Payment(Excluding taxes and  Insurance)" aura:id="inputMonthMotPay" 
+                            class="slds-input" required="true"/>
+          </div>
+          </div>
+        
+          
+        
+       
+          <div class="slds-form-element__row">
+            <lightning:button aura:id="outputButton" variant="brand" label="Submit" onclick="{!c.Save }" />
+          </div>          
+      </div>
+    </fieldset>
+   
+</div>
+    
+</aura:component>

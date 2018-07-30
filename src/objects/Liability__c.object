@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Additional_Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Remarks</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Address__c</fullName>
+        <description>Mandatory if Real Estate Schedule is selected in the category</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Alimony_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Alimony Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alimony</fullName>
+                    <default>false</default>
+                    <label>Alimony</label>
+                </value>
+                <value>
+                    <fullName>Child Support</fullName>
+                    <default>false</default>
+                    <label>Child Support</label>
+                </value>
+                <value>
+                    <fullName>Separation Maintenance</fullName>
+                    <default>false</default>
+                    <label>Separation Maintenance</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Amount__c</fullName>
+        <description>Must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Annual_Hazard_Insurance__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Hazard Insurance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Check_If_Title_is_also_Held_As__c</fullName>
+        <externalId>false</externalId>
+        <label>Check If Title is also Held As</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Living Trust</fullName>
+                    <default>false</default>
+                    <label>Living Trust</label>
+                </value>
+                <value>
+                    <fullName>Revocable Trust</fullName>
+                    <default>false</default>
+                    <label>Revocable Trust</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>City__c</fullName>
+        <description>Mandatory if Real Estate Schedule is selected in the category</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Condominium_FHA_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Condominium FHA Approved</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>County__c</fullName>
+        <description>Must have only digits or can have one hyphen(-)</description>
+        <externalId>false</externalId>
+        <label>County</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Foreclosure__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Foreclosure</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Gross_Rental_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Gross_Rental_Income</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>HOA_Monthly_Dues__c</fullName>
+        <externalId>false</externalId>
+        <label>HOA Monthly Dues</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Insurance_Taxes_etc__c</fullName>
+        <externalId>false</externalId>
+        <label>Insurance_Taxes_etc</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>IsJoint__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsJoint</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Is_Liability_Validated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Liability Validated?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Job_Expense_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Expense Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Job related Expense</fullName>
+                    <default>false</default>
+                    <label>Job related Expense</label>
+                </value>
+                <value>
+                    <fullName>Other expense</fullName>
+                    <default>false</default>
+                    <label>Other expense</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Job_Related_Expenses__c</fullName>
+        <description>Vale must be greater than Zero</description>
+        <externalId>false</externalId>
+        <label>Job Related Expenses</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Legal_Description_of_Property__c</fullName>
+        <externalId>false</externalId>
+        <label>Legal Description of Property</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Liability_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alimony</fullName>
+                    <default>false</default>
+                    <label>Alimony</label>
+                </value>
+                <value>
+                    <fullName>Job Expense</fullName>
+                    <default>false</default>
+                    <label>Job Expense</label>
+                </value>
+                <value>
+                    <fullName>Liability</fullName>
+                    <default>false</default>
+                    <label>Liability</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Schedule</fullName>
+                    <default>false</default>
+                    <label>Real Estate Schedule</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Liability_Monthly_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Payment</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Liability_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Liability_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Divorce</fullName>
+                    <default>false</default>
+                    <label>Divorce</label>
+                </value>
+                <value>
+                    <fullName>Child Support</fullName>
+                    <default>false</default>
+                    <label>Child Support</label>
+                </value>
+                <value>
+                    <fullName>Separate Maintenance.</fullName>
+                    <default>false</default>
+                    <label>Separate Maintenance.</label>
+                </value>
+                <value>
+                    <fullName>Job Related Expenses</fullName>
+                    <default>false</default>
+                    <label>Job Related Expenses</label>
+                </value>
+                <value>
+                    <fullName>Other expense</fullName>
+                    <default>false</default>
+                    <label>Other expense</label>
+                </value>
+                <value>
+                    <fullName>Collections/Judgements/Liens</fullName>
+                    <default>false</default>
+                    <label>Collections/Judgements/Liens</label>
+                </value>
+                <value>
+                    <fullName>Home Equity Line of Credit</fullName>
+                    <default>false</default>
+                    <label>Home Equity Line of Credit</label>
+                </value>
+                <value>
+                    <fullName>Installment</fullName>
+                    <default>false</default>
+                    <label>Installment</label>
+                </value>
+                <value>
+                    <fullName>Lease Payments</fullName>
+                    <default>false</default>
+                    <label>Lease Payments</label>
+                </value>
+                <value>
+                    <fullName>Mortgage Loans</fullName>
+                    <default>false</default>
+                    <label>Mortgage Loans</label>
+                </value>
+                <value>
+                    <fullName>Open 30 day Charge Accounts</fullName>
+                    <default>false</default>
+                    <label>Open 30 day Charge Accounts</label>
+                </value>
+                <value>
+                    <fullName>Revolving</fullName>
+                    <default>false</default>
+                    <label>Revolving</label>
+                </value>
+                <value>
+                    <fullName>Taxes</fullName>
+                    <default>false</default>
+                    <label>Taxes</label>
+                </value>
+                <value>
+                    <fullName>Mechnic Lien</fullName>
+                    <default>false</default>
+                    <label>Mechnic Lien</label>
+                </value>
+                <value>
+                    <fullName>Property Taxes</fullName>
+                    <default>false</default>
+                    <label>Property Taxes</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Property</fullName>
+                    <default>false</default>
+                    <label>Property</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Alimony</controllingFieldValue>
+                <valueName>Divorce</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Alimony</controllingFieldValue>
+                <valueName>Child Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Alimony</controllingFieldValue>
+                <valueName>Separate Maintenance.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Job Expense</controllingFieldValue>
+                <valueName>Job Related Expenses</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Job Expense</controllingFieldValue>
+                <valueName>Other expense</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Collections/Judgements/Liens</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Home Equity Line of Credit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Installment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Lease Payments</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Mortgage Loans</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Open 30 day Charge Accounts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Revolving</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Taxes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Mechnic Lien</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Property Taxes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Liability</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Real Estate Schedule</controllingFieldValue>
+                <valueName>Property</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields><fields>
+        <fullName>Liability_Unpaid_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Unpaid Balance</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Liability_willBeClosed_by_paying__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this checkbox if the Liability will be paid by closing this alimony</inlineHelpText>
+        <label>Liability wil be closed by Payin Alimony</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Liability_will_be_closed_by_Paying_RES__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this checkbox if Liability will be closed by paying the RES money.</inlineHelpText>
+        <label>Liability will be closed by Paying RES</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Liability_will_be_closed_by_payingThis__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this checkbox if the liability will be closed by paying this expense</inlineHelpText>
+        <label>Liability will be closed by Paying this</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Liability_will_be_closed_by_paying__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Please check this box if the Liability will be closed by paying this</inlineHelpText>
+        <label>Liability will be closed by Paying</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Monthly_Flood_Insurance_Premium__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Flood Insurance Premium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Monthly_Ground_Rents_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Ground Rents Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Monthly_PUD_Fees_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly PUD Fees Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Mortgage_Liens__c</fullName>
+        <description>Must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Mortgage &amp; Liens</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Mortgage_Payments__c</fullName>
+        <description>Must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Mortgage Payments</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Name_of_Company__c</fullName>
+        <description>Mandatory if Real Estate Schedule is selected in the category</description>
+        <externalId>false</externalId>
+        <label>Name of Company</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Net_Rental_Income_RealEstate__c</fullName>
+        <description>Must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Net Rental Income</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Other_Expense__c</fullName>
+        <externalId>false</externalId>
+        <label>Other_Expense</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Payments_Owed_to__c</fullName>
+        <externalId>false</externalId>
+        <label>Payments Owed to</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Present_Mortgage_Value__c</fullName>
+        <description>Must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Present Market Value</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Property_Address2__c</fullName>
+        <externalId>false</externalId>
+        <label>Property_Address2</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Property_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Property_Address</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Property_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Property_City</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Property_County__c</fullName>
+        <externalId>false</externalId>
+        <label>Property County</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Property_Held_as__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Held as</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fee Simple</fullName>
+                    <default>false</default>
+                    <label>Fee Simple</label>
+                </value>
+                <value>
+                    <fullName>Leasehold</fullName>
+                    <default>false</default>
+                    <label>Leasehold</label>
+                </value>
+                <value>
+                    <fullName>Life Estate</fullName>
+                    <default>false</default>
+                    <label>Life Estate</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Property_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Property_State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alabama</fullName>
+                    <default>false</default>
+                    <label>Alabama</label>
+                </value>
+                <value>
+                    <fullName>Alaska</fullName>
+                    <default>false</default>
+                    <label>Alaska</label>
+                </value>
+                <value>
+                    <fullName>Arizona</fullName>
+                    <default>false</default>
+                    <label>Arizona</label>
+                </value>
+                <value>
+                    <fullName>Arkansas</fullName>
+                    <default>false</default>
+                    <label>Arkansas</label>
+                </value>
+                <value>
+                    <fullName>California</fullName>
+                    <default>false</default>
+                    <label>California</label>
+                </value>
+                <value>
+                    <fullName>Colorado</fullName>
+                    <default>false</default>
+                    <label>Colorado</label>
+                </value>
+                <value>
+                    <fullName>Connecticut</fullName>
+                    <default>false</default>
+                    <label>Connecticut</label>
+                </value>
+                <value>
+                    <fullName>Delaware</fullName>
+                    <default>false</default>
+                    <label>Delaware</label>
+                </value>
+                <value>
+                    <fullName>Florida</fullName>
+                    <default>false</default>
+                    <label>Florida</label>
+                </value>
+                <value>
+                    <fullName>Georgia</fullName>
+                    <default>false</default>
+                    <label>Georgia</label>
+                </value>
+                <value>
+                    <fullName>Hawaii</fullName>
+                    <default>false</default>
+                    <label>Hawaii</label>
+                </value>
+                <value>
+                    <fullName>Idaho</fullName>
+                    <default>false</default>
+                    <label>Idaho</label>
+                </value>
+                <value>
+                    <fullName>Illinois Indiana</fullName>
+                    <default>false</default>
+                    <label>Illinois Indiana</label>
+                </value>
+                <value>
+                    <fullName>Iowa</fullName>
+                    <default>false</default>
+                    <label>Iowa</label>
+                </value>
+                <value>
+                    <fullName>Kansas</fullName>
+                    <default>false</default>
+                    <label>Kansas</label>
+                </value>
+                <value>
+                    <fullName>Kentucky</fullName>
+                    <default>false</default>
+                    <label>Kentucky</label>
+                </value>
+                <value>
+                    <fullName>Louisiana</fullName>
+                    <default>false</default>
+                    <label>Louisiana</label>
+                </value>
+                <value>
+                    <fullName>Maine</fullName>
+                    <default>false</default>
+                    <label>Maine</label>
+                </value>
+                <value>
+                    <fullName>Maryland</fullName>
+                    <default>false</default>
+                    <label>Maryland</label>
+                </value>
+                <value>
+                    <fullName>Massachusetts</fullName>
+                    <default>false</default>
+                    <label>Massachusetts</label>
+                </value>
+                <value>
+                    <fullName>Michigan</fullName>
+                    <default>false</default>
+                    <label>Michigan</label>
+                </value>
+                <value>
+                    <fullName>Minnesota</fullName>
+                    <default>false</default>
+                    <label>Minnesota</label>
+                </value>
+                <value>
+                    <fullName>Mississippi</fullName>
+                    <default>false</default>
+                    <label>Mississippi</label>
+                </value>
+                <value>
+                    <fullName>Missouri</fullName>
+                    <default>false</default>
+                    <label>Missouri</label>
+                </value>
+                <value>
+                    <fullName>Montana Nebraska</fullName>
+                    <default>false</default>
+                    <label>Montana Nebraska</label>
+                </value>
+                <value>
+                    <fullName>Nevada</fullName>
+                    <default>false</default>
+                    <label>Nevada</label>
+                </value>
+                <value>
+                    <fullName>New Hampshire</fullName>
+                    <default>false</default>
+                    <label>New Hampshire</label>
+                </value>
+                <value>
+                    <fullName>New Jersey</fullName>
+                    <default>false</default>
+                    <label>New Jersey</label>
+                </value>
+                <value>
+                    <fullName>New Mexico</fullName>
+                    <default>false</default>
+                    <label>New Mexico</label>
+                </value>
+                <value>
+                    <fullName>New York</fullName>
+                    <default>false</default>
+                    <label>New York</label>
+                </value>
+                <value>
+                    <fullName>North Carolina</fullName>
+                    <default>false</default>
+                    <label>North Carolina</label>
+                </value>
+                <value>
+                    <fullName>North Dakota</fullName>
+                    <default>false</default>
+                    <label>North Dakota</label>
+                </value>
+                <value>
+                    <fullName>Ohio</fullName>
+                    <default>false</default>
+                    <label>Ohio</label>
+                </value>
+                <value>
+                    <fullName>Oklahoma</fullName>
+                    <default>false</default>
+                    <label>Oklahoma</label>
+                </value>
+                <value>
+                    <fullName>Oregon</fullName>
+                    <default>false</default>
+                    <label>Oregon</label>
+                </value>
+                <value>
+                    <fullName>Pennsylvania Rhode Island</fullName>
+                    <default>false</default>
+                    <label>Pennsylvania Rhode Island</label>
+                </value>
+                <value>
+                    <fullName>South Carolina</fullName>
+                    <default>false</default>
+                    <label>South Carolina</label>
+                </value>
+                <value>
+                    <fullName>South Dakota</fullName>
+                    <default>false</default>
+                    <label>South Dakota</label>
+                </value>
+                <value>
+                    <fullName>Tennessee</fullName>
+                    <default>false</default>
+                    <label>Tennessee</label>
+                </value>
+                <value>
+                    <fullName>Texas</fullName>
+                    <default>false</default>
+                    <label>Texas</label>
+                </value>
+                <value>
+                    <fullName>Utah</fullName>
+                    <default>false</default>
+                    <label>Utah</label>
+                </value>
+                <value>
+                    <fullName>Vermont</fullName>
+                    <default>false</default>
+                    <label>Vermont</label>
+                </value>
+                <value>
+                    <fullName>Virginia</fullName>
+                    <default>false</default>
+                    <label>Virginia</label>
+                </value>
+                <value>
+                    <fullName>Washington</fullName>
+                    <default>false</default>
+                    <label>Washington</label>
+                </value>
+                <value>
+                    <fullName>West Virginia</fullName>
+                    <default>false</default>
+                    <label>West Virginia</label>
+                </value>
+                <value>
+                    <fullName>Wisconsin</fullName>
+                    <default>false</default>
+                    <label>Wisconsin</label>
+                </value>
+                <value>
+                    <fullName>Wyoming</fullName>
+                    <default>false</default>
+                    <label>Wyoming</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Property_States__c</fullName>
+        <externalId>false</externalId>
+        <label>Property_State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields><fields>
+        <fullName>Property_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sold</fullName>
+                    <default>false</default>
+                    <label>Sold</label>
+                </value>
+                <value>
+                    <fullName>Listed For Sale</fullName>
+                    <default>false</default>
+                    <label>Listed For Sale</label>
+                </value>
+                <value>
+                    <fullName>Pending Sale</fullName>
+                    <default>false</default>
+                    <label>Pending Sale</label>
+                </value>
+                <value>
+                    <fullName>Rental</fullName>
+                    <default>false</default>
+                    <label>Rental</label>
+                </value>
+                <value>
+                    <fullName>2nd Home/Vacation</fullName>
+                    <default>false</default>
+                    <label>2nd Home/Vacation</label>
+                </value>
+                <value>
+                    <fullName>Subject Property</fullName>
+                    <default>false</default>
+                    <label>Subject Property</label>
+                </value>
+                <value>
+                    <fullName>Co-signor</fullName>
+                    <default>false</default>
+                    <label>Co-signor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Property_Title_is_Held_in_These_Names__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Title is Held in These Names</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Property_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Property_Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Family</fullName>
+                    <default>false</default>
+                    <label>Single Family</label>
+                </value>
+                <value>
+                    <fullName>Condominium</fullName>
+                    <default>false</default>
+                    <label>Condominium</label>
+                </value>
+                <value>
+                    <fullName>Townhouse</fullName>
+                    <default>false</default>
+                    <label>Townhouse</label>
+                </value>
+                <value>
+                    <fullName>Co-operative</fullName>
+                    <default>false</default>
+                    <label>Co-operative</label>
+                </value>
+                <value>
+                    <fullName>Two-to-four unit property</fullName>
+                    <default>false</default>
+                    <label>Two-to-four unit property</label>
+                </value>
+                <value>
+                    <fullName>Multifamily (more than 4 units)</fullName>
+                    <default>false</default>
+                    <label>Multifamily (more than 4 units)</label>
+                </value>
+                <value>
+                    <fullName>Manufactured/Mobile Home</fullName>
+                    <default>false</default>
+                    <label>Manufactured/Mobile Home</label>
+                </value>
+                <value>
+                    <fullName>Commercial – Non-Residential</fullName>
+                    <default>false</default>
+                    <label>Commercial – Non-Residential</label>
+                </value>
+                <value>
+                    <fullName>Mixed Use – Residential</fullName>
+                    <default>false</default>
+                    <label>Mixed Use – Residential</label>
+                </value>
+                <value>
+                    <fullName>Farm</fullName>
+                    <default>false</default>
+                    <label>Farm</label>
+                </value>
+                <value>
+                    <fullName>Home and Business Combined</fullName>
+                    <default>false</default>
+                    <label>Home and Business Combined</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
+                </value>
+                <value>
+                    <fullName>Property</fullName>
+                    <default>false</default>
+                    <label>Property</label>
+                </value>
+                <value>
+                    <fullName>Investment</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Investment</label>
+                </value>
+                <value>
+                    <fullName>Primary</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Primary</label>
+                </value>
+                <value>
+                    <fullName>Second Home</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Second Home</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Property_ZIP__c</fullName>
+        <externalId>false</externalId>
+        <label>Property_ZIP</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Real_Estate_Liability__c</fullName>
+        <externalId>false</externalId>
+        <label>Real_Estate_Schedule (RES) Type</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Real_Estate_Taxes_Monthly__c</fullName>
+        <externalId>false</externalId>
+        <label>Real Estate Taxes - Monthly</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>RelatedClient__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>RelatedClient</label>
+        <referenceTo>Client__c</referenceTo>
+        <relationshipLabel>Liabilities</relationshipLabel>
+        <relationshipName>Liabilities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>RelatedLoan__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>RelatedLoan</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipLabel>Liabilities</relationshipLabel>
+        <relationshipName>Liabilities</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>RemainingMonths__c</fullName>
+        <description>To auto calculate remaining months</description>
+        <externalId>false</externalId>
+        <formula>CEILING(Liability_Unpaid_Balance__c  /  Liability_Monthly_Payment__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RemainingMonths</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Remaining_months__c</fullName>
+        <description>Must not be less than 0</description>
+        <externalId>false</externalId>
+        <label>Remaining months</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Square_Footage__c</fullName>
+        <externalId>false</externalId>
+        <label>Square Footage</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>State__c</fullName>
+        <description>Mandatory if Real Estate Schedule is selected in the category</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields><fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Liability Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Collections/Judgments/Liens</fullName>
+                    <default>false</default>
+                    <label>Collections/Judgments/Liens</label>
+                </value>
+                <value>
+                    <fullName>Home Equity Line of Credit</fullName>
+                    <default>false</default>
+                    <label>Home Equity Line of Credit</label>
+                </value>
+                <value>
+                    <fullName>Installment</fullName>
+                    <default>false</default>
+                    <label>Installment</label>
+                </value>
+                <value>
+                    <fullName>Lease Payments</fullName>
+                    <default>false</default>
+                    <label>Lease Payments</label>
+                </value>
+                <value>
+                    <fullName>Mortgage Loans</fullName>
+                    <default>false</default>
+                    <label>Mortgage Loans</label>
+                </value>
+                <value>
+                    <fullName>Open 30 day Charge Accounts</fullName>
+                    <default>false</default>
+                    <label>Open 30 day Charge Accounts</label>
+                </value>
+                <value>
+                    <fullName>Revolving</fullName>
+                    <default>false</default>
+                    <label>Revolving</label>
+                </value>
+                <value>
+                    <fullName>Taxes</fullName>
+                    <default>false</default>
+                    <label>Taxes</label>
+                </value>
+                <value>
+                    <fullName>Mechanic Lien</fullName>
+                    <default>false</default>
+                    <label>Mechanic Lien</label>
+                </value>
+                <value>
+                    <fullName>Property Taxes</fullName>
+                    <default>false</default>
+                    <label>Property Taxes</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Year_Built__c</fullName>
+        <externalId>false</externalId>
+        <label>Year Built</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Zip__c</fullName>
+        <description>Mandatory if Real Estate Schedule is selected in the category</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Must have only digits or can have one hyphen(-)</inlineHelpText>
+        <label>Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>isActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>isActive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Liability object</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Liability</label><nameField>
+        <displayFormat>L-{00000}</displayFormat>
+        <label>Liability ID</label>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>Liabilities</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>Liability_Unpaid_Balance__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RelatedClient__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RelatedLoan__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Liability_Category__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Liability_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>isActive__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Liability_Unpaid_Balance__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RelatedClient__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RelatedLoan__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Liability_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Liability_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>isActive__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Liability_Unpaid_Balance__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>RelatedClient__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>RelatedLoan__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Liability_Category__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Liability_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>isActive__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Liability_Unpaid_Balance__c</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>RelatedClient__c</searchFilterFields>
+        <searchFilterFields>RelatedLoan__c</searchFilterFields>
+        <searchFilterFields>Liability_Category__c</searchFilterFields>
+        <searchFilterFields>Liability_Type__c</searchFilterFields>
+        <searchFilterFields>isActive__c</searchFilterFields>
+        <searchResultsAdditionalFields>Liability_Unpaid_Balance__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RelatedClient__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RelatedLoan__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Liability_Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Liability_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>isActive__c</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><listViews>
+        <fullName>All_Liabilities</fullName>
+        <columns>Liability_Unpaid_Balance__c</columns>
+        <columns>NAME</columns>
+        <columns>RelatedClient__c</columns>
+        <columns>RelatedLoan__c</columns>
+        <columns>Liability_Category__c</columns>
+        <columns>Liability_Type__c</columns>
+        <columns>isActive__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Liabilities</label>
+    </listViews><sharingReasons>
+        <fullName>LoanProcessor__c</fullName>
+        <label>Loan Processor</label>
+    </sharingReasons><sharingReasons>
+        <fullName>Loan_Officer__c</fullName>
+        <label>Loan Officer</label>
+    </sharingReasons><sharingReasons>
+        <fullName>Origination_Loan_Officer__c</fullName>
+        <label>Origination Loan Officer</label>
+    </sharingReasons><validationRules>
+        <fullName>Address_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(Address__c = '',
+OR(ISPICKVAL (Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
+        <errorDisplayField>Address__c</errorDisplayField>
+        <errorMessage>Address mandatory for this category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Amount_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Amount__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Amount__c</errorDisplayField>
+        <errorMessage>Amount must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>City_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(City__c = '',
+OR(ISPICKVAL (Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
+        <errorDisplayField>City__c</errorDisplayField>
+        <errorMessage>Mandatory for this category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>County_validations</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(County__c = '',
+OR(ISPICKVAL (Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
+        <errorDisplayField>County__c</errorDisplayField>
+        <errorMessage>County is mandatory for this category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Gross_Rental_Income_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Gross_Rental_Income__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Gross_Rental_Income__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Insurance_Taxes_etc_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Insurance_Taxes_etc__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Insurance_Taxes_etc__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Job_Related_Expenses_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Job_Related_Expenses__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Job_Related_Expenses__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Liability_Monthly_Payment_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Liability_Monthly_Payment__c  &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Liability_Monthly_Payment__c</errorDisplayField>
+        <errorMessage>Liability Monthly Payment value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Liability_Unpaid_Balance_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Liability_Unpaid_Balance__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Liability_Unpaid_Balance__c</errorDisplayField>
+        <errorMessage>Unpaid balance must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Mortgage_Liens_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Mortgage_Liens__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Mortgage_Liens__c</errorDisplayField>
+        <errorMessage>Must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Mortgage_Payments_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Mortgage_Payments__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Mortgage_Payments__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Net_Rental_Income_RealEstate_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Net_Rental_Income_RealEstate__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Net_Rental_Income_RealEstate__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Present_Mortgage_Value_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Present_Mortgage_Value__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Present_Mortgage_Value__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Remaining_months_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(Remaining_months__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>Remaining_months__c</errorDisplayField>
+        <errorMessage>Must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Zip_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( OR(), NOT(REGEX(Zip__c , "\\d{5}(-\\d{4})?")))</errorConditionFormula>
+        <errorDisplayField>Zip__c</errorDisplayField>
+        <errorMessage>Zip Can  contain numbers and hypen(-)</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Zip_validation_for_mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(Zip__c ='',
+OR(ISPICKVAL(Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
+        <errorDisplayField>Zip__c</errorDisplayField>
+        <errorMessage>Mandatory for this category</errorMessage>
+    </validationRules></CustomObject>

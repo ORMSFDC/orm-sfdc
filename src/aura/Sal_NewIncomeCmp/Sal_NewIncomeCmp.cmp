@@ -1,0 +1,445 @@
+<aura:component controller="SAL_NewIncomeController"
+                implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="IncomeLoanId" type="String" />
+    <aura:attribute name="TabRecordData"  type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
+    <aura:attribute name="RecordId" type="String" />
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    <aura:attribute name="manual" type="boolean" default="true"/>    
+    <aura:attribute name="selectedRecord" type="Income_New__c" default="{'sobjectType':'Income_New__c'}" />
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+    <aura:attribute name="Heading" type="String" />
+    <aura:attribute name="currentValue" type="String" />
+    <!-- Employment attributes -->
+    <aura:attribute name="UsState" type="List" />
+    <aura:attribute name="Year" type="List" />
+    <aura:attribute name="IncomeCategory" type="string[]" />
+    <aura:attribute name="NewEmp" type="Employment__c" default="{'sobjectType':'Employment__c'}" />
+    
+    <aura:attribute name="recordSaved" type="Boolean" default="false" />
+    <aura:attribute name="enableSave" type="Boolean" default="false" /> 
+    <aura:attribute name="enableAddIncome" type="Boolean" default="false" />
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="disabledClient" type="string" default="display:block"/>
+    <aura:attribute name="showErrorEmp" type="boolean" default="false"/>
+    <aura:attribute name="showSuccess" type="boolean" default="false"/>
+    <aura:attribute name="SocialSecurityIncome" type="boolean" default="true"/>
+    
+    <!-- Div control for hiding and showing -->
+    <!--<aura:attribute name="divIncome" type="Boolean" default="false" />-->
+    
+    
+    <aura:attribute name="clientList" type="List" />
+    <aura:attribute name="incomeOptions" type="List" />
+    <aura:attribute name="IncomeList" type="Income_New__c"  />
+    <!-- <aura:attribute name="IncomeListNew" type="Client_IncomeEmp[]"  />-->
+    <aura:attribute name="IncomeListNew" type="IncomeEmpResponse[]"  />
+    
+    <aura:attribute name="nextOpt" type="boolean" />
+    <aura:attribute name="currentOpt" type="boolean" />
+    <aura:attribute name="prevOpt" type="boolean" />
+    <aura:attribute name="total" type="Double" default="0.00" />
+    <aura:attribute name="IncomeCount" type="Integer" default="0" />
+    
+    <aura:attribute name="ClientIncome" type="Double" default="0.00" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="showPopup" type="boolean" default="false" />
+    <aura:attribute name="DeletePopup" type="boolean" default="false" />
+    <aura:attribute name="showTable" type="boolean" default="false" />
+    <!--Control Id for Validation-->
+    <aura:attribute name="IncomeTypeId" type="string" default="" />
+    <aura:attribute name="ClientID" type="String" default="null" />
+    <aura:attribute name="itemsClicked" type="String" default="opt1"/>
+    <aura:attribute name="DeleteID" type="String" default="" />
+    <aura:attribute name="DeleteObj" type="String" default=""/>
+    
+    <!--Delete PopUp -->
+    <aura:if isTrue="{!v.DeletePopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeMyModel }">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Do you really want to Delete?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">                    
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.closeModel}" label="Cancel"></ui:button>
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.DeleteRecord}" label="Ok"></ui:button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    <!--Empoyment PopUp -->
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 style="color:#2081bf;" id="header43" class="slds-text-heading--medium">{!v.Heading}</h2>
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div class="slds-form slds-form_compound">
+                        <fieldset class="slds-form-element">
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-1">
+                                    <div  class="slds-size_1-of-1" style="{!v.disabledClient}" >
+                                        
+                                        <lightning:select aura:id="pickClient"  name="selClient" label="Client*"> 
+                                            <aura:iteration items="{!v.clientList}" var="pOptions">
+                                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                        
+                                        <label id="clientlbl" class="lblStyle"></label>
+                                    </div>
+                                    <div style="margin-bottom: 3%;" class="slds-size_1-of-1">
+                                        <ui:inputText label="Income Type" aura:id="inputIncomeType" required="true"
+                                                      value="{!v.NewEmp.Income_Type__c}" class="slds-input" disabled="true"/>
+                                        
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 3%;" class="slds-size_1-of-1">
+                                        <ui:inputSelect label="Income Category " aura:id="IncomeCategory" required="false" value="{!v.NewEmp.IncomeCategory__c}" >
+                                            <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                            <aura:iteration items="{!v.IncomeCategory}" var="pOptions" >
+                                                <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.text}"/>
+                                            </aura:iteration>
+                                            
+                                        </ui:inputSelect>
+                                        
+                                    </div>
+                                    <!--required when Self employed is "yes" -->
+                                    <div style="margin-bottom: 3%;" class="slds-size_1-of-1">
+                                        
+                                        <ui:inputText label="Employer Name" aura:id="inputFName"
+                                                      value="{!v.NewEmp.EmployerName__c}" class="slds-input"
+                                                      required="{!v.Isrequired}" />
+                                        <br />
+                                        
+                                        <ui:inputText label="Position/Title" aura:id="inputPosition"
+                                                      value="{!v.NewEmp.PositionTitle__c}" class="slds-input"
+                                                      required="{!v.Isrequired}"/>
+                                        <br />   
+                                        
+                                        <ui:inputCurrency label="Monthly Income Value" aura:id="inputIncomeValue"
+                                                          required="true" value="{!v.NewEmp.IncomeValue__c}" />
+                                        <br />
+                                        
+                                        <ui:inputPhone label="Employer Phone" aura:id="inputEmpPhone"
+                                                       maxlength="16" value="{!v.NewEmp.EmployerPhone__c}" class="slds-input"
+                                                       required="{!v.Isrequired}" keyup="{!c.FormatPhone}"
+                                                       updateOn="keyup"/>
+                                        <label id="Phonerr" class="errorclr"></label>
+                                        <!--change="{!c.EmploymentValidations}"-->
+                                        <br />
+                                        
+                                        <ui:inputText label="Employer Address"
+                                                      aura:id="inputEmpAddress"
+                                                      value="{!v.NewEmp.EmployerAddress__c}" class="slds-input"
+                                                      required="{!v.Isrequired}"/>
+                                        <br />
+                                        <ui:inputText label="City" aura:id="inputCity"
+                                                      value="{!v.NewEmp.City__c}" class="slds-input"
+                                                      required="{!v.Isrequired}" />
+                                        <br />
+                                        <ui:inputSelect label="State" aura:id="State" required="{!v.Isrequired}" value="{!v.NewEmp.State__c}" >
+                                            <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                            
+                                            <aura:iteration items="{!v.UsState}" var="pOptions" >
+                                                <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.text}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect> 
+                                        <br />
+                                        <ui:inputText label="Zip" aura:id="inputZip"
+                                                      value="{!v.NewEmp.Zip__c}" class="slds-input"
+                                                      required="{!v.Isrequired}" />
+                                        
+                                    </div>
+                                    <!--required when Self employed is "yes" -->
+                                    <br />
+                                    <h3  style="color:#2081bf;">Time at this job</h3>
+                                    <div class="slds-size_1-of-1" style="margin-bottom: 3%;">
+                                        
+                                        <ui:inputText label="Years " aura:id="inputYear"
+                                                      value="{!v.NewEmp.Years__c}"
+                                                      class="slds-input" required="true" 
+                                                      />
+                                        <br /> 
+                                        
+                                        <ui:inputNumber label="Months " aura:id="inputMonth"
+                                                        value="{!v.NewEmp.Months__c}"
+                                                        class="slds-input" 
+                                                        />
+                                        <br />
+                                        
+                                        <ui:inputSelect label="Years Employed in Profession (optional)" aura:id="Year" value="{!v.NewEmp.YearEmployedinProfession__c}" >
+                                            
+                                            <ui:inputSelectOption value="true" text="" label="---Select Option---"/>
+                                            <aura:iteration items="{!v.Year}" var="pOptions" >
+                                                <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.text}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect> 
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######--> 
+                <div class="slds-modal__footer"> 
+                    <div align="left">
+                        <aura:if isTrue="{!v.showErrorEmp}">                            
+                            <ui:message title="Error" severity="error" >
+                                Please review all errors before moving to next page
+                            </ui:message>                            
+                        </aura:if>
+                    </div>
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.closeModel}" label="Cancel"></ui:button>
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.FormatEmploymentValidations}" label="Save"></ui:button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>    
+    
+    <br />
+    <div id="TotalDiv" style="display:none">
+        <table class="slds-table_cell-buffer">
+            <tbody>
+                <tr style="background-color:lightgray;">
+                    
+                    <td style="text-align:left;">
+                        <span style="font-weight:bold;">Total Clients' Income &nbsp;</span>
+                    </td>
+                    <td data-label="Value" style="text-align:left;">
+                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="totalClient1" value="{!v.ClientIncome}"/></span>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+    <br />
+    <aura:if isTrue="{!v.showTable}">
+        <aura:iteration items="{!v.IncomeListNew}" var="IncomeListNew" indexVar="index">
+            <div style="font-size:19px;">
+                {!IncomeListNew.ClientName}
+            </div>
+            <br/>
+            
+            <table class="slds-table_cell-buffer">                
+                <thead >
+                    <tr style="background-color: #2877bd">
+                         <th></th>
+                        <th scope="col" colspan="1" style="width:30%;color: white;">
+                            Income Type
+                        </th>
+                        <th style="width:5%;"></th>
+                        <th scope="col" style="text-align:left;width:20%;color: white;">
+                            Source Name
+                        </th>
+                        <th></th>
+                        <th scope="col" style="text-align:right;width:16%;color: white;">
+                            Monthly Income Value
+                        </th>
+                        
+                        <th scope="col">
+                            <!--<h6 style="font-weight:bold;">Edit</h6>-->
+                        </th>
+                       
+                        
+                    </tr>
+                </thead>
+                <tbody> 
+                    <aura:if isTrue="{!IncomeListNew.IncomeEmpList != undefined }">
+                        <aura:iteration items="{!IncomeListNew.IncomeEmpList}" var="IncomeList">
+                            <aura:if isTrue="{!v.IncomeCount != 0}">
+                                <tr>
+                                     <td data-label=""  style="text-align:center;">
+                                        <aura:if isTrue="{!IncomeList.IsValidated}">
+                                            <aura:set attribute="else">
+                                                <Label style="color:red;padding-right:2px;font-size: 25px;">&#33;</Label>
+                                            </aura:set>
+                                        </aura:if>
+                                    </td>
+                                    <td data-label="Income Type">
+                                        <div class="slds-truncate">{!IncomeList.IncomeType}</div>
+                                    </td>
+                                    <td style="width:5%;"></td>
+                                    <td data-label="Source Name" style="text-align:left;">
+                                        <div class="slds-truncate">
+                                            {!IncomeList.SourceName}</div>
+                                    </td>
+                                    <td></td>
+                                    <td data-label="Monthly Income value" style="text-align:right;">
+                                        <ui:outputCurrency value="{!IncomeList.MonthlyIncomeValue}"></ui:outputCurrency>
+                                    </td>
+                                    <td data-label="Edit"  style="text-align:right;">
+                                        <a id="{!IncomeList.RecordID}" name="{!IncomeList.ObjectType}" onclick="{!c.EditRecord}">Edit</a>&nbsp;
+                                        <a id="{!IncomeList.RecordID}" name="{!IncomeList.ObjectType}" onclick="{!c.DeleteConfirm}">Delete</a>
+                                    </td>
+                                
+                                </tr> 
+                            </aura:if>                            
+                        </aura:iteration>
+                        <aura:set attribute="else">
+                            <tr>
+                                <td colspan="6">
+                                    No Incomes have been added.
+                                </td>
+                                <aura:iteration items="{!IncomeListNew.IncomeEmpList}" var="IncomeList">
+                                    <td></td>
+                                </aura:iteration>
+                            </tr>
+                        </aura:set>
+                    </aura:if>                    
+                    
+                    <tr style="background-color:lightgray;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                        <td  style="text-align:right;">
+                            <span style="font-weight:bold;">Total</span>
+                        </td>
+                        
+                        <td colspan="2" data-label="Value" style="text-align:right;">
+                            <span style="font-weight:bold;"><ui:outputCurrency aura:id="totalID" value="{!IncomeListNew.TotalIncome}"/></span>
+                        </td>
+                        <td>
+                        </td>
+                       
+                    </tr>                     
+                </tbody>
+            </table>
+            <br />
+        </aura:iteration> 
+    </aura:if>
+    
+    
+    <div>
+        
+        <div  id="maindiv" style="display:none">            
+            
+            <aura:if isTrue="{!v.isOpen}">
+                <!--###### MODAL BOX Start From Here ######-->
+                <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                    <div class="slds-modal__container">
+                        <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 style="color:#2081bf;" id="header43" class="slds-text-heading--medium">{!v.Heading}</h2>
+                        </div>
+                        <!--###### MODAL BOX BODY Part Start From Here ######-->
+                        
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <div  class="slds-size_1-of-1" style="{!v.disabledClient}">
+                                <lightning:select aura:id="pickClient" label="Client*" name="selClient" class="{!v.errorComponent}">
+                                    
+                                    <aura:iteration items="{!v.clientList}" var="pOptions">
+                                        <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                    </aura:iteration>
+                                </lightning:select> 
+                                
+                                <label id="clientlbl" class="lblStyle"></label>
+                            </div>
+                            <aura:if isTrue="{!v.SocialSecurityIncome}">
+                                <div Style="margin-bottom: 3%;" class="slds-size_1-of-1">                                
+                                    <ui:inputText label="Source Name" aura:id="IncomeSource" required="true"
+                                                  value="{!v.IncomeList.Income_Source__c}" />
+                                </div>
+                            </aura:if>
+                            <div Style="margin-bottom: 3%;" class="slds-size_1-of-1">                                
+                                <ui:inputText label="Income Type" aura:id="IncomeType" disabled="true"
+                                              required="true" value="{!v.IncomeList.Income_Types__c}" />
+                            </div>
+                            <div Style="margin-bottom: 3%;" class="slds-size_1-of-1">                                
+                                <ui:inputCurrency label="Monthly Income Value" aura:id="IncomeValue"
+                                                  required="true" value="{!v.IncomeList.Income_Value__c}" />
+                            </div>
+                            
+                        </div>
+                        <div class="slds-modal__footer">
+                            <div align="left">  <aura:if isTrue="{!v.showError}">                            
+                                <ui:message title="Error" severity="error" >
+                                    Please review all errors before moving to next page
+                                </ui:message>                                
+                                </aura:if>
+                            </div>
+                            <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}"/>
+                            <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.FormatValidations}"/>
+                            
+                        </div>
+                        
+                        <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                    </div>
+                </div>
+                <div class="slds-backdrop slds-backdrop--open"></div>
+                <!--###### MODAL BOX Part END Here ######-->
+            </aura:if>
+            
+            
+            <!--Drop down  starts from here  -->
+            <label for="LoanMortgageAppliedFor" class="control-label"></label>
+            <div class="slds-combobox_container slds-size_medium">
+                
+                <ui:inputSelect aura:id="incomePicklist" label="Other forms of income" value="" change="{!c.PickChange}">
+                    <ui:inputSelectOption value="true" text="---Select option---" label="---Select option---" />
+                    <aura:iteration items="{!v.incomeOptions}" var="iOptions">
+                        <ui:inputSelectOption text="{!iOptions.value}" label="{!iOptions.value}"/>
+                    </aura:iteration>
+                    
+                </ui:inputSelect>
+            </div>
+            
+            
+            <aura:if isTrue="{!v.enableAddIncome}">
+                <br/>
+                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                           aura:id="AddIncome" label="Add Income" press="{!c.AddRecord}" />
+            </aura:if>
+            
+            <aura:if isTrue="{!v.showError}">                            
+                <ui:message title="Error" severity="error" closable="false">
+                    Please review all errors and save again.
+                </ui:message>                                
+            </aura:if>
+            <aura:if isTrue="{!v.showSuccess}">                            
+                <ui:message title="Information" severity="confirm" closable="false">
+                    Income Saved Successfully.
+                </ui:message>                                
+            </aura:if>
+            
+            <br></br>            
+            
+        </div>     
+        <br></br>
+        <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                   aura:id="addSubjectProperty" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+        <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                   label="Next" press="{!c.MoveNext}"></ui:button>
+    </div>
+    
+</aura:component>
