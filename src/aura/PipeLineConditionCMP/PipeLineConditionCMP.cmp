@@ -1,0 +1,143 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="ConditionController" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:attribute name="LoanId" type="string" default=""/>
+    <aura:attribute name="ConditionD" type="Object"/> 
+    <aura:attribute name="ConditionStatus" type="Object"/>     
+    <aura:attribute name="showNoCondition" type="boolean" default="false"/>
+    <aura:attribute name="showPrintCondition" type="boolean" default="false"/>
+    <aura:attribute name="showPopup" type="boolean" default="false"/>
+    <aura:attribute name="CurrentStatusCondition" type="Object"  />
+    <aura:attribute name="Condition" type="String"  default=''/>
+    <aura:attribute name="printPDF" type="string" default="defaultCls" />  
+    
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <h2 id="header99"  style="color:#2081bf;  margin-bottom: 0 !important;" class="slds-text-heading--medium">
+                        {!v.CurrentStatusCondition.Index}</h2>
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeDeleteModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>
+                        Current Status:{!v.CurrentStatusCondition.Status}
+                        </b>
+                    </p>           
+                    
+                    <br></br>
+                    <p><b>
+                        Status History:
+                        </b>
+                    </p> 
+                    <div class="slds-grid slds-wrap slds-grid_pull-padded" style="padding-left:2% !important">
+                        <aura:iteration items="{!v.ConditionStatus}" var="ConditionStatus">
+                            
+                            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_2-of-3 slds-large-size_2-of-3">
+                                <b>Change from '{!ConditionStatus.Status}' to '{!ConditionStatus.NewStatus}' </b>
+                            </div>
+                            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3">
+                                <b>{!ConditionStatus.StatusDate} </b>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                    
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.closeDeleteModel}" >Cancel</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    
+    <!-- Code added for Story No:-1088 by Developer 3 -->
+    <aura:if isTrue="{!v.showPrintCondition}">
+        <div style="Padding-right:25px;">
+            <ui:button class="{!v.printPDF}" label="Print Conditions" press="{!c.openPDF}"/>
+            
+            <br/> <br/>
+        </div>
+    </aura:if>
+    <!-- End of Code change -->
+    
+    <div style="height:800px;overflow-y:scroll">
+        <fieldset class="slds-box slds-theme--default slds-container--large">
+            <div>
+                <aura:if isTrue="{!v.showNoCondition}">
+                    <div class="slds-form slds-form_compound">
+                        <fieldset class="slds-form-element">
+                            
+                            
+                            <h2 id="header99"  style="color:#2081bf;" class="slds-text-heading--medium alert">
+                                No conditions have been added.</h2>
+                        </fieldset>
+                    </div>
+                </aura:if>
+                
+                <div class="slds-form slds-form_compound">
+                    <fieldset class="slds-form-element">
+                        
+                        <aura:iteration items="{!v.ConditionD}" var="Con">
+                            <div class="panel panel-default" style= "background-color:#2877bd;color:white">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <span style= "color:white">{!Con.Index} </span>
+                                        </div>
+                                        <div class="col-md-7" style= "color:white">
+                                            <div class="pull-right">
+                                                <button id="{!Con.Id}" class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Click to get Status History"
+                                                        onclick="{!c.display}" >
+                                                    <!--<lightning:icon iconName="utility:info" size="xx-small" alternativeText="Click to get Status History"/>
+                                                    <span class="slds-assistive-text">Click to get Status History</span>-->
+                                                    <lightning:helptext content="Click to get Status History" />
+                                                </button> 
+                                                <ui:outputText value="Status:" /><ui:outputText value="{!Con.Status}" />&nbsp;&nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5" style= "color:white">
+                                            <ui:outputText value="Created Date:" /><ui:outputText value="{!Con.CreatedDate}" />
+                                        </div>
+                                        <div class="col-md-7" style= "color:white">
+                                            <div class="pull-right">
+                                                 <ui:outputText value="Status Date:" /><ui:outputText value="{!Con.StatusDate}" />&nbsp;&nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default" >
+                                <div class="panel-body">                              
+                                    <aura:iteration items="{!Con.DescText}" var="desk">
+                                        <div class="row" >
+                                            <div class="col-md-1" style="width:0px;padding-left: 0px !important;display: list-item;   list-style-type: disc;    list-style-position: inside;">
+                                            </div>
+                                            <div class="col-md-11 text-justify" style="padding-left: 0px !important; color:black;">
+                                                {!desk}
+                                            </div>
+                                            
+                                        </div> 
+                                        <div class="slds-m-top--small"></div>
+                                    </aura:iteration>
+                                </div></div>
+                        </aura:iteration>
+                    </fieldset>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</aura:component>

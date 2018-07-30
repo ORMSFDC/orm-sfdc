@@ -1,0 +1,198 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="UploadController">
+    <aura:attribute name="recordId" type="ID"  />
+    
+    <aura:attribute name="frameWidth" type="String" default="300" /><!--250-->
+    <aura:attribute name="frameHeight" type="String" default="40" /><!--30-->
+    
+    <!-- Needed to send messages to VF page. But we will get it from VF itself -->
+    <aura:attribute name="vfHost" type="String" default="" />
+    <!-- Domain of LC for VF to send message -->
+    <aura:attribute name="lcHost" type="String" />
+    
+    <aura:attribute name="frameSrc" type="String" />
+    <aura:attribute name="IsSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="TargetDocument" type="string" default="" /> 
+    <aura:attribute name="Attachment" type="Object" />
+    <aura:attribute name="LOAttachment" type="Object" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" /> 
+    
+    <aura:attribute name="IsDeletedisplay" type="Boolean" default="false" />
+    <aura:attribute name="targetid" type="string" default="" />
+    <aura:attribute name="DocDeletePopup" type="Boolean" default="false" />
+    <fieldset class="slds-box slds-theme--default slds-container--large">
+        <div>
+            
+            <div class="slds-form slds-form_compound">
+                
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1"   >  
+                                
+                                <DIV id="partnerdiv"><h1>ORM Documents</h1></DIV>
+                                <table class="slds-table_bordered slds-table_cell-buffer"  >
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white">File Name</th>
+                                            <th style= "color:white">Uploaded Date</th>
+                                            <th style= "color:white" >Uploaded By</th>
+                                            <th style= "color:white"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <aura:iteration items="{!v.Attachment}" var="Attachment">
+                                            <!--  <aura:iteration items="{!v.contents}" var="content">-->
+                                            <tr >
+                                                
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate">
+                                                        <a id = "{!Attachment.Id}" target="_blank" onclick="{!c.Download}" >
+                                                            {!Attachment.DocName}</a>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" ><b>{!Attachment.CreatedDate}
+                                                        </b></div>
+                                                </td>
+                                                
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" ><b>{!Attachment.UploadedBy}
+                                                        </b></div>
+                                                </td>
+                                                
+                                                
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate">
+                                                        <aura:if isTrue="{!v.IsDeletedisplay}">
+                                                            <b>
+                                                                <a id = "{!Attachment.Id}" style="color:red"
+                                                                   name="{!Attachment.DocName}"
+                                                                   target="_blank" onclick="{!c.DeleteDocConfirmation}" > Delete</a>
+                                                            </b>
+                                                        </aura:if>
+                                                    </div>
+                                                </td> 
+                                            </tr>
+                                        </aura:iteration> 
+                                    </tbody>
+                                    
+                                </table>   
+                                &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                                <DIV><h1>Partner Documents </h1></DIV>
+                                <table class="slds-table_bordered slds-table_cell-buffer"  >
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white" >File Name</th>
+                                            <th style= "color:white" >Uploaded Date</th>
+                                            <th style= "color:white" >Uploaded By</th>
+                                            <th></th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <aura:iteration items="{!v.LOAttachment}" var="LOAttachment">
+                                            <tr >
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate" >
+                                                        <a id = "{!LOAttachment.Id}" target="_blank"
+                                                           onclick="{!c.Download}"  >
+                                                            <!--onclick="{!c.DownloadDoc}" >-->
+                                                            {!LOAttachment.DocName}</a>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate"><b>{!LOAttachment.CreatedDate}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate" ><b>{!LOAttachment.UploadedBy}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate">
+                                                        <aura:if isTrue="{!v.IsDeletedisplay}">
+                                                            <b>
+                                                                <a id = "{!LOAttachment.Id}" target="_blank"
+                                                                   name="{!LOAttachment.DocName}" style="color:red"
+                                                                   onclick="{!c.DeleteDocConfirmation}" > Delete</a>
+                                                            </b>
+                                                        </aura:if>
+                                                    </div>
+                                                </td>  
+                                            </tr> 
+                                        </aura:iteration>   
+                                    </tbody> 
+                                </table> 
+                                &nbsp;  &nbsp;  &nbsp;  &nbsp; 
+                                <div> 
+                                    <table>
+                                        <tbody>
+                                            
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div class="slds">
+                                                        <div aura:id="uiMessage">{!v.body}</div>
+                                                        
+                                                        <iframe frameBorder="0" aura:id="vfFrame" src="{! v.frameSrc}" width="{!v.frameWidth}" height="{!v.frameHeight}" class="vfFrame"/>
+                                                        <lightning:button label="Upload File" value="Upload File" onclick="{!c.sendMessage}" class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" disabled="true" aura:id="uploadFileButton"/>
+                                                        <aura:if isTrue="{!v.IsSpinner}">
+                                                            <div class="slds-spinner_container">
+                                                                <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                                                                    <div class="slds-spinner__dot-a"></div>
+                                                                    <div class="slds-spinner__dot-b"></div>
+                                                                </div>
+                                                            </div>
+                                                        </aura:if>  
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        
+    </fieldset>
+    <aura:if isTrue="{!v.DocDeletePopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" 
+             class="slds-modal slds-fade-in-open " >
+            <div class="slds-modal__container slds-mymodal" > 
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close 
+                                   slds-button--icon-inverse" 
+                            title="Close" onclick="{!c.DeleteDocConfirmationClose}">X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="header43" style="color:#2081bf;" 
+                        class="slds-text-heading--medium">Delete Document</h2>
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium" 
+                     >
+                    <br/>
+                    <div style="font-size:1.2em"> 
+                        Are you sure you want to delete {!v.TargetDocument}?
+                        
+                    </div>
+                    <br/>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer"> 
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.DeleteDocConfirmationClose}" >Cancel</button>
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.DeleteDoc}" >Yes</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+</aura:component>

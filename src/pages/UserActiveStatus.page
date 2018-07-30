@@ -1,0 +1,18 @@
+<apex:page standardController="Contact"   extensions="PortalUserActiveStatusController"
+ showHeader="false"  sidebar="false"   lightningStylesheets="true">
+  <!-- Begin Default Content REMOVE THIS -->
+   
+  <apex:form >
+<apex:image styleClass="checked"  rendered="{!IF((IsActive==false), 'display:none','')}" style="
+background: transparent url(/auraFW/resources/aura/images/smallcheck-checked.png) no-repeat;
+    height: 17px;
+    width: 17px;" />
+ 
+
+ <apex:image styleClass="unchecked"  rendered="{!IF((IsActive==true), 'display:none','')}" style="
+background: transparent url(/auraFW/resources/aura/images/smallcheck.png) no-repeat;
+    height: 17px;
+    width: 17px;"
+ />
+</apex:form>
+</apex:page>

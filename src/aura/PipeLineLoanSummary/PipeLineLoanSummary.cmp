@@ -1,0 +1,250 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global"  controller="PipeLineController" >
+    <aura:attribute name="LoanId" type="String" default="" />
+    <aura:attribute name="showLesa" type="boolean" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="loan" type="Object" />
+    
+    
+    <div>      
+        <fieldset class="slds-box slds-theme--default slds-container--large">            
+            
+            <div class="slds-form slds-form_compound">
+                
+                <fieldset class="slds-form-element">
+                    <table>
+                        <thead>
+                            <tr style= "background-color:#2877bd">
+                                <th  style= "color:white">
+                                    Loan Information
+                                </th>  
+                                <th colspan="4"></th>                                
+                            </tr>
+                        </thead>                            
+                    </table>
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">
+                                <table class="slds-table slds-table--fixed-layout">
+                                    <tbody>
+                                        <tr>
+                                            <td data-label="Proceeds available first year">                                                
+                                                <b>Proceeds Available First Year: </b>
+                                               	<lightning:formattedNumber value="{!v.loan.ProcAvailFirstYear}" style="currency" />
+                                            </td>
+                                            
+                                            <td></td>
+                                            
+                                            <td data-label="Line of credit after first year">                                            	
+                                                <b>Line of Credit After First Year: </b>
+                                                <lightning:formattedNumber value="{!v.loan.LineOfCredit}" style="currency" />                                            
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="cash due for Closing">
+                                                <b>Funds to Close: </b>
+                                                <lightning:formattedNumber value="{!v.loan.CashDueClosing}" style="currency" />
+                                            </td>
+                                             <td></td>
+                                            <td data-label="Initail Unpaid Principal Balance">                                                
+                                                <b>Initial Unpaid Principal Balance: </b>
+                                                <lightning:formattedNumber value="{!v.loan.InitialUnpaidPriBal}" style="currency" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Principal Limit">
+                                                <b>Principal Limit: </b>
+                                                <lightning:formattedNumber value="{!v.loan.PrincipalLimit}" style="currency" />
+                                            </td>
+                                             <td></td>
+                                            <td data-label="Mandatory Obligations">
+                                                <b>Mandatory Obligations: </b>  
+                                                <lightning:formattedNumber value="{!v.loan.MandatoryObligation}" style="currency" />
+                                            </td>
+                                        </tr>
+                                        <tr >
+                                            <td data-label="Property Appriasal value">
+                                                <b>Property Appraisal Value: </b>
+                                                <lightning:formattedNumber value="{!v.loan.ProAppValue}" style="currency" />
+                                            </td>
+                                             <td></td>
+                                            <td data-label="Margin">
+                                                <b>Margin: </b>
+                                                <!--Astik(25/01/2018)for showing percent write margin fild under aura if  -->
+                                                <aura:if isTrue="{!v.loan.Margin >=null}">
+                                                    {!v.loan.Margin} %
+                                                </aura:if>
+                                            </td>                                            
+                                        </tr>
+                                        
+                                        <tr >
+                                            
+                                            <!--<td data-label="Financial Assement Result" >
+                                                <b>Financial Assessment Result: </b>
+                                                {!v.loan.FinancialAsstResult}
+                                            </td>-->
+                                            <td data-label="Repair Set Aside">
+                                                <b>Repair Set Aside: </b>
+                                                <lightning:formattedNumber value="{!v.loan.RepairSetAside}" style="currency" />
+                                            </td>
+                                             <td></td>
+                                            <!--Astik (25/01/2018) exchange location of Broker Origination and Total Compensation -->
+                                            <td data-label="Total Compensation " >
+                                                <b>Total Compensation : </b>
+                                                <lightning:formattedNumber value="{!v.loan.BrokerComp}" style="currency" />
+                                            </td>                                         
+                                        </tr>
+                                        <tr >
+                                            <div>
+                                                
+                                                    <!--<td data-label="Total LESA">
+                                                        <b>Total LESA: </b>
+                                                        <lightning:formattedNumber value="{!v.loan.LESA}" style="currency" />
+                                                    </td>-->
+                                                    <td data-label="Initial Interest Rate">
+                                                        <b>Initial Interest Rate: </b>
+                                                        <aura:if isTrue="{!v.loan.InitialInterestRate >=null}">
+                                                            {!v.loan.InitialInterestRate} %
+                                                        </aura:if>                                                 
+                                                    </td>
+                                                </div>
+                                            
+                                            <td></td>
+                                            <!--Astik (25/01/2018) exchange location of Broker Compensation and Expected Interest Rate -->
+                                            
+                                            <td data-label="Broker Origination" >
+                                                <b>Broker Origination: </b>
+                                                <lightning:formattedNumber value="{!v.loan.BrokerOrigination}" style="currency" />
+                                            </td>
+                                        </tr>
+                                        <tr >
+                                            <td data-label="Repair Estimate">
+                                                <b>Repair Estimate: </b>
+                                                <lightning:formattedNumber value="{!v.loan.RepairEstimate}" style="currency" />
+                                            </td>
+                                             <td></td>
+                                            <td data-label="FHA Case Number" >
+                                                <b>FHA Case Number: </b>
+                                                {!v.loan.FHACaseNumber}
+                                            </td>                                            
+                                        </tr>
+                                        <tr >
+                                            <!--<td data-label="Repair Set Aside">
+                                                <b>Repair Set Aside: </b>
+                                                <lightning:formattedNumber value="{!v.loan.RepairSetAside}" style="currency" />
+                                            </td>-->
+                                            <td data-label="Financial Assement Result" >
+                                                <b>Financial Assessment Result: </b>
+                                                {!v.loan.FinancialAsstResult}
+                                            </td>
+                                             <td></td>
+                                            
+                                            <td data-label="Expected Interest Rate">
+                                                <b>Expected Interest Rate: </b>
+                                            </td> 
+                                        </tr>
+                                        <tr > 
+                                            <!--<td data-label="Initial Interest Rate">
+                                                <b>Initial Interest Rate: </b>
+                                                <aura:if isTrue="{!v.loan.InitialInterestRate >=null}">
+                                                    {!v.loan.InitialInterestRate} %
+                                                </aura:if>                                                 
+                                            </td>-->
+                                            <div id="showLesa" >
+                                            <td data-label="Total LESA">
+                                                        <b>Total LESA: </b>
+                                                        <lightning:formattedNumber value="{!v.loan.LESA}" style="currency" />
+                                                    </td>
+                                                
+                                                </div>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    
+                                </table>  
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+            </div>
+            <div class="slds-form slds-form_compound">
+                
+                <fieldset class="slds-form-element">
+                    <table>
+                        <thead>
+                            <tr style= "background-color:#2877bd">
+                                <th  style= "color:white">
+                                    Client Information
+                                </th>  
+                                <th colspan="4"></th>                                
+                            </tr>
+                        </thead>                            
+                    </table>
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">
+                                <table class="slds-table slds-table--fixed-layout">
+                                    <tbody>
+                                        <tr >
+                                            <td data-label="Residential Income Required" >
+                                                    <b>Residential Income Required: </b>
+                                                	<lightning:formattedNumber value="{!v.loan.ResidentialIncomeRequired}" style="currency" />
+                                            </td>
+                                            <td ></td>
+                                            <!-- <td data-label="Life Expectancy" >
+                                                    <b>Life Expectancy: </b>
+                                                	{!v.loan.LifeExpectancy}
+                                            </td> -->
+                                            <td data-label="Total Assets" >
+                                                    <b>Total Assets: </b> 
+                                                	<lightning:formattedNumber value="{!v.loan.TotalAssets}" style="currency" />
+                                            </td>                                            
+                                            <td></td>
+                                        </tr>
+                                        <tr >
+                                            <td data-label="Total Income" >
+                                                    <b>Total Income: </b>
+                                                	<lightning:formattedNumber value="{!v.loan.TotalIncome}" style="currency" />
+                                            </td>
+                                            <td></td>
+                                            <td data-label="Lien Balance">
+                                                    <b>Lien Balance: </b>
+                                                	<lightning:formattedNumber value="{!v.loan.LienBalance}" style="currency" />
+                                            </td>                                            
+                                        </tr>                                        
+                                        <tr >                                            
+                                            <td data-label="Total Expenses">
+                                                    <b>Total Expenses: </b>
+                                                	<lightning:formattedNumber value="{!v.loan.TotalExpenses}" style="currency" />
+                                            </td>
+                                            <td></td>
+                                            <td data-label="Lien Creditor">
+                                                    <b>Lien Creditor: </b>
+                                                	<lightning:formattedNumber value="{!v.loan.LienCreditor}" style="currency" />
+                                            </td>                                           
+                                        </tr>                                        
+                                        <tr >
+                                            <td data-label="Residual Income Fullfilled" >
+                                                    <b>Percent of Residual Income Fullfilled: </b>
+                                                	<lightning:formattedNumber value="{!v.loan.ResidualIncome}" />
+                                            </td>                                             
+                                            <td></td>                                                                                      
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Total Monthly Property Charges">
+                                                    <b>Total Monthly Property Charges: </b>
+                                                	<lightning:formattedNumber value="{!v.loan.TotalMonthlyPropertyCharges}" style="currency" />
+                                            </td>
+                                        </tr>
+                                    </tbody>                                    
+                                </table>  
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>                
+            </div>            
+            <br></br>            
+        </fieldset>        
+    </div>
+</aura:component>

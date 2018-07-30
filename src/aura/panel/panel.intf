@@ -1,0 +1,6 @@
+<aura:interface description="Demo Adapter Panel Interface, where every implementation is able to fire the events below.," >
+    <aura:registerEvent name="renderPanel" type="c:renderPanel"/>
+    <aura:registerEvent name="editPanel" type="c:editPanel"/>
+    <aura:registerEvent name="getSettings" type="c:getSettings"/>
+    <aura:registerEvent name="Alert" type="c:Alert"/>
+</aura:interface>

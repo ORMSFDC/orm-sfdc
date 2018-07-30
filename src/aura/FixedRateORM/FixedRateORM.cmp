@@ -1,0 +1,95 @@
+<aura:component controller="Pricing" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="IsSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="FixedRate" type="Object" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <form class="slds-form--stacked" style="margin-left: 5%;margin-right: 5%;">
+        <div  >
+            
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer" 
+                   style="border-top:0px solid red !important">
+                <thead>
+                    
+                    <tr class="slds-text-title_caps">
+                        <th> <div class="slds-truncate" ></div></th>
+                        <th scope="col" colspan="10" style="text-align:center;background-color: rgb(40, 119, 189)">
+                            <div class="slds-truncate" title="Utilization" 
+                                 style="color: antiquewhite;font-size: 18px  !important; !important">
+                                <!--color: #2081BF;-->
+                                HECM FIXED RATE</div>
+                        </th> 
+                    </tr>
+                    <tr class="slds-text-title_caps" >
+                        
+                        <th scope="col" style="background-color: rgb(40, 119, 189)">
+                            <div class="slds-truncate" title="Rate" 
+                                 style="color: antiquewhite; text-align:center; 
+                                        font-weight: bold;font-size: 1.3em !important;">
+                               Rate
+                            </div>
+                        </th>
+                        <th scope="col" class="HeaderCss" >
+                            <div class="slds-truncate  FontText" title="Price"  >
+                               Price
+                            </div>
+                        </th>
+                        <th scope="col"  class="HeaderCss" style="text-align:right !important" >
+                            <div class="slds-truncate  FontText" title="Origination to ORM" style="text-align:right !important" >
+                              Orig. to ORM
+                            </div>
+                        </th>
+                       
+                        <th scope="col"   class="HeaderCss">
+                            <div class="slds-truncate  FontText" title="Credit to Borrower"   >
+                                Credit to Borrower
+                            </div>
+                        </th>
+                   
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.FixedRate}" var="FixedRate">
+                        <tr>
+                            <td data-label="Rate" style="background-color: rgb(40, 119, 189)">
+                                <div class="slds-truncate" title=""
+                                     style="color: antiquewhite;  text-align:center;  font-weight: bold;"> 
+                                    {!FixedRate.Rate}
+                                </div>
+                            </td>
+                            <td data-label="Price">
+                                <div class="slds-truncate"  style="text-align:center;">
+                                 {!FixedRate.Price} <!-- <lightning:formattedNumber value="{!FixedRate.Price}" style="percent" /> -->
+                                </div>
+                            </td>
+                            <td data-label="Org.to ORM">
+                                <div class="slds-truncate"   style="text-align:right;padding-right:20px">
+                                   <lightning:formattedNumber value="{!FixedRate.OriginationToORM}" style="currency" currencyCode="USD" />  
+                                </div>
+                            </td>
+                            <td data-label="Credit to Borrower">
+                                <div class="slds-truncate"  style="text-align:center;">
+                                    {!FixedRate.CreditToBorrower}
+                                </div>
+                            </td>
+                   
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        <div style="color: #222222;" class="customFont16">
+            <br/>
+        
+            <b> Effective Date: </b> {!$Label.c.BrokerPricingDateText}
+        </div>
+            <aura:if isTrue="{!v.IsSpinner}">
+                <div class="slds-spinner_container">
+                    <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </aura:if>  
+        </div>
+    </form>
+    
+</aura:component>

@@ -1,0 +1,95 @@
+/*toggleCss.css*/
+.THIS.toggle {
+    display: none;
+}
+.THIS .LabelDiv
+{
+    color: rgb(105, 105, 105) !important;
+    line-height: 1.5 !important ;
+    margin-bottom: .25rem !important;
+    font-weight: bold !important;
+}
+.THIS .myCheckbox{
+  display: inline-block;
+  float: left;
+}
+
+.THIS .myBtn{
+    background-color:#2877bd !important;
+}
+.THIS .TransperantIconGreen svg{
+    fill: green !important;
+    background-color :transparent !important;
+}
+.THIS .TransperantIconGreen1 {
+    fill: green !important;
+    background-color :transparent !important;
+}
+
+.THIS .TransperantIconRed svg{
+    fill: red !important;
+    background-color :transparent !important;
+}
+.THIS .TransperantIconRed1 {
+    fill: red !important;
+    background-color :transparent !important;
+}
+.THIS .lblRemarkStyle {
+    font-size:0.75rem;
+    color:rgb(194, 57, 52) !important;
+    font-weight: normal;
+}
+.THIS .btncls { 
+    padding-left: 1rem !important;
+      
+    padding-right: 1rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    margin-left: -10px !important;
+    
+}
+.THIS .disabledcls { 
+    padding-left: 1rem !important;
+    
+    padding-right: 1rem !important;
+   
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #6C9F2E !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    cursor: not-allowed !important;
+}
+.THIS .error_border{
+    border:1px solid red;
+}
+.THIS .DivStyle
+{
+    font-size:0.75rem;color:rgb(194, 57, 52) !important;
+}
+.THIS .NBS
+{
+    margin-top:-45px !important;
+     margin-left:2px !important;
+}
+.THIS .Label
+{
+    /* font-size: 16px !important; */
+   
+    /*font-family: myraid pro !important;*/
+    color: #5a5a5a !important;
+    font-weight:bold !important;
+
+}
+.THIS .slds-form-element__label{
+    
+    font-size: 15px !important;
+   	color: #5a5a5a !important;
+    font-weight: bold !important;
+}
+.THIS .slds-required {
+    border-bottom: none !important;
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Enable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables (or disables) the method within TriggerHandlerExternalService.cls.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enables (or disables) the method within TriggerHandlerExternalService.cls.</inlineHelpText>
+        <label>Enable</label>
+        <type>Checkbox</type>
+    </fields><description>Controls (enables/disables) individual methods within TriggerHandlerExternalService.cls</description><label>TriggerExternalService</label><pluralLabel>TriggerExternalServices</pluralLabel><visibility>Public</visibility></CustomObject>

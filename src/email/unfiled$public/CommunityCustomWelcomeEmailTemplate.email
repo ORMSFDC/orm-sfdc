@@ -1,0 +1,11 @@
+<p>Hi  {!Receiving_User.Name},</p>
+
+<p>Welcome to One Reverse Mortgage Services! To get started, <a href="{!Community_Url}">please click here to create a password</a>.</p>
+<p>Your username is: {!Receiving_User.Username} </p>
+<p>Please reach out if you have any questions.</p>
+
+<br/> 
+<p>Thank you!</p>
+<p style="margin: 0;">{!User.Name}</p>
+<p style="margin: 0;margin-bottom: 1em;">{!User.Phone}</p>
+<img src="{!$Label.EmailTemplateLogoUrl}" alt="Image is blocked" title="Right click on the image to save it to your computer.">

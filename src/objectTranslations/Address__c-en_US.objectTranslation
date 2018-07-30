@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields><fields>
+        <label><!-- Number of years --></label>
+        <name>Number_of_years__c</name>
+    </fields><fields>
+        <label><!-- Related Client --></label>
+        <name>Related_Client_New__c</name>
+        <relationshipLabel><!-- FormerAddresses --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Related Loan --></label>
+        <name>Releted_Loan_New__c</name>
+        <relationshipLabel><!-- FormerAddresses --></relationshipLabel>
+    </fields><fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields><fields>
+        <label><!-- Zip --></label>
+        <name>Zip__c</name>
+    </fields><fields>
+        <label><!-- isActive --></label>
+        <name>isActive__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Address</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Addresses</value>
+    </caseValues><startsWith>Vowel</startsWith><layouts>
+        <layout>Address Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- Number of years must be greater than 0 --></errorMessage>
+        <name>Number_of_years_validation</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Can have only numbers and/or one - (Hyphen) --></errorMessage>
+        <name>zip_Address_Validation</name>
+    </validationRules></CustomObjectTranslation>

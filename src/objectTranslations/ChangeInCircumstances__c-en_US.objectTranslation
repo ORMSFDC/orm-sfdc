@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Act of God, war, disaster or other Appraisal Received
+emergency --></help>
+        <label><!-- Act of God,war,disaster --></label>
+        <name>Act_of_God__c</name>
+    </fields><fields>
+        <label><!-- AddRemove Borrowe --></label>
+        <name>AddRemove_Borrowe__c</name>
+    </fields><fields>
+        <label><!-- Add a Non Borrowing Spouse --></label>
+        <name>Add_a_Non_Borrowing_Spouse__c</name>
+    </fields><fields>
+        <label><!-- Adding a non-borrowing resident --></label>
+        <name>Adding_a_non_borrowing_resident__c</name>
+    </fields><fields>
+        <label><!-- Explanation --></label>
+        <name>Additional_Loan_Explanation__c</name>
+    </fields><fields>
+        <label><!-- Appraisal Received --></label>
+        <name>Appraisal_Received__c</name>
+    </fields><fields>
+        <label><!-- Bring Optional Funds to Closing --></label>
+        <name>Bring_Optional_Funds_to_Closing__c</name>
+    </fields><fields>
+        <help><!-- Information has been obtained regarding the client’s loan, which will result in changed circumstance under RESPA Section 3500.2 --></help>
+        <label><!-- CIC RESPA Section 3500.2 --></label>
+        <name>CIC_RESPA__c</name>
+    </fields><fields>
+        <label><!-- Change in Employment --></label>
+        <name>Change_in_Employment__c</name>
+    </fields><fields>
+        <label><!-- Change in Loan Officer --></label>
+        <name>Change_in_Loan_Officer__c</name>
+    </fields><fields>
+        <label><!-- Change in Requested Payment Plan --></label>
+        <name>Change_in_Requested_Payment_Plan__c</name>
+    </fields><fields>
+        <label><!-- Explanation --></label>
+        <name>Fee_Change_Explanation__c</name>
+    </fields><fields>
+        <help><!-- Inaccurate information about the
+client or transaction --></help>
+        <label><!-- Inaccurate Information --></label>
+        <name>Inaccurate_Information__c</name>
+    </fields><fields>
+        <label><!-- Loan Id --></label>
+        <name>Loan_Id__c</name>
+        <relationshipLabel><!-- Change In Circumstances --></relationshipLabel>
+    </fields><fields>
+        <help><!-- If this box is not checked, please check &apos;Related&apos; for the Fee changes. --></help>
+        <label><!-- No fee changes --></label>
+        <name>No_fee_changes__c</name>
+    </fields><fields>
+        <label><!-- Other Change --></label>
+        <name>Other_Change__c</name>
+    </fields><fields>
+        <help><!-- Other circumstance that is particular
+to the client or transaction --></help>
+        <label><!-- Other Circumstance Client or Transaction --></label>
+        <name>Other_Circumstance_Client_or_Transaction__c</name>
+    </fields><fields>
+        <help><!-- Other New Information  particular to Client or transaction --></help>
+        <label><!-- Other Information to Client Transaction --></label>
+        <name>Other_Information_to_Client_Transaction__c</name>
+    </fields><fields>
+        <label><!-- Other --></label>
+        <name>Other__c</name>
+    </fields><fields>
+        <label><!-- Reduce Origination Fee --></label>
+        <name>Reduce_Origination_Fee__c</name>
+    </fields><fields>
+        <label><!-- Title Fees Received --></label>
+        <name>Title_Fees_Received__c</name>
+    </fields><fields>
+        <label><!-- Withdraw --></label>
+        <name>Withdraw__c</name>
+    </fields><fields>
+        <label><!-- change circumstance occurred on --></label>
+        <name>change_circumstance_occurred_on__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Change In Circumstance</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Change In Circumstances</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>ChangeInCircumtances Layout</layout>
+        <sections>
+            <label><!-- Additional Loan changes Request: --></label>
+            <section>Additional Loan changes Request:</section>
+        </sections>
+        <sections>
+            <label><!-- CIC Details --></label>
+            <section>CIC Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description of changed circumstances (fee change possible) --></label>
+            <section>Description of changed circumstances (fee change possible)</section>
+        </sections>
+        <sections>
+            <label><!-- Fees changing as a Result of the Client-Requested Change of Changed Circumstance --></label>
+            <section>Fees changing as a Result of the Client-Requested Change of Changed Circumstance</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

@@ -1,0 +1,10 @@
+Hello {!QLMS_AE__c.00Nf2000003K0CA},
+<P>
+Congratulations! Your partner {!Account.Name} has been approved with ORMS.
+<P>
+Sincerely,
+<P>
+{!Account.OwnerFullName}<br />
+{!Account.OwnerTitle}<br />
+{!Account.OwnerPhone}<br />
+{!Account.OwnerEmail}<br />

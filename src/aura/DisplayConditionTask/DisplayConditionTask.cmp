@@ -1,0 +1,108 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes"
+                controller="DisplayPCSTaskController">
+	<aura:attribute name="wrapperList" type="List"/>
+    <aura:attribute name="ConditiontaskStatusList" type="List"/>
+    <aura:attribute name="selectStatus" type="String"/>
+    <aura:attribute name="options" type="List" />
+
+    <aura:attribute name="arrowDirection" type="string" default="arrowup" description="Use for change arrow sign direction on header based on click"/>
+    <aura:attribute name="isAsc" type="boolean" default="true" description="boolean flag for pass sorting condition to apex class"/>
+    <aura:attribute name="selectedTabsoft" type="string" default="DueDate" description="Use for show/hide arraow sign on header based on conditions"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+
+    <aura:handler event="force:navigateToSObject" action="{!c.navigateToRecord}"/>
+
+    <lightning:card title="7. Loans Almost Ready:" class=".slds-theme_alert-texture">
+        <table style="width: 100%; table-layout:fixed;"  class="slds-table slds-table_bordered slds-table_cell-buffer slds-max-medium-table_stacked-horizontal slds-cell-wrap">
+            <thead>
+                <tr class="slds-text-heading--label" >
+                    <th class="slds-cell-wrap" style = "width: 40%;" scope="col">Subject</th>
+                
+                    <th class="slds-cell-wrap" style = "width: 20%;" scope="col"  onclick="{!c.sortDueDate}">
+                    	<a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                            <span class="slds-assistive-text">Sort</span>
+                            <span class="slds-truncate slds-cell-wrap" title="Name">Created Date</span>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'DueDate') }">&nbsp;  &#9660; </aura:if>
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'DueDate') }"> &nbsp;  &#9650; </aura:if>
+                        </a>
+                    </th>
+                    
+					<!--Added New -->                   
+                    <th class="slds-cell-wrap" style = "width: 20%;" scope="col"  onclick="{!c.sortDueDate2}">
+                    	<a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+                            <span class="slds-assistive-text">Sort</span>
+                            <span class="slds-truncate slds-cell-wrap" title="Name">Due Date</span>
+                            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'DueDate') }">&nbsp;  &#9660; </aura:if>
+                            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'DueDate') }"> &nbsp;  &#9650; </aura:if>
+                        </a>
+                    </th>
+                    
+                    <th class="slds-cell-wrap" style = "width: 20%;" scope="col">Status</th>
+                    <th class="slds-cell-wrap" style = "width: 15%;" scope="col">Loan ID</th>
+                    <th class="slds-cell-wrap" style = "width: 15%;" scope="col">Loan Number</th>
+                    <th class="slds-cell-wrap" style = "width: 20%;" scope="col">Client Name </th>
+					<th class="slds-cell-wrap" style = "width: 20%;" scope="col">Subject State </th>                    
+                    <th class="slds-cell-wrap" style = "width: 20%;" scope="col">Anticipated Closing Date</th>
+                    <th class="slds-cell-wrap" style = "width: 20%;" scope="col">Loan Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.wrapperList}" var="wrapper">
+                    <tr class="slds-hint-parent slds-cell-wrap">
+                        <td data-label="Subject" class="slds-cell-wrap" >
+                            <a onclick="{!c.navigateToRecord}" style="width:100%;" data-index="{!wrapper.task.Id}">{!wrapper.task.Subject}</a>
+                        </td>
+
+                        <td data-label="Created Date" class="slds-cell-wrap" >  
+                            <ui:outputDate value="{!wrapper.task.Created_DateTime__c}" format="MM/dd/YYYY, hh:mm A"></ui:outputDate>                           
+                        </td> 
+						
+                        <!--Added New -->
+                        <td data-label="Due Date" class="slds-cell-wrap" >  
+                            <ui:outputDate value="{!wrapper.task.ActivityDate}" format="MM/dd/YYYY"></ui:outputDate>                           
+                        </td> 
+						
+                        <td data-label="Status" data-taskId="{!wrapper.task.Id}" id="tdId" class="tdclass">
+                            <lightning:select name="{!wrapper.task.Id}" label="" aura:id="{!wrapper.task.Id}" value="{!wrapper.task.Status}"
+                                              variant="label-hidden" onchange="{!c.saveTaskStatusFun}">
+                                <aura:iteration items="{!v.ConditiontaskStatusList}" var="itemStatus">
+                                    <option text="{!itemStatus}" value="{!itemStatus}" />
+                                 </aura:iteration>
+                            </lightning:select>
+
+                            <lightning:input aura:id="taskId" label="taskId" name="taskId"
+                                                    type="text" value="{!wrapper.task.Id}"  class="slds-hide"/>
+                        </td>
+                        <td data-label="Loan ID" class="slds-cell-wrap" >
+                            <a onclick="{!c.navigateToRecord}" style="width:100%;" data-index="{!wrapper.task.WhatId}">{!wrapper.task.What.Name}</a>
+                        </td>
+                        <td data-label="Loan Number" class="slds-cell-wrap" >
+                            <a onclick="{!c.navigateToRecord}" style="width:100%;" data-index="{!wrapper.task.WhatId}">{!wrapper.loan.LoanNumber__c}</a>                             
+                        </td>
+                        <td data-label="Client Name" class="slds-cell-wrap" >
+                            <ui:outputText value="{!wrapper.loan.Client_Name__c}"/>
+                        </td>
+                        <td data-label="Subject State" class="slds-cell-wrap" >
+                            <ui:outputText value="{!wrapper.loan.Subject_Property_State__c}"/>
+                        </td>
+                        <td data-label="Anticipated Closing Date" class="slds-cell-wrap" >
+                            <ui:outputDate value="{!wrapper.loan.Anticipated_Closing_Date__c}" format="MM/dd/YYYY"></ui:outputDate>
+                        </td>
+                        <td data-label="Loan Status" class="slds-cell-wrap" >
+                            <ui:outputText value="{!wrapper.loanStatus}"/>
+                        </td>
+                        
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+       <table style="width: 100%; table-layout:fixed;" class="slds-table slds-table_bordered slds-table_cell-buffer slds-max-medium-table_stacked-horizontal slds-cell-wrap">
+        <th class="" scope="col"></th>
+            <td data-label="View All" class="slds-cell-wrap" >
+              <a onclick="{!c.navigateToViewAll}" style="width:100%;">View All</a>
+            </td> 
+       </table>
+    </lightning:card>
+</aura:component>

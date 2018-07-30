@@ -1,0 +1,17 @@
+.THIS {
+}
+.THIS .btn{
+    padding-left:0px !important;
+    padding-right:0px !important;
+}
+.THIS .imgWidth{
+   width:40%;
+}
+.THIS .textWidth{
+   width:60%;
+}
+@media  (max-width: 470px) {
+    .THIS .mediaHeight {
+        height:100%;
+    }
+}

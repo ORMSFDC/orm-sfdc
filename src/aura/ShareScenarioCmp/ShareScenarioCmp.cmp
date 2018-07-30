@@ -1,0 +1,151 @@
+<aura:component controller="Get_portalUsers">
+  
+  <aura:attribute name="isShared" type="boolean" default="false"/>
+    <aura:attribute name="selectedRecord" type="Account"/>
+    <aura:attribute name="selectedContactRecord" type="Contact"/>
+    <aura:attribute name="serachContact" type="boolean" default="true"/>
+    <aura:attribute name="readytoShare" type="boolean" default="true"/>
+    
+  <aura:attribute name="show_sharing_popup" type="Boolean" default="false"/>
+    <aura:attribute name="selected_user" type="String"/>
+    <aura:attribute name="selected_record" type="String"/>
+    <aura:attribute name="userlist" type="user[]"/>
+     <aura:attribute name="SearchKeyWord" type="string"/>
+     <aura:attribute name="SearchKeyWordContact" type="string"/>
+    <aura:attribute name="Message" type="String" default="Search Result.."/>
+    <aura:attribute name="MessageContact" type="String" default="Search Result.."/>
+ 
+    <aura:attribute name="listOfSearchRecords" type="Account[]" description="Use,for store the list of search records which returns from apex class"/>
+    <aura:attribute name="listOfSearchContactRecords" type="Contact[]" description="Use,for store the list of search records which returns from apex class"/>
+   
+    <aura:handler name="oSelectedAccountEvent" event="c:selectedAccountEvent" action="{!c.handleComponentEvent}"/>
+   <aura:handler name="oSelectedContactEvent" event="c:selectedContactEvent" action="{!c.handleComponentEventContact}"/>
+   
+    <aura:handler name="init" value="this" action="{!c.doinit}"/>
+   <!--###### MODAL BOX Start From Here ######--> 
+      <div style="margin-top:4%;" role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+        <div class="slds-modal__container" style="">
+          <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+          <div class="slds-modal__header">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">
+            X
+            <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="header99" class="slds-text-heading--medium">Share Scenario</h2>
+          </div>
+          <!--###### MODAL BOX BODY Part Start From Here ######-->
+          <div class="slds-modal__content slds-p-around--medium" style="height:300px">
+            <div style="display:none"> 
+        <ui:inputText aura:id="secret"    value="{!v.selectedRecord.Id}"/>
+    </div>
+            <!--start of  business partner-->
+            <div class="slds-m-around--Large">
+                        <div aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close" 
+                             data-select="single">
+              <div class="slds-form-element__control">
+                                <div class="slds-input-has-icon slds-input-has-icon--right">
+                                    
+                                    <!-- This markup is for when an record is selected -->
+                                    <div aura:id="lookup-pill" class=" slds-hide">
+                                       <label>Business Partner</label>
+                                 <div    class="slds-pill-container"  >
+                                        <span class="slds-pill">
+                                            <span class="slds-pill__label">
+                                                {!v.selectedRecord.Name}  
+                                            </span>&nbsp;&nbsp;
+                                            
+                                            
+                                            <button class="slds-button slds-button--icon slds-pill__remove" 
+                                                    onclick="{!c.clear}">
+                                                <lightning:icon iconName="utility:close" size="small" alternativeText="Indicates approval"/>                       
+                                                <span class="slds-assistive-text">Remove</span>
+                                            </button>
+                                        </span>
+                                     </div>
+                                    </div>
+                                    
+                                   <div aura:id="lookupField" class="slds-show">
+                                      <label>Business Partner</label>
+                                       <ui:inputText updateOn="keyup,change" keyup="{!c.keyPressController}"
+                                                      class="slds-lookup__search-input slds-input " 
+                                                      value="{!v.SearchKeyWord}" placeholder="search Business Partner.."/>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!--This part is for Display typehead lookup result List-->  
+                            <div class="slds-lookup__menu slds" id="lookup-348">
+                                <div class="slds-lookup__item--label slds-text-body--small">{!v.Message}</div>
+                                <center> <ui:spinner aura:id="spinner"/> </center>
+                                <ul class="slds-lookup__list" role="listbox">
+                                    <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                                        <c:AccountLookup oAccount="{!singleRec}" />
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                           </div>
+                 </div> 
+                      
+            <!-- end of Business partner -->
+             <!--start of  business Individual-->
+            <div class="slds-m-around--Large">
+                        <div aura:id="searchContactRes" class="slds-form-element slds-lookup slds-is-close" 
+                             data-select="single">
+              <div class="slds-form-element__control">
+                                <div class="slds-input-has-icon slds-input-has-icon--right">
+                                    
+                                    <!-- This markup is for when an record is selected -->
+                                    <div aura:id="lookup-pill-contact" class=" slds-hide">
+                                         <label>Business Individual</label>
+                                     <div class="slds-pill-container">
+                                        <span class="slds-pill">
+                                            <span class="slds-pill__label">
+                                                {!v.selectedContactRecord.Name}  
+                                            </span>&nbsp;&nbsp;
+                                            
+                                            
+                                            <button class="slds-button slds-button--icon slds-pill__remove" 
+                                                    onclick="{!c.clearContact}">
+                                                <lightning:icon iconName="utility:close" size="small" alternativeText="Indicates approval"/>                       
+                                                <span class="slds-assistive-text">Remove</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                  </div>
+                                   <div aura:id="lookupContactField" class="slds-show">
+                                       <label>Business Individual</label>
+                                        <ui:inputText disabled="{!v.serachContact}" updateOn="keyup,change" keyup="{!c.keyPressContactController}"
+                                                      class="slds-lookup__search-input slds-input " 
+                                                      value="{!v.SearchKeyWordContact}" placeholder="search Business individual.."/>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!--This part is for Display typehead lookup result List-->  
+                            <div class="slds-lookup__menu slds" id="lookup-348">
+                                <div class="slds-lookup__item--label slds-text-body--small">{!v.Message}</div>
+                                <center> <ui:spinner aura:id="spinner"/> </center>
+                                <ul class="slds-lookup__list" role="listbox">
+                                    <aura:iteration items="{!v.listOfSearchContactRecords}" var="singleRec">
+                                        <c:ContactLookup oContact="{!singleRec}" />
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                           </div>
+                 </div> 
+                      
+            <!-- end of Business Individual -->
+          
+              <br/>
+                  <button disabled="{!v.readytoShare}" class="slds-button slds-button--neutral" onclick="{!c.shareRec}" >Share</button>
+        
+          </div> 
+          <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+          <div class="slds-modal__footer">
+            <button class="slds-button slds-button--neutral" onclick="{!c.closeModel}" >Cancel</button>
+          </div>
+        </div>
+      </div>
+      <div class="slds-backdrop slds-backdrop--open"></div>
+    
+</aura:component>

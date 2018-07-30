@@ -1,0 +1,6 @@
+<aura:component controller="PipeLineController" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global"> 
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:attribute name="recordId" type="String" default="" />
+</aura:component>

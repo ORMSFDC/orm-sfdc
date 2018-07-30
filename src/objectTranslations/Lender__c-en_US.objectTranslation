@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- LenderNumber --></label>
+        <name>LenderNumber__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Lender</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Lender</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Lender Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

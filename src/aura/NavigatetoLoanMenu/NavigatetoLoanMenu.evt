@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION">
+<aura:attribute name="LoanId" type="String" />
+    <aura:attribute name="File" type="Loan_New__c" />
+   <aura:attribute name="ApplicationDate" type="Date" default="" />
+    <aura:attribute name="ERateType" type="String" default="" />
+    <aura:attribute name="EMortgageAppliedFor" type="String" default="" />
+</aura:event>

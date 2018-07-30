@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanNumber__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Client_Name__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanStatus__c</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.PCS_at_Loan_Level__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.QLMS_Account_Executive__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Company_NMLS_ID__c</field>
+    </columns>
+    <columns>
+        <field>FK_ACC_OWNER_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Test Partner</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Loan Pipeline Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Loan_New__c@Loan_New__c.Related_Partner__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Loan_New__c.Application_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

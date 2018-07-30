@@ -1,0 +1,2 @@
+<aura:component controller="LoanMenuController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    </aura:component>

@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- AssetsAccountNumber --></label>
+        <name>AssetsAccountNumber__c</name>
+    </fields><fields>
+        <label><!-- AssetsCompleteFlag --></label>
+        <name>AssetsCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- AssetsInstitutionAddress --></label>
+        <name>AssetsInstitutionAddress__c</name>
+    </fields><fields>
+        <label><!-- AssetsInstitutionName --></label>
+        <name>AssetsInstitutionName__c</name>
+    </fields><fields>
+        <label><!-- AssetsMarketValue --></label>
+        <name>AssetsMarketValue__c</name>
+    </fields><fields>
+        <label><!-- AssetsPresentMarketValue --></label>
+        <name>AssetsPresentMarketValue__c</name>
+    </fields><fields>
+        <label><!-- AssetsPropertyAddress --></label>
+        <name>AssetsPropertyAddress__c</name>
+    </fields><fields>
+        <label><!-- AssetsTotalAssets --></label>
+        <name>AssetsTotalAssets__c</name>
+    </fields><fields>
+        <label><!-- ClientBorrowerName --></label>
+        <name>ClientBorrowerName__c</name>
+    </fields><fields>
+        <label><!-- ClientCity --></label>
+        <name>ClientCity__c</name>
+    </fields><fields>
+        <label><!-- ClientCompleteFlag --></label>
+        <name>ClientCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- ClientDOB --></label>
+        <name>ClientDOB__c</name>
+    </fields><fields>
+        <label><!-- ClientIName --></label>
+        <name>ClientIName__c</name>
+        <relationshipLabel><!-- OldLoans --></relationshipLabel>
+    </fields><fields>
+        <label><!-- ClientMailingAddress1 --></label>
+        <name>ClientMailingAddress1__c</name>
+    </fields><fields>
+        <label><!-- ClientMailingAddress2 --></label>
+        <name>ClientMailingAddress2__c</name>
+    </fields><fields>
+        <label><!-- ClientMaritalStatus --></label>
+        <name>ClientMaritalStatus__c</name>
+    </fields><fields>
+        <label><!-- ClientNBRDOB --></label>
+        <name>ClientNBRDOB__c</name>
+    </fields><fields>
+        <label><!-- ClientNBRName --></label>
+        <name>ClientNBRName__c</name>
+    </fields><fields>
+        <label><!-- ClientNBRPhone --></label>
+        <name>ClientNBRPhone__c</name>
+    </fields><fields>
+        <label><!-- ClientNBRRelationship --></label>
+        <name>ClientNBRRelationship__c</name>
+    </fields><fields>
+        <label><!-- ClientNBR --></label>
+        <name>ClientNBR__c</name>
+    </fields><fields>
+        <label><!-- ClientNBSDOB --></label>
+        <name>ClientNBSDOB__c</name>
+    </fields><fields>
+        <label><!-- ClientNBSName --></label>
+        <name>ClientNBSName__c</name>
+    </fields><fields>
+        <label><!-- ClientNBSPhone --></label>
+        <name>ClientNBSPhone__c</name>
+    </fields><fields>
+        <label><!-- ClientNBSRelationship --></label>
+        <name>ClientNBSRelationship__c</name>
+    </fields><fields>
+        <label><!-- ClientNBS --></label>
+        <name>ClientNBS__c</name>
+    </fields><fields>
+        <label><!-- ClientPresentAddressYears --></label>
+        <name>ClientPresentAddressYears__c</name>
+    </fields><fields>
+        <label><!-- ClientSSN --></label>
+        <name>ClientSSN__c</name>
+    </fields><fields>
+        <label><!-- ClientState --></label>
+        <name>ClientState__c</name>
+    </fields><fields>
+        <label><!-- ClientZip --></label>
+        <name>ClientZip__c</name>
+    </fields><fields>
+        <label><!-- CreditCompleteFlag --></label>
+        <name>CreditCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- CreditPullNewChild --></label>
+        <name>CreditPullNewChild__c</name>
+    </fields><fields>
+        <label><!-- CreditPullNew --></label>
+        <name>CreditPullNew__c</name>
+    </fields><fields>
+        <label><!-- CreditReferenceNumberConfirm --></label>
+        <name>CreditReferenceNumberConfirm__c</name>
+    </fields><fields>
+        <label><!-- CreditReferenceNumber --></label>
+        <name>CreditReferenceNumber__c</name>
+    </fields><fields>
+        <label><!-- CreditReissue --></label>
+        <name>CreditReissue__c</name>
+    </fields><fields>
+        <label><!-- DecBankrupt --></label>
+        <name>DecBankrupt__c</name>
+    </fields><fields>
+        <label><!-- DecCoMaker --></label>
+        <name>DecCoMaker__c</name>
+    </fields><fields>
+        <label><!-- DecCompleteFlag --></label>
+        <name>DecCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- DecDefaultFederalDebt --></label>
+        <name>DecDefaultFederalDebt__c</name>
+    </fields><fields>
+        <label><!-- DecDownPaymentBorrowed --></label>
+        <name>DecDownPaymentBorrowed__c</name>
+    </fields><fields>
+        <label><!-- DecEthenicity --></label>
+        <name>DecEthenicity__c</name>
+    </fields><fields>
+        <label><!-- DecFHAInsuranceLoan --></label>
+        <name>DecFHAInsuranceLoan__c</name>
+    </fields><fields>
+        <label><!-- DecIntendToOccupy --></label>
+        <name>DecIntendToOccupy__c</name>
+    </fields><fields>
+        <label><!-- DecLawsuit --></label>
+        <name>DecLawsuit__c</name>
+    </fields><fields>
+        <label><!-- DecObligatedLoan --></label>
+        <name>DecObligatedLoan__c</name>
+    </fields><fields>
+        <label><!-- DecObligatedPayAlimony --></label>
+        <name>DecObligatedPayAlimony__c</name>
+    </fields><fields>
+        <label><!-- DecOutstandingJudgement --></label>
+        <name>DecOutstandingJudgement__c</name>
+    </fields><fields>
+        <label><!-- DecPropertyForClose --></label>
+        <name>DecPropertyForClose__c</name>
+    </fields><fields>
+        <label><!-- DecRace --></label>
+        <name>DecRace__c</name>
+    </fields><fields>
+        <label><!-- DecReverseMortgage --></label>
+        <name>DecReverseMortgage__c</name>
+    </fields><fields>
+        <label><!-- DecSex --></label>
+        <name>DecSex__c</name>
+    </fields><fields>
+        <label><!-- DecUSCitizen --></label>
+        <name>DecUSCitizen__c</name>
+    </fields><fields>
+        <label><!-- EmploymentAddress1 --></label>
+        <name>EmploymentAddress1__c</name>
+    </fields><fields>
+        <label><!-- EmploymentAddress2 --></label>
+        <name>EmploymentAddress2__c</name>
+    </fields><fields>
+        <label><!-- EmploymentBusinessPhone --></label>
+        <name>EmploymentBusinessPhone__c</name>
+    </fields><fields>
+        <label><!-- EmploymentCity --></label>
+        <name>EmploymentCity__c</name>
+    </fields><fields>
+        <label><!-- EmploymentCompleteFlag --></label>
+        <name>EmploymentCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- EmploymentEndDate --></label>
+        <name>EmploymentEndDate__c</name>
+    </fields><fields>
+        <label><!-- EmploymentName --></label>
+        <name>EmploymentName__c</name>
+    </fields><fields>
+        <label><!-- EmploymentSelfEmployed --></label>
+        <name>EmploymentSelfEmployed__c</name>
+    </fields><fields>
+        <label><!-- EmploymentStartDate --></label>
+        <name>EmploymentStartDate__c</name>
+    </fields><fields>
+        <label><!-- EmploymentState --></label>
+        <name>EmploymentState__c</name>
+    </fields><fields>
+        <label><!-- EmploymentZip --></label>
+        <name>EmploymentZip__c</name>
+    </fields><fields>
+        <label><!-- FinalCompleteFlag --></label>
+        <name>FinalCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- IncomeCompleteFlag --></label>
+        <name>IncomeCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- IncomeDescribeOther --></label>
+        <name>IncomeDescribeOther__c</name>
+    </fields><fields>
+        <label><!-- IncomeGrossMonthly --></label>
+        <name>IncomeGrossMonthly__c</name>
+    </fields><fields>
+        <label><!-- IncomeGrossRental --></label>
+        <name>IncomeGrossRental__c</name>
+    </fields><fields>
+        <label><!-- IncomeMonthly --></label>
+        <name>IncomeMonthly__c</name>
+    </fields><fields>
+        <label><!-- IncomeNetRental --></label>
+        <name>IncomeNetRental__c</name>
+    </fields><fields>
+        <label><!-- IsActiveFlag --></label>
+        <name>IsActiveFlag__c</name>
+    </fields><fields>
+        <label><!-- LiabilitiesAlimony --></label>
+        <name>LiabilitiesAlimony__c</name>
+    </fields><fields>
+        <label><!-- LiabilitiesCombinedMonthlyDebts --></label>
+        <name>LiabilitiesCombinedMonthlyDebts__c</name>
+    </fields><fields>
+        <label><!-- LiabilitiesCompleteFlag --></label>
+        <name>LiabilitiesCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- LiabilitiesJobRelated --></label>
+        <name>LiabilitiesJobRelated__c</name>
+    </fields><fields>
+        <label><!-- LiabilitiesMortgagePayment --></label>
+        <name>LiabilitiesMortgagePayment__c</name>
+    </fields><fields>
+        <label><!-- LiabilitiesMortgage --></label>
+        <name>LiabilitiesMortgage__c</name>
+    </fields><fields>
+        <label><!-- LiabilitiesTaxes --></label>
+        <name>LiabilitiesTaxes__c</name>
+    </fields><fields>
+        <label><!-- LoanAlternateContactAddress --></label>
+        <name>LoanAlternateContactAddress__c</name>
+    </fields><fields>
+        <label><!-- LoanAlternateContactName --></label>
+        <name>LoanAlternateContactName__c</name>
+    </fields><fields>
+        <label><!-- LoanAlternateContactPhone --></label>
+        <name>LoanAlternateContactPhone__c</name>
+    </fields><fields>
+        <label><!-- LoanApplicationTakenBy --></label>
+        <name>LoanApplicationTakenBy__c</name>
+    </fields><fields>
+        <label><!-- LoanChildrenbelow6 --></label>
+        <name>LoanChildrenbelow6__c</name>
+    </fields><fields>
+        <label><!-- LoanCompleteFlag --></label>
+        <name>LoanCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- LoanDetailsCompleteFlag --></label>
+        <name>LoanDetailsCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- LoanDetailsContact --></label>
+        <name>LoanDetailsContact__c</name>
+    </fields><fields>
+        <label><!-- LoanDetailsPayPartner --></label>
+        <name>LoanDetailsPayPartner__c</name>
+    </fields><fields>
+        <label><!-- LoanDetailsTitleCompany --></label>
+        <name>LoanDetailsTitleCompany__c</name>
+    </fields><fields>
+        <label><!-- LoanDetailsTitleSource --></label>
+        <name>LoanDetailsTitleSource__c</name>
+    </fields><fields>
+        <label><!-- LoanEstimateAppraisedValue --></label>
+        <name>LoanEstimateAppraisedValue__c</name>
+    </fields><fields>
+        <label><!-- LoanHouseHoldMembers --></label>
+        <name>LoanHouseHoldMembers__c</name>
+    </fields><fields>
+        <label><!-- LoanInterviewDate --></label>
+        <name>LoanInterviewDate__c</name>
+    </fields><fields>
+        <label><!-- LoanMortgageAppliedFor --></label>
+        <name>LoanMortgageAppliedFor__c</name>
+    </fields><fields>
+        <label><!-- LoanOriginationFee --></label>
+        <name>LoanOriginationFee__c</name>
+    </fields><fields>
+        <label><!-- LoanOriginatorCompanyAddress --></label>
+        <name>LoanOriginatorCompanyAddress__c</name>
+    </fields><fields>
+        <label><!-- LoanOriginatorCompanyIdentifier --></label>
+        <name>LoanOriginatorCompanyIdentifier__c</name>
+    </fields><fields>
+        <label><!-- LoanOriginatorCompanyName --></label>
+        <name>LoanOriginatorCompanyName__c</name>
+    </fields><fields>
+        <label><!-- LoanOriginatorIdentifier --></label>
+        <name>LoanOriginatorIdentifier__c</name>
+    </fields><fields>
+        <label><!-- LoanOriginatorName --></label>
+        <name>LoanOriginatorName__c</name>
+    </fields><fields>
+        <label><!-- LoanOriginatorPhone --></label>
+        <name>LoanOriginatorPhone__c</name>
+    </fields><fields>
+        <label><!-- LoanPOA --></label>
+        <name>LoanPOA__c</name>
+    </fields><fields>
+        <label><!-- LoanPurpose --></label>
+        <name>LoanPurpose__c</name>
+    </fields><fields>
+        <label><!-- LoanSquareFoot --></label>
+        <name>LoanSquareFoot__c</name>
+    </fields><fields>
+        <label><!-- Loan Number --></label>
+        <name>Loan_Number__c</name>
+    </fields><fields>
+        <label><!-- Loan Status --></label>
+        <name>Loan_Status__c</name>
+        <picklistValues>
+            <masterLabel>Application Package Received</masterLabel>
+            <translation><!-- Application Package Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Closing</masterLabel>
+            <translation><!-- Awaiting Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled/Denied</masterLabel>
+            <translation><!-- Cancelled/Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Awaiting Funding</masterLabel>
+            <translation><!-- Closed - Awaiting Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditionally Approved</masterLabel>
+            <translation><!-- Conditionally Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funded</masterLabel>
+            <translation><!-- Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Processing</masterLabel>
+            <translation><!-- In Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal</masterLabel>
+            <translation><!-- Proposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting Clear to Close</masterLabel>
+            <translation><!-- Underwriting Clear to Close --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Full Package</masterLabel>
+            <translation><!-- Waiting for Full Package --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Broker Compensation --></label>
+        <name>PlineBrokerCompensation__c</name>
+    </fields><fields>
+        <label><!-- Cash Avaliable to Client --></label>
+        <name>PlineCashAvaliabletoClient__c</name>
+    </fields><fields>
+        <label><!-- Cash Due for Closing --></label>
+        <name>PlineCashDueforClosing__c</name>
+    </fields><fields>
+        <label><!-- Financial Assessment Result --></label>
+        <name>PlineFinancialAssessmentResult__c</name>
+    </fields><fields>
+        <label><!-- Monthly Payment available to Client --></label>
+        <name>PlineMonthlyPaymentavailabletoClient__c</name>
+    </fields><fields>
+        <label><!-- Property Appraisal Value --></label>
+        <name>PlinePropertyAppraisalValue__c</name>
+    </fields><fields>
+        <label><!-- Total LESA --></label>
+        <name>PlineTotalLESA__c</name>
+    </fields><fields>
+        <label><!-- SubjectCheckHeldAs --></label>
+        <name>SubjectCheckHeldAs__c</name>
+    </fields><fields>
+        <label><!-- SubjectCompleteFlag --></label>
+        <name>SubjectCompleteFlag__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyAddress --></label>
+        <name>SubjectPropertyAddress__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyDescription --></label>
+        <name>SubjectPropertyDescription__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyHazardInsurance --></label>
+        <name>SubjectPropertyHazardInsurance__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyHeldAs --></label>
+        <name>SubjectPropertyHeldAs__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyHeldNames --></label>
+        <name>SubjectPropertyHeldNames__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyHomeOwnerFee --></label>
+        <name>SubjectPropertyHomeOwnerFee__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyNoOfProperty --></label>
+        <name>SubjectPropertyNoOfProperty__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyRealEstateTax --></label>
+        <name>SubjectPropertyRealEstateTax__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyResidenceType --></label>
+        <name>SubjectPropertyResidenceType__c</name>
+    </fields><fields>
+        <label><!-- SubjectPropertyYearBuilt --></label>
+        <name>SubjectPropertyYearBuilt__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>OldLoan</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>OldLoans</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Loan Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Loan_Page Layout</layout>
+        <sections>
+            <label><!-- Assets --></label>
+            <section>Assets</section>
+        </sections>
+        <sections>
+            <label><!-- Client --></label>
+            <section>Client</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Declarations --></label>
+            <section>Declarations</section>
+        </sections>
+        <sections>
+            <label><!-- Employment --></label>
+            <section>Employment</section>
+        </sections>
+        <sections>
+            <label><!-- Income --></label>
+            <section>Income</section>
+        </sections>
+        <sections>
+            <label><!-- Liabilities --></label>
+            <section>Liabilities</section>
+        </sections>
+        <sections>
+            <label><!-- Reverse Loan --></label>
+            <section>Reverse Loan</section>
+        </sections>
+        <sections>
+            <label><!-- Subject Property --></label>
+            <section>Subject Property</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

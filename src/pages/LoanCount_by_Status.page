@@ -1,0 +1,11 @@
+<apex:page controller="DonutChartController" title="Count by Status" >
+
+   <apex:chart height="550" width="700"   data="{!pieData}"   > 
+        <apex:legend position="left" padding="20" spacing="20"  font="20px comic sans" /> 
+        <apex:pieSeries dataField="loanCount" labelField="loanStatus" donut="0" highlight="true"   >             
+            <apex:chartLabel display="none" font="bold 14px comic sans" />        
+            <apex:chartTips width="200"  trackMouse="true"/>
+        </apex:pieSeries>                           
+    </apex:chart>        
+    
+</apex:page>

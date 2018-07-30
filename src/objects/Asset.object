@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>AssetLevel</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>AssetProvidedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>AssetServicedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Cash_or_Market_Value__c</fullName>
+        <description>Value must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Cash or Market Value</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Cash_or_Market_Value_for_Stocks_or_Bonds__c</fullName>
+        <externalId>false</externalId>
+        <label>Cash or Market Value for Stocks or Bonds</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bank/Credit Union</fullName>
+                    <default>false</default>
+                    <label>Bank/Credit Union</label>
+                </value>
+                <value>
+                    <fullName>Stock &amp; Bonds</fullName>
+                    <default>false</default>
+                    <label>Stock &amp; Bonds</label>
+                </value>
+                <value>
+                    <fullName>Life Insurance</fullName>
+                    <default>false</default>
+                    <label>Life Insurance</label>
+                </value>
+                <value>
+                    <fullName>Retirement Fund</fullName>
+                    <default>false</default>
+                    <label>Retirement Fund</label>
+                </value>
+                <value>
+                    <fullName>Business</fullName>
+                    <default>false</default>
+                    <label>Business</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Owned(REO)</fullName>
+                    <default>false</default>
+                    <label>Real Estate Owned(REO)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Company_Name_for_Stocks_or_Bonds__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name for Stocks or Bonds</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ContactId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>Financial_Institution_Address__c</fullName>
+        <description>Field visible for Bank/Credit union, stock &amp; Bonds, Life Insurance, Retirement Fund and Business Categories</description>
+        <externalId>false</externalId>
+        <label>Financial Institution Address</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Financial_Institution_Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Institution Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Financial_institution_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial institution City</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Finanical_Institution_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Finanical Institution State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields><fields>
+        <fullName>InstallDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>IsCompetitorProduct</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>IsInternal</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>Is_Asset_Validated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Asset Validated?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Life_Insurance_Policy_Face_Value__c</fullName>
+        <description>Value must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Life Insurance Policy - Face Value</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>Name_of_Institution__c</fullName>
+        <description>Field visible for Bank/Credit union, stock &amp; Bonds, Life Insurance, Retirement Fund and Business Categories</description>
+        <externalId>false</externalId>
+        <label>Name of Institution</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Net_Worth_of_Business_es_Owned__c</fullName>
+        <description>Value must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Net Worth of Business(es) Owned</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Other_Asset_Amount__c</fullName>
+        <description>Value must be greater that 0</description>
+        <externalId>false</externalId>
+        <label>Other Asset Amount</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Other_Assets_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Assets Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cash Deposit on Sales Contract</fullName>
+                    <default>false</default>
+                    <label>Cash Deposit on Sales Contract</label>
+                </value>
+                <value>
+                    <fullName>Gifts Not Deposited</fullName>
+                    <default>false</default>
+                    <label>Gifts Not Deposited</label>
+                </value>
+                <value>
+                    <fullName>Secured Borrower Funds not Deposited</fullName>
+                    <default>false</default>
+                    <label>Secured Borrower Funds not Deposited</label>
+                </value>
+                <value>
+                    <fullName>Bridge Loan Not Deposited</fullName>
+                    <default>false</default>
+                    <label>Bridge Loan Not Deposited</label>
+                </value>
+                <value>
+                    <fullName>Other Non-Liquid Asset</fullName>
+                    <default>false</default>
+                    <label>Other Non-Liquid Asset</label>
+                </value>
+                <value>
+                    <fullName>Other Liquid Asset</fullName>
+                    <default>false</default>
+                    <label>Other Liquid Asset</label>
+                </value>
+                <value>
+                    <fullName>Net Equity</fullName>
+                    <default>false</default>
+                    <label>Net Equity</label>
+                </value>
+                <value>
+                    <fullName>Liquid Assets</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Liquid Assets</label>
+                </value>
+                <value>
+                    <fullName>Non-Liquid Assets</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Non-Liquid Assets</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ParentId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Present_Market_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Present Market Value</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Price</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>Product2Id</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ProductCode</fullName>
+    </fields><fields>
+        <fullName>ProductDescription</fullName>
+    </fields><fields>
+        <fullName>ProductFamily</fullName>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>PurchaseDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>Quantity</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>RelatedClient__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>RelatedClient</label>
+        <referenceTo>Client__c</referenceTo>
+        <relationshipLabel>Assets</relationshipLabel>
+        <relationshipName>Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>RelatedLoan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>RelatedLoan</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipLabel>Assets</relationshipLabel>
+        <relationshipName>Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Retirement_Funds__c</fullName>
+        <externalId>false</externalId>
+        <label>Retirement Funds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>RootAssetId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Schedule_of_REO_Address_Line_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Schedule of REO Address Line 2</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Schedule_of_REO_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Schedule of REO City</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Schedule_of_REO_Property_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Schedule of REO Property Address</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Schedule_of_REO_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Schedule of REO State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields><fields>
+        <fullName>Schedule_of_REO_Zip_Code__c</fullName>
+        <description>can have numbers or one hyphen (-)</description>
+        <externalId>false</externalId>
+        <label>Schedule of REO Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>SerialNumber</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>Source_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Status</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>StockKeepingUnit</fullName>
+    </fields><fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Stock Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Stock</fullName>
+                    <default>false</default>
+                    <label>Stock</label>
+                </value>
+                <value>
+                    <fullName>Bond</fullName>
+                    <default>false</default>
+                    <label>Bond</label>
+                </value>
+                <value>
+                    <fullName>Mutual fund</fullName>
+                    <default>false</default>
+                    <label>Mutual fund</label>
+                </value>
+                <value>
+                    <fullName>Gift of Equity</fullName>
+                    <default>false</default>
+                    <label>Gift of Equity</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Type_of_Account__c</fullName>
+        <description>Savings, Money Market, Checking Account</description>
+        <externalId>false</externalId>
+        <label>Type of Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Certificate of Deposit/Time Deposit</fullName>
+                    <default>false</default>
+                    <label>Certificate of Deposit/Time Deposit</label>
+                </value>
+                <value>
+                    <fullName>Checking Account</fullName>
+                    <default>false</default>
+                    <label>Checking Account</label>
+                </value>
+                <value>
+                    <fullName>Trust Account</fullName>
+                    <default>false</default>
+                    <label>Trust Account</label>
+                </value>
+                <value>
+                    <fullName>Cash on Hand</fullName>
+                    <default>false</default>
+                    <label>Cash on Hand</label>
+                </value>
+                <value>
+                    <fullName>Money Market Fund</fullName>
+                    <default>false</default>
+                    <label>Money Market Fund</label>
+                </value>
+                <value>
+                    <fullName>Savings Account</fullName>
+                    <default>false</default>
+                    <label>Savings Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>UsageEndDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields><fields>
+        <fullName>Vested_Interest_in_Retirement_Fund__c</fullName>
+        <description>Value must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Vested Interest in Retirement Fund</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>isActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>To know whether the record is active or not</description>
+        <externalId>false</externalId>
+        <label>isActive</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>isJoint__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Pointer to all the clients</description>
+        <externalId>false</externalId>
+        <label>isJoint</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><enableFeeds>false</enableFeeds><searchLayouts>
+        <customTabListAdditionalFields>ASSET.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASSET.SERIAL_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ASSET.INSTALL_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.SERIAL_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ASSET.INSTALL_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.SERIAL_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ASSET.INSTALL_DATE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.NAME</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.SERIAL_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ASSET.INSTALL_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.NAME</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><listViews>
+        <fullName>AllAssets</fullName>
+        <columns>ASSET.NAME</columns>
+        <columns>CONTACT.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Assets</label>
+    </listViews><validationRules>
+        <fullName>Amount_above_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>Other_Asset_Amount__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Other_Asset_Amount__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Amount_more_than_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>Net_Worth_of_Business_es_Owned__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Net_Worth_of_Business_es_Owned__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Amount_not_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>Present_Market_Value__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Present_Market_Value__c</errorDisplayField>
+        <errorMessage>value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Financial_Institution_Zip_Code_Validati</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(Financial_Institution_Zip_Code__c ='', 
+OR( 
+ISPICKVAL( Category__c, "Bank/Credit Union"), 
+ISPICKVAL( Category__c, "Stock &amp; Bonds"), 
+ISPICKVAL( Category__c, "Life Insurance"), 
+ISPICKVAL( Category__c, "Retirement Fund"), 
+ISPICKVAL( Category__c, "Business")))</errorConditionFormula>
+        <errorDisplayField>Financial_Institution_Zip_Code__c</errorDisplayField>
+        <errorMessage>Mandatory Zip for this Category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Financial_institution_City_Validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(Financial_institution_City__c ='', 
+OR( 
+ISPICKVAL( Category__c, "Bank/Credit Union"), 
+ISPICKVAL( Category__c, "Stock &amp; Bonds"), 
+ISPICKVAL( Category__c, "Life Insurance"), 
+ISPICKVAL( Category__c, "Retirement Fund"), 
+ISPICKVAL( Category__c, "Business")))</errorConditionFormula>
+        <errorDisplayField>Financial_institution_City__c</errorDisplayField>
+        <errorMessage>Financial Institution City is mandatory for this category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Financial_institution_address_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( ISBLANK(Financial_Institution_Address__c), 
+OR( 
+ISPICKVAL( Category__c, "Bank/Credit Union"), 
+ISPICKVAL( Category__c, "Stock &amp; Bonds"), 
+ISPICKVAL( Category__c, "Life Insurance"),
+ISPICKVAL( Category__c, "Retirement Fund"),
+ISPICKVAL( Category__c, "Business")))</errorConditionFormula>
+        <errorDisplayField>Financial_Institution_Address__c</errorDisplayField>
+        <errorMessage>Financial Institution address is mandatory for this Category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Finanical_Institution_State_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(ISPICKVAL( Finanical_Institution_State__c, "*"), 
+OR( 
+ISPICKVAL( Category__c, "Bank/Credit Union"), 
+ISPICKVAL( Category__c, "Stock &amp; Bonds"), 
+ISPICKVAL( Category__c, "Life Insurance"), 
+ISPICKVAL( Category__c, "Retirement Fund"), 
+ISPICKVAL( Category__c, "Business")))</errorConditionFormula>
+        <errorDisplayField>Finanical_Institution_State__c</errorDisplayField>
+        <errorMessage>State is mandatory for this category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Name_of_Institution_validation</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(Name_of_Institution__c ='', 
+OR( 
+ISPICKVAL( Category__c, "Bank/Credit Union"), 
+ISPICKVAL( Category__c, "Stock &amp; Bonds"), 
+ISPICKVAL( Category__c, "Life Insurance"),
+ISPICKVAL( Category__c, "Retirement Fund"),
+ISPICKVAL( Category__c, "Business")))</errorConditionFormula>
+        <errorDisplayField>Name_of_Institution__c</errorDisplayField>
+        <errorMessage>Name of the Institution is mandatory for this category</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Validation_Rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>Life_Insurance_Policy_Face_Value__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Life_Insurance_Policy_Face_Value__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Value_must_be_greater_than_0</fullName>
+        <active>true</active>
+        <description>Value must be greater than 0</description>
+        <errorConditionFormula>Cash_or_Market_Value__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Cash_or_Market_Value__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Vested_Interest_in_Retirement_Fund_valid</fullName>
+        <active>true</active>
+        <errorConditionFormula>Vested_Interest_in_Retirement_Fund__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Vested_Interest_in_Retirement_Fund__c</errorDisplayField>
+        <errorMessage>Value must be greater than 0</errorMessage>
+    </validationRules><validationRules>
+        <fullName>ZipCode</fullName>
+        <active>true</active>
+        <description>can have numbers or one hyphen (-)</description>
+        <errorConditionFormula>AND( OR(), NOT(REGEX(Schedule_of_REO_Zip_Code__c , "\\d{5}(-\\d{4})?")) )</errorConditionFormula>
+        <errorDisplayField>Schedule_of_REO_Zip_Code__c</errorDisplayField>
+        <errorMessage>can have numbers or one hyphen (-)</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Zip_Validation</fullName>
+        <active>false</active>
+        <description>can have numbers and hypen</description>
+        <errorConditionFormula>AND( OR(), NOT(REGEX(Financial_Institution_Zip_Code__c , "\\d{5}(-\\d{4})?")) )</errorConditionFormula>
+        <errorDisplayField>Financial_Institution_Zip_Code__c</errorDisplayField>
+        <errorMessage>can have only numbers and one hypen</errorMessage>
+    </validationRules></CustomObject>

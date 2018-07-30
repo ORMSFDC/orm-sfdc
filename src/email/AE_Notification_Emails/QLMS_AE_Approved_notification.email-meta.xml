@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QLMS AE Approved notification</name>
+    <style>none</style>
+    <subject>Your Partner: {!Account.Name} has been Approved</subject>
+    <textOnly>Hello {!Account.QLMS_First_Name__c},
+
+Your partner, {!Account.Name}, has been approved with ORMS.
+
+Sincerely,
+
+{!Account.OwnerFullName}
+{!Account.OwnerTitle}
+{!Account.OwnerPhone}
+{!Account.OwnerEmail}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

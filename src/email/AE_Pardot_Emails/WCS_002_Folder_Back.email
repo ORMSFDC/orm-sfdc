@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>%%subject%%</title>
+		
+	</head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: none;margin: 0;padding: 0;background-color: #FAFAFA;width: 100%;">
+<style type="text/css">#outlook a {
+              padding: 0;
+          }
+          .body{
+              width: 100% !important;
+              -webkit-text-size-adjust: 100%;
+              -ms-text-size-adjust: 100%;
+              margin: 0;
+              padding: 0;
+          }
+          .ExternalClass {
+              width:100%;
+          }
+          .ExternalClass,
+          .ExternalClass p,
+          .ExternalClass span,
+          .ExternalClass font,
+          .ExternalClass td,
+          .ExternalClass div {
+              line-height: 100%;
+          }
+          img {
+              outline: none;
+              text-decoration: none;
+              -ms-interpolation-mode: bicubic;
+          }
+          a img {
+              border: none;
+          }
+          p {
+              margin: 1em 0;
+          }
+          table td {
+              border-collapse: collapse;
+          }
+          /* hide unsubscribe from forwards*/
+          blockquote .original-only, .WordSection1 .original-only {
+            display: none !important;
+          }
+</style>
+<center>
+<table border="0" cellpadding="0" cellspacing="0" height="100%" id="backgroundTable" style="margin: 0;padding: 0;background-color: #FAFAFA;height: 100%;width: 100%;" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Preheader \ -->
+			<table border="0" cellpadding="10" cellspacing="0" id="templatePreheader" style="background-color: #FAFAFA;" width="600">
+				<tbody>
+					<tr>
+						<td class="preheaderContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Preheader  -->
+						<table border="0" cellpadding="10" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="border-collapse: collapse;" valign="top">
+									<div pardot-region="std_preheader_content" style="color: #707070;font-family: Arial;font-size: 10px;line-height: 10px;text-align: left;">I sent you a partner application last week, but have not received it back. Once we have your application, we'll move quickly to get you approved and ready to start uploading loans. </div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Module: Standard Preheader  --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // End Template Preheader \ -->
+
+			<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="border: 0;background-color: #FDFDFD;" width="600">
+				<tbody>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Header \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateHeader" style="background-color: #2383be;border-bottom: 0px solid #505050;" width="600">
+							<tbody>
+								<tr>
+									<td class="headerContent" style="border-collapse: collapse;"><!-- // Begin Module: Letterhead, Center Header Image \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td pardot-region="header_image" style="border-collapse: collapse;" valign="middle" width="235"><img alt="" height="36" id="headerImage campaign-icon" src="http://go.pardot.com/l/476012/2018-02-22/9dcx3/476012/27964/ORMS_logo.png" style="width: 235px;border: 0;height: 36px;outline: none;text-decoration: none;" width="235"></td>
+												<td class="rightHeaderContent" style="border-collapse: collapse;">
+												<div pardot-region="header_content_right" style="color: #FFFFFF;font-family: Arial;font-size: 16px;line-height: 32px;text-align: center;vertical-align: middle;"><a href="http://www.OneReverseMortgageServices.com" style="color:#FFFFFF; font-family: Arial; font-size: 16px; text-decoration: none">ORMServices.com</a></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Letterhead, Center Header Image \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Header \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Body \ -->
+						<table border="0" cellpadding="10" cellspacing="0" id="templateBody" width="600">
+							<tbody>
+								<tr>
+									<td class="bodyContent" style="border-collapse: collapse;background-color: #FDFDFD;" valign="top"><!-- // Begin Module: Standard Content \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;" valign="top">
+												<div pardot-data="link-color:#ffffff;" pardot-region="std_content00" style="color: #505050;font-family: Arial;font-size: 14px;line-height: 21px;text-align: left;">Hello {!Contact.FirstName},<br>
+												<br>
+												I sent you a partner application last week, but have not received it back. Once we have your application, we'll move quickly to get you approved and ready to start uploading loans. Remember, our process is simple, with our specialists available to assist every step of the way. We do all the heavy lifting, so you and your client can have the best experience possible. Are you ready to get started? Send us your application today so we can get to work.
+<br><br>
+If you have any questions, call me at {!User.Phone} or reply to this email.<br>
+												<br>
+												Best,<br>
+												<br>
+												<strong>{!User.Name} |  {!User.Title}</strong><br>
+												Phone: {!User.Phone}<br>
+												Email: {!User.Email}<br>
+												Web: <a href="http://www.OneReverseMortgageServices.com/" style="color: #336699;font-weight: normal;text-decoration: underline;">OneReverseMortgageServices.com</a></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Standard Content \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Body \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Footer \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateFooter" style="background-color: #FAFAFA;" width="600">
+							<tbody>
+								<tr>
+									<td class="footerContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Footer \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr pardot-removable="">
+												<td id="social" style="border-collapse: collapse;background-color: #2383be;border: 0;" valign="middle">
+												<div pardot-region="std_social" style="color: #FFFFFF;font-family: Arial;font-size: 16px;text-align: center;">Contact me at {!User.Phone} or just hit reply to this email.</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;" valign="top" width="350">
+												<div pardot-region="std_footer" style="color: #707070;font-family: Arial;font-size: 11px;line-height: 14px;text-align: left;"><em>Copyright © 2018, All rights reserved.</em><br>
+												<br>
+												<strong>Our mailing address is:</strong><br>
+												4445 Eastgate Mall, Ste 320, San Diego, CA 92121</div>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2" id="utility" style="border-collapse: collapse;background-color: #FAFAFA;border-top: 0;" valign="middle">
+												<div class="original-only" pardot-region="std_utility" style="color: #707070;font-family: Arial;font-size: 12px;line-height: 15px;text-align: center;"><a href="mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}" style="color: #336699;font-weight: normal;text-decoration: underline;">unsubscribe from all emails</a><br>
+												<b>Equal Housing Lender. Licensed in all 50 states.&nbsp; NMLS #2052</b><br>
+												<img alt="" border="0" src="http://go.pardot.com/l/476012/2018-04-16/dh5l3/476012/32376/Equal_Housing_Opportunity.png" style="border-width: 0px; border-style: solid;">&nbsp;</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Standard Footer \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Footer \ --></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+
+</body>
+</html>

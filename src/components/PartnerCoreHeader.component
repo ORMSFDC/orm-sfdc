@@ -1,0 +1,22 @@
+<apex:component >
+  <!-- Begin Default Content REMOVE THIS -->
+   <div class="ql-color-bar ql-color-bar-primary" style="width:116%"></div>
+   <header id="masthead" class="ql-header">
+       
+        <div class="ql-row" >
+             
+            <div id="logo" class="ql-col-third">
+                <a href="/" title="Go Home">
+                    <img src="{!$Resource.ORMLogo}" width="350px" height="45px"  alt="One Reverse Mortgage Services logo" /></a>
+            </div>
+             <div class="ql-col-two-third" id="ql-header-signed-out">
+                <div class="promotion-branding">
+                    <p id="sign-out-welcome">{!$Label.PartnerCoreSignOut}</p>
+                    <p id="need-help">{!$Label.PartnerNeedHelp}
+                     <a href="{!$Label.PartnerTelNo}" title="Help Line">{!$Label.PartnerTelNumber}</a></p>
+                </div>
+            </div>
+        </div>
+    </header>
+  <!-- End Default Content REMOVE THIS -->
+</apex:component>

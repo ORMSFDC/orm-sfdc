@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>LoanId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan Id</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipLabel>LoanStatus</relationshipLabel>
+        <relationshipName>LoanStatus</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ORMS_AE__c</fullName>
+        <externalId>false</externalId>
+        <formula>LoanId__r.ORMS_AE__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ORMS AE</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>PreviousStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Status</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Remove_Dups__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remove Dups</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Status__c</fullName>
+        <description>Status - Used By Executive Reporting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status - Used By Executive Reporting</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>false</default>
+                    <label>Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Application Requested</fullName>
+                    <default>false</default>
+                    <label>Application Requested</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Full Package</fullName>
+                    <default>false</default>
+                    <label>Waiting for Full Package</label>
+                </value>
+                <value>
+                    <fullName>Full Package Received</fullName>
+                    <default>false</default>
+                    <label>Full Package Received</label>
+                </value>
+                <value>
+                    <fullName>Full Application Received - Incomplete</fullName>
+                    <default>false</default>
+                    <label>Full Application Received - Incomplete</label>
+                </value>
+                <value>
+                    <fullName>In Processing</fullName>
+                    <default>false</default>
+                    <label>In Processing</label>
+                </value>
+                <value>
+                    <fullName>Conditionally Approved</fullName>
+                    <default>false</default>
+                    <label>Conditionally Approved</label>
+                </value>
+                <value>
+                    <fullName>Underwriting Clear to Close</fullName>
+                    <default>false</default>
+                    <label>Underwriting Clear to Close</label>
+                </value>
+                <value>
+                    <fullName>Suspended</fullName>
+                    <default>false</default>
+                    <label>Suspended</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Closing</fullName>
+                    <default>false</default>
+                    <label>Awaiting Closing</label>
+                </value>
+                <value>
+                    <fullName>Closed - Awaiting Funding</fullName>
+                    <default>false</default>
+                    <label>Closed - Awaiting Funding</label>
+                </value>
+                <value>
+                    <fullName>Funded</fullName>
+                    <default>false</default>
+                    <label>Funded</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>Sandbox</fullName>
+                    <default>false</default>
+                    <label>Sandbox</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Team__c</fullName>
+        <description>Team (Source via Loan Team)</description>
+        <externalId>false</externalId>
+        <formula>LoanId__r.Team__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Team (Source via Loan Team)</inlineHelpText>
+        <label>Team</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ReadWrite</externalSharingModel><label>LoanStatus</label><nameField>
+        <label>Current Status</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>LoanStatus</pluralLabel><searchLayouts /><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility></CustomObject>

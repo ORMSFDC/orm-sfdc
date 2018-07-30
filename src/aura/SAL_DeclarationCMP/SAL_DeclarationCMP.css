@@ -1,0 +1,76 @@
+.THIS .myBtn{
+    background-color:#2877bd !important;
+}
+.THIS .slds-form-element__legend
+{
+    font-size:16px !important;
+}
+.THIS .slds-form-element__label
+{
+    font-weight:normal  !important;
+    font-size:16px !important;
+    color:#222222 !important; 
+}
+.THIS .errorComponent
+{
+    box-shadow: rgb(194, 57, 52) 0 0 0 1px inset !important;
+}
+.THIS .DivStyle
+{
+    font-size:0.75rem;color:rgb(194, 57, 52) !important;
+}
+.THIS .DivStyle .Hide
+{
+    display: none !important;
+}
+.THIS .LabelDiv
+{
+    color: #222222 !important;
+    line-height: 1.5 !important ;
+    margin-bottom: .25rem !important;
+     
+}
+.THIS .boldLabel{
+    font-weight: bold !important;
+}
+.THIS .TransperantIconGreen svg{
+    fill: green !important;
+    background-color :transparent !important;
+}
+.THIS .TransperantIconGreen1 {
+    fill: green !important;
+    background-color :transparent !important;
+}
+
+.THIS .TransperantIconRed svg{
+    fill: red !important;
+    background-color :transparent !important;
+}
+.THIS .TransperantIconRed1 {
+    fill: red !important;
+    background-color :transparent !important;
+}
+.THIS .textAreaStyle {
+    border: 1px solid black !important;
+    overflow: hidden;
+}
+.THIS .lblRemarkStyle {
+    font-size:16px;
+    color:rgb(194, 57, 52) !important;
+    font-weight: normal;
+    margin-bottom:15px;
+}
+
+.THIS .highlighted_row{
+   background-color: blue !important;
+    COLOR:WHITE;
+    /*background-color:#FFFF99 !important; */
+}
+
+.THIS .errorQuestion
+{
+    color: red !important;
+    line-height: 1.5 !important ;
+    margin-bottom: .25rem !important;
+    font-weight: bold !important;
+}

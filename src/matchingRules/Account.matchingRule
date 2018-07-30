@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><MatchingRules xmlns="http://soap.sforce.com/2006/04/metadata"><matchingRules>
+        <fullName>Account_NMLS_Match</fullName>
+        <description>To check NMLS duplicate on Accounts</description>
+        <label>Account NMLS Match</label>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>Company_NMLS_ID__c</fieldName>
+            <matchingMethod>Exact</matchingMethod>
+        </matchingRuleItems>
+        <ruleStatus>Active</ruleStatus>
+    </matchingRules></MatchingRules>

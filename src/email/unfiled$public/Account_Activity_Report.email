@@ -1,0 +1,9 @@
+<messaging:emailTemplate subject="Account Activity Report" recipientType="Contact">
+    <messaging:htmlEmailBody >
+        Hi  {!recipient.Name},<br/>        
+        <c:accountActivityComp /><br/><br/>
+        <b>Regards,</b><br/>
+        <b>ORM Support Team</b>
+        
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

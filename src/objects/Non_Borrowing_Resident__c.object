@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Client_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Client Id</label>
+        <referenceTo>Client__c</referenceTo>
+        <relationshipLabel>Non-Borrowing Resident</relationshipLabel>
+        <relationshipName>Non_Borrowing_Resident</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Date_of_Birth__c</fullName>
+        <externalId>false</externalId>
+        <label>Non Borrowing Resident Date of Birth</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>IsActiveNBR__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>if checked means alive NBR</description>
+        <externalId>false</externalId>
+        <label>Is Active?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Loan_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan Id</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipLabel>Non-Borrowing Resident</relationshipLabel>
+        <relationshipName>Non_Borrowing_Resident</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Monthly_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Non Borrowing Resident Monthly Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Non_Borrowing_Resident_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Non Borrowing Resident</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Relationship_to_Client__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship to Client</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mother</fullName>
+                    <default>false</default>
+                    <label>Mother</label>
+                </value>
+                <value>
+                    <fullName>Father</fullName>
+                    <default>false</default>
+                    <label>Father</label>
+                </value>
+                <value>
+                    <fullName>Child</fullName>
+                    <default>false</default>
+                    <label>Child</label>
+                </value>
+                <value>
+                    <fullName>Sister</fullName>
+                    <default>false</default>
+                    <label>Sister</label>
+                </value>
+                <value>
+                    <fullName>Brother</fullName>
+                    <default>false</default>
+                    <label>Brother</label>
+                </value>
+                <value>
+                    <fullName>Aunt</fullName>
+                    <default>false</default>
+                    <label>Aunt</label>
+                </value>
+                <value>
+                    <fullName>Uncle</fullName>
+                    <default>false</default>
+                    <label>Uncle</label>
+                </value>
+                <value>
+                    <fullName>Niece</fullName>
+                    <default>false</default>
+                    <label>Niece</label>
+                </value>
+                <value>
+                    <fullName>Nephew</fullName>
+                    <default>false</default>
+                    <label>Nephew</label>
+                </value>
+                <value>
+                    <fullName>Friend</fullName>
+                    <default>false</default>
+                    <label>Friend</label>
+                </value>
+                <value>
+                    <fullName>Grandchild</fullName>
+                    <default>false</default>
+                    <label>Grandchild</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>false</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Non-Borrowing Resident</label><nameField>
+        <displayFormat>NBR-{0}</displayFormat>
+        <label>Non-Borrowing Resident Number</label>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>Non-Borrowing Resident</pluralLabel><searchLayouts /><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><sharingReasons>
+        <fullName>LoanProcessor__c</fullName>
+        <label>Loan Processor</label>
+    </sharingReasons><sharingReasons>
+        <fullName>Loan_Officer__c</fullName>
+        <label>Loan Officer</label>
+    </sharingReasons><sharingReasons>
+        <fullName>Origination_Loan_Officer__c</fullName>
+        <label>Origination Loan Officer</label>
+    </sharingReasons></CustomObject>

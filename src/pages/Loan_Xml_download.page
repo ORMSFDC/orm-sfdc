@@ -1,0 +1,30 @@
+<apex:page controller="Loan_Xml_ctrl" standardStylesheets="false" showHeader="false" sidebar="false">
+ 
+ 
+ <script>
+ var cnst = JSON.parse('{!mappingString }');
+  var xmltext = '<?xml version="1.0"?><LeadImport xmlns:xsi="http://www.w3.org/2001/XMSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><BorrowerFirstName xmlns="http://reversevision.com/wse">First_name</BorrowerFirstName><BorrowerMiddleName xmlns="http://reversevision.com/wse">Middle_Name</BorrowerMiddleName><BorrowerLastName xmlns="http://reversevision.com/wse">Last_Name</BorrowerLastName><BorrowerDOB xmlns="http://reversevision.com/wse">BR_DOB</BorrowerDOB><BorrowerPhone xmlns="http://reversevision.com/wse">BR_Phone</BorrowerPhone><BorrowerMobilePhone xmlns="http://reversevision.com/wse">BR_Mobile</BorrowerMobilePhone><BorrowerEmail xmlns="http://reversevision.com/wse">BR_Email</BorrowerEmail><CoBorrowerFirstName xmlns="http://reversevision.com/wse">CO_BR_FName</CoBorrowerFirstName><CoBorrowerMiddleName xmlns="http://reversevision.com/wse">CO_BR_MName</CoBorrowerMiddleName><CoBorrowerLastName xmlns="http://reversevision.com/wse">CO_BR_LName</CoBorrowerLastName><CoBorrowerDOB xmlns="http://reversevision.com/wse">CO_BR_DOB</CoBorrowerDOB><City xmlns="http://reversevision.com/wse">BR_CITY</City><Address1 xmlns="http://reversevision.com/wse">BR_Address1</Address1><Address2 xmlns="http://reversevision.com/wse">BR_Address2</Address2><Zip xmlns="http://reversevision.com/wse">BR_ZIP</Zip><PropertyValue xmlns="http://reversevision.com/wse">BR_PropertyValue</PropertyValue><Liens xmlns="http://reversevision.com/wse">BR_Lines</Liens><UniqueKey xmlns="http://reversevision.com/wse">BR_uniqueKey</UniqueKey><CRMLoanID xmlns="http://reversevision.com/wse">BR_LoanId</CRMLoanID></LeadImport>'; 
+
+  for ( var key in cnst ) {
+ xmltext  =  xmltext.replace(key, cnst[key]);
+  console.log(key);
+  }
+
+ 
+ var pom = document.createElement('a');
+
+var filename = "{!FileName}.xml";
+var pom = document.createElement('a');
+var bb = new Blob([xmltext], {type: 'text/plain'});
+
+pom.setAttribute('href', window.URL.createObjectURL(bb));
+pom.setAttribute('download', filename);
+
+pom.dataset.downloadurl = ['text/plain', pom.download, pom.href].join(':');
+pom.draggable = true; 
+pom.classList.add('dragout');
+
+pom.click();
+  window.history.back();
+ </script>
+</apex:page>

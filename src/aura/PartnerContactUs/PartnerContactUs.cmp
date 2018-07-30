@@ -1,0 +1,26 @@
+<aura:component controller="PartnerResourcesController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <link charset="utf-8" href="{!$Resource.AuthCss}" media="screen" rel="stylesheet" type="text/css"></link>
+    <link charset="utf-8" href="{!$Resource.GlobalCss}" media="screen" rel="stylesheet" type="text/css"></link>
+    <body id="category_sign_in" class="signed_out">
+        
+        <footer class="ql-footer" style="background-color: transparent;">
+            
+            <div class="ql-row" style="padding-left: 13%;padding-top: 3%;">
+                <div class="ql-col-fifth" style="width:15.4%"><a href="/s/zoom"><img id="quick-share" src="{!$Resource.QuickShare}" 
+                                                                 alt="Zoom logo" title="Share your screen with Zoom." /></a></div>
+                <div class="ql-col-three-fifth">
+                    <p class="ql-copyright" style="color: #444444;font-size: 16px;font-family: Myriad Pro">&copy; {!$Label.c.partnerCopyright}</p>
+                </div>
+                <div  >
+                    <a target="_blank"   href="{!$Label.c.PartnerLenderURL}" title="One Reverse Mortgage is an Equal Housing Lender">
+                        <img  src="{!$Resource.Lender}" alt="Lender" title="One Reverse Mortgage is an Equal Housing Lender" style="padding-left:51px" /></a>
+                </div>
+            </div>
+        </footer>
+        
+        <div class="ql-color-bar ql-color-bar-primary"></div>
+        
+    </body>
+    
+</aura:component>

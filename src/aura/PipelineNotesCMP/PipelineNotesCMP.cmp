@@ -1,0 +1,127 @@
+<aura:component controller="PipelineNotesController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" >
+    <aura:handler name="init" action="{!c.doIn}" value="{!this}" />
+    <aura:attribute name="Loan" type="string" default=""/>
+    <aura:attribute name="text" type="string" default=""/>
+    <aura:attribute name="textarea" type="string" default=""/>
+    <aura:attribute name="Content" type="Object" />
+    <aura:attribute name="title_error" type="boolean" default="false"/>
+    <aura:attribute name="note_error" type="boolean" default="false"/>
+    <div>
+        <fieldset class="slds-box slds-theme--default slds-container--large">
+            <div>
+                <div class="slds-form slds-form_compound">
+                    <fieldset class="slds-form-element">
+                        <DIV>
+                            <h1 class="header">Add Notes</h1>
+                        </DIV>
+                        <table >
+                            <tbody>
+                                <tr>
+                                    <td >
+                                        <ui:inputtext aura:id="title" placeholder="Enter Title here" value="{!v.text}" maxlength="80"/>
+                                        
+                                        <aura:if isTrue="{!v.title_error}">
+                                            <ui:message severity="error" closable="false" >
+                                                Please enter some values into Title field
+                                            </ui:message>
+                                            
+                                        </aura:if>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <ui:inputtextarea aura:id="note" placeholder="Enter Note here" value="{!v.textarea}" class="NoteBorder"/>
+                                        <aura:if isTrue="{!v.note_error}">
+                                            <ui:message severity="error" closable="false" >
+                                                Please enter some values into Note field
+                                            </ui:message>
+                                            
+                                        </aura:if>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ui:button label="Save Note" class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"  
+                                                   press="{!c.myAction}"  />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <aura:iteration items="{!v.Content}" var="N">
+                   <!-- <fieldset>
+                                <table class="slds-table slds-table_bordered slds-table_cell-buffer" >
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white">{!N.Title} 
+                                             
+                                                <div class="slds-form-element__group"> 
+                                                    <div class="slds-form-element__row">
+                                                        
+                                                        <div class="slds-form-element slds-size_1-of-2" >
+                                                            <div class="slds-truncate slds-text-align_left">
+                                                                <b><ui:outputText value="{!N.LastModifiedDate}" /></b>
+                                                                
+                                                            </div></div>
+                                                        <div class="slds-form-element slds-size_1-of-2" >
+                                                            <div class="slds-truncate slds-text-align_right">
+                                                                <b>  <ui:outputText value="{!N.owner}" />&nbsp;, <ui:outputText value="{!N.ownerType}" /></b>
+                                                            </div></div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr >
+                                            <td data-label="Loan Number">
+                                                <p style="width:900px; /* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                                    <b>{!N.Body}</b>
+                                                 </p>
+                                            </td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>-->
+                            
+                           
+                            <div class="panel panel-default" style= "background-color:#2877bd;color:white">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span style= "color:white">{!N.Title} </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5" style= "color:white">
+                                            <ui:outputText value="{!N.LastModifiedDate}" />
+                                        </div>
+                                        <div class="col-md-7" style= "color:white">
+                                            <div class="pull-right">
+                                            <ui:outputText value="{!N.owner}" />, <ui:outputText value="{!N.ownerType}" />&nbsp;&nbsp;
+                                       </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default" >
+                                <div class="panel-body">
+                            <div class="row" >
+                               
+                                <div class="col-sm-12">
+                                    <p style="/* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                        <b style="text-align: center; color:black;">{!N.Body}</b>
+                                    </p>
+                                </div>
+                                    </div></div>
+                            </div>
+                        </aura:iteration>
+                        
+                        
+                    </fieldset>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</aura:component>

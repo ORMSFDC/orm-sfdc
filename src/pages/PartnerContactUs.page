@@ -1,0 +1,67 @@
+<apex:page id="PartnerContactUs" showHeader="false"  standardStylesheets="false" 
+           title="{!$Label.Conactuslabel}" >
+    <apex:includeLightning />
+     
+  
+    <script>        
+              
+        window.onload = function() {
+           $Lightning.use("c:PartnerContactUsAPP", function() {               
+              var comapp=$Lightning.createComponent("c:ContactUsCmp", 
+              {},             
+              "lightning",
+              function(component) {
+               });              
+            });            
+        }
+
+        
+    </script>
+         
+    
+    
+   
+    <HTML>
+        <head>
+            <link charset="utf-8" href="{!$Resource.AuthCss}" media="screen" rel="stylesheet" type="text/css"></link>
+        <link charset="utf-8" href="{!$Resource.GlobalCss}" media="screen" rel="stylesheet" type="text/css"></link>
+    <title>Contact Us - One Reverse Mortgage Services</title>
+     
+</head>
+<body id="category_sign_in" class="signed_out">
+    
+    <c:PartnerCoreHeader ></c:PartnerCoreHeader>
+    <div class="ql-main ql-content"><div class="ql-v1-style-wrapper"><div class="authentication_wrapper" id="sign_in">
+        
+        <h2 class="marginBottom">Contact Details</h2>
+        <apex:form id="loginForm" forceSSL="true">
+            <fieldset>
+                <legend>Details</legend>
+                <apex:outputPanel layout="block">
+                    <apex:pageMessages id="error"/>
+                   
+                    
+                    <dl id="signinname_list">
+                        <dt id="signinname_label">
+                         <div id="lightning" /></dt>
+                        
+                        
+                    </dl>
+                    
+                    <span> 
+                        <apex:outputLink value="{!$Label.PartnerLoginURL}"> {!$Label.SignIn}</apex:outputLink>
+                    </span>
+                    
+                </apex:outputPanel>
+            </fieldset>
+        </apex:form>
+        
+        </div>
+        </div></div>
+   <c:PartnerCoreFooter ></c:PartnerCoreFooter>
+    
+    <div class="ql-color-bar ql-color-bar-primary"></div>
+    
+</body>
+</html>
+</apex:page>

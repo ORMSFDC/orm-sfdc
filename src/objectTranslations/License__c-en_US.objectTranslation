@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Account License Type --></label>
+        <name>Account_License_Type__c</name>
+        <picklistValues>
+            <masterLabel>1st Mortgage Broker License</masterLabel>
+            <translation><!-- 1st Mortgage Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st Mortgage Broker/Lender License</masterLabel>
+            <translation><!-- 1st Mortgage Broker/Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st Mortgage Broker/Lender Registrant</masterLabel>
+            <translation><!-- 1st Mortgage Broker/Lender Registrant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st Mortgage Broker/Lender/Servicer Registrant</masterLabel>
+            <translation><!-- 1st Mortgage Broker/Lender/Servicer Registrant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Mortgage Broker/Lender Registrant</masterLabel>
+            <translation><!-- 2nd Mortgage Broker/Lender Registrant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BFI - Mortgage Lender/Servicer License</masterLabel>
+            <translation><!-- BFI - Mortgage Lender/Servicer License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRE - Real Estate Corporation License Endorsement</masterLabel>
+            <translation><!-- BRE - Real Estate Corporation License Endorsement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRE-Real Estate Broker License Endorsement</masterLabel>
+            <translation><!-- BRE-Real Estate Broker License Endorsement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker License</masterLabel>
+            <translation><!-- Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combination Mortgage Banker-Broker-Servicer License</masterLabel>
+            <translation><!-- Combination Mortgage Banker-Broker-Servicer License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company License</masterLabel>
+            <translation><!-- Company License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumer Credit License</masterLabel>
+            <translation><!-- Consumer Credit License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumer Loan Company License</masterLabel>
+            <translation><!-- Consumer Loan Company License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Correspondent Residential Mortgage Lender License</masterLabel>
+            <translation><!-- Correspondent Residential Mortgage Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBO - Finance Lenders Law License</masterLabel>
+            <translation><!-- DBO - Finance Lenders Law License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBO - Residential Mortgage Lending Act License</masterLabel>
+            <translation><!-- DBO - Residential Mortgage Lending Act License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCA - Mortgage Broker License</masterLabel>
+            <translation><!-- DCA - Mortgage Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DFI - Mortgage Lending License</masterLabel>
+            <translation><!-- DFI - Mortgage Lending License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DFI - Residential First Mortgage Notification</masterLabel>
+            <translation><!-- DFI - Residential First Mortgage Notification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DRE - Mortgage Entity License</masterLabel>
+            <translation><!-- DRE - Mortgage Entity License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lender License</masterLabel>
+            <translation><!-- Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Broker License</masterLabel>
+            <translation><!-- Loan Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Money Broker License</masterLabel>
+            <translation><!-- Money Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Banker License</masterLabel>
+            <translation><!-- Mortgage Banker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Banker Registration</masterLabel>
+            <translation><!-- Mortgage Banker Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Broker Act Certificate of Registration</masterLabel>
+            <translation><!-- Mortgage Broker Act Certificate of Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Broker Act Mortgage Banker Exemption</masterLabel>
+            <translation><!-- Mortgage Broker Act Mortgage Banker Exemption --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Broker License</masterLabel>
+            <translation><!-- Mortgage Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Broker Registration</masterLabel>
+            <translation><!-- Mortgage Broker Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Broker/Lender License</masterLabel>
+            <translation><!-- Mortgage Broker/Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Broker/Processor License/Registration</masterLabel>
+            <translation><!-- Mortgage Broker/Processor License/Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Brokerage License</masterLabel>
+            <translation><!-- Mortgage Brokerage License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Brokers License</masterLabel>
+            <translation><!-- Mortgage Brokers License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Company License</masterLabel>
+            <translation><!-- Mortgage Company License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Company Registration</masterLabel>
+            <translation><!-- Mortgage Company Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Dual Authority License</masterLabel>
+            <translation><!-- Mortgage Dual Authority License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Lender License</masterLabel>
+            <translation><!-- Mortgage Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Lender License/Registration</masterLabel>
+            <translation><!-- Mortgage Lender License/Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Lender Servicer License</masterLabel>
+            <translation><!-- Mortgage Lender Servicer License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Lender/Broker License</masterLabel>
+            <translation><!-- Mortgage Lender/Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Lender/Servicer License</masterLabel>
+            <translation><!-- Mortgage Lender/Servicer License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Lending License</masterLabel>
+            <translation><!-- Mortgage Lending License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage License</masterLabel>
+            <translation><!-- Mortgage License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loan Company License</masterLabel>
+            <translation><!-- Mortgage Loan Company License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loan Correspondent License</masterLabel>
+            <translation><!-- Mortgage Loan Correspondent License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loan Originator Company License</masterLabel>
+            <translation><!-- Mortgage Loan Originator Company License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Servicer License</masterLabel>
+            <translation><!-- Mortgage Servicer License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential First Mortgage Notification</masterLabel>
+            <translation><!-- Residential First Mortgage Notification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Mortgage Broker License</masterLabel>
+            <translation><!-- Residential Mortgage Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Mortgage Lender License</masterLabel>
+            <translation><!-- Residential Mortgage Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Mortgage Lending License</masterLabel>
+            <translation><!-- Residential Mortgage Lending License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Mortgage License</masterLabel>
+            <translation><!-- Residential Mortgage License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Mortgage Originator License</masterLabel>
+            <translation><!-- Residential Mortgage Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SML - Mortgage Banker Registration</masterLabel>
+            <translation><!-- SML - Mortgage Banker Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SML - Mortgage Company License</masterLabel>
+            <translation><!-- SML - Mortgage Company License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOS - Loan Broker License</masterLabel>
+            <translation><!-- SOS - Loan Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supervised Lender License</masterLabel>
+            <translation><!-- Supervised Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplemental Mortgage Servicer License</masterLabel>
+            <translation><!-- Supplemental Mortgage Servicer License --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Contact License Type --></label>
+        <name>Contact_License_Type__c</name>
+        <picklistValues>
+            <masterLabel>BFI - Mortgage Loan Originator License</masterLabel>
+            <translation><!-- BFI - Mortgage Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRE - Real Estate Broker License Endorsement</masterLabel>
+            <translation><!-- BRE - Real Estate Broker License Endorsement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRE - Real Estate Salesperson License Endorsement</masterLabel>
+            <translation><!-- BRE - Real Estate Salesperson License Endorsement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBO - Mortgage Loan Originator License</masterLabel>
+            <translation><!-- DBO - Mortgage Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DFI - Mortgage Loan Originator License</masterLabel>
+            <translation><!-- DFI - Mortgage Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DRE - Lending Manager License</masterLabel>
+            <translation><!-- DRE - Lending Manager License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Designated Broker Registration</masterLabel>
+            <translation><!-- Designated Broker Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Originator License</masterLabel>
+            <translation><!-- Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgae Loan Originator</masterLabel>
+            <translation><!-- Mortgae Loan Originator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Agent License</masterLabel>
+            <translation><!-- Mortgage Agent License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Broker Act Loan Originator License</masterLabel>
+            <translation><!-- Mortgage Broker Act Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loan Act Loan Originator License</masterLabel>
+            <translation><!-- Mortgage Loan Act Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loan Officer License</masterLabel>
+            <translation><!-- Mortgage Loan Officer License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loan Originator License</masterLabel>
+            <translation><!-- Mortgage Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Loan Originators License</masterLabel>
+            <translation><!-- Mortgage Loan Originators License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Originator License</masterLabel>
+            <translation><!-- Mortgage Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualified Individual Correspondent Residental Mortgage Lender License</masterLabel>
+            <translation><!-- Qualified Individual Correspondent Residental Mortgage Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualified Individual Residential Mortgage Broker License</masterLabel>
+            <translation><!-- Qualified Individual Residential Mortgage Broker License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualified Individual Residential Mortgage Lender License</masterLabel>
+            <translation><!-- Qualified Individual Residential Mortgage Lender License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Salesperson License Endorsement</masterLabel>
+            <translation><!-- Real Estate Salesperson License Endorsement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SML - Mortgage Loan Originator</masterLabel>
+            <translation><!-- SML - Mortgage Loan Originator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOS - Loan Originator License</masterLabel>
+            <translation><!-- SOS - Loan Originator License --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOS - Principal Manager License</masterLabel>
+            <translation><!-- SOS - Principal Manager License --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- License Expiration --></label>
+        <name>License_Expiration__c</name>
+    </fields><fields>
+        <label><!-- License Issued Date --></label>
+        <name>License_Issued_Date__c</name>
+    </fields><fields>
+        <label><!-- License Number --></label>
+        <name>License_Number__c</name>
+    </fields><fields>
+        <label><!-- License Type --></label>
+        <name>License_Type__c</name>
+    </fields><fields>
+        <label><!-- Related Business Partner --></label>
+        <name>Related_Account__c</name>
+        <relationshipLabel><!-- State Licenses --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Related Branch --></label>
+        <name>Related_Branch__c</name>
+        <relationshipLabel><!-- State Licenses --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Related Business Individual --></label>
+        <name>Related_Contact__c</name>
+        <relationshipLabel><!-- State Licenses --></relationshipLabel>
+    </fields><fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>State License</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>State Licenses</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Branch Licenses Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Individual Licenses Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Licensee Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Partner Licenses Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Branch Licenses --></label>
+        <name>Branch_Licenses</name>
+    </recordTypes><recordTypes>
+        <label><!-- Individual Licenses --></label>
+        <name>Individual_Licenses</name>
+    </recordTypes><recordTypes>
+        <label><!-- Partner Licenses --></label>
+        <name>Partner_Licenses</name>
+    </recordTypes><validationRules>
+        <errorMessage><!-- License Type is required for this State --></errorMessage>
+        <name>Account_License_Type_Required</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- License Type is required for this State --></errorMessage>
+        <name>Contact_License_Type_Required</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- License Number cannot be blank for this State. --></errorMessage>
+        <name>License_Number_Required</name>
+    </validationRules></CustomObjectTranslation>

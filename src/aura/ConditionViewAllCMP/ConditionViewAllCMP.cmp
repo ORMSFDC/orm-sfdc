@@ -1,0 +1,213 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes"
+                controller="ConditionController" >
+    <aura:attribute name="IsSpinner" type="Boolean" default="false"/>
+    
+    <aura:attribute name="ConditionData" type="Object[]"/> 
+    <aura:handler event="c:Event_Condition_ForCloseUpdateModal" action="{!c.getModalValue}"/>
+    <aura:handler event="c:Event_Condition_ForCloseAddModal" action="{!c.getAddModalValue}"/>
+    <aura:attribute name="LoanName" type="String"  />
+    <aura:attribute name="ConditionD" type="Object"/> 
+    <aura:attribute name="DBConditionCount" type="Integer" default="1" />
+    <aura:attribute name="ConditionCount" type="Integer"  />
+    <aura:attribute name="ConditioRowId" type="String"  />
+    <aura:attribute name="ConditioEditId" type="String"  />
+    <aura:attribute name="ConditioHisroryId" type="String"  />    
+    <aura:attribute name="recordId" type="String"  default="12345"/>
+    <!--a0Q29000002d4oWEAQ-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    
+    <aura:attribute name="showAddConditionPopup" type="Boolean" default="false" />
+    <aura:attribute name="showAddConditionPopupTest" type="Boolean" default="false" />
+    
+    <aura:attribute name="showEditConditionPopup" type="Boolean" default="false" />
+    <aura:attribute name="showHistoryConditionPopup" type="Boolean" default="false" />
+    
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+    
+    <div style="background-color:rgb(243, 242, 242)"> 
+        
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                
+                <div class="slds-media__body">
+                    <lightning:breadcrumbs >
+                        <lightning:breadcrumb label="Loans" onclick="{!c.navHome}" />
+                        <lightning:breadcrumb label="{!v.LoanName}" onclick="{!c.createRecord}"/>
+                    </lightning:breadcrumbs>
+                    <h1 class="slds-page-header__title slds-truncate" title="Conditions"
+                        >Conditions</h1>
+                    
+                </div>
+            </header>
+            
+            <div class="slds-no-flex">
+                <button class="slds-button slds-button_neutral" onclick="{!c.OpenAddConditionModal}">New</button>
+            </div>
+            
+        </div> 
+        <div style="padding: 0 1rem 0;
+                    margin: 0 0 .75rem;" ><span class="countSortedByFilteredBy uiOutputText" 
+                                                data-aura-class="uiOutputText">{!v.ConditionCount} items • </span>
+            <span class="uiOutputText" 
+                  data-aura-class="uiOutputText">Updated a few seconds ago</span>
+            <div class="slds-float_right" style=" 
+                                                 margin: 0 0 .75rem;">
+                <button class="slds-button slds-button_icon slds-button_icon-border-filled"
+                        aria-pressed="false" title="Like" onclick="{!c.doInit}">
+                    <lightning:icon iconName="utility:refresh" size="x-small" variant="refresh"/>
+                    
+                </button></div>
+        </div>
+        
+        <div class="slds-card__body">
+            <table class="slds-table slds-table_fixed-layout slds-table_bordered slds-no-row-hover slds-table_cell-buffer">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Condition">Condition</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Created Date">Created Date</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Status Date">Status Date</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                        <th scope="col"  colspan="4"  >
+                            <div class="slds-truncate" title="Description">Description</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Action"></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.ConditionD}" var="Con">
+                        <tr class="slds-hint-parent">
+                            <th scope="row">
+                                {!Con.Index}
+                            </th>
+                            <td >    {!Con.CreatedDate}
+                            </td>
+                            <td  >
+                                {!Con.StatusDate}
+                                
+                            </td>
+                            <td  >
+                                {!Con.Status} 
+                            </td>
+                            <td colspan="4"   >
+                                <ui:outputTextArea value="{!Con.DescText}"  >
+                                </ui:outputTextArea>   
+                            </td>
+                            
+                            <td style="padding-left:44px">   
+                                <lightning:buttonMenu iconName="utility:down" 
+                                                      iconSize="x-small"
+                                                      alternativeText="down" 
+                                                      onselect="{! c.handleMenuSelect }" class="">
+                                    <lightning:menuItem label="Edit" value="{!Con.Id}" title="{!Con.Index}" />
+                                    <lightning:menuItem label="View History" value="{!Con.Id}" title="{!Con.Index}" />
+                                </lightning:buttonMenu>
+                            </td>
+                        </tr>
+                    </aura:iteration> 
+                </tbody>
+            </table>
+        </div>
+        <br/> 
+    </div>
+    
+    
+    <aura:if isTrue="{!v.showAddConditionPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open " >
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header" >
+                    
+                    <h2 id="header99"  style="color:#2081bf;" class="slds-text-heading--medium">
+                        Add New Condition(s)</h2>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium" style="height:267px !important" >
+                    <c:Condition_AddCmp LoanId="{!v.recordId}" aura:id="item_in_kit" />
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.CloseAddConditionModal}" >Cancel</button>
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.doAction}">Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    <aura:if isTrue="{!v.showEditConditionPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1"  aria-labelledby="header99" class="slds-modal slds-fade-in-open " >
+            <div class="slds-modal__container slds-mymodal" style="padding-top:150px !important">
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header" >
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.CloseEditConditionModal}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="header99"  style="color:#2081bf;" class="slds-text-heading--medium">
+                        Update {!v.ConditioEditId} </h2>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium" style="height:250px !important" >
+                    <c:Condition_EditCmp ConditionId="{!v.ConditioRowId}" aura:id="Edit" LoanId="{!v.recordId}"  />
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.CloseEditConditionModal}" >Cancel</button>
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.doActionEdit}">Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    <aura:if isTrue="{!v.showHistoryConditionPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1"  aria-labelledby="header99" class="slds-modal slds-fade-in-open " >
+            <div class="slds-modal__container slds-mymodal" style="padding-top:150px !important">
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header" >
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.CloseHisConditionModal}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="header99"  style="color:#2081bf;" class="slds-text-heading--medium">
+                        View {!v.ConditioHisroryId} </h2>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium" style="height:250px !important" >
+                    <c:Condition_HistoryCmp ConditionId="{!v.ConditioRowId}"  />
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.CloseHisConditionModal}" >Cancel</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    <aura:if isTrue="{!v.IsSpinner}">
+        <div class="slds-spinner_container">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if> 
+</aura:component>

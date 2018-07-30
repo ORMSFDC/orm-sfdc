@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Loan Status Waiting for Full Package</name>
+    <style>none</style>
+    <subject>Application Disclosure Request Loan #{!Loan_New__c.LoanNumber__c}, Loan ID: {!Loan_New__c.Name}, Client: {!Loan_New__c.Client_Name__c}.</subject>
+    <textOnly>A new application has been sent out! To be in compliance, mail the following 3 disclosures to the client’s mailing address today:
+
+1.       Affiliated Business Arrangement
+2.       Settlement Service Providers
+3.       Good Faith Estimate
+
+Regards,
+ORMS Support Team.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

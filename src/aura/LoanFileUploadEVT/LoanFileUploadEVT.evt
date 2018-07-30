@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="isOpen_c" type="boolean" default="false"/>
+</aura:event>

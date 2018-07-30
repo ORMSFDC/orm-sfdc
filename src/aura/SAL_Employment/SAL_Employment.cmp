@@ -1,0 +1,320 @@
+<aura:component controller="SAL_EmploymentController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+                access="global">
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+    <aura:attribute name="LoanId" type="String"
+                    default="a0M0q000000ARq9EAG" />
+    <aura:attribute name="EmploymentLoanId" type="String" />
+   <!-- <ui:outputText value="{!v.EmploymentLoanId}" />-->
+    <aura:attribute name="Heading" type="String" default="" />
+    <aura:attribute name="ClientName" type="String" default="" />
+    <aura:attribute name="UsState" type="List" />
+    <aura:attribute name="Year" type="List" />
+    <aura:attribute name="IncomeType" type="string[]" />
+      <aura:attribute name="Index" type="Integer" default="0"/>
+    <aura:attribute name="clientList" type="List" />
+    <aura:attribute name="Employment" type="Employment__c[]" />
+    <aura:attribute name="NewEmp" type="Employment__c" default="{'sobjectType':'Employment__c'}" />
+    <aura:attribute name="NewEmp1" type="Employment__c" />
+    <aura:attribute name="error" type="String" />
+    <aura:attribute name="nextOpt" type="boolean"/>
+    <aura:attribute name="currentOpt" type="boolean"/>
+    <aura:attribute name="prevOpt" type="boolean"/>
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="Isrequired" type="boolean" default="false"/> 
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="idIs" type="String" default="null" />
+    <aura:attribute name="showPopup" type="boolean" default="false" />
+    <aura:attribute name="ClientID" type="String" default="null" />
+    
+	 <aura:if isTrue="{!v.showPopup}">
+	  <!--###### MODAL BOX Start From Here ######--> 
+      <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+        <div class="slds-modal__container slds-mymodal" >
+          <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+          <div class="slds-modal__header">
+            <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeDeleteModel}">
+            X
+            <span class="slds-assistive-text">Close</span>
+            </button>
+          
+          </div>
+          <!--###### MODAL BOX BODY Part Start From Here ######-->
+          <div class="slds-modal__content slds-p-around--medium">
+            <p><b>Do you really want to Delete?
+              </b>
+            </p>
+          </div>
+          <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+          <div class="slds-modal__footer">
+            <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.closeDeleteModel}" >Cancel</button>
+            <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.doAction}">Ok</button>
+          </div>
+        </div>
+      </div>
+      <div class="slds-backdrop slds-backdrop--open"></div>
+      <!--###### MODAL BOX Part END Here ######-->
+	 </aura:if>
+    <div>
+        <fieldset class="slds-box slds-theme--default slds-container--large">
+            <div class="slds-form slds-form_compound">
+                <fieldset class="slds-form-element">
+                    <div class="slds-form-element__group">
+                        <div class="slds-form slds-form_compound">
+                           
+                                <h4>Clients</h4>
+                                <lightning:select name="selClient" aura:id="pickClient"
+                                                  onchange="{!c.onSelectChange}">
+                                    <aura:iteration items="{!v.clientList}" var="pOptions">
+                                        <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                        <br></br>
+                            <div class="slds-grid slds-grid--align-end">
+                                <ui:button disabled="true"
+                                           class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                                           aura:id="addEmp" label="Add" press="{!c.AddRecord }" />
+                            </div>
+                        </div>
+                          <br></br>
+                        <div class="slds-form-element__row">
+                            <div class="slds-size_1-of-1">
+                                <table class="slds-table_bordered slds-table_cell-buffer ">
+                                    <thead>
+                                        <tr style="background-color: #2877bd">
+                                            <th style="color: white">Company Name</th>
+                                            <th style="color: white">Phone</th>
+                                            <th style="color: white">Income Type</th>
+                                            <th style="color: white">Address</th>
+                                            <th style="color: white">City</th>
+                                            <th style="color: white">State</th>
+                                            <th style="color: white">Zip</th>
+                                            <th style="color: white"></th>
+                                            <th style="color: white"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <aura:iteration items="{!v.Employment}" var="Employment">
+                                            <tr>
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate">
+                                                         <p style="width:110px; /* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                                            {!Employment.EmployerName__c}
+                                                          </p>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Phone">
+                                                    <div class="slds-truncate">
+                                                        {!Employment.EmployerPhone__c}</div>
+                                                </td>
+                                                <td data-label="Income Type">
+                                                    <div class="slds-truncate">
+                                                        {!Employment.IncomeType__c}</div>
+                                                </td>
+                                                <td data-label="Address">
+                                                    <div class="slds-truncate">
+                                                        <p style="width:110px; /* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                                             {!Employment.EmployerAddress__c}
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                                <td data-label="City">
+                                                    <div class="slds-truncate">{!Employment.City__c}</div>
+                                                </td>
+                                                <td data-label="State">
+                                                    <div class="slds-truncate">{!Employment.State__c}</div>
+                                                </td>
+                                                <td data-label="Zip">
+                                                    <div class="slds-truncate">{!Employment.Zip__c}</div>
+                                                </td>
+                                                <td data-label="Edit">
+                                                    <div class="slds-truncate" title="Edit">                                                        
+                                                        <a id="{!Employment.Id}" onclick="{!c.Edit}">Edit</a>                                                        
+                                                    </div>
+                                                </td>
+                                                <td data-label="Delete">
+                                                    <div class="slds-truncate" title="Delete">                                                        
+                                                        <a id="{!Employment.Id}" onclick="{!c.Delete}">Delete</a>                                                        
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <aura:if isTrue="{!v.isOpen}">
+                <!--###### MODAL BOX Start From Here ######-->
+                <div role="dialog" tabindex="-1" aria-labelledby="header99"
+                     class="slds-modal slds-fade-in-open ">
+                    <div class="slds-modal__container">
+                        <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                        <div class="slds-modal__header">
+                            <button
+                                    class="slds-button slds-modal__close slds-button--icon-inverse"
+                                    title="Close" onclick="{!c.closeModel}">
+                                X <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 id="header99"  style="color:#2081bf;" class="slds-text-heading--medium">{!v.Heading}</h2>
+                        </div>
+                        <!--###### MODAL BOX BODY Part Start From Here ######-->
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <div class="slds-form slds-form_compound">
+                                <fieldset class="slds-form-element">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element slds-size_1-of-1">
+                                            <div style="margin-bottom: 3%;" class="slds-size_1-of-1">
+                                                <ui:inputSelect aura:id="SelfEmp" required="true" change="{!c.IsselfEmployed}" label="Self Employed " value="{!v.NewEmp.unknown_custom_field}" >
+                                                    <ui:inputSelectOption value="" text="" label="---Select option---"/>
+                                                    <ui:inputSelectOption value="Yes" text="Yes" label="Yes"/>
+                                                    <ui:inputSelectOption value="No" text="No" label="No"/>
+                                                    
+                                                </ui:inputSelect>
+                                                
+                                            </div>
+                                           <!-- <div style="margin-bottom: 3%;" class="slds-size_1-of-1">
+                                                <ui:inputSelect label="Current Position (Optional)" value="{!v.NewEmp.CurrentPosition__c}" >
+                                                    <ui:inputSelectOption value="" text="" label="-Select option-"/>
+                                                    <ui:inputSelectOption value="Yes" text="Yes" label="Yes"/>
+                                                    <ui:inputSelectOption value="No" text="No" label="No"/>
+                                                    
+                                                </ui:inputSelect>
+                                                
+                                            </div>-->
+                                            <div style="margin-bottom: 3%;" class="slds-size_1-of-1">
+                                                <ui:inputSelect label="IncomeType " aura:id="IncomeType" required="true" value="{!v.NewEmp.unknown_custom_field}" >
+                                            		 <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                                    <aura:iteration items="{!v.IncomeType}" var="pOptions" >
+                                                        <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.text}"/>
+                                                    </aura:iteration>
+                                                    
+                                                </ui:inputSelect>
+                                                
+                                            </div>
+                                          <!--required when Self employed is "yes" -->
+                                            <div style="margin-bottom: 3%;" class="slds-size_1-of-1">
+                                                
+                                                <ui:inputText label="Employer Name" aura:id="inputFName"
+                                                              value="{!v.NewEmp.EmployerName__c}" class="slds-input"
+                                                              required="{!v.Isrequired}" />
+                                                <br />
+                                                
+                                                <ui:inputText label="Position/Title" aura:id="inputPosition"
+                                                              value="{!v.NewEmp.PositionTitle__c}" class="slds-input"
+                                                              required="{!v.Isrequired}"/>
+                                                <br />
+                                                
+                                                <ui:inputPhone label="Employer Phone" aura:id="inputEmpPhone"
+                                                              maxlength="10" value="{!v.NewEmp.EmployerPhone__c}" class="slds-input"
+                                                              required="{!v.Isrequired}" blur="{!c.FormatPhone}" 
+                                                              keypress="{!c.RestrictZeroInEmployerPhoneFirstTime}" keyup="{!c.RestrictZeroInEmployerPhoneFirstTime}"
+                                                              keydown="{!c.RestrictZeroInEmployerPhoneFirstTime}"  updateOn="keypress, keyup, keydown"/>
+                                                <label id="Phonerr" class="errorclr"></label>
+                                                <!--change="{!c.EmploymentValidations}"-->
+                                                <br />
+                                                
+                                                <ui:inputText label="Employer Address"
+                                                              aura:id="inputEmpAddress"
+                                                              value="{!v.NewEmp.EmployerAddress__c}" class="slds-input"
+                                                              required="{!v.Isrequired}"/>
+                                                <br />
+                                                <ui:inputText label="City" aura:id="inputCity"
+                                                              value="{!v.NewEmp.City__c}" class="slds-input"
+                                                              required="{!v.Isrequired}" />
+                                                <br />
+                                                <ui:inputSelect label="State" aura:id="State" required="{!v.Isrequired}" value="{!v.NewEmp.State__c}" >
+                                                    <ui:inputSelectOption value="true" text="" label="---Select option---"/>
+                                                   
+                                                    <aura:iteration items="{!v.UsState}" var="pOptions" >
+                                                        <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.text}"/>
+                                                    </aura:iteration>
+                                                </ui:inputSelect> 
+                                                <br />
+                                                <ui:inputText label="Zip" aura:id="inputZip"
+                                                              value="{!v.NewEmp.Zip__c}" class="slds-input"
+                                                              required="{!v.Isrequired}" />
+                                            
+                                            </div>
+                                             <!--required when Self employed is "yes" -->
+                                            <br />
+                                            <h3  style="color:#2081bf;">Time at this job</h3>
+                                            <div class="slds-size_1-of-1" style="margin-bottom: 3%;">
+                                                
+                                                <ui:inputText label="Years " aura:id="inputYear"
+                                                              value="{!v.NewEmp.Years__c}"
+                                                              class="slds-input" required="true" 
+                                                              />
+                                               <br /> 
+                                                
+                                               <ui:inputNumber label="Months " aura:id="inputMonth"
+                                                              value="{!v.NewEmp.Months__c}"
+                                                              class="slds-input" 
+                                                              />
+                                                <br />
+                                                <!--<ui:inputDate aura:id="Startdate"
+                                                              class="slds-input Datecontrolwidth"
+                                                             
+                                                              label="Start Date (optional)"
+                                                              value="{!v.NewEmp.StartDate__c}" required=""
+                                                              format="MM/dd/yyyy" displayDatePicker="true"
+                                                              />
+                                                <br />-->
+                                               <!--  blur="{!c.dateCheck}"
+                                                <label id="StartD" class="errorclr"></label>-->
+                                                
+                                                
+                                                <!--<ui:inputDate aura:id="Enddate"
+                                                              class="slds-input Datecontrolwidth"
+                                                              
+                                                              label="End Date (optional)" value="{!v.NewEmp.EndDate__c}"
+                                                              required="" format="MM/dd/yyyy" displayDatePicker="true"
+                                                              blur="{!c.dateCheckCompare}" />
+                                                <br />-->
+                                                <ui:inputSelect label="Years Employed in Profession (optional)" aura:id="Year" value="{!v.NewEmp.YearEmployedinProfession__c}" >
+                                                    
+                                                    <ui:inputSelectOption value="true" text="" label="---Select Option---"/>
+                                                    <aura:iteration items="{!v.Year}" var="pOptions" >
+                                                        <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.text}"/>
+                                                    </aura:iteration>
+                                                </ui:inputSelect> 
+                                                
+                                                <!-- <ui:inputText label="Years Employed in Profession (optional) "  aura:id="inputFName" value=""
+                                      class="slds-input" required=""/>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                        
+                        <div class="slds-modal__footer">
+                            <!--<label id="assetserr" class="errorclr" />-->
+                            <div align="left"> <aura:if isTrue="{!v.showError}">                            
+                                <ui:message title="Error" severity="error" >
+                                    Please review all errors before moving to next page
+                                </ui:message>                            
+                            </aura:if></div>
+                            <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                                       press="{!c.closeModel}" label="Cancel"></ui:button>
+                            <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+                                       press="{!c.FormatValidations}" label="Save"></ui:button>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-backdrop slds-backdrop--open"></div>
+                <!--###### MODAL BOX Part END Here ######-->
+            </aura:if>
+        </fieldset>
+    </div>
+    <br></br>
+    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+               label="Previous" press="{!c.previous}"></ui:button>
+    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+               label="Next" press="{!c.next}"></ui:button>
+</aura:component>

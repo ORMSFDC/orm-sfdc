@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION">
+<aura:attribute name="LoanNumberE" type="String" />
+</aura:event>

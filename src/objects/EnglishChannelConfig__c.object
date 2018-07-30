@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>ApiGatewayEndpoint1__c</fullName>
+        <externalId>false</externalId>
+        <label>ApiGatewayEndpoint1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ApiGatewayEndpoint__c</fullName>
+        <description>The endpoint (url) for the english channel API gateway.</description>
+        <externalId>false</externalId>
+        <label>ApiGatewayEndpoint</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><customSettingsType>Hierarchy</customSettingsType><description>English channel configuration.</description><enableFeeds>false</enableFeeds><label>English Channel Config</label><visibility>Public</visibility></CustomObject>

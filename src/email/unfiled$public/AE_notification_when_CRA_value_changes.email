@@ -1,0 +1,7 @@
+Hello {!Account.Account_Executive_Name__c},
+
+The Credit Risk Package Status has been updated for partner {!Account.Name} . The status has changed to '{!Account.Credit_Risk_Package_Status__c}'. Please look into your partner record and take required action. 
+
+Thank you.
+
+-ORMS Support Team

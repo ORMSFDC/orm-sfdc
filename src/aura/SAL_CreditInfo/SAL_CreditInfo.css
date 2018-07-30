@@ -1,0 +1,31 @@
+.THIS .final-button{
+	 color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            background: rgb(28, 184, 65); 
+            margin-top: 1cm;
+}
+
+
+.THIS .defaultCls { 
+   padding-left: 1rem !important;
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    padding-right: 1rem !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: rgb(75, 202, 129) !important;
+    border: 1px solid rgb(75, 202, 129) !important;
+    color:white !important;
+    
+}
+
+.THIS .disabledcls { 
+   
+    cursor: not-allowed !important;
+}
+.THIS .Enableddisabledcls { 
+   
+    cursor: pointer !important;
+    
+}

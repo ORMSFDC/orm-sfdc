@@ -1,0 +1,68 @@
+<apex:component controller="loanAttachment" access="global" >
+
+<apex:attribute name="lId" type="Id" description="Id of Loan" assignTo="{!loanId}"/>
+   <html>
+<head>
+<meta charset="UTF-8">    
+<style>
+body {
+    background-color: #FFFFFF;
+}
+
+h1 {
+    color: #000000;
+    font-family: "Calibri", "sans-serif";
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+
+table {
+    border: 1px solid black;
+}
+    
+td {
+    font-family:Calibri;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding: 3px;
+    text-align: center;
+}
+    
+tr.grey {
+    background-color: #eeeeee;
+}   
+</style>
+</meta>
+</head>
+
+<body>
+
+            <TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="1000" BORDER="1" class="snapshot" align="center">
+                <TR class="grey">     
+                    <TD><strong>Loan Id</strong></TD>
+                    <TD><strong>Client Name</strong></TD>  
+                    <TD><strong>Loan Number</strong></TD>
+                    <TD><strong>Loan Purpose</strong></TD>
+                    <TD><strong>Loan Status</strong></TD>
+                    <TD><strong>Subject Property Address</strong></TD>                  
+                </TR>                
+                
+        <apex:repeat value="{!Loan}" var="l">
+        <tr>
+            <td>{!l.Name}</td>
+            <td>{!l.Client_Name__c}</td>
+            <td>{!l.LoanNumber__c}</td>
+            <td>{!l.Purpose_of_Loan__c}</td>
+            <td>{!l.LoanStatus__c}</td>
+            <td>{!l.Subject_Property_Address__c}</td>
+        </tr>
+        </apex:repeat>                
+            </TABLE>
+    
+</body>
+</html>   
+        
+ 
+</apex:component>

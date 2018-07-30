@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Loan Id --></label>
+        <name>LoanId__c</name>
+        <relationshipLabel><!-- LoanStatus --></relationshipLabel>
+    </fields><fields>
+        <label><!-- ORMS AE --></label>
+        <name>ORMS_AE__c</name>
+    </fields><fields>
+        <label><!-- Previous Status --></label>
+        <name>PreviousStatus__c</name>
+    </fields><fields>
+        <label><!-- Remove Dups --></label>
+        <name>Remove_Dups__c</name>
+    </fields><fields>
+        <help><!-- Status - Used By Executive Reporting --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Application Requested</masterLabel>
+            <translation><!-- Application Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Closing</masterLabel>
+            <translation><!-- Awaiting Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Awaiting Funding</masterLabel>
+            <translation><!-- Closed - Awaiting Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditionally Approved</masterLabel>
+            <translation><!-- Conditionally Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Application Received - Incomplete</masterLabel>
+            <translation><!-- Full Application Received - Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Package Received</masterLabel>
+            <translation><!-- Full Package Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funded</masterLabel>
+            <translation><!-- Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Processing</masterLabel>
+            <translation><!-- In Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sandbox</masterLabel>
+            <translation><!-- Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting Clear to Close</masterLabel>
+            <translation><!-- Underwriting Clear to Close --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Full Package</masterLabel>
+            <translation><!-- Waiting for Full Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Team (Source via Loan Team) --></help>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>LoanStatus</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>LoanStatus</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

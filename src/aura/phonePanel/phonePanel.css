@@ -1,0 +1,24 @@
+.THIS .forceHighlightsStencil .header.dark {
+    background: white;
+}
+
+.THIS .messageBody {
+	margin-top: 130px;
+	color: #54698d;
+}
+
+.THIS .toggle {
+    display: none;
+}
+
+.THIS .placeHolderText {
+    font-size: 0.8125rem;
+}
+
+.THIS .contact{
+	  background-color: #7F8DE1;
+}
+
+.THIS .button-inv {
+    background: #1589ee;
+}

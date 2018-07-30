@@ -1,0 +1,24 @@
+.THIS .logo {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15%;
+    margin-top: 15%;
+}
+
+.THIS.slds-modal__container {
+    padding: 0;
+}
+
+.THIS .slds-form-element {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.THIS.toggle {
+    display: none;
+}
+
+.THIS .slds-button--brand {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

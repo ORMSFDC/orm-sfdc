@@ -1,0 +1,11 @@
+Hi {!Receiving_User.Name},
+
+Welcome to ORM! To get started, please click here to create a password: 
+{!Community_Url}
+
+Your username is: {!Receiving_User.Username}
+
+Please reach out to your Account Executive if you have any questions. 
+
+Thank you!
+One Reverse Mortgage

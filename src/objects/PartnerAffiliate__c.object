@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>200</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Nature_of_Service_Provided__c</fullName>
+        <externalId>false</externalId>
+        <label>Nature of Service Provided</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Title Services</fullName>
+                    <default>false</default>
+                    <label>Title Services</label>
+                </value>
+                <value>
+                    <fullName>Insurance</fullName>
+                    <default>false</default>
+                    <label>Insurance</label>
+                </value>
+                <value>
+                    <fullName>Settlement Services</fullName>
+                    <default>false</default>
+                    <label>Settlement Services</label>
+                </value>
+                <value>
+                    <fullName>Wealth Management</fullName>
+                    <default>false</default>
+                    <label>Wealth Management</label>
+                </value>
+                <value>
+                    <fullName>Appraisal Services</fullName>
+                    <default>false</default>
+                    <label>Appraisal Services</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Services</fullName>
+                    <default>false</default>
+                    <label>Real Estate Services</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields><fields>
+        <fullName>Other_Service_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Service Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Related_Partner__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Partner Affiliates</relationshipLabel>
+        <relationshipName>Partner_Affiliates</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>25</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>10</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>PartnerAffiliate</label><nameField>
+        <label>Affiliated Entity Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Partner Affiliates</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>Related_Partner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Address__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>State__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Zip__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Nature_of_Service_Provided__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Other_Service_Name__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Related_Partner__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Address__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>State__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Zip__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Nature_of_Service_Provided__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Other_Service_Name__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Related_Partner__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Address__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>State__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Zip__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Nature_of_Service_Provided__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Other_Service_Name__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Related_Partner__c</searchFilterFields>
+        <searchFilterFields>Address__c</searchFilterFields>
+        <searchFilterFields>City__c</searchFilterFields>
+        <searchFilterFields>State__c</searchFilterFields>
+        <searchFilterFields>Zip__c</searchFilterFields>
+        <searchFilterFields>Nature_of_Service_Provided__c</searchFilterFields>
+        <searchFilterFields>Other_Service_Name__c</searchFilterFields>
+        <searchResultsAdditionalFields>Related_Partner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Address__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>State__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Zip__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Nature_of_Service_Provided__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Other_Service_Name__c</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel><visibility>Public</visibility><listViews>
+        <fullName>All_Partner_Affiliates</fullName>
+        <columns>NAME</columns>
+        <columns>Related_Partner__c</columns>
+        <columns>Address__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>Zip__c</columns>
+        <columns>Nature_of_Service_Provided__c</columns>
+        <columns>Other_Service_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Partner Affiliates</label>
+    </listViews><validationRules>
+        <fullName>Other_is_must_for_other_service</fullName>
+        <active>true</active>
+        <description>Must fill 'Other Service Name' field if 'Other' is selected as picklist option for Nature of Service Provided field.</description>
+        <errorConditionFormula>INCLUDES( Nature_of_Service_Provided__c ,'Other') &amp;&amp;  ISBLANK( Other_Service_Name__c )</errorConditionFormula>
+        <errorDisplayField>Other_Service_Name__c</errorDisplayField>
+        <errorMessage>Must fill 'Other Service Name' field if 'Other' is selected as picklist option for Nature of Service Provided field.</errorMessage>
+    </validationRules></CustomObject>

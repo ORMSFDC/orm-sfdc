@@ -1,0 +1,519 @@
+<aura:component controller="savedScenarioController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="MarginIs" type="String" default="Margin"/>
+    <aura:registerEvent name="chartEvent" type="c:ChartEvent"/>
+    <aura:attribute name="ScenarioID" type="string" default='a0Hm000000H5zn2'  /> 
+    <aura:attribute name="isOldScenario" type="Boolean" default="true"/>
+  <aura:attribute name="CF1MA" type="string" default='' />
+  <aura:attribute name="CF5MA" type="string" default='' />
+  <aura:attribute name="CF10MA" type="string" default='' />
+    <aura:attribute name="ScenarioType" type="String"/>
+    <aura:attribute name="isTraditional" type="boolean" default="true"/>
+     <aura:attribute name="LRateType" type="String" default="ARM"/>
+         <aura:attribute name="LMortgageAppliedFor" type="String" default="FHA Traditional HECM"/>
+   
+    <aura:attribute name="displayTab" type="Boolean" default="true"/>
+    <aura:attribute name="ApplicationDate" type="String"/>
+    
+    <aura:attribute name="EHV" type="decimal" default="" />
+    <aura:attribute name="CMB" type="decimal" default=""/>
+    <aura:attribute name="CMIR" type="string" default=""/>
+    <aura:attribute name="MMP" type="decimal" default=""/>
+    <aura:attribute name="Age" type="string" />
+    <aura:attribute name="Ageminus1" type="string" />
+    <aura:attribute name="FirstAmount" type="string" />
+    <aura:attribute name="TotalAmountAvailable" type="integer" />
+    <aura:attribute name="TenthAmount" type="string" />
+    <aura:attribute name="apr_is" type="String" default=''/>
+    <aura:attribute name="libor" type="String" default=''/>
+    
+    <!--Index Table-->
+    <aura:attribute name="Index" type="string"  />
+    <aura:attribute name="Margin" type="string" />
+    <aura:attribute name="MIP" type="string" />
+    <aura:attribute name="IGR" type="string" />
+    <aura:attribute name="AGR" type="string" />
+    <aura:attribute name="CF12MA" type="string" default='' />
+    <aura:attribute name="CF60MA" type="string" default='' />
+    <aura:attribute name="CFRMA" type="string" default='0' />
+    <aura:attribute name="CFRM" type="string" default='0' />
+    <aura:attribute name="secMN" type="string" default='' />
+    <aura:attribute name="cashToClose" type="string" default='' />
+    <aura:attribute name="Cash_to_close" type="String" default=''/>
+    <aura:attribute name="EstimatedClosingCosts" type="string" default='' />
+    <aura:attribute name="CFRMACF" type="string" default='' />
+    <aura:attribute name="CFRMCF" type="string" default='' />
+    <aura:attribute name="RESTError" type="String" default=""/>    
+    <aura:attribute name="EOF" type="decimal" />
+    <aura:attribute name="render_popup" type="Boolean" default="false"/>
+    <aura:attribute name="isConveted" type="Boolean" default="false"/>
+    <aura:attribute name="showLoan" type="Boolean" />
+    <aura:attribute name="showLoanId" type="String" />
+    
+    <!---Use Salesforce Lightning Design System CSS From Static resources-->
+    <aura:attribute name="IsSpinner" type="boolean" default="false" />
+     <ltng:require scripts="{!$Resource.jquery}" ></ltng:require>
+    <!-- <ltng:require scripts="{!$Resource.ChartJS24}" ></ltng:require> -->
+    <ltng:require scripts="{!join(',',
+                           $Resource.ChartJS23,
+                           $Resource.ChartJS24)}"
+                  afterScriptsLoaded="{!c.scriptsLoaded}" /> 
+    <aura:if isTrue="{!!v.showLoan}">
+        <div class="slds-form slds-form_compound" >   
+            <div id="twosec">
+                <div id="LOCandCashFlows"  style="display:none">
+                    <fieldset class="slds-form-element">   
+                        <div> 
+                            <h1  id="loc">Scenario Results</h1>                    
+                        </div>
+                        <fieldset class="slds-form-element">            
+                            <div class="slds-form-element__group" >
+                                <aura:unescapedHtml value="{!v.RESTError}">
+                                </aura:unescapedHtml>                
+                            </div>
+                        </fieldset>
+                        <div class="slds-form-element__group"> 
+                            <div class="slds-form-element__row">                        
+                                <div class="slds-form-element slds-size_1-of-2" 
+                                     style="">
+                                    <table class=" slds-table_cell-buffer" >
+                                        <thead style="border:0px solid black;">
+                                            <th colspan="2" style="    padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+                                                Your Client Information:
+                                            </th>
+                                        </thead>
+                                        <tbody>                                    
+                                            <tr>                                        
+                                                <td data-label="Age">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            Age
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Year">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap" >
+                                                        {!v.Ageminus1} &nbsp;years                                                
+                                                    </div>
+                                                </td>                                        
+                                            </tr>
+                                            <tr>
+                                                <td data-label="HV">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            <aura:if isTrue="{!v.isTraditional}">    
+                             
+                                                            Home Value
+                                                                  <aura:set attribute="else">
+                                                                      Purchase price
+                                                                  </aura:set>
+                                                            </aura:if>
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                            
+                                                <td data-label="EHV">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.EHV}" style="currency" />
+                                                    </div>
+                                                </td>    
+                                               
+                                            </tr>
+                                            <tr>    
+                                                     <aura:if isTrue="{!v.isTraditional}">    
+                             
+                                                <td data-label="CMB">
+                                                    <div class="slds-truncate slds-cell-wrap" >
+                                                        <b>
+                                                            Current Mortgage Balance
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="CMB">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.CMB}" style="currency" />
+                                                    </div>
+                                                </td> 
+                                                </aura:if>
+                                            </tr>                                    
+                                            <tr> 
+                                                     <aura:if isTrue="{!v.isTraditional}">    
+                             
+                                                <td data-label="CMMP">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            Current Monthly Mortgage Payment
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="CMMP">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.MMP}" style="currency" />
+                                                    </div>
+                                                </td>    
+                                                </aura:if>
+                                            </tr>
+                                        </tbody>
+                                    </table> 
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <table class=" slds-table_cell-buffer"  style="">
+                                        <thead style="border:0px solid black;">
+                                            <th colspan="2" class=" slds-cell-wrap" style="    padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+                                                HECM Loan
+                                            </th>
+                                        </thead>
+                                        <tbody>  
+                                            <tr>
+                                                <td data-label="MARGIN">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            {!v.MarginIs}
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="MARGIN">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <ui:outputNumber value="{!v.Margin}" format=".000"/>%
+                                                        
+                                                    </div>
+                                                </td>                                    
+                                            </tr>
+                                            <tr>   
+                                                
+                                                <td data-label="TAA">
+                                                    <div class="slds-truncate slds-cell-wrap" >
+                                                        <b>
+                                                            Total Amount Available (Principal Limit)
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="TAA">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">                                                
+                                                        <lightning:formattedNumber value="{!v.TotalAmountAvailable}" style="currency" />
+                                                    </div>
+                                                </td>                                        
+                                            </tr>
+                                            <aura:if isTrue="{!v.isTraditional}">
+                                            <tr>
+                                                
+                                                <td data-label="Lien">
+                                                    <div class="slds-truncate slds-cell-wrap" >
+                                                        <b>
+                                                             Amount Available (after Lien payoff and estimated closing costs)
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Lien">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.FirstAmount}" style="currency" />                                                
+                                                    </div>
+                                                </td>                                        
+                                            </tr> </aura:if>                                   
+                                            <tr>                                        
+                                                <td data-label="Close">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            Funds Needed to Close
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Close">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">                                                
+                                                        <lightning:formattedNumber value="{!v.Cash_to_close}" style="currency" />                                                
+                                                    </div>
+                                                </td>                                        
+                                            </tr>
+                                        </tbody>
+                                    </table> 
+                                </div>                
+                            </div>
+                        </div>
+                        <div class="slds-form-element__group">                
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-2" 
+                                     style="">
+                                    <table class="slds-table_cell-buffer"  style=""  >
+                                        <thead style="border:0px solid black;">
+                                            <th colspan="2" class=" slds-cell-wrap" style="    padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+                                                Rate and Cost
+                                            </th>
+                                        </thead>
+                                        <tbody>   
+                                            <tr>                                
+                                                <td data-label="HEADER">
+                                                    <div class="slds-truncate">
+                                                        <b>
+                                                            {!$Label.c.Scenario_Header5}
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="INDEX">
+                                                    <div class="slds-truncate  slds-text-align_right slds-cell-wrap">
+                                                        {!v.Index}%
+                                                    </div>
+                                                </td>                                
+                                            </tr>
+                                            
+                                            <tr>                                    
+                                                <td data-label="MIP">
+                                                    <div class="slds-truncate slds-cell-wrap" >
+                                                        <b>
+                                                            Upfront Mortgage Insurance Premium
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="MIP">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap" >
+                                                        <lightning:formattedNumber value="{!v.MIP}" style="currency" />
+                                                        
+                                                    </div>
+                                                </td>                                    
+                                            </tr>
+                                            
+                                            
+                                            <tr>
+                                                <td data-label="EOF">
+                                                    <div class="slds-truncate">
+                                                        <b>
+                                                             Adjustable Desired Origination
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="EOF">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.EOF}" style="currency" />
+                                                    </div>
+                                                </td>                                    
+                                            </tr>                                
+                                            <tr>
+                                                <td data-label="ECC">
+                                                    <div class="slds-truncate">
+                                                        <b>
+                                                            Other Estimated Closing Costs
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="ECC">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="2500" style="currency" />
+                                                    </div>
+                                                </td>                                    
+                                            </tr>                                
+                                        </tbody>
+                                    </table> 
+                                </div>
+                             <aura:if isTrue="{!!v.isOldScenario}">
+                                <div class="slds-form-element slds-size_1-of-2"  >
+                             <aura:if isTrue="{!v.isTraditional}"  > 
+                                <table class=" slds-table_cell-buffer" ID="CashFlowTable" style=""  >
+                                    <thead style="border:0px solid black;">
+                                        <th colspan="2" style="padding-left:1.5rem;background: #FFF;padding:.5em;text-align:left;white-space:nowrap;">
+                                            <div class="customFont22">
+                                            Cash Flow Savings
+                                                </div>
+                                        </th>
+                                    </thead>
+                                    <tbody>                               
+                                        
+                                        <tr>
+                                            <td data-label="1CF">
+                                                <div class="slds-truncate customFont161">
+                                                    <b>
+                                                    1 Year Cash Flow Savings
+                                                    </b></div>
+                                            </td>
+                                            <td data-label="1CF">
+                                                <div class="slds-truncate  slds-text-align_right customFont161">
+                                                    <lightning:formattedNumber value="{!v.CF1MA}" style="currency" />                                            
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>                                    
+                                            <td data-label="2NDCF">
+                                                <div class="slds-truncate customFont161">
+                                                    <b>
+                                                    5 Years Cash Flow Savings
+                                                    </b></div>
+                                            </td>
+                                            <td data-label="2NDCF">
+                                                <div class="slds-truncate slds-text-align_right customFont161">
+                                                    <lightning:formattedNumber value="{!v.CF5MA}" style="currency" />
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>                                    
+                                            <td data-label="2NDCF">
+                                                <div class="slds-truncate customFont161">
+                                                    <b>
+                                                    10 Years Cash Flow Savings
+                                                    </b></div>
+                                            </td>
+                                            <td data-label="3NDCF">
+                                                <div class="slds-truncate slds-text-align_right customFont161">
+                                                    <lightning:formattedNumber value="{!v.CF10MA}" style="currency" />
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                       
+                                        <tr>
+                                            <td data-label="OCF">
+                                                <div class="slds-truncate"><b>
+                                                    {!v.CFRMCF} </b></div>
+                                            </td>
+                                            <td data-label="OCF">
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    <lightning:formattedNumber value="{!v.CFRMACF}" style="currency" />
+                                                    
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table> 
+                                </aura:if>
+                            </div>
+                            </aura:if>
+                                <!-- for old scenario-->
+                                <aura:if isTrue="{!v.isOldScenario}">
+                          
+ <div class="slds-form-element slds-size_1-of-2"  >                        
+                                    <table class=" slds-table_cell-buffer" ID="CashFlowTable" style=""  >
+                                        <thead style="border:0px solid black;">
+                                            <th colspan="2" CLASS="slds-cell-wrap" style="    padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+                                                Cash Flow Savings
+                                            </th>
+                                        </thead>
+                                        <tbody>  
+                                            <tr>
+                                                <td data-label="CFS">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            1 Year Cash Flow Savings
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="CFS">
+                                                    <div class="slds-truncate  slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.CF12MA}" style="currency" />                                            
+                                                    </div>
+                                                </td>                                    
+                                            </tr>
+                                            <tr>                                    
+                                                <td data-label="CFS">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            {!v.secMN} Years Cash Flow Savings
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="CFS">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.CF60MA}" style="currency" />
+                                                    </div>
+                                                </td>                                    
+                                            </tr>
+                                            <tr>
+                                                <td data-label="CFS">
+                                                    <div class="slds-truncate slds-cell-wrap">
+                                                        <b>
+                                                            {!v.CFRMCF}
+                                                        </b>
+                                                    </div>
+                                                </td>
+                                                <td data-label="CFS">
+                                                    <div class="slds-truncate slds-text-align_right slds-cell-wrap">
+                                                        <lightning:formattedNumber value="{!v.CFRMACF}" style="currency" />
+                                                    </div>
+                                                </td>                                    
+                                            </tr>                                
+                                        </tbody>
+                                    </table>
+                                </div>
+								</aura:if>
+                                                    </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <DIV ID="GRAs" style="display:none">            
+                    <div>                
+                        <div class="slds-text-heading--medium1 loc1" >
+                            <h2 style="color: #2081bf; !important;margin-bottom: 0em;">Line of Credit</h2>
+                            
+                        </div>
+                        <canvas aura:id="chart" height="380"></canvas>
+                    </div> 
+                </DIV>       
+            </div>  
+            <div id="CashFlows"  style="display:none">
+                <div>
+                    <fieldset class="slds-form-element">                    
+                        <div class="slds-form-element__group" style="display:none">
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-1">
+                                    <div class="slds-text-heading--medium1 loc1" >
+                                        <h2 style="color: #2081bf; !important;margin-bottom: 0em;">
+                                            Cashflow
+                                        </h2>                    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-1" >  
+                                    <div class="slds-size_1-of-2">                                
+                                        <canvas aura:id="chart1"    ></canvas>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div style="margin-top:1%" class="slds-form-element slds-size_2-of-2">
+                                <p>    *Please consult your financial advisor.</p>
+                                <p>**This scenario is for our annual adjustable HECM Line of Credit and is based on the values you have provided and the 1-Year LIBOR index as of {!v.libor}. The index can change at any time. The Annual Percentage Rate (APR) is {!v.apr_is}%. The estimated closing costs include an origination fee and there is a 2% MIP fee which is paid to FHA.
+                                    The unused line of credit funds will compound at the current market growth rate throughout the life of the loan. Results may vary. The interest rate is variable and may change subject to a 2% limit at any one time and it will never increase by more than 5% (Lifetime cap).
+                                    We used Moody’s Analytics to derive the future interest rates and home price appreciation.</p>
+                            </div>
+                            <br/>
+                        </div>
+                        <aura:if isTrue="{!!v.isConveted}">
+                            <button class="slds-button slds-button_brand" onclick="{!c.Start_newloan}">Start A New Loan</button>
+                            <span id="requestbtn">&nbsp;&nbsp;&nbsp;
+                                <lightning:button aura:id="outputButton1" variant="brand" 
+                                                  label="Request Scenario Package" 
+                                                  onclick="{!c.sendmailrequest}" class="e_btn senario_button" /> </span>&nbsp;
+                            
+                        </aura:if>
+                        
+                        <aura:if isTrue="{!v.isConveted}">
+                            <p><h4>This scenario already Converted.</h4></p>
+                        </aura:if>
+                        
+                    </fieldset>
+                </div>
+            </div>               
+        </div>
+        <aura:if isTrue="{!v.IsSpinner}">
+            <div class="slds-spinner_container">
+                <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>        
+        </aura:if>  
+        <div id="spinner" style="display:none"><div class="slds-spinner_container">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+            </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!v.showLoan}">
+        {!v.body}
+    </aura:if>    
+    <c:Strat_newloanFromSavedsenarioPopup ApplicationDate="{!v.ApplicationDate}" displayTab="{!v.displayTab}" showLoanId="{!v.showLoanId}" showLoan="{!v.showLoan}" render_popup="{!v.render_popup}" senario_id="{!v.ScenarioID}" LRateType="{!v.LRateType}" LMortgageAppliedFor="{!v.LMortgageAppliedFor}"/>
+</aura:component>

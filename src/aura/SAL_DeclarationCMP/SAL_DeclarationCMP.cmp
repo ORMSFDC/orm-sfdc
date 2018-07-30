@@ -1,0 +1,438 @@
+<aura:component controller="sal_decalarationcontroller" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="NewDeclaration" type="Declaration__c" default="{'sobjectType':'Declaration__c'}" />
+    <aura:attribute name="clientList" type="List" />
+    <aura:attribute name="clientRecords" type="Object" />
+    <aura:attribute name="LoanId" type="String" />
+    <aura:attribute name="DecLoanId" type="String" />
+    <aura:attribute name="nextOpt" type="boolean" />
+    <aura:attribute name="currentOpt" type="boolean" />
+    <aura:attribute name="prevOpt" type="boolean" />
+    <aura:attribute name="showEthnicity" type="boolean" default="true" />
+    <aura:attribute name="showRemarks" type="boolean" default="true" />
+    <aura:attribute name="showRaceNative" type="boolean" default="true" />
+    <aura:attribute name="showAsian" type="boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showSuccess" type="boolean" default="false"/>
+    <aura:attribute name="showWarning" type="boolean" default="false"/>
+    <aura:attribute name="showPrimaryRsdnce" type="boolean" default="false"/>
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>    
+    <aura:attribute name="skipValidate" type="boolean" default="false"/>
+    <aura:attribute name="incompleteSection" type="boolean" default="false"/>
+    <aura:attribute name="ClientID" type="String" default="null" />
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'Yes', 'value': 'Yes'},
+                                                        {'label': 'No', 'value': 'No'}
+                                                        ]"/>
+    <aura:attribute name="value" type="String" default="No"/>
+    <aura:attribute name="itemsClicked" type="String" />
+    
+    <fieldset class="slds-box slds-theme--default slds-container--large">
+        <div class="slds-form slds-form_compound">
+            <h4>Client(s)</h4>            
+        </div>
+        <div>
+            <br></br>
+        </div>
+        <div id="Clientdetails">
+            <div class="slds-form-element__row">
+                <div class="slds-size_1-of-1">
+                    <table class="slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr style="background-color:#2877bd">
+                                <th style="color:white">Client Name</th>
+                                <th style="color:white;text-align:center">Client Declaration Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.clientRecords}" var="pOptions">
+                                <tr class="{!'each_row row_'+ pOptions.ClientId}">
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Click to View Declaration" id="{!pOptions.ClientId}" onclick="{!c.onClientSelectChange}" style="cursor:pointer;text-decoration:underline;">
+                                            <span id="{!pOptions.ClientId}" class="slds-icon_container--circle">
+                                                {!pOptions.ClientFullName}
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td data-label="Status" style="text-align:center">
+                                        <aura:if isTrue="{!pOptions.ClientDeclarationStatus}">
+                                            <lightning:icon title="Accepted" iconName="action:approval" class="TransperantIconGreen TransperantIconGreen1" size="xx-small" />
+                                            <aura:set attribute="else">
+                                                <lightning:icon title="Pending" iconName="action:close" class="TransperantIconRed TransperantIconRed1" size="xx-small" />
+                                            </aura:set>
+                                        </aura:if>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br></br>
+        </div>
+        <div id="declrbyclients" style="color:red;"></div>
+        <div id="formdetails" style="display:none">
+            <div id = "lblQuestionA" class="slds-size_1-of-1 LabelDiv">                
+                a. Are there any outstanding judgments against you?<span title="required">*</span>                
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_a"
+                                      name="radioButtonGroup_a"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Outstanding_Judgments__c }"
+                                      onchange="{! c.onAIfieldsChange }" />                
+            </div>
+            <label id="lbl_group_a" class="lblRemarkStyle"></label>
+            <br/>
+            <div id="lblQuestionB" class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    b. Are you a party to a lawsuit?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_b"
+                                      name="radioButtonGroup_b"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Lawsuit__c }"
+                                      onchange="{! c.onAIfieldsChange }"  />    
+            </div>
+            <label id="lbl_group_b" class="lblRemarkStyle"></label>            
+            <br/>
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    c. Are you presently delinquent or in default on any Federal debt or any other loan, mortgage, financial obligation, bond, or loan guarantee?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_c"
+                                      name="radioButtonGroup_c"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Delinquent__c }"
+                                      onchange="{! c.delinquent }"  />
+                <label id="lbl_group_c" class="lblRemarkStyle"></label>
+                <br/>                
+            </div>            
+            <div id="reason_group_c" style="display:none;">                
+                <ui:inputDate aura:id="dateFieldcc"
+                              class="slds-input Datecontrolwidth"
+                              labelClass="boldLabel"
+                              label="Date of the Debt" 
+                              value="{!v.NewDeclaration.Delinquent_Date_of_the_Debt__c}" required="true"
+                              format="MM/dd/yyyy" displayDatePicker="true"  />
+                <div id="dateFieldccError" class="DivStyle"></div>
+                <br/>
+                <ui:inputText aura:id="nameadrcc" required="true" label="&nbsp;Name &nbsp;" value="{!v.NewDeclaration.Delinquent_Name__c}" />
+                <div id="nameadrccError" class="DivStyle"></div>
+                <br/>
+                <ui:inputText aura:id="adrcc" required="true" label="&nbsp;Address &nbsp;" 
+                              value="{!v.NewDeclaration.Delinquent_Address__c}" />
+                <div id="adrccError" class="DivStyle"></div>
+                <br/>
+                <ui:inputText aura:id="fhavacasecc" required="true" label="&nbsp;FHA/VA Case &nbsp;" value="{!v.NewDeclaration.Delinquent_FHA_VA_Case__c}" />
+                <div id="fhavacaseccError" class="DivStyle"></div>
+                <br/>
+                <ui:inputText aura:id="reasoncc" required="true" label="&nbsp;Reason for Default &nbsp;" value="{!v.NewDeclaration.Delinquent_Reason__c}" />
+                <div id="reasonccError" class="DivStyle"></div>
+                <br/>
+            </div> 
+            <!-- Code changes started for Story No:- ORMSFDC-1258 by Developer3-->
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    d. Are you required to bring Cash to Close?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_d"
+                                      name="radioButtonGroup_d"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.CashtoClose__c }"
+                                      onchange="{! c.cashtoclose }" />
+            </div>
+            <label id="lbl_group_d" class="lblRemarkStyle"></label>
+            <div id="reason_group_d" style="display:none">
+                <div class="slds-size_1-of-1 LabelDiv">                    
+                    <div>
+                        Did you borrow the money?
+                    </div>
+                </div>
+                <div class="slds-size_1-of-2">
+                    <lightning:radioGroup aura:id="reason_d"
+                                          name="radioButtonGroupReason_d"
+                                          options="{! v.options }"
+                                          value="{!v.NewDeclaration.CashtoClose_Borrowed_Money__c }"
+                                          onchange="{! c.borrowthemoney }"/>
+                </div>
+                <label id="lbl_reason_d" class="lblRemarkStyle"></label>
+            </div>
+            <!-- End of Code change -->
+            <br/>
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    e. Are you a co-maker or endorser on a note?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_e"
+                                      name="radioButtonGroup_e"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Endorser__c }"
+                                      onchange="{! c.onAIfieldsChange }" />
+            </div>
+            <label id="lbl_group_e" class="lblRemarkStyle"></label>
+            <br/>
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    f. Are you a U.S. citizen?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_f"
+                                      name="radioButtonGroup_f"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.US_Citizen__c }"
+                                      onchange="{! c.onAIfieldsChange }" />
+            </div>
+            <label id="lbl_group_f" class="lblRemarkStyle"></label>
+            <br/>
+            <div class="slds-size_1-of-1 LabelDiv">                
+                g. Are you a permanent resident alien?<span title="required">*</span>                
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_g"
+                                      name="radioButtonGroup_g"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Permanent_Resident__c }"
+                                      onchange="{! c.onAIfieldsChange }"
+                                      />
+            </div>
+            <label id="lbl_group_g" class="lblRemarkStyle"></label>
+            <br/>
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    h. Do you intend to occupy the property as your primary residence?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_h"
+                                      name="radioButtonGroup_h"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Primary_Residence__c }"
+                                      onchange="{! c.onAIfieldsChange }"
+                                      />                
+            </div>
+            <label id="lbl_group_h" class="lblRemarkStyle"></label>
+            <div>
+                <aura:if isTrue="{!v.showPrimaryRsdnce}">                            
+                    <ui:message title="Warning" severity="warning" closable="false">
+                        You cannot proceed unless you occupy the property as your primary residence.
+                    </ui:message>  
+                    <br/>
+                </aura:if>                
+            </div>            
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    i. Have you filed for any bankruptcy that has not yet been resolved?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_i"
+                                      name="radioButtonGroup_i"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Bankruptcy__c }"
+                                      onchange="{! c.onAIfieldsChange }"
+                                      />
+            </div>
+            <label id="lbl_group_i" class="lblRemarkStyle"></label>
+            <br/>
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    j. Do you intend to use the Reverse Mortgage to purchase or invest in financial products such as Insurance, Mutual Funds or annuities?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_j"
+                                      name="radioButtonGroup_j"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.ReverseMortgage__c }"
+                                      onchange="{! c.ReverseMortgage }"
+                                      />
+            </div>
+            <label id="lbl_group_j" class="lblRemarkStyle"></label>
+            <br/>
+            <div id="reason_group_j" style="display:none">
+                <ui:inputText aura:id="finproductjj" required="true" label=" Name of Financial Product" value="{!v.NewDeclaration.ReverseMortgage_finproduct__c}" />
+                <div id="finproductjjError" class="DivStyle"></div>
+                <br/>
+                <ui:inputCurrency aura:id="costjj" required="true" label="Cost to Purchase or Invest " value="{!v.NewDeclaration.ReverseMortgage_Cost__c}" />
+                <div id="costjjError" class="DivStyle"></div>
+                <br/>
+            </div>            
+            <div class="slds-size_1-of-1 LabelDiv" >
+                <div>
+                    k. Do you have an existing FHA insured loan?<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_k"
+                                      name="radioButtonGroup_k"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.FHA_Insured_Loan__c }"
+                                      onchange="{! c.FHAInsuredLoan }"
+                                      />
+            </div>
+            <label id="lbl_group_k" class="lblRemarkStyle"></label>
+            <div id="FHADetails" style="display:none;">                
+                <ui:inputText aura:id="propadr" required="true" label="&nbsp;Property Address &nbsp;" value="{!v.NewDeclaration.FHA_Property_Address__c}" />
+                <div id="propadrError" class="DivStyle"></div>
+                <br/>
+                <ui:inputText aura:id="acno" required="true" label="&nbsp;Account Number &nbsp;" value="{!v.NewDeclaration.FHA_Acc_No__c}" />
+                <div id="acnoError" class="DivStyle"></div>
+                <br/>
+                <ui:inputText aura:id="creditorname" required="true" label="&nbsp;Name of Creditor &nbsp;" value="{!v.NewDeclaration.FHA_Creditor__c}" />
+                <div id="creditornameError" class="DivStyle"></div>
+                <br/>
+                <ui:inputCurrency aura:id="amount" required="true" label="&nbsp;Amount of Mortgages and Liens &nbsp;" value="{!v.NewDeclaration.FHA_Amount__c}" />
+                <div id="amountError" class="DivStyle"></div>
+                <br/>
+                <ui:inputCurrency aura:id="unpaidloan" required="true" label="&nbsp;Unpaid Loan Balance &nbsp;" value="{!v.NewDeclaration.FHA_Unpaid_Loan__c}" />
+                <div id="unpaidloanError" class="DivStyle"></div>
+                <br/>
+            </div>
+            
+            <div id="DivshowRemarks" class="slds-size_1-of-2 ">
+                
+                <div class="LabelDiv" >
+                    Additional Remarks
+                </div>
+                <div>
+                    <ui:inputTextArea aura:id="DeclComments" label="" value="{!v.NewDeclaration.Declaration_Remarks__c}" rows="3" class="textAreaStyle"/>
+                </div>
+                <div aura:id="RemarksError" id="RemarksError" class="DivStyle Hide"></div>
+            </div>
+            <br/>
+            <!--Code Added/Changed by Dev4 for ORMSFDC-1432-->
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    l. Ethnicity<span title="required">*</span>
+                    
+                </div>
+            </div>
+            <div id="showEthnicity" class="slds-size_1-of-2">
+                <ui:inputSelect aura:id="group_mainEthnicity" value="{!v.NewDeclaration.Ethnicity__c}">
+                    <ui:inputSelectOption value="true" text="" label="Select Ethnicity" />
+                    <ui:inputSelectOption text="Hispanic or Latino" label="Hispanic or Latino" />
+                    <ui:inputSelectOption text="Not Hispanic or Latino" label="Not Hispanic or Latino" />
+                     <!--Code Added(One Field added to Dropdown) by Dev4 for ORMSFDC-1475-->
+                    <ui:inputSelectOption text="Do Not Disclose" label="Do Not Disclose" />
+                    
+                </ui:inputSelect>
+                
+                <div aura:id ="show_ethnicityError" id ="show_ethnicityError" class="DivStyle Hide"></div>
+                <br/>
+            </div>
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    Sub Ethnicity<span title="required">*</span>
+                </div>
+            </div>
+            <div id="DivshowEthnicity" class="slds-size_1-of-2">
+                <ui:inputSelect aura:id="groupSubEthnicity" value="{!v.NewDeclaration.Ethnicity_New__c}" multiple="true">
+                    <ui:inputSelectOption text="Mexican" label="Mexican" />
+                    <ui:inputSelectOption text="Puerto Rican" label="Puerto Rican" />
+                    <ui:inputSelectOption text="Cuban" label="Cuban" />
+                    <ui:inputSelectOption text="Other" label="Other" />
+                    <!--<ui:inputSelectOption text="Not Hispanic or Latino" label="Not Hispanic or Latino" />-->
+                    <ui:inputSelectOption text="Do Not Disclose" label="Do Not Disclose" />
+                </ui:inputSelect>
+                <div aura:id ="subEthnicityError" id ="subEthnicityError" class="DivStyle Hide"></div>
+                <br/>
+            </div>
+            <!--Code Ended by Dev4 for ORMSFDC-1432-->
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    m. Race<span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <ui:inputSelect label="" aura:id="group_m" value="{!v.NewDeclaration.Race__c}" multiple="true" change="{!c.changeRace}">
+                    <ui:inputSelectOption text="American Indian or Alaska Native" label="American Indian or Alaska Native" />
+                    <ui:inputSelectOption text="Asian Indian" label="Asian Indian" />
+                    <ui:inputSelectOption text="Black or African American" label="Black or African American" />
+                    <ui:inputSelectOption text="Chinese" label="Chinese" />
+                    <ui:inputSelectOption text="Filipino" label="Filipino" />
+                    <ui:inputSelectOption text="Guamanian or Chamorro" label="Guamanian or Chamorro" />
+                    <ui:inputSelectOption text="Japanese" label="Japanese" />
+                    <ui:inputSelectOption text="Korean" label="Korean" />
+                    <ui:inputSelectOption text="Native Hawaiian" label="Native Hawaiian" />
+                    <ui:inputSelectOption text="Samoan" label="Samoan" />
+                    <ui:inputSelectOption text="Vietnamese" label="Vietnamese" />
+                    <ui:inputSelectOption text="White" label="White" />
+                    <ui:inputSelectOption text="Other Asian" label="Other Asian" />
+                    <ui:inputSelectOption text="Other Pacific Islander" label="Other Pacific Islander" />
+                    <ui:inputSelectOption text="Do Not Disclose" label="Do Not Disclose" />
+                </ui:inputSelect>
+            </div>
+            <div id="group_mError" class="DivStyle"></div>
+            <br />
+            <div id="DivshowRaceNative" class="slds-size_1-of-2">
+                <div class="LabelDiv">
+                    <div>
+                        What is your principle or enrollment tribe?<span title="required">*</span>
+                    </div>
+                </div>
+                <div>
+                    <ui:inputText aura:id="EnrolledTribeText" required="true" label="" value="{!v.NewDeclaration.Enrolled_tribe__c}" />
+                    <div aura:id="EnrolledTribeError" id="EnrolledTribeError" class="DivStyle Hide"></div>
+                </div>
+                <br/>
+            </div>            
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    n. Sex <span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <ui:inputSelect multiple="true" aura:id="group_n" value="{!v.NewDeclaration.Sex_New__c}">
+                    <ui:inputSelectOption text="Male" label="Male" />
+                    <ui:inputSelectOption text="Female" label="Female" />
+                    <ui:inputSelectOption text="Client did not provide this information" label="Client did not provide this information" />
+                </ui:inputSelect>
+                <br/>
+            </div>
+            <div id="group_nError" class="DivStyle"></div>
+            <br/>
+            
+            <div id="Savebtn" style="color:White;">
+                <lightning:button label="Save" onclick="{!c.SaveDeclarations}" variant="brand" class="slds-m-top--medium" />
+            </div>
+            <br/>
+            
+            <div id="declrerror" class="DivStyle"></div>
+        </div>
+    </fieldset>
+    <div align="left"><aura:if isTrue="{!v.showError}">                            
+        <ui:message title="Error" severity="error" closable="false">
+            Please review all errors and save again.
+        </ui:message>                                
+        </aura:if>
+        <aura:if isTrue="{!v.showSuccess}">                            
+            <ui:message title="Information" severity="confirm" closable="false"> 
+                Declaration Saved Successfully.
+            </ui:message>                                
+        </aura:if>
+        <aura:if isTrue="{!v.incompleteSection}">                            
+            <ui:message title="Warning" severity="warning" closable="false">
+                Please select the client and <strong>save</strong> declarations for all clients with incomplete declarations.
+            </ui:message>                                
+        </aura:if>
+        <aura:if isTrue="{!v.showWarning}">                            
+            <ui:message title="Warning" severity="warning" closable="false">
+                Please select the client and <strong>save</strong> declarations for all clients with incomplete declarations.
+            </ui:message>                                
+        </aura:if>
+    </div>
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="previousStep" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="DeclarationNextButton" label="Next" press="{!c.next}"></ui:button>
+</aura:component>

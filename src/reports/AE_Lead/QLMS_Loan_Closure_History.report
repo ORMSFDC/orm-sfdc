@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>QLMS_AE__c.QLMS_AE__r$Name</field>
+    </columns>
+    <columns>
+        <field>QLMS_AE__c.QLMS_AE__r.Loans__r$Name</field>
+    </columns>
+    <columns>
+        <field>QLMS_AE__c.QLMS_AE__r.Loans__r$LoanStatus__c</field>
+    </columns>
+    <columns>
+        <field>QLMS_AE__c.QLMS_AE__r.Loans__r.LoanStatus__r$Name</field>
+    </columns>
+    <columns>
+        <field>QLMS_AE__c.QLMS_AE__r.Loans__r.LoanStatus__r$CreatedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>QLMS_AE__c.QLMS_AE__r$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QLMS_AE__c.QLMS_AE__r.Loans__r.LoanStatus__r$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed - Awaiting Funding</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>QLMS_AE__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>QLMS Loan Closure History</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>QLMS_AE_Loan__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>QLMS_AE__c.QLMS_AE__r.Loans__r.LoanStatus__r$CreatedDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>QLMS_AE__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

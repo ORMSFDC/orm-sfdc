@@ -1,0 +1,4471 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>AddToCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>EnableCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>EnablePartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>EnableSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>ListClean</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Merge</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>NewContact</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SmsHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Contact_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides><actionOverrides>
+        <actionName>ViewCustomerPortal</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>ViewPartnerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>ViewSelfService</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Never Active</fullName>
+                    <default>false</default>
+                    <label>Never Active</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Previously Active</fullName>
+                    <default>false</default>
+                    <label>Previously Active</label>
+                </value>
+                <value>
+                    <fullName>Engaged</fullName>
+                    <default>false</default>
+                    <label>Engaged</label>
+                </value>
+                <value>
+                    <fullName>Motivated</fullName>
+                    <default>false</default>
+                    <label>Motivated</label>
+                </value>
+                <value>
+                    <fullName>Prime</fullName>
+                    <default>false</default>
+                    <label>Prime</label>
+                </value>
+                <value>
+                    <fullName>Napping</fullName>
+                    <default>false</default>
+                    <label>Napping</label>
+                </value>
+                <value>
+                    <fullName>Sleeping</fullName>
+                    <default>false</default>
+                    <label>Sleeping</label>
+                </value>
+                <value>
+                    <fullName>Dormant</fullName>
+                    <default>false</default>
+                    <label>Dormant</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Trained</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Trained</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Approval_Sub_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Sub-Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Denied by Credit Risk</fullName>
+                    <default>false</default>
+                    <label>Denied by Credit Risk</label>
+                </value>
+                <value>
+                    <fullName>Terminated (Production)</fullName>
+                    <default>false</default>
+                    <label>Terminated (Production)</label>
+                </value>
+                <value>
+                    <fullName>Terminated (Leadership Request)</fullName>
+                    <default>false</default>
+                    <label>Terminated (Leadership Request)</label>
+                </value>
+                <value>
+                    <fullName>Terminated (DTRT)</fullName>
+                    <default>false</default>
+                    <label>Terminated (DTRT)</label>
+                </value>
+                <value>
+                    <fullName>Terminated (Performance)</fullName>
+                    <default>false</default>
+                    <label>Terminated (Performance)</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn by Partner</fullName>
+                    <default>false</default>
+                    <label>Withdrawn by Partner</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Approved_Date__c</fullName>
+        <description>ORMSFDC-1222</description>
+        <externalId>false</externalId>
+        <label>Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Assigned_Credit_Risk_Analyst__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Assigned_Credit_Risk_Analyst__r.FirstName + ' ' +  Account.Assigned_Credit_Risk_Analyst__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned Credit Risk Analyst</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Assigned_PCS__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Assigned_PCS__r.FirstName + ' ' + Account.Assigned_PCS__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned PCS</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>AssistantName</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>AssistantPhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>Birthdate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>Cell__c</fullName>
+        <externalId>false</externalId>
+        <label>Cell</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields><fields>
+        <fullName>Check_to_create_a_Prospective_User_Login__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to create a Prospective Portal User login</inlineHelpText>
+        <label>Check to create a Prospective User Login</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields><fields>
+        <fullName>Contact_Image__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Image</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields><fields>
+        <fullName>Contact_NMLS__c</fullName>
+        <externalId>false</externalId>
+        <label>NMLS ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Corporate_Resolution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Corporate Resolution</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Date_of_Board_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Board Approval</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Days_since_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY()-Approved_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days since Approval</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Department</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>DoNotCall</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>Email</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>Ext__c</fullName>
+        <externalId>false</externalId>
+        <label>Ext.</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Fax</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>HasOptedOutOfFax</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>HomePhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>How_did_you_hear_about_us__c</fullName>
+        <externalId>false</externalId>
+        <label>How did you hear about us?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>An email from QLMS</fullName>
+                    <default>false</default>
+                    <label>An email from QLMS</label>
+                </value>
+                <value>
+                    <fullName>A Flyer about QLMS</fullName>
+                    <default>false</default>
+                    <label>A Flyer about QLMS</label>
+                </value>
+                <value>
+                    <fullName>Someone in the industry</fullName>
+                    <default>false</default>
+                    <label>Someone in the industry</label>
+                </value>
+                <value>
+                    <fullName>Through Comergence</fullName>
+                    <default>false</default>
+                    <label>Through Comergence</label>
+                </value>
+                <value>
+                    <fullName>A pricing tool (Loan Sifter)</fullName>
+                    <default>false</default>
+                    <label>A pricing tool (Loan Sifter)</label>
+                </value>
+                <value>
+                    <fullName>An article or a blog</fullName>
+                    <default>false</default>
+                    <label>An article or a blog</label>
+                </value>
+                <value>
+                    <fullName>Twitter</fullName>
+                    <default>false</default>
+                    <label>Twitter</label>
+                </value>
+                <value>
+                    <fullName>Linkedin</fullName>
+                    <default>false</default>
+                    <label>Linkedin</label>
+                </value>
+                <value>
+                    <fullName>Trade Magazine</fullName>
+                    <default>false</default>
+                    <label>Trade Magazine</label>
+                </value>
+                <value>
+                    <fullName>Facebook</fullName>
+                    <default>false</default>
+                    <label>Facebook</label>
+                </value>
+                <value>
+                    <fullName>Web Search</fullName>
+                    <default>false</default>
+                    <label>Web Search</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Individual_Lead_source__c</fullName>
+        <externalId>false</externalId>
+        <label>Individual Lead source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Referral</fullName>
+                    <default>false</default>
+                    <label>Referral</label>
+                </value>
+                <value>
+                    <fullName>TradeShow</fullName>
+                    <default>false</default>
+                    <label>TradeShow</label>
+                </value>
+                <value>
+                    <fullName>QLMS Website</fullName>
+                    <default>false</default>
+                    <label>QLMS Website</label>
+                </value>
+                <value>
+                    <fullName>Internet search</fullName>
+                    <default>false</default>
+                    <label>Internet search</label>
+                </value>
+                <value>
+                    <fullName>Networking</fullName>
+                    <default>false</default>
+                    <label>Networking</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>Purchased list</fullName>
+                    <default>false</default>
+                    <label>Purchased list</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Individual_lead_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Individual lead Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Processing</fullName>
+                    <default>false</default>
+                    <label>Processing</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Application Sent</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Application Sent</label>
+                </value>
+                <value>
+                    <fullName>Converted</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Converted</label>
+                </value>
+                <value>
+                    <fullName>Hot</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Hot</label>
+                </value>
+                <value>
+                    <fullName>Not Qualified</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Not Qualified</label>
+                </value>
+                <value>
+                    <fullName>Warm</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Warm</label>
+                </value>
+                <value>
+                    <fullName>cold</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>cold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Is_this_user_an_Owner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is this user an Owner?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Jigsaw</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>LastCURequestDate</fullName>
+    </fields><fields>
+        <fullName>LastCUUpdateDate</fullName>
+    </fields><fields>
+        <fullName>Last_Activity_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastActivityDate</formula>
+        <label>Last Activity Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Last_Login_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Login Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields><fields>
+        <fullName>Last_Significant_Contact_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Significant Contact Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>LeadSource</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Loan_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan Officer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Contacts</relationshipLabel>
+        <relationshipName>Contacts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>MailingAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>MailingCity__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>MailingPostalCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing Zip/Postal Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>MailingState__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing State/Province</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>MailingStreet__c</fullName>
+        <externalId>false</externalId>
+        <label>Mailing Street</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Mailing_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.BillingStreet + ' ' +  Account.BillingCity + ' ' +  Account.BillingState + ' ' +  Account.BillingPostalCode + ' ' +  Account.BillingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mailing Address</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>MobilePhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>NMLS_ID_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>NMLS ID Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>NMLS_ID_Issued_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>NMLS ID Issued Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields><fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>FirstName + ' ' + LastName</formula>
+        <label>Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Nickname__c</fullName>
+        <externalId>false</externalId>
+        <label>Nickname</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ORM_Account_Executive_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.ORM_Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ORM Account Executive Email</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ORM_Account_Executive_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Account_Executive_Name__r.FirstName + ' ' +  Account.Account_Executive_Name__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ORM Account Executive Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ORM_Account_Executive_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.ORM_Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ORM Account Executive Title</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ORM_Anniversary__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Days_since_Approval__c = 365, "1 year", 
+IF( Days_since_Approval__c = 730, "2 year", 
+IF( Days_since_Approval__c = 1095, "3 year", 
+IF( Days_since_Approval__c = 1460, "4 year", 
+IF( Days_since_Approval__c = 1826, "5 year", 
+IF( Days_since_Approval__c = 2191, "6 year", 
+IF( Days_since_Approval__c = 2556, "7 year", 
+IF( Days_since_Approval__c = 2921, "8 year", 
+IF( Days_since_Approval__c = 3287, "9 year", 
+IF( Days_since_Approval__c = 3652, "10 year", 
+IF( Days_since_Approval__c = 4017, "11 year", 
+IF( Days_since_Approval__c = 4382, "12 year", 
+IF( Days_since_Approval__c = 4748, "13 year", 
+IF( Days_since_Approval__c = 5113, "14 year", 
+IF( Days_since_Approval__c = 5478, "15 year", 
+IF( Days_since_Approval__c = 5843, "16 year", 
+IF( Days_since_Approval__c = 6209, "17 year", 
+IF( Days_since_Approval__c = 6574, "18 year", 
+IF( Days_since_Approval__c = 6939, "19 year", 
+IF( Days_since_Approval__c = 7304, "20 year", 
+"" 
+))))))))))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ORM Anniversary</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Office_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Office Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Phone</type>
+    </fields><fields>
+        <fullName>OtherAddress</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>OtherPhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Ownership_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <label>Ownership Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>PPU_Loan_Production_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>PPU Loan Production Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New Portal User/Never Engaged</fullName>
+                    <default>false</default>
+                    <label>New Portal User/Never Engaged</label>
+                </value>
+                <value>
+                    <fullName>Aged Partner/Never Engaged</fullName>
+                    <default>false</default>
+                    <label>Aged Partner/Never Engaged</label>
+                </value>
+                <value>
+                    <fullName>Producing</fullName>
+                    <default>false</default>
+                    <label>Producing</label>
+                </value>
+                <value>
+                    <fullName>Pre-Dormant</fullName>
+                    <default>false</default>
+                    <label>Pre-Dormant</label>
+                </value>
+                <value>
+                    <fullName>Dormant</fullName>
+                    <default>false</default>
+                    <label>Dormant</label>
+                </value>
+                <value>
+                    <fullName>Aged Partner</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Aged Partner</label>
+                </value>
+                <value>
+                    <fullName>New Partner</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>New Partner</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>PPU_Total_Loan_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>PPU Total Loan Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Producing</fullName>
+                    <default>false</default>
+                    <label>Producing</label>
+                </value>
+                <value>
+                    <fullName>Pre-Dormant</fullName>
+                    <default>false</default>
+                    <label>Pre-Dormant</label>
+                </value>
+                <value>
+                    <fullName>Dormant</fullName>
+                    <default>false</default>
+                    <label>Dormant</label>
+                </value>
+                <value>
+                    <fullName>Never Engaged</fullName>
+                    <default>false</default>
+                    <label>Never Engaged</label>
+                </value>
+                <value>
+                    <fullName>Engaged</fullName>
+                    <default>false</default>
+                    <label>Engaged</label>
+                </value>
+                <value>
+                    <fullName>Motivated</fullName>
+                    <default>false</default>
+                    <label>Motivated</label>
+                </value>
+                <value>
+                    <fullName>Committed</fullName>
+                    <default>false</default>
+                    <label>Committed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Partner_Denial_Reasons__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Denial Reasons</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Financial</fullName>
+                    <default>false</default>
+                    <label>Financial</label>
+                </value>
+                <value>
+                    <fullName>Reputation Report</fullName>
+                    <default>false</default>
+                    <label>Reputation Report</label>
+                </value>
+                <value>
+                    <fullName>MARI Report</fullName>
+                    <default>false</default>
+                    <label>MARI Report</label>
+                </value>
+                <value>
+                    <fullName>Exclusionary List</fullName>
+                    <default>false</default>
+                    <label>Exclusionary List</label>
+                </value>
+                <value>
+                    <fullName>Licensing</fullName>
+                    <default>false</default>
+                    <label>Licensing</label>
+                </value>
+                <value>
+                    <fullName>Resume</fullName>
+                    <default>false</default>
+                    <label>Resume</label>
+                </value>
+                <value>
+                    <fullName>Company Formation</fullName>
+                    <default>false</default>
+                    <label>Company Formation</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Phone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>Potential_Portal_User_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Potential Portal User Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ready</fullName>
+                    <default>true</default>
+                    <label>Ready</label>
+                </value>
+                <value>
+                    <fullName>Training In Process</fullName>
+                    <default>false</default>
+                    <label>Training In Process</label>
+                </value>
+                <value>
+                    <fullName>Complete/Approved</fullName>
+                    <default>false</default>
+                    <label>Complete/Approved</label>
+                </value>
+                <value>
+                    <fullName>Complete/Denied</fullName>
+                    <default>false</default>
+                    <label>Complete/Denied</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Closing_Volume_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Closing Volume Purchase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Closing_Volume_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Closing Volume Refi</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Closing_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Closing Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Closings_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Closings Purchase</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Closings_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Closings Refi</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Closings__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Closings</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Folder_Volume_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Folder Volume Purchase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Folder_Volume_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Folder Volume Refi</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Folder_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Folder Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Folders_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Folders Purchase</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Folders_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Folders Refi</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_12_Month_Folders__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 12 Month Folders</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Closing_Volume_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Closing Volume Purchase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Closing_Volume_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Closing Volume Refi</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Closing_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Closing Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Closings_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Closings Purchase</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Closings_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Closings Refi</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Closings__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Closings</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Folder_Volume_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Folder Volume Purchase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Folder_Volume_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Folder Volume Refi</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Folder_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Folder Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Folders_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Folders Purchase</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Folders_Refi__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Folders Refi</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_6_Month_Folders__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS 6 Month Folders</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_Account_Executive__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.QLMS_Account_Executive__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>QLMS Account Executive</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_Contact_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS Contact ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>QLMS_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(QLMS_Account_Executive__c , FIND(" ", QLMS_Account_Executive__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>QLMS First Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Related_Branch__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Branch</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Branches__c.Business_Partners_Acc__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.AccountId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Branches__c</referenceTo>
+        <relationshipLabel>Business Individuals</relationshipLabel>
+        <relationshipName>Business_Individuals</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ReportsToId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>SSN__c</fullName>
+        <externalId>false</externalId>
+        <label>SSN</label>
+        <length>15</length>
+        <maskChar>X</maskChar>
+        <maskType>ssn</maskType>
+        <required>false</required>
+        <type>EncryptedText</type>
+    </fields><fields>
+        <fullName>Secondary_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Source_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Source Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Time_Zone__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( ISBLANK(Office_Phone__c),"--", 
+
+if( CONTAINS("206:209:213:253:310:323:360:408:415:425:503:509:510:530:559:562:604:619:626:650:661:702:707:714:760:775:778:805:818:831:858:867:909:916:925:949:951:971:236:250:604:778:867", left(SUBSTITUTE( Office_Phone__c , "(", ""),3)), 
+"Pacific", 
+
+if( 
+CONTAINS("208:250:303:307:385403:406:435:480:505:520:602:623:719:720:780:801:928:970:403:587:780", left(SUBSTITUTE( Office_Phone__c , "(", ""),3)),"Mountain", 
+
+if( 
+CONTAINS("204:205:210:214:217:218:224:225:228:251:254:256:262:270:281:306:308:309:312:314:316:318:319:320:325:334:337:361:402:405:409:414:417:430:432:469:479:501:504:507:512:515:563:573:580:601:605:608:612:615:618:620:630:636:641:651:660:662:682:708:712:713:715:731:763:769:773:785:806:815:816:817:830:832:847:901:903:913:915:918:920:931:936:940:952:956:972:979:985:204:306:431:639:807", left(SUBSTITUTE( Office_Phone__c , "(", ""),3)),"Central", 
+
+if( 
+CONTAINS("201:202:203:207:212:215:216:219:226:229:231:234:239:240:248:252:267:269:276:289:301:302:304:305:313:315:321:330:336:339:345:347:351:352:386:404:407:410:412:416:418:419:434:438:440:443:450:470:475:478:484:502:508:513:514:516:517:518:519:540:551:561:567:570:571:585:586:603:606:607:609:610:613:614:616:617:631:646:647:649:678:703:704:705:706:716:717:718:724:727:732:734:740:754:757:770:772:774:781:786:802:803:804:810:813:814:819:828:835:843:845:848:856:857:859:860:862:863:864:865:876:878:904:905:908:910:912:914:917:919:937:941:947:954:959:973:978:980:226:249:289:343:365:416:437:438:450:514:519:579:581:613:647:705:819:873:905", left(SUBSTITUTE( Office_Phone__c , "(", ""),3)),"Eastern", 
+
+if( 
+CONTAINS("506:709:902",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Atlantic", 
+
+if( 
+CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Other" 
+)))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Zone</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Title</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields><fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Principal</fullName>
+                    <default>false</default>
+                    <label>Principal</label>
+                </value>
+                <value>
+                    <fullName>Loan Officer</fullName>
+                    <default>false</default>
+                    <label>Loan Officer</label>
+                </value>
+                <value>
+                    <fullName>Processor</fullName>
+                    <default>false</default>
+                    <label>Processor</label>
+                </value>
+                <value>
+                    <fullName>Branch Manager</fullName>
+                    <default>false</default>
+                    <label>Branch Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Manager</label>
+                </value>
+                <value>
+                    <fullName>Secondary Market</fullName>
+                    <default>false</default>
+                    <label>Secondary Market</label>
+                </value>
+                <value>
+                    <fullName>Post close contact</fullName>
+                    <default>false</default>
+                    <label>Post close contact</label>
+                </value>
+                <value>
+                    <fullName>Assistant Loan Officer</fullName>
+                    <default>false</default>
+                    <label>Assistant Loan Officer</label>
+                </value>
+                <value>
+                    <fullName>Processing manager</fullName>
+                    <default>false</default>
+                    <label>Processing manager</label>
+                </value>
+                <value>
+                    <fullName>Third party closer</fullName>
+                    <default>false</default>
+                    <label>Third party closer</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Billing Contact</fullName>
+                    <default>false</default>
+                    <label>Billing Contact</label>
+                </value>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>QL Banker</fullName>
+                    <default>false</default>
+                    <label>QL Banker</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Username__c</fullName>
+        <externalId>false</externalId>
+        <label>Username</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>userLoginId__c</fullName>
+        <externalId>false</externalId>
+        <label>userLoginId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>false</enableHistory><externalSharingModel>ControlledByParent</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><searchLayouts>
+        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE1</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE3</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE4</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE5</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.PHONE6</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.PHONE1</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.EMAIL</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel><listViews>
+        <fullName>AllContacts</fullName>
+        <columns>ORM_Account_Executive_Name__c</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.RECORDTYPE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>evink</value>
+        </filters>
+        <label>All Contacts</label>
+    </listViews><listViews>
+        <fullName>All_Approved_Individuals</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.Partner_Portal_User</value>
+        </filters>
+        <label>All Partner Portal Users</label>
+    </listViews><listViews>
+        <fullName>All_Individual_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTACT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Contact.Potential_Partner_Portal_User</value>
+        </filters>
+        <label>All Potential Partner Portal Users</label>
+    </listViews><listViews>
+        <fullName>Individuals_Created_on_10_30_2017</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.TITLE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CONTACT.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>10/30/2017 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>CONTACT.LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>10/30/2017 12:00 AM</value>
+        </filters>
+        <label>Individuals Created on 10-30-2017</label>
+    </listViews><listViews>
+        <fullName>MyContacts</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.RECORDTYPE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>Approved_Date__c</columns>
+        <columns>Approval_Sub_Status__c</columns>
+        <columns>CONTACT.LAST_ACTIVITY</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Approved_Date__c</field>
+            <operation>notEqual</operation>
+            <value>7/5/2018</value>
+        </filters>
+        <label>My Contacts</label>
+    </listViews><recordTypes>
+        <fullName>Approved_Individuals</fullName>
+        <active>true</active>
+        <label>Approved Individuals</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Napping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sleeping</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post close contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third party closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Banker</fullName>
+        <active>true</active>
+        <label>Banker</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Napping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previously Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sleeping</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Aged Partner%2FNever Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User%2FNever Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post close contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL Banker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third party closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Client_Portal_User</fullName>
+        <active>true</active>
+        <label>Client Portal User</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previously Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post close contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third party closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Committed_Partner_Portal_User</fullName>
+        <active>true</active>
+        <label>Committed Partner Portal User</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previously Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post close contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third party closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>General</fullName>
+        <active>true</active>
+        <label>General</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Billing Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Individual_Leads</fullName>
+        <active>true</active>
+        <label>Individual Leads</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previously Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post close contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third party closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Partner_Portal_User</fullName>
+        <active>true</active>
+        <label>Partner Portal User</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previously Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Aged Partner%2FNever Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User%2FNever Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post close contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third party closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Potential_Partner_Portal_User</fullName>
+        <active>true</active>
+        <label>Potential Partner Portal User</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previously Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_hear_about_us__c</picklist>
+            <values>
+                <fullName>A Flyer about QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A pricing tool %28Loan Sifter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An article or a blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>An email from QLMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Someone in the industry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Through Comergence</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Search</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_Lead_source__c</picklist>
+            <values>
+                <fullName>Internet search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Networking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased list</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Individual_lead_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Loan_Production_Status__c</picklist>
+            <values>
+                <fullName>Aged Partner%2FNever Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Portal User%2FNever Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PPU_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Company Formation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Licensing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Potential_Portal_User_Status__c</picklist>
+            <values>
+                <fullName>Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Training In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post close contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third party closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><validationRules>
+        <fullName>Contact_AE_Field_Validation_Rule</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL( Individual_lead_Status__c , 'Processing'), 
+ISPICKVAL( Individual_lead_Status__c , 'Approved'), 
+ISPICKVAL( Individual_lead_Status__c , 'Denied'), 
+$Profile.Name = "Account Executives Team")</errorConditionFormula>
+        <errorMessage>Account Executive Team can choose only 'New'</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Contact_AE_Validation_Rule_for_New</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( 
+NOT( 
+ISPICKVAL( Individual_lead_Status__c  , 'New')), 
+$Profile.Name = "Account Executives Team")</errorConditionFormula>
+        <errorMessage>You are not authorized for desired Action!</errorMessage>
+    </validationRules><validationRules>
+        <fullName>EmailMustBeAnEmailFormat</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(REGEX( Email,'([a-zA-Z0-9_\\-\\.]+)@((\\[a-z]{1,3}\\.[a-z]{1,3}\\.[a-z]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})'))</errorConditionFormula>
+        <errorMessage>Email format doesn't exist</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Office_Phone_must_have_10_digit_no</fullName>
+        <active>false</active>
+        <description>Validate 10 digit number Office_Phone__c</description>
+        <errorConditionFormula>NOT(REGEX(Office_Phone__c, "\\D*?(\\d\\D*?){10}"))</errorConditionFormula>
+        <errorDisplayField>Office_Phone__c</errorDisplayField>
+        <errorMessage>Phone number must be 10 digit number.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Phone10DigitNumber</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(NOT(REGEX(Office_Phone__c,"(\\d){10}")), IF( LEFT( Office_Phone__c, 1) == '0' , true,false))</errorConditionFormula>
+        <errorMessage>Phone number must Contain 10 digits number,and should not start with 0.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Username_Required_if_checkbox_checked</fullName>
+        <active>true</active>
+        <description>if Check to create a Prospective Portal User is checked,then Username required</description>
+        <errorConditionFormula>AND(  Check_to_create_a_Prospective_User_Login__c = TRUE, ISBLANK(  Username__c ))</errorConditionFormula>
+        <errorDisplayField>Username__c</errorDisplayField>
+        <errorMessage>This is a required field.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Username_cannot_change_while_Update</fullName>
+        <active>true</active>
+        <description>This cannot Allow user to change USERNAME while updating the record.</description>
+        <errorConditionFormula>AND( 
+NOT(ISNEW()), 
+PRIORVALUE(Check_to_create_a_Prospective_User_Login__c) =true,
+ISCHANGED( Username__c)
+)</errorConditionFormula>
+        <errorDisplayField>Username__c</errorDisplayField>
+        <errorMessage>You Cannot change Username.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>cellMustContain10Digits</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(NOT(REGEX(Cell__c,"(\\d){10}")), IF( LEFT( Cell__c, 1) == '0' , true,false))</errorConditionFormula>
+        <errorMessage>Cell must Contain 10 digits number,and should not start with 0.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>checkSourceName_LeadSource</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Individual_Lead_source__c, 'Other'), ISBLANK(  Source_Name__c ))</errorConditionFormula>
+        <errorMessage>Source Name must contain value.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>checkTradeShow_LeadSource</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(ISPICKVAL(  Individual_Lead_source__c, 'TradeShow'), ISBLANK( Trade_Show__c ))</errorConditionFormula>
+        <errorMessage>Trade Show must contain value.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>checkbox_cannot_change_while_update</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+NOT(ISNEW()), 
+PRIORVALUE(Check_to_create_a_Prospective_User_Login__c) =true,
+ Check_to_create_a_Prospective_User_Login__c=false
+)</errorConditionFormula>
+        <errorDisplayField>Check_to_create_a_Prospective_User_Login__c</errorDisplayField>
+        <errorMessage>You cannot change the value, once it checked.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>partner_denial_reasons</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(ISPICKVAL(Individual_lead_Status__c,'Denied'),ISPICKVAL(Partner_Denial_Reasons__c,''))</errorConditionFormula>
+        <errorMessage>Please choose the Partner Denial Reason</errorMessage>
+    </validationRules><webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact_MailingStreet}+{!Contact_MailingCity}+{!Contact_MailingState}&amp;om=1</url>
+    </webLinks><webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
+    </webLinks></CustomObject>

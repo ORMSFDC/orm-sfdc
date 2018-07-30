@@ -1,0 +1,6 @@
+<aura:component description="Login panel for users to log into their CTI systems."  implements="c:panel">
+   <aura:handler name="init" value="{!this}" action="{!c.handleLogin}"/>
+    <div class="slds-modal__container">
+       
+    </div>
+</aura:component>

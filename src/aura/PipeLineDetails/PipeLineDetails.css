@@ -1,0 +1,20 @@
+.THIS {
+    color:black;
+}
+
+.THIS .loanDetails{
+    font-family: 'LatoFont'  !important; 
+    font-weight:bold !important;
+}
+
+.THIS .loanDetailsData{
+    font-family: 'LatoFont'  !important; 
+    font-weight:regular !important;
+    font-size:14px;
+}
+
+@font-face {
+  font-family: 'LatoFont';
+   
+   src: url(/resource/LatoFont);
+}

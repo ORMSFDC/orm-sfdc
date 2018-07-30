@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global" >
+	<aura:attribute name="LoanNumber" type="String"/>
+     <aura:attribute name="ChildParentNewLoanId" type="String"  />
+   <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+   <!--<aura:handler event="c:LoantoLoanMenuEVT" action="{!c.NavigateComponent}"/>-->
+    <aura:attribute name="LoanErr" type="boolean"/>
+    <aura:attribute name="NewLoan" type="Loan_New__c"  />
+      <!--application Date-->
+    <aura:attribute name="ApplicationDateOnLoanCMP" type="Date" default=""/>
+    <!--Flag for new application-->
+    <aura:attribute name="NewStartLoan" type="boolean" default="true"/>
+    
+    <!--Flag to skip steps in incompete form -->
+    <aura:attribute name="Incomplete" type="boolean"/>
+
+     <aura:attribute name="nextOpt" type="boolean"/>
+     <aura:attribute name="currentOpt" type="boolean"/>
+    <!--Remove-->
+    <c:SAL_Loan NewStartLoan="{!v.NewStartLoan}" ApplicationDate="{!v.ApplicationDateOnLoanCMP}" Incomplete="{!v.Incomplete}" LoanId="{!v.ChildParentNewLoanId}" LoanErr="{!v.LoanErr}" NuLoan="{!v.NewLoan}" nextOpt="{!v.nextOpt}" currentOpt="{!v.currentOpt}"/>
+
+   <!--{!v.body}-->
+</aura:component>

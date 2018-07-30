@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Loan_New__c$Household_Members__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c$Name</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanStatus__r$Name</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c$Application_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c$Closing_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c$LoanNumber__c</field>
+    </columns>
+    <description>Jenn Test</description>
+    <format>Matrix</format>
+    <name>Jenn Test</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Jenn_Test__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Loan_New__c$Application_Date__c</dateColumn>
+        <endDate>2017-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-04-03</startDate>
+    </timeFrameFilter>
+</Report>

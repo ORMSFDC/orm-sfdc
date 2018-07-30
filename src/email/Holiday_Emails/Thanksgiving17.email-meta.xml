@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Thanksgiving17</name>
+    <style>none</style>
+    <subject>Happy Thanksgiving from ORMS</subject>
+    <textOnly>This year, we are thankful to work with professionals like you to help older Americans change the way they live their retirement. We are grateful for the opportunity to provide the best service to you and your clients.
+
+From our family to yours, have a wonderful holiday.
+
+Have a happy Thanksgiving!</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

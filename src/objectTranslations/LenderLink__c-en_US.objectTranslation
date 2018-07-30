@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- IsActive --></label>
+        <name>IsActive__c</name>
+    </fields><fields>
+        <label><!-- Link sequence --></label>
+        <name>Link_sequence__c</name>
+    </fields><fields>
+        <label><!-- URL --></label>
+        <name>URL__c</name>
+    </fields><fields>
+        <help><!-- This link only be seen when there is an assigned QLMS Account Executive to the partner. --></help>
+        <label><!-- Visible if QLMS AE Assigned to Partner --></label>
+        <name>Visible_if_QLMS_AE_Assigned_to_Partner__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>LenderLink</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>LenderLink</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>LenderLink Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

@@ -1,0 +1,43 @@
+.THIS {
+    font-family: 'LatoFont'  !important;
+}
+  
+/* latin */
+@font-face {
+  font-family: 'LatoFont';
+   
+   src: url(/resource/LatoFont);
+}
+.THIS ABC{
+    
+    color: #6c9f2e !important;
+}
+
+.THIS t{
+    
+    color: blue !important;
+}
+.THIS .normal{
+    
+    font-family: 'LatoFont'  !important; 
+}
+.THIS .h2Css
+{
+   color: #0C4569;
+    font-size: 28px;
+     font-family: 'LatoFont'  !important; 
+     font-weight:bold !important;
+}
+.THIS .h3Css
+{
+   color: #2081BF!important;
+    font-size: 22px;
+     font-family: 'LatoFont'  !important;
+     font-weight:bold !important;
+}
+.THIS .h4Css
+{
+   
+     font-family: 'LatoFont'  !important; 
+     font-weight:bold !important;
+}

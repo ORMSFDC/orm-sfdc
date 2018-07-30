@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="List of Leads" recipientType="Contact">
+<!-- <messaging:emailTemplate subject="List of Leads" recipientType="Contact"> -->
+
+<messaging:htmlEmailBody >
+    
+    <c:LeadDisplayTable ContId="{!recipient.id}"  /><br/><br/>
+    <b>Regards,</b><br/>
+    One Reverse Mortgage  
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

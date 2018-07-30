@@ -1,0 +1,223 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                controller="SAL_CashFlowController" access="global">
+    <aura:attribute name="LoanId" type="String"  />
+    <aura:attribute name="Incomplete" type="boolean" default="false"/>
+    <aura:attribute name="currentOpt" type="boolean"/>
+    <aura:attribute name="prevOpt" type="boolean"/>
+    <aura:attribute name="nextOpt" type="boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="disabledClass" type="string" default="defaultCls" />
+    <aura:attribute name="CashFlowdata" type="Object" />
+    <aura:attribute name="manual" type="Boolean" default="false"/>
+    <aura:handler name="change" value="{!v.Incomplete}" action="{!c.nexttab}"/> 
+    <aura:attribute name="itemsClicked" type="String" />
+    <aura:attribute name="showError" type="Boolean" default="false"/>    
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    <fieldset class="slds-box slds-theme--default slds-container--large">
+        <form>
+            <br/>
+            <div class="slds-size_1-of-2">
+                <DIV>
+                    <h4>
+                        <b>
+                            &nbsp;Income
+                        </b>
+                    </h4>
+                </DIV>
+                <Table class="slds-table_cell-buffer">
+                    <tr>                        
+                        <td data-label="Members">
+                            <div class="slds-truncate" title="Household Members">
+                                <lightning:helptext content="This value is entered on the Loan tab." />
+                                Household Members:
+                            </div>
+                        </td>
+                        <td data-label=""  style="text-align:right">                          
+                            <div class="slds-truncate" title="Household Members">
+                                <ui:outputText aura:id="HouseholdMembersVal"  
+                                               value="{!v.CashFlowdata.HouseholdMembers}">
+                                </ui:outputText>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="AssetIncome ">
+                            <div class="slds-truncate" title="Monthly Asset Income">
+                                <lightning:helptext content="This value is calculating by taking 85% of all assets and dividing them by the number of months of the life expectancy of the youngest Client." />
+                                Monthly Asset Income: 
+                            </div>
+                        </td>
+                        <td data-label="AssetIncome" style="text-align:right">
+                            <div  class="slds-truncate" title="Monthly Asset Income">
+                                <ui:outputCurrency aura:id="MonthlyAssetIncomeVal" 
+                                                   value="{!v.CashFlowdata.MonthlyAssetIncome}">
+                                </ui:outputCurrency>
+                            </div>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td data-label="Monthly Income">
+                            <div class="slds-truncate" title="Monthly Income">
+                                <lightning:helptext content="This value is the sum of incomes entered on the Income tab." />
+                                Monthly Income: 
+                            </div>
+                        </td>
+                        <td data-label="Monthly Income" style="text-align:right">
+                            <div  class="slds-truncate" title="Monthly Income">
+                                <ui:outputCurrency value="{!v.CashFlowdata.MonthlyIncome}" 
+                                                   aura:id="MonthlyIncomeVal">
+                                </ui:outputCurrency>
+                            </div>
+                        </td>
+                    </tr>
+                </Table>                
+            </div>
+            <br/>
+            <div class="slds-size_1-of-2">
+                <DIV>
+                    <h4>
+                        <b>
+                            &nbsp;Expenses
+                        </b>
+                    </h4>
+                </DIV>
+                <Table class="slds-table_cell-buffer">
+                    <tr >                        
+                        <td data-label="Expenses">
+                            <div class="slds-truncate" title=" Monthly Expenses">
+                                <lightning:helptext content="This value is the total monthly payments on the Liabilities tab plus the monthly mortgage payments for any real estate property that is not the Subject Property." />
+                                Monthly Expenses: 
+                            </div>
+                        </td>
+                        <td data-label="Expenses"  style="text-align:right">
+                            <div class="slds-truncate" title="Monthly Expenses:">
+                                <ui:outputCurrency value="{!v.CashFlowdata.MonthlyExpense}" aura:id="MonthlyExpensesVal">
+                                </ui:outputCurrency>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Property Charges">
+                            <div class="slds-truncate" title="Monthly Property Charges">
+                                <lightning:helptext content="This value is the sum of Real Estate Taxes, Hazard Insurance and Miscellaneous values entered on the Subject Property tab." />
+                                Monthly Property Charges: 
+                            </div>
+                        </td>
+                        <td data-label="Monthly Property Charges" style="text-align:right" >
+                            <div class="slds-truncate" title="Monthly Property Charges">
+                                <ui:outputCurrency value="{!v.CashFlowdata.MonthlyPropertyCharge}" aura:id="MonthlyPropertyChargesVal">
+                                </ui:outputCurrency>
+                            </div>
+                        </td>  
+                    </tr>
+                    <tr>
+                        <td data-label="Maintenance">
+                            <div class="slds-truncate" title="Monthly Maintenance">
+                                <lightning:helptext content="This value is 14% of the square footage entered on Loan tab." />
+                                Monthly Maintenance: 
+                            </div>
+                        </td>
+                        <td data-label="Maintenance" style="text-align:right">
+                            <div class="slds-truncate" title="Monthly Maintenance">
+                                <ui:outputCurrency value="{!v.CashFlowdata.MonthlyMaintenance}" aura:id="MonthlyMaintenanceVal">
+                                </ui:outputCurrency>
+                            </div>
+                        </td>
+                    </tr>
+                </Table>
+            </div>
+            <br/>
+            <div class="slds-size_1-of-2"  >
+                <DIV>
+                    <h4>
+                        <b>
+                            &nbsp;Cash Flow
+                        </b>
+                    </h4>
+                </DIV>
+                <Table class="slds-table_cell-buffer">
+                    <tr>
+                        <td data-label="CashFlow ">
+                            <div class="slds-truncate" title="CashFlow">
+                                <lightning:helptext content="This value is derived from subtracting total expenses from Total Income." />
+                                Cash Flow: 
+                            </div>
+                        </td>
+                        <td data-label=""  style="text-align:right">
+                            <div class="slds-truncate" title="CashFlow">
+                                <ui:outputText value="{!v.CashFlowdata.CashFlow}" aura:id="CashFlowVal">
+                                </ui:outputText>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Cash Flow">
+                            <div class="slds-truncate" title="Cash Flow">
+                                <lightning:helptext content="This value uses the number of household members and the subject property state to determine the required cash flow by region." />
+                                Required Cash Flow: 
+                            </div>
+                        </td>
+                        <td data-label="Cash Flow"  style="text-align:right" >
+                            <div class="slds-truncate" title="Cash Flow" >
+                                <ui:outputCurrency value="{!v.CashFlowdata.RequiredCashFlow}" aura:id="RequiredCashFlowVal">
+                                </ui:outputCurrency> 
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-label="Capacity">
+                            <div class="slds-truncate" title="Capacity">
+                                <lightning:helptext content="This percentage value is the derived by dividing Cash Flow by Required Cash Flow." />
+                                Total Capacity: 
+                            </div>
+                        </td>
+                        <td data-label="Capacity" style="text-align:right;color:green">
+                            <div  class="slds-truncate" title="Capacity">
+                                <ui:outputText value="{!v.CashFlowdata.TotalCapacity}" aura:id="TotalCapacityVal">
+                                </ui:outputText>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td data-label="Shortage/Overage">
+                            <div class="slds-truncate" title="Shortage/Overage">                                    
+                                <lightning:helptext content="This value is derived by subtracting Required Cash Flow from Cash Flow." />
+                                Capacity Shortage/Overage: 
+                            </div>
+                        </td>
+                        <td data-label="Shortage/Overage" style="text-align:right;color:green">
+                            <div  class="slds-truncate" title="Shortage/Overage">
+                                <ui:outputText value="{!v.CashFlowdata.CapacityStorage}" aura:id="CapacityShortageVal">
+                                </ui:outputText>                                
+                            </div>
+                        </td>
+                    </tr>
+                </Table>                
+            </div>
+            <br/>
+            <div class="slds-size_1-of-1">
+                <ui:outputText value="*These values are static. If you would like to make a change, please modify application inputs." />
+            </div>
+            <br/>           
+            <div class="slds-size_1-of-1">
+                <ui:outputText value=" Not for consumer use. Scenario presented is for hypothetical purposes only, number and values have not been verified. " />
+                <br>
+                </br>
+                <ui:outputText value="This is not a commitment to lend." />                
+            </div>
+            <br></br>
+            <div align="left"><aura:if isTrue="{!v.showError}"> 
+                <ui:message title="Warning" severity="warning" closable="false">
+                    The Capacity calculations use values from the previous tabs. Please review the red tabs above to see Cash Flow results.
+                </ui:message>
+                </aura:if></div>
+            <br/>            
+            <div class="slds-grid slds-grid--align-left">
+                <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addDeclaration" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+                <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="NextbtntoCapacity" label="Continue" press="{!c.Continue}" />
+            </div>
+            <br/>  
+        </form>
+    </fieldset>    
+</aura:component>

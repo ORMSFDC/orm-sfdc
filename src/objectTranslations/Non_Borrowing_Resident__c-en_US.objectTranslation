@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Client Id --></label>
+        <name>Client_Id__c</name>
+        <relationshipLabel><!-- Non-Borrowing Resident --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Non Borrowing Resident Date of Birth --></label>
+        <name>Date_of_Birth__c</name>
+    </fields><fields>
+        <label><!-- Is Active? --></label>
+        <name>IsActiveNBR__c</name>
+    </fields><fields>
+        <label><!-- Loan Id --></label>
+        <name>Loan_Id__c</name>
+        <relationshipLabel><!-- Non-Borrowing Resident --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Non Borrowing Resident Monthly Income --></label>
+        <name>Monthly_Income__c</name>
+    </fields><fields>
+        <label><!-- Non Borrowing Resident --></label>
+        <name>Non_Borrowing_Resident_Name__c</name>
+    </fields><fields>
+        <label><!-- Relationship to Client --></label>
+        <name>Relationship_to_Client__c</name>
+        <picklistValues>
+            <masterLabel>Aunt</masterLabel>
+            <translation><!-- Aunt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother</masterLabel>
+            <translation><!-- Brother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child</masterLabel>
+            <translation><!-- Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Father</masterLabel>
+            <translation><!-- Father --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend</masterLabel>
+            <translation><!-- Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandchild</masterLabel>
+            <translation><!-- Grandchild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother</masterLabel>
+            <translation><!-- Mother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephew</masterLabel>
+            <translation><!-- Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niece</masterLabel>
+            <translation><!-- Niece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister</masterLabel>
+            <translation><!-- Sister --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncle</masterLabel>
+            <translation><!-- Uncle --></translation>
+        </picklistValues>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Non-Borrowing Resident</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Non-Borrowing Resident</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Non-Borrowing Resident Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><sharingReasons>
+        <label><!-- Loan Processor --></label>
+        <name>LoanProcessor</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Loan Officer --></label>
+        <name>Loan_Officer</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Origination Loan Officer --></label>
+        <name>Origination_Loan_Officer</name>
+    </sharingReasons></CustomObjectTranslation>

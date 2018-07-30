@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>LoanStatus__c$LoanId__c</field>
+    </columns>
+    <columns>
+        <field>LoanStatus__c$LoanId__c.IsActiveFlag__c</field>
+    </columns>
+    <columns>
+        <field>LoanStatus__c$LoanId__c.Related_Partner__c</field>
+    </columns>
+    <columns>
+        <field>LoanStatus__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>LoanStatus__c$LoanId__c.CreatedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>LoanStatus__c$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Application Package Received,Proposal,Application Requested,Full Package Received</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LoanStatus__c$LoanId__c.IsActiveFlag__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LoanStatus__c$LoanId__c.Related_Partner__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test Partner</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LoanStatus__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Loan Status May 18</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Loan_Status_history_with_Loans__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>LoanStatus__c$CreatedDate</dateColumn>
+        <endDate>2018-05-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-05-01</startDate>
+    </timeFrameFilter>
+</Report>

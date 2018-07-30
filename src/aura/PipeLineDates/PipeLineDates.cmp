@@ -1,0 +1,264 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global"  controller="PipeLineController" >
+    <aura:attribute name="LoanId" type="String" default="" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="loanDate" type="Object" />
+    <aura:attribute name="ReDisclosure" type="Object" />
+    <aura:attribute name="proCurrentDate" type="String" default="" />
+    <aura:attribute name="showCoolingDate" type="Boolean" default="false" />
+    <aura:attribute name="showCoolingDateWarning" type="Boolean" default="false" />
+    
+    <aura:attribute name="showPopup" type="boolean" default="false" />
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeDeleteModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>
+                        Current Re-Disclosure Date:{!v.proCurrentDate}
+                        </b>
+                    </p>           
+                    
+                    <br></br>
+                    <p><b>
+                        Re-Disclosure Date History:
+                        </b>
+                    </p>  
+                    <table class="slds-table_bordered slds-table_cell-buffer"  >
+                        <thead>
+                            <tr Style= "background-color:#2877bd">
+                                <th style= "color:white" class="slds-col slds-size--1-of-4">Changed On</th>
+                                <th style= "color:white" class="slds-col slds-size--1-of-4">Change Reason</th>
+                            </tr>
+                        </thead>   
+                        <tbody>
+                            <aura:iteration items="{!v.ReDisclosure}" var="ReDisclosure">
+                                
+                                <tr >
+                                    <td data-label="Name" >
+                                        <div class="slds-truncate" ><b>{!ReDisclosure.ReasonChangeDate} </b></div>
+                                    </td>
+                                    <td data-label="Name" >
+                                        <ui:outputTextArea value="{!ReDisclosure.DisclouserReason}"></ui:outputTextArea> </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button style ="color:white" class="slds-button slds-button--brand" onclick="{!c.closeDeleteModel}" >Close</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    
+    <div>  
+        <table>
+            <thead>
+                <tr style= "background-color:#2877bd">
+                    <th  style= "color:white">
+                        Loan Dates
+                    </th>  
+                    
+                </tr>
+            </thead>                            
+        </table>  
+        
+        <table class="slds-table slds-table--fixed-layout"  >
+            <tbody>
+                <tr>
+                    <td data-label="" >
+                        <b>Application Requested Date: </b> 
+                        {!v.loanDate.ApplicationDate}
+                    </td>
+                    <td></td>
+                    <aura:if isTrue="{!v.showCoolingDate}">
+                    <td data-label="Cooling Off Notice Signed date" >
+                        <b>Cooling Off Notice Signed date: </b>                        
+                        {!v.loanDate.CoolingOffNoticeSignedDate}
+                        <aura:if isTrue="{!v.showCoolingDateWarning}">
+                            <td data-label="Cooling Off Notice Signed date" >
+                                <h6 style="color:red;font-size:10px">You cannot contact 
+                                    the client within 7 days after the client signing the Cooling off Notice. </h6>
+                                
+                            </td>
+                        </aura:if>
+                    </td>
+                    </aura:if>                                      
+                    
+                </tr>
+                
+                <tr>
+                	<td data-label="">
+                        <b>Application Signed Date: </b> 
+                        {!v.loanDate.ApplicationSignedDate}
+                    </td>
+                </tr>
+                
+                <tr >                    
+                    <td data-label="">
+                        <b>FHA Case Number Date: </b> 
+                        {!v.loanDate.FHACaseNaumberDate}
+                    </td>
+                    <td></td>
+                    <td data-label="Property Appriasal value" >
+                        <b>Counseling Date: </b>                        
+                        {!v.loanDate.CounselingDate}
+                    </td>                  
+                </tr>
+                
+                <tr >
+                    <td data-label="" style="text-align:left">
+                        <b>Anticipated Closing Date: </b>  
+                        {!v.loanDate.AnticipatedClosingDate}
+                    </td>
+                    <td></td>                                          
+                    <td data-label="" style="text-align:left">
+                        <b>Next Tax Due Date: </b>  
+                        {!v.loanDate.NextTaxDueDate} 
+                    </td>
+                </tr>
+                
+                <tr >
+                    <td data-label="" style="text-align:left">
+                        <b>Actual Closing Date: </b>
+                        {!v.loanDate.ClosingDate}                         
+                    </td>
+                    <td></td>
+                    <td data-label="" style="text-align:left">
+                        <b>Scheduled Closing Date: </b> 
+                        {!v.loanDate.ScheduledClosingDate}
+                    </td>
+                </tr>
+                <tr >
+                    <td data-label="" style="text-align:left">
+                        <b>Re-Disclosure Date: </b>  
+                        {!v.loanDate.ReDiscloserDate}
+                    </td>
+                    <td>
+                    </td>
+                    <td data-label="" style="text-align:left">
+                        <b>Actual Funding Date: </b>
+                        {!v.loanDate.ActualFundingDate} 
+                    </td>        
+                </tr>
+                <tr>
+                    <td data-label="" style="text-align:left">
+                        <b>Re-Disclosure Reason: </b>
+                        {!v.loanDate.ReDiscloserReason}
+                        <!--<ui:outputTextArea value="{!v.loanDate.ReDiscloserReason}"></ui:outputTextArea>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="" style="text-align:left" colspan="4">
+                        <div class="slds-truncate" title="Index">
+                            <b><a onclick="{!c.ShowHistory}"  >See Re-Disclosure History</a> 
+                            </b>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>  
+        
+        <table>
+            <thead>
+                <tr style= "background-color:#2877bd">
+                    <th  style= "color:white">
+                        Vendor Services
+                    </th>  
+                    
+                </tr>
+            </thead>                            
+        </table>  
+        <table class="slds-table slds-table--fixed-layout"  >
+            <tbody>
+                <tr >
+                    <td data-label="Payoff Order Date" style="text-align:left;">                        
+                        <b>Payoff Order Date: </b>
+                        {!v.loanDate.PayoffOrderDate}                        
+                    </td>
+                    
+                    <td data-label="Appraisal Ordered Date" style="text-align:left;">
+                        <b>Appraisal Ordered Date: </b>
+                        {!v.loanDate.AppraisalOrderDate}
+                    </td>
+                </tr>
+                <tr >
+                    <td data-label="Credit Report Date " style="text-align:left">
+                        <b>Credit Report Date: </b>
+                        {!v.loanDate.CreditReportDate}
+                    </td>
+                    
+                    <td data-label="Appraisal Scheduled Date " style="text-align:left">
+                        <b>Appraisal Scheduled Date: </b>
+                        {!v.loanDate.AppraisalScheduledDate}
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Title Received Date" style="text-align:left">
+                        <b>Title Received Date: </b> 
+                        {!v.loanDate.TitleReceivedDate}
+                    </td>
+                    
+                    <td data-label="Appraisal Effective Date" style="text-align:left">
+                        <b>Appraisal Effective Date: </b> 
+                        {!v.loanDate.AppraisalEffectiveDate}
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Title Ordered Date" style="text-align:left">
+                        <b>Title Ordered Date: </b>
+                        {!v.loanDate.TitleOrderedDate}
+                    </td>
+                    
+                    <td data-label="Appraisal Received Date" style="text-align:left">
+                        <b>Appraisal Received Date: </b> 
+                        {!v.loanDate.AppraisalReceivedDate}
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Flood Ordered Date" style="text-align:left">                        
+                        <b>Flood Ordered Date: </b>
+                        {!v.loanDate.FloodOrderedDate}
+                    </td>
+                    
+                    
+                    <td data-label="Insurance Binder Ordered Date" style="text-align:left">
+                        <b>Insurance Binder Ordered Date: </b>
+                        {!v.loanDate.InsuranceBinderOrderedDate}
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Flood Received Date" style="text-align:left">
+                        <b>Flood Received Date: </b>
+                        {!v.loanDate.FloodReceivedDate}
+                    </td>
+                    
+                    <td data-label="Insurance Binder Received Date" style="text-align:left">
+                        <b>Insurance Binder Received Date: </b>
+                        {!v.loanDate.InsuranceBinderReceivedDate}
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>  
+        
+        
+        
+        
+    </div>
+</aura:component>

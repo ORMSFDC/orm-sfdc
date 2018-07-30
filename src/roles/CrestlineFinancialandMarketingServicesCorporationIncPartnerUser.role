@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Crestline Financial and Marketing Services Corporation, Inc. Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Crestline Financial and Marketing Services Corporation, Inc. Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>CrestlineFinancialandMarketingServicesCorporationIncPartnerManager</parentRole>
+</Role>

@@ -1,0 +1,53 @@
+<aura:component controller="ZoomController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="lenderlink" type="Object[]" />    
+    <aura:attribute name="UserEmail" type="String" />  
+    <aura:attribute name="txtUsername" type="String" /> 
+    <aura:attribute name="topicname" type="String" /> 
+    
+    <div style = "slds">
+        <div class="slds-col slds-col--padded slds-p-top--large">
+            <div aria-labelledby="newform">
+                <fieldset class="slds-box slds-theme--default slds-container--small">
+                    
+                    <form class="slds-form--stacked">
+                         <div class="slds-form-element slds-is-required">
+                            <div class="slds-form-element__control">
+                                <ui:inputText aura:id="Topic" label="Meeting Topic" 
+                                              class="slds-input" labelClass="slds-form-element__label" 
+                                              value="{!v.topicname}"
+                                              required="true"/>
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-is-required">
+                            <div class="slds-form-element__control">
+                                <ui:inputText aura:id="UserName" label="Name" 
+                                              class="slds-input" labelClass="slds-form-element__label" 
+                                              value="{!v.txtUsername}"
+                                              required="true"/>
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-is-required">
+                            <div class="slds-form-element__control">
+                                
+                                <ui:inputText aura:id="EmailID" label="Email" class="slds-input" 
+                                              labelClass="slds-form-element__label"
+                                              value="{!v.UserEmail}" required="true"
+                                              />
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element">
+                            <ui:button label="Create Meeting And Send Mail" 
+                                       class="slds-button slds-button--brand"
+                                       press="{!c.CreateMeetingandSenMail}"/>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        
+        
+    </div>
+</aura:component>

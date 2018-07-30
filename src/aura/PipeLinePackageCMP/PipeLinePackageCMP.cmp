@@ -1,0 +1,86 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="PipeLineController">
+    <aura:attribute name="LoanNumberId" type="String" default="a0Q29000002d6sPEAQ"/>
+    <aura:attribute name="ClientName" type="String"/>
+    <aura:attribute name="IndividualId" type="String"/>
+    <aura:attribute name="LoanOfficer" type="String"/>
+    <aura:attribute name="AccountExecutive" type="String"/>
+    <aura:attribute name="valueStatus" type="boolean" default="false"/>
+    <aura:attribute name="showButton" type="boolean" default="true"/>
+    <aura:attribute name="showPackage" type="boolean" default="true"/>
+    <aura:attribute name="showThanks" type="boolean" default="false"/>
+    <aura:attribute name="showHeader" type="boolean" default="true"/>
+    <aura:attribute name="showFooter" type="boolean" default="true"/>
+    <aura:attribute name="loan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
+    <aura:registerEvent name="statusEvent" type="c:Event_PackageSave_CloseModal"/>
+    
+    <!--###### MODAL BOX Start From Here ######--> 
+    <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container slds-mymodal" >
+            <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+            <div class="slds-modal__header">
+                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                <aura:if isTrue="{!v.showHeader}">
+                    <div style="font-size:18px;" id="header43" class="slds-text-heading--medium fontText">Submit a Full Application</div>
+                </aura:if>
+            </div>
+            <!--###### MODAL BOX BODY Part Start From Here ######-->
+            <div class="slds-modal__content slds-p-around--medium">
+                <aura:if isTrue="{!v.showPackage}">
+                    <div id="Package">
+                        <label class="modalLabel fontText">Did you upload:
+                        </label>
+                        <br/>
+                        <br/>
+                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">       
+                            <label class="slds-checkbox">
+                                <ui:inputCheckbox label="" aura:id="fully" value="{!v.loan.Fully_Signed_Application_Package__c}" change="{!c.onCheck}"/>&nbsp;
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label modalLabel fontText">Fully Signed Application Package </span>
+                            </label>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                            <label class="slds-checkbox">
+                                <ui:inputCheckbox label="" aura:id="driver" value="{!v.loan.Driver_License_and_Social_Security_Card__c}" change="{!c.onCheck}"/>&nbsp;
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label modalLabel fontText">Driver's License and Social Security Card</span>
+                            </label>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                            <label class="slds-checkbox">
+                                <ui:inputCheckbox label="" aura:id="income" value="{!v.loan.Income_and_Asset_Documentation__c}" change="{!c.onCheck}"/>&nbsp;
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label modalLabel fontText">Income and Asset Documentation</span>
+                            </label>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-form-element slds-size_1-of-1">
+                            <label class="slds-checkbox">
+                                <ui:inputCheckbox label="" aura:id="hecm" value="{!v.loan.HECM_Counseling_Certificate__c}" change="{!c.onCheck}"/>&nbsp;
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label modalLabel fontText">HECM Counseling Certificate</span>
+                            </label>
+                        </div>
+                    </div>
+                    <label class="uiLabel-right form-element__label uiLabel fontText" style="text-align:center;font-size:12px;">
+                        <span>If you have not uploaded these documents, please do so in the Documents tab prior to submitting your full application package.</span>
+                    </label>
+                </aura:if>
+                 <aura:if isTrue="{!v.showThanks}">
+                     <label style="text-align:center;font-size:17px;margin-left:70px;" class="fontText">
+                        <span>Your full application package has been submitted.</span>
+                    </label>
+                </aura:if>
+            </div>
+            <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+            <div class="slds-modal__footer">
+                <aura:if isTrue="{!v.showFooter}">
+                    <a href="" class="border" onclick="{! c.closeModel}">Cancel</a>&nbsp;&nbsp;&nbsp;
+                    <lightning:button aura:id="BtnSubmit" class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn defaultButton" label="Submit" disabled="{!v.showButton}" onclick="{!c.addPackage}"/>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open"></div>
+    <!--###### MODAL BOX Part END Here ######-->
+</aura:component>

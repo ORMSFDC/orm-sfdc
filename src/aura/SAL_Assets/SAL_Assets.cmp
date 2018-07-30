@@ -1,0 +1,647 @@
+<aura:component controller="SAL_AssetController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="objAsset" type="Asset" default="{'sobjectType':'Asset'}" />
+    <aura:attribute name="AssetList" type="Asset[]" />
+    <aura:attribute name="isBankAccountOpen" type="boolean" default="false" />
+    <aura:attribute name="isStockOpen" type="boolean" default="false" />
+    <aura:attribute name="isLifeInsuaranceOpen" type="boolean" default="false" />
+    <aura:attribute name="isClentSelected" type="boolean" default="false" />
+    <aura:attribute name="isRetirementOpen" type="boolean" default="false" />
+    <aura:attribute name="isBusinessOpen" type="boolean" default="false" />
+    <aura:attribute name="clientCount" type="Integer"/>
+    <aura:attribute name="isOthersOpen" type="boolean" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="Heading" type="String" default="" />
+    <aura:attribute name="BLRText" type="String" default="" />
+    <aura:attribute name="RowId" type="String" default="123" />
+    <aura:attribute name="category" type="String" default="" />
+    <aura:attribute name="myText1" type="String" default="Other Assets Amount *" />
+    <aura:attribute name="myText2" type="String" default="Company Name/Number *" />
+    <aura:attribute name="myText3" type="String" default="Cash or Market Value *" />
+    <aura:attribute name="myText4" type="String" default="Name of Bank Or Credit Union *" />
+    <aura:attribute name="myText5" type="String" default="Account Number (Optional)" />
+    <aura:attribute name="myText6" type="String" default="Cash or Market Value *" />
+    <aura:attribute name="ClientList" type="String[]" />
+    <aura:attribute name="clientListHeader" type="List"/>
+    <aura:attribute name="assetCategory" type="List" />
+    <aura:attribute name="BankAccountTypeOptions" type="List" />
+    <aura:attribute name="StockTypeOptions" type="List" />
+    <aura:attribute name="AssetsTypeOptions" type="List" />
+    <aura:attribute name="nextOpt" type="boolean" />
+    <aura:attribute name="currentOpt" type="boolean" />
+    <aura:attribute name="prevOpt" type="boolean" />
+    <aura:attribute name="LoanId" type="String" default="a0M0q000000ARqJEAW" />
+    <aura:attribute name="total" type="Double" default="0.00" />
+    <aura:attribute name="AssetsTotal" type="Double" default="0.00" />
+    <aura:attribute name="assetLoanId" type="String" />
+    <aura:attribute name="showError" type="boolean" default="false" />
+    <!--Remove-->
+    <aura:attribute name="NewLoan" type="Loan_New__c" />
+    <aura:attribute name="idIs" type="String" default="null" />
+    <aura:attribute name="showPopup" type="boolean" default="flase" />
+    <aura:attribute name="UsState" type="List"/>
+    <aura:attribute name="ClientID" type="String" default="null" />
+    <aura:attribute name="itemsClicked" type="String" default="opt1"/>
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    
+    
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeMyModel }">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Do you really want to Delete?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">                    
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.closeMyModel}" label="Cancel"></ui:button>
+                    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" press="{!c.doAction}" label="Ok"></ui:button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>
+    <fieldset class="slds-box slds-theme--default slds-container--large">
+        <br/>
+        <div>
+            <div class="slds-form slds-form_compound">
+                <fieldset class="slds-form-element">
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">
+                                <div style="background-color:lightgray;font-weight:bold;" class="row">
+                                    <div class="col-md-4" style="text-align:center;">
+                                        <span style="font-weight:bold;">Total Clients' Assets   &nbsp;</span>
+                                    </div>
+                                    <div class="col-md-8" style="text-align:center;">
+                                        <span style="font-weight:bold;"><ui:outputCurrency aura:id="AssetTotal" value="{!v.AssetsTotal}"></ui:outputCurrency></span>   
+                                    </div>                                        
+                                </div>
+                                <br />
+                                
+                                <div class="slds-scrollable" id="NoAssetCount" style=" width: 54rem;display:none">                                    
+                                    <table id="mynotable" class="slds-table slds-table_bordered slds-table_cell-buffer ">
+                                        <thead>                                            
+                                            <tr style="background-color: #2877bd !important">
+                                                <th  style="color: white;width:20px; background-color: #2877bd !important">
+                                                    Category
+                                                </th>
+                                                <th  style="text-align:left;color: white;width:20px; background-color: #2877bd !important;padding-left:20px;">
+                                                    Source Name 
+                                                </th>
+                                                <th  style="text-align:right;color: white;padding-left:45px; background-color: #2877bd !important">
+                                                    <!-- <h6 style="font-weight:bold;text-align:right;">Value</h6>-->
+                                                    Value
+                                                </th>
+                                                <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                                                    <th style="text-align:right;color: white;width:20px ;background-color: #2877bd !important;padding-left:10px;"> {!pOptions.Name}
+                                                    </th>
+                                                </aura:iteration>
+                                            </tr>
+                                        </thead>                                    
+                                        <tbody>  
+                                            <tr>
+                                                <td colspan="3">
+                                                    No Assets have been added.
+                                                </td>
+                                                <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                                                    <td></td>
+                                                </aura:iteration>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>                                
+                                
+                                <div class="slds-scrollable" id="AssetCount" style=" width: 54rem;display:none">                                    
+                                    <table id="mytable" class="slds-table slds-table_bordered slds-table_cell-buffer ">
+                                        <thead>                                            
+                                            <tr style="background-color: #2877bd !important">
+                                                <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                                                <th  style="color: white;width:20px; background-color: #2877bd !important">
+                                                    Category
+                                                </th>
+                                                <th  style="text-align:left;color: white;width:20px; background-color: #2877bd !important;padding-left:20px;">
+                                                    Source Name 
+                                                </th>
+                                                <th  style="text-align:right;color: white;padding-left:45px; background-color: #2877bd !important">
+                                                    <!-- <h6 style="font-weight:bold;text-align:right;">Value</h6>-->
+                                                    Value
+                                                </th>
+                                                <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                                                    <th style="text-align:right;color: white;width:20px ;background-color: #2877bd !important;padding-left:10px;"> {!pOptions.Name}
+                                                    </th>
+                                                    
+                                                </aura:iteration>
+                                                <th style="text-align:right;color: white;background-color: #2877bd !important"></th>
+                                                
+                                                <th style="text-align:right;color: white;background-color: #2877bd !important" colspan="2">
+                                                    <!--<h6 style="font-weight:bold;"></h6>-->
+                                                </th>
+                                                
+                                            </tr>
+                                        </thead>                                    
+                                        <tbody>                                       
+                                            <aura:iteration items="{!v.AssetList}" var="AssetList">
+                                                <tr>
+                                                     <td data-label=""  style="text-align:center;padding-right:10px;">
+                                                        <aura:if isTrue="{!AssetList.Is_Asset_Validated__c}">
+                                                            <aura:set attribute="else">
+                                                                <Label style="color:red;padding-right:2px;font-size: 25px;">&#33;</Label>
+                                                            </aura:set>
+                                                        </aura:if>
+                                                    </td>
+                                                    <td data-label="Category">
+                                                        <div class="slds-truncate">{!AssetList.Category__c}</div>
+                                                    </td>
+                                                    <td data-label="Name" style="text-align:left;padding-left:20px;padding-top:8px;">                                                    
+                                                        <div class="slds-truncate">
+                                                            <p style="width:100px; /* wrap long text and urls */ white-space: pre; /* CSS 2.0 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3.0 */ white-space: -pre-wrap; /* Opera 4-6 */ white-space: -o-pre-wrap; /* Opera 7 */ white-space: -moz-pre-wrap; /* Mozilla */ word-wrap: break-word; /* IE 5+ */" class="slds-truncate" title="Index" >
+                                                                {!AssetList.Source_Name__c}
+                                                            </p>
+                                                        </div>
+                                                        
+                                                    </td>
+                                                    <td data-label="Value" style="text-align:right;padding-right:10px;">
+                                                        <aura:if isTrue="{!AssetList.Cash_or_Market_Value__c != null}">
+                                                            <div class="slds-truncate">
+                                                                <span style="font-weight:bold;"></span>
+                                                                <ui:outputCurrency aura:id="curr" value="{!AssetList.Cash_or_Market_Value__c}"></ui:outputCurrency>
+                                                            </div>
+                                                        </aura:if>
+                                                        <aura:if isTrue="{!AssetList.Life_Insurance_Policy_Face_Value__c != null}">
+                                                            <div class="slds-truncate">
+                                                                <span style="font-weight:bold;"></span>
+                                                                <ui:outputCurrency aura:id="curr1" value="{!AssetList.Life_Insurance_Policy_Face_Value__c}"></ui:outputCurrency>
+                                                            </div>
+                                                        </aura:if>
+                                                        <aura:if isTrue="{!AssetList.Vested_Interest_in_Retirement_Fund__c!=null}">
+                                                            <div class="slds-truncate">
+                                                                <span style="font-weight:bold;"></span>
+                                                                <ui:outputCurrency aura:id="curr2" value="{!AssetList.Vested_Interest_in_Retirement_Fund__c}"></ui:outputCurrency>
+                                                            </div>
+                                                        </aura:if>
+                                                        <aura:if isTrue="{!AssetList.Net_Worth_of_Business_es_Owned__c!=null}">
+                                                            <div class="slds-truncate">
+                                                                <span style="font-weight:bold;"></span>
+                                                                <ui:outputCurrency aura:id="curr3" value="{!AssetList.Net_Worth_of_Business_es_Owned__c}"></ui:outputCurrency>
+                                                            </div>
+                                                        </aura:if>
+                                                        <aura:if isTrue="{!AssetList.Present_Market_Value__c!=null}">
+                                                            <div class="slds-truncate">
+                                                                <span style="font-weight:bold;"></span>
+                                                                <ui:outputCurrency aura:id="curr4" value="{!AssetList.Present_Market_Value__c}"></ui:outputCurrency>
+                                                            </div>
+                                                        </aura:if>
+                                                        <aura:if isTrue="{!AssetList.Other_Asset_Amount__c!=null}">
+                                                            <div class="slds-truncate">
+                                                                <span style="font-weight:bold;"></span>
+                                                                <ui:outputCurrency aura:id="curr4" value="{!AssetList.Other_Asset_Amount__c}"></ui:outputCurrency>
+                                                            </div>
+                                                        </aura:if>
+                                                    </td>
+                                                    <aura:iteration items="{!v.clientListHeader}" var="pOptions">
+                                                        <td style="color:green;font-weight: bold;Text-align:center">
+                                                            
+                                                        </td>                                                    
+                                                    </aura:iteration>
+                                                    <td style="color:green;font-weight: bold;text-align:center;">   
+                                                        
+                                                    </td>
+                                                    <td data-label="Edit/Delete" colspan="2" style="text-align:right;">
+                                                        <a id="{!AssetList.Id}" onclick="{!c.EditAssetbyId}">Edit</a>&nbsp;
+                                                        <a id="{!AssetList.Id}" onclick="{!c.DeleteAssetbyId}">Delete</a>
+                                                    </td>
+                                                   
+                                                </tr>
+                                            </aura:iteration>   
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <br/>
+                                <div class="slds-size_1-of-3">
+                                    <h4>Add New Asset (Optional) </h4>
+                                    <ui:inputSelect aura:id="categoryId"  label="Category" change="{!c.addAssetBasedOnCategory}" value="{!v.objAsset.Category__c}">
+                                        <ui:inputSelectOption value="true" text="" label="Select Option" />
+                                        <aura:iteration items="{!v.assetCategory}" var="pOptions">
+                                            <ui:inputSelectOption text="{!pOptions.value}" label="{!pOptions.value}" />
+                                        </aura:iteration>
+                                    </ui:inputSelect>
+                                    <br/>
+                                    <ui:button disabled="true" class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addAsset" label="Add" press="{!c.addAsset}" />
+                                </div>
+                                <aura:if isTrue="{!v.isBankAccountOpen}">
+                                    <!--###### MODAL BOX Start From Here ######-->
+                                    <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open " id="BankAccountId">
+                                        <div class="slds-modal__container">
+                                            <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                                            <div class="slds-modal__header">
+                                                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <h2 id="header43" style="color:#2081bf;" class="slds-text-heading--medium">{!v.Heading}</h2>
+                                            </div>
+                                            <!--###### MODAL BOX BODY Part Start From Here ######-->
+                                            <div class="slds-modal__content slds-p-around--medium">
+                                                <div class="slds-form slds-form_compound">
+                                                    <fieldset class="slds-form-element">
+                                                        <div class="slds-form-element__group">
+                                                            <div class="slds-form-element__row">
+                                                                <div class="slds-form-element slds-size_1-of-1">
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <lightning:select name="pickClient" aura:id="pickClient">
+                                                                            <aura:iteration items="{!v.ClientList}" var="pOptions">
+                                                                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                                                            </aura:iteration>
+                                                                        </lightning:select>
+                                                                        <aura:if isTrue='{!v.isClentSelected}'>
+                                                                            <h6 style="color:red;">Please select a value for this field</h6>
+                                                                        </aura:if>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputText aura:id="Bank_SrcName" maxlength="100" label="Source Name *" value="{!v.objAsset.Source_Name__c}" />
+                                                                    </div>
+                                                                    
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputText aura:id="accountNoID" maxlength="100" label="{!v.myText5}" value="{!v.objAsset.Account_Number__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputCurrency aura:id="cashMarketValueID" label="{!v.myText3}" value="{!v.objAsset.Cash_or_Market_Value__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputSelect aura:id="accountTypeID" label="Type *" value="{!v.objAsset.Type_of_Account__c}">
+                                                                            <ui:inputSelectOption value="true" text="" label="Select one" />
+                                                                            <aura:iteration items="{!v.BankAccountTypeOptions}" var="pOptions">
+                                                                                <ui:inputSelectOption text="{!pOptions.value}" label="{!pOptions.value}" />
+                                                                            </aura:iteration>
+                                                                        </ui:inputSelect>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                                            
+                                            <div class="slds-modal__footer">
+                                                <div align="left"><aura:if isTrue="{!v.showError}">
+                                                    <ui:message title="Error" severity="error">
+                                                        Please review all errors before moving to next page
+                                                    </ui:message>
+                                                    </aura:if></div>
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}" />
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.ValidateBankAccount}" />
+                                                <!--<button class="" onclick="{!c.closeModel}" >Cancel</button>
+                                                                                                                                                <button class="" onclick="{!c.saveAsset}">Save</button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-backdrop slds-backdrop--open"></div>
+                                    <!--###### MODAL BOX Part END Here ######-->
+                                </aura:if>                                
+                                <aura:if isTrue="{!v.isStockOpen}">
+                                    <!--###### MODAL BOX Start From Here ######-->
+                                    <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                                        <div class="slds-modal__container">
+                                            <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                                            <div class="slds-modal__header">
+                                                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <h2 id="header99" style="color:#2081bf;" class="slds-text-heading--medium">{!v.Heading}</h2>
+                                            </div>
+                                            <!--###### MODAL BOX BODY Part Start From Here ######-->
+                                            <div class="slds-modal__content slds-p-around--medium">
+                                                <div class="slds-form slds-form_compound">
+                                                    <fieldset class="slds-form-element">
+                                                        <div class="slds-form-element__group" id="StockId">
+                                                            <div class="slds-form-element__row">
+                                                                <div class="slds-form-element slds-size_1-of-1">
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <lightning:select name="pickClient" aura:id="pickClient" onchange="{!c.onClientSelectChange}">
+                                                                            <aura:iteration items="{!v.ClientList}" var="pOptions">
+                                                                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                                                            </aura:iteration>
+                                                                        </lightning:select>
+                                                                        <aura:if isTrue='{!v.isClentSelected}'>
+                                                                            <h6 style="color:red;">Please select a value for this field</h6>
+                                                                        </aura:if>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputText aura:id="Stock_SrcName" maxlength="100" label="Source Name *" value="{!v.objAsset.Source_Name__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputCurrency aura:id="cashMarketStockID" label="{!v.myText3}" value="{!v.objAsset.Cash_or_Market_Value__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputSelect aura:id="assetTypeID" label="Type *" value="{!v.objAsset.Type__c}">
+                                                                            <ui:inputSelectOption text="" value="true" label="Select one" />
+                                                                            <aura:iteration items="{!v.StockTypeOptions}" var="pOptions">
+                                                                                <ui:inputSelectOption text="{!pOptions.value}" label="{!pOptions.value}" />
+                                                                            </aura:iteration>
+                                                                        </ui:inputSelect>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                                            <div class="slds-modal__footer">
+                                                <div align="left"><aura:if isTrue="{!v.showError}">
+                                                    <ui:message title="Error" severity="error">
+                                                        Please review all errors before moving to next page
+                                                    </ui:message>
+                                                    </aura:if></div>
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}" />
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.ValidateStock}" />
+                                                <!--<button class="" onclick="{!c.closeModel}" >Cancel</button>
+                                                                                                                                                <button class="" onclick="{!c.saveAsset}">Save</button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-backdrop slds-backdrop--open"></div>
+                                    <!--###### MODAL BOX Part END Here ######-->
+                                </aura:if>
+                                <aura:if isTrue="{!v.isLifeInsuaranceOpen}">
+                                    <!--###### MODAL BOX Start From Here ######-->
+                                    <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                                        <div class="slds-modal__container">
+                                            <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                                            <div class="slds-modal__header">
+                                                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <h2 id="header99" style="color:#2081bf;" class="slds-text-heading--medium">{!v.Heading}</h2>
+                                            </div>
+                                            <!--###### MODAL BOX BODY Part Start From Here ######-->
+                                            <div class="slds-modal__content slds-p-around--medium">
+                                                <div class="slds-form slds-form_compound">
+                                                    <fieldset class="slds-form-element">
+                                                        <div class="slds-form-element__group" id="BLRId">
+                                                            <div class="slds-form-element__row">
+                                                                <div class="slds-form-element slds-size_1-of-1">
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <lightning:select name="pickClient" aura:id="pickClient" onchange="{!c.onClientSelectChange}">
+                                                                            <aura:iteration items="{!v.ClientList}" var="pOptions">
+                                                                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                                                            </aura:iteration>
+                                                                        </lightning:select>
+                                                                        <aura:if isTrue='{!v.isClentSelected}'>
+                                                                            <h6 style="color:red;">Please select a value for this field</h6>
+                                                                        </aura:if>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputText aura:id="LifeIns_SrcName" maxlength="100" label="Source Name *" value="{!v.objAsset.Source_Name__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputCurrency aura:id="LifeIPFVID" label="{!v.BLRText}" value="{!v.objAsset.Life_Insurance_Policy_Face_Value__c}" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                                            <div class="slds-modal__footer">
+                                                <div align="left"><aura:if isTrue="{!v.showError}">
+                                                    <ui:message title="Error" severity="error">
+                                                        Please review all errors before moving to next page
+                                                    </ui:message>
+                                                    </aura:if></div>
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}" />
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.ValidateLifeInsuarance}" />
+                                                <!--<button class="" onclick="{!c.closeModel}" >Cancel</button>
+                                                                                                                                                <button class="" onclick="{!c.saveAsset}">Save</button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-backdrop slds-backdrop--open"></div>
+                                    <!--###### MODAL BOX Part END Here ######-->
+                                </aura:if>
+                                <aura:if isTrue="{!v.isRetirementOpen}">
+                                    <!--###### MODAL BOX Start From Here ######-->
+                                    <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                                        <div class="slds-modal__container">
+                                            <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                                            <div class="slds-modal__header">
+                                                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <h2 id="header99" style="color:#2081bf;" class="slds-text-heading--medium">{!v.Heading}</h2>
+                                            </div>
+                                            <!--###### MODAL BOX BODY Part Start From Here ######-->
+                                            <div class="slds-modal__content slds-p-around--medium">
+                                                <div class="slds-form slds-form_compound">
+                                                    <fieldset class="slds-form-element">
+                                                        <div class="slds-form-element__group" id="BLRId">
+                                                            <div class="slds-form-element__row" >
+                                                                <div class="slds-form-element slds-size_1-of-1">
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <lightning:select name="pickClient" aura:id="pickClient" onchange="{!c.onClientSelectChange}">
+                                                                            <aura:iteration items="{!v.ClientList}" var="pOptions">
+                                                                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                                                            </aura:iteration>
+                                                                        </lightning:select>
+                                                                        <aura:if isTrue='{!v.isClentSelected}'>
+                                                                            <h6 style="color:red;">Please select a value for this field</h6>
+                                                                        </aura:if>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputText aura:id="Retire_SrcName" maxlength="100" label="Source Name *" value="{!v.objAsset.Source_Name__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputCurrency aura:id="RetirementVestedID" label="{!v.BLRText}" value="{!v.objAsset.Vested_Interest_in_Retirement_Fund__c}" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                                            <div class="slds-modal__footer">
+                                                <div align="left"><aura:if isTrue="{!v.showError}">
+                                                    <ui:message title="Error" severity="error">
+                                                        Please review all errors before moving to next page
+                                                    </ui:message>
+                                                    </aura:if></div>
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}" />
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.ValidateRetirement}" />
+                                                <!--<button class="" onclick="{!c.closeModel}" >Cancel</button>
+                                                                                                                                                <button class="" onclick="{!c.saveAsset}">Save</button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-backdrop slds-backdrop--open"></div>
+                                    <!--###### MODAL BOX Part END Here ######-->
+                                </aura:if>
+                                <aura:if isTrue="{!v.isBusinessOpen}">
+                                    <!--###### MODAL BOX Start From Here ######-->
+                                    <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                                        <div class="slds-modal__container">
+                                            <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                                            <div class="slds-modal__header">
+                                                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <h2 id="header99" style="color:#2081bf;" class="slds-text-heading--medium">{!v.Heading}</h2>
+                                            </div>
+                                            <!--###### MODAL BOX BODY Part Start From Here ######-->
+                                            <div class="slds-modal__content slds-p-around--medium">
+                                                <div class="slds-form slds-form_compound">
+                                                    <fieldset class="slds-form-element">
+                                                        <div class="slds-form-element__group" id="BLRId">
+                                                            <div class="slds-form-element__row">
+                                                                <div class="slds-form-element slds-size_1-of-1">
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <lightning:select name="pickClient" aura:id="pickClient" onchange="{!c.onClientSelectChange}">
+                                                                            <aura:iteration items="{!v.ClientList}" var="pOptions">
+                                                                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                                                            </aura:iteration>
+                                                                        </lightning:select>
+                                                                        <aura:if isTrue='{!v.isClentSelected}'>
+                                                                            <h6 style="color:red;">Please select a value for this field</h6>
+                                                                        </aura:if>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputText aura:id="Buss_SrcName" maxlength="100" label="Source Name *" value="{!v.objAsset.Source_Name__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputCurrency aura:id="BusinessNetWorthID" label="{!v.BLRText}" value="{!v.objAsset.Net_Worth_of_Business_es_Owned__c}" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                                            <div class="slds-modal__footer">
+                                                <div align="left"><aura:if isTrue="{!v.showError}">
+                                                    <ui:message title="Error" severity="error">
+                                                        Please review all errors before moving to next page
+                                                    </ui:message>
+                                                    </aura:if></div>
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}" />
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.ValidateBusiness}" />
+                                                <!--<button class="" onclick="{!c.closeModel}" >Cancel</button>
+                                                                                                                                                <button class="" onclick="{!c.saveAsset}">Save</button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-backdrop slds-backdrop--open"></div>
+                                    <!--###### MODAL BOX Part END Here ######-->
+                                </aura:if>                              
+                                <aura:if isTrue="{!v.isOthersOpen}">
+                                    <!--###### MODAL BOX Start From Here ######-->
+                                    <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+                                        <div class="slds-modal__container">
+                                            <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                                            <div class="slds-modal__header">
+                                                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">X
+                                                    <span class="slds-assistive-text">Close</span>
+                                                </button>
+                                                <h2 id="header99" style="color:#2081bf;" class="slds-text-heading--medium">{!v.Heading}</h2>
+                                            </div>
+                                            <!--###### MODAL BOX BODY Part Start From Here ######-->
+                                            <div class="slds-modal__content slds-p-around--medium">
+                                                <div class="slds-form slds-form_compound">
+                                                    <fieldset class="slds-form-element">
+                                                        <div class="slds-form-element__group" id="OtherId">
+                                                            <div class="slds-form-element__row">
+                                                                <div class="slds-form-element slds-size_1-of-1">
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <lightning:select name="pickClient" aura:id="pickClient" onchange="{!c.onClientSelectChange}">
+                                                                            <aura:iteration items="{!v.ClientList}" var="pOptions">
+                                                                                <option value="{!pOptions.Id}">{!pOptions.Name}</option>
+                                                                            </aura:iteration>
+                                                                        </lightning:select>
+                                                                        <aura:if isTrue='{!v.isClentSelected}'>
+                                                                            <h6 style="color:red;">Please select a value for this field</h6>
+                                                                        </aura:if>
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputText aura:id="Other_SrcName" maxlength="100" label="Source Name *" value="{!v.objAsset.Source_Name__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputCurrency aura:id="otherAssetAmtID" label="{!v.myText1}" value="{!v.objAsset.Other_Asset_Amount__c}" />
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="slds-size_1-of-1">
+                                                                        <ui:inputSelect aura:id="otherAssetTypeID" label="Other Assets Type *" value="{!v.objAsset.Other_Assets_Type__c}">
+                                                                            <ui:inputSelectOption text="" value="true" label="Select one" />
+                                                                            <aura:iteration items="{!v.AssetsTypeOptions}" var="pOptions">
+                                                                                <ui:inputSelectOption text="{!pOptions.value}" label="{!pOptions.value}" />
+                                                                            </aura:iteration>
+                                                                        </ui:inputSelect>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                                            <div class="slds-modal__footer">
+                                                <div align="left"><aura:if isTrue="{!v.showError}">
+                                                    <ui:message title="Error" severity="error">
+                                                        Please review all errors before moving to next page
+                                                    </ui:message>
+                                                    </aura:if></div>
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeModel}" />
+                                                <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.ValidateOthers}" />
+                                                <!--<button class="" onclick="{!c.closeModel}" >Cancel</button>
+                                                                                                                                                <button class="" onclick="{!c.saveAsset}">Save</button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-backdrop slds-backdrop--open"></div>
+                                    <!--###### MODAL BOX Part END Here ######-->
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <br></br>
+    </fieldset>
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="previousStep" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+    <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Next" press="{!c.next}"></ui:button>
+</aura:component>

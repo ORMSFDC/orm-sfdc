@@ -1,0 +1,4 @@
+<aura:component controller="loginPartner_ctrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="this" action="{!c.myAction}"/>
+   <!-- <h1>Task Creation cmp</h1>-->
+</aura:component>

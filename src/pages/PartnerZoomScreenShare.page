@@ -1,0 +1,63 @@
+<apex:page id="loginPage"  standardStylesheets="false" showHeader="false" title="{!$Label.site.site_login}">
+    <script src="{!$Resource.jquery}"></script>
+    
+<script>
+       var $Jq = $.noConflict();
+    function Hello()
+    {        
+     var a = $Jq("[id$='Mid']").val(); 
+    // alert(a);
+    if (a=="" || a==null)
+        {
+            $Jq("[id$='ErLabel']").text("Enter meeting ID");
+                      
+            return false;
+            
+        }
+    else{
+         window.open('https://zoom.us/j/'+a, '_blank');
+        }
+    //window.location.assign = "https://www.google.com";
+    //window.open('http://stackoverflow.com', '_blank');
+   
+    }
+        </script>
+
+    <html>
+        <head>
+            <link charset="utf-8" href="{!$Resource.AuthCss}" media="screen" rel="stylesheet" type="text/css" />
+            <link charset="utf-8" href="{!$Resource.GlobalCss}" media="screen" rel="stylesheet" type="text/css" />
+             <title>Sign-in - ORM Services</title>
+    </head>
+<body id="category_sign_in" class="signed_out"> 
+  
+    <c:PartnerCoreHeader ></c:PartnerCoreHeader>
+    <br/>
+    <p style="color:#2081bf;font-weight:bold;font-size:x-large">	{!$Label.PartnerZoomShareLabel} </p>
+    <br/> 
+    <h2 style="color:#a3bf57;font-weight:bold;font-size:x-large">	{!$Label.PartnerNeedHelpLabel} </h2>
+    <br/>
+    <p>	{!$Label.HelpDescription} </p>
+    <br/>
+    <p>	{!$Label.ZoomInfoLabel} </p>
+    <!--<br/>-->
+    <p style="color:#444;font-weight:bold;font-size:large">{!$Label.PartenrZoomMeetingIdLabel} </p> 
+
+     <input type="text" id="Mid" style=" border-radius: 5px; background-color: #fff;border: 2px solid #ddd; width: 30em;
+        height: 3em; padding: .5em; border: 2px solid black" />
+    <apex:outputLabel ></apex:outputLabel><apex:outputLabel ></apex:outputLabel>
+    <input type="button"  style="font-size: 1em;height: 3em; background: #839f33; border: 2px solid #839f33;
+    color: #fff; display: inline-block; font-weight: 700; width text-align: center; border-radius: 5px; width: 5em;"
+    value="Submit" onclick="Hello()" id="SubmitButton" />
+    <apex:outputLabel ></apex:outputLabel><apex:outputLabel ></apex:outputLabel>
+    <apex:outputLink value="{!$Page.PartnerLoginPage}"> {!$Label.PartnerCancelLabel}</apex:outputLink>
+    <br/>
+    <label id="ErLabel" style="color:red;font-weight:bold; "></label>
+  <c:PartnerCoreFooter ></c:PartnerCoreFooter>
+    
+    <div class="ql-color-bar ql-color-bar-primary"></div>
+    
+</body>
+</html>
+
+</apex:page>

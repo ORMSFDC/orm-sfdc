@@ -1,0 +1,4 @@
+<aura:component controller="savedScenarioController" >
+    <aura:attribute name="senario_delete" type="String"/>
+    <aura:handler name="init" value="this" action="{!doinit}"/>
+</aura:component>

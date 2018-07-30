@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProfileSessionSetting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <externalCommunityUserIdentityVerif>false</externalCommunityUserIdentityVerif>
+    <forceLogout>false</forceLogout>
+    <profile>ormservices profile1501296577439</profile>
+    <sessionPersistence>false</sessionPersistence>
+    <sessionTimeout>0</sessionTimeout>
+    <sessionTimeoutWarning>false</sessionTimeoutWarning>
+</ProfileSessionSetting>

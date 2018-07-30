@@ -1,0 +1,44 @@
+.THIS .changeMe { 
+    background-color:yellow; 
+    width:200px; 
+    
+}
+ .THIS .uiButton.invisible {
+    display: none;
+}
+.THIS .slds-text-heading--medium {
+    margin-bottom: 12px;
+}
+.THIS .loc {
+text-align: center  !important;
+vertical-align: middle !important;
+line-height: 80px !important; 
+    border:1px solid #d3d3d3 !important;
+}
+.THIS .fontsize {
+clear: both;
+    font-size: .82397rem;
+    font-style: italic;
+    line-height: 1.3;
+    margin-bottom: 0;
+    text-align: justify
+}
+.THIS .btn {
+    -webkit-appearance: none;
+    background-color: #562d84;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    line-height: normal;
+    margin: 0;
+    overflow: visible;
+    padding: .5rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.THIS .e_btn{
+    background-color:#6C9F2E !important;
+}

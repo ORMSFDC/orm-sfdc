@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields><fields>
+        <label><!-- Condition Number --></label>
+        <name>Condition_Number__c</name>
+    </fields><fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+        <picklistValues>
+            <masterLabel>2 Year Tax Return</masterLabel>
+            <translation><!-- 2 Year Tax Return --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alternate Address Clarification</masterLabel>
+            <translation><!-- Alternate Address Clarification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bank statements</masterLabel>
+            <translation><!-- Bank statements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client(s) to provide</masterLabel>
+            <translation><!-- Client(s) to provide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copy of Divorce Decree and/or Settlement Agreement</masterLabel>
+            <translation><!-- Copy of Divorce Decree and/or Settlement Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copy of Each Client's Social Security Card</masterLabel>
+            <translation><!-- Copy of Each Client&apos;s Social Security Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Report Inquiries Requiring Explanation</masterLabel>
+            <translation><!-- Credit Report Inquiries Requiring Explanation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driver's License for all clients</masterLabel>
+            <translation><!-- Driver&apos;s License for all clients --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric Bills (Occupancy Clarification)</masterLabel>
+            <translation><!-- Electric Bills (Occupancy Clarification) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Occupancy Status</masterLabel>
+            <translation><!-- Occupancy Status --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paystubs-30 days most recent</masterLabel>
+            <translation><!-- Paystubs-30 days most recent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pension Award Letter</masterLabel>
+            <translation><!-- Pension Award Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Please provide a copy of your current mortgage statement</masterLabel>
+            <translation><!-- Please provide a copy of your current mortgage statement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power of Attorney</masterLabel>
+            <translation><!-- Power of Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proof of Social Security Income</masterLabel>
+            <translation><!-- Proof of Social Security Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proof of assets in the amount  needed for funds to close</masterLabel>
+            <translation><!-- Proof of assets in the amount  needed for funds to close --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self-Employed 2 years Tax Returns</masterLabel>
+            <translation><!-- Self-Employed 2 years Tax Returns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trust Agreement</masterLabel>
+            <translation><!-- Trust Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility Bill (Occupancy Clarification)</masterLabel>
+            <translation><!-- Utility Bill (Occupancy Clarification) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>W-2 Form</masterLabel>
+            <translation><!-- W-2 Form --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Loan Id --></label>
+        <name>Loan_Id__c</name>
+        <relationshipLabel><!-- Condition --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cleared</masterLabel>
+            <translation><!-- Cleared --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outstanding</masterLabel>
+            <translation><!-- Outstanding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision Requested</masterLabel>
+            <translation><!-- Revision Requested --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- rvxId --></label>
+        <name>rvxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Condition</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Conditions</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Condition Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

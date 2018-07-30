@@ -1,0 +1,154 @@
+<aura:component controller="LoanDateController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="filedata" type="String" default="" access="GLOBAL"/>
+    <aura:attribute name="datepick" type="String"/>
+    <aura:attribute name="LRateType" type="String"  />
+    <aura:attribute name="LMortgageAppliedFor" type="String" />
+    <aura:attribute name="JsonResponse" type="String"/>
+    <aura:attribute name="FNMData" type="String"/>
+    <aura:attribute name="text" type="String" /> 
+    <aura:attribute name="Id" type="String" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="isOpen_c1" type="boolean" default="false"/>
+    <aura:attribute name="isOpen_c" type="boolean" default="false"/>
+    <aura:attribute name="fileupload" type="boolean" default="false"/>
+    <aura:attribute name="newloan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}"/>
+    <aura:handler name="change" value="{!v.datepick}" action="{!c.myAction}"/>
+    <aura:registerEvent name="nav" type="c:NavigatetoLoanMenu"/>
+    <aura:registerEvent name="n" type="c:NavigatetoLoanMenu"/>
+    <aura:attribute name="attFile" type="boolean" default="true"/>  
+	  <aura:attribute type="String" name="fileString" default=''/>
+    <aura:attribute type="String" name="fileName" default="notExist"/>
+    <aura:attribute type="String" name="upload_file" default="choose file"/>
+    <aura:attribute name="IsSpinner" type="Boolean" default="false"/>
+   <!--- <aura:attribute name="show_success" type="Boolean" default="false"/>
+    <aura:attribute name="show_success1" type="String" default="Error msg"/>
+     <aura:renderIf isTrue="{!v.show_success}">
+   		 <ui:message title="Confirmation" severity="confirm" closable="true">
+     		 {!v.show_success1}
+ 	 	</ui:message>
+       </aura:renderIf>  
+   -->
+    <div class="fontCss"> 
+      
+       
+       <!-- <h1 style="font-weight:bold;">{!$Label.c.PartnerAppDateLabel}</h1> --> 
+        
+        <form class="slds-form--inline">
+            
+             <div style="margin-bottom:3%; " class="slds-size_1-of-3">
+                            <ui:inputSelect aura:id="LoanMortgageAppliedFor" required="true" label="Mortgage Applied for " value="{!v.LMortgageAppliedFor}" class="fontCss">
+                                
+                                <ui:inputSelectOption value="true" text="FHA Traditional HECM" label="FHA Traditional HECM"/>
+                                <!--<ui:inputSelectOption text="FHA Refinance HECM" label="FHA Refinance HECM"/>-->
+                                <ui:inputSelectOption text="HECM to HECM Refinance" label="HECM to HECM Refinance"/>
+                                <ui:inputSelectOption text="HECM for Purchase" label="HECM for Purchase"/>
+                            </ui:inputSelect>
+            			
+                
+                        </div>
+            
+           <div style="margin-bottom:3%; " class="slds-size_1-of-3">
+                            <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.LRateType}" >
+                                
+                                
+                                <ui:inputSelectOption value="true" text="ARM" label="ARM"/>
+                                <ui:inputSelectOption text="Fixed" label="Fixed"/>
+                            </ui:inputSelect>
+                            
+                        </div>
+            
+            <div class="slds-form-element__control">
+                <input type = "hidden" id = "secret"/>
+                <ui:inputDate aura:id="expname" 
+                              label="{!$Label.c.PartnerAppDateLabel}"
+                              change="{!c.myAction}"
+                              
+                              value="{!v.datepick}"
+                              required="true"
+                              displayDatePicker="true"
+                              format="MM/dd/yyyy"
+                              />
+                <label id = "error" style = "color:red" class="fontCss"/>
+            </div>
+            
+            <div class="slds-form-element" style="margin-top: -32%;margin-left: 48%;">
+			 <div style="border-style: solid;border-width: 5px;padding: 15px;border-color:5px solid green;color:#81AD4D;">
+              <!--   Have an existing package from another lender ?<br/>
+                 Upload it here and we'll do the rest!  -->
+                <div>
+                    <p class="tex">
+                      
+                     Submit Fully Signed Reverse Mortgage Application here and we'll do the rest!
+                    </p>
+                  <br/>
+			<!--	Upload it here and we do the rest!<br/> -->
+			<!--<aura:if isTrue="{!v.attFile}">-->
+                 
+                </div>
+                 <input id="upFile" type="file" style=" width: 24%;color: #2081bf;" class="file slds-file-selector__button slds-button slds-button_neutral email_att" aura:id="myFile" onchange="{!c.upload_attachment}"/> 
+                 &nbsp;&nbsp; {!v.upload_file}&nbsp;&nbsp;&nbsp;
+                <ui:button disabled="{!if(v.fileName=='notExist',true,false)}"  label="Upload" class="uploadButton" press="{!c.upload_file}" />
+		<!--	</aura:if> -->
+				
+			</div>
+                <!--      <ui:button label="submit"  press="{!c.LoanMenu}"/> -->
+                
+            </div>
+            
+            <div>
+                <ui:outputText class="t" value="{!v.text}"/>
+            </div> 
+        </form>
+        
+        <aura:if isTrue="{!v.isOpen}">
+            <br/>
+            <br/>
+           <!--   <div class = "slds-form-element">
+              <ui:inputCheckbox aura:id="checkbox" value="{!v.isOpen_c}" change="{!c.openchk}" /> 
+                
+                <ui:outputText value="By checking the box I acknowledge that this is the date that I collected the required pieces of information considered to be an application"/>
+            </div> -->
+            <div class = "slds-form-element">
+                <!--     <ui:inputCheckbox aura:id="checkbox1" value="{!v.isOpen_c1}"  change="{!c.openchk1}"/> // prsn -->
+                
+                <ui:outputText value="By entering the application date, I certify that this is the date that I collected the required pieces of information considered to be an application and that One Reverse will prepare and send a Good Faith Estimate (GFE) package directly to the client. I am aware this will occur whether I finish the registration process or not." class="fontCss"/>
+            </div>
+            <br/>
+            <br/>
+            
+            <div class = "container" >
+                <div style="display:none">
+                    <textarea id="inputtxt" class="fontCss"></textarea>
+                </div>
+            
+                 <p class="fontCss">If you have a Fannie Mae 3.2 file, please upload it and click “Start Application”. If you do not have a 3.2 file, please just click “Start Application” to manually enter your loan information.
+          </p>  <br></br>
+              <!--  <input type="file" class="file" label="Upload your client's 1003 file (FNMA 3.2 format)" 
+                       aura:id="file" id="fileInput" name="fileInput" multiple="false"   onchange="{!c.BindData}"
+                       accept=".FNM" disabled="{!v.fileupload}" /> prsn  -->
+                <input type="file" class="file" label="Upload your client's 1003 file (FNMA 3.2 format)" 
+                       aura:id="file" id="fileInput" name="fileInput" multiple="false"   onchange="{!c.BindData}"
+                       accept=".FNM"  />
+                
+                <!--<ui:button label="try" press="{!c.save1}"/> 
+                </div>
+         <div><img src="" alt="Image preview..."/> -->
+            </div>
+            <br></br>
+            <div class = "container">
+               
+            <!--    <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn" 
+                           label="{!$Label.c.PartnerSaveLabel}" aura:id="btn" press="{!c.save}" disabled="{!v.fileupload}"  /> prsn -->
+                
+				<ui:button class="slds-button slds-button_brand font_white" 
+                           label="{!$Label.c.PartnerSaveLabel}" aura:id="btn" press="{!c.save}"/>
+                
+                <aura:if isTrue="{!v.IsSpinner}">
+                    <lightning:spinner aura:id="spinner" variant="inverse" size="small" />
+                </aura:if>  
+            </div>
+        </aura:if>
+    </div> 
+    
+</aura:component>

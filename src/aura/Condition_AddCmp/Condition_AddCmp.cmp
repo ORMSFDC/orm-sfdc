@@ -1,0 +1,160 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="ConditionController" >
+    <aura:attribute name="ConditionData" type="Object[]"      /> 
+    <aura:attribute name="DBConditionCount" type="Integer" default="1" />
+    <aura:attribute name="ConditionCount" type="Integer" default="1" />
+    <aura:attribute name="LoanId" type="String" default="" />
+    <aura:method name="SaveCondition" action="{!c.SaveCondition}" />
+    <aura:registerEvent name="loadMyEvent" type="c:Event_Condition_ForCloseAddModal"/>
+    <!-- attribute for delete icon-->
+    <aura:attribute name="IsDeleteIconDisplay" type="boolean" default="False" />
+    <aura:attribute name="IsControlDisplay" type="boolean" default="True" />
+    <aura:attribute name="IsTextboxDisabled" type="boolean" default="true" />
+    <aura:handler name="change" value="{!v.IsDeleteIconDisplay}" action="{!c.displayDeleteIcon}"/>
+    <aura:handler name="change" value="{!v.IsControlDisplay}" action="{!c.displaycontrol}"/>
+    
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <table>
+              <tr>
+              <th style="width:74px;  padding-right:4px">Condition</th>
+                   <th  style="width:164px;   vertical-align:top;padding-right:4px">Status</th>
+                   <th style=" vertical-align:top">Description</th>
+                   
+              </tr>
+               <aura:iteration items="{!v.ConditionData}" var="ConditionData">
+    <tr><td style="width:50px;   vertical-align:top;padding-right:4px">
+        <ui:inputText disabled="true"  value="{!ConditionData.Index}"
+                                  class="slds-input IndexTextLength" />
+         </td>
+        <td style="width:164px;    vertical-align:top;padding-right:4px">
+            <ui:inputText disabled="true" 
+                                  value="{!ConditionData.Status}"
+                                  class="slds-input" />
+        </td>
+        <td style="width:328px;    vertical-align:top">
+                 <ui:inputText disabled="true"
+                                  value="{!ConditionData.DropDownValue}"
+                                  class="slds-input textLength" /> 
+        </td>
+       <td style="  vertical-align:top">
+        <a id="{!ConditionData.Index}" onclick="{!c.DeleteRow}">
+                        <lightning:icon variant="error" title="Delete" 
+                                        iconName="utility:delete" class="slds-icon slds-icon_small" 
+                                        size="small" alternativeText="{!ConditionData.Index}"/>
+                    </a> 
+        </td>
+        
+        </tr>
+                   <div class="slds-m-top--xxx-small"></div>
+     <tr><td></td>
+        <td></td>
+        <td colspan="2" >
+               <ui:inputTextArea disabled="true"  label=""
+                                      value="{!ConditionData.DescText}" 
+                                      class="slds-input  "
+                                      />
+               </td>
+        </tr>
+   
+        
+       
+    </aura:iteration>   </table>         
+    
+    <table>
+    <tr>
+        
+        <td id="ControlDisplay" style="  height: 57px; vertical-align:top;padding-right:4px">
+        <ui:inputText label="" aura:id="ConditionIndex"  disabled="true"  
+                                  value="{!v.ConditionCount}" class="slds-input IndexTextLength"
+                                  /> 
+        </td>
+        <td id="ControlDisplay1" style=" width:164px;   height: 57px; vertical-align:top;padding-right:4px">
+            <ui:inputText label=""  disabled="true"  aura:id="Status"
+                                  value="Outstanding" class="slds-input "
+                                  />
+        </td>
+        <td id="ControlDisplay2" style="  height: 57px; vertical-align:top">
+             <ui:inputSelect label="" class="slds-input" change="{!c.DescChange}" aura:id="DDl_Description" >
+                        <ui:inputSelectOption value="" text="" label="Select"/>
+                        <ui:inputSelectOption text="Driver's License for all clients" label="Driver's License for all clients"/>
+                        <ui:inputSelectOption text="Copy of Each Client's Social Security Card" label="Copy of Each Client's Social Security Card"/>
+                        <ui:inputSelectOption text="Trust Agreement" label="Trust Agreement"/>
+                        <ui:inputSelectOption text="Power of Attorney" label="Power of Attorney"/>
+                        <ui:inputSelectOption text="Occupancy Status" label="Occupancy Status"/>
+                        <ui:inputSelectOption text="Alternate Address Clarification" label="Alternate Address Clarification"/>
+                        <ui:inputSelectOption text="Copy of Divorce Decree and/or Settlement Agreement" label="Copy of Divorce Decree and/or Settlement Agreement"/>
+                        <ui:inputSelectOption text="Client(s) to provide" label="Client(s) to provide"/>
+                        <ui:inputSelectOption text="Please provide a copy of your current mortgage statement" label="Please provide a copy of your current mortgage statement"/>
+                        <ui:inputSelectOption text="Proof of assets in the amount needed for funds to close" label="Proof of assets in the amount needed for funds to close"/>
+                        <ui:inputSelectOption text="Proof of Social Security Income" label="Proof of Social Security Income"/>
+                        <ui:inputSelectOption text="Paystubs-30 days most recent" label="Paystubs-30 days most recent"/>
+                        <ui:inputSelectOption text="W-2 Form" label="W-2 Form"/>
+                        <ui:inputSelectOption text="Pension Award Letter" label="Pension Award Letter"/>
+                        <ui:inputSelectOption text="Self-Employed 2 years Tax Returns" label="Self-Employed 2 years Tax Returns"/>
+                        <ui:inputSelectOption text="2 Year Tax Return" label="2 Year Tax Return"/>
+                        <ui:inputSelectOption text="Bank statements" label="Bank statements"/>
+                        <ui:inputSelectOption text="Utility Bill (Occupancy Clarification)" label="Utility Bill (Occupancy Clarification)"/>
+                        <ui:inputSelectOption text="Electric Bills (Occupancy Clarification)" label="Electric Bills (Occupancy Clarification)"/>
+                        <ui:inputSelectOption text="Credit Report Inquiries Requiring Explanation" label="Credit Report Inquiries Requiring Explanation"/>
+                        <ui:inputSelectOption text="Other" label="Other"/>
+                        
+                    </ui:inputSelect>
+                   
+        </td>
+             
+       <td style="vertical-align:top">
+        <a id="deletecontrol"  onclick="{!c.hideControl}" style="display:none">
+                        <lightning:icon variant="error" title="Delete" 
+                                        iconName="utility:delete" class="slds-icon slds-icon_small" 
+                                        size="small" />
+                    </a> 
+        </td>
+        
+        </tr>
+     <tr><td></td>
+        <td></td>
+        <td colspan="2" id="ControlDisplay3">
+               <ui:inputTextArea label="" disabled="{!v.IsTextboxDisabled}" aura:id="inputCondition"
+                                      class="slds-input  "  />
+               </td>
+        </tr>
+    </table>
+    <!-- Nausad -->
+    <fieldset class="slds-theme--default slds-container--xx-large" >
+        <div id="ControlDisplay">
+            <div class="slds-m-top--small"></div>
+                                     
+        </div>
+        <div class="slds-grid slds-grid--pull-padded">
+            <div class="slds-col--padded " 
+                 style="text-align: right !important;">
+                Add Another Condition
+                <a onclick="{! c.AddCondition }"  >
+                    <lightning:icon variant="Info" title="Delete" 
+                                    iconName="utility:new" class="slds-icon slds-icon_small TransperantIconGreen" 
+                                    size="small" />
+                </a> 
+                
+            </div>
+        </div> 
+        <div class="slds-grid slds-grid--pull-padded">
+            <div class="slds-col--padded">                
+                <!-- <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+               press="{!c.SaveCondition}" label="Save"></ui:button>-->
+            </div>
+        </div> 
+    </fieldset>    
+    <fieldset class="slds-theme--default slds-container--xx-large">
+        <div class="slds-m-top--x-small"></div>
+        <div class="slds-grid slds-grid--pull-padded">
+            <div class="slds-col--padded " style="text-align: right !important;">
+                <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="CheckAddCondition"  value="" />
+                <span> Notify Primary Loan Contact of New Condition(s)</span>
+            </div>
+        </div> 
+        
+        
+    </fieldset>
+    
+    
+</aura:component>

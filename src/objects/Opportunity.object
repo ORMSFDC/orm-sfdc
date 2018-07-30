@@ -1,0 +1,2913 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>AddInfluence</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Opportunity_Record_Page7</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides><businessProcesses>
+        <fullName>NewProcess</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses><businessProcesses>
+        <fullName>Partner Onboarding</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>App Complete%2FApproved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App Complete%2FDenied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App Outstanding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App Pending Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>App Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Seasoning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reviewing Docs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses><businessProcesses>
+        <fullName>Portal User Onboarding</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Complete%2FApproved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete%2FDenied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training In Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses><businessProcesses>
+        <fullName>Renewals</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete%2FApproved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete%2FDenied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses><compactLayouts>
+        <fullName>New_Awesome_Companct_Layout</fullName>
+        <fields>Name</fields>
+        <fields>AccountId</fields>
+        <fields>CloseDate</fields>
+        <fields>Amount</fields>
+        <fields>OwnerId</fields>
+        <label>New Awesome Compact Layout</label>
+    </compactLayouts><fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Addendum_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Addendum Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Addendum_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Addendum Received?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Addendum_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Addendum Required? </label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Affiliated_Entities_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliated Entities Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Affiliated_Entities__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Affiliated Entities</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Amount</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>App_Sent__c</fullName>
+        <externalId>false</externalId>
+        <label>App Sent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Application_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Assigned_Credit_Risk_Analyst__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned Credit Risk Analyst</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Assigned_PCS__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned PCS</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Assigned_Trainer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned Trainer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Trainer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Broker_Agreement_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Broker Agreement Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Broker_Agreement__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Broker Agreement</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Budget_Confirmed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Budget Confirmed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>CampaignId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Cash__c</fullName>
+        <externalId>false</externalId>
+        <label>Cash</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Certification_and_Authorization_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Certification and Authorization Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Certification_and_Authorization__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Certification and Authorization</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Character_Checks_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Character Checks Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Character_Checks__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Character Checks</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>ClientID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Client Name</label>
+        <referenceTo>ClientInfo__c</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>CloseDate</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities (Contact)</relationshipLabel>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ContractId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Corporate_Resolution_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Corporate Resolution Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Corporate_Resolution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Corporate Resolution</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Credit_Risk_Package_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Risk Package Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Initial Review</fullName>
+                    <default>false</default>
+                    <label>Initial Review</label>
+                </value>
+                <value>
+                    <fullName>Broker Package Incomplete</fullName>
+                    <default>false</default>
+                    <label>Broker Package Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Full Review In Process</fullName>
+                    <default>false</default>
+                    <label>Full Review In Process</label>
+                </value>
+                <value>
+                    <fullName>Escalated</fullName>
+                    <default>false</default>
+                    <label>Escalated</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Credit_risk_package_status_changed_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit risk package status changed date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Current_RV_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Current RV User</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>Discovery_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Discovery Completed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>E_sign_Addendum_Provider__c</fullName>
+        <externalId>false</externalId>
+        <label>E-sign Addendum Provider</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Doc Magic</fullName>
+                    <default>false</default>
+                    <label>Doc Magic</label>
+                </value>
+                <value>
+                    <fullName>DocuSign</fullName>
+                    <default>false</default>
+                    <label>DocuSign</label>
+                </value>
+                <value>
+                    <fullName>Calyx</fullName>
+                    <default>false</default>
+                    <label>Calyx</label>
+                </value>
+                <value>
+                    <fullName>Ellie Mae</fullName>
+                    <default>false</default>
+                    <label>Ellie Mae</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>E_sign_Addendum_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>E-sign Addendum Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>E_sign_Addendum__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>E-sign Addendum</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Equity__c</fullName>
+        <externalId>false</externalId>
+        <label>Equity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Estimated_Home_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Home Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields><fields>
+        <fullName>Exclusionary_Lists_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Exclusionary Lists Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Exclusionary_Lists__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Exclusionary Lists</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>Ext__c</fullName>
+        <externalId>false</externalId>
+        <label>Ext</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FHAC_Sponsored_Originator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>FHAC Sponsored Originator?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>FHA_Connection_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK("https://entp.hud.gov/clas/index.cfm/" , 'Please click here to be taken to FHA Connection.')</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FHA Connection Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Financials_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Financials Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Financials__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Financials</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>FirstName__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Formation_Documents_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Formation Documents Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Formation_Documents__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Formation Documents</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>IqScore</fullName>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>IsPrivate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>LO_Comp_2018__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LO Comp 2018</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>LastName__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>LeadSource</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>LoanOfficerName__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>LoanOfficerName</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Loan_Officer_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan Officer Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Loan_Related_Fees_Related_Policy_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Related Fees &amp; Related Policy Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Loan_Related_Fees_and_Related_Policy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Loan Related Fees and Related Policy</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Loss_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Loss Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Lost to Competitor</fullName>
+                    <default>false</default>
+                    <label>Lost to Competitor</label>
+                </value>
+                <value>
+                    <fullName>No Budget / Lost Funding</fullName>
+                    <default>false</default>
+                    <label>No Budget / Lost Funding</label>
+                </value>
+                <value>
+                    <fullName>No Decision / Non-Responsive</fullName>
+                    <default>false</default>
+                    <label>No Decision / Non-Responsive</label>
+                </value>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>MARI_Background_Check_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>MARI Background Check Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>MARI_Background_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MARI Background Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Margin__c</fullName>
+        <externalId>false</externalId>
+        <label>Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>NMLS_ID_Verified_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>NMLS ID Verified Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>NMLS_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>NMLS ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>New_CRA_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>New CRA Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>NextStep</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>Next_Recertification_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Recertification Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>ORM_Account_Executive_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ORM Account Executive Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Old_CRA_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Old CRA Status</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Opt_In_Lead_Sharing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Opt In Lead Sharing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Original_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Original Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>PartnerAccountId</fullName>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Partner_Addendum_Signed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Addendum Signed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Partner_Addendum_Signed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Partner Addendum Signed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Partner_Denial_Reasons__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Denial Reasons</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Affiliated Entities</fullName>
+                    <default>false</default>
+                    <label>Affiliated Entities</label>
+                </value>
+                <value>
+                    <fullName>Broker Agreement</fullName>
+                    <default>false</default>
+                    <label>Broker Agreement</label>
+                </value>
+                <value>
+                    <fullName>Certification and Authorization</fullName>
+                    <default>false</default>
+                    <label>Certification and Authorization</label>
+                </value>
+                <value>
+                    <fullName>Character Checks</fullName>
+                    <default>false</default>
+                    <label>Character Checks</label>
+                </value>
+                <value>
+                    <fullName>Corporate Resolution</fullName>
+                    <default>false</default>
+                    <label>Corporate Resolution</label>
+                </value>
+                <value>
+                    <fullName>Exclusionary Lists</fullName>
+                    <default>false</default>
+                    <label>Exclusionary Lists</label>
+                </value>
+                <value>
+                    <fullName>Financials</fullName>
+                    <default>false</default>
+                    <label>Financials</label>
+                </value>
+                <value>
+                    <fullName>Formation Documents</fullName>
+                    <default>false</default>
+                    <label>Formation Documents</label>
+                </value>
+                <value>
+                    <fullName>Loan Related Fees and Related Policy</fullName>
+                    <default>false</default>
+                    <label>Loan Related Fees and Related Policy</label>
+                </value>
+                <value>
+                    <fullName>MARI Background Check</fullName>
+                    <default>false</default>
+                    <label>MARI Background Check</label>
+                </value>
+                <value>
+                    <fullName>NMLS ID</fullName>
+                    <default>false</default>
+                    <label>NMLS ID</label>
+                </value>
+                <value>
+                    <fullName>Reputation Check</fullName>
+                    <default>false</default>
+                    <label>Reputation Check</label>
+                </value>
+                <value>
+                    <fullName>Resumes</fullName>
+                    <default>false</default>
+                    <label>Resumes</label>
+                </value>
+                <value>
+                    <fullName>W-9</fullName>
+                    <default>false</default>
+                    <label>W-9</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields><fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields><fields>
+        <fullName>Pricebook2Id</fullName>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Probability</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>Proper_Addendum_sent_to_RV_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Proper Addendum sent to RV Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Proper_Addendum_sent_to_RV__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Proper Addendum sent to RV</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>QLMS_Account_Executive__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>QLMS Account Executive</label>
+        <referenceTo>QLMS_AE__c</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>ROI_Analysis_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>ROI Analysis Completed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>RV_Agreement_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>RV Agreement Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Reapplication_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Reapplication Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>App Package sent to inactive partner</fullName>
+                    <default>false</default>
+                    <label>App Package sent to inactive partner</label>
+                </value>
+                <value>
+                    <fullName>Application Package Uploaded</fullName>
+                    <default>false</default>
+                    <label>Application Package Uploaded</label>
+                </value>
+                <value>
+                    <fullName>Application Package Accepted by Credit Risk</fullName>
+                    <default>false</default>
+                    <label>Application Package Accepted by Credit Risk</label>
+                </value>
+                <value>
+                    <fullName>App Package incomplete per Credit Risk</fullName>
+                    <default>false</default>
+                    <label>App Package incomplete per Credit Risk</label>
+                </value>
+                <value>
+                    <fullName>Reapproved</fullName>
+                    <default>false</default>
+                    <label>Reapproved</label>
+                </value>
+                <value>
+                    <fullName>Denied by Credit Risk</fullName>
+                    <default>false</default>
+                    <label>Denied by Credit Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Recertification_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Recertification Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Recertification_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Recertification Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Related_Branch__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Branch</label>
+        <referenceTo>Branches__c</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Related_Individual__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Individual</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Renewal_Questionnaire_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Received?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Renewal_Questionnaire_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Outstanding</fullName>
+                    <default>false</default>
+                    <label>Outstanding</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Need LOX</fullName>
+                    <default>false</default>
+                    <label>Need LOX</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Reputation_Check_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Reputation Check Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Reputation_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reputation Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Resumes_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Resumes Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Resumes__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Resumes</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>StageName</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Status_App_Completed_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Status App Completed/Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_App_Completed_Denied__c</fullName>
+        <externalId>false</externalId>
+        <label>Status App Completed/Denied</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_App_Outstanding__c</fullName>
+        <externalId>false</externalId>
+        <label>Status App Outstanding</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_App_Pending_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Status App Pending Review</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_App_Ready__c</fullName>
+        <externalId>false</externalId>
+        <label>Status App Ready</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_Documents_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Documents Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_Escalated_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Escalated Review</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_Reviewing_Docs__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Reviewing Docs</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status_Withdrawn__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Withdrawn</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>StreetAddress__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>SyncedQuoteId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>TotalOpportunityQuantity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields><fields>
+        <fullName>Training_Complete_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Complete Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Training_In_Process_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Training In Process Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Training_Sent_to_Trainer_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Sent to Trainer Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Training_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Training Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent to Trainer</fullName>
+                    <default>false</default>
+                    <label>Sent to Trainer</label>
+                </value>
+                <value>
+                    <fullName>Training in Process</fullName>
+                    <default>false</default>
+                    <label>Training in Process</label>
+                </value>
+                <value>
+                    <fullName>Training Complete</fullName>
+                    <default>false</default>
+                    <label>Training Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Updated_Financial_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financial Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Updated_Financial_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Updated Financial Received?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Updated_Financial_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financial Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Outstanding</fullName>
+                    <default>false</default>
+                    <label>Outstanding</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Need LOX</fullName>
+                    <default>false</default>
+                    <label>Need LOX</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields><fields>
+        <fullName>W_9_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>W-9 Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>W_9__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>W-9</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>11</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>validated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>validated</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
+        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OPPORTUNITY.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ORM_Account_Executive_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>Private</sharingModel><listViews>
+        <fullName>AllOpportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>notEqual</operation>
+            <value>varma</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>notEqual</operation>
+            <value>Ready</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Partner_Onboarding</value>
+        </filters>
+        <label>All Partner Onboarding Opportunities</label>
+    </listViews><listViews>
+        <fullName>All_Partner_Onboarding_Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Partner_Onboarding</value>
+        </filters>
+        <label>All Partner Onboarding Opportunities</label>
+    </listViews><listViews>
+        <fullName>All_Portal_Training_Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.RECORDTYPE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>notEqual</operation>
+            <value>varma</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>equals</operation>
+            <value>Ready,Training In Process,Complete/Approved,Complete/Denied</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Portal_User_Onboarding</value>
+        </filters>
+        <label>All Portal Training Opportunities</label>
+    </listViews><listViews>
+        <fullName>All_Portal_User_Onboarding_Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Portal_User_Onboarding</value>
+        </filters>
+        <label>All Portal User Onboarding Opportunities</label>
+    </listViews><listViews>
+        <fullName>ClosingNextMonth</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>LoanOfficerName__c</columns>
+        <columns>ClientID__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <label>Closing Next Month</label>
+    </listViews><listViews>
+        <fullName>ClosingThisMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Closing This Month</label>
+    </listViews><listViews>
+        <fullName>Default_Opportunity_Pipeline</fullName>
+        <booleanFilter>(1 OR 2)</booleanFilter>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <label>Opportunity Pipeline</label>
+    </listViews><listViews>
+        <fullName>MyOpportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Email__c</columns>
+        <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+        <columns>Broker_Agreement__c</columns>
+        <columns>Broker_Agreement_Received_Date__c</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Opportunities</label>
+    </listViews><listViews>
+        <fullName>NewThisWeek</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>LoanOfficerName__c</columns>
+        <columns>ClientID__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews><listViews>
+        <fullName>Won</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.WON</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Won</label>
+    </listViews><recordTypes>
+        <fullName>Loan</fullName>
+        <active>true</active>
+        <businessProcess>NewProcess</businessProcess>
+        <label>Loan</label>
+        <picklistValues>
+            <picklist>Credit_Risk_Package_Status__c</picklist>
+            <values>
+                <fullName>Broker Package Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Review In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>E_sign_Addendum_Provider__c</picklist>
+            <values>
+                <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doc Magic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Reason__c</picklist>
+            <values>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget %2F Lost Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Decision %2F Non-Responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Affiliated Entities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification and Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Character Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary Lists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formation Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Related Fees and Related Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Background Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NMLS ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W-9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reapplication_Status__c</picklist>
+            <values>
+                <fullName>App Package incomplete per Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package sent to inactive partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Accepted by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Uploaded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reapproved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Questionnaire_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Status__c</picklist>
+            <values>
+                <fullName>Sent to Trainer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training in Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Updated_Financial_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Partner_Onboarding</fullName>
+        <active>true</active>
+        <businessProcess>Partner Onboarding</businessProcess>
+        <label>Partner Onboarding</label>
+        <picklistValues>
+            <picklist>Credit_Risk_Package_Status__c</picklist>
+            <values>
+                <fullName>Broker Package Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Review In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>E_sign_Addendum_Provider__c</picklist>
+            <values>
+                <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doc Magic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Reason__c</picklist>
+            <values>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget %2F Lost Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Decision %2F Non-Responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Affiliated Entities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification and Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Character Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary Lists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formation Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Related Fees and Related Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Background Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NMLS ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W-9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reapplication_Status__c</picklist>
+            <values>
+                <fullName>App Package incomplete per Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package sent to inactive partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Accepted by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Uploaded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reapproved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Questionnaire_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Status__c</picklist>
+            <values>
+                <fullName>Sent to Trainer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training in Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Updated_Financial_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Portal_User_Onboarding</fullName>
+        <active>true</active>
+        <businessProcess>Portal User Onboarding</businessProcess>
+        <label>Portal User Onboarding</label>
+        <picklistValues>
+            <picklist>Credit_Risk_Package_Status__c</picklist>
+            <values>
+                <fullName>Broker Package Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Review In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>E_sign_Addendum_Provider__c</picklist>
+            <values>
+                <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doc Magic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Reason__c</picklist>
+            <values>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget %2F Lost Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Decision %2F Non-Responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Affiliated Entities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification and Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Character Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary Lists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formation Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Related Fees and Related Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Background Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NMLS ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W-9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reapplication_Status__c</picklist>
+            <values>
+                <fullName>App Package incomplete per Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package sent to inactive partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Accepted by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Uploaded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reapproved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Questionnaire_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Status__c</picklist>
+            <values>
+                <fullName>Sent to Trainer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training in Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Updated_Financial_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Renewals</fullName>
+        <active>true</active>
+        <businessProcess>NewProcess</businessProcess>
+        <label>Renewals</label>
+        <picklistValues>
+            <picklist>Credit_Risk_Package_Status__c</picklist>
+            <values>
+                <fullName>Broker Package Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Review In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>E_sign_Addendum_Provider__c</picklist>
+            <values>
+                <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doc Magic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Reason__c</picklist>
+            <values>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget %2F Lost Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Decision %2F Non-Responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Affiliated Entities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification and Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Character Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary Lists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formation Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Related Fees and Related Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Background Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NMLS ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W-9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reapplication_Status__c</picklist>
+            <values>
+                <fullName>App Package incomplete per Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package sent to inactive partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Accepted by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Uploaded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reapproved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Questionnaire_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Status__c</picklist>
+            <values>
+                <fullName>Sent to Trainer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training in Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Updated_Financial_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><validationRules>
+        <fullName>AE_Opportunity_Stage_Change</fullName>
+        <active>true</active>
+        <description>AE's cannot change the Opportunity Stage after App Pending Review</description>
+        <errorConditionFormula>AND( RecordType.Name = "Partner Onboarding", $UserRole.Name = "Account Executive", ISCHANGED(StageName),     
+OR(
+ISPICKVAL(StageName, 'Reviewing Docs'),
+ISPICKVAL(StageName, 'Documents Required'),
+ISPICKVAL(StageName, 'Escalated Review'),
+ISPICKVAL(StageName, 'Pending Seasoning'),
+ISPICKVAL(StageName, 'App Complete/Approved'),
+ISPICKVAL(StageName, 'App Complete/Denied'),
+ISPICKVAL(StageName, 'Withdrawn')
+))</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>You do not have access to update this stage</errorMessage>
+    </validationRules></CustomObject>

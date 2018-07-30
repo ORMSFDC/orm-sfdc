@@ -1,0 +1,12 @@
+<aura:component controller="lookUpController" >
+       	  <ltng:require scripts="{!join(',',
+                           $Resource.ChartJS23)}"
+                  afterScriptsLoaded="{!c.myAction}" />
+    	
+    <aura:attribute name="months" type="object"/>
+        <aura:attribute name="chart" type="object"/>
+        <aura:attribute name="data" type="object"/>
+         <aura:attribute name="bar" type="object"/>
+    
+      <canvas aura:id="chart1"  id="cashflow_chart" ></canvas>
+</aura:component>

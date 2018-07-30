@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Account</entityName>
+    <fieldName>Partner_Loan_Production_Stage__c</fieldName>
+    <masterLabel>Committed Partner Path</masterLabel>
+    <recordTypeName>Committed_Partner</recordTypeName>
+</PathAssistant>

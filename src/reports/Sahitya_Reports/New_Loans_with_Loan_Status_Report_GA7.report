@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Loan_New__c$Name</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanStatus__r$Name</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanStatus__r$CreatedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__r$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Waiting for Full Package</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c$LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Waiting for Full Package</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Loan_New__c$IsActiveFlag__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>New Loans with Loan Status Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Loans_with_Loan_Status__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Loan_New__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

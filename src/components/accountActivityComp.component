@@ -1,0 +1,10 @@
+<apex:component controller="accountActivity" access="global">
+    
+    <apex:attribute name="acctId" type="Id" description="Id of the account" assignTo="{!accountId}"/>
+    <h3>Account Activity Report:</h3>
+      <li>All Activities : <b>{!allActivities}</b></li>
+      <li>Last Week Activities : <b>{!last7DaysActivities}</b></li>
+      <li>Current Month Activities : <b>{!last30DaysActivities}</b></li>
+      
+     
+</apex:component>

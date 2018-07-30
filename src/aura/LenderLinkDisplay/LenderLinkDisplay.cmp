@@ -1,0 +1,25 @@
+<aura:component controller="PartnerHomeAfterLoginController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <ltng:require styles="/resource/SLDS0122/assets/styles/salesforce-lightning-design-system.min.css"/>
+    
+    <link href="assets/styles/salesforce-lightning-design-system-vf.css" rel="stylesheet"/>
+    <aura:attribute name="lenderlink" type="LenderLink__c" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <form class="slds-form--stacked">
+        <div class="table table-bordered">
+            <table class="table table-striped">
+                <tr><td><h3 class="customFont"><b>{!$Label.c.HomePageLinksHeading}</b></h3></td></tr>
+                <tr><td></td></tr>
+                <aura:iteration items="{!v.lenderlink}" var="lend">                 
+                    <tr><td class="bodyText">
+                        <b class="linkText" > 
+                        <ui:outputURL value="{!lend.URL__c}"  target="blank" label="{!lend.Name}"/></b>
+                        </td></tr> 
+                </aura:iteration>
+            </table>
+        </div>
+    </form>
+    
+</aura:component>

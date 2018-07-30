@@ -1,0 +1,114 @@
+<aura:component controller="LoanController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+                access="global">
+    
+    <aura:attribute name="toReset" type="boolean" default="false" description=""/>
+    
+    <aura:handler name="init" action="{!c.doIn}" value="{!this}" />
+    <aura:attribute name="loan" type="Loan_New__c[]" />
+    <aura:attribute name="count" type="boolean" />
+    <aura:attribute name="onclick" type="boolean" default="false"/>
+    <aura:attribute name="submit" type="boolean" default="false"/>
+    <aura:registerEvent name="navigate" type="c:NavigatetoLoanMenu"/>
+    <aura:attribute name="idIs" type="String" default="null" />
+    <aura:attribute name="showSpinner" type="boolean" default="false" />
+      <aura:attribute name="showPopup" type="boolean" default="false"/>
+    
+    <aura:if isTrue="{!v.showPopup}">
+        <!--###### MODAL BOX Start From Here ######--> 
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container slds-mymodal" >
+                <!-- ###### MODAL BOX HEADER Part Start From Here ######-->
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    
+                </div>
+                <!--###### MODAL BOX BODY Part Start From Here ######-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>Do you really want to delete?
+                        </b>
+                    </p>
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start From Here ######-->
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--brand" onclick="{!c.closeModel}" >Cancel</button>
+                    <button class="slds-button slds-button--brand" onclick="{!c.doDelete}">Ok</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+    </aura:if>    
+    
+    <div class="slds-form slds-form_stacked" 
+         style="margin-left:123px;margin-right:60px;">
+        
+        <div>
+            <h2 class="h2Css">{!$Label.c.PartnerIncompleteRegLabel}</h2>  
+            
+        </div>
+        
+        <div  style="display:Block">
+            <aura:if isTrue="{!v.count}">
+                <ui:button aura:id="click" label="{!$Label.c.PartnerIncompleteAppLabel}" press="{!c.myAction}" class="normal"/>
+                <br/>
+                
+                <aura:if isTrue="{!v.onclick}">
+                    <div style="color:red;font-weight:bold;">
+                        
+                        <p>{!$Label.c.PartnerIncompleteAppDescLabel}</p>
+                    </div>
+                    
+                    <br/>
+                    <div style="color:grey;">
+                        <p>{!$Label.c.PartnerOpenSaveIncLabel}</p> 
+                    </div>
+                    
+                    
+                    
+                    <div class="slds-box">
+                        <ul>
+                            
+                            <aura:iteration items="{!v.loan}" var="loan">
+                                <div class = "slds-grid" >
+                                    <div class="slds-col" > <h3 class="h3Css"><ui:outputText class="t1" value="{!loan.Name}"/>&nbsp;-&nbsp;<ui:outputText class="t1" value="{!loan.Client_Name__c}"/></h3>
+                                        <p class = "t">Created on:  <ui:outputDate class="t" value="{!loan.LastModifiedDate}"/></p><br/></div>
+                                    
+                                    <div style="color:blue">
+                                        <a onclick="{!c.LoanDel}" id = "{!loan.Id}" >{!$Label.c.PartnerDelLabel}</a>  
+                                        
+                                        &nbsp;&nbsp;
+                                        
+                                        <a id = "{!loan.Id}" name="{!loan.Rate_Type__c}" onclick="{!c.LoanMenu}">{!$Label.c.PartnerCompleteReg} </a> 
+                                        <input type = "hidden" id = "{!loan.Id}" value = "{!loan.Id}"/>
+                                        <!-- <u>Delete</u> <ui:outputText value="Complete Registration"
+                                               click="{!c.LoanMenu}"/></u>-->
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </aura:if>
+                
+                <br></br>
+                <div >
+                    <h3 class="h3Css"> 
+                        {!$Label.c.PartnerSubmitAppDescLabel}</h3>
+                </div>
+            </aura:if>
+        </div>
+        <div class = "container">
+            <c:LoanDateValidation />
+        </div>
+    </div>
+    <div id="spinner" style="display:none">
+        <div class="slds-spinner_container">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </div>
+</aura:component>

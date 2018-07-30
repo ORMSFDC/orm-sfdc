@@ -1,0 +1,23 @@
+<aura:component controller="PartnerHomeAfterLoginController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <ltng:require styles="/resource/SLDS0122/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <link href="assets/styles/salesforce-lightning-design-system-vf.css" rel="stylesheet"/>
+    <aura:attribute name="lender" type="Lender__c" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <form class="slds-form--stacked">
+        <div class="table table-bordered">
+            <table class="table table-striped">
+                <tr><td><h3  class="customFont"><b>{!$Label.c.HomePageContactUsHeading}</b></h3></td></tr>                               
+                <aura:iteration items="{!v.lender}" var="lend">                 
+                    <tr>
+                        <td class="customBody"><b >{!lend.Name}:</b>&nbsp;{!lend.LenderNumber__c}</td>                        
+                    </tr>
+                </aura:iteration>
+                <td  class="customBody"><b>Email:</b>&nbsp;
+                     <ui:outputURL value="mailto:ORMSSupport@onereverse.com"   label="ORMSSupport@onereverse.com"/> 
+                       
+                   </td>
+            </table>
+        </div>
+    </form>    
+</aura:component>

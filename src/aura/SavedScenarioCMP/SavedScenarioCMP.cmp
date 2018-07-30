@@ -1,0 +1,735 @@
+<aura:component controller="savedScenarioController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+    <ltng:require scripts="{!join(',',
+                           $Resource.ChartJS23,
+                           $Resource.ChartJS24)}"/>    
+    <ltng:require scripts="{!$Resource.bootstrap}" />
+    <link rel="stylesheet" type="text/css" href="{!$Resource.bootstrapiso}"/>    
+    <!--Index Table-->
+    <!---Use Salesforce Lightning Design System CSS From Static resources-->   
+    <ltng:require styles="{!$Resource.SLDS24 + '/assets/styles/salesforce-lightning-design-system.css'}"/>
+    <ltng:require styles="{!$Resource.BootstrapCSSFILE}" />  
+     <ltng:require styles="{!$Resource.bts}" /> 
+    <ltng:require styles="{!$Resource.datatablecss}" />
+   
+    
+ <aura:attribute name="displayTab" type="Boolean" default="true"/>
+ <aura:attribute name="loadingDone" type="Boolean" />
+    <aura:attribute name="senario_delete" type="String"/>
+    <aura:attribute name="senario_delete_popup" type="Boolean" default="false"/>
+    <aura:attribute name="senario_delete_cmp_c" type="Boolean" default="false"/>
+     <ltng:require scripts="{!join(',', $Resource.jqueryjs,$Resource.datatable,$Resource.bt1,$Resource.bt2)}" />
+<!-- doInit method will call JS controller and then will get the details from Apex Controller and put in into the HTML using aura:iteration -->
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    <aura:attribute name="totalRec" type="Integer" default="0" access="Global"/>
+    <aura:attribute name="viewText" type="String" default="View"/>
+    <aura:attribute name="percent" type="String" default="%"/>
+     <!--   <aura:handler name="change" value="{!v.totalRec}" action="{!c.jsLoaded}"/>-->
+     <!--    <aura:attribute name="sum" type="Integer" />  -->
+  <!--  <aura:attribute name="oppCompleted" type="Boolean" default="false"/>
+    <aura:handler name="change" value="{!v.oppCompleted}" action="{!c.jsLoaded}"/>-->
+  <!--  <ui:button label="click" press="{!c.jsLoaded}"/>-->
+    <aura:attribute name="scenarios" type="Scenario__c[]"  /> 
+    <aura:attribute name="sortColumn" type="String" default=""/>
+    <aura:attribute name="Estimated_home_value__c" type="boolean" default="true"/>
+	<aura:attribute name="Date_saved__c" type="boolean" default="true"/>
+    <aura:attribute name="Current_Mortgage_Balance__c" type="boolean" default="true"/>
+    <aura:attribute name="ClientId__c" type="boolean" default="true"/>
+    <aura:attribute name="Date_of_birth__c" type="boolean" default="true"/>
+  	<aura:attribute name="Phone_Number__c" type="boolean" default="true"/>
+    <aura:attribute name="address" type="boolean" default="true"/>
+    <aura:attribute name="margin" type="boolean" default="true"/>
+    <aura:attribute name="showtable" type="boolean" default="false"/>
+	<aura:attribute name="showAll" type="boolean" default="true"/>
+	<aura:attribute name="showAllTables" type="boolean" default="true"/>
+	<aura:attribute name="show_arrows" type="boolean" default="false"/>
+    <aura:attribute name="ApplicationDate" type="String"/>
+    <!-- attribute to accept Visualforce page's javascript method prsn-->
+    <aura:attribute name="sendData" type="object"/>
+    <!--showAll-->
+    <aura:attribute name="searchValues" type="search_content" />
+    <aura:handler name="change" value="{!v.searchValues.Phone}" action="{!c.LoanOriginatorFormatPhone}"/>
+
+ <lightning:spinner aura:id="mySpinner" />
+
+    <!--declare attributes--> 
+    <aura:attribute name="selectedRecord" type="Lead"
+                    default="{'sobjectType':'Lead'}" 
+                    description="Use,for store SELECTED sObject Record"/>    
+    <aura:attribute name="listOfSearchRecords" type="Lead[]" description="Use,for store the list of search records which returns from apex class"/>
+    <aura:attribute name="SearchKeyWord" type="string"/>
+   <!-- adding code for processing to SANL -->
+    <aura:attribute name="myURL" type="string" default="{!$Label.c.EnviormentURL}"/>
+    
+    <aura:attribute name="Message" type="String" default="Search Result.."/>
+   <!-- <aura:attribute name="scenarios" type="Scenario__c[]"  />-->
+   <!-- <aura:attribute name="viewText" type="string" default=''  />-->
+    <aura:attribute name="percentage" type="string" default=''  />
+    <aura:attribute name="Scenario_ID" type="string" default=''  />
+    <aura:attribute name="IsGraphDisplay" type="boolean" default='false'  />   
+    <aura:attribute name="showLoan" type="Boolean" default="false"/>
+    <aura:attribute name="showLoanId" type="String" />
+    <aura:attribute name="message_is" type="String" />
+    <aura:attribute name="candelete" type="Boolean" default="false"/>
+<aura:handler name="change" value="{!v.showLoan}" action="{!c.optionChanged}"/>
+      <aura:handler name="oSelectedAccountEvent" event="c:selectedAccountEvent" action="{!c.handleComponentEvent}"/>
+    <aura:attribute name="senario_delete_changed" type="boolean" default="false"/>
+    <aura:handler name="change" value="{!v.senario_delete_changed}" action="{!c.confirDelteNew}"/>
+    
+    <aura:if isTrue="{!v.senario_delete_popup}">
+	<div class="demo-only" style="height: 640px;width:900px">
+  <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+    <div class="slds-modal__container">
+      <header class="slds-modal__header">
+        <button onclick="{!c.close}" class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+        X
+            <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"></h2>
+      </header>
+      <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+      
+     <div>
+	 <div>
+		<b>	{!v.message_is}</b>
+	 </div>
+         <br/>
+              
+          <div style="text-align:center"> 
+		  <aura:if isTrue="{!v.candelete}">
+     	      <button  class="slds-button slds-button_brand" onclick="{!c.confirDelte}" >Yes</button>
+     &nbsp;&nbsp;
+               <button class="slds-button slds-button_brand" onclick="{!c.close}">No</button>
+ 	</aura:if>
+	<aura:if isTrue="{!!v.candelete}">
+     	      
+               <button class="slds-button slds-button_brand" onclick="{!c.close}">close</button>
+ 	</aura:if>
+        </div>
+        </div>
+		</div> 
+      <footer class="slds-modal__footer">
+      </footer>
+         </div> 
+  </section>
+       </div>
+  <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+<aura:if isTrue="{!!v.showLoan}">
+    <!--declare events hendlers-->  
+    <div style="background: #e0e5ee;">
+        <div class="slds-form slds-form_compound" id="scenariodic">
+            <div class="slds-col slds-col--padded slds-p-top--large">
+                <div aria-labelledby="newform">
+                    <div class="slds-form slds-form_compound">        
+                        <fieldset class="slds-box slds-theme--default slds-container--xx-large">
+                           <div>
+                            <div id="clientdiv"  style="display:block">  
+                                
+    <div class="col-md-12">
+    	<div class="demo-only col-md-9" style="">
+            <div class="slds-scope">
+  <div class="slds-form slds-form_compound">
+<!--      <form> -->
+    <fieldset class="slds-form-element">
+      <h2 class="">Search For Saved Scenarios</h2>
+      <div class="slds-form-element__group">
+        <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-3">
+      <!--      <label class="slds-form-element__label" for="input-01">Clients First Name</label>
+            <input type="text" id="input-01" class="slds-input" />-->
+            <ui:inputText class="slds-input" label="Client First Name" value="{!v.searchValues.FirstName}"  updateOn="change"/>
+            </div>
+          <div class="slds-form-element slds-size_1-of-3">
+                <ui:inputDate format="MM/dd/YYYY"  displayDatePicker="true"  class="slds-input" label="Date of Birth" value="{!v.searchValues.DOB}"  updateOn="change"/>
+    
+          </div>
+            <div class="slds-form-element slds-size_1-of-3">
+         <!--   <label class="slds-form-element__label" for="input-02">E-mail</label>-->
+                  <ui:inputEmail class="slds-input" label="E-mail" value="{!v.searchValues.Email}"  updateOn="change" aura:id="inputEmail" blur="{!c.EmailValidation}"/>
+     
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="slds-form-element">
+     <div class="slds-form-element__group">
+        <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-3">
+          <!--  <label class="slds-form-element__label" for="input-01">Clients Last Name</label>-->
+                       <ui:inputText class="slds-input" label="Client Last name" value="{!v.searchValues.LastName}"  updateOn="change"/>
+     
+          </div>
+          <div class="slds-form-element slds-size_1-of-3">
+                         <ui:inputText class="slds-input" label="Address" value="{!v.searchValues.Address}"  updateOn="change"/>
+     
+          </div>
+            <div class="slds-form-element slds-size_1-of-3">
+                       <ui:inputPhone maxlength="10" class="slds-input" label="Phone"  blur="{!c.LoanOriginatorFormatPhone}" value="{!v.searchValues.Phone}"  updateOn="keypress, keyup, keydown"  />
+				 
+
+          </div>
+        </div>
+      </div>
+        <div class="slds-form-element__row">
+                     <div class="slds-form-element slds-size_1-of-4">
+                         <button class="slds-button slds-button_brand" onclick="{!c.draw}" style="height: 30px;margin-top: 2.5%;">Search</button>
+                         <button class="slds-button slds-button_destructive" onclick="{!c.reset_filters}" style="margin-left: 12px;height: 30px;margin-top: 2.5%;">Reset</button>
+                         <!--<a href="{!$Label.c.RunScenarioLabel}">
+                             <button class="slds-button slds-button_success" onclick="{!c.reset_filters}" style="margin-left: 12px;height: 30px;margin-top: 2.5%;">Run New Scenario</button>
+                         </a>-->
+                         
+            </div>
+
+        </div>
+      </fieldset>
+       <!--   </form>-->
+  </div>
+                </div>
+</div>
+    </div>
+    <br/>
+    <div class="col-md-12" style="margin-top:20px">
+         <h4 class="">Saved Scenarios Pipeline</h4>
+       <aura:if isTrue="{!v.showAllTables}">  
+  <aura:if isTrue="{!v.showAll}">
+      <div class="slds-grid">
+           <div class="slds-col">
+  <table class="table table-striped table-bordered sampleTable slds-max-medium-table_stacked-horizontal" cellspacing="0" width="100%" id="sampleTable">
+                                                        <thead>
+                                                            <tr style="background-color: #2877bd" >
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap"></th>
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="ClientId__c">Client Name 
+																 	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+                                                                   																	
+																	<aura:if isTrue="{!and(v.ClientId__c == true, v.sortColumn == 'ClientId__c') }">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+                                                                    </aura:if>
+																	
+                                                                    <aura:if isTrue="{!(and(v.ClientId__c == false, v.sortColumn == 'ClientId__c'))}">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                                
+                                                                
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Date_of_birth__c">Date of Birth
+                                                                    
+																	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+																	<aura:if isTrue="{! and(v.Date_of_birth__c == true, v.sortColumn == 'Date_of_birth__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.Date_of_birth__c == false, v.sortColumn == 'Date_of_birth__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                                
+                                                                
+                                                                
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Phone_Number__c">Phone
+																		<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+
+																<aura:if isTrue="{! and(v.Phone_Number__c == true, v.sortColumn == 'Phone_Number__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.Phone_Number__c == false, v.sortColumn == 'Phone_Number__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+																
+																<th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="address">Address
+                                                                  
+																	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+																  <aura:if isTrue="{! and(v.address == true, v.sortColumn == 'address') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.address == false, v.sortColumn == 'address') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="margin">Margin
+                                                                  
+																	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+																  <aura:if isTrue="{! and(v.margin == true, v.sortColumn == 'margin') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.margin == false, v.sortColumn == 'margin') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Estimated_home_value__c">Estimated Home Value
+																
+																<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																							
+																<aura:if isTrue="{! and(v.Estimated_home_value__c == true, v.sortColumn == 'Estimated_home_value__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.Estimated_home_value__c == false, v.sortColumn == 'Estimated_home_value__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                  
+																</th>
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Date_saved__c">Date Saved
+																<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																	
+																	
+																								
+																<aura:if isTrue="{! and(v.Date_saved__c == true, v.sortColumn == 'Date_saved__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="xx-small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.Date_saved__c == false, v.sortColumn == 'Date_saved__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="xx-small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                  
+																</th> 
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" >Converted</th>
+                                                              
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                       <aura:renderIf isTrue="{!v.showtable}">
+                                                            <aura:iteration items="{!v.scenarios}" var="scenario">
+                                                                <aura:if isTrue="{!scenario !=null}">
+                                                                <tr>
+                                                                    <td data-label="View">
+                                                                        <div class="slds-truncate">
+                                                                            <a  class="btn slds-button slds-button_brand" id="{!scenario.Id}" onclick="{!c.GetScenarioId}">{!v.viewText}</a>
+                                                                            &nbsp;&nbsp;
+                                                                            <a  class="btn slds-button slds-button_destructive" data-id="{!scenario.Id}" data-isconverted="{!scenario.is_Converted__c}" onclick="{!c.delete_senario}">Delete</a>
+                                                                        </div>
+                                                                    </td>
+                                                                          <td data-label="CLI" >
+                                                                       {!scenario.Client_Lead__r.LastName}, {!scenario.Client_Lead__r.FirstName}
+                                                                    </td>
+                                                                    
+                                                                    <td data-label="dob">
+                                                                      <span style="display:none">  {!scenario.Date_of_birth__c}</span>
+                                                                            <ui:outputDate aura:id="CDateTime" value="{!scenario.Date_of_birth__c}" format="MM/dd/YYYY"></ui:outputDate>
+                                                                       
+                                                                    </td>  
+                                                                    
+                                                                    <td data-label="phone">
+                                                                      <span style="display:none">  {!scenario.Client_Lead__r.Phone}</span>
+                                                                        <ui:outputPhone value="{!scenario.Client_Lead__r.Phone}" />
+                                                                       
+                                                                    </td>   
+																	<td data-label="address">
+                                                               {!scenario.Client_Lead__r.Street}
+                                                                       
+                                                                    </td>   
+                                                                         <td data-label="margin">
+                                                                      <span style="display:none">  {!scenario.Margin__c}</span>
+																	     <ui:outputNumber value="{!scenario.Margin__c}" format=".000"/>%
+                                                            
+                                                                       
+                                                                    </td>  
+                                                        
+                                                                   <td data-label="EHV" >
+                                                                        <span style="display:none"> {!scenario.Estimated_home_value__c} </span>
+                                                                            <lightning:formattedNumber value="{!scenario.Estimated_home_value__c}" style="currency" />
+                                                                    </td>
+                                                                    
+                                                                    <td data-label="Edit">
+                                                                      <span style="display:none">  {!scenario.CreatedDate}</span>
+                                                                            <ui:outputDateTime aura:id="oDateTime" value="{!scenario.CreatedDate}" format="MM/dd/YYYY"></ui:outputDateTime>
+                                                                       
+                                                                    </td>      
+                                                                     <td data-label="conv">
+                                                                       
+                                                                         <aura:if isTrue="{!scenario.is_Converted__c}">
+                                                                         <lightning:icon iconName="utility:check" size="small"/>
+
+                                                                         </aura:if>
+                                                                         <aura:if isTrue="{!!scenario.is_Converted__c}">
+                                                                         <lightning:icon iconName="utility:close"  size="small"/>
+
+                                                                         </aura:if>
+                                                                    </td>      
+                                                                   
+                                                                </tr>
+                                                                     </aura:if>
+                                                            </aura:iteration>
+                                                            </aura:renderIf>    
+                                                        </tbody>
+                                                    </table>
+  
+      </div>
+      </div>
+  </aura:if>  
+  
+        
+        
+        <aura:if isTrue="{!!v.showAll}">
+  					<table class="table table-striped table-bordered sampleTable" cellspacing="0" width="100%" id="sampleTable">
+                                                        <thead>
+                                                            <tr style="background-color: #2877bd" >
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap"></th>
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="ClientId__c">Client Name 
+                                                                   
+																<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																				
+																   <aura:if isTrue="{! and(v.ClientId__c == true, v.sortColumn == 'ClientId__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.ClientId__c == false, v.sortColumn == 'ClientId__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                                
+                                                                
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Date_of_birth__c">Date Of Birth
+                                                                
+																	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																			
+																<aura:if isTrue="{! and(v.Date_of_birth__c == true, v.sortColumn == 'Date_of_birth__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.Date_of_birth__c == false, v.sortColumn == 'Date_of_birth__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                                
+                                                                
+                                                                
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Phone_Number__c">Phone
+																	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+
+																<aura:if isTrue="{! and(v.Phone_Number__c == true, v.sortColumn == 'Phone_Number__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.Phone_Number__c == false, v.sortColumn == 'Phone_Number__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+																
+																<th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="address">Address
+																		<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+
+																<aura:if isTrue="{! and(v.address == true, v.sortColumn == 'address') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.address == false, v.sortColumn == 'address') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                                 <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="margin">Margin
+                                                                  
+																	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+																  <aura:if isTrue="{! and(v.margin == true, v.sortColumn == 'margin') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.margin == false, v.sortColumn == 'margin') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                                                                        
+                                                                </th>
+                                                               
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Estimated_home_value__c">Estimated home value
+																	<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+
+																<aura:if isTrue="{! and(v.Estimated_home_value__c == true, v.sortColumn == 'Estimated_home_value__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowdown" size="small"/>  
+  																	 </div>
+                                                                    </aura:if>
+                                                                    <aura:if isTrue="{! and(v.Estimated_home_value__c == false, v.sortColumn == 'Estimated_home_value__c') }">
+                                                                    <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                        </aura:if>
+                  
+																</th>
+                                                                <th style="color: white" scope="col" class="slds-cell-wrap" onclick="{!c.columnSort}" id="Date_saved__c">Date saved
+																<aura:if isTrue="{!v.show_arrows==true}">
+                                                                    <div class="slds-icon_container">  
+																	<lightning:icon iconName="utility:arrowdown" size="small"/>
+      																 </div>
+																	     <div class="slds-icon_container">  
+      																	<lightning:icon iconName="utility:arrowup" size="small"/>  
+  																	 </div>
+                                                                
+                                                                    </aura:if>
+																
+																
+																</th> 
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                       <aura:renderIf isTrue="{!v.showtable}">
+                                                            <aura:iteration items="{!v.scenarios}" var="scenario">
+                                                                <aura:if isTrue="{!scenario !=null}">
+                                                                <tr>
+                                                                    <td data-label="View">
+                                                                        <div class="slds-truncate">
+                                                                            <a class="btn slds-button slds-button_brand" id="{!scenario.Id}" onclick="{!c.GetScenarioId}">{!v.viewText}</a>
+                                                                                &nbsp;&nbsp;
+                                                                            <button  class="btn slds-button slds-button_destructive" data-id="{!scenario.Id}" data-isconverted="{!scenario.is_Converted__c}" onclick="{!c.delete_senario}">Delete</button>
+                                                                    
+                                                                        </div>
+                                                                    </td>
+                                                                          <td data-label="CLI" >
+                                                                       {!scenario.Client_Lead__r.LastName}, {!scenario.Client_Lead__r.FirstName}
+                                                                    </td>
+                                                                    
+                                                                    <td data-label="dob">
+                                                                      <span style="display:none">  {!scenario.Date_of_birth__c}</span>
+                                                                            <ui:outputDate aura:id="CDateTime" value="{!scenario.Date_of_birth__c}" format="MM/dd/YYYY"></ui:outputDate>
+                                                                       
+                                                                    </td>   
+                                                                    
+                                                                    <td data-label="phone">
+                                                                      <span style="display:none">  {!scenario.Client_Lead__r.Phone}</span>
+                                                                        <ui:outputPhone value="{!scenario.Client_Lead__r.Phone}" />
+                                                                       
+                                                                    </td>   
+																	<td data-label="address">
+                                                               {!scenario.Client_Lead__r.Street}
+                                                                       
+                                                                    </td>   
+                                                                         <td data-label="margin">
+                                                                      <span style="display:none">  {!scenario.Margin__c}</span>
+																	   <ui:outputNumber value="{!scenario.Margin__c}" format=".000"/>%
+                                                            
+                                                                       
+                                                                    </td>  
+                                                        
+                                                                   <td data-label="EHV" >
+                                                                        <span style="display:none"> {!scenario.Estimated_home_value__c} </span>
+                                                                            <lightning:formattedNumber value="{!scenario.Estimated_home_value__c}" style="currency" />
+                                                                    </td>
+                                                                    
+                                                                    <td data-label="Edit">
+                                                                      <span style="display:none">  {!scenario.CreatedDate}</span>
+                                                                            <ui:outputDateTime aura:id="oDateTime" value="{!scenario.CreatedDate}" format="MM/dd/YYYY"></ui:outputDateTime>
+                                                                       
+                                                                    </td>      
+                                                                   
+                                                                </tr>
+                                                                     </aura:if>
+                                                            </aura:iteration>
+                                                            </aura:renderIf>    
+                                                        </tbody>
+                                                    </table>
+  
+        
+  </aura:if>  
+    </aura:if>  
+  
+    </div>
+                            </div>
+                                <br></br>
+                                <aura:if isTrue="{!v.IsGraphDisplay}"> 
+                                    <div class="slds-button slds-button--neutral1 " style="padding-left: 1rem;    padding-right: 1rem;   text-align: center; vertical-align: middle;   -webkit-transition: border .15s linear;   transition: border .15s linear;  background-color: rgb(255, 255, 255);" ></div>     
+		                            
+                               <!-- <lightning:button onclick="{!c.save_pdf }" variant="brand" label="save">  </lightning:button>      
+                                <lightning:button variant="brand" label="Print" 
+                                                  onclick="{!c.print_pdf }" /> &nbsp; -->
+                                 
+                                    <!-- Button component to invoke PDF download prsn -->
+                                    <div  class ="slds-float_right" style="padding-right:1rem;"><br/><br/>
+                                    <lightning:button label="Print" 
+                                                      onclick="{!c.printDocument}" /> 
+                                    </div>
+                                    <div>  
+                                        <c:ClientScenario_Graph ApplicationDate="{!v.ApplicationDate}" displayTab="{!v.displayTab}" showLoanId="{!v.showLoanId}" ScenarioID="{!v.Scenario_ID}"  showLoan="{!v.showLoan}"/>
+                                    </div>
+                                </aura:if>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+        
+    </div>
+    </aura:if>
+    
+<aura:if isTrue="{!v.showLoan}">
+    {!v.body}
+    </aura:if>    
+    
+         <div id="printspinner">
+        <lightning:spinner aura:id="print_Spinner" class="slds-hide"/>
+    </div>
+        <div style="display:none"> 
+            <ui:inputText aura:id="secret"    value="{!v.selectedRecord.Id}"/>
+        </div>
+        <aura:if isTrue="{!v.IsSpinner}">
+            <div class="slds-spinner_container">
+                <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>        
+        </aura:if> 
+        <br></br>
+</aura:component>

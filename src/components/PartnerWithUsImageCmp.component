@@ -1,0 +1,146 @@
+<apex:component >
+  
+
+  <html >
+    <head>
+    <!--width: 1349px;
+   --->
+    <style type="text/css">
+   
+    
+    .a {
+       background-size: 100% 100%;
+    background-repeat: no-repeat;
+  /*  width: 116%;*/
+    height: 615px;
+   
+ background-image: url("{!$Resource.LoginBackgroundImage}") !important; 
+   background-size:1349px400px,  auto !important;
+  /*  margin-top: -8px;*/
+  /*  margin-left: -188px;*/
+     overflow-x: hidden;
+}
+.b {
+  /*  width: 1349px;*/
+   height: 286px;
+    background-color: #2B3856;
+     text-align: center;
+   /*  margin-left: -188px;*/
+      overflow-x: hidden;
+}
+    
+    
+    .c {
+    text-align: center;
+    
+}
+.d {
+    text-align: center;
+    font-size: 15px;
+   color: Blue;
+}
+.e {
+    text-align: center;
+    
+   color: white;
+}
+.f {
+    text-align: center;
+    
+   color: white;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+    </style>
+        
+    </head>
+    <body>
+<div class="a">
+       
+     
+<div class="c">
+<br></br>
+  <p style=" font-size: 30px; color: #2B547E;"><b> Welcome to ORMS! </b> </p>
+  <br></br>
+  <P style=" font-size: 20px; color: #2B547E;margin:-18px"><b>Partner with Us and Watch your Business Grow!</b></P>
+</div>
+</div>
+     
+      
+      <div class ="b">
+
+         <apex:image id="theImage" value="{!$Resource.LoginBackgrounHand}" width="150px" height="80px" style="margin-top:18px;" />
+        
+        <!-- <div style="margin:18px;">
+         <p style=" font-size: 22px;color: White;">Partner With Us</p></div>
+          
+          <div style=" width: 10%; float: left;  "> </div>
+          <div style=" width: 80%; float: left; margin-left:315px"> 
+          <p style=" font-size: 18px;color: White;text-align: Left; margin-left: -43px;">
+          <span>As a partner of One Reverse Mortgage services, you'II be equipped with everything you need to provide</span>
+          </p>
+          <p style=" font-size: 18px;color: White;text-align: Left; margin-left: -43px;">
+<span>top-notch service to your clients. We provide the marketing materials, required documents, and training so </span>
+</p> 
+<p style=" font-size: 18px;color: White;text-align: Left; margin-left: -43px;">      
+<span>you can focus on what's really important - your client. Your Account Executive will run through scenarios with</span> 
+</p>
+<p style=" font-size: 18px;color: White;text-align: Left; margin-left: -43px;">             
+<span>you, answer any questions you may have along the way, and assist you in registering and closing your loans.</span> 
+</p>
+<p style=" font-size: 18px;color: White;text-align: Left; margin-left: -43px;">         
+<span> </span>
+          </p>
+          </div>-->
+          
+          <div style="margin:18px;">
+         <p style=" font-size: 22px;color: White;">Partner With Us</p></div>
+          
+          <div style=" "> 
+          <p style=" font-size: 18px;color: White;text-align: Left;text-align:center;">
+          <span>As a partner of One Reverse Mortgage services, you'II be equipped with everything you need to provide</span>
+          </p>
+          <p style=" font-size: 18px;color: White;text-align: Left;text-align:center;">
+<span>top-notch service to your clients. We provide the marketing materials, required documents, and training so </span>
+</p> 
+<p style=" font-size: 18px;color: White;text-align: Left;text-align:center;">      
+<span>you can focus on what's really important - your client. Your Account Executive will run through scenarios with</span> 
+</p>
+<p style=" font-size: 18px;color: White;text-align: Left;text-align:center;">             
+<span>you, answer any questions you may have along the way, and assist you in registering and closing your loans.</span> 
+</p>
+<p style=" font-size: 18px;color: White;text-align: Left;text-align:center; ">         
+<span> </span>
+          </p>
+          </div>
+          <div style=" width: 10%; float: left;  "> </div>
+
+      </div>
+     <style>
+  /*   @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  
+  
+  body#category_sign_in {
+    width: 100%;
+    max-width: 85em !important;
+    margin: auto;
+    margn-left:0px !important;
+}
+
+}
+
+*/
+      </style>
+     
+    </body>
+  </html>
+
+</apex:component>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lead: Attempted to Contact</name>
+    <style>none</style>
+    <subject>QLMS: What&apos;s a cheeseburger without fries?</subject>
+    <textOnly>YOU&apos;RE ONE STEP AWAY QLMS Partner ORMS Partner
+
+Hello {!Contact.FirstName},
+
+Teaming up with One Reverse Mortgage Services is easy for current QLMS partners.
+
+Soon, you will be approved and ready to start uploading loans with our easy, streamlined process. Our specialists will work with you from loan registration through closing. We do all the heavy lifting, so you can focus on providing your client the best experience. I am looking forward to working with you. Contact me at {!User.Phone} or simply reply to this email to schedule a time to talk.
+
+
+Best,
+
+{!User.Name} | {!User.Title}
+Phone: {!User.Phone}
+Email: {!User.Email}
+Web: &lt;a href=&quot;http://www.OneReverseMortgageServices.com/&quot;&gt;OneReverseMortgageServices.com&lt;/a&gt;
+
+Our mailing address is:
+4445 Eastgate Mall, Ste 320, San Diego, CA 92121
+&lt;a href=&quot;mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}&quot;&gt;Unsubscribe&lt;/a&gt;
+Equal Housing Lender. Licensed in all 50 states.  NMLS #2052</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

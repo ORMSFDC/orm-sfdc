@@ -1,0 +1,10 @@
+Hello {!Account.QLMS_First_Name__c},
+<P>
+Your partner, {!Account.Name}, has been sent a broker application to become an approved partner with ORMS.
+<P>
+Sincerely,
+<P>
+{!Account.OwnerFullName}<br />
+{!Account.OwnerTitle}<br />
+{!Account.OwnerPhone}<br />
+{!Account.OwnerEmail}<br />

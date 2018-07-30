@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>%%subject%%</title>
+		
+	</head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: none;margin: 0;padding: 0;background-color: #FAFAFA;width: 100%;">
+<style type="text/css">#outlook a {
+              padding: 0;
+          }
+          .body{
+              width: 100% !important;
+              -webkit-text-size-adjust: 100%;
+              -ms-text-size-adjust: 100%;
+              margin: 0;
+              padding: 0;
+          }
+          .ExternalClass {
+              width:100%;
+          }
+          .ExternalClass,
+          .ExternalClass p,
+          .ExternalClass span,
+          .ExternalClass font,
+          .ExternalClass td,
+          .ExternalClass div {
+              line-height: 100%;
+          }
+          img {
+              outline: none;
+              text-decoration: none;
+              -ms-interpolation-mode: bicubic;
+          }
+          a img {
+              border: none;
+          }
+          p {
+              margin: 1em 0;
+          }
+          table td {
+              border-collapse: collapse;
+          }
+          /* hide unsubscribe from forwards*/
+          blockquote .original-only, .WordSection1 .original-only {
+            display: none !important;
+          }
+</style>
+<center>
+<table border="0" cellpadding="0" cellspacing="0" height="100%" id="backgroundTable" style="margin: 0;padding: 0;background-color: #FAFAFA;height: 100%;width: 100%;" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Preheader \ -->
+			<table border="0" cellpadding="10" cellspacing="0" id="templatePreheader" style="background-color: #FAFAFA;" width="600">
+				<tbody>
+					<tr>
+						<td class="preheaderContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Preheader  -->
+						<table border="0" cellpadding="10" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="border-collapse: collapse;" valign="top">
+									<div pardot-region="std_preheader_content" style="color: #707070;font-family: Arial;font-size: 10px;line-height: 10px;text-align: left;">What's the Diff between QLMS and ORMS</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Module: Standard Preheader  --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // End Template Preheader \ -->
+
+			<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="border: 0;background-color: #FDFDFD;" width="600">
+				<tbody>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Header \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0px solid #505050;" width="600">
+							<tbody>
+								<tr>
+									<td class="headerContent" style="border-collapse: collapse;"><!-- // Begin Module: Letterhead, Center Header Image \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td pardot-region="header_image" style="border-collapse: collapse;" valign="middle" width="294"><img alt="" height="50" id="headerImage campaign-icon" src="http://go.pardot.com/l/476012/2018-02-25/9fg9w/476012/28138/Colored_Logo.png" style="width: 294px;border: 0;height: 50px;outline: none;text-decoration: none;" width="235"></td>
+												<td class="rightHeaderContent" style="border-collapse: collapse;">
+												<div pardot-region="header_content_right" style="color: #000000;font-family: Arial;font-size: 16px;line-height: 32px;text-align: center;vertical-align: middle;"><strong>{!User.Phone}</strong></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table border="0" cellpadding="10" cellspacing="0" style="background-color: #1ba9d1;" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse; background-image: url(http://go.pardot.com/l/476012/2018-04-08/d6j59/476012/31952/slice_design__bg_questionMark_aqua.jpg);">
+												<h1 class="email-content-main-header text-center collapse" style="color: #fefefe;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;margin: 0;text-align: center;line-height: 1.3;word-wrap: normal;margin-bottom: 0px;font-size: 54px;padding-top: 20px !important;">WHAT’S THE DIFF?</h1>
+
+												<h2 class="email-content-sub-header text-center collapse" style="color: #fefefe;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;margin: 0;text-align: center;line-height: 1.3;word-wrap: normal;margin-bottom: 0px;font-size: 22px;padding-bottom: 20px !important;">The differences between QLMS and ORMS</h2>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Letterhead, Center Header Image \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Header \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Body \ -->
+						<table border="0" cellpadding="10" cellspacing="0" id="templateBody" width="600">
+							<tbody>
+								<tr>
+									<td class="bodyContent" style="border-collapse: collapse;background-color: #FDFDFD;" valign="top"><!-- // Begin Module: Standard Content \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;" valign="top">
+												<div pardot-data="link-color:#ffffff;" pardot-region="std_content00" style="color: #505050;font-family: Arial;font-size: 14px;line-height: 21px;text-align: left;">Hello {!Contact.FirstName},<br><br>
+												<table class="row cell-container table-column-labels bgc-blue" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;width: 100%;position: relative;display: table;">
+													<tbody>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<th class="cell-column small-3 large-3 columns first" style="color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;margin: 0 auto;text-align: left;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 0px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;vertical-align: middle;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;background-color: #00A8D3;border-left: 1px solid #5d5d5d;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #fefefe !important;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">&nbsp;</p>
+															</th>
+															<th class="cell-column small-3 large-3 columns" style="color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;margin: 0 auto;text-align: left;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 0px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;vertical-align: middle;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;background-color: #00A8D3;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #fefefe !important;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">QLMS</p>
+															</th>
+															<th class="cell-column small-3 large-3 columns last" style="color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;margin: 0 auto;text-align: left;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 0px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;vertical-align: middle;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;background-color: #00A8D3;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #fefefe !important;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">ORMS</p>
+															</th>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">TRID</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Applies</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Does not apply</p>
+															</td>
+														</tr>
+														<tr class="bgc-lt-gray" style="padding: 0;vertical-align: top;text-align: left;background-color: #f3f3f3;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Loan Estimate</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Loan Estimate &amp; Intent to Proceed issued at registration for Client Acknowledgment</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;"><strong>No LE</strong> - Good Faith Estimate issued within three days of partner’s request for the application</p>
+															</td>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Closing Disclosure</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">CD to be acknowledged by client three days prior to closing</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;"><strong>No CD</strong> - HUD1 Settlement Statement sent to client to view 24 hours prior to closing</p>
+															</td>
+														</tr>
+														<tr class="bgc-lt-gray" style="padding: 0;vertical-align: top;text-align: left;background-color: #f3f3f3;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Monthly Mortgage Payment</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Required</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Not required</p>
+															</td>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Taxes &amp; Insurance</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Can be included in payment (escrow account)</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Tax and insurance funds can be electively held or required - see <strong>Loan Expectancy Set Aside (LESA)</strong> details</p>
+															</td>
+														</tr>
+														<tr class="bgc-lt-gray" style="padding: 0;vertical-align: top;text-align: left;background-color: #f3f3f3;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Interest Rate</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Locked up front and client can buy down rate</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Principal Limit Protection (PLP) gives client the better rate between the application expected rate and the closing</p>
+															</td>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">DTI &amp; FICOs</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Credit Approval consideration is based on DTI, FICOs</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;"><strong>Does not apply</strong>. Instead of DTI &amp; FICO, credit approval is based on financial assessment review</p>
+															</td>
+														</tr>
+														<tr class="bgc-lt-gray" style="padding: 0;vertical-align: top;text-align: left;background-color: #f3f3f3;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">LTV</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Loan amount maximums are determinied by loan to value restrictions</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;"><strong>Does not apply</strong>. Instead of LTV, the principal limit (aka load amount) is determined by the age of the youngest</p>
+															</td>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column  add-border--bottom small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-bottom: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Non-lien Debts</p>
+															</td>
+															<td class="cell-column  add-border--bottom small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-bottom: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Can be paid through closing to qualify or as desired</p>
+															</td>
+															<td class="cell-column  add-border--bottom small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-bottom: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Non-lien debts can only be paid prior to closing if needed to qualify and cannot be paid through closing</p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+
+												<h2>Process</h2>
+
+												<table class="row cell-container table-column-labels bgc-blue" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;width: 100%;position: relative;display: table;">
+													<tbody>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<th class="cell-column small-3 large-3 columns first" style="color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;margin: 0 auto;text-align: left;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 0px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;vertical-align: middle;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;background-color: #00A8D3;border-left: 1px solid #5d5d5d;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #fefefe !important;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">&nbsp;</p>
+															</th>
+															<th class="cell-column small-3 large-3 columns" style="color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;margin: 0 auto;text-align: left;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 0px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;vertical-align: middle;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;background-color: #00A8D3;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #fefefe !important;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">QLMS</p>
+															</th>
+															<th class="cell-column small-3 large-3 columns last" style="color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;margin: 0 auto;text-align: left;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 0px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;vertical-align: middle;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;background-color: #00A8D3;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #fefefe !important;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">ORMS</p>
+															</th>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Third Party Counseling</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Not required</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Required for all loans. Must be completed prior to processing.</p>
+															</td>
+														</tr>
+														<tr class="bgc-lt-gray" style="padding: 0;vertical-align: top;text-align: left;background-color: #f3f3f3;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Systems</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">QLMS portal</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">ORMS portal</p>
+															</td>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Automated Underwriting</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Rocket</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Doesn’t apply</p>
+															</td>
+														</tr>
+														<tr class="bgc-lt-gray" style="padding: 0;vertical-align: top;text-align: left;background-color: #f3f3f3;">
+															<td class="cell-column small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Application</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Six pieces of information constitutes an "application" that can be completed and registered with QLMS</p>
+															</td>
+															<td class="cell-column small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Requesting an application after all necessary information is entered on the ORMS portal constitutes an “application”</p>
+															</td>
+														</tr>
+														<tr style="padding: 0;vertical-align: top;text-align: left;">
+															<td class="cell-column add-border--bottom small-3 large-3 columns first" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-left: 1px solid #5d5d5d;border-bottom: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: bold;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Appraisal &amp; Processing</p>
+															</td>
+															<td class="cell-column  add-border--bottom small-3 large-3 columns" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-bottom: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Ordered at Rocket</p>
+															</td>
+															<td class="cell-column  add-border--bottom small-3 large-3 columns last" style="padding: 0;vertical-align: middle;text-align: left;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0 auto;line-height: 1.3;font-size: 16px;padding-left: 16px !important;padding-bottom: 16px;width: 25% !important;padding-right: 16px !important;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;padding-top: 10px;border-right: 1px solid #5d5d5d;border-top: 1px solid #5d5d5d;border-bottom: 1px solid #5d5d5d;border-collapse: collapse !important;display: table-cell !important;height: auto !important;">
+															<p class="cell-data" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: center;line-height: 1.3;font-size: 16px;">Cannot begin until seven days after the day of counseling</p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												&nbsp;<br>
+												Best,<br>
+												<br>
+												<strong>{!User.Name} |  {!User.Title}</strong><br>
+												Phone: {!User.Phone}<br>
+												Email: {!User.Email}<br>
+												Web: <a href="http://www.OneReverseMortgageServices.com/" style="color: #336699;font-weight: normal;text-decoration: underline;">OneReverseMortgageServices.com</a></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Standard Content \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Body \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Footer \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateFooter" style="background-color: #FAFAFA;" width="600">
+							<tbody>
+								<tr>
+									<td class="footerContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Footer \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr pardot-removable="">
+												<td id="social" style="border-collapse: collapse;background-color: #1ba9d1;border: 0;" valign="middle">
+												<div pardot-region="std_social" style="color: #FFFFFF;font-family: Arial;font-size: 16px;text-align: center;">Contact me at {!User.Phone} or just hit reply to this email.</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;" valign="top" width="350">
+												<div pardot-region="std_footer" style="color: #707070;font-family: Arial;font-size: 11px;line-height: 14px;text-align: left;"><em>Copyright © 2018, All rights reserved.</em><br>
+												<br>
+												<strong>Our mailing address is:</strong><br>
+												4445 Eastgate Mall, Ste 320, San Diego, CA 92121</div>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2" id="utility" style="border-collapse: collapse;background-color: #FAFAFA;border-top: 0;" valign="middle">
+												<div class="original-only" pardot-region="std_utility" style="color: #707070;font-family: Arial;font-size: 12px;line-height: 15px;text-align: center;"><a href="mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}" style="color: #336699;font-weight: normal;text-decoration: underline;">unsubscribe from all emails</a><br>
+												<b>Equal Housing Lender. Licensed in all 50 states.&nbsp; NMLS #2052</b><br>
+												<img alt="" border="0" src="http://go.pardot.com/l/476012/2018-04-16/dh5l3/476012/32376/Equal_Housing_Opportunity.png" style="border-width: 0px; border-style: solid;">&nbsp;</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Standard Footer \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Footer \ --></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<!--
+          This email was originally designed by the wonderful folks at MailChimp and remixed by Pardot.
+          It is licensed under CC BY-SA 3.0
+        -->
+</body>
+</html>

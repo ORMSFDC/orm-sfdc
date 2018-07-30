@@ -1,0 +1,92 @@
+.THIS {
+    font-family: 'LatoFont';
+}
+.THIS .customFont16{    
+     
+    font-size: 16px !important;
+    font-weight:regular !important;
+    color:#222222;
+}
+@font-face {
+  font-family: 'LatoFont';
+   
+   src: url(/resource/LatoFont);
+}
+.THIS .Datecontrolwidth {
+    width:100% !important;
+}
+.THIS .TransperantIconRed svg{
+       fill: red !important;
+    background-color :transparent !important;
+}
+.THIS .TransperantIconRed1 {
+       fill: red !important;
+    background-color :transparent !important;
+}
+.THIS thead th{background: #2081bf;
+    color: #fff;
+    font-weight: bold;
+    padding: .5em;
+    text-align: left;
+    white-space: nowrap;
+}
+.THIS tbody td {
+    padding: .5em;
+}
+
+.THIS  h1{
+    font-size: 1.375em;
+    line-height: 2.1818181818em;
+    margin-bottom: 1em;
+ 
+  
+}
+
+.THIS h2{
+    
+     margin-bottom: 1em;
+    color: #a3bf57;
+    font-weight: 700;
+    font-family: quatro-slab,Georgia,serif;
+}
+
+.THIS h5{  
+    font-family: quatro-slab,Georgia,serif;
+    color: #2081bf;
+}
+.THIS .monthYear {
+    line-height: 16px;
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+.THIS .slds-select {
+    border: 1px solid gray !Important;
+    box-shadow: none;
+}
+
+.THIS .slds-spinner_container{
+    
+    margin-top:-148%;
+}
+
+.THIS .margin-table-container{
+    margin-left:9%;
+    margin-right:9%;
+}
+
+.THIS .margin-table-head th{
+    
+      color: #2081bf;
+    background: #fff;
+}
+.THIS .cmi{
+    width:67% !important;
+}
+.THIS .slds-button--brand{    
+     
+    font-size: 16px !important;
+    font-weight:regular !important;
+    background-color : #6c9f2e!important; 
+    
+}

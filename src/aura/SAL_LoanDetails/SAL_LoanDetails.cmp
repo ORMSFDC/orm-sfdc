@@ -1,0 +1,180 @@
+<aura:component controller="SAL_LoanDetailsController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="UsState" type="List" />
+    <aura:attribute name="LoanId" type="String"/>
+    <aura:attribute name="Number" type="List" />
+    <aura:attribute name="Loan_Details" type="boolean"  />
+    <aura:attribute name="Loan_Detail" type="boolean"  />
+    <aura:attribute name="fromPopup" type="boolean" default="false"/>
+    <aura:attribute name="clientIncomplete" type="boolean" default="true"/>
+    <aura:attribute name="NewLoan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.clientIncomplete}" action="{!c.nexttab}"/>
+    <aura:attribute name="nextOpt" type="boolean"/>
+    <aura:attribute name="currentOpt" type="boolean"/>
+    <aura:attribute name="isLoanProccessor" type="boolean"/>
+     <aura:attribute name="isLoanOfficer" type="boolean"/>
+    
+    <aura:attribute name="prevOpt" type="boolean"/>
+    <aura:attribute name="ClosingAgent" type="List" />
+    <!--First Load-->
+    <aura:attribute name="manual" type="Boolean" default="true"/>
+    <aura:attribute name="nextDataExist" type="Boolean" default="false"/>    
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showWarning" type="boolean" default="false"/>
+    <aura:attribute name="itemsClicked" type="String" />
+    <aura:attribute name="YesNoList" type="List" default="[
+                                                          {'label': 'Yes', 'value': 'Yes'},
+                                                          {'label': 'No', 'value': 'No'}
+                                                          ]"/>
+    <!--Code Started for Story No:- ORMSFDC-1275 by Dev4-->
+    <aura:attribute name="Year" type="List" />
+    <aura:attribute name="LoanOfficerList" type="object[]" />
+    <aura:attribute name="LoanProcessorList" type="object[]" />
+    <aura:attribute name="PullNewCredit" type="boolean" default="false" />
+    <aura:attribute name="IsLPrequired" type="boolean" default="false" />
+    <aura:attribute name="PullNewCreditNoJoint" type="boolean" default="false" />
+    <aura:attribute name="ReIssueCredit" type="boolean" default="false" />
+    <aura:attribute name="LoanOfficer" type="String" />
+    <aura:attribute name="LoanContactDetailsResponse" type="Object[]"  />
+    <aura:attribute name="ClientName" type="string"  />
+    <!--<aura:attribute name="showError" type="boolean" default="false"/>-->
+    <aura:attribute name="showSuccess" type="boolean" default="false"/>
+    
+    
+    <aura:attribute name="showPopup_2" type="boolean" default="false" />
+    <aura:attribute name="disabledClass" type="string" default="defaultCls" />
+    
+    <aura:attribute name="CurrentUser" type="String"/>
+    <aura:attribute name="Preferredlist" type="List" />
+    <!--Code Ended for Story No:- ORMSFDC-1275 by Dev4-->
+    
+    
+    
+    <div>
+        <div class="slds-form slds-form_compound">
+            <fieldset class="slds-form-element">
+                <div class="slds-form-element__group">
+                    <div class="slds-form-element slds-size_1-of-1">
+                        <div style="margin-bottom:3%; "  class="slds-size_1-of-1">
+                           
+                            <div style="font-weight: bold;color: #5a5a5a;">
+                                
+                                <br/>
+                                
+                            </div>
+                            <lightning:radioGroup aura:id="LoanDetailsTitleSource"
+                                                  label="Will you be using AmRock as the Closing Agent/Escrow Officer and Title Company?"
+                                                  required="true"
+                                                  name="radioButtonGroup_LoanDetailsTitleSource"
+                                                  options="{! v.YesNoList }"
+                                                  value="{!v.NewLoan.Using_Title_Source_as_the_Closing_Agent__c }"
+                                                  onchange="{! c.LoanDetails }"
+                                                  />  
+                        </div>
+                        <aura:if isTrue="{!v.Loan_Details}">
+                            <div style="margin-bottom:3%; "  class="slds-size_1-of-1">
+                                <ui:inputText label="Title Company " aura:id="TitleCompany" value="{!v.NewLoan.Title_Company__c}" class="slds-input" required="true" />
+                                <div id="TitleCompanyError" style="color:red;"></div>          							
+                            </div>
+                            <div style="margin-bottom:3%; "  class="slds-size_1-of-1">
+                                <ui:inputText label="Contact Name " aura:id="Contact" value="{!v.NewLoan.Contact_Name__c}" class="slds-input" required="true" />
+                                <div id="ContactError" style="color:red;"></div>         						
+                            </div>
+                            <div style="margin-bottom:3%; "  class="slds-size_1-of-1"><!--blur="{!c.FormatPhone}"-->
+                                <ui:inputPhone label="Contact Phone Number " maxlength="10" aura:id="ContactPhoneNumber" value="{!v.NewLoan.Contact_Phone_Number_LoanDetails__c}" class="slds-input" required="true" blur="{!c.FormatPhone}"
+                                               keypress="{!c.RestrictZeroInCreditInfoPhoneFirstTime}" keyup="{!c.RestrictZeroInCreditInfoPhoneFirstTime}"
+                                               keydown="{!c.RestrictZeroInCreditInfoPhoneFirstTime}"  updateOn="keypress, keyup, keydown" />
+                                <div id="ContactPhoneError" style="color:red;"></div>         						 
+                            </div>
+                            <div style="margin-bottom:3%; "  class="slds-size_1-of-1">
+                                <ui:inputEmail label="Contact Email" aura:id="ContactEmail" value="{!v.NewLoan.Contact_Email__c}" class="slds-input"  />
+                                <div id="ContactEmailError" style="color:red;"></div>         						
+                            </div>
+                        </aura:if>
+                      
+                        <div  class="slds-size_1-of-1">
+                            <ui:inputTextArea label="Tell the story (optional)" maxlength="2000" aura:id="storyID" value="{!v.NewLoan.Tell_the_story__c}" class="slds-input"/>
+                        </div>                       
+                        
+                        <aura:if isTrue="{!v.Loan_Detail}">
+                            <div style="margin-bottom:3%; "  class="slds-size_1-of-1">
+                            </div>
+                        </aura:if>
+                        
+                        
+                        
+                        
+                        <br/>
+                        <!--Code Started for Story No:- ORMSFDC-1275 by Dev4-->
+                        <div id="LoanContact">
+                            <h3>Loan Contact</h3>
+                            <br/>
+                            <div class="slds-size_1-of-2">
+                                <ui:inputSelect value="{!v.LoanContactDetailsResponse.LoanOfficer}" 
+                                                aura:id="SelectLoanofficer" label="Loan Officer"
+                                                 disabled="{!v.isLoanOfficer}" >
+                                    <aura:iteration items="{!v.LoanOfficerList}" var="pOptions">
+                                        <ui:inputSelectOption text="{!pOptions.Id}" label="{!pOptions.LoanofficerName}"  />
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                                <div id="CreditReportTypeError" style="color:red;"></div>
+                            </div>
+                            <br/>
+                            <div class="slds-size_1-of-2" id="LoanProcessor" style="display:none">
+                                <ui:inputSelect value="{!v.LoanContactDetailsResponse.LoanProcessor}" 
+                                                required="{!v.IsLPrequired}" aura:id="SelectLoanProcessor" 
+                                                label="Loan Processor" change="{!c.CreditReportFunc}"
+                                                disabled="{!v.isLoanProccessor}" >
+                                    
+                                    <aura:iteration items="{!v.LoanProcessorList}" var="pOptions">
+                                        <ui:inputSelectOption text="{!pOptions.Id}" label="{!pOptions.LoanProcessorName}" />
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                                <div id="CreditReportTypeError" style="color:red;"></div>
+                            </div>
+                            <br/>
+                            <div class="slds-size_1-of-2">
+                                <ui:inputSelect label="Preferred Contact" aura:id="SelectpreferredContact"
+                                                value="{!v.LoanContactDetailsResponse.PreferredContact}" change="{!c.PreContactChange}">
+                                    <aura:iteration items="{!v.Preferredlist}" var="pOptions">
+                                        <ui:inputSelectOption text="{!pOptions.Id}" label="{!pOptions.Name}" />
+                                    </aura:iteration>
+                                    
+                                </ui:inputSelect>
+                                
+                            </div>
+                            <br/>
+                            <!--<aura:if isTrue="{!v.showError}">                            
+               <ui:message title="Error" severity="error" closable="false">
+                Please review all errors before moving to next page
+               </ui:message>                                
+            </aura:if>
+             <aura:if isTrue="{!v.showSuccess}">                            
+            <ui:message title="Information" severity="confirm" closable="false">
+                Loan Contacts Saved Successfully.
+            </ui:message>                                
+        </aura:if>-->
+                            
+                            <!-- <div class="slds-grid slds-grid-align-left">
+                <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addDeclaration" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+                <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addLoan" label="Save and Continue" press="{!c.LoanFormatValidations}" />
+            </div>-->
+                            
+                        </div>
+                        <!--Code Ended for Story No:- ORMSFDC-1275 by Dev4-->
+                        <div align="left"><aura:if isTrue="{!v.showError}">
+                            <br/>
+                            <ui:message title="Error" severity="error" closable="false">
+                                Please review all errors before moving to next page
+                            </ui:message>
+                            </aura:if></div>   
+                        <div class="slds-grid slds-grid--align-left">
+                            <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addDeclaration" label="Previous" press="{!c.previous}" />&nbsp;&nbsp;
+                            <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="NextbtnLoanDetails" label="Save and Continue" press="{!c.LoanFormatValidations}" />
+                        </div>
+                    </div> 
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</aura:component>

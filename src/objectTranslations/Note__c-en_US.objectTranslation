@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Body --></label>
+        <name>Body__c</name>
+    </fields><fields>
+        <help><!-- Please check this checkbox to confirm that you are posting this note to the portal --></help>
+        <label><!-- Confirm to Post Note to Portal --></label>
+        <name>Confirm_to_Show_Notes_in_Portal__c</name>
+    </fields><fields>
+        <label><!-- Email of AE for Loan --></label>
+        <name>Email_of_AE_for_Loan__c</name>
+    </fields><fields>
+        <label><!-- Email of PCS at Loan Level --></label>
+        <name>Email_of_PCS_at_Loan_Level__c</name>
+    </fields><fields>
+        <label><!-- Email of PCS at Partner Level --></label>
+        <name>Email_of_PCS_at_Partner_Level__c</name>
+    </fields><fields>
+        <label><!-- LoanId --></label>
+        <name>LoanId__c</name>
+        <relationshipLabel><!-- Portal Notes --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Loan Id --></label>
+        <name>Loan_Id__c</name>
+        <relationshipLabel><!-- Portal Notes --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Loan Officer Email --></label>
+        <name>Loan_Officer_Email__c</name>
+    </fields><fields>
+        <label><!-- Loan Processor Email --></label>
+        <name>Loan_Processor_Email__c</name>
+    </fields><fields>
+        <help><!-- Check this checkbox to send an email to the primary loan contact notifying him/her of the new note on the loan --></help>
+        <label><!-- Notify Primary Loan Contact --></label>
+        <name>Notify_Primary_Loan_Contact__c</name>
+    </fields><fields>
+        <label><!-- Related Client Name --></label>
+        <name>Related_Client_Name__c</name>
+    </fields><fields>
+        <label><!-- User Name --></label>
+        <name>User_Name__c</name>
+    </fields><fields>
+        <label><!-- User Profile --></label>
+        <name>User_Profile__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Portal Note</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Portal Notes</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Note Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- Please check this checkbox to confirm that you are posting this note to the portal. --></errorMessage>
+        <name>Checkbox_must_be_checked_confirmation</name>
+    </validationRules></CustomObjectTranslation>

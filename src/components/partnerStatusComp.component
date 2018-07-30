@@ -1,0 +1,109 @@
+<apex:component controller="partnerStatus" access="global">
+    
+<apex:attribute name="acctId" type="Id" description="Id of the account" assignTo="{!accountId}"/>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>QL Hot Transfer Status Email</title>
+    
+<style>
+body {
+    background-color: #FFFFFF;
+}
+
+h1 {
+    color: #000000;
+    font-family: "Arial Black", "sans-serif";
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+
+table {
+    border: 1px solid black;
+}
+    
+td {
+    font-family: Arial;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding: 3px;
+    text-align: center;
+}
+    
+tr.grey {
+    background-color: #eeeeee;
+}   
+</style>
+</meta>
+</head>
+
+<body>
+
+            <TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="600" BORDER="1" class="snapshot" align="center">
+                <TR class="grey">
+                    <TD colspan="5"><H1>One Reverse Mortgage Services</H1></TD>
+                </TR>
+                <TR class="grey">
+                    <TD>Partner Prospecting Results</TD>
+                    <TD><strong>This Week</strong></TD>
+                    <TD><strong>Last Week</strong></TD>
+                    <TD><strong>MTD:</strong></TD>
+                    <TD><strong>YTD:</strong></TD>
+                </TR>
+                <TR>
+                    <TD>Attempted to Contact:</TD>
+                    <TD>{!AllActivities1}</TD>
+                    <TD>{!AllActivities2}</TD>
+                    <TD>{!AllActivities3}</TD>
+                    <TD>{!AllActivities4}</TD>
+                </TR>
+                <TR>
+                    <TD>Partner Approval Requests:</TD>
+                    <TD>{!StatusProcessing}</TD>
+                    <TD>{!StatusProcessing2}</TD>
+                    <TD>{!StatusProcessing3}</TD>
+                    <TD>{!StatusProcessing4}</TD>
+                </TR>
+                <TR>
+                    <TD>Partners Approved:</TD>
+                    <TD>{!StatusApproved}</TD>
+                    <TD>{!StatusApproved2}</TD>
+                    <TD>{!StatusApproved3}</TD>
+                    <TD>{!StatusApproved4}</TD>
+                </TR>
+                <TR class="grey">
+                    <TD>Loan Pipeline</TD>
+                    <TD><strong>This Week</strong></TD>
+                    <TD><strong>Last Week</strong></TD>
+                    <TD><strong>MTD:</strong></TD>
+                    <TD><strong>YTD:</strong></TD>
+                </TR>
+                <TR>
+                    <TD>Scenarios Out:</TD>
+                    <TD>{!Scenarios1}</TD>
+                    <TD>{!Scenarios2}</TD>
+                    <TD>{!Scenarios3}</TD>
+                    <TD>{!Scenarios4}</TD>
+                </TR>
+                <TR>
+                    <TD>Folders Received:</TD>
+                    <TD>{!Folder1}</TD>
+                    <TD>{!Folder2}</TD>
+                    <TD>{!Folder3}</TD>
+                    <TD>{!Folder4}</TD>
+                </TR>
+                <TR>
+                    <TD>Closings:</TD>
+                    <TD>{!Loan1}</TD>
+                    <TD>{!Loan2}</TD>
+                    <TD>{!Loan3}</TD>
+                    <TD>{!Loan4}</TD>
+                </TR>
+            </TABLE>
+    
+</body>
+</html>  
+</apex:component>

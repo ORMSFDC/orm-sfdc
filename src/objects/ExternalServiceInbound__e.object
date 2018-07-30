@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>ExternalServiceID__c</fullName>
+        <description>Reference to ExternalService__c object associated with this Event</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>External Service ID</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Payload__c</fullName>
+        <description>JSON representation of Response from External Service</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Payload</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields><fields>
+        <fullName>ServiceName__c</fullName>
+        <description>Name of External Service</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Service Name</label>
+        <length>128</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><deploymentStatus>Deployed</deploymentStatus><description>Platform Event from an External Service</description><eventType>StandardVolume</eventType><label>External Service Inbound</label><pluralLabel>External Service Inbound</pluralLabel></CustomObject>

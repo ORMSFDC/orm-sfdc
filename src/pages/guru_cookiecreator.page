@@ -1,0 +1,7 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false">
+ <script>
+ document.cookie = "ORMSAuth=true";
+// window.location.href = 'http://guru.onereversemortgageservices.com';
+window.open('http://guru.onereversemortgageservices.com', '_blank');
+ </script>
+</apex:page>

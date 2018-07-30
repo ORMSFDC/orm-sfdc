@@ -1,0 +1,119 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="ConditionController" >
+    <aura:attribute name="ConditionData" type="Object"/>    
+     <aura:attribute name="LoanId" type="String" default="" />
+     <aura:attribute name="ConditionId" type="String" />
+ 		<aura:method name="SaveEditCondition" action="{!c.SaveEditCondition}" />
+      <aura:registerEvent name="loadMyEvent" type="c:Event_Condition_ForCloseUpdateModal"/>
+    <aura:attribute name="cssStyle" type="String" />
+    <style>
+        {!v.cssStyle}
+    </style>
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+   
+        
+             
+                 
+                  <fieldset class="slds-theme--default slds-container--xx-large">
+                       
+                            <div class="slds-grid slds-grid--pull-padded">                                
+                                
+                                <div class="slds-col--padded">
+                                    <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Current Status</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                     <ui:inputText disabled="true" label="" 
+                                                   value="{!v.ConditionData.Status}"
+                                      class="slds-input Length" />
+                                    </div>
+                                
+                                
+                                <div class="slds-col--padded">
+                                      <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Description</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                      <ui:inputTextArea disabled="true"  label=""
+                                          value="{!v.ConditionData.DescText}" class="slds-input DesTextLenght "
+                                          /> 
+                                    
+                                    </div>
+                              
+                            </div>  
+                        
+                    </fieldset> 
+                
+                    <!-- Nausad -->
+                    <fieldset class="slds-theme--default slds-container--xx-large">
+                       
+                            <div class="slds-grid slds-grid--pull-padded">                                
+                                
+                                <div class="slds-col--padded">
+                                    <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Current Status</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                    <ui:inputSelect label=""  class="slds-input Length" value="{!v.ConditionData.NewStatus}"
+                                
+                                aura:id="DDl_Description" >
+                    <ui:inputSelectOption value="" text="" label="Select"/>
+                    <ui:inputSelectOption text="Outstanding" label="Outstanding"/>
+                    <ui:inputSelectOption text="Revision Requested" label="Revision Requested"/>
+                    <ui:inputSelectOption text="Cancelled " label="Cancelled "/>
+                    <ui:inputSelectOption text="Cleared " label="Cleared "/>
+                </ui:inputSelect>
+                                    </div>
+                                <div class="slds-col--padded">
+                                    <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Description</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                    <ui:inputTextArea label="" aura:id="inputCondition" value="{!v.ConditionData.NewDescText}"
+                                 class="slds-input DesTextLenght "
+                                  />
+                                      </div>
+                            </div>  
+                        
+                    </fieldset>
+                <fieldset class="slds-theme--default slds-container--xx-large">
+                        <div class="slds-grid slds-grid--pull-padded">
+                                <div class="slds-col--padded " style="text-align: right !important; padding-right: 4.5% !important;">
+                                   
+                                    <ui:inputCheckbox class="myCheckbox Disblck" label="" aura:id="CheckEditCondition"  value="" />
+                                                 
+                                                    <span> Notify Primary loan Contact Of Update</span>
+                                                
+                                    
+                                    
+                                </div>
+                            </div> 
+                            
+                        
+                    </fieldset>
+    <br></br>
+        <fieldset class="slds-theme--default slds-container--xx-large">
+                       
+                            <div class="slds-grid slds-grid--pull-padded">                                
+                                
+                                <div class="slds-col--padded">
+                                    <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Created By</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                  {!v.ConditionData.CreatedBy} on  {!v.ConditionData.CreatedDate}
+                                    </div>
+                                <div class="slds-col--padded">
+                                    <label class="uiLabel-left form-element__label uiLabel"
+                                           data-aura-class="uiLabel"><span class="">Last Modified By</span>
+                                        <!--render facet: 189:0--><!--render facet: 190:0--></label>
+                                    <br></br>
+                                {!v.ConditionData.LastModifyBy} On {!v.ConditionData.LastModifyDate}
+                                      </div>
+                            </div>  
+                           
+                                 <!--  <ui:button class="slds-button slds-button_stateful slds-not-selected slds-button_brand btn"
+               press="{!c.SaveEditCondition}" label="Save"></ui:button>-->
+                    </fieldset>
+        
+   
+</aura:component>

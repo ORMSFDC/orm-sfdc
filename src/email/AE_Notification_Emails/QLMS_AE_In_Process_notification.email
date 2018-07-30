@@ -1,0 +1,10 @@
+Hello {!Account.QLMS_First_Name__c},
+<P>
+Your partner, {!Account.Name}, is in process to become approved with ORMS.
+<P>
+Sincerely,
+<P>
+{!Account.OwnerFullName}<br />
+{!Account.OwnerTitle}<br />
+{!Account.OwnerPhone}<br />
+{!Account.OwnerEmail}<br />

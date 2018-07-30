@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Pacific Coast Home Mortgage &amp; Real Estate, Inc. Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Pacific Coast Home Mortgage &amp; Real Estate, Inc. Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>PacificCoastHomeMortgageRealEstateIncPartnerManager</parentRole>
+</Role>

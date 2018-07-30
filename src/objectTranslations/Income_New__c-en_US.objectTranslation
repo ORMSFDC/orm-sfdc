@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Source Name --></label>
+        <name>Income_Source__c</name>
+    </fields><fields>
+        <label><!-- Income Type --></label>
+        <name>Income_Types__c</name>
+        <picklistValues>
+            <masterLabel>Accessory Unit Income</masterLabel>
+            <translation><!-- Accessory Unit Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alimony/Child Support Income</masterLabel>
+            <translation><!-- Alimony/Child Support Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automobile Expense Amount</masterLabel>
+            <translation><!-- Automobile Expense Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boarder Income</masterLabel>
+            <translation><!-- Boarder Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonuses</masterLabel>
+            <translation><!-- Bonuses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gains</masterLabel>
+            <translation><!-- Capital Gains --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commissions</masterLabel>
+            <translation><!-- Commissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disability Income</masterLabel>
+            <translation><!-- Disability Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dividend/Interest Income</masterLabel>
+            <translation><!-- Dividend/Interest Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment Income</masterLabel>
+            <translation><!-- Employment Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment Related Assets</masterLabel>
+            <translation><!-- Employment Related Assets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foreign Income</masterLabel>
+            <translation><!-- Foreign Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foster Care</masterLabel>
+            <translation><!-- Foster Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Housing Choice Voucher (Sec 8)</masterLabel>
+            <translation><!-- Housing Choice Voucher (Sec 8) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Base Pay</masterLabel>
+            <translation><!-- Millitary Base Pay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Clothes Allowance</masterLabel>
+            <translation><!-- Millitary Clothes Allowance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Combat Pay</masterLabel>
+            <translation><!-- Millitary Combat Pay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Flight Pay</masterLabel>
+            <translation><!-- Millitary Flight Pay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Hazard Pay</masterLabel>
+            <translation><!-- Millitary Hazard Pay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Overseas Pay</masterLabel>
+            <translation><!-- Millitary Overseas Pay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Prop Pay</masterLabel>
+            <translation><!-- Millitary Prop Pay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Quarters Allowance</masterLabel>
+            <translation><!-- Millitary Quarters Allowance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Rations Allowance</masterLabel>
+            <translation><!-- Millitary Rations Allowance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millitary Variable Housing Allowance</masterLabel>
+            <translation><!-- Millitary Variable Housing Allowance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Credit Certificate</masterLabel>
+            <translation><!-- Mortgage Credit Certificate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Differential</masterLabel>
+            <translation><!-- Mortgage Differential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net Rental Income</masterLabel>
+            <translation><!-- Net Rental Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Borrower Household Income</masterLabel>
+            <translation><!-- Non-Borrower Household Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notes Receivable/Installment</masterLabel>
+            <translation><!-- Notes Receivable/Installment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Type Of Income</masterLabel>
+            <translation><!-- Other Type Of Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overtime</masterLabel>
+            <translation><!-- Overtime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pension/Retirement Income</masterLabel>
+            <translation><!-- Pension/Retirement Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Royalty Payment</masterLabel>
+            <translation><!-- Royalty Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seasonal Income</masterLabel>
+            <translation><!-- Seasonal Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Security Income</masterLabel>
+            <translation><!-- Social Security Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subject Property Net Cash Flow</masterLabel>
+            <translation><!-- Subject Property Net Cash Flow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temporary Leave Income</masterLabel>
+            <translation><!-- Temporary Leave Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tip Income</masterLabel>
+            <translation><!-- Tip Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trust</masterLabel>
+            <translation><!-- Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unemployment/Public Assistance Income</masterLabel>
+            <translation><!-- Unemployment/Public Assistance Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA Benefits (Non Educational)</masterLabel>
+            <translation><!-- VA Benefits (Non Educational) --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Income Value --></label>
+        <name>Income_Value__c</name>
+    </fields><fields>
+        <label><!-- IsActive --></label>
+        <name>IsActive__c</name>
+    </fields><fields>
+        <label><!-- Is Income Validated? --></label>
+        <name>Is_Income_Validated__c</name>
+    </fields><fields>
+        <label><!-- RelatedClient --></label>
+        <name>RelatedClient__c</name>
+        <relationshipLabel><!-- Incomes --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Related Loan --></label>
+        <name>Related_Loan__c</name>
+        <relationshipLabel><!-- Incomes --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Income</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Incomes</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Income New Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><sharingReasons>
+        <label><!-- Loan Processor --></label>
+        <name>LoanProcessor</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Loan Officer --></label>
+        <name>Loan_Officer</name>
+    </sharingReasons><sharingReasons>
+        <label><!-- Origination Loan Officer --></label>
+        <name>Origination_Loan_Officer</name>
+    </sharingReasons></CustomObjectTranslation>

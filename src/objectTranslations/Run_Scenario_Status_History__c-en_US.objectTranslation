@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Last Modified Date/Time --></label>
+        <name>Last_Modified_Date_Time__c</name>
+    </fields><fields>
+        <label><!-- New Scenario Count --></label>
+        <name>New_Scenario_Count__c</name>
+    </fields><fields>
+        <label><!-- Old Scenario Count --></label>
+        <name>Old_Scenario_Count__c</name>
+    </fields><fields>
+        <help><!-- Run Scenario Date - Used to filter Run Scenario Dates Reporting. Defaulted to created date. --></help>
+        <label><!-- Run Scenario Date --></label>
+        <name>Run_Scenario_Date__c</name>
+    </fields><fields>
+        <label><!-- Scenario Ran --></label>
+        <name>Scenario_Ran__c</name>
+        <relationshipLabel><!-- Run Scenario Status History --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Run Scenario Status History</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Run Scenario Status History</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

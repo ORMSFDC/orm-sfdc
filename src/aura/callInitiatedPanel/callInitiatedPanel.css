@@ -1,0 +1,59 @@
+.THIS.toggle {
+    display: none;
+}
+
+.THIS .avatar {
+    margin-top: 25%;
+    margin-bottom: 3%;
+}
+
+.THIS .name {
+    margin-bottom: 10%;
+}
+
+.THIS .incoming {
+    margin-top: 15%;
+    color: #1589ee;
+}
+
+.THIS .bottom-panel {
+    margin-top: 10%;
+}
+
+.THIS .slds-button {
+    font-weight: normal;
+    height: 40px;
+}
+
+.THIS .companyDetails {
+    font-size: 0.85rem;
+}
+.THIS div.message{
+    color:#FFFFFF;
+        font-weight: bold;
+    background-color:#000000;
+    width:95%;
+    margin:10px auto 10px auto;
+    padding:25px;
+    border-radius:5px;
+        
+}
+.THIS .hide .container {
+    display: none;
+}
+.THIS .expandCollapse::after {
+    content: "[ - ]"
+}
+.THIS .hide .expandCollapse::after {
+    content: "[ + ]"
+}
+.THIS .slds-input{
+    width: 90%
+}
+.THIS .slds-select{
+    width: 90%
+}
+
+.THIS .slds-input-small{
+    width: 30%
+}

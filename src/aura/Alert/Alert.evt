@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" description="Event fired to trigger panel rendering/transitioning.">
+    <aura:attribute name="messagealert" type="String"   description="The type of panel component to create, e.g. c:ctiLoginPanel."/>
+    <aura:attribute name="showhide" type="boolean"   description="It return boolean value"/>
+    
+</aura:event>

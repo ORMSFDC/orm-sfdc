@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" >
+
+    <aura:attribute name="tabName" type="String" default="tabA"/>
+    <aura:attribute name="displayTab" type="Boolean" default="true"/>
+    <aura:attribute name="loadingDone" type="Boolean" default="true"/>
+
+    <div class="slds-tabs_default">
+           <aura:if isTrue="{!v.displayTab}">
+ 
+  <ul class="slds-tabs_default__nav" role="tablist" style="padding-left:0em">
+    <li style="text-transform:none;padding:0px"	 class="{!v.tabName == 'tabA' ? 'slds-tabs_default__item slds-is-active' : 'slds-tabs_default__item'}"  title="Item One" role="presentation" id="tabA" onclick="{!c.switch_tab}"><a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tabA" onclick="{!c.switch_tab}">Run Scenario</a></li>
+    <li style="text-transform:none;padding:0px" class="{!v.tabName == 'tabB' ? 'slds-tabs_default__item slds-is-active' : 'slds-tabs_default__item'}" title="Item Two" role="presentation" id="tabB" onclick="{!c.switch_tab}"><a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tabB" onclick="{!c.switch_tab}">Saved Scenarios</a></li>
+  </ul>
+        </aura:if>     
+  <aura:if isTrue="{!v.tabName == 'tabA'}">
+  <div id="tab-default-1" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+      <c:LoanCalculatorCMPClone displayTab="{!v.displayTab}" />
+    <!-- <c:LoanCalculatorCMP loadingDone="{!v.loadingDone}" displayTab="{!v.displayTab}" />-->
+
+   </div>
+   </aura:if>   
+  <aura:if isTrue="{!v.tabName == 'tabB'}">
+        
+        <div id="tab-default-2" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-2__item">
+      
+   <!-- <c:SavedScenarioCMP loadingDone="{!v.loadingDone}" displayTab="{!v.displayTab}" />-->
+        <c:savedScenarioCmpClone loadingDone="{!v.loadingDone}" displayTab="{!v.displayTab}"/>
+        </div>
+ 
+      </aura:if>   
+ </div>
+    
+    <aura:if isTrue="{!!v.loadingDone}">
+    
+         <div id="printspinner">
+       <lightning:spinner aura:id="print_Spinner" class="slds-show"/>
+    </div>
+        </aura:if>
+</aura:component>

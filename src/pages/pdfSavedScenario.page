@@ -1,0 +1,537 @@
+<apex:page controller="PdfSavedScenarioController" showHeader="false" sidebar="false" standardStylesheets="false">
+    <apex:slds />
+    <apex:includeLightning />
+    <apex:includeScript value="{!$Resource.ChartJS23}" />
+    <apex:includeScript value="{!$Resource.ChartJS24}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <link charset="utf-8" href="{!$Resource.AuthCss}" media="screen" rel="stylesheet" type="text/css" />
+    <link charset="utf-8" href="{!$Resource.GlobalCss}" media="screen" rel="stylesheet" type="text/css" />
+
+    <style>
+    @media print {
+#printable{
+     display:float;
+     justify-content:center;
+     align-items:center;
+     height:100%;
+         
+
+     }
+    html, body{
+      height:100%;
+      width:100%;
+      transform: scale(.85);
+    }
+}
+        .monthYear {
+            line-height: 16px;
+            font-size: .75rem;
+            text-transform: uppercase;
+        }
+
+        .slds-select {
+            border: 1px solid gray !Important;
+            box-shadow: none;
+        }
+
+        h2 {
+            margin-bottom: 1em;
+            color: #a3bf57;
+            font-weight: 700;
+            font-family: quatro-slab, Georgia, serif;
+        }
+
+        thead th {
+            background: #2081bf;
+            color: #fff;
+            font-weight: bold;
+            padding: .5em;
+            text-align: left;
+            white-space: nowrap;
+        }
+    </style>
+    <HTML>
+
+    <head>
+        <title>Contact Us - One Reverse Mortgage Services</title>
+    </head>
+
+    <body id="category_sign_in" class="signed_out1 component_width" style="max-width:80%">
+        <form class="ui form" id="printable">
+            <div id="content">
+                <div style="display:inline">
+                    <div id="header_sec" style="margin-bottom:10px">
+                        <div class="slds-grid">
+                            <div class="slds-p-horizontal_small slds-size_1-of-2 slds-medium-size_5-of-6 slds-large-size_8-of-12">
+                                <br/><br/><br/><br/><br/>
+                                <p>Partner name : {!con.Account.Name}</p>
+                                <p>Loan Officer name : {!$User.FirstName} {!$User.LastName}</p>
+                                <p>LO NMLS Id : {!con.Account.Company_NMLS_ID__c}</p>
+                                <p>LO Email : {!u.email}</p>
+                                <p>LO Phone : {!con.Account.Main_Phone__c}</p>
+
+                            </div>
+                        <!-- <div class="slds-p-horizontal_small slds-size_1-of-2 slds-medium-size_1-of-6 slds-large-size_4-of-12">
+                                <br/><br/><br/><br/><br/><br/>
+                                <img src="{!con.Account.Logo__c}" alt="Salesforce.com" width="175" height="65" id="phHeaderLogoImage" title="Salesforce.com" />
+                            </div>  --> <!-- Hiding the Image for now as per request from Josh Evink - Bala -->
+                        </div>
+                                <br/><br/>
+                    </div>
+                </div>
+                                <div class="slds-form-element slds-size_1-of-2">
+                                    <table class=" slds-table_cell-buffer" style="">
+                                    <thead style="border:0px solid black;">
+                                            <th colspan="2" style=" padding-left: 1.5rem;font-size: 20px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+                                             Scenario Results</th>
+                                        </thead>
+                                     </table>
+                                 </div>
+                <div id="LOCandCashFlow" style="">
+                    <fieldset class="slds-form-element">
+                        <div class="slds-form-element__group">
+                            <div class="slds-form-element__row">
+
+                                <div class="slds-form-element slds-size_1-of-2" style="float:right">
+                                    <table class=" slds-table_cell-buffer" style="">
+                                        <thead style="border:0px solid black;">
+                                            <th colspan="2" style=" padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+                                            HECM Loan</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-label="MARGIN">
+                                                    <div class="slds-truncate"><b>{!RateTypeis }
+                                                                                </b></div>
+                                                </td>
+                                                <td data-label="MARGIN">
+                                                    <div class="slds-truncate slds-text-align_right">
+                                                        {!scenario.Margin__c}%
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="HL">
+                                                    <div class="slds-truncate">
+                                                        <b>Total Amount Available (Principal Limit) </b></div>
+                                                </td>
+                                                <td data-label="HL">
+                                                    <div class="slds-truncate slds-text-align_right">
+                                                        <apex:outputText value="{0, number, Currency}">
+                                                            <apex:param value="{!scenario.Principal_Limit__c}" />
+                                                        </apex:outputText>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="AA">
+                                                    <div class="slds-truncate"><b>Amount Available after Lien Payoff
+                                                                                                                    </b></div>
+                                                </td>
+                                                <td data-label="AA">
+                                                    <div class="slds-truncate slds-text-align_right">
+                                                        <apex:outputText value="{0, number, Currency}">
+                                                            <apex:param value="{!firstAmount}" />
+                                                        </apex:outputText>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="FNC">
+                                                    <div class="slds-truncate">
+                                                        <b>Funds Needed to Close</b></div>
+                                                </td>
+                                                <td data-label="FNC">
+                                                    <div class="slds-truncate slds-text-align_right">
+                                                        <apex:outputText value="{0, number, Currency}">
+                                                            <apex:param value="{!fundsNeedToClose}" />
+                                                        </apex:outputText>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-form-element slds-size_1-of-2" style="">
+                            <table class=" slds-table_cell-buffer">
+                                <thead style="border:0px solid black;">
+                                    <th colspan="2" style="padding-left: 11.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+                                        Your Client Information:</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Age">
+                                            <div class="slds-truncate">
+                                                <b>Age
+                                                                                                                                                                                </b></div>
+                                        </td>
+                                        <td data-label="Age">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                {!age} Years
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="HV">
+                                            <div class="slds-truncate"><b>Home Value</b></div>
+                                        </td>
+                                        <td data-label="HV">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                <apex:outputText value="{0, number, Currency}">
+                                                    <apex:param value="{!scenario.Estimated_home_value__c}" />
+                                                </apex:outputText>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <apex:outputText rendered="{!isTraditional}">  
+                                    <tr>
+                                        <td data-label="CMB">
+                                            <div class="slds-truncate"><b>Current Mortgage Balance
+                                                                                                                                                                                                                </b></div>
+                                        </td>
+                                        <td data-label="CMB">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                <apex:outputText value="{0, number, Currency}">
+                                                    <apex:param value="{!scenario.Current_Mortgage_Balance__c}" />
+                                                </apex:outputText>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="CMMP">
+                                            <div class="slds-truncate">
+                                                <b>Current Monthly Mortgage Payment
+                                                                                                                                                                                                                                        </b></div>
+                                        </td>
+                                        <td data-label="CMMP">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                <apex:outputText value="{0, number, Currency}">
+                                                    <apex:param value="{!scenario.Monthly_Mortgage_Payment__c}" />
+                                                </apex:outputText>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </apex:outputText>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    <apex:outputText rendered="{!!isOld}">
+                        <div class="slds-form-element slds-size_1-of-2" style="float:right">
+                            <apex:outputText rendered="{!isTraditional}">  
+                                    
+                            <table class=" slds-table_cell-buffer" ID="CashFlowTable" style="">
+                                <thead style="border:0px solid black;">
+                                    <th colspan="2" style="padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+
+                                        Cash Flow Savings</th>
+                                        </thead>
+                                        <tbody>
+                                            
+                                            <tr>
+                                            <td data-label="1CF">
+                                                <div class="slds-truncate"><b>
+                                                    1 Year Cash Flow Savings
+                                                    </b></div>
+                                                        </td>
+                                                    <td data-label="1CF">
+                                                        <div class="slds-truncate  slds-text-align_right">
+                                                         <!--   <apex:outputText value="{0, number, Currency}">
+                                                                <apex:param value="{!scenario.CashFlow1__c}" />
+                                                                    </apex:outputText>-->
+                                                                    {!scenario.CashFlow1__c}
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td data-label="OCF">
+                                            <div class="slds-truncate" id="monthlytr" style="display:none1"><b>
+                                     5 years Cash Flow Savings
+                                              
+                </b></div>
+                                        </td>
+                                        <td data-label="OCF">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                {!if(scenario.CashFlow5__c != '','$','')} {!if(scenario.CashFlow5__c!= '',scenario.CashFlow5__c,'')}
+                                                <!-- <lightning:formattedNumber value="{!v.CFRMACF}" style="currency" /> -->
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+                                    <tr>
+                                        <td data-label="OCF">
+                                            <div class="slds-truncate" id="monthlytr1" style="display:none1"><b>
+                                     10 years Cash Flow Savings
+                                              
+                </b></div>
+                                        </td>
+                                        <td data-label="OCF">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                {!if(scenario.CashFlow10__c!= '','$','')} {!if(scenario.CashFlow10__c!= '',scenario.CashFlow10__c,'')}
+                                                <!-- <lightning:formattedNumber value="{!v.CFRMACF}" style="currency" /> -->
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                              </tbody>
+                            </table>
+                            </apex:outputText>  
+                                  
+                        </div>
+                        </apex:outputText>
+                        <!--start of old cash flow---->
+                        
+                        
+                        
+                        <apex:outputText rendered="{!isOld}">
+         <div class="slds-form-element slds-size_1-of-2" style="float:right">
+
+                            <table class=" slds-table_cell-buffer" ID="CashFlowTable" style="">
+                                <thead style="border:0px solid black;">
+                                    <th colspan="2" style="padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+
+                                        Cash Flow Savings</th>
+                                        </thead>
+                                        <tbody>
+                                            
+                                            <tr>
+                                            <td data-label="1CF">
+                                                <div class="slds-truncate"><b>
+                                                    1 Year Cash Flow Savings
+                                                    </b></div>
+                                                        </td>
+                                                    <td data-label="1CF">
+                                                        <div class="slds-truncate  slds-text-align_right">
+                                                            <apex:outputText value="{0, number, Currency}">
+                                                                <apex:param value="{!scenario.Cash_Flow_12_months_Amount__c}" />
+                                                                    </apex:outputText>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td data-label="2NDCF">
+                                            <div class="slds-truncate"><b>
+                                                                                                                                                                                                                                                                                                        <apex:outputText value="" id="sixtymonth"></apex:outputText> Years Cash Flow Savings
+                                                                                                                                                                                                                                                                                                        </b></div>
+                                        </td>
+                                        <td data-label="2NDCF">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                <apex:outputText value="{0, number, Currency}">
+                                                                <apex:param value="{!scenario.Cash_Flow_60_months_Amount__c}" />
+                                                                    </apex:outputText>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td data-label="OCF">
+                                            <div class="slds-truncate" id="monthlytr" style="display:none"><b>
+                                <apex:outputText value="" id="monthly"></apex:outputText> Years Cash Flow Savings
+                </b></div>
+                                        </td>
+                                        <td data-label="OCF">
+                                            <div class="slds-truncate slds-text-align_right">
+                                                {!if(scenario.Cash_Flow_Remaining_months_Amount__c != 0,'$','')} {!if(scenario.Cash_Flow_Remaining_months_Amount__c != 0,scenario.Cash_Flow_Remaining_months_Amount__c,'')}
+                                                <!-- <lightning:formattedNumber value="{!v.CFRMACF}" style="currency" /> -->
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                              </tbody>
+                            </table>
+                        </div>
+</apex:outputText>
+
+                        <div class="slds-form-element__row" style="">
+                            <div class="slds-form-element slds-size_1-of-2" style="">
+                                <table class=" slds-table_cell-buffer" style="">
+                                    <thead style="border:0px solid black;">
+                                        <th colspan="2" style="padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;">
+
+                                            Rate and Cost</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td data-label="RAC">
+                                                <div class="slds-truncate">
+                                                    <b>{!$Label.Scenario_Header5}
+                                </b></div>
+                                            </td>
+                                            <td data-label="RAC">
+                                                <div class="slds-truncate  slds-text-align_right">{!scenario.Index__c}%
+                                                    <!--{!v.Index}% -->
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td data-label="MIP">
+                                                <div class="slds-truncate"><b>Upfront Mortgage Insurance Premium
+                                            </b></div>
+                                            </td>
+                                            <td data-label="MIP">
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    <apex:outputText value="{0, number, Currency}">
+                                                        <apex:param value="{!scenario.MIP__c}" />
+                                                    </apex:outputText>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="EOF">
+                                                <div class="slds-truncate"><b>
+                                                 Estimated Origination Fee</b></div>
+                                            </td>
+                                            <td data-label="EOF">
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    <apex:outputText value="{0, number, Currency}">
+                                                        <apex:param value="{!finalEOF}" />
+                                                    </apex:outputText>
+                                                 </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td data-label="ECC">
+                                                <div class="slds-truncate"><b>
+                                                Other Estimated Closing Costs</b></div>
+                                            </td>
+                                            <td data-label="ECC">
+                                                <div class="slds-truncate slds-text-align_right">
+                                                    $2,500.00
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                                                <br/><br/>
+                <div ID="GRAs" style="display:inline">
+                    <div align="center" style="text-align:center;">
+                        <div class="slds-text-heading--medium1 loc1">
+                            <h2 colspan="2" style="padding-left: 1.5rem;font-size: 18px;background: #FFF;color: #2081bf; font-weight: bold;padding: .5em;text-align: left;white-space: nowrap;"><b>Line of Credit</b></h2>
+                            <div align="center" style="text-align:center;"><canvas id="chart-area" height="450" style="horizontal-align:middle"></canvas> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- scripts -->
+        <script>
+        var jdata = '';
+           if('{!scenario.BarChartResponse__c}' !=''){
+            jdata = '{!scenario.BarChartResponse__c}';
+            }
+            var myObjCF = jdata;
+            var i1, k, j1 = "",
+                v1 = "",
+                x1 = "",
+                y1 = "",
+                z1 = "";
+            var monthlyPyment = myObjCF.monthlyPayment;
+            var MonthTerm = myObjCF.terms;
+            if (MonthTerm < 60) {
+                var m = (MonthTerm / 12).toFixed(1);
+                document.getElementById('{!$Component.sixtymonth}').innerHTML = m;
+            } else {
+                for (k in myObjCF.termCashFlowList) {
+                    if (60 == myObjCF.termCashFlowList[k].month) {
+                        var m = (60 / 12).toFixed(1);
+                        document.getElementById('{!$Component.sixtymonth}').innerHTML = m;
+                    }
+                    if (MonthTerm == myObjCF.termCashFlowList[k].month) {
+                        var m = (MonthTerm / 12).toFixed(1);
+                        document.getElementById("monthlytr").style.display = "Inline";
+                        document.getElementById('{!$Component.monthly}').innerHTML = m;
+                    }
+                }
+            }
+
+            var ctx = document.getElementById("chart-area");
+            var datais = [{!scenario.Current_Mortgage_Balance__c},
+                             {!scenario.MIP__c},
+                           {!financingFees},
+                             {!equityReserves},
+                             {!cashAtClose},
+                             {!scenario.Line_of_Credit__c}
+                        ];
+          
+            var chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Monthly Mortgage Balance  $'+(({!scenario.Current_Mortgage_Balance__c}).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,'))+'',
+                             'Insurance Fees  $'+(({!scenario.MIP__c}).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,'))+'',
+                             'Financing Fees  $'+(({!financingFees}).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,'))+'',
+                             'Equity Reserves $'+(({!equityReserves}).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,'))+'',
+                             'Cash at Close $'+(({!cashAtClose}).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,'))+'',
+                             'Line of Credit  $'+(({!scenario.Line_of_Credit__c}).toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,'))+''
+                    ],
+                    datasets: [{
+                        data: datais ,
+                       // backgroundColor: ['#ff6384', '#cc65fe', '#0066ff', '#36a2eb', '#ffce56', '#b2d12b'],
+                         backgroundColor: ['#FF9B00', '#B5121B', '#0C4569', '#2081BF', '#ffce56',  '#6C9F2E'],
+                   
+                        borderColor: 'white',
+                        borderWidth: 1,
+                    }]
+                },
+                showDatapoints: true,
+                options: {
+                    tooltips: {
+                        enabled: false
+                    },
+                    pieceLabel: {
+                    render: 'label',
+                  
+    fontColor: '#000',
+    position: 'outside'
+                    
+                    /*    render: function(args) {
+                            return '$' + args.value.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        },
+                        position: 'outside',
+                        fontColor: '#000',*/
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        position: 'top',
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+        </script>
+    
+        <script>
+            $(document).ready(function() {
+                $(window).load(function() {
+                    setTimeout(function() {
+                        window.print();
+                       }, 1200);
+                });
+                
+            });
+        </script>
+    </body>
+
+    </html>
+
+</apex:page>

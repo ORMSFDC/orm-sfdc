@@ -1,0 +1,386 @@
+<aura:component controller="PipeLineController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+                access="global">
+    
+    <aura:handler name="init" action="{!c.doIn}" value="{!this}" />
+    <aura:attribute name="IsdataAvailableInPipeLine" type="boolean" default="false" />
+    <aura:attribute name="DataMessage" type="string"  />
+    <aura:attribute name="loan" type="Object" />
+    <aura:attribute name="loanP" type="Object" />
+    <aura:attribute name="loanU" type="Object" />
+    <aura:attribute name="loanS" type="Object" />
+    <aura:attribute name="loanCl" type="Object" />
+    <aura:attribute name="loanF" type="Object" />
+    <aura:attribute name="loanC" type="Object" />
+    <aura:registerEvent name="navigate" type="c:NavigatetoPipeLineMenu"/>
+    
+    <aura:renderIf isTrue="{!v.IsdataAvailableInPipeLine}">
+        <div class="slds-form slds-form_Compound"  >
+            <div id="divOrigination">  
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">     
+                                <div>
+                                   <h3 class="header"><b> Origination </b></h3>
+                                </div>
+                                <table class="slds-table_bordered slds-table_cell-buffer"  >
+                                    <thead>
+                                        <tr Style= "background-color:#2877bd">
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Number</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Name</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Status</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Status Date</th>
+                                        </tr>
+                                    </thead>   
+                                    <tbody>
+                                        <aura:iteration items="{!v.loan}" var="loan">
+                                            
+                                            <tr >
+                                                
+                                                <td data-label="Loan Number"  >
+                                                    <div class="slds-truncate table-body">
+                                                        
+                                                        <b><a id = "{!loan.Loanid}" onclick="{!c.PipeLineMenu}">{!loan.LoanNumber}</a>
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Name" >
+                                                    <div class="slds-truncate table-body"><b>
+                                                        {!loan.FullName}</b></div>
+                                                </td>
+                                                <td data-label="Status"  >
+                                                    <div class="slds-truncate table-body"><b>{!loan.LoanStatus}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Loan Status DateTime"  >
+                                                    <div class="slds-truncate table-body"><b>{!loan.LoanDate}
+                                                        </b></div>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </aura:iteration>                         
+                                    </tbody>
+                                    
+                                </table>  </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+            </div>
+            &nbsp; &nbsp; &nbsp;
+            <div id="divProcessing">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">
+                                <div>
+                                    <h3 class="header">
+                                        <b >Processing</b>
+                                    </h3>
+                                </div>
+                                <table class="slds-table_bordered slds-table_cell-buffer">
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Number</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Name</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Status</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Status Date</th>
+                                        </tr>
+                                    </thead>   
+                                    <tbody>
+                                        <aura:iteration items="{!v.loanP}" var="loanP">
+                                            
+                                            <tr >
+                                                
+                                                <td data-label="Loan Number">
+                                                    <div class="slds-truncate"  style="color:blue">
+                                                        
+                                                        <b> <a id = "{!loanP.Loanid}" onclick="{!c.PipeLineMenu}" >{!loanP.LoanNumber}</a>
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate table-body" ><b>{!loanP.FullName}</b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate table-body"><b>{!loanP.LoanStatus}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Loan Status DateTime">
+                                                    <div class="slds-truncate table-body"><b>{!loanP.LoanDate}
+                                                        </b></div>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </aura:iteration>                         
+                                    </tbody>
+                                    
+                                </table>  </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            &nbsp; &nbsp; &nbsp;
+            <div id="divUnderwriting">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">
+                                <div class="header">
+                                    <h3 class="header"><b >Underwriting</b></h3>
+                                </div>
+                                <table class="slds-table_bordered slds-table_cell-buffer">
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Number</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Name</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Status</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Status Date</th>
+                                        </tr>
+                                    </thead>   
+                                    <tbody>
+                                        <aura:iteration items="{!v.loanU}" var="loanU">
+                                            
+                                            <tr >
+                                                
+                                                <td data-label="Loan Number">
+                                                    <div class="slds-truncate"  style="color:blue">
+                                                        
+                                                        <b> <a id = "{!loanU.Loanid}" onclick="{!c.PipeLineMenu}" >{!loanU.LoanNumber}</a>
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate table-body"><b>{!loanU.FullName}</b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate table-body" ><b>{!loanU.LoanStatus}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Loan Status DateTime">
+                                                    <div class="slds-truncate table-body" ><b>{!loanU.LoanDate}
+                                                        </b></div>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </aura:iteration>                         
+                                    </tbody>
+                                    
+                                </table>  </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            &nbsp; &nbsp; &nbsp;
+            <div id="divSuspended">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">      
+                                <div class="header">
+                                    <h3 class="header"><b >Suspended</b></h3>
+                                </div>
+                                <table class="slds-table_bordered slds-table_cell-buffer"  >
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Number</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Name</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Status</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Status Date</th>
+                                        </tr>
+                                    </thead>   
+                                    <tbody>
+                                        <aura:iteration items="{!v.loanS}" var="loanS">
+                                            
+                                            <tr >
+                                                
+                                                <td data-label="Loan Number">
+                                                    <div class="slds-truncate" style="color:blue">
+                                                        
+                                                        <b> <a id = "{!loanS.Loanid}" onclick="{!c.PipeLineMenu}" >{!loanS.LoanNumber}</a>
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate table-body" ><b>{!loanS.FullName}</b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate table-body" ><b>{!loanS.LoanStatus}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Loan Status DateTime">
+                                                    <div class="slds-truncate table-body"><b>{!loanS.LoanDate}
+                                                        </b></div>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                            
+                                        </aura:iteration>                         
+                                    </tbody>
+                                    
+                                </table>  </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            &nbsp; &nbsp; &nbsp;
+            <div id="divClosing">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">   
+                                <div class="header">
+                                    <h3 class="header"><b>Closing</b></h3>
+                                </div>
+                                <table class="slds-table_bordered slds-table_cell-buffer"  >
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Number</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Name</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Status</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Status Date</th>
+                                        </tr>
+                                    </thead>   
+                                    <tbody>
+                                        <aura:iteration items="{!v.loanCl}" var="loanCl">
+                                            
+                                            <tr >
+                                                <td data-label="Loan Number">
+                                                    <div class="slds-truncate" style="color:blue">
+                                                        
+                                                        <b> <a id = "{!loanCl.Loanid}" onclick="{!c.PipeLineMenu}" >{!loanCl.LoanNumber}</a>
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate table-body" ><b>{!loanCl.FullName}</b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate table-body" ><b>{!loanCl.LoanStatus}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Loan Status DateTime">
+                                                    <div class="slds-truncate table-body"><b>{!loanCl.LoanDate}
+                                                        </b></div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>                         
+                                    </tbody>
+                                </table>  </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            &nbsp; &nbsp; &nbsp;
+            <div id="divFunded">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1"> 
+                                <div class="header">
+                                    <h3 class="header"><b>Funded</b></h3>
+                                </div>                                
+                                <table class="slds-table_bordered slds-table_cell-buffer"  >
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Number</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Name</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Status</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Status Date</th>
+                                        </tr>
+                                    </thead>   
+                                    <tbody>
+                                        <aura:iteration items="{!v.loanF}" var="loanF">
+                                            
+                                            <tr >
+                                                
+                                                <td data-label="Loan Number">
+                                                    <div class="slds-truncate"  style="color:blue">
+                                                        
+                                                        <b> <a id = "{!loanF.Loanid}" onclick="{!c.PipeLineMenu}" >{!loanF.LoanNumber}</a>
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate table-body" ><b>{!loanF.FullName}</b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate table-body" ><b>{!loanF.LoanStatus}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Loan Status DateTime">
+                                                    <div class="slds-truncate table-body"><b>{!loanF.LoanDate}
+                                                        </b></div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>                         
+                                    </tbody>
+                                </table>  </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            &nbsp; &nbsp; &nbsp;
+            <div id="divCancelled">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-1">
+                                <div class="header">
+                                    <h3 class="header"><b>Denied/Withdrawn</b></h3>
+                                </div>
+                                <table class="slds-table_bordered slds-table_cell-buffer"  >
+                                    <thead>
+                                        <tr style= "background-color:#2877bd">
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Number</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Name</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Status</th>
+                                            <th style= "color:white" class="slds-col slds-size--1-of-4">Loan Status Date</th>
+                                        </tr>
+                                    </thead>   
+                                    <tbody>
+                                        <aura:iteration items="{!v.loanC}" var="loanC">
+                                            
+                                            <tr >
+                                                <td data-label="Loan Number">
+                                                    <div class="slds-truncate" style="color:blue">
+                                                        
+                                                        <b> <a id = "{!loanC.Loanid}" onclick="{!c.PipeLineMenu}" >{!loanC.LoanNumber}</a>
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Name">
+                                                    <div class="slds-truncate table-body"><b>{!loanC.FullName}</b></div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div class="slds-truncate table-body" ><b>{!loanC.LoanStatus}
+                                                        </b></div>
+                                                </td>
+                                                <td data-label="Loan Status DateTime">
+                                                    <div class="slds-truncate table-body" ><b>{!loanC.LoanDate}
+                                                        </b></div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>                         
+                                    </tbody>
+                                </table>  </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-form slds-form_Compound" style="text-align:center !important">
+                {!v.DataMessage}
+                <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+            </div>
+        </aura:set>
+    </aura:renderIf> 
+</aura:component>

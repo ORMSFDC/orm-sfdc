@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.Business_Partners__r.Contacts$Name</field>
+    </columns>
+    <columns>
+        <field>User.Business_Partners__r.Contacts$Office_Phone__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User.Business_Partners__r$RecordType</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.Approved_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Business_Partners__r.Contacts$ORM_Account_Executive_Name__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Josh Evink</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.Business_Partners__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.Business_Partners__r$Primary_contact_name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Approved Partner Details</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Business_Partners_individuals_users__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>User.Business_Partners__r.Contacts$Name</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>User.Business_Partners__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

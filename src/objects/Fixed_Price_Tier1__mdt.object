@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Credit_to_Borrower__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Credit to Borrower</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Origination_to_ORM__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Origination to ORM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Price</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Rate__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields><label>Fixed Price Tier1</label><pluralLabel>Fixed Price Tier1</pluralLabel><visibility>Public</visibility><listViews>
+        <fullName>Rate</fullName>
+        <columns>Rate__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>Origination_to_ORM__c</columns>
+        <columns>Price__c</columns>
+        <columns>Credit_to_Borrower__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Rate</label>
+    </listViews></CustomObject>

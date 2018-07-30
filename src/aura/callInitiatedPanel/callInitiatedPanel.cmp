@@ -1,0 +1,134 @@
+<aura:component controller="CTIServiceProviderController" description="panel that is shown on dialing, incoming or transferring calls before being connected that displays basic contact info for the call." implements="c:panel">
+    <aura:attribute name="QLPropCategories" type="String[]" />
+    <aura:attribute name="QLPropSubCategories" type="String[]" />
+    <aura:attribute name="StatusList" type="String[]" />
+     <aura:attribute name="SubjectTypeList" type="String[]" />
+    <aura:attribute name="objInfo" type="string" default="Task" description="store object Info." />
+    <aura:attribute name="depnedentFieldMap" type="map" 
+                    description="store controller(key)--> dependent(values) picklist value as a map." />
+    <aura:attribute name="isDependentDisable" type="boolean" 
+                    default="true" description="use for, make disbale depandent field." />
+    <aura:attribute name="CTIRequestData" type="object" />
+    
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="state" type="String" />
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="recordName" type="String" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="account" type="Object" />
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="phone" type="String" />
+    <aura:attribute name="TaskID" type="String" />
+    <aura:attribute name="assignedToLabel" type="String" default="Assigned To : " />
+    <aura:attribute name="assigned" type="String" 
+                    description="UserName"/>
+    <aura:attribute name="presence" type="String" default="Available" 
+                    description="Could be Available, Busy or Unavailable"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <aura:attribute name="FollowUpDueDate" type="Date" />
+    <div style="overflow-y: scroll; height:500px;">
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+            <span class="slds-assistive-text">info</span>
+            <h2>In Call.</h2>
+            <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="In Call">
+                <lightning:icon iconName="standard:call" size="x-small" alternativeText="In Call"/>
+            </span>
+        </div>
+        <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.sectionOne}">
+            <section class="slds-clearfix">
+                <div class="slds-float--left ">
+                    <lightning:icon class="slds-show" aura:id="articleOne" iconName="utility:add" size="x-small" />
+                    <lightning:icon class="slds-hide" aura:id="articleOne" iconName="utility:dash" size="x-small" />
+                </div>
+                <div class="slds-m-left--large">Task Information</div>
+            </section>
+        </div>
+        <!--Task Information-->
+        <div class="slds-hide slds-p-around--medium" aura:id="articleOne">
+            <label>{!v.assignedToLabel}</label>
+            <ui:outputText title="Assigned To"  value="{!v.assigned}" class="uiOutputText" />
+            <br/>
+            
+            <ui:inputText label="Subject"  aura:id="tsk_Subject" 
+                          class="slds-input"/>
+            <ui:inputSelect class="slds-select" aura:id="SubjectType" required="false" 
+                                    label="Subject Type" >
+                        <aura:iteration items="{!v.SubjectTypeList}" var="status" >                            
+                            <option text="{!status.label}" value="{!status.value}" selected="{!status.selected}"/>
+                                                    </aura:iteration>
+                    </ui:inputSelect>
+            <!-- <ui:inputSelect aura:id="qlpropCat" class="slds-select"  label="QL Value Prop Categories" 
+                            change="{!c.onQLSelectedChange}">
+                <aura:iteration items="{!v.QLPropCategories}" var="pOptions">
+                    <option value="{!pOptions.value}">{!pOptions.label}</option>
+                </aura:iteration>
+            </ui:inputSelect>
+            <ui:inputSelect class="slds-select" aura:id="qlpropSubCat" multiple="true" 
+                            disabled="{!v.isDependentDisable}"  
+                            label="QL Value Prop Sub Categories" >
+                <aura:iteration items="{!v.QLPropSubCategories}" var="SubpOptions">
+                    <option value="{!SubpOptions.value}">{!SubpOptions.label}</option>
+                </aura:iteration>
+            </ui:inputSelect>-->
+            <ui:inputTextArea aura:id="comments" class="slds-input" label="Comments" />
+            <ui:inputSelect aura:id="selFollowup"  class="slds-select"  change="{!c.followChange}" 
+                            label="Create Follow-up Task" >
+                <option value="None">--None--</option>
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </ui:inputSelect>
+        </div>
+        <div class="slds-hide" aura:id="followuppanel">
+            <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.sectiontwo}">
+                <section class="slds-clearfix">
+                    <div class="slds-float--left ">
+                        <lightning:icon class="slds-show" aura:id="articletwo" iconName="utility:add" size="x-small" />
+                        <lightning:icon class="slds-hide" aura:id="articletwo" iconName="utility:dash" size="x-small" />
+                    </div>
+                    <div class="slds-m-left--large">Followup-Task-Note</div>
+                </section>
+            </div>
+            <!--Followup-Task-Note-->
+            <div class="slds-hide slds-p-around--medium" aura:id="articletwo">
+                <div class="slds-hide" aura:id="nofollowup">
+                    <label>{!v.assignedToLabel}</label>
+                    <ui:outputText title="Assigned To"  value="{!v.assigned}" class="uiOutputText" />
+                    <br/>
+                    <ui:inputDate aura:id="txtFollowDueDate" 
+                                  class="slds-input" 
+                                  label="DueDate"                        
+                                  required="false"
+                                  format="MM/dd/yyyy"
+                                  displayDatePicker="true" value="{!v.FollowUpDueDate}" 
+                                  />
+                    <ui:inputText label="Subject" class="slds-input" aura:id="txtSubject" />
+                    <ui:inputSelect class="slds-select" aura:id="Status" required="false" 
+                                    label="Status" >
+                        <aura:iteration items="{!v.StatusList}" var="status" >
+                            
+                            <option text="{!status.label}" value="{!status.value}" selected="{!status.selected}"/>
+                            
+                        </aura:iteration>
+                    </ui:inputSelect>
+                    <ui:inputTextArea aura:id="txtFollowupComments"  class="slds-input"  label="Comments" />
+                    <ui:inputCheckbox aura:id="chkReminder" class="slds-checkbox" click="{!c.toggle}" label="Reminder "/>
+                    <div aura:id="mySelectedDateTime" class=" slds-hide">
+                        <ui:inputDateTime class="slds-input" aura:id="ReminderDateTime"
+                                          label="Select a date and time"  format="MM/dd/yyyy"
+                                          displayDatePicker="true"/></div>
+                </div>
+                <div aura:id="notes" class="slds-hide">
+                    <ui:inputTextArea class="slds-input" label="Notes" aura:id="followupNotes"/>
+                </div>   
+            </div>
+        </div>
+        <aura:if isTrue="{!v.showError}">                            
+            <ui:message title="Error" severity="error" closable="false">
+                Please review all errors and save again.
+            </ui:message>                                
+        </aura:if>
+        <button class="slds-size--1-of-1 slds-button slds-button--destructive" onclick="{!c.UpdateTaskAndClose}">Save and Close</button>
+        <br/>
+    </div>
+</aura:component>
