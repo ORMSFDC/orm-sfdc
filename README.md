@@ -12,11 +12,11 @@ Complete SFDC codebase for ORM
 **Flow**
 
 1.  Clone this repo
-1.  Checkout sprint branch (ex: `git checkout w50-sprint7`)
-1.  Create new branch from the sprint branch. Ex: `git checkout -b w50-sprint7-ryan`
+1.  Checkout sprint branch (ex: `git checkout sprint7`)
+1.  Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
 1.  Modify [`package.xml`](./package.xml) as you develop, to specify ONLY what you are working on.  Also make note of profiles and permission changes in your `README.md` (template below)
 1.  Deploy to your sandbox via `tools/deploy.sh`.  See [tools/README.md](./tools) for more info.
-1.  When ready to deliver to QA, [rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) your branch on top of the sprint branch to pull in any changes made since you branched from it.
+1.  When ready to deliver to QA, [rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) your branch on top of the sprint branch to pull in any changes made since you branched from it.  Ex: `git fetch origin && git rebase sprint7`
 1.  If you have lots of un-necessary commit messages, please [squash them](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html) into a few concise ones.
 1.  Send a github pull request from your branch to the sprint branch. 
 1.  Release manager will review changes at a high level, and take note of `package.xml` updates.  He will then update the CI on the sprint branch to account for `package.xml` changes.
