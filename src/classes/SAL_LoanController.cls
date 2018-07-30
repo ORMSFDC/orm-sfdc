@@ -66,7 +66,7 @@ public with sharing class SAL_LoanController {
                          Present_Market_Value__c,Mortgage_and_Liens__c,Name_of_Company__c,Account_Number__c,Gross_Rental_Income__c,Monthly_Mortgage_Payment__c,
                          Net_Rental_Income__c, Purchase_Price__c,Earnest_Money_Deposit__c,Contract_Date__c,Contract_Closing_Date__c,Status_Of_Current_Address__c,
                          Source_Of_Funds__c,Sale_Date__c,Sale_Proceeds__c,Assets_Amount__c,Gift_Amount__c,Other_Source_Of_Funds__c,Amount_Of_Other_Funds__c,
-                         Originating_Loan_Officer__c
+                         Originating_Loan_Officer__c, Product_Type__c, Loan_Payment_Plan_Term__c
                          //End
                          FROM Loan_New__c where Id=: RecordId];
             //Code Ended by Dev4 for ORMSFDC-1423

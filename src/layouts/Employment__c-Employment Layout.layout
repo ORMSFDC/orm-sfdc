@@ -57,8 +57,8 @@
                 <field>RelatedLoan__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>SelfEmployment__c</field>
+                <behavior>Edit</behavior>
+                <field>IncomeCategory__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

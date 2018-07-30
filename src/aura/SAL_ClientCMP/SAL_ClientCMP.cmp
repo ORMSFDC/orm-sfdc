@@ -9,7 +9,7 @@
     
     <aura:attribute name="jumpto_last" type="boolean" default="true"/>
     
-    <aura:attribute name="LoanId" type="String" default="a0Q29000002oKMdEAM" />
+    <aura:attribute name="LoanId" type="String"/>
     
     <aura:attribute name="ClientName" type="String" />
     <aura:attribute name="clientLoanIdforAddress" type="String" />
@@ -260,11 +260,16 @@
                     <lightning:radioGroup aura:id="inputClientSpouseFieldNBS"
                                           name="radioButtonGroup_ClientSpouse"
                                           
-                                          options="{! v.YesNoList}"
+                                          options="{!v.YesNoList}"
                                           
                                           value="{!v.NBSYesNo}"
                                           onchange="{!c.showSpouse}"
                                           />
+                    <aura:if isTrue="{!or(v.MortgageAppliedForValue == 'HELO Refinance',v.MortgageAppliedForValue == 'HELO for Purchase')}">
+                        <ui:message aura:id="invalidHeloNBS" title="Error" severity="error" closable="false" class="{!if(v.NBSYesNo eq 'Yes','slds-show','slds-hide')}">
+                            You cannot use the HELO product if there is a NBS. Please return to the Loan page and change the Loan type to HECM to proceed with a NBS.
+                        </ui:message>
+                    </aura:if>
                 </div>
                 <div id="showSpouseDetails" style="display:none">
                     <div class="slds-p-horizontal_small slds-size_1-of-1">

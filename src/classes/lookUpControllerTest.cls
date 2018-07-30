@@ -251,7 +251,7 @@ insert ObjOpp;*/
         
         try{
        id scenerioId1 = lookUpController.SaveScenario(l,date.today().format().replace('/','-'), 10, 10, 14, 20, 1, 13, 
-                                                      10, 23, 13, 12, 'High', 12, 14, 7, 10, 12,'abc','xyz',1.0,1.1,'Hecm','Test','123','123','123','123','Adjust','120',10,'12');  
+                                                      10, 23, 13, 12, 'High', 12, 14, 7, 10, 12,'abc','xyz',1.0,1.1,'Hecm','Test','123','123','123','123','Adjust','120',10,new scenario__c());  
         }catch(exception ex){}
         
        // lookUpController.getCashFlowData(10,10,10,10,10,[select id from Scenario__c limit 1].id,100);

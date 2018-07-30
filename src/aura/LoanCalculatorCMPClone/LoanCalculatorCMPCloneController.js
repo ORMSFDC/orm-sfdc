@@ -1,5 +1,5 @@
 ({
-	onSelectChange : function(component, event, helper) {
+    onSelectChange : function(component, event, helper) {
         component.set('v.DOB','');
         component.set('v.EHV','');
         component.set('v.PP','');
@@ -7,27 +7,27 @@
         component.set('v.CMIR','');
         component.set('v.MMP','');
         component.set('v.ADO', '');
-    
-	component.set('v.ClientDiv',false);
+        
+        component.set('v.ClientDiv',false);
         component.set('v.Show_FHA_Hecm',false);
         
-            component.set('v.Show_FHA_Purchase',false);
+        component.set('v.Show_FHA_Purchase',false);
         component.set('v.show_MaxAdo',false);
-    var selected = component.find("levels").get("v.value");
-  //  alert(selected);
+        var selected = component.find("levels").get("v.value");
+        //  alert(selected);
         if( selected =='FHA Traditional HECM'){
-           // component.set('v.ClientDiv',false);
+            // component.set('v.ClientDiv',false);
             component.set('v.ScenarioType','FHA Traditional HECM');
-           component.set('v.Show_FHA_Hecm',true);
-    
+            component.set('v.Show_FHA_Hecm',true);
+            
         }else{
             
             component.set('v.ScenarioType','HECM for Purchase');
             component.set('v.Show_FHA_Purchase',true);
         }
-   
-},
-       //Validate Estimate Home Value
+        
+    },
+    //Validate Estimate Home Value
     validateEHV:function(component, event, helper) {
         debugger;
         var EhvVal = component.get('v.EHV'); // 300000
@@ -35,13 +35,13 @@
         var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
         var finalEOF1 = (HUDeof < 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
         component.set("v.ADO", finalEOF1);
-           component.set("v.MaxAdo",finalEOF1);
-     
-      //  alert('Loan Calculator validateEHV');
+        component.set("v.MaxAdo",finalEOF1);
+        
+        //  alert('Loan Calculator validateEHV');
         
         var inz = component.get('v.EHV');
-            console.log('inz ',inz);
-    
+        console.log('inz ',inz);
+        
         if(isNaN(inz) && inz)
         {
             component.set('v.EHV', inz.substring(0, inz.length - inz.length));
@@ -53,12 +53,12 @@
         var EhvVal = component.get('v.EHV'); // 300000
         console.log('EhvVal  -->', EhvVal);
         var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
-
-
+        
+        
         var finalEOF1 = (HUDeof < 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
         component.set("v.ADO", finalEOF1);
         component.set("v.MaxAdo",finalEOF1);
-      //  alert('Loan Calculator validateEHV');
+        //  alert('Loan Calculator validateEHV');
         var inz = component.get('v.CMB');
         console.log('CMB ',inz);
         if(isNaN(inz) && inz)
@@ -67,7 +67,7 @@
             component.set("v.ErrorMsg","");
         }
     },
-   //Validate Current Mortgage Interest Rate
+    //Validate Current Mortgage Interest Rate
     validateCMIR:function(component, event, helper) {
         debugger;
         var inz = component.get('v.CMIR');
@@ -86,7 +86,7 @@
             }          
         }      
     },
-   //Validate Monthly Mortgage Payment
+    //Validate Monthly Mortgage Payment
     validateMMP:function(component, event, helper) {
         var inz = component.get('v.MMP');
         if(isNaN(inz) && inz)
@@ -97,38 +97,39 @@
     },
     //Validate Monthly Mortgage Payment
     validateADO: function (component, event, helper) {
-    //  var inputCmp = component.find('inputADO');   
+        //  var inputCmp = component.find('inputADO');   
         var inz = component.get('v.ADO');
         if (isNaN(inz) && inz) {
-           // alert(1);
+            // alert(1);
             component.set('v.ADO', inz.substring(0, inz.length - inz.length));
             component.set("v.ErrorMsg", "");
         }else{
-           // alert(2); 
+            // alert(2); 
             var MaxAdoIs = parseInt(component.get('v.MaxAdo'));
             console.log(inz,MaxAdoIs);
             if(inz>MaxAdoIs){
                 component.set('v.show_MaxAdo',true);
-                  // inputCmp.set("v.errors", [{ message: "This should be less than or equal to  " + MaxAdoIs  }]);   
-         
+                // inputCmp.set("v.errors", [{ message: "This should be less than or equal to  " + MaxAdoIs  }]);   
+                
             }else{
                 component.set('v.show_MaxAdo',false);
-                   // inputCmp.set("v.errors",null);   
-        
+                // inputCmp.set("v.errors",null);   
+                
             }            
         }
     },
     AdoOnblur:function(component,event,helper){
-     helper.validateAdo(component,event,helper);
-   
-    },
-
-     //Validate Required Field
-    Validations: function(component, event, helper) {
-            component.set('v.Show_table',true);
+        helper.validateAdo(component,event,helper);
         
-     //   debugger;
-      // alert('validations ');
+    },
+    
+    //Validate Required Field
+    Validations: function(component, event, helper) {
+        console.log('validations method');
+        component.set('v.Show_table',true);
+        
+        //   debugger;
+        // alert('validations ');
         var msg = "";
         var reg = '';
         var array_id = new Array();
@@ -136,7 +137,7 @@
         var array_reg = new Array();
         var arr_reg = new Array();
         var arr_func = new Array();
-             var valArray = [
+        var valArray = [
             { ar_id: "inputDOB", mes: "This is a required field.", reg: validateRequiredField },
             { ar_id: "inputEHV", mes: "This is a required field.", reg: validateRequiredField },
             { ar_id: "inputCMB", mes: "This is a required field.", reg: validateRequiredField },
@@ -144,49 +145,49 @@
         ]; 
         
         
- var bothFilled = false;
+        var bothFilled = false;
         var CMIRIs = component.get('v.CMIR');
         var MMPIs = component.get('v.MMP');
         if((CMIRIs=='' || CMIRIs==undefined) && (MMPIs=='' || MMPIs==undefined) ){
             component.set('v.Show_table',false);
             try{
                 var inputCmp = component.find('inputMMP');    
-  			  inputCmp.set("v.errors", null);  
-                 var inputCmp1 = component.find('inputCMIR');    
-  			  inputCmp1.set("v.errors",null);   
+                inputCmp.set("v.errors", null);  
+                var inputCmp1 = component.find('inputCMIR');    
+                inputCmp1.set("v.errors",null);   
             }catch(err){}
-             
-          //  bothFilled = true;
-        }else{
-             try{ 
-            if((CMIRIs!='' &&  CMIRIs!=undefined && CMIRIs!=0) && (MMPIs=='' ||  MMPIs==undefined)){
-              bothFilled = true;
-              
-                var inputCmp = component.find('inputMMP');    
-  			  inputCmp.set("v.errors", [{ message: "This is a required field" }]);   
-
-            }else{
-                   var inputCmp = component.find('inputMMP');    
-  			  inputCmp.set("v.errors", null);   
-
-            }
             
-              if((MMPIs!='' &&  MMPIs!=undefined && MMPIs!=0) && (CMIRIs=='' ||  CMIRIs==undefined)){
-              bothFilled = true;
-       
-                  var inputCmp = component.find('inputCMIR');    
-  			  inputCmp.set("v.errors", [{ message: "This is a required field" }]);   
-              }else{
-                           var inputCmp = component.find('inputCMIR');    
-  			  inputCmp.set("v.errors",null);   
-             
-              }
-                 
-             }catch(err){}
+            //  bothFilled = true;
+        }else{
+            try{ 
+                if((CMIRIs!='' &&  CMIRIs!=undefined && CMIRIs!=0) && (MMPIs=='' ||  MMPIs==undefined)){
+                    bothFilled = true;
+                    
+                    var inputCmp = component.find('inputMMP');    
+                    inputCmp.set("v.errors", [{ message: "This is a required field" }]);   
+                    
+                }else{
+                    var inputCmp = component.find('inputMMP');    
+                    inputCmp.set("v.errors", null);   
+                    
+                }
+                
+                if((MMPIs!='' &&  MMPIs!=undefined && MMPIs!=0) && (CMIRIs=='' ||  CMIRIs==undefined)){
+                    bothFilled = true;
+                    
+                    var inputCmp = component.find('inputCMIR');    
+                    inputCmp.set("v.errors", [{ message: "This is a required field" }]);   
+                }else{
+                    var inputCmp = component.find('inputCMIR');    
+                    inputCmp.set("v.errors",null);   
+                    
+                }
+                
+            }catch(err){}
             
         }
         
-     //   alert(1);
+        //   alert(1);
         function validateRequiredField(value) {          
             if ($A.util.isEmpty(value))
             {
@@ -198,83 +199,91 @@
             }            
         }
         //     { ar_id: "inputCMIR", mes: "This is a required field.", reg: validateRequiredField },
-       //       { ar_id: "inputMMP", mes: "This is a required field." , reg: validateRequiredField},
-     
-           
+        //       { ar_id: "inputMMP", mes: "This is a required field." , reg: validateRequiredField},
+        
+        
         array_id = valArray.map(item => item.ar_id);
         array_mes = valArray.map(item => item.mes);
         array_reg = valArray.map(item => item.reg); 
-    
-     //   alert(2);
+        
+        //   alert(2);
         var Isrequired = false;
         try{
-        Isrequired =helper.formatErrorMethod(component, array_reg, array_mes, array_id) ;
+            Isrequired =helper.formatErrorMethod(component, array_reg, array_mes, array_id) ;
         }catch(err){}
         
-    //    alert(3);
+        //    alert(3);
         var isdateworng = false;
         try{
-         isdateworng=helper.validateDate(component, event, helper);
+            isdateworng=helper.validateDate(component, event, helper);
         }catch(err){}
         var IsCurrenyWorng = false;
         try{
-         IsCurrenyWorng= helper.CurrencyRegexCheck(component) ;
+            IsCurrenyWorng= helper.CurrencyRegexCheck(component) ;
         }catch(err){}
         
-     //   alert(4);
+        //   alert(4);
         var IsInterestrateWorng = false;
         try{
-         IsInterestrateWorng=helper.validateCMIRValue(component, event, helper);
+            IsInterestrateWorng=helper.validateCMIRValue(component, event, helper);
         }catch(err){}
-    //    alert(5);
+        //    alert(5);
         var adoError= false;
         try{
             
-         adoError =    helper.validateAdo(component, event, helper);
+            adoError =    helper.validateAdo(component, event, helper);
         }catch(err){}
-     //      alert(6);
+        //      alert(6);
         if (Isrequired || IsCurrenyWorng || isdateworng || IsInterestrateWorng || adoError || bothFilled) {            
-     //          alert(7);
+            //          alert(7);
             console.log('Isrequired || IsCurrenyWorng || isdateworng || IsInterestrateWorng || adoError || bothFilled',Isrequired , IsCurrenyWorng , isdateworng,IsInterestrateWorng,adoError,bothFilled)
             component.set("v.showError", true);            
         }        
         else
         { 
-     //          alert(8);
+            //          alert(8);
             component.set("v.showError", false);
             helper.checkFor62(component,event,helper);          
         } 
+        if(component.get("v.Show_FHA_Hecm")  || component.get("v.Show_FHA_Purchase")){ 
+            if(component.get("v.EHV") >= 350000){
+                component.set("v.displayHelo", true);
+            }else{
+                component.set("v.displayHelo", false);
+            }
+        } 
     },
     get_loanFor_margin:function(component,event,helper){
-            component.set("v.ClientDiv",true);
-  
+        component.set("v.ClientDiv",true);
+        
         var selectedItem = event.currentTarget;
-          var recId = selectedItem.dataset;
+        var recId = selectedItem.dataset;
         console.log('selectedItem.dataset ',selectedItem.dataset.type);
-          var selId = event.currentTarget.id;
+        var selId = event.currentTarget.id;
         console.log('selId ',selId);
         var alm = selId;
-  
+        
         $('.each_row').removeClass('highlighted_row');//.css('background-color','white').css('color','black');
         $('.'+'row_'+selId).addClass('highlighted_row');//.css('background-color','blue').css('color','white');
     },
     
-     //Validate Required Field
+    //Validate Required Field
     ValidationsNew: function(component, event, helper) {
-      var isValidatePP = false;
+        console.log('validationsnew method');
+        var isValidatePP = false;
         try{
-    isValidatePP =   helper.validatePP(component, event, helper);
+            isValidatePP =   helper.validatePP(component, event, helper);
         }catch(err){}
         
         var isdateworng = false;
         try{
-         isdateworng=helper.validateDatenew(component, event, helper);
+            isdateworng=helper.validateDatenew(component, event, helper);
         }catch(err){}
         
         var adoError= false;
         try{
             
-         adoError =    helper.validateAdo(component, event, helper);
+            adoError =    helper.validateAdo(component, event, helper);
         }catch(err){}
         if (isdateworng || adoError || isValidatePP) {            
             component.set("v.showError", true);            
@@ -287,7 +296,19 @@
             component.set("v.showPrintOption",true);
             helper.checkFor62(component,event,helper); //Added Age Error for Purchase - Bala
         }  
-     //   alert();
+        if(component.get("v.Show_FHA_Hecm")  || component.get("v.Show_FHA_Purchase")){ 
+            console.log('show fha Hecm',component.get("v.Show_FHA_Hecm"));
+            console.log('show fha Purchase',component.get("v.Show_FHA_Purchase"));
+            //alert('init'+component.get("v.EHV"));
+            if(component.get("v.EHV") >= 350000){
+                console.log(' displayHelo above 350k');
+                component.set("v.displayHelo", true);
+            } else{
+                console.log(' displayHelo below 350k');
+                component.set("v.displayHelo", false);
+            }
+        } 
+        //   alert();
       /*  var msg = "";
         var reg = '';
         var array_id = new Array();
@@ -324,26 +345,26 @@
             helper.checkFor62(component,event,helper);          
         } */
     },
-     optionChanged:function(component, event, helper){
-         var lnId= component.get("v.showLoanId");
-     
-       //  alert(lnId);
-         if(lnId!=null && lnId!=undefined && lnId!=''){  
-                $A.createComponent(
-             "c:StartNewLoanCmp",
-            
-          {
-              "ApplicationDate":component.get("v.ApplicationDate"),
-             "LoanId":component.get("v.showLoanId"), 
-              "fromPopup":true
-         },
-         function(newCmp){
-            if (component.isValid()) {
-                component.set("v.body", newCmp);
-            }
-         }
-      );
-         }
+    optionChanged:function(component, event, helper){
+        var lnId= component.get("v.showLoanId");
+        
+        //  alert(lnId);
+        if(lnId!=null && lnId!=undefined && lnId!=''){  
+            $A.createComponent(
+                "c:StartNewLoanCmp",
+                
+                {
+                    "ApplicationDate":component.get("v.ApplicationDate"),
+                    "LoanId":component.get("v.showLoanId"), 
+                    "fromPopup":true
+                },
+                function(newCmp){
+                    if (component.isValid()) {
+                        component.set("v.body", newCmp);
+                    }
+                }
+            );
+        }
     },
     
     onSingleSelectChange:function(component){ // Bala 

@@ -113,7 +113,35 @@
                 <br />
                 <div class="slds-size_1-of-2">
                     <ui:inputSelect aura:id="CreditReissueVendor" label="Credit Reissue Vendor" value="{!v.NewCredit.Credit_Reissue_Vendor__c}">
-                        <ui:inputSelectOption text="Credco" label="Credco" value="true"/>
+                            <ui:inputSelectOption text="ADV" label="ADVANTAGE CREDIT" value="true"/>
+                            <ui:inputSelectOption text="ADVPLUS" label="ADVANTAGE PLUS" value="true"/>
+                            <ui:inputSelectOption text="ALLIANCE" label="ALLIANCE 2020" value="true"/>
+                            <ui:inputSelectOption text="ARC" label="AMERICAN REPORTING COMPANY" value="true"/>
+                            <ui:inputSelectOption text="BCS" label="BIRCHWOOD CREDIT SERVICES, INC." value="true"/>
+                            <ui:inputSelectOption text="NATIONWIDE" label="CERTIFIED CREDIT LINK" value="true"/>
+                            <ui:inputSelectOption text="CERTIFIED" label="CERTIFIED CREDIT REPORTING" value="true"/>
+                            <ui:inputSelectOption text="CIC" label="CIC CREDIT" value="true"/>
+                            <ui:inputSelectOption text="CISIS" label="CIS INFORMATION SERVICES" value="true"/>
+                            <ui:inputSelectOption text="CISCO" label="CISCO CREDIT" value="true"/>
+                            <ui:inputSelectOption text="CALCOAST" label="CLEAR CHOICE CREDIT" value="true"/>
+                            <ui:inputSelectOption text="CBS" label="CREDIT BUREAU SERVICES" value="true"/>
+                            <ui:inputSelectOption text="CREDITLINK" label="CREDIT LINK" value="true"/>
+                            <ui:inputSelectOption text="CPLUS" label="CREDIT PLUS" value="true"/>
+                            <ui:inputSelectOption text="CTIMI" label="CREDIT TECHNOLOGIES, INC" value="true"/>
+                            <ui:inputSelectOption text="CTICA" label="CREDIT TECHNOLOGY, INC" value="true"/>
+                            <ui:inputSelectOption text="DCI" label="DCI CREDIT" value="true"/>
+                            <ui:inputSelectOption text="ISC" label="ISC" value="true"/>
+                            <ui:inputSelectOption text="KEWANEE" label="KEWANEE CREDIT BUREAU" value="true"/>
+                            <ui:inputSelectOption text="MERCHANT" label="MERCHANTS CREDIT BUREAU" value="true"/>
+                            <ui:inputSelectOption text="MCBSAV" label="MERCHANTS CREDIT BUREAU (SAV)" value="true"/>
+                            <ui:inputSelectOption text="MWM" label="MIDWEST MORTGAGE CREDIT SERVICES" value="true"/>
+                            <ui:inputSelectOption text="PREMIUM" label="PREMIUM CREDIT BUREAU" value="true"/>
+                            <ui:inputSelectOption text="CDC" label="PREMIUM CREDIT BUREAU (CDC)" value="true"/>
+                            <ui:inputSelectOption text="SARMA" label="SARMA" value="true"/>
+                            <ui:inputSelectOption text="SVC1" label="SERVICE 1ST INFOSYSTEM" value="true"/>
+                            <ui:inputSelectOption text="SETONE" label="SETTLEMENTONE CREDIT CORP." value="true"/>
+                            <ui:inputSelectOption text="UNITEDONE" label="UNITED ONE RESOURCES" value="true"/>
+                            <ui:inputSelectOption text="UCS" label="UNIVERSAL CREDIT SERVICES" value="true"/>
                     </ui:inputSelect>
                     
                     <div id="CreditReissueVendorError" style="color:red;"></div>
