@@ -8,7 +8,7 @@ if (!process.env.SFDC_SANDBOX_USERNAME) {
 }
 
 const username = process.env.SFDC_SANDBOX_USERNAME;
-const deployDir = path.join(__dirname, '..');
+const deployDir = path.join(__dirname, '..', 'src');
 const deployParams = ['force:mdapi:deploy', '-d', deployDir, '-u', username, '--json'];
 
 console.log(`Deploying ${deployDir} under username ${username}`);
