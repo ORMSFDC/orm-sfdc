@@ -20,5 +20,9 @@
         <members></members>
         <name>StaticResource</name>
     </types>
+        <types>
+        <members></members>
+        <name>ApexTriggers</name>
+    </types>
     <version>43.0</version>
 </Package>
