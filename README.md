@@ -9,9 +9,6 @@ Complete SFDC codebase for ORM
 1.  Release manager (Mike) will create a gearsets CI to QA as soon as a new sprint branch is created.
 1.  Layouts and permissions can not be handled in this codebase, must be assigned in the SFDC setup web UI.  Devs will track these manually in their branch's `README.md` (see below).
 
-TODO: 
-*  [] Add actors to the flow
-
 **Flow**
 
 1.  **All**: Clone this repo
