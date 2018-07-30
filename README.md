@@ -9,10 +9,14 @@ Complete SFDC codebase for ORM
 1.  Release manager (Mike) will create a gearsets CI to QA as soon as a new sprint branch is created.
 1.  Layouts and permissions can not be handled in this codebase, must be assigned in the SFDC setup web UI.  Devs will track these manually in their branch's `README.md` (see below).
 
+TODO: 
+*  [] Add actors to the flow
+
 **Flow**
 
-1.  Clone this repo
-1.  Checkout sprint branch (ex: `git checkout sprint7`)
+1.  All: Clone this repo
+1.  Release manager: every new sprint, release manager creates a git branch for the sprint (ex: `sprint7`) and creates a gearsets CI job, connecting it to QA (ignoring `package.xml`)
+1.  Developer: Checkout sprint branch (ex: `git checkout sprint7`)
 1.  Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
 1.  Modify [`package.xml`](./package.xml) as you develop, to specify ONLY what you are working on.  Also make note of profiles and permission changes in your `README.md` (template below)
 1.  Deploy to your sandbox via `tools/deploy.sh`.  See [tools/README.md](./tools) for more info.
