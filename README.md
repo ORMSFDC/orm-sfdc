@@ -12,7 +12,11 @@ Complete SFDC codebase for ORM
 **Flow**
 
 1.  **All**: Clone this repo
-1.  **Release manager**: every new sprint, release manager creates a git branch for the sprint (ex: `git push origin sprint7`) and creates a gearsets CI job, connecting it to QA (ignoring `package.xml`) and slack channel (https://hooks.slack.com/services/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)
+1.  **Release manager**: every new sprint:
+    1.  creates a git branch for the sprint (ex: `git push origin sprint7`)
+    1.  copy over clean `package.xml`: `cp ./template/package.xml ./src/`
+    1.  creates a gearsets CI job, connecting it to QA (ignoring `package.xml`) 
+    1.  connect gearsets to slack channel (https://hooks.slack.com/services/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)
 1.  **Developer**: Checkout sprint branch (ex: `git checkout sprint7`)
 1.  **Developer**: Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
 1.  **Developer**: Modify [`package.xml`](./package.xml) as you develop, to specify ONLY what you are working on.  Also make note of profiles and permission changes in your `README.md` (template below)
