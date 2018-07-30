@@ -55,12 +55,11 @@
 <aura:if isTrue="{!v.showSpinnerLoan}"><!--{!v.showSpinnerLoan}-->
    								 <lightning:spinner variant="brand" size="large"/>
    							 </aura:if>
-            <div style="margin-bottom:3%; " class="slds-size_1-of-3">
+            <!-- <div style="margin-bottom:3%; " class="slds-size_1-of-3">
                 <ui:inputSelect aura:id="LoanMortgageAppliedFor" required="true" label="Mortgage Applied for " value="{!v.LMortgageAppliedFor}"
                     class="fontCss">
             
                     <ui:inputSelectOption text="FHA Traditional HECM" label="FHA Traditional HECM" />
-                    <!--<ui:inputSelectOption text="FHA Refinance HECM" label="FHA Refinance HECM"/>-->
                     <ui:inputSelectOption text="HECM to HECM Refinance" label="HECM to HECM Refinance" />
                     <ui:inputSelectOption text="HECM for Purchase" label="HECM for Purchase" />
                 </ui:inputSelect>
@@ -76,7 +75,7 @@
                 </ui:inputSelect>
             
             
-            </div>
+            </div> -->
             
             <div class="slds-form-element__control">
                 <input type = "hidden" id = "secret"/>
@@ -154,4 +153,5 @@
   <div class="slds-backdrop slds-backdrop_open"></div>
     </aura:if>
      
+    <div style="display: none">get js to deploy</div>
 </aura:component>

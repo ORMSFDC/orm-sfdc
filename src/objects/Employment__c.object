@@ -1,34 +1,59 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
         <label>Employer City</label>
@@ -37,7 +62,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Client_id__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -48,7 +74,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CurrentPosition__c</fullName>
         <externalId>false</externalId>
         <label>CurrentPosition</label>
@@ -71,7 +98,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>EmployerAddress__c</fullName>
         <externalId>false</externalId>
         <label>EmployerAddress</label>
@@ -80,7 +108,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>EmployerName__c</fullName>
         <externalId>false</externalId>
         <label>EmployerName</label>
@@ -89,15 +118,17 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>EmployerPhone__c</fullName>
-        <description>Make a validation to make it a 10 digit number, doesn't start with 0, does not allow all same digits</description>
+        <description>Make a validation to make it a 10 digit number, doesn&apos;t start with 0, does not allow all same digits</description>
         <externalId>false</externalId>
         <label>EmployerPhone</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IncomeCategory__c</fullName>
         <externalId>false</externalId>
         <label>IncomeCategory</label>
@@ -140,7 +171,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IncomeType__c</fullName>
         <externalId>false</externalId>
         <label>IncomeType</label>
@@ -173,7 +205,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IncomeValue__c</fullName>
         <externalId>false</externalId>
         <label>IncomeValue</label>
@@ -182,7 +215,8 @@
         <scale>3</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Income_Type__c</fullName>
         <externalId>false</externalId>
         <label>Income_Type</label>
@@ -191,16 +225,18 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_Employment_Validated__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Is Employment Validated?</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Months__c</fullName>
-        <description>Can't be less than 0</description>
+        <description>Can&apos;t be less than 0</description>
         <externalId>false</externalId>
         <label>Months</label>
         <precision>2</precision>
@@ -209,7 +245,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PositionTitle__c</fullName>
         <externalId>false</externalId>
         <label>Position/Title</label>
@@ -218,7 +255,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Employment__c</fullName>
         <defaultValue>true</defaultValue>
         <description>To identify if the employment is primary or secondary</description>
@@ -226,7 +264,8 @@
         <label>Primary Employment</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>RelatedLoan__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -237,11 +276,12 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>SelfEmployment__c</fullName>
         <externalId>false</externalId>
         <label>SelfEmployment</label>
-        <required>true</required>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -260,7 +300,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <externalId>false</externalId>
         <label>Employer State</label>
@@ -523,7 +564,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>YearEmployedinProfession__c</fullName>
         <externalId>false</externalId>
         <label>YearEmployedinProfession</label>
@@ -1036,9 +1078,10 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Years__c</fullName>
-        <description>Can't be  less than zero</description>
+        <description>Can&apos;t be  less than zero</description>
         <externalId>false</externalId>
         <label>Years</label>
         <precision>2</precision>
@@ -1047,7 +1090,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Zip__c</fullName>
         <externalId>false</externalId>
         <label>Employer Zip</label>
@@ -1056,7 +1100,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>is_Active__c</fullName>
         <defaultValue>false</defaultValue>
         <description>To know whether the record is active or not</description>
@@ -1064,15 +1109,30 @@
         <label>is Active</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Employment</label><nameField>
+    </fields>
+    <label>Employment</label>
+    <listViews>
+        <fullName>All_Employment_information</fullName>
+        <columns>NAME</columns>
+        <columns>Client_id__c</columns>
+        <columns>RelatedLoan__c</columns>
+        <columns>IncomeType__c</columns>
+        <columns>IncomeCategory__c</columns>
+        <columns>is_Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Employment information</label>
+    </listViews>
+    <nameField>
         <displayFormat>EMP-{00000}</displayFormat>
         <label>Employment ID</label>
         <type>AutoNumber</type>
-    </nameField><pluralLabel>Employments</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>Employments</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>Client_id__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>RelatedLoan__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SelfEmployment__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IncomeType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IncomeCategory__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>is_Active__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>EmployerName__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CurrentPosition__c</customTabListAdditionalFields>
@@ -1080,50 +1140,46 @@
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Client_id__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>RelatedLoan__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>SelfEmployment__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>IncomeType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IncomeCategory__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>is_Active__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>EmployerName__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CurrentPosition__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Client_id__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>RelatedLoan__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>SelfEmployment__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>IncomeType__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IncomeCategory__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>is_Active__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>EmployerName__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CurrentPosition__c</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>Client_id__c</searchFilterFields>
         <searchFilterFields>RelatedLoan__c</searchFilterFields>
-        <searchFilterFields>SelfEmployment__c</searchFilterFields>
         <searchFilterFields>IncomeType__c</searchFilterFields>
+        <searchFilterFields>IncomeCategory__c</searchFilterFields>
         <searchFilterFields>is_Active__c</searchFilterFields>
         <searchFilterFields>EmployerName__c</searchFilterFields>
         <searchFilterFields>CurrentPosition__c</searchFilterFields>
         <searchResultsAdditionalFields>Client_id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>RelatedLoan__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>SelfEmployment__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>IncomeType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IncomeCategory__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>is_Active__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>EmployerName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CurrentPosition__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><listViews>
-        <fullName>All_Employment_information</fullName>
-        <columns>NAME</columns>
-        <columns>Client_id__c</columns>
-        <columns>RelatedLoan__c</columns>
-        <columns>SelfEmployment__c</columns>
-        <columns>IncomeType__c</columns>
-        <columns>is_Active__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Employment information</label>
-    </listViews><sharingReasons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <sharingReasons>
         <fullName>LoanProcessor__c</fullName>
         <label>Loan Processor</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Loan_Officer__c</fullName>
         <label>Loan Officer</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Origination_Loan_Officer__c</fullName>
         <label>Origination Loan Officer</label>
-    </sharingReasons></CustomObject>
+    </sharingReasons>
+    <visibility>Public</visibility>
+</CustomObject>

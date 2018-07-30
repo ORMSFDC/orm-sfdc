@@ -1,158 +1,163 @@
-<aura:component controller="SAL_LoanController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
-    <aura:attribute name="UsState" type="List"/>
+<aura:component controller="SAL_LoanController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+    access="global">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
     <aura:attribute name="LoanMortgageAppliedFor" type="String" />
-    <aura:attribute name="LoanId" type="String"/>
-    <aura:attribute name="popupLoanId" type="String" default="default"/>
-    <aura:attribute name="EditLoanId" type="String" default=""/>
-    <aura:attribute name="Number" type="List"/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="RateType" type="String" default="ARM" />
+    <aura:attribute name="UsState" type="List" />
+    <aura:attribute name="LoanId" type="String" />
+    <aura:attribute name="popupLoanId" type="String" default="default" />
+    <aura:attribute name="EditLoanId" type="String" default="" />
+    <aura:attribute name="Number" type="List" />
     <aura:attribute name="NewLoan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
-    <aura:attribute name="NuLoan" type="Loan_New__c"/>
-    <aura:attribute name="LoanErr" type="boolean"/>
-    <aura:attribute name="poaWarning" type="boolean" default="false"/>
-    <aura:attribute name="IsSaved" type="String"/>
-    <aura:attribute name="RecState" type="String"/>
-    <aura:attribute name="nextOpt" type="boolean"/>
-    <aura:attribute name="currentOpt" type="boolean"/>
-    <aura:attribute name="prevOpt" type="boolean"/>
-    <aura:attribute name="showError" type="boolean" default="false"/>
-    <aura:attribute name="PageMsg" type="String"/>
-    <aura:attribute name="NameOfPOA" type="String"/>
-    <aura:attribute name="show_originate_fee" type="boolean" default="false"/>
+    <aura:attribute name="NuLoan" type="Loan_New__c" />
+    <aura:attribute name="LoanErr" type="boolean" />
+    <aura:attribute name="poaWarning" type="boolean" default="false" />
+    <aura:attribute name="IsSaved" type="String" />
+    <aura:attribute name="RecState" type="String" />
+    <aura:attribute name="nextOpt" type="boolean" />
+    <aura:attribute name="currentOpt" type="boolean" />
+    <aura:attribute name="prevOpt" type="boolean" />
+    <aura:attribute name="showError" type="boolean" default="false" />
+    <aura:attribute name="PageMsg" type="String" />
+    <aura:attribute name="NameOfPOA" type="String" />
+    <aura:attribute name="show_originate_fee" type="boolean" default="false" />
     <!--Code Modified by Dev4 for ORMSFDC-1471-->
-    <aura:attribute name="show_originate_fee_disable" type="boolean" default="true"/>
+    <aura:attribute name="show_originate_fee_disable" type="boolean" default="true" />
     <!--Code Ended by Dev4 for ORMSFDC-1471-->
-    <aura:attribute name="show_msg" type="boolean" default="false"/>
-    <aura:attribute name="showLoanPurpose" type="boolean" default="true"/>
-    <aura:attribute name="Relationship_to_Alternative_Contact" type="boolean" default="false"/>
-    <aura:attribute name="itemsClicked" type="String" />    
+    <aura:attribute name="show_msg" type="boolean" default="false" />
+    <aura:attribute name="showLoanPurpose" type="boolean" default="true" />
+    <aura:attribute name="Relationship_to_Alternative_Contact" type="boolean" default="false" />
+    <aura:attribute name="itemsClicked" type="String" />
     <ltng:require scripts="{!$Resource.common}" />
     <!-- <aura:handler event="c:getdateEvent" action="{!c.getdate}"/>
  Flag to check if it is a new loan -->
-    <aura:attribute name="NewStartLoan" type="boolean" default="true"/>
-    <aura:attribute name="ApplicationDate" type="Date" default=""/>
-    <aura:attribute name="newSelectlistdisable" type="boolean" default="true"/> 
-    <aura:attribute name="isMoved" type="boolean" default="false"/>
+    <aura:attribute name="NewStartLoan" type="boolean" default="true" />
+    <aura:attribute name="ApplicationDate" type="Date" default="" />
+    <aura:attribute name="newSelectlistdisable" type="boolean" default="true" />
+    <aura:attribute name="isMoved" type="boolean" default="false" />
     <!--Flag to skip steps in incompete form -->
-    <aura:attribute name="Incomplete" type="boolean" default="false"/>
-    <aura:handler name="change" value="{!v.Incomplete}" action="{!c.LoanFormatValidations}"/>
-    <aura:attribute name="PropertyValue" type="Currency" default=""/>
-    <!--<aura:attribute name="oldApplicationDate" type="Date" default="01/01/1990"/>-->
-    <aura:registerEvent name="PillsEvent" type="c:NavPillsEvent"/>
+    <aura:attribute name="Incomplete" type="boolean" default="false" />
+    <aura:handler name="change" value="{!v.Incomplete}" action="{!c.LoanFormatValidations}" />
+    <aura:attribute name="PropertyValue" type="Currency" default="" />
+    <aura:registerEvent name="PillsEvent" type="c:NavPillsEvent" />
     <aura:attribute name="YesNoList" type="List" default="[
                                                           {'label': 'Yes', 'value': 'Yes'},
                                                           {'label': 'No', 'value': 'No'}
-                                                          ]"/>
+                                                          ]" />
     <div>
         <div class="slds-form slds-form_compound">
             <fieldset class="slds-form-element">
-                <div  class="slds-form-element__group" >
-                    <div  class="slds-form-element slds-size_1-of-1" >
+                <div class="slds-form-element__group">
+                    <div class="slds-form-element slds-size_1-of-1">
                         <div style="margin-bottom:3%; " class="slds-size_1-of-2">
-                             <h5 class="fontCss">Purchase Information  &nbsp;</h5>
-                            <ui:inputSelect aura:id="LoanMortgageAppliedFor" required="true" label="Mortgage Applied for " value="{!v.NewLoan.Mortgage_Applied_for__c}" disabled="true" >
-                                
-                                <ui:inputSelectOption value="true" text="FHA Traditional HECM" label="FHA Traditional HECM"/>
-                                <!--<ui:inputSelectOption text="FHA Refinance HECM" label="FHA Refinance HECM"/>-->
-                                <ui:inputSelectOption text="HECM to HECM Refinance" label="HECM to HECM Refinance"/>
-                                <ui:inputSelectOption text="HECM for Purchase" label="HECM for Purchase" disabled="true"/>
+                            <h5 class="fontCss">Purchase Information (ARM) &nbsp;</h5>
+
+                            <ui:inputSelect aura:id="LoanType" required="true" label="Loan Type " value="{!v.NewLoan.Product_Type__c}">
+                                <ui:inputSelectOption value="true" text="HECM" label="HECM" />
+                                <ui:inputSelectOption text="HELO" label="One Reverse HELO" />
                             </ui:inputSelect>
-                            
+
+                            <ui:inputSelect aura:id="LoanMortgageAppliedFor" required="true" label="Mortgage Type " value="{!v.NewLoan.Mortgage_Applied_for__c}">
+                                <aura:if isTrue="{!v.NewLoan.Product_Type__c == 'HECM'}">
+                                    <ui:inputSelectOption value="true" text="FHA Traditional HECM" label="Traditional" />
+                                </aura:if>
+                                <ui:inputSelectOption text="HECM to HECM Refinance" label="Refinance" />
+                                <ui:inputSelectOption text="HECM for Purchase" label="Purchase" />
+                            </ui:inputSelect>
+
+                            <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.NewLoan.Rate_Type__c}" disabled="{!(v.NewLoan.Product_Type__c == 'HELO') ? true  : false}">
+                                <ui:inputSelectOption text="ARM" label="ARM" value="{!(v.NewLoan.Product_Type__c == 'HELO') ? false  : true}" />
+                                <ui:inputSelectOption text="Fixed" label="Fixed" value="{!(v.NewLoan.Product_Type__c == 'HELO') ? true  : false}" />
+                            </ui:inputSelect>
                         </div>
                         <div id="loanPurpose" style="display:none">
                             <table>
                                 <tr>
                                     <td>
-                                        <div>Purpose of Loan  *&nbsp;
-                                            <!--<lightning:icon iconName="utility:info" size="x-small" title=" Please hold the Ctrl button on the keyboard to select more than one option."/>-->
+                                        <div>Purpose of Loan *&nbsp;
                                             <lightning:helptext content="Please hold the Ctrl button on the keyboard to select more than one option." />
-                                        </div>     
+                                        </div>
                                     </td>
                                 </tr>
                             </table>
-                            
-                            <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                                <ui:inputSelect class="automation" aura:id="LoanPurposeLoan" required="true" multiple="true" value="{!v.NewLoan.Purpose_of_Loan__c}" >                                
+
+                            <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                                <ui:inputSelect class="automation" aura:id="LoanPurposeLoan" required="true" multiple="true" value="{!v.NewLoan.Purpose_of_Loan__c}">
                                     <ui:inputSelectOption text="Additional Income" label="Additional Income" value="true"></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Home Improvement" label="Home Improvement" ></ui:inputSelectOption>  
+                                    <ui:inputSelectOption text="Home Improvement" label="Home Improvement"></ui:inputSelectOption>
                                     <ui:inputSelectOption text="Payment of Taxes" label="Payment of Taxes"></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Payment of Insurance" label="Payment of Insurance" ></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Leisure" label="Leisure" ></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Medical" label="Medical" ></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Extinguish Forward Mortgage" label="Extinguish Forward Mortgage" ></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Other" label="Other" ></ui:inputSelectOption>
+                                    <ui:inputSelectOption text="Payment of Insurance" label="Payment of Insurance"></ui:inputSelectOption>
+                                    <ui:inputSelectOption text="Leisure" label="Leisure"></ui:inputSelectOption>
+                                    <ui:inputSelectOption text="Medical" label="Medical"></ui:inputSelectOption>
+                                    <ui:inputSelectOption text="Extinguish Forward Mortgage" label="Extinguish Forward Mortgage"></ui:inputSelectOption>
+                                    <ui:inputSelectOption text="Other" label="Other"></ui:inputSelectOption>
                                 </ui:inputSelect>
                             </div>
-                            
-                            
-                            <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                                <ui:inputSelect aura:id="LoanPayment" required="true" label="Selected Loan Payment Plan " value="{!v.NewLoan.Selected_Loan_Payment_Plan__c }" >
-                                   <!-- Modified Picklist values by Bala   -->
-                                    <ui:inputSelectOption value="true" text="Line of Credit" label="Line of Credit"/>
-                                    <ui:inputSelectOption text="Single Lump Sum" label="Single Lump Sum"/>
-                                    <ui:inputSelectOption text="Term" label="Term"/>
-                                    <ui:inputSelectOption text="Modified Term" label="Modified Term"/>
-                                    <ui:inputSelectOption text="Tenure" label="Tenure"/>
-                                    <ui:inputSelectOption text="Modified Tenure" label="Modified Tenure"/>
-                                    <ui:inputSelectOption text="Undecided" label="Undecided"/>                                    
-                                 
+
+
+                            <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                                <ui:inputSelect aura:id="LoanPayment" required="true" label="Selected Loan Payment Plan " value="{!v.NewLoan.Selected_Loan_Payment_Plan__c }">
+                                    <!-- Modified Picklist values by Bala   -->
+                                    <ui:inputSelectOption value="true" text="Line of Credit" label="Line of Credit" />
+                                    <ui:inputSelectOption text="Single Lump Sum" label="Single Lump Sum" />
+                                    <ui:inputSelectOption text="Term" label="Term" />
+                                    <ui:inputSelectOption text="Modified Term" label="Modified Term" />
+                                    <ui:inputSelectOption text="Tenure" label="Tenure" />
+                                    <ui:inputSelectOption text="Modified Tenure" label="Modified Tenure" />
+                                    <ui:inputSelectOption text="Undecided" label="Undecided" />
                                 </ui:inputSelect>
                             </div>
-                            <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                                
-                                <ui:inputCurrency label="Estimate of Appraised Value " required="true" 
-                                                  aura:id="LoanEstimateAppVal" value="{!v.NewLoan.Estimate_of_Appraised_Value__c}" 
-                                                  class="slds-input" blur="{!c.populateFee}"/>
+                            <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+
+                                <ui:inputCurrency label="Estimate of Appraised Value " required="true" aura:id="LoanEstimateAppVal" value="{!v.NewLoan.Estimate_of_Appraised_Value__c}"
+                                    class="slds-input" blur="{!c.populateFee}" />
                             </div>
                         </div>
                         <div id="hecm" class="slds-size_1-of-2">
-                            <ui:inputCurrency label="Purchase Price" required="true" aura:id="PurchasePrice" value="{!v.NewLoan.Purchase_Price__c}" 
-                                              class="slds-input" blur="{!c.populateFromPurchasePrice}"/>
+                            <ui:inputCurrency label="Purchase Price" required="true" aura:id="PurchasePrice" value="{!v.NewLoan.Purchase_Price__c}" class="slds-input"
+                                blur="{!c.populateFromPurchasePrice}" />
                             <br/>
-                            <ui:inputCurrency label="Earnest Money Deposit" required="true" aura:id="EarnestMoneyDeposit" value="{!v.NewLoan.Earnest_Money_Deposit__c}" 
-                                              />
+                            <ui:inputCurrency label="Earnest Money Deposit" required="true" aura:id="EarnestMoneyDeposit" value="{!v.NewLoan.Earnest_Money_Deposit__c}"
+                            />
                             <br/>
-                            <ui:inputDate aura:id="ContractDate" label="Contract Date" required="true" 
-                                           
-                                          value="{!v.NewLoan.Contract_Date__c}" displayDatePicker="true" format="MM/dd/yyyy" />
+                            <ui:inputDate aura:id="ContractDate" label="Contract Date" required="true" value="{!v.NewLoan.Contract_Date__c}" displayDatePicker="true"
+                                format="MM/dd/yyyy" />
                             <br/>
-                            <ui:inputDate aura:id="ContractClosingDate" label="Contract Closing Date" format="MM/dd/yyyy" 
-                                          value="{!v.NewLoan.Contract_Closing_Date__c}" displayDatePicker="true"  
-           />
-                            <label id = "errorcontractClosingDate" style = "color:#c13935; font-size:13px; font-weight:normal;"/>
+                            <ui:inputDate aura:id="ContractClosingDate" label="Contract Closing Date" format="MM/dd/yyyy" value="{!v.NewLoan.Contract_Closing_Date__c}"
+                                displayDatePicker="true" />
+                            <label id="errorcontractClosingDate" style="color:#c13935; font-size:13px; font-weight:normal;" />
                             <br/>
                             <ui:inputSelect aura:id="CurrentAddressStatus" required="true" label="Status Of Current Address " value="{!v.NewLoan.Status_Of_Current_Address__c}">
-                                
-                                <ui:inputSelectOption value="" text="" label="Select One"/>
-                                <ui:inputSelectOption text="Sold" label="Sold"/>
-                                <ui:inputSelectOption text="For Sale" label="For Sale"/>
-                                <ui:inputSelectOption text="Keeping Property" label="Keeping Property"/>
-                                <ui:inputSelectOption text="Currently Renting" label="Currently Renting"/>
+                                <ui:inputSelectOption value="" text="" label="Select One" />
+                                <ui:inputSelectOption text="Sold" label="Sold" />
+                                <ui:inputSelectOption text="For Sale" label="For Sale" />
+                                <ui:inputSelectOption text="Keeping Property" label="Keeping Property" />
+                                <ui:inputSelectOption text="Currently Renting" label="Currently Renting" />
                             </ui:inputSelect>
                             <br/>
                             <table>
                                 <tr>
                                     <td>
-                                        <h5 style='font-weight: bold;'>Source Of Funds  *&nbsp;
+                                        <h5 style='font-weight: bold;'>Source Of Funds *&nbsp;
                                             <lightning:helptext content="Please hold the Ctrl button on the keyboard to select more than one option." />
-                                        </h5>     
+                                        </h5>
                                     </td>
                                 </tr>
-                            </table>                        
-                            <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                                <ui:inputSelect class="automation" aura:id="SourceOfFunds" 
-                                                required="true" multiple="true" 
-                                                value="{!v.NewLoan.Source_Of_Funds__c}" 
-                                                change="{!c.changeSource}">                                
+                            </table>
+                            <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                                <ui:inputSelect class="automation" aura:id="SourceOfFunds" required="true" multiple="true" value="{!v.NewLoan.Source_Of_Funds__c}"
+                                    change="{!c.changeSource}">
                                     <ui:inputSelectOption text="Sale Of Other Property" label="Sale Of Other Property"></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Assets" label="Assets" ></ui:inputSelectOption>  
+                                    <ui:inputSelectOption text="Assets" label="Assets"></ui:inputSelectOption>
                                     <ui:inputSelectOption text="Gift" label="Gift"></ui:inputSelectOption>
-                                    <ui:inputSelectOption text="Others" label="Others" ></ui:inputSelectOption>
+                                    <ui:inputSelectOption text="Others" label="Others"></ui:inputSelectOption>
                                 </ui:inputSelect>
-                            </div>                            
+                            </div>
                             <div id="SalDate" style="display:none">
-                                <ui:inputDate aura:id="SaleDate" label="Sale Date" required="true"
-                                              value="{!v.NewLoan.Sale_Date__c}" displayDatePicker="true" format="MM/dd/yyyy" />
+                                <ui:inputDate aura:id="SaleDate" label="Sale Date" required="true" value="{!v.NewLoan.Sale_Date__c}" displayDatePicker="true"
+                                    format="MM/dd/yyyy" />
                                 <br/>
                                 <ui:inputCurrency label="Sale Proceeds" required="true" aura:id="SaleProceeds" value="{!v.NewLoan.Sale_Proceeds__c}" />
                             </div>
@@ -166,112 +171,115 @@
                             </div>
                             <div id="OtherSrcFund" style="display:none">
                                 <br/>
-                                <ui:inputText label="Other Source Of Funds "  aura:id="OtherFundSource" value="{!v.NewLoan.Other_Source_Of_Funds__c}" 
-                                              class="slds-input" required="true"/>
+                                <ui:inputText label="Other Source Of Funds " aura:id="OtherFundSource" value="{!v.NewLoan.Other_Source_Of_Funds__c}" class="slds-input"
+                                    required="true" />
                                 <br/>
-                                <ui:inputCurrency label="Amount Of Other Fund" required="true" aura:id="AmtOtherFund" value="{!v.NewLoan.Amount_Of_Other_Funds__c}" />
+                                <ui:inputCurrency label="Amount Of Other Fund" required="true" aura:id="AmtOtherFund" value="{!v.NewLoan.Amount_Of_Other_Funds__c}"
+                                />
                             </div>
                         </div>
-                        
-                        <h5 class="fontCss">Loan Information  &nbsp;</h5>
+
+                        <h5 class="fontCss">Loan Information &nbsp;</h5>
                         <br/>
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            
-                            <ui:inputSelect aura:id="marginoptions" required="true" label="Margin" 
-                                            value="{!v.NewLoan.Margin__c}"
-                                            change="{!c.marginoption}">
-                                <ui:inputSelectOption value="" text="" label="---Select option---"/>
-                                <ui:inputSelectOption text="1.750" label="1.750"/>
-                                <ui:inputSelectOption text="1.875" label="1.875"/>
-                                <ui:inputSelectOption text="2.000" label="2.000"/>
-                                <ui:inputSelectOption text="2.125" label="2.125"/>
-                                <ui:inputSelectOption text="2.250" label="2.250"/>
-                                <ui:inputSelectOption text="2.375" label="2.375"/>
-                                <ui:inputSelectOption text="2.500" label="2.500"/>
-                                <ui:inputSelectOption text="2.625" label="2.625"/>
-                                <ui:inputSelectOption text="2.750" label="2.750"/>
-                                <ui:inputSelectOption text="2.875" label="2.875"/>
-                                <ui:inputSelectOption text="3.000" label="3.000"/>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+
+                            <ui:inputSelect aura:id="marginoptions" required="true" label="Margin" value="{!v.NewLoan.Margin__c}" change="{!c.marginoption}">
+                                <ui:inputSelectOption value="" text="" label="---Select option---" />
+                                <ui:inputSelectOption text="1.750" label="1.750" />
+                                <ui:inputSelectOption text="1.875" label="1.875" />
+                                <ui:inputSelectOption text="2.000" label="2.000" />
+                                <ui:inputSelectOption text="2.125" label="2.125" />
+                                <ui:inputSelectOption text="2.250" label="2.250" />
+                                <ui:inputSelectOption text="2.375" label="2.375" />
+                                <ui:inputSelectOption text="2.500" label="2.500" />
+                                <ui:inputSelectOption text="2.625" label="2.625" />
+                                <ui:inputSelectOption text="2.750" label="2.750" />
+                                <ui:inputSelectOption text="2.875" label="2.875" />
+                                <ui:inputSelectOption text="3.000" label="3.000" />
                             </ui:inputSelect>
                         </div>
-                        
+
                         <!--new section -->
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <ui:inputSelect aura:id="newSelectlist" required="true" label="Loan Origination Fee - Calculation Method " value="{!v.NewLoan.Loan_Origination_Fee_Calculation__c}" change="{!c.feeCalculation}">                                
-                                <ui:inputSelectOption value="Calculate Maximum Fee" text="Calculate Maximum Fee" label="Calculate Maximum Fee"/>
-                                <ui:inputSelectOption value="Enter Fee Value ($0 - $6,000)" text="Enter Fee Value ($0 - $6,000)" label="Enter Fee Value ($0 - $6,000)"/>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <ui:inputSelect aura:id="newSelectlist" required="true" label="Loan Origination Fee - Calculation Method " value="{!v.NewLoan.Loan_Origination_Fee_Calculation__c}"
+                                change="{!c.feeCalculation}">
+                                <ui:inputSelectOption value="Calculate Maximum Fee" text="Calculate Maximum Fee" label="Calculate Maximum Fee" />
+                                <ui:inputSelectOption value="Enter Fee Value ($0 - $6,000)" text="Enter Fee Value ($0 - $6,000)" label="Enter Fee Value ($0 - $6,000)"
+                                />
                             </ui:inputSelect>
                         </div>
                         <!--Code Modified by Dev4 for ORMSFDC-1471-->
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <div style="width:100%;float:left;display:inline-block;">  
-                                <ui:inputCurrency disabled="{!v.show_originate_fee_disable}" label="Loan Origination Fee " required="true" aura:id="LoanOriginationFee" value="{!v.NewLoan.Loan_Origination_Fee__c}" 
-                                                  size="4"  blur="{!c.fee_change}" />
-                                <aura:if isTrue="{!v.show_msg}"> 
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <div style="width:100%;float:left;display:inline-block;">
+                                <ui:inputCurrency disabled="{!v.show_originate_fee_disable}" label="Loan Origination Fee " required="true" aura:id="LoanOriginationFee"
+                                    value="{!v.NewLoan.Loan_Origination_Fee__c}" size="4" blur="{!c.fee_change}" />
+                                <aura:if isTrue="{!v.show_msg}">
                                     <li class="form-element__help" style="color:#c23934;font-size:.75rem;margin-top:.5rem;width:100%">The Maximum Allowed Loan Origination Fee is $6,000.</li>
                                     <br/>
-                                </aura:if>    
+                                </aura:if>
                             </div>
                             <div style="margin-left:100%;">
                                 <!--<lightning:icon iconName="utility:info" size="x-small" title="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6000."/>-->
-                                <lightning:helptext content="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6000." />
+                                <lightning:helptext content="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6000."
+                                />
                             </div>
-                        </div>                        
+                        </div>
                         <br/>
-                        <br/>                       
-                        
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <ui:inputSelect aura:id="Apptakenby" required="true" label="This application was taken by " value="{!v.NewLoan.This_application_was_taken_by__c}" >
-                                <ui:inputSelectOption value="" text="" label="---Select option---"/>
-                                <ui:inputSelectOption value="Face to Face" text="Face to Face" label="Face to Face"/>
-                                <ui:inputSelectOption value="Telephone Interview" text="Telephone Interview" label="Telephone Interview"/>
-                                <ui:inputSelectOption value="By the applicant and submitted by fax or mail" text="By the applicant and submitted by fax or mail" label="By the applicant and submitted by fax or mail"/>
-                                <ui:inputSelectOption value="By the applicant and submitted via email or the Internet" text="By the applicant and submitted via email or the Internet" label="By the applicant and submitted via email or the Internet"/>
+                        <br/>
+
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <ui:inputSelect aura:id="Apptakenby" required="true" label="This application was taken by " value="{!v.NewLoan.This_application_was_taken_by__c}">
+                                <ui:inputSelectOption value="" text="" label="---Select option---" />
+                                <ui:inputSelectOption value="Face to Face" text="Face to Face" label="Face to Face" />
+                                <ui:inputSelectOption value="Telephone Interview" text="Telephone Interview" label="Telephone Interview" />
+                                <ui:inputSelectOption value="By the applicant and submitted by fax or mail" text="By the applicant and submitted by fax or mail"
+                                    label="By the applicant and submitted by fax or mail" />
+                                <ui:inputSelectOption value="By the applicant and submitted via email or the Internet" text="By the applicant and submitted via email or the Internet"
+                                    label="By the applicant and submitted via email or the Internet" />
                             </ui:inputSelect>
                         </div>
-                        
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" > 
-                            <ui:inputDate aura:id="ApplicationDate" 
-                                          class="slds-input Datecontrolwidth" 
-                                          label="Application Date "
-                                          value="{!v.NewLoan.Application_Date__c}"
-                                          format="MM/dd/yyyy"
-                                          displayDatePicker="true"  
-                                          disabled="true" /> 
+
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <ui:inputDate aura:id="ApplicationDate" class="slds-input Datecontrolwidth" label="Application Date " value="{!v.NewLoan.Application_Date__c}"
+                                format="MM/dd/yyyy" displayDatePicker="true" disabled="true" />
                         </div>
-                        
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <ui:inputSelect label="Household Members " aura:id="Hmember" required="true" value="{!v.NewLoan.Household_Members__c}" >
-                                <ui:inputSelectOption value="true" text="" label="---Select Option---"/>
-                                <aura:iteration items="{!v.Number}" var="pOptions" >
+
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <ui:inputSelect label="Household Members " aura:id="Hmember" required="true" value="{!v.NewLoan.Household_Members__c}">
+                                <ui:inputSelectOption value="true" text="" label="---Select Option---" />
+                                <aura:iteration items="{!v.Number}" var="pOptions">
                                     <ui:inputSelectOption text="{!pOptions.text}" label="{!pOptions.text}" />
                                 </aura:iteration>
                             </ui:inputSelect>
                         </div>
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >                            
-                            <div class="normalfontCss">                                
-                                Children under the age of 6 living in the home?                                 
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <div class="normalfontCss">
+                                Children under the age of 6 living in the home?
                             </div>
-                            <lightning:radioGroup aura:id="Children_Under_the_age"
-                                       name="radioButtonGroup_Children_Under_the_age" options="{! v.YesNoList }"
-                                       value="{! v.NewLoan.Children_Under_the_age_of_6_living_in_th__c }" />
+                            <lightning:radioGroup aura:id="Children_Under_the_age" name="radioButtonGroup_Children_Under_the_age" options="{! v.YesNoList }"
+                                value="{! v.NewLoan.Children_Under_the_age_of_6_living_in_th__c }" />
                         </div>
-                        <div  style="margin-bottom:3%; " class="slds-size_1-of-2"><span class="LabelMsg">* Alternate Contact cannot live in the subject property *</span></div>
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <div style="width:100%;float:left;display:inline-block;">  
-                                <ui:inputText label="Alternate Contact Name " required="true" aura:id="AltConName" value="{!v.NewLoan.Alternate_Contact_Name__c}" class="slds-input" />
-                                
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <span class="LabelMsg">* Alternate Contact cannot live in the subject property *</span>
+                        </div>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <div style="width:100%;float:left;display:inline-block;">
+                                <ui:inputText label="Alternate Contact Name " required="true" aura:id="AltConName" value="{!v.NewLoan.Alternate_Contact_Name__c}"
+                                    class="slds-input" />
+
                             </div>
                             <div style="margin-left:100%;">
                                 <!--<lightning:icon iconName="utility:info" size="x-small" title="An alternate contact is required and cannot be someone residing in the home. The lender will reach out to the alternate contact as needed throughout servicing the loan."/>-->
-                                <lightning:helptext content="An alternate contact is required and cannot be someone residing in the home. The lender will reach out to the alternate contact as needed throughout servicing the Loan." />
+                                <lightning:helptext content="An alternate contact is required and cannot be someone residing in the home. The lender will reach out to the alternate contact as needed throughout servicing the Loan."
+                                />
                             </div>
                         </div>
                         <br/>
                         <br/>
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <div style="width:100%;float:left;display:inline-block;">  
-                                <ui:inputText label="Alternate Contact Full Address " required="true" aura:id="AltConFullAdd" value="{!v.NewLoan.Alternate_Contact_full_address__c}" class="slds-input"  />
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <div style="width:100%;float:left;display:inline-block;">
+                                <ui:inputText label="Alternate Contact Full Address " required="true" aura:id="AltConFullAdd" value="{!v.NewLoan.Alternate_Contact_full_address__c}"
+                                    class="slds-input" />
                             </div>
                             <div style="margin-left:100%;">
                                 <!--<lightning:icon iconName="utility:info" size="x-small" title="Cannot be subject Property or PO Box."/>-->
@@ -280,12 +288,12 @@
                         </div>
                         <br/>
                         <br/>
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <div style="width:100%;float:left;display:inline-block;"> 
-                                <ui:inputPhone label="Alternate Contact Phone Number " required="true" aura:id="AltConphoneName" 
-                                               value="{!v.NewLoan.Alternate_Contact_Phone_number__c}" class="slds-input" maxlength="10" 
-                                               blur="{!c.FormatPhone}"  keypress="{!c.RestrictZeroInAlternatePhoneFirstTime}" keyup="{!c.RestrictZeroInAlternatePhoneFirstTime}"
-                                               keydown="{!c.RestrictZeroInAlternatePhoneFirstTime}"  updateOn="keypress, keyup, keydown" />
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <div style="width:100%;float:left;display:inline-block;">
+                                <ui:inputPhone label="Alternate Contact Phone Number " required="true" aura:id="AltConphoneName" value="{!v.NewLoan.Alternate_Contact_Phone_number__c}"
+                                    class="slds-input" maxlength="10" blur="{!c.FormatPhone}" keypress="{!c.RestrictZeroInAlternatePhoneFirstTime}"
+                                    keyup="{!c.RestrictZeroInAlternatePhoneFirstTime}" keydown="{!c.RestrictZeroInAlternatePhoneFirstTime}"
+                                    updateOn="keypress, keyup, keydown" />
                             </div>
                             <div style="margin-left:100%;">
                                 <lightning:helptext content="Cannot be Client’s phone number." />
@@ -293,45 +301,44 @@
                         </div>
                         <br/>
                         <br/>
-                        
+
                         <!--Other Option -->
-                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <ui:inputSelect aura:id="relationshipContact" required="true" label="Relationship to Alternative Contact" 
-                                            value="{!v.NewLoan.Relationship_to_Alternative_Contact__c	}"
-                                            change="{!c.relationshipOption}">
-                                <ui:inputSelectOption value="" text="" label="---Select option---"/>
-                                <ui:inputSelectOption text="Mother" label="Mother"/>
-                                <ui:inputSelectOption text="Father" label="Father"/>
-                                <ui:inputSelectOption text="Child" label="Child"/>
-                                <ui:inputSelectOption text="Sister" label="Sister"/>
-                                <ui:inputSelectOption text="Brother" label="Brother"/>
-                                <ui:inputSelectOption text="Aunt" label="Aunt"/>
-                                <ui:inputSelectOption text="Uncle" label="Uncle"/>
-                                <ui:inputSelectOption text="Niece" label="Niece"/>
-                                <ui:inputSelectOption text="Nephew" label="Nephew"/>
-                                <ui:inputSelectOption text="Friend" label="Friend"/>
-                                <ui:inputSelectOption text="Grandchild" label="Grandchild"/>
-                                <ui:inputSelectOption text="Other" label="Other"/>
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                            <ui:inputSelect aura:id="relationshipContact" required="true" label="Relationship to Alternative Contact" value="{!v.NewLoan.Relationship_to_Alternative_Contact__c	}"
+                                change="{!c.relationshipOption}">
+                                <ui:inputSelectOption value="" text="" label="---Select option---" />
+                                <ui:inputSelectOption text="Mother" label="Mother" />
+                                <ui:inputSelectOption text="Father" label="Father" />
+                                <ui:inputSelectOption text="Child" label="Child" />
+                                <ui:inputSelectOption text="Sister" label="Sister" />
+                                <ui:inputSelectOption text="Brother" label="Brother" />
+                                <ui:inputSelectOption text="Aunt" label="Aunt" />
+                                <ui:inputSelectOption text="Uncle" label="Uncle" />
+                                <ui:inputSelectOption text="Niece" label="Niece" />
+                                <ui:inputSelectOption text="Nephew" label="Nephew" />
+                                <ui:inputSelectOption text="Friend" label="Friend" />
+                                <ui:inputSelectOption text="Grandchild" label="Grandchild" />
+                                <ui:inputSelectOption text="Other" label="Other" />
                             </ui:inputSelect>
                         </div>
-                        <!-- end of Other Option--> 
+                        <!-- end of Other Option-->
                         <aura:if isTrue="{!v.Relationship_to_Alternative_Contact}">
-                            <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                                <ui:inputText label="Other Relationship"  aura:id="othRlsnshp" value="{!v.NewLoan.Other_Relationship_Alternative_Contact__c}" 
-                                              class="slds-input"/>                                
-                            </div>                            
+                            <div style="margin-bottom:3%; " class="slds-size_1-of-2">
+                                <ui:inputText label="Other Relationship" aura:id="othRlsnshp" value="{!v.NewLoan.Other_Relationship_Alternative_Contact__c}"
+                                    class="slds-input" />
+                            </div>
                         </aura:if>
                         <div class="slds-size_1-of-1">
-                            <aura:if isTrue="{!v.showError}">                            
+                            <aura:if isTrue="{!v.showError}">
                                 <ui:message title="Error" severity="error" closable="false">
                                     Please review all errors before moving to next page
-                                </ui:message>                                
+                                </ui:message>
                             </aura:if>
                         </div>
-                        <div class = "nextSteps">
-                            <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="nextStep"
-                                       label="Save and Continue" press="{!c.validateandgo}"  />
-                        </div>  
+                        <div class="nextSteps">
+                            <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="nextStep" label="Save and Continue"
+                                press="{!c.validateandgo}" />
+                        </div>
                     </div>
                 </div>
             </fieldset>
