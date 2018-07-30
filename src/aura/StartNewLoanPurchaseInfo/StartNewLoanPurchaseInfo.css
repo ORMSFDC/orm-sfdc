@@ -1,0 +1,14 @@
+.THIS .inputHelpContainer {
+  position: relative;
+}
+
+.THIS .inputHelpText {
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
+
+.THIS .listWithNumbers li {
+  list-style: decimal;
+  width: auto;
+}

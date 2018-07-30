@@ -1,4 +1,14 @@
+/**
+ * @description: fetch Pricing metadata to display pricing table on Portal 
+ * @author: Ravi
+ * @date: 1/17/2018
+ *
+ * changelog:
+ * 07/17/2018: Sahitya - Added Helo for Pricing table
+ */
 public class Pricing {
+    
+    // ARM/Broker Pricing
     @AuraEnabled
     public static List<PricingResponse> getBrokerPricing( ) {
         List<PricingResponse> PricingResponseFinalList=new List<PricingResponse>();
@@ -20,6 +30,7 @@ public class Pricing {
         }
         return PricingResponseFinalList;
     }
+    
     public static  List<PricingResponse> Tier2_Data()
     {
         List<PricingResponse> PricingResponseList=new List<PricingResponse>();
@@ -44,6 +55,7 @@ public class Pricing {
         }
         return PricingResponseList;
     }
+    
     public static  List<PricingResponse> Tier1_Data()
     {
         List<PricingResponse> PricingResponseList=new List<PricingResponse>();
@@ -66,18 +78,17 @@ public class Pricing {
             BrokerResponseObj.x90_to_100=String.valueOf(obj.X90_to_100__c);
             PricingResponseList.add(BrokerResponseObj);
         }
-        return PricingResponseList;
-        
+        return PricingResponseList;        
     }
     
-    
-     @AuraEnabled
+    //Fixed Pricing
+    @AuraEnabled
     public static List<FixedRateResponse> getFixedRateORM( ) {
         List<FixedRateResponse> PricingResponseFinalList=new List<FixedRateResponse>();
         Boolean IsPremierParthner;
         try{
             Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
-           IsPremierParthner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
+            IsPremierParthner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
             if(IsPremierParthner)
             {
                 PricingResponseFinalList= FixedRateTier2_Data();
@@ -92,17 +103,17 @@ public class Pricing {
         }
         return PricingResponseFinalList;
     }
-      public static  List<FixedRateResponse> FixedRateTier2_Data()
+    
+    public static  List<FixedRateResponse> FixedRateTier2_Data()
     {
         List<FixedRateResponse> PricingResponseList=new List<FixedRateResponse>();
-        List<Fixed_Price_Tier2__mdt> Pricing = 
-            [SELECT   Rate__c,Price__c,Origination_to_ORM__c,Credit_to_Borrower__c
-             from  Fixed_Price_Tier2__mdt order by Rate__c desc ];
+        List<Fixed_Price_Tier2__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_ORM__c,Credit_to_Borrower__c
+                                                from  Fixed_Price_Tier2__mdt order by Rate__c desc ];
         for(Fixed_Price_Tier2__mdt obj:Pricing )
         {
             FixedRateResponse  ResponseObj=new FixedRateResponse();
             ResponseObj.Rate=String.valueOf(obj.Rate__c);
-           	ResponseObj.Price=String.valueOf(obj.Price__c)+'%';
+            ResponseObj.Price=String.valueOf(obj.Price__c)+'%';
             ResponseObj.OriginationToORM=String.valueOf(obj.Origination_to_ORM__c);
             ResponseObj.CreditToBorrower=String.valueOf(obj.Credit_to_Borrower__c)+'%';
             PricingResponseList.add(ResponseObj);
@@ -110,22 +121,80 @@ public class Pricing {
         return PricingResponseList;
     }
     
-      public static  List<FixedRateResponse> FixedRateTier1_Data()
+    public static  List<FixedRateResponse> FixedRateTier1_Data()
     {
         List<FixedRateResponse> PricingResponseList=new List<FixedRateResponse>();
-        List<Fixed_Price_Tier1__mdt> Pricing = 
-            [SELECT   Rate__c,Price__c,Origination_to_ORM__c,Credit_to_Borrower__c
-             from  Fixed_Price_Tier1__mdt order by Rate__c desc ];
+        List<Fixed_Price_Tier1__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_ORM__c,Credit_to_Borrower__c
+                                                from  Fixed_Price_Tier1__mdt order by Rate__c desc ];
         for(Fixed_Price_Tier1__mdt obj:Pricing )
         {
-             FixedRateResponse  ResponseObj=new FixedRateResponse();
+            FixedRateResponse  ResponseObj=new FixedRateResponse();
             ResponseObj.Rate=String.valueOf(obj.Rate__c);
-           	ResponseObj.Price=String.valueOf(obj.Price__c)+'%';
+            ResponseObj.Price=String.valueOf(obj.Price__c)+'%';
             ResponseObj.OriginationToORM=String.valueOf(obj.Origination_to_ORM__c);
             ResponseObj.CreditToBorrower=String.valueOf(obj.Credit_to_Borrower__c)+'%';
             PricingResponseList.add(ResponseObj);
         }
         return PricingResponseList;
     }
-      
+    
+    
+    //Helo Pricing - Bala
+    @AuraEnabled
+    public static List<HeloRateResponse> getHeloRateORM( ) {
+        List<HeloRateResponse> PricingResponseFinalList=new List<HeloRateResponse>();
+        Boolean IsPremierPartner;
+        try{
+            Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
+            IsPremierPartner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
+            if(IsPremierPartner)
+            {
+                PricingResponseFinalList= HeloRateTier2_Data();
+            }
+            else{
+                PricingResponseFinalList= HeloRateTier1_Data();
+            }  
+        } 
+        catch(Exception ex)
+        {
+            system.debug('getHeloRateORM .....'+ ex.getMessage());
+        }
+        return PricingResponseFinalList;
+    }
+    
+    public static  List<HeloRateResponse> HeloRateTier2_Data()
+    {
+        List<HeloRateResponse> PricingResponseList=new List<HeloRateResponse>();
+        List<Proprietary_Tier_2__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_Partner__c,Credit_to_Borrower__c,Servicing_Fee__c
+                                                from  Proprietary_Tier_2__mdt order by Rate__c desc ];
+        for(Proprietary_Tier_2__mdt obj:Pricing )
+        {
+            HeloRateResponse  ResponseObj=new HeloRateResponse();
+            ResponseObj.Rate=String.valueOf(obj.Rate__c);
+            ResponseObj.Price=String.valueOf(obj.Price__c)+'%';
+            ResponseObj.OriginationToPartner=String.valueOf(obj.Origination_to_Partner__c)+'%';
+            ResponseObj.CreditToBorrower=String.valueOf(obj.Credit_to_Borrower__c)+'%';
+            ResponseObj.ServicingFee=String.valueOf(obj.Servicing_Fee__c);
+            PricingResponseList.add(ResponseObj);
+        }
+        return PricingResponseList;
+    }
+    
+    public static  List<HeloRateResponse> HeloRateTier1_Data()
+    {
+        List<HeloRateResponse> PricingResponseList=new List<HeloRateResponse>();
+        List<Proprietary_Tier_1__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_Partner__c,Credit_to_Borrower__c,Servicing_Fee__c
+                                                from  Proprietary_Tier_1__mdt order by Rate__c desc ];
+        for(Proprietary_Tier_1__mdt obj:Pricing )
+        {
+            HeloRateResponse  ResponseObj=new HeloRateResponse();
+            ResponseObj.Rate=String.valueOf(obj.Rate__c);
+            ResponseObj.Price=String.valueOf(obj.Price__c)+'%';
+            ResponseObj.OriginationToPartner=String.valueOf(obj.Origination_to_Partner__c)+'%';
+            ResponseObj.CreditToBorrower=String.valueOf(obj.Credit_to_Borrower__c)+'%';
+            ResponseObj.ServicingFee=String.valueOf(obj.Servicing_Fee__c);
+            PricingResponseList.add(ResponseObj);
+        }
+        return PricingResponseList;
+    }  
 }

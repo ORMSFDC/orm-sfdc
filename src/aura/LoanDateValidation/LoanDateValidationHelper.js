@@ -1,34 +1,32 @@
 ({
-    Loan_Obj1 : function(component, event, helper, applicationDate,rateType,loanMortgageAppliedFor) {
+    Loan_Obj1: function (component, event, helper, applicationDate) {
         debugger;
         var fileInput = component.find("file").getElement();
         var file = fileInput.files[0];
-        
-        var spinner = component.find("spinner");        
+
+        var spinner = component.find("spinner");
         $A.util.toggleClass(spinner, "slds-hide");
-        var data=component.get("v.filedata");
-        
-        var dd=document.getElementById('inputtxt').value;
+        var data = component.get("v.filedata");
+
+        var dd = document.getElementById('inputtxt').value;
         var action = component.get("c.getFNMData");
         //Code Modified by Dev4 for ORMSFDC-1471
         action.setParams({
-            "filedata" : dd,
-            fileName: file.name,
-            base64Data: encodeURIComponent(data), 
-            contentType: file.type,
-            applicationDate: applicationDate,
-            rateType:rateType,
-            loanMortgageAppliedFor:loanMortgageAppliedFor
+            "filedata": dd,
+            fileName: file.name,
+            base64Data: encodeURIComponent(data),
+            contentType: file.type,
+            applicationDate: applicationDate
         });
         //Code Ended by Dev4 for ORMSFDC-1471
-        action.setCallback(this, function(a) {
+        action.setCallback(this, function (a) {
             debugger;
             var errors = action.getError();
             // alert(errors+''+a.getReturnValue());
             if (errors && errors[0]) {
-                
+
                 console.error("getFNMData error", errors);
-                
+
                 // display error in toast
                 var toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
@@ -38,46 +36,44 @@
                     "message": errors[0].message
                 });
                 toastEvent.fire();
-                
+
                 // hide loading spinner
                 var spinner = component.find("spinner");
                 $A.util.toggleClass(spinner, "slds-hide");
-                
+
             } else {
                 debugger;
                 var Id = a.getReturnValue();
-                
-                
+
+
                 //Code for redirect to Start a Loan Page
-                
+
                 var evt = $A.get("e.c:NavigatetoLoanMenu");
-                //Code Modified by Dev4 for ORMSFDC-1471
-                evt.setParams({ERateType:rateType})
-                evt.setParams({EMortgageAppliedFor:loanMortgageAppliedFor})
+                //Code Modified by Dev4 for ORMSFDC-1471                
                 //Code Ended by Dev4 for ORMSFDC-1471
-                evt.setParams({LoanId:Id})
+                evt.setParams({ LoanId: Id });
                 evt.fire();
             }
         });
         $A.enqueueAction(action);
     },
-    
-    showSpinner:function(component){
-        
-        component.set("v.IsSpinner",true);
-        var a  =  component.get("v.IsSpinner");
+
+    showSpinner: function (component) {
+
+        component.set("v.IsSpinner", true);
+        var a = component.get("v.IsSpinner");
         // alert("in SS: " + a);
-        
+
     },
-    
-    hideSpinner:function(component){
-        
-        component.set("v.IsSpinner",false);
-        var a  =  component.get("v.IsSpinner");
+
+    hideSpinner: function (component) {
+
+        component.set("v.IsSpinner", false);
+        var a = component.get("v.IsSpinner");
         //alert("in HS: " + a);
-        
+
     },
-    
+
     /*Loan_Obj : function(component, event, helper) {
         var spinner = component.find("spinner");
         
@@ -378,6 +374,6 @@ component.set("v.newloan.ClientIName__c",ClientIName);
         });
         $A.enqueueAction(action);
     },*/
-    
-    
+
+
 })

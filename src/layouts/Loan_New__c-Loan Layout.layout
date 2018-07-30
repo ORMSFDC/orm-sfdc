@@ -35,6 +35,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Product_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Mortgage_Applied_for__c</field>
             </layoutItems>
             <layoutItems>
@@ -48,6 +52,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Property_Charge_Payment_History_Result__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CreditIsComplete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TitleFeeIsComplete__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -74,6 +86,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Loan_Origination_Fee__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Servicing_Fee__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

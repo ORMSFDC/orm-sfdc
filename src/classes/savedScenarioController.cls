@@ -1,3 +1,11 @@
+/**
+ * @description: used to fetch run scenario values and generate saved scenario results along with PieGraph 
+ * @author: Ravi
+ * @date: 9/13/2017
+ *
+ * changelog:
+ * 07/19/2018: Sahitya - added new fields for Helo PieGraph(Other_Estimated_Closing_Costs__c,Origination_to_orm__c)
+ */
 public class savedScenarioController {
     
      public class AccWrap{
@@ -22,9 +30,10 @@ public class savedScenarioController {
          List < scenario__c > Scenariolist=new List < scenario__c >();
         try{
        
-        Scenariolist=[select Id,is_Converted__c,Margin__c,Date_of_birth__c,Client_Lead__r.Street,Client_Lead__r.Phone,Client_Lead__r.FirstName,Client_Lead__r.LastName,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,CreatedDate,RateType__c
-                      from scenario__c  order by CreatedDate desc limit 10];
-            //where ClientId__c=:ClientID 
+        Scenariolist=[select Id,is_Converted__c,Margin__c,Date_of_birth__c,Client_Lead__r.Street,Client_Lead__r.Phone,Client_Lead__r.FirstName,
+                      Client_Lead__r.LastName,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,
+                      Estimated_home_value__c,CreatedDate,RateType__c,Other_Estimated_Closing_Costs__c,Origination_to_orm__c
+                      from scenario__c  order by CreatedDate desc limit 10];            
         }
         catch(exception ex ){
             system.debug('--------------------getScenarioList------------------'+ex);
@@ -38,8 +47,8 @@ public class savedScenarioController {
     public static AccWrap getScenario_nextPage(Integer pageNumber,String sort_Column,String sortorder){
         System.debug('pageNumber ===> '+pageNumber);
         integer pageNum = integer.valueOf(pageNumber);
-        String  Query = 'select Id,is_Converted__c,Margin__c,Client_Lead__r.Email,Client_Lead__r.Phone,Client_Lead__r.Street,Date_of_birth__c,Client_Lead__r.FirstName,Client_Lead__r.LastName,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,CreatedDate from scenario__c   ';
-       Query+= ' order by '+sort_Column+' '+sortorder +' nulls last limit 10 offset '+pageNum;
+        String  Query = 'select Id,is_Converted__c,Margin__c,Client_Lead__r.Email,Client_Lead__r.Phone,Client_Lead__r.Street,Date_of_birth__c,Client_Lead__r.FirstName,Client_Lead__r.LastName,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,Other_Estimated_Closing_Costs__c,Origination_to_orm__c,CreatedDate from scenario__c   ';
+        Query+= ' order by '+sort_Column+' '+sortorder +' nulls last limit 10 offset '+pageNum;
    //     return [select id,Name from Account   limit 10 offset:pageNumber];
    //     //[select Id,is_Converted__c,Margin__c,Date_of_birth__c,Client_Lead__r.Street,Client_Lead__r.Phone,Client_Lead__r.FirstName,Client_Lead__r.LastName,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,CreatedDate
                 //      from scenario__c  order by CreatedDate desc limit 10 offset:pageNum]
@@ -52,9 +61,11 @@ public class savedScenarioController {
       scenario__c  Scenariodata=new scenario__c();
       system.debug('ScenarioID from getScenarioData --> '+ ScenarioID);
         try{
-        Scenariodata=[select Id,RateType__c,is_Converted__c,Principal_Limit__c,MIP__c,Monthly_Mortgage_Payment__c,
-                      Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,Date_of_birth__c,
-                      CreatedDate,piechartresponse__c,barchartresponse__c,Line_of_Credit__c,Index__c,Margin__c,Scenario_Type__c,CashFlow1__c,CashFlow10__c,CashFlow5__c,Cash_at_close__c,Cash_to_close__c,EOF__c 
+        Scenariodata=[select Id,RateType__c,is_Converted__c,Principal_Limit__c,
+                      MIP__c,
+                      Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,Date_of_birth__c,
+                      CreatedDate,piechartresponse__c,barchartresponse__c,Line_of_Credit__c,Index__c,Margin__c,Scenario_Type__c,CashFlow1__c,CashFlow10__c,
+                      CashFlow5__c,Cash_at_close__c,Cash_to_close__c,EOF__c,Other_Estimated_Closing_Costs__c,Origination_to_orm__c
                       from scenario__c where id=:ScenarioID];
          }
         catch(exception ex ){
@@ -73,7 +84,7 @@ public class savedScenarioController {
         String baseQuery = '';
         try{
        //Query = 'select Id,ClientId__r.Email_Optional__c,ClientId__r.Phone_Number__c,ClientId__r.Street_Address__c,Date_of_birth__c,ClientId__r.Name,ClientId__r.Last_Name__c,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,CreatedDate from scenario__c  where ClientId__c=:ClientID and ';
-       Query = 'select Id,is_Converted__c,Margin__c,Client_Lead__r.Email,Client_Lead__r.Phone,Client_Lead__r.Street,Date_of_birth__c,Client_Lead__r.FirstName,Client_Lead__r.LastName,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,CreatedDate from scenario__c   ';
+       Query = 'select Id,is_Converted__c,Margin__c,Client_Lead__r.Email,Client_Lead__r.Phone,Client_Lead__r.Street,Date_of_birth__c,Client_Lead__r.FirstName,Client_Lead__r.LastName,Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,Other_Estimated_Closing_Costs__c,Origination_to_orm__c,CreatedDate from scenario__c   ';
        
             if(sdata.FirstName!='' || sdata.LastName!='' || sdata.DOB!=null|| sdata.Email!='' || sdata.Phone!='' || sdata.Address!=''){
             Query+= ' where ';

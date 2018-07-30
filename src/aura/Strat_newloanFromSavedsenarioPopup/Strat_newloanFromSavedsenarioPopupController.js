@@ -1,285 +1,266 @@
 ({
-    populateLoanid:function(component, event, helper){
+    populateLoanid: function (component, event, helper) {
         debugger;
         var id = component.get("v.showLoanId");
         var senid = component.get("v.senario_id");
-      //  alert(senid);
-         helper.helperMethod(component,id,senid);
+        //  alert(senid);
+        helper.helperMethod(component, id, senid);
 
-         
+
     },
-    doinit:function(component, event, helper){
+    doinit: function (component, event, helper) {
         debugger;
-       $A.createComponent(
-         "c:LoanIncompleteRegistration",
-         
-         {
- 
-         },
-         
-         function(newCmp){
-            if (component.isValid()) {
-               component.set("v.body", newCmp);
+        $A.createComponent(
+            "c:LoanIncompleteRegistration",
+
+            {
+
+            },
+
+            function (newCmp) {
+                if (component.isValid()) {
+                    component.set("v.body", newCmp);
+                }
             }
-         }
-      );  
+        );
     },
-	close : function(component, event, helper) {
-		component.set("v.render_popup",false);
-	},
-    start_newloan:function(component){
-         component.set('v.showSpinnerLoan',true);
-     
+    close: function (component, event, helper) {
+        component.set("v.render_popup", false);
+    },
+    start_newloan: function (component) {
+        //Dont save info, just send them to SAL splash screen
+        window.open('/s/startnewloan');
+        return;
+
+        component.set('v.showSpinnerLoan', true);
+
         //  debugger;
-         var getdate = component.get("v.ApplicationDate");
-     //   alert('applicationDate 1123 '+getdate);
-       // alert('date pick '+component.get("v.datepick"));
-      
-     var fileInput = document.getElementById('fileInput').value;        
-        console.log('fileInput ',fileInput);
-      //  var datecontrol= component.find('expname');
-    //    var date = datecontrol.get('v.value');
-       var applicationDate = getdate;//component.get("v.datepick");
+        var getdate = component.get("v.ApplicationDate");
+        //   alert('applicationDate 1123 '+getdate);
+        // alert('date pick '+component.get("v.datepick"));
+
+        var fileInput = document.getElementById('fileInput').value;
+        console.log('fileInput ', fileInput);
+        //  var datecontrol= component.find('expname');
+        //    var date = datecontrol.get('v.value');
+        var applicationDate = getdate;//component.get("v.datepick");
         //Check whether File is selected or not
-        if (!$A.util.isEmpty(fileInput))
-        {
-             var fileInput = component.find("file").getElement();
-        var file = fileInput.files[0];
-        
-//        var spinner = component.find("spinner");        
-  //      $A.util.toggleClass(spinner, "slds-hide");
-        var data=component.get("v.filedata");
-     
-        var dd=document.getElementById('inputtxt').value;
-        var action = component.get("c.getFNMData");
-          //  alert(component.get("v.senario_id"));
-        action.setParams({
-            "filedata" : dd,
-            fileName: file.name,
-            base64Data: encodeURIComponent(data), 
-            contentType: file.type,
-            applicationDate: applicationDate,
-            senario_id:component.get("v.senario_id")
-        });
-        
-        action.setCallback(this, function(a) {
-               component.set('v.showSpinnerLoan',false);
-     
-//			alert('in call back');
-            var errors = action.getError();
-            //alert(errors);
-            if (errors && errors[0]) {
+        if (!$A.util.isEmpty(fileInput)) {
+            var fileInput = component.find("file").getElement();
+            var file = fileInput.files[0];
 
-                console.error("getFNMData error", errors);
-                
-                // display error in toast
-                var toastEvent = $A.get("e.force:showToast");
-                toastEvent.setParams({
-                    "type": "error",
-                    "mode": "sticky",
-                    "title": "Upload Failed!",
-                    "message": errors[0].message
-                });
-                toastEvent.fire();
-                
-                // hide loading spinner
-                var spinner = component.find("spinner");
-                $A.util.toggleClass(spinner, "slds-hide");
+            //        var spinner = component.find("spinner");        
+            //      $A.util.toggleClass(spinner, "slds-hide");
+            var data = component.get("v.filedata");
 
-            } else {
-                var Id = a.getReturnValue();
-                component.set("v.myBool",true);
-         component.set("v.showLoanId",Id);
-            component.set("v.render_popup",false);
-            component.set("v.showLoan",true);
-           component.set("v.displayTab",false);
-  
-     
-                // alert("Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");                 
-                // component.set('v.show_success',true);
-                // component.set('v.show_success1',"Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");
-             
-                //alert("Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");                 
-                // $A.get('e.force:refreshView').fire(); 
+            var dd = document.getElementById('inputtxt').value;
+            var action = component.get("c.getFNMData");
+            //  alert(component.get("v.senario_id"));
+            action.setParams({
+                "filedata": dd,
+                fileName: file.name,
+                base64Data: encodeURIComponent(data),
+                contentType: file.type,
+                applicationDate: applicationDate,
+                senario_id: component.get("v.senario_id")
+            });
 
-                //Code for redirect to Start a Loan Page
-               // var evt = $A.get("e.c:NavigatetoLoanMenu");
-               // evt.setParams({LoanId:Id})
-               // evt.fire();
-            }
-        });
-        $A.enqueueAction(action);
-    
+            action.setCallback(this, function (a) {
+                component.set('v.showSpinnerLoan', false);
+
+                //			alert('in call back');
+                var errors = action.getError();
+                //alert(errors);
+                if (errors && errors[0]) {
+
+                    console.error("getFNMData error", errors);
+
+                    // display error in toast
+                    var toastEvent = $A.get("e.force:showToast");
+                    toastEvent.setParams({
+                        "type": "error",
+                        "mode": "sticky",
+                        "title": "Upload Failed!",
+                        "message": errors[0].message
+                    });
+                    toastEvent.fire();
+
+                    // hide loading spinner
+                    var spinner = component.find("spinner");
+                    $A.util.toggleClass(spinner, "slds-hide");
+
+                } else {
+                    var Id = a.getReturnValue();
+                    component.set("v.myBool", true);
+                    component.set("v.showLoanId", Id);
+                    component.set("v.render_popup", false);
+                    component.set("v.showLoan", true);
+                    component.set("v.displayTab", false);
+
+
+                    // alert("Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");                 
+                    // component.set('v.show_success',true);
+                    // component.set('v.show_success1',"Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");
+
+                    //alert("Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");                 
+                    // $A.get('e.force:refreshView').fire(); 
+
+                    //Code for redirect to Start a Loan Page
+                    // var evt = $A.get("e.c:NavigatetoLoanMenu");
+                    // evt.setParams({LoanId:Id})
+                    // evt.fire();
+                }
+            });
+            $A.enqueueAction(action);
+
         }
-        else
-        {   
-     //      alert('normal');
-    //    alert(component.get("v.senario_id"));
-  		debugger;
-        var action = component.get("c.createLoan");
-        action.setParams({
-            senarioid:component.get("v.senario_id")
-        });
-        
-        action.setCallback(this,function(data){
-          
-               component.set('v.showSpinnerLoan',false);
-          // alert(data.getReturnValue()+'is created ');
-          component.set("v.showLoanId",data.getReturnValue().Id);
-    //        console.log('data.getReturnValue().Id ',data.getReturnValue().Id);
-    var toastEvent = $A.get("e.force:showToast");
-    toastEvent.setParams({
-        "title": "Success!",
-        "message": data.getReturnValue().Name + " is Created."
-    });
-    toastEvent.fire();
-//$('.tabs__nav').hide();
-           // 
-//           alert('application date is '+component.get("v.ApplicationDate"));
-          	component.set("v.render_popup",false);
-           component.set("v.showLoan",true);
-            component.set("v.displayTab",false);
-       //     alert('ad');
-	
-        });
-        $A.enqueueAction(action);
-       // location.open('/s/startnewloan');
-       // 
-    }
-    },    
-    openchk : function(component, event, helper) {
+        else {
+            var action = component.get("c.createLoan");
+            action.setParams({
+                senarioid: component.get("v.senario_id")
+            });
+
+            action.setCallback(this, function (data) {
+                var urlEvent = $A.get("e.force:navigateToURL");
+                urlEvent.setParams({
+                    "url": "/startnewloan"
+                });
+                urlEvent.fire();
+            });
+            $A.enqueueAction(action);
+            // location.open('/s/startnewloan');
+            // 
+        }
+    },
+    openchk: function (component, event, helper) {
         debugger;
         var t = component.get("v.isOpen_c");
-        
+
         var m = component.find("checkbox1");
-        m.set("v.disabled",false);
-        
+        m.set("v.disabled", false);
+
         var a = component.find("file");
         var b = component.find("btn");
         var t = component.get("v.isOpen_c");
-        
+
         var s = component.get("v.isOpen_c1");
-        
-        if (t == true && s == true ) {
-             a.set("v.disabled",false);
-            component.set("v.fileupload",false);
-          //  b.set("v.disabled",false);  
-            component.set("v.isDisabled",false);
+
+        if (t == true && s == true) {
+            a.set("v.disabled", false);
+            component.set("v.fileupload", false);
+            //  b.set("v.disabled",false);  
+            component.set("v.isDisabled", false);
         }
         else {
-            a.set("v.disabled",true);
-              component.set("v.fileupload",true);
+            a.set("v.disabled", true);
+            component.set("v.fileupload", true);
             //b.set("v.disabled",true); 
-              component.set("v.isDisabled",true);
+            component.set("v.isDisabled", true);
         }
-        
-        
+
+
     },
-    openchk1 : function(component, event, helper) {
+    openchk1: function (component, event, helper) {
         debugger;
         //component.set("v.isOpen_c1",true);
         var a = component.find("file");
         //var b = component.find("btn");
         var t = component.get("v.isOpen_c");
-        
+
         var s = component.get("v.isOpen_c1");
-        
-        if (t == true && s == true ) {
-            a.set("v.disabled",false);
-            component.set("v.fileupload",false);
-          //  b.set("v.disabled",false);  
-            component.set("v.isDisabled",false);
+
+        if (t == true && s == true) {
+            a.set("v.disabled", false);
+            component.set("v.fileupload", false);
+            //  b.set("v.disabled",false);  
+            component.set("v.isDisabled", false);
         }
         else {
-            a.set("v.disabled",true);
-              component.set("v.fileupload",true);
+            a.set("v.disabled", true);
+            component.set("v.fileupload", true);
             //b.set("v.disabled",true); 
-              component.set("v.isDisabled",true);
+            component.set("v.isDisabled", true);
         }
-        
+
     },
-        myAction : function(component, event, helper) {
-            component.set("v.isDisabled",false);
-            debugger;
-        document.getElementById("error").innerHTML = "";        
-        var validDate = true;        
-        component.set("v.isOpen_c",false);
-        component.set("v.isOpen_c1",false);
-        component.set("v.fileupload",true);        
+    myAction: function (component, event, helper) {
+        component.set("v.isDisabled", false);
+        debugger;
+        document.getElementById("error").innerHTML = "";
+        var validDate = true;
+        component.set("v.isOpen_c", false);
+        component.set("v.isOpen_c1", false);
+        component.set("v.fileupload", true);
         var findid = component.find("expname");
         var getdate = findid.get("v.value");
-       //      alert("value is: " + getdate);
-       component.set("v.ApplicationDate",''+getdate);
-       console.log('getdate getdate ',getdate);        
-        if ($A.util.isEmpty(getdate)){
+        //      alert("value is: " + getdate);
+        component.set("v.ApplicationDate", '' + getdate);
+        console.log('getdate getdate ', getdate);
+        if ($A.util.isEmpty(getdate)) {
             validDate = false;
-            console.log("no val");            
+            console.log("no val");
         }
-        else {            
-            var year=getdate.substring(0,4);         
-            var month=getdate.substring(5,7);         
-            var day=getdate.substring(8,10); 
-            getdate=month+'/'+day+'/'+year;
-            var date_regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-            if(!(date_regex.test(getdate)))
-            {
+        else {
+            var year = getdate.substring(0, 4);
+            var month = getdate.substring(5, 7);
+            var day = getdate.substring(8, 10);
+            getdate = month + '/' + day + '/' + year;
+            var date_regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+            if (!(date_regex.test(getdate))) {
                 document.getElementById("error").innerHTML = "Please enter a valid date format in MM/DD/YYYY!"
-                component.set("v.isOpen",false);
-                component.set("v.isDisabled",true);
+                component.set("v.isOpen", false);
+                component.set("v.isDisabled", true);
             }
-            else
-            {
+            else {
                 var currdate = new Date();
                 var mydate = new Date(getdate);
-                if (currdate.getTime() < mydate.getTime()){
-                    component.set("v.text","We apologize for the inconvenience. Date cannot be in future. Please enter a valid date.");   
-                    component.set("v.isOpen",false);
-                    component.set("v.isDisabled",true);
-                    console.log("text ",component.get("v.text"));
+                if (currdate.getTime() < mydate.getTime()) {
+                    component.set("v.text", "We apologize for the inconvenience. Date cannot be in future. Please enter a valid date.");
+                    component.set("v.isOpen", false);
+                    component.set("v.isDisabled", true);
+                    console.log("text ", component.get("v.text"));
                 }
-                else
-                {
+                else {
                     var timeDiff = Math.abs(currdate.getTime() - mydate.getTime());
                     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
                     console.log("day difference is: " + diffDays);
-                    if (diffDays > 3){
-                        component.set("v.text","We apologize for the inconvenience. One Reverse Mortgage Services requires 1 day to send out Good Faith\nEstimate to meet regulatory requirements and the date you selected exceeds the tolerance.");  
-                        component.set("v.isOpen",false);
-                        component.set("v.isDisabled",true);
+                    if (diffDays > 3) {
+                        component.set("v.text", "We apologize for the inconvenience. One Reverse Mortgage Services requires 1 day to send out Good Faith\nEstimate to meet regulatory requirements and the date you selected exceeds the tolerance.");
+                        component.set("v.isOpen", false);
+                        component.set("v.isDisabled", true);
                     }
-                    else
-                    {
-                        component.set("v.text",""); 
-                        component.set("v.isOpen",true);
-                        component.set("v.isDisabled",false);
+                    else {
+                        component.set("v.text", "");
+                        component.set("v.isOpen", true);
+                        component.set("v.isDisabled", false);
                     }
                 }
             }
         }
-        
+
     },
-    
-     BindData : function(component, event, helper) {  
-         debugger;
-        var jsondata='';
-        var fileInput = document.getElementById('fileInput');        
+
+    BindData: function (component, event, helper) {
+        debugger;
+        var jsondata = '';
+        var fileInput = document.getElementById('fileInput');
         var inputtxtid = document.getElementById('inputtxt');
         var file = fileInput.files[0];
         var reader = new FileReader();
-        reader.onload = function(e) {          
-            jsondata='{"IncludeFields": true,"ValidateOnly": false,"AddressValidationLevel": "None","TenOhThree": "'+reader.result+'"}';
+        reader.onload = function (e) {
+            jsondata = '{"IncludeFields": true,"ValidateOnly": false,"AddressValidationLevel": "None","TenOhThree": "' + reader.result + '"}';
             document.getElementById('inputtxt').value = jsondata;
         }
         reader.readAsText(file);
         var fr1 = new FileReader();
-        fr1.onload = function() {
+        fr1.onload = function () {
             var fileContents = fr1.result;
             var base64Mark = 'base64,';
             var dataStart = fileContents.indexOf(base64Mark) + base64Mark.length;
             fileContents = fileContents.substring(dataStart);
-            component.set("v.filedata",fileContents);            
+            component.set("v.filedata", fileContents);
         };
-        fr1.readAsDataURL(file); 
+        fr1.readAsDataURL(file);
     },
-   
+
 })

@@ -213,8 +213,11 @@
             component.set("v.ClientDiv", false);
             component.set("v.ClientDiv", true); 
             component.set("v.showPrintOption",true);
+            component.set("v.showLoan",false); //Helo Fix
             try{
+                
             var evt=$A.get("e.c:LoanCalculatorEvent");
+                console.log('evt >> ',evt);
            // alert(DOBValue);
             evt.setParams({"DOBE":DOBValue});
             evt.setParams({"EHVE":EHVValue}); 

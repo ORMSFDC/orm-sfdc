@@ -4,17 +4,16 @@
     <aura:registerEvent name="chartEvent" type="c:ChartEvent"/>
     <aura:attribute name="ScenarioID" type="string" default='a0Hm000000H5zn2'  /> 
     <aura:attribute name="isOldScenario" type="Boolean" default="true"/>
-  <aura:attribute name="CF1MA" type="string" default='' />
-  <aura:attribute name="CF5MA" type="string" default='' />
-  <aura:attribute name="CF10MA" type="string" default='' />
+    <aura:attribute name="CF1MA" type="string" default='' />
+    <aura:attribute name="CF5MA" type="string" default='' />
+    <aura:attribute name="CF10MA" type="string" default='' />
     <aura:attribute name="ScenarioType" type="String"/>
     <aura:attribute name="isTraditional" type="boolean" default="true"/>
-     <aura:attribute name="LRateType" type="String" default="ARM"/>
-         <aura:attribute name="LMortgageAppliedFor" type="String" default="FHA Traditional HECM"/>
-   
+    <aura:attribute name="LRateType" type="String" default="ARM"/>
+    <aura:attribute name="LMortgageAppliedFor" type="String" default="FHA Traditional HECM"/>
+    <aura:attribute name="OECC" type="integer" /> <!--Helo Fix-->
     <aura:attribute name="displayTab" type="Boolean" default="true"/>
-    <aura:attribute name="ApplicationDate" type="String"/>
-    
+    <aura:attribute name="ApplicationDate" type="String"/>    
     <aura:attribute name="EHV" type="decimal" default="" />
     <aura:attribute name="CMB" type="decimal" default=""/>
     <aura:attribute name="CMIR" type="string" default=""/>
@@ -25,8 +24,7 @@
     <aura:attribute name="TotalAmountAvailable" type="integer" />
     <aura:attribute name="TenthAmount" type="string" />
     <aura:attribute name="apr_is" type="String" default=''/>
-    <aura:attribute name="libor" type="String" default=''/>
-    
+    <aura:attribute name="libor" type="String" default=''/>    
     <!--Index Table-->
     <aura:attribute name="Index" type="string"  />
     <aura:attribute name="Margin" type="string" />
@@ -269,16 +267,24 @@
                                                         
                                                     </div>
                                                 </td>                                    
-                                            </tr>
-                                            
-                                            
+                                            </tr> 
                                             <tr>
                                                 <td data-label="EOF">
-                                                    <div class="slds-truncate">
-                                                        <b>
-                                                             Adjustable Desired Origination
-                                                        </b>
-                                                    </div>
+                                                    <aura:if isTrue="{!v.isTraditional}"><!--Saved scenario label fix-->
+                                                        <div class="slds-truncate">
+                                                            <b>
+                                                                Origination to One Reverse Mortgage, LLC
+                                                            </b>
+                                                        </div>
+                                                        <aura:set attribute="else">
+                                                            <div class="slds-truncate">
+                                                                <b>
+                                                                    Desired Origination for Adjustable Rate Product
+                                                                </b>
+                                                            </div>
+                                                        </aura:set>
+                                                    </aura:if>
+
                                                 </td>
                                                 <td data-label="EOF">
                                                     <div class="slds-truncate slds-text-align_right slds-cell-wrap">
@@ -296,7 +302,7 @@
                                                 </td>
                                                 <td data-label="ECC">
                                                     <div class="slds-truncate slds-text-align_right slds-cell-wrap">
-                                                        <lightning:formattedNumber value="2500" style="currency" />
+                                                        <lightning:formattedNumber value="{!v.OECC}" style="currency" /> <!--Helo Fix-->
                                                     </div>
                                                 </td>                                    
                                             </tr>                                

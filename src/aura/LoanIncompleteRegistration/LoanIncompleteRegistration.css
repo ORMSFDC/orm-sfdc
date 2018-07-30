@@ -17,10 +17,16 @@
     
     color: blue !important;
 }
-.THIS .normal{
-    
+.THIS .normal {
     font-family: 'LatoFont'  !important; 
+    height: 33px;
 }
+
+.THIS .normal span {    
+    color: rgb(40, 119, 189) !important;
+    font-size: 15px;
+}
+
 .THIS .h2Css
 {
    color: #0C4569;
