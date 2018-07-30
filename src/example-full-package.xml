@@ -1,134 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Active_Resource_Count</members>
-        <members>Finance_MSA_Snapshot</members>
+        <members>*</members>
         <name>AnalyticSnapshot</name>
     </types>
     <types>
-        <members>AccountHandler_Test</members>
-        <members>AccountTriggerHandler</members>
-        <members>ApexUtils</members>
-        <members>BatchJobAdminController</members>
-        <members>BatchJobAdminController_Test</members>
-        <members>ChangeLeadOwnerController_Ext</members>
-        <members>ChangeLeadOwnerController_ExtTest</members>
-        <members>CommissionTransactionTriggerHandler</members>
-        <members>ContactFlowController</members>
-        <members>ContactFlowControllerTest</members>
-        <members>ERD_DescribeSObjects</members>
-        <members>ERD_FieldWrapper</members>
-        <members>ERD_OrgChart</members>
-        <members>ERD_OrgChartEntry</members>
-        <members>ERD_SchemaVizController</members>
-        <members>Logger</members>
-        <members>LoggerTest</members>
-        <members>MaintainActiveResourceBatch</members>
-        <members>MaintainActiveResourceBatch_Test</members>
-        <members>MaintainNamelyUseCase</members>
-        <members>MaintainNamelyUseCase_Test</members>
-        <members>MaintainOpportunityFields</members>
-        <members>MaintainOpportunityFields_Test</members>
-        <members>MaintainProductInstance</members>
-        <members>MaintainProductInstance_Test</members>
-        <members>MaintainQuoteFields</members>
-        <members>MaintainQuoteFields_Test</members>
-        <members>MaintainQuoteLineFields</members>
-        <members>MaintainQuoteLineFields_Test</members>
-        <members>MaintainRevenueTransaction</members>
-        <members>MaintainRevenueTransaction2</members>
-        <members>MaintainRevenueTransaction2_Test</members>
-        <members>MaintainRevenueTransactionDetails</members>
-        <members>MaintainRevenueTransactionDetails_Test</members>
-        <members>MaintainRevenueTransaction_Test</members>
-        <members>MassReassignOpportunitiesController</members>
-        <members>MassReassignOpportunitiesControllerTest</members>
-        <members>OppPusherTests</members>
-        <members>OpportunityActiveContractHandler</members>
-        <members>OpportunityActiveContractHandler_Test</members>
-        <members>OpportunityLineItemTriggerHandler</members>
-        <members>OpportunityTriggerHandler</members>
-        <members>OpportunityTriggerHandler2</members>
-        <members>ProductUsageHandler</members>
-        <members>QuoteLineHandler</members>
-        <members>QuoteLineTriggerHandler</members>
-        <members>QuoteTriggerHandler</members>
-        <members>RevenueTransactionDetailsBatch</members>
-        <members>RevenueTransactionDetailsBatch_Test</members>
-        <members>RevenueTransactionHandler</members>
-        <members>SBQQ_QuoteHandler</members>
-        <members>TBN_AccountContact_Owner</members>
-        <members>TBN_AccountContact_OwnerTest</members>
-        <members>TBN_ChangeAccount_Contact_Owner</members>
-        <members>TBN_ChangeAccount_Contact_OwnerTest</members>
-        <members>TBN_ContactHandler</members>
-        <members>TBN_ContactHandler_Test</members>
-        <members>TBN_LeadHandler</members>
-        <members>TBN_LeadHandler_Test</members>
-        <members>TBN_ProjectHandler</members>
-        <members>TBN_ProjectHandlerTest</members>
-        <members>TBN_ScheduledOppsToUpdateContactRole</members>
-        <members>TBN_TaskHandler</members>
-        <members>TBN_TaskHandler_Test</members>
-        <members>TBN_UpdatePrimaryContactRole_Batch</members>
-        <members>TBN_UpdatePrimaryContactRole_Batch_Test</members>
-        <members>TM_LinkToExistingJIRA</members>
-        <members>TestFactory</members>
-        <members>TestOpportunityTriggerHandler</members>
-        <members>TestQuoteLineHandler</members>
-        <members>Test_SBQQ_QuoteHandler</members>
-        <members>Test_TM_LinkToExistingJIRA</members>
-        <members>TriggerHandler</members>
-        <members>TriggerHandler_Test</members>
-        <members>UpdateUserPasswordReset_Batch</members>
-        <members>dlrs_AccountTest</members>
-        <members>dlrs_EmailMessageTest</members>
-        <members>dlrs_Finance_MSA_DetailTest</members>
-        <members>dlrs_OpportunityLineItemTest</members>
-        <members>dlrs_Revenue_TransactionTest</members>
-        <members>dlrs_SBQQ_QuoteLineTest</members>
-        <members>whiteSpaceController</members>
-        <members>whiteSpaceControllerTest</members>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
-    <types>
-        <members>BatchJobAdmin</members>
-        <members>ChangeLeadOwnerVF</members>
-        <members>ContactFlow</members>
-        <members>ERD_Common_CSS</members>
-        <members>ERD_Help</members>
-        <members>ERD_SchemaViz</members>
-        <members>MassReassignOpportunities</members>
-        <members>arr_qa</members>
-        <members>whiteSpace</members>
+    <types>        
+        <members>*</members>
         <name>ApexPage</name>
     </types>
-    <types>
-        <members>NamelyCustom</members>
-        <members>S2</members>
-        <members>S3</members>
+    <types>        
+        <members>*</members>
         <name>ApexTestSuite</name>
     </types>
-    <types>
-        <members>AccountTrigger</members>
-        <members>CommissionTransactionTrigger</members>
-        <members>OppPusher</members>
-        <members>OpportunityLineItemTrigger</members>
-        <members>OpportunityTrigger</members>
-        <members>ProductUsageTrigger</members>
-        <members>QuoteLineTrigger</members>
-        <members>RevenueTransactionTrigger</members>
-        <members>SBQQ_QuoteTrigger</members>
-        <members>TBN_ContactTrigger</members>
-        <members>TBN_LeadTrigger</members>
-        <members>TBN_Project</members>
-        <members>TBN_TaskTrigger</members>
-        <members>dlrs_AccountTrigger</members>
-        <members>dlrs_EmailMessageTrigger</members>
-        <members>dlrs_Finance_MSA_DetailTrigger</members>
-        <members>dlrs_OpportunityLineItemTrigger</members>
-        <members>dlrs_Revenue_TransactionTrigger</members>
-        <members>dlrs_SBQQ_QuoteLineTrigger</members>
+    <types>        
+        <members>*</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -137,33 +26,11 @@
         <name>AppMenu</name>
     </types>
     <types>
-        <members>Account.Namely_URL_Approval</members>
-        <members>Case.Custom_Report_Case</members>
-        <members>Credit_Requests__c.Brokerage_Credit_Request_Approval</members>
-        <members>Credit_Requests__c.CS_Credit_Request_Approval</members>
-        <members>Credit_Requests__c.Credit_Request_CSM_Approval</members>
-        <members>Credit_Requests__c.Credit_Request_VP_Approval</members>
-        <members>Credit_Requests__c.Finance_A_Credit_Request_Approval</members>
-        <members>Credit_Requests__c.Finance_B_Credit_Request_Approval</members>
-        <members>Credit_Requests__c.PS_CS_Credit_Request_Approval</members>
-        <members>Credit_Requests__c.PS_Credit_Request_Approval</members>
-        <members>Opportunity.Namely_Sandbox_Approval</members>
-        <members>Professional_Services_Ticket__c.Actual_Go_Live_Date_Changed</members>
-        <members>Professional_Services_Ticket__c.Actual_Go_Live_Date_Populated</members>
-        <members>Reference_Request__c.Reference_Request_Approval_Process</members>
-        <members>SBQQ__Quote__c.Billing_Schedule_Approval</members>
-        <members>SBQQ__Quote__c.Manager_Quote_Approval</members>
-        <members>SBQQ__Quote__c.Quote_Approval</members>
-        <members>SBQQ__Quote__c.Subscription_PS_Payment_TermsApproval</members>
-        <members>SBQQ__Quote__c.Subscription_Payment_Term_Approval</members>
-        <members>zqu__Quote__c.Quote_Approval_First_Step</members>
+        <members>*</members>
         <name>ApprovalProcess</name>
     </types>
     <types>
-        <members>Case.Service Cloud</members>
-        <members>Lead.Inbound Leads Assignment</members>
-        <members>Lead.LeanData - when status %3D Recycle Pool</members>
-        <members>Lead.LeanData Routing - Go to Daisy</members>
+        <members>*</members>
         <name>AssignmentRule</name>
     </types>
     <types>
