@@ -55,7 +55,9 @@
             if (component.get("v.Incomplete")) {
                 $('li#l11').removeClass('disabled');
                 $('li#l11 a').attr("data-toggle", "tab");
-                $('li#l11 a').click();
+                $A.getCallback(function (result) {
+                    $('li#l11 a').click();
+                });
                 component.set("v.nextOpt", "true");
                 component.set("v.currentOpt", "false");
                 window.scrollTo(0, 0);
