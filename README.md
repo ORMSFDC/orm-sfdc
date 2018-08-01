@@ -26,7 +26,7 @@ Complete SFDC codebase for ORM
     1.  If you have lots of un-necessary commit messages, please [squash them](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html) into a few concise messages.    
 1.  **Developer**: Send a github pull request from your branch to the sprint branch. 
 1.  **Release manager**: will review changes at a high level, and take note of `package.xml` updates.  He will then update the CI on the sprint branch to account for `package.xml` changes.
-1.  **Release manager**: merge PR, then **delete developer feature branch**.  CI deploy to QA will automatically run.
+1.  **Release manager**: merge PR, then **delete developer feature branch**.  CI deploy to QA will automatically run.  **NOTE**: The QA CI deploy only supports [these metadata types](https://docs.google.com/spreadsheets/d/1gbJW7k0mVKhb4Sb_IXZM345nGrnQcIXnIEL7V4NZ9o4/edit#gid=0).  If you need to deploy a type not on this list, ping Mike.
 1.  **Developer**: delete your feature branch. Ex: `git branch -d sprint7-ryan`
 1.  **Release manager**: Once biz has signed off on QA, gearsets CI will be updated to deploy to UAT
 1.  **Release manager**: Once biz signs off on UAT, Release manager will create a PR from feature branch to `master` (rebasing if necessary)
