@@ -8,9 +8,12 @@
 * @date 6/19/2018
 *
 * changelog:
+* QDA/MG 07/03/2018 Added Context Check isBatch
 *
 */
 public without sharing class TriggerHandlerLoan extends TriggerHandler {
+
+
     /**
     * @description custom metadata types enable/disable methods
     */
@@ -37,13 +40,18 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
         // Run Loan Update Partner Fields
 
         if (testControlMap.get('updatePartnerFields') != NULL) {
+
+
             if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('updatePartnerFields').Enable__c) {
+
                 String jsonNewMap = JSON.serialize((Map<Id, sObject>) Trigger.newMap);
                 Logger.debug('afterInsert is firing');
                 LoanUpdatePartnerFieldsHandler.updatePartnerFields(jsonNewMap, null);
 
                 Logger.debug('QA Called LoanUpdatePartnerFieldsHandler Future from afterInsert');
+
             }
+
         }
         Logger.pop();
     }
@@ -63,44 +71,56 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
         if (testControlMap.get('trackLoanStatus') != NULL) {
 
             if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('trackLoanStatus').Enable__c) {
-
+                // Track loan status 
                 LoanStatusHandler.trackLoanStatus((Map<Id, Loan_New__c>) Trigger.newMap, (Map<Id, Loan_New__c>) Trigger.oldMap);
-
-                Logger.debug('QA Called LoanStatusHandler Future');
+            
             }
+
         }
 
         // Run Loan Update Partner Fields
         if (testControlMap.get('updatePartnerFields') != NULL) {
 
+
             if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('updatePartnerFields').Enable__c) {
 
                 String jsonNewMap = JSON.serialize((Map<Id, sObject>) Trigger.newMap);
                 String jsonOldMap = JSON.serialize((Map<Id, sObject>) Trigger.oldMap);
-
-                if (!System.isBatch()){ 
-                     LoanUpdatePartnerFieldsHandler.updatePartnerFields(jsonNewMap, jsonOldMap); // Call future context safely    
-                     Logger.debug('QA Called LoanUpdatePartnerFieldsHandler Future'); 
-                } 
+                
+                // Skip this call when Loan is updated via DeactivatePipelineLoan batch (change of loan status to withdraw)
+                if (!System.isBatch()){
+                    LoanUpdatePartnerFieldsHandler.updatePartnerFields(jsonNewMap, jsonOldMap); // Call future context safely   
+                    //Logger.debug('QA Called LoanUpdatePartnerFieldsHandler Future');
+                }
+               
             }
+
         }
 
         // Run Loan Update Partner Fields
         if (testControlMap.get('updateLoanSharing') != NULL) {
 
+
             if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('updateLoanSharing').Enable__c) {
 
                 String jsonNewMap = JSON.serialize((Map<Id, sObject>) Trigger.newMap);
                 String jsonOldMap = JSON.serialize((Map<Id, sObject>) Trigger.oldMap);
-
+                
+                // Skip this call when Loan is updated via DeactivatePipelineLoan batch (change of loan status to withdraw)
                 if (!System.isBatch()){
                     LoanSharingHandler.updateLoanSharing(jsonNewMap, jsonOldMap);
-                    Logger.debug('QA Called LoanStatusHandler Future');
+                    //Logger.debug('QA Called LoanStatusHandler Future');
                 }
+            
             }
+
         }
-        
+
+
         RecursiveTriggerHandler.isFirstTime = false;
         Logger.pop();
+
     }
+
+
 }

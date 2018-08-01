@@ -60,6 +60,7 @@ public without sharing class TriggerHandlerExternalServiceInbound extends Trigge
 		Set<Id> esIdSet = new Set<Id>();
 		for ( ExternalServiceInbound__e esi : newESIlist ) {
 			String esId = ExternalServiceDispatcher.getPayloadReference( esi.Payload__c );
+			System.debug( '>>> TriggerHandlerExternalServiceInbound.processEvents.esi: ' + esi );
 			System.debug( '>>> TriggerHandlerExternalServiceInbound.processEvents.esi.Payload__c: ' + esi.Payload__c );
 			System.debug( '>>> TriggerHandlerExternalServiceInbound.processEvents.esId: ' + esId );
 			if ( String.isNotBlank( esId ) && esId instanceof Id ) {
@@ -74,6 +75,7 @@ public without sharing class TriggerHandlerExternalServiceInbound extends Trigge
 		] );
 		if ( !updateESIdMap.isEmpty() ) {
 			System.debug( '>>> TriggerHandlerExternalServiceInbound.processEvents:  updating ESI...' );
+			// iterate through ESIs and update ESs
 			for ( ExternalServiceInbound__e esi : newESIlist ) {
 				Id esId = ExternalServiceDispatcher.getPayloadReference( esi.Payload__c );
 				if ( esId != NULL ) {

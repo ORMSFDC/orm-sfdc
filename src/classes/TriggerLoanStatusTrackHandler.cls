@@ -1,10 +1,12 @@
-/** * File Name   : TriggerLoanStatusTrackHandler.cls
-*     Description : invoked from TriggerLoanStatusTrack trigger to share the Loan Objects and to update Business
-*                   partner fields in backend.
-*     Created     : 10/30/2017
-*     Copyright   :  
-*   * @author     : Prsn
-* */
+/** 
+* @Description invoked from TriggerLoanStatusTrack trigger to share the Loan Objects and to update Business 
+* partner fields in backend.
+* @created 10/30/2017
+* @author Prsn (GalaxE?)
+* @changelog 
+* - QDA/MG 07/03 Move original updatePartnerFields into LoanUpdataPartnerFieldsHandler 
+*   for additional refactoring and control execution with legacy org technical debt
+*/
 public class TriggerLoanStatusTrackHandler { 
     public static void shareLoan(Map<Id,Loan_New__c> loanMap) {
         Logger.push('shareLoan', 'TriggerLoanStatusTrackHandler');
@@ -153,6 +155,8 @@ public class TriggerLoanStatusTrackHandler {
     } 
     
     // updating the backend fields in Bussiness Partner
+    // method updatePartnerFields moved into LoanUpdatePartnerFieldsHandler
+      // updating the backend fields in Bussiness Partner
     
     public static void updatePartnerFields(Map<Id,Loan_New__c> newLoanMap) {
         Logger.push('updatePartnerFields','TriggerLoanStatusTrackHandler');
@@ -241,5 +245,6 @@ public class TriggerLoanStatusTrackHandler {
             Logger.debugException(ex);
         }
         Logger.pop();
-    }
+    }    
+  
 }

@@ -2,6 +2,7 @@
  * @description Loan Update Partner Fields Handler - Async class for calling existing ORM methods
  * @author Mike Gill
  * @date 21st June 2018
+ * @todo Complete refactoring for updatePartnerFields is recommended./ could shift into dlrs
  */
 public without sharing class LoanUpdatePartnerFieldsHandler {
 
@@ -25,10 +26,12 @@ public without sharing class LoanUpdatePartnerFieldsHandler {
         Map<Id, Loan_New__c> newLoanMap = new Map<Id, Loan_New__c>(newLoanList);
 
         Logger.debug('QA Running TriggerLoanStatusTrackHandler.updatePartnerFields!');
+        //LoanUpdatePartnerFieldsHandler.updatePartnerFields(newLoanMap);
         TriggerLoanStatusTrackHandler.updatePartnerFields(newLoanMap);
 
         Logger.pop();
     }
 
+  
 
 }

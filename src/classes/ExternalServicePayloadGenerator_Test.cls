@@ -5,10 +5,11 @@
 * @date 05/20/2018
 *
 * changelog:
+* 06/04/2018: DWilson - changed to private class declaration
 *
 */
 @IsTest
-public with sharing class ExternalServicePayloadGenerator_Test {
+private with sharing class ExternalServicePayloadGenerator_Test {
 
 	private static final String EXTERNAL_SERVICE_NAME = 'AmrockBot';
 	private static final String LOAN_STATUS_APPLICATIONREQUESTED = 'Proposal';

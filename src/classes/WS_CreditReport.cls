@@ -1,15 +1,13 @@
 /**
-* @description WS_AmrockBot encapsulates the Amrock-Bot external (web) service
+* @description WS_AmrockBot encapsulates the CreditReport external (web) service
 *
 * @author Dennis Wilson
-* @date 5/10/2018
+* @date 06/06/2018
 *
 * changelog:
-* 06/04/2018: DWilson - refactored to implement interface
-* 06/15/2018: DWilson - added Logger
 *
 */
-public without sharing class WS_AmrockBot implements ExternalServiceDispatcher.DispatchHandler{
+public without sharing class WS_CreditReport implements ExternalServiceDispatcher.DispatchHandler{
 
 	/*******************************************************************************************************
 	* @description used to induce exception coverage by test methods
@@ -20,12 +18,12 @@ public without sharing class WS_AmrockBot implements ExternalServiceDispatcher.D
 	/*******************************************************************************************************
 	* @description performs callout to AmrockBot service
 	* @param serReq structured request
-	* @return structured response (serviceResponse)
+	* @return structured response (ExternalServiceDispatcher.serviceRequest)
 	*/
 	public static ExternalServiceDispatcher.serviceResponse invokeService( ExternalServiceDispatcher.serviceRequest serReq ) {
 
 		System.debug( '>>> WS_CreditReport.invokeService called... ' );
-		Logger.push( 'invokeService', 'WS_AmrockBot' );
+		Logger.push( 'invokeService', 'WS_CreditReport' );
 		Logger.debug( 'WS_CreditReport.invokeService called...' );
 		ExternalServiceDispatcher.serviceResponse serResp = new ExternalServiceDispatcher.serviceResponse();
 		String serviceName = serReq.control.NamedCredential__c;
@@ -72,7 +70,8 @@ public without sharing class WS_AmrockBot implements ExternalServiceDispatcher.D
 					serResp.success = TRUE;
 					serResp.response = '[Status=' + res.getStatus() + ', StatusCode=' + res.getStatusCode() + ']\r\n';
 					serResp.response += '[Response Returned:]\r\n';
-					serResp.response += res.getBody();
+					// only return first 1K of response to prevent blowing field length
+					serResp.response += ( res.getBody().length() > 1024 ? res.getBody().left( 1024 ) : res.getBody() );
 				}
 			} else {
 				serResp.success = FALSE;
@@ -82,6 +81,7 @@ public without sharing class WS_AmrockBot implements ExternalServiceDispatcher.D
 			serResp.success = FALSE;
 			serResp.errorMessageList = new List<String> { 'No configuration found for External Service' };
 		}
+		Logger.pop();
 		return serResp;
 	}
 }

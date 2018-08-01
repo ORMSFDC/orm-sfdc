@@ -5,6 +5,7 @@
 * @date 5/14/2018
 *
 * changelog:
+* 06/04/2018: DWilson - refactored to implement interface
 *
 */
 
@@ -29,7 +30,7 @@ private class WS_AmrockBot_Test {
 		mock.setStatusCode( 200 );
 		mock.setHeader( 'Content-Type', 'application/json' );
 		Test.setMock( HttpCalloutMock.class, mock );
-		WS_AmrockBot.serviceResponse checkResponse = WS_AmrockBot.invokeService( testSRpostive );
+		ExternalServiceDispatcher.serviceResponse checkResponse = WS_AmrockBot.invokeService( testSRpostive );
 		Test.stopTest();
 		// expecting OK status
 		System.assert(  checkResponse.response.contains( 'Status=OK' ) );
@@ -46,11 +47,11 @@ private class WS_AmrockBot_Test {
 		mock.setStatusCode( 400 );
 		mock.setHeader( 'Content-Type', 'application/json' );
 		Test.setMock( HttpCalloutMock.class, mock );
-		WS_AmrockBot.serviceResponse checkResponse1 = WS_AmrockBot.invokeService( testSRpostive );
-		WS_AmrockBot.serviceResponse checkResponse2 = WS_AmrockBot.invokeService( testSRexceptions );
+		ExternalServiceDispatcher.serviceResponse checkResponse1 = WS_AmrockBot.invokeService( testSRpostive );
+		ExternalServiceDispatcher.serviceResponse checkResponse2 = WS_AmrockBot.invokeService( testSRexceptions );
 		// case of inducting a callout exception
 		WS_AmrockBot.testException = TRUE;
-		WS_AmrockBot.serviceResponse checkResponse3 = WS_AmrockBot.invokeService( testSRpostive );
+		ExternalServiceDispatcher.serviceResponse checkResponse3 = WS_AmrockBot.invokeService( testSRpostive );
 		Test.stopTest();
 		// expecting error messages
 		System.assert( checkResponse1.errorMessageList.size() > 0 );
@@ -65,16 +66,16 @@ private class WS_AmrockBot_Test {
 	private static ExternalServiceRegistry__mdt testEScontrol {
 		get {
 			testEScontrol = ( ExternalServiceRegistry__mdt ) JSON.deserialize(
-				'{ "MasterLabel" : "TestExternalService", "NamedCredential__c" : "TestExternalService" }',
+				'{ "MasterLabel" : "TestExternalService", "NamedCredential__c" : "TestExternalService", "ExternalServiceDispatcherClass__c" : "WS_AmrockBot", "IsActive__c" : true }',
 				ExternalServiceRegistry__mdt.class );
 			return testEScontrol;
 		}
 		private set;
 	}
 
-	private static WS_AmrockBot.serviceRequest testSRpostive {
+	private static ExternalServiceDispatcher.serviceRequest testSRpostive {
 		get {
-			testSRpostive = new WS_AmrockBot.serviceRequest();
+			testSRpostive = new ExternalServiceDispatcher.serviceRequest();
 			testSRpostive.control = testEScontrol;
 			testSRpostive.payload = '{ test : me }';
 			return testSRpostive;
@@ -82,9 +83,9 @@ private class WS_AmrockBot_Test {
 		private set;
 	}
 
-	private static WS_AmrockBot.serviceRequest testSRexceptions {
+	private static ExternalServiceDispatcher.serviceRequest testSRexceptions {
 		get {
-			testSRexceptions = new WS_AmrockBot.serviceRequest();
+			testSRexceptions = new ExternalServiceDispatcher.serviceRequest();
 			testSRexceptions.control = NULL;
 			testSRexceptions.payload = '{ test : me }';
 			return testSRexceptions;
