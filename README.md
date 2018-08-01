@@ -18,6 +18,7 @@ Complete SFDC codebase for ORM
     1.  connect gearsets to slack channel (https://hooks.slack.com/services/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)
 1.  **Developer**: Checkout sprint branch (ex: `git checkout sprint7`)
 1.  **Developer**: Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
+1.  **Developer**: Go to production SFDC UI and [Refresh your sandbox](https://help.salesforce.com/articleView?id=data_sandbox_refresh.htm&type=5) from the QA enviornment.  Make sure to choose `Create From: QA` and `Auto Activate`
 1.  **Developer**: As you develop, make note of profiles and permission changes this `README.md` (template below)
 1.  **Developer**: Deploy to your sandbox via [mdapi-smart-deploy](https://github.com/rynop/mdapi-smart-deploy).
 1.  **Developer**: When ready to deliver to QA:
