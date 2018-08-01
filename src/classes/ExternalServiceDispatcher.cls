@@ -6,6 +6,7 @@
 * @date 5/10/2018
 *
 * changelog:
+* 06/04/2018: DWilson - refactored to define handler interface
 *
 */
 public without sharing class ExternalServiceDispatcher {
@@ -13,14 +14,20 @@ public without sharing class ExternalServiceDispatcher {
 	/*******************************************************************************************************
 	* @description custom metadata types for the parameters of external services
 	*/
-	@testVisible
+	@TestVisible
 	private static Map<String, ExternalServiceRegistry__mdt> esrControlMap {
 		get {
 			if ( esrControlMap == NULL ) {
 				esrControlMap = new Map<String, ExternalServiceRegistry__mdt>();
 				for ( ExternalServiceRegistry__mdt esrControl : [
-					SELECT MasterLabel, NamedCredential__c
+					SELECT
+						MasterLabel,
+						ExternalServiceDispatcherClass__c,
+						NamedCredential__c,
+						AuthorizationHeaderToken__c,
+						AuthorizationHeaderValue__c
 					FROM ExternalServiceRegistry__mdt
+					WHERE IsActive__c = TRUE
 				] ) {
 					esrControlMap.put( esrControl.MasterLabel, esrControl );
 				}
@@ -31,10 +38,33 @@ public without sharing class ExternalServiceDispatcher {
 	}
 
 	/*******************************************************************************************************
+	* @description structured request to an external service
+	*/
+	public class serviceRequest {
+		public ExternalServiceRegistry__mdt control;
+		public String payload;
+	}
+
+	/*******************************************************************************************************
+	* @description structured response from an external service
+	*/
+	public class serviceResponse {
+		public Boolean success;
+		public String response;
+		public List<String> errorMessageList;
+	}
+
+
+	public interface DispatchHandler {
+
+		serviceResponse invokeService( serviceRequest serReq );
+	}
+
+	/*******************************************************************************************************
 	* @description sends requests to appropriate external services
 	* @param esoList the list of ExternalServiceOutbound__e events to process
 	*/
-	@future( callout=TRUE )
+	@Future( Callout=TRUE )
 	public static void processESOlist( List<String> serialESOlist ) {
 
 		System.debug( '>>> ExternalServiceDispatcher.processESOlist called...' );
@@ -60,19 +90,22 @@ public without sharing class ExternalServiceDispatcher {
 		for ( ExternalServiceOutbound__e eso : esoList ) {
 			// dispatch to appropriate service
 			ExternalServiceRegistry__mdt esrControl = esrControlMap.get( eso.ServiceName__c );
-			// update original external service record
+			// fetch original referenced external service record
 			ExternalService__c es = esIdMap.get( eso.ExternalServiceID__c );
 			// ensure controls and external service record are present
 			System.debug( 'ExternalServiceDispatcher.processESOlist.esrControl: ' + esrControl );
-			if ( esrControl != NULL && es != NULL ) {
+			if ( esrControl != NULL && String.isNotBlank( esrControl.ExternalServiceDispatcherClass__c ) && es != NULL ) {
 				// todo:  use interface https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_type.htm
 				es.ReplayID__c = eso.ReplayId;
-				// setup callout to Amrock-Bot service
-				WS_AmrockBot.serviceRequest newRequest = new WS_AmrockBot.serviceRequest();
+				// instantiate the appropriate dispatch handler class
+				Type handlerType = Type.forName( esrControl.ExternalServiceDispatcherClass__c );
+				DispatchHandler handler = ( DispatchHandler )handlerType.newInstance();
+				// setup callout to service
+				serviceRequest newRequest = new serviceRequest();
 				newRequest.control = esrControl;
 				newRequest.payload = eso.Payload__c;
 				// make callout
-				WS_AmrockBot.serviceResponse resp = WS_AmrockBot.invokeService( newRequest );
+				serviceResponse resp = handler.invokeService( newRequest );
 				if ( resp.success ) {
 					// good response, update external service record
 					es.Status__c = 'Request Sent';
@@ -86,6 +119,7 @@ public without sharing class ExternalServiceDispatcher {
 				// config missing for this external service
 				es.Status__c = 'Error/Exception';
 				es.ResponsePayload__c = 'External Service configuration missing for: ' + eso.ServiceName__c;
+				System.debug( 'External Service configuration missing for: ' + eso.ServiceName__c );
 			}
 		}
 		Database.update( esIdMap.values() );

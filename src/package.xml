@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
     <members>get_metadata</members>
@@ -300,6 +300,14 @@
     <members>zipDictionaryTest</members>
     <members>ZoomController</members>
     <members>ZoomControllerTest</members>
+    <members>AppPackageRequestHandler</members>
+    <members>CreditReportDomainService</members>
+    <members>CreditReportDomainService_Test</members>
+    <members>EnglishChannelClient</members>
+    <members>LoanExportUtil</members>
+    <members>LoanExportUtilTest</members>
+    <members>WS_CreditReport</members>
+    <members>WS_CreditReport_Test</members>
     <name>ApexClass</name>
   </types>
   <types>

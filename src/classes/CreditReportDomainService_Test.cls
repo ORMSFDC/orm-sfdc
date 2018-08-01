@@ -1,19 +1,17 @@
 /**
-* @description test class for ExternalServicePayloadResponder.cls
+* @description test class for CreditReportDomainService.cls
 *
 * @author Dennis Wilson
-* @date 05/20/2018
+* @date 06/29/2018
 *
 * changelog:
-* 06/27/2018: Dennis W. - update to match class changes
-*
 *
 */
 @IsTest
-private class ExternalServicePayloadResponder_Test {
+private class CreditReportDomainService_Test {
 
-	private static final String EXTERNAL_SERVICE_NAME = 'AmrockBot';
-	private static final String EXTERNAL_SERVICE_CLASSNAME = 'AmrockTitleFeesDomainService';
+	private static final String EXTERNAL_SERVICE_NAME = 'reos_credit_service';
+	private static final String EXTERNAL_SERVICE_CLASSNAME = 'CreditReportDomainService';
 	private static final String EXTERNAL_SERVICE_STATUS_RESPONSERECEIVED = 'Response Received';
 	private static final Decimal EXPECTED_CLOSING_COSTS = 1234;
 	private static final String EXPECTED_CLOSING_COST_URL = 'https://test.org';
@@ -26,17 +24,17 @@ private class ExternalServicePayloadResponder_Test {
 	}
 
 	/*******************************************************************************************************
-	* @description postive test of processESOlist method
+	* @description postive test of processResponse method
 	*/
-	static testMethod void testUpdateDomainRecordsPositive() {
+	static testMethod void testProcessResponsePositive() {
 
 		// disable outbound external service trigger processing
 		TriggerHandlerExternalServiceOutbound.tesoControlMap = testTESOmdtMap;
 		Test.startTest();
-		// override any ExternalServiceRegistry__mdt entries for ExternalServicePayloadResponder
-		ExternalServicePayloadResponder.esrControlMap = testESRcontrolMap;
-		// call invocable with request list
-		ExternalServicePayloadResponder.updateDomainRecords( new List<Id>{ testExternalService.Id } );
+		CreditReportDomainService handler = new CreditReportDomainService();
+		handler.processResponses(
+			new List<ExternalService__c>{ testExternalService }
+		);
 		Test.stopTest();
 		// check results
 		Loan_New__c checkLoan = [SELECT Id, Other_Closing_Costs__c, Other_Closing_Costs_URL__c FROM Loan_New__c LIMIT 1];
@@ -46,11 +44,49 @@ private class ExternalServicePayloadResponder_Test {
 		System.assertEquals( checkLoan.Other_Closing_Costs__c, EXPECTED_CLOSING_COSTS );
 		// expect closing cost url to be updated
 		System.assertEquals( checkLoan.Other_Closing_Costs_URL__c, EXPECTED_CLOSING_COST_URL );
-		// just for coverage
-		ExternalServicePayloadResponder.esrControlMap = NULL;
-		System.assertNotEquals( ExternalServicePayloadResponder.esrControlMap, NULL );
 	}
 
+	/*******************************************************************************************************
+	* @description test of processRecords method exceptions
+	*/
+/*
+	static testMethod void testProcessRecordsException() {
+
+		// disable outbound external service trigger processing
+		TriggerHandlerExternalServiceOutbound.tesoControlMap = testTESOmdtMap;
+		Test.startTest();
+		// create nested maps as per processRecords arg:  Map<Id, Map<Id, String>>
+		// outermap:  [key = ExternalService__c.SourceID__c] [value = innermap]
+		// innermap:  [key = ExternalService__c.Id] [value = ExternalService__c.ResponsePayload__c
+		Map<Id, Map<Id, String>> testMap = new Map<Id, Map<Id, String>>{
+			testExternalService.SourceID__c => new Map<Id, String> {
+				testExternalService.Id => testExternalService.ResponsePayload__c
+			}
+		};
+		// induce exception handling logic through use of embedded static variable
+		AmrockTitleFeesDomainService.testException = TRUE;
+		AmrockTitleFeesDomainService.processRecords( testMap );
+		Test.stopTest();
+		// check results
+		ExternalService__c checkES = [SELECT Id, ResponsePayload__c FROM ExternalService__c WHERE Id = :testExternalService.Id];
+		System.debug( '>>> checkES.ResponsePayload__c: ' + checkES.ResponsePayload__c );
+	}
+*/
+	/*******************************************************************************************************
+	* @description test of getPayloadTokenValue method exceptions
+	*/
+/*
+	static testMethod void testGetPayloadTokenValueException() {
+
+		Test.startTest();
+		// pass an impossible to parse JSON payload
+		String badPayload = '{ "bad" :  }';
+		String checkTokenValue = CreditReportDomainService.getPayloadTokenValue( badPayload, 'doesNotExist' );
+		System.debug( '>>> checkTokenValue: ' + checkTokenValue );
+		System.assertEquals( checkTokenValue, NULL );
+		Test.stopTest();
+	}
+*/
 	/***************************************************************************************************
 	*						 Initialize Test Data
 	*************************************************************************************************/
@@ -72,6 +108,7 @@ private class ExternalServicePayloadResponder_Test {
 					'{ "MasterLabel" : "' + EXTERNAL_SERVICE_NAME +
 						'", "NamedCredential__c" : "' + EXTERNAL_SERVICE_NAME +
 						'", "ExternalServiceClass__c" : "' + EXTERNAL_SERVICE_CLASSNAME +
+						'", "IsActive__c" : true' +
 						'" }',
 					ExternalServiceRegistry__mdt.class )
 			};
@@ -132,4 +169,5 @@ private class ExternalServicePayloadResponder_Test {
 		private set;
 	}
 */
+
 }

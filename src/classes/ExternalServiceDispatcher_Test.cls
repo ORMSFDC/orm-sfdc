@@ -5,6 +5,7 @@
 * @date 5/14/2018
 *
 * changelog:
+* 06/05/2018: DWilson - refactored to implement interface
 *
 */
 
@@ -132,7 +133,9 @@ private class ExternalServiceDispatcher_Test {
 		get {
 			testEScontrolMap = new Map<String, ExternalServiceRegistry__mdt> {
 				EXTERNAL_SERVICE_NAME => ( ExternalServiceRegistry__mdt ) JSON.deserialize(
-					'{ "MasterLabel" : "' + EXTERNAL_SERVICE_NAME + '", "NamedCredential__c" : "' + EXTERNAL_SERVICE_NAME + '" }',
+					'{ "MasterLabel" : "' + EXTERNAL_SERVICE_NAME + '", "NamedCredential__c" : "'
+						+ EXTERNAL_SERVICE_NAME + '", "IsActive__c" : true'
+						+ '", "ExternalServiceDispatcherClass__c" : "WS_AmrockBot" }',
 					ExternalServiceRegistry__mdt.class )
 			};
 			return testEScontrolMap;
