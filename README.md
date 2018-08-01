@@ -39,7 +39,7 @@ Complete SFDC codebase for ORM
 
 ## New SFDC object/field permissions needed for this feature branch
 
-- [ ] Grant visiblity on `X_Object__c.Y` for Z profile
+- [ ] Grant visiblity on `New_Loan__C.Loan_Payment_Plan_Term`
 
 
 
