@@ -3,7 +3,7 @@
  * @author Mike Gill
  * @date 28th June 2018
  * 
- * 07/27/18 MG/QDA BUG FIX - Tighten up tests for to explicitly check SFDC-222
+ * 07/27/18 MG/QDA BUG FIX - Tighten up tests for to explicitly check SFDC-222 (update)
  *
  */
 
@@ -71,10 +71,6 @@ private class LoanStatusHandlerTest {
 		System.assertEquals(loanStatusHistory[0].PreviousStatus__c, 'Funded');
 		System.assertEquals(loanStatusHistory[0].Status__c, 'Application Requested');
 		
-
-		
-
-       
 
     }
 
