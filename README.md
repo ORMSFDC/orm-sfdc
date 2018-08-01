@@ -18,7 +18,7 @@ Complete SFDC codebase for ORM
     1.  connect gearsets to slack channel (https://hooks.slack.com/services/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)
 1.  **Developer**: Checkout sprint branch (ex: `git checkout sprint7`)
 1.  **Developer**: Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
-1.  **Developer**: As you develop, make note of profiles and permission changes in your `README.md` (template below)
+1.  **Developer**: As you develop, make note of profiles and permission changes this `README.md` (template below)
 1.  **Developer**: Deploy to your sandbox via [mdapi-smart-deploy](https://github.com/rynop/mdapi-smart-deploy).
 1.  **Developer**: When ready to deliver to QA:
     1.  Run `npx mdapi-smart-deploy ---only-gen-package-xml`.  Manually merge the output of this into [src/package.xml](./src/package.xml) so the release manager knows the items you have changed.
@@ -34,8 +34,7 @@ Complete SFDC codebase for ORM
 1.  **Release manager**: will deploy `master` to production
 
 
-# Sprint feature branch README.md template
-
+# Sprint feature branch notes
 
 ## New SFDC object/field permissions needed for this feature branch
 
