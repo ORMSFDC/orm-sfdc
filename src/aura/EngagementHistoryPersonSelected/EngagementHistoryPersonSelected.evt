@@ -1,3 +1,0 @@
-<aura:event type="COMPONENT" description="Indicates a context change">
-	<aura:attribute name="index" type="Integer" />
-</aura:event>

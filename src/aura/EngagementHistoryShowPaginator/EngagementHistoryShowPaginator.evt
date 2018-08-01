@@ -1,3 +1,0 @@
-<aura:event type="APPLICATION" description="EngagementHistoryShowPaginator" access="public">
-    <aura:attribute name="showPaginator" type="Boolean" access="public"/>
-</aura:event>

@@ -1,4 +1,0 @@
-<aura:component controller='pi.OutlookComposeController'>
-<aura:attribute name="eo" type="Object" />
-    <div></div>
-</aura:component>
