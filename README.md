@@ -8,6 +8,7 @@ Complete SFDC codebase for ORM
 1.  `master` branch is **ALWAYS** production deployable.
 1.  Release manager (Mike) will create a gearsets CI to QA as soon as a new sprint branch is created.
 1.  Layouts and permissions can not be handled in this codebase, must be assigned in the SFDC setup web UI.  Devs will track these manually in their branch's `README.md` (see below).
+1.  You have [Instaled IntelliJ and Illuminated Cloud plugin](./intellij-setup.md)
 
 **Flow**
 
@@ -19,7 +20,7 @@ Complete SFDC codebase for ORM
 1.  **Developer**: Checkout sprint branch (ex: `git checkout sprint7`)
 1.  **Developer**: Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
 1.  **Developer**: Go to production SFDC UI and [Refresh your sandbox](https://help.salesforce.com/articleView?id=data_sandbox_refresh.htm&type=5) from the QA enviornment.  Make sure to choose `Create From: QA` and `Auto Activate`
-1.  **Developer**: Install [IntelliJ](https://www.jetbrains.com/idea/download) community edition, then install the [illuminated cloud](http://www.illuminatedcloud.com) plugin. **Make sure** to install `illuminated cloud 2` plugin.  This plugin will help you deploy and sync up code with your sandbox.  You will need to [purchase](http://www.illuminatedcloud.com/purchase) a illuminated cloud licence after 30 days.
+1.  **Developer**: [Hookup Illuminated Cloud](./intellij-setup.md) to your sandbox.
 1.  **Developer**: As you develop, make note of profiles and permission changes this `README.md` (template below)
 1.  **Developer**: When ready to deliver to QA:    
     1.  [rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) your branch on top of the sprint branch to pull in any changes made since you branched from it.  Ex: `git fetch origin && git rebase sprint7`
