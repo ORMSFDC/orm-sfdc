@@ -16,9 +16,6 @@ public without sharing class AppPackageRequestHandler {
 
 
             LoanExportUtil.LoanWithRelatedObjects_fnl loanExport = LoanExportUtil.getExportForLoanIdNew(l.Id);
-
-            Logger.debug(l.Name  +  ' = ' + JSON.serializePretty(loanExport));
-
             EnglishChannelClient.sendEvent('LoanAppSubmitted', loanExport, l.Id); // Can be turned off to reduce the stack
 
         }

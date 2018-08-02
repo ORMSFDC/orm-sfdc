@@ -3,7 +3,9 @@
  * @author GalaxE (Original Author)
  * @date 13th June 2018 (Updated by Mike)
  *
- * @todo    MG Code review & tidy - In progress
+ * @changelog MG SFDC-226 Updates to support not saving Attachment back into SFDC
+ *
+ * @todo    MG Code review & tidy - In progress (02/08/2018)
  *          MG Compare and Merge with other DevSandbox before deploying to Partial/Prod
  */
 global class EnglishChannelClient {
@@ -17,20 +19,14 @@ global class EnglishChannelClient {
      */
     public static void sendEvent(String eventName, Object eventPayload, String loanId) {
         Logger.push('sendEvent', 'EnglishChannelClient');
-		
-        
+
         String body = JSON.serialize(new Event(eventName, eventPayload));
 
-
-            Logger.debug('eventPayload =' + eventPayload);
-            Logger.debug('loanId ' + loanId);
-            Logger.debug('eventName ' + eventName);
         try {
             send(JSON.serialize(eventPayload), loanId);
         } catch (Exception ex) {
             Logger.debugException(ex);
         }
-		
         Logger.pop();
     }
 
@@ -43,10 +39,10 @@ global class EnglishChannelClient {
     @future(callout=true)
     private static void send(String body, String loanId) {
         Logger.push('send', 'EnglishChannelClient');
-        Logger.debug('json='+ body);
-
 
         HttpRequest request = new HttpRequest();
+
+        if (body != null) Logger.debug(body); // This is the JSON Log
 
         request.setEndpoint(EnglishChannelConfig__c.getOrgDefaults().ApiGatewayEndpoint__c); // @TODO MG Add null check
         Logger.debug('request setEndpoint '+ EnglishChannelConfig__c.getOrgDefaults().ApiGatewayEndpoint__c); // @TODO MG Move into CMT
@@ -77,7 +73,7 @@ global class EnglishChannelClient {
 
 
         //Logger.debug('response.getBody() '+ response.getBody().substring(0, 131000));
-		saveAppPackageToLoan(loanId, xmlstring);
+		//saveAppPackageToLoan(loanId, xmlstring); // SFDC-226 Not required to be saved back into SFDC
         Logger.pop(); // Popping further up stack
 
       
@@ -85,6 +81,7 @@ global class EnglishChannelClient {
     }
 
 	/**
+	*  Surplus to Requirements for now
 	 * @description New method saveAppPackageToLoan (chunk down original method, could require further splitting out...)
 	 * @param  loanId Salesforce record Id
 	 * @param  xmlstring xml response from Baydocs containing base64 attachment
@@ -94,8 +91,9 @@ global class EnglishChannelClient {
         /**
             @TODO Pending review by Mike
             @TODO Lift and shift into separate method
-       */
+        */
 
+        /*
         list< String> outxmlstring = new list< String>();
         string OrdNumber = '0';
         DOM.Document xmlDOC = new DOM.Document();
@@ -180,7 +178,7 @@ global class EnglishChannelClient {
         Loan_New__c lnstatus = [select loanstatus__c from loan_new__c where id = :loanId];
         lnstatus.LoanStatus__c = 'Waiting for Full Package';
         //update lnstatus; // @TODO MG/QDA commented out for dev testing
-        
+        */
         Logger.pop();
 
 
