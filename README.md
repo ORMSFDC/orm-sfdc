@@ -18,15 +18,15 @@ Complete SFDC codebase for ORM
     1.  connect gearsets to slack channel (https://hooks.slack.com/services/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)
 1.  **Developer**: Checkout sprint branch (ex: `git checkout sprint7`)
 1.  **Developer**: Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
-1.  **Developer**: As you develop, make note of profiles and permission changes in your `README.md` (template below)
-1.  **Developer**: Deploy to your sandbox via [mdapi-smart-deploy](https://github.com/rynop/mdapi-smart-deploy).
-1.  **Developer**: When ready to deliver to QA:
-    1.  Run `npx mdapi-smart-deploy ---only-gen-package-xml`.  Manually merge the output of this into [src/package.xml](./src/package.xml) so the release manager knows the items you have changed.
+1.  **Developer**: Go to production SFDC UI and [Refresh your sandbox](https://help.salesforce.com/articleView?id=data_sandbox_refresh.htm&type=5) from the QA enviornment.  Make sure to choose `Create From: QA` and `Auto Activate`
+1.  **Developer**: Install [IntelliJ](https://www.jetbrains.com/idea/download) community edition, then install the [illuminated cloud](http://www.illuminatedcloud.com) plugin.  This plugin will help you deploy and sync up code with your sandbox.  You will need to [purchase](http://www.illuminatedcloud.com/purchase) a illuminated cloud licence after 30 days.
+1.  **Developer**: As you develop, make note of profiles and permission changes this `README.md` (template below)
+1.  **Developer**: When ready to deliver to QA:    
     1.  [rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) your branch on top of the sprint branch to pull in any changes made since you branched from it.  Ex: `git fetch origin && git rebase sprint7`
     1.  If you have lots of un-necessary commit messages, please [squash them](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html) into a few concise messages.    
 1.  **Developer**: Send a github pull request from your branch to the sprint branch. 
 1.  **Release manager**: will review changes at a high level, and take note of `package.xml` updates.  He will then update the CI on the sprint branch to account for `package.xml` changes.
-1.  **Release manager**: merge PR, then **delete developer feature branch**.  CI deploy to QA will automatically run.
+1.  **Release manager**: merge PR, then **delete developer feature branch**.  CI deploy to QA will automatically run.  **NOTE**: The QA CI deploy only supports [these metadata types](https://docs.google.com/spreadsheets/d/1gbJW7k0mVKhb4Sb_IXZM345nGrnQcIXnIEL7V4NZ9o4/edit#gid=0).  If you need to deploy a type not on this list, ping Mike.
 1.  **Developer**: delete your feature branch. Ex: `git branch -d sprint7-ryan`
 1.  **Release manager**: Once biz has signed off on QA, gearsets CI will be updated to deploy to UAT
 1.  **Release manager**: Once biz signs off on UAT, Release manager will create a PR from feature branch to `master` (rebasing if necessary)
@@ -34,12 +34,11 @@ Complete SFDC codebase for ORM
 1.  **Release manager**: will deploy `master` to production
 
 
-# Sprint feature branch README.md template
-
+# Sprint feature branch notes
 
 ## New SFDC object/field permissions needed for this feature branch
 
-- [ ] Grant visiblity on `X_Object__c.Y` for Z profile
+- [ ] Grant visiblity on `New_Loan__C.Loan_Payment_Plan_Term`
 
 
 

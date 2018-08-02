@@ -73,3 +73,6 @@ scripts
 
 #MacOS stuff
 .DS_Store
+
+#Intellij
+.idea
