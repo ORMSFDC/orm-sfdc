@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Send App Package Request to Baydocs</description>
+        <name>Call_Request_App_Package</name>
+        <label>Call_Request App Package</label>
+        <locationX>430</locationX>
+        <locationY>323</locationY>
+        <actionName>AppPackageRequestHandler</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_BayDocs_Flag</targetReference>
+        </connector>
+        <inputParameters>
+            <name>loanIds</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <name>Sent_To_BayDocs</name>
+        <label>Sent To BayDocs</label>
+        <locationX>151</locationX>
+        <locationY>162</locationY>
+        <defaultConnector>
+            <targetReference>Send_Request_to_Baydocs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>SentToBayDocs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varSentToBayDocs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Already_sent_to_Baydocs</targetReference>
+            </connector>
+            <label>SentToBayDocs</label>
+        </rules>
+    </decisions>
+    <description>Quick Action - Request App Package</description>
+    <formulas>
+        <description>Display warning about Fees</description>
+        <name>DisplayWarningAboutFees</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!varTitleFeeIsComplete},&apos;&apos;,
+{!TitleFeesIsNotCompletedText} 
+)</expression>
+    </formulas>
+    <interviewLabel>Request App Package {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quick Action - Request App Package</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Lookup up fields from the Loan</description>
+        <name>Lookup_Loan_Details</name>
+        <label>Lookup Loan Details</label>
+        <locationX>151</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Sent_To_BayDocs</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Loan_New__c</object>
+        <outputAssignments>
+            <assignToReference>varLoanId</assignToReference>
+            <field>Name</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varSentToBayDocs</assignToReference>
+            <field>SentToBayDocs__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varTitleFeeIsComplete</assignToReference>
+            <field>TitleFeeIsComplete__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>Set Sent to BayDocs flag on Loan object to true</description>
+        <name>Update_BayDocs_Flag</name>
+        <label>Update BayDocs Flag</label>
+        <locationX>432</locationX>
+        <locationY>444</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>SentToBayDocs__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Loan_New__c</object>
+    </recordUpdates>
+    <screens>
+        <description>Warn user that app package has been sent to BayDocs</description>
+        <name>Already_sent_to_Baydocs</name>
+        <label>BayDocs Request</label>
+        <locationX>429</locationX>
+        <locationY>167</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>BayDocsRequestWarning</name>
+            <fieldText>Request to BayDocs has already been sent. Please contact Administrator for resending.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Present user with Request App Package screen</description>
+        <name>Send_Request_to_Baydocs</name>
+        <label>Send Request to BayDocs</label>
+        <locationX>152</locationX>
+        <locationY>319</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Call_Request_App_Package</targetReference>
+        </connector>
+        <fields>
+            <name>RequestAppPackageMsg</name>
+            <fieldText>Click next to send Loan {!varLoanId} to BayDocs
+
+{!DisplayWarningAboutFees}</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Lookup_Loan_Details</startElementReference>
+    <textTemplates>
+        <description>Display text related for Title Fees not completed</description>
+        <name>TitleFeesIsNotCompletedText</name>
+        <text>Please note that Title Fees has not been requested for this Loan. 
+
+Send to BayDocs without Title Fees or cancel the request and Request Title Fees before sending to Baydocs.</text>
+    </textTemplates>
+    <variables>
+        <description>Record Id from Quick Action</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable Loan Id (L-0000)</description>
+        <name>varLoanId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Sent to Baydoca Variable</description>
+        <name>varSentToBayDocs</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Title Fees Request Is Completed</description>
+        <name>varTitleFeeIsComplete</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

@@ -1,71 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
+    </actionOverrides><actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Loan_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-    </actionOverrides>
-    <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
-    <compactLayouts>
+    </actionOverrides><compactLayouts>
         <fullName>Loan_Layout</fullName>
         <fields>Name</fields>
         <fields>LoanNumber__c</fields>
         <fields>Client_Name__c</fields>
         <fields>LoanOfficer__c</fields>
         <label>Loan Layout</label>
-    </compactLayouts>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
-    <enableFeeds>true</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-    <fields>
+    </compactLayouts><fields>
         <fullName>Account_Number__c</fullName>
         <externalId>false</externalId>
         <label>Account Number</label>
@@ -76,8 +50,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Actual_Funding_Date__c</fullName>
         <externalId>false</externalId>
         <label>Actual Funding Date*</label>
@@ -86,8 +59,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Adjusted_Discount__c</fullName>
         <externalId>false</externalId>
         <label>Adjusted Discount Value</label>
@@ -99,8 +71,7 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Advanced_Fee_disclosures__c</fullName>
         <externalId>false</externalId>
         <label>Advanced Fee disclosures</label>
@@ -110,8 +81,7 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>2</visibleLines>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Alternate_Contact_Name__c</fullName>
         <externalId>false</externalId>
         <label>Alternate Contact Name</label>
@@ -122,8 +92,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Alternate_Contact_Phone_number__c</fullName>
         <externalId>false</externalId>
         <label>Alternate Contact Phone number</label>
@@ -132,8 +101,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Alternate_Contact_full_address__c</fullName>
         <externalId>false</externalId>
         <label>Alternate Contact full address</label>
@@ -144,8 +112,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Amount_Of_Other_Funds__c</fullName>
         <externalId>false</externalId>
         <label>Amount Of Other Funds</label>
@@ -156,8 +123,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Anticipated_Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Anticipated Closing Date*</label>
@@ -166,8 +132,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Application_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Requested Date*</label>
@@ -176,8 +141,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Application_Requested_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Req Date</label>
@@ -186,8 +150,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Application_Signed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Signed Date</label>
@@ -196,19 +159,17 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Appraisal_Delivery__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <inlineHelpText>Please check this box for &apos;YES&apos;</inlineHelpText>
+        <inlineHelpText>Please check this box for 'YES'</inlineHelpText>
         <label>Client Waived Appraisal Delivery Period</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Appraisal_Effective_Date__c</fullName>
         <externalId>false</externalId>
         <label>Appraisal Effective Date*</label>
@@ -217,8 +178,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Appraisal_Expiration_Date__c</fullName>
         <externalId>false</externalId>
         <formula>Appraisal_Effective_Date__c  + 180</formula>
@@ -228,8 +188,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Appraisal_Ordered_Date__c</fullName>
         <externalId>false</externalId>
         <label>Appraisal Ordered Date*</label>
@@ -238,8 +197,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Appraisal_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Appraisal Received Date*</label>
@@ -248,8 +206,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Appraisal_Scheduled_Date__c</fullName>
         <externalId>false</externalId>
         <label>Appraisal Scheduled Date*</label>
@@ -258,8 +215,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Appraisal_sent_to_Client_Date__c</fullName>
         <externalId>false</externalId>
         <label>Appraisal sent to Client Date*</label>
@@ -268,8 +224,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Assets_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Assets Amount</label>
@@ -280,8 +235,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Awaiting_Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Awaiting Closing Date</label>
@@ -290,8 +244,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>BayDocsOrderNumber__c</fullName>
         <externalId>false</externalId>
         <label>BayDocsOrderNumber</label>
@@ -302,8 +255,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>BrokerCompensation__c</fullName>
         <externalId>false</externalId>
         <label>Total Compensation</label>
@@ -314,8 +266,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>BrokerOrigination__c</fullName>
         <externalId>false</externalId>
         <label>BrokerOrigination*</label>
@@ -326,8 +277,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Broker_Origination__c</fullName>
         <externalId>false</externalId>
         <label>Broker Origination</label>
@@ -338,8 +288,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>CashAvaliabletoClient__c</fullName>
         <externalId>false</externalId>
         <label>CashAvaliabletoClient*</label>
@@ -350,8 +299,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Check_If_Title_is_also_Held_As__c</fullName>
         <externalId>false</externalId>
         <label>Check If Title is also Held As Trust</label>
@@ -376,8 +324,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Children_Under_the_age_of_6_living_in_th__c</fullName>
         <externalId>false</externalId>
         <label>Children Under the age of 6 living in th</label>
@@ -402,8 +349,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Client_Name__c</fullName>
         <externalId>false</externalId>
         <label>Client Name*</label>
@@ -414,11 +360,10 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Client_s_credit_score__c</fullName>
         <externalId>false</externalId>
-        <label>Client&apos;s credit score</label>
+        <label>Client's credit score</label>
         <precision>3</precision>
         <required>false</required>
         <scale>0</scale>
@@ -427,8 +372,7 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Closed_Awaiting_Funding_Date__c</fullName>
         <externalId>false</externalId>
         <label>Closed – Awaiting Funding Date</label>
@@ -437,8 +381,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Actual Closing Date*</label>
@@ -447,8 +390,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Cond_Approved_Days__c</fullName>
         <externalId>false</externalId>
         <formula>TODAY() - Conditionally_Approved_Date__c</formula>
@@ -460,8 +402,7 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Condition__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -474,8 +415,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Conditionally_Approved_Date__c</fullName>
         <externalId>false</externalId>
         <label>Conditionally Approved Date</label>
@@ -484,8 +424,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Condominium_FHA_Approved__c</fullName>
         <externalId>false</externalId>
         <label>Condominium FHA Approved</label>
@@ -510,8 +449,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Condominium_Name__c</fullName>
         <externalId>false</externalId>
         <label>Condominium Name</label>
@@ -522,8 +460,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Confirm_Credit_Reference_Number__c</fullName>
         <externalId>false</externalId>
         <label>Confirm Credit Reference Number</label>
@@ -534,8 +471,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Contact Email</label>
@@ -545,8 +481,7 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Contact_Name__c</fullName>
         <externalId>false</externalId>
         <label>Contact Name</label>
@@ -557,8 +492,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Contact_Phone_Number_LoanDetails__c</fullName>
         <externalId>false</externalId>
         <label>Contact Phone Number LoanDetails*</label>
@@ -567,8 +501,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Contract_Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Contract Closing Date</label>
@@ -577,8 +510,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Contract_Date__c</fullName>
         <externalId>false</externalId>
         <label>Contract Date</label>
@@ -587,8 +519,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Cooling_Off_Notice_Signed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Cooling Off Notice Signed Date</label>
@@ -597,8 +528,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Counseling_Date__c</fullName>
         <externalId>false</externalId>
         <label>Counseling Date*</label>
@@ -607,8 +537,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Counseling_Expiration_Date__c</fullName>
         <externalId>false</externalId>
         <formula>Counseling_Date__c + 180</formula>
@@ -618,8 +547,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>CreditIsComplete__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -628,8 +556,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Credit_Indicator__c</fullName>
         <externalId>false</externalId>
         <label>Credit Indicator</label>
@@ -654,8 +581,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Credit_Reference_Number__c</fullName>
         <externalId>false</externalId>
         <label>Credit Reference Number</label>
@@ -666,8 +592,7 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Credit_Reissue_Vendor__c</fullName>
         <externalId>false</externalId>
         <label>Credit Reissue Vendor</label>
@@ -881,8 +806,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Credit_Report_Date__c</fullName>
         <externalId>false</externalId>
         <label>Credit Report Date*</label>
@@ -891,8 +815,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Credit_Report_type__c</fullName>
         <externalId>false</externalId>
         <label>Credit Report type</label>
@@ -917,8 +840,7 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Credit_to_Borrower__c</fullName>
         <externalId>false</externalId>
         <label>Credit to Borrower</label>
@@ -930,8 +852,7 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Current_User_is_Assigend_PCS__c</fullName>
         <externalId>false</externalId>
         <formula>PCS_at_Loan_Level__c =  $User.Id ||  Related_Partner__r.Assigned_PCS__c =  $User.Id</formula>
@@ -941,8 +862,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Denied_Date__c</fullName>
         <externalId>false</externalId>
         <label>Denied Date</label>
@@ -951,8 +871,7 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Discounted_Value__c</fullName>
         <externalId>false</externalId>
         <label>Discounted Value</label>
@@ -964,26 +883,24 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>DocViewer_Link__c</fullName>
-        <description>This link cannot be edited - it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support&quot;.</description>
+        <description>This link cannot be edited - it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</description>
         <externalId>false</externalId>
         <formula>IF( 
 ISBLANK(LoanNumber__c ), 
-HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;, &apos;&apos;), 
-HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c , &apos;Please click here to view the documents&apos;) 
+HYPERLINK("http://documentviewer/documentviewer/#/", ''), 
+HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please click here to view the documents') 
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>This link cannot be edited - &quot;it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support&quot;.</inlineHelpText>
+        <inlineHelpText>This link cannot be edited - "it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</inlineHelpText>
         <label>DocViewer Link</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Driver_License_and_Social_Security_Card__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -992,8 +909,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Earnest_Money_Deposit__c</fullName>
         <externalId>false</externalId>
         <label>Earnest Money Deposit</label>
@@ -1004,8 +920,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Estimate_of_Appraised_Value__c</fullName>
         <externalId>false</externalId>
         <label>Estimate of Appraised Value</label>
@@ -1016,8 +931,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>ExpectedInterestRate__c</fullName>
         <externalId>false</externalId>
         <label>ExpectedInterestRate*</label>
@@ -1028,8 +942,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Extend_Application_Time__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1038,8 +951,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>FHACaseNumber__c</fullName>
         <externalId>false</externalId>
         <label>FHACaseNumber*</label>
@@ -1050,8 +962,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>FHA_Case_Number_Date__c</fullName>
         <externalId>false</externalId>
         <label>FHA Case Number Date*</label>
@@ -1060,8 +971,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>FHA_Case_Number_Expiration__c</fullName>
         <externalId>false</externalId>
         <formula>FHA_Case_Number_Date__c + 180</formula>
@@ -1071,8 +981,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Final_Goals_Call_Date__c</fullName>
         <externalId>false</externalId>
         <label>Final Goals Call Date</label>
@@ -1081,8 +990,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Final_Goals_Call__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1091,8 +999,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>FinancialAssessmentResult__c</fullName>
         <externalId>false</externalId>
         <label>FinancialAssessmentResult*</label>
@@ -1127,8 +1034,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Flood_Ordered_Date__c</fullName>
         <externalId>false</externalId>
         <label>Flood Ordered Date*</label>
@@ -1137,8 +1043,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Flood_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Flood Received Date*</label>
@@ -1147,8 +1052,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>FollowUp_Call_Date__c</fullName>
         <externalId>false</externalId>
         <label>FollowUp Call Date</label>
@@ -1157,8 +1061,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>FollowUp_Call__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1167,8 +1070,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Full_Application_Received_Incomplete_Dat__c</fullName>
         <externalId>false</externalId>
         <label>Full Application Received Incomplete Dat</label>
@@ -1177,8 +1079,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Full_Package_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Full Package Received Date</label>
@@ -1187,8 +1088,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Fully_Signed_Application_Package__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1197,8 +1097,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Funded_Date__c</fullName>
         <externalId>false</externalId>
         <label>Funded Date</label>
@@ -1207,8 +1106,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>FundtoClose__c</fullName>
         <externalId>false</externalId>
         <label>FundtoClose*</label>
@@ -1219,8 +1117,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Gift_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Gift Amount</label>
@@ -1231,8 +1128,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Gross_Rental_Income__c</fullName>
         <externalId>false</externalId>
         <label>Gross Rental Income</label>
@@ -1243,8 +1139,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Gross_Value__c</fullName>
         <externalId>false</externalId>
         <label>Gross Value</label>
@@ -1256,8 +1151,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>HECM_Counseling_Certificate__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1266,8 +1160,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>HOA_Monthly_Dues__c</fullName>
         <externalId>false</externalId>
         <label>HOA Monthly Dues</label>
@@ -1278,8 +1171,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>HOA_PUD_Condo_Fees__c</fullName>
         <externalId>false</externalId>
         <label>Monthly HOA, PUD, Condo Fees</label>
@@ -1290,8 +1182,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>HOI_Effective_Date__c</fullName>
         <externalId>false</externalId>
         <label>HOI Effective Date</label>
@@ -1300,8 +1191,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Hazard_Insurance__c</fullName>
         <externalId>false</externalId>
         <label>Annual Hazard Insurance</label>
@@ -1312,8 +1202,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Household_Members__c</fullName>
         <externalId>false</externalId>
         <label>Household Members</label>
@@ -1378,8 +1267,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>If_yes_Name_of_POA__c</fullName>
         <externalId>false</externalId>
         <label>If yes, Name of POA</label>
@@ -1390,8 +1278,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>In_Processing_Date__c</fullName>
         <externalId>false</externalId>
         <label>In Processing Date</label>
@@ -1400,8 +1287,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Income_and_Asset_Documentation__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1410,8 +1296,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Incomplete_Date__c</fullName>
         <externalId>false</externalId>
         <label>Incomplete Date</label>
@@ -1420,8 +1305,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>InitialInterestRate__c</fullName>
         <externalId>false</externalId>
         <label>InitialInterestRate*</label>
@@ -1432,8 +1316,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>InitialUnpaidPrincipalBalance__c</fullName>
         <externalId>false</externalId>
         <label>InitialUnpaidPrincipalBalance*</label>
@@ -1444,8 +1327,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Initial_Call_Date__c</fullName>
         <externalId>false</externalId>
         <label>Initial Call Date</label>
@@ -1454,8 +1336,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Initial_Call__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1464,8 +1345,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Insurance_Binder_Ordered_Date__c</fullName>
         <externalId>false</externalId>
         <label>Insurance Binder Ordered Date*</label>
@@ -1474,8 +1354,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Insurance_Binder_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Insurance Binder Received Date*</label>
@@ -1484,8 +1363,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Interview_Date__c</fullName>
         <externalId>false</externalId>
         <label>Interview Date</label>
@@ -1494,8 +1372,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsActiveFlag__c</fullName>
         <defaultValue>true</defaultValue>
         <externalId>false</externalId>
@@ -1504,8 +1381,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsAssetsFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1514,8 +1390,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsClientFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1524,8 +1399,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsCreditInfoFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1534,8 +1408,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsDeclarationFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1544,8 +1417,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsEmploymentFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1554,8 +1426,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsIncomeFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Field for income tab</description>
@@ -1565,8 +1436,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsLaibilitiesFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1575,8 +1445,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsLoanContactFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1585,8 +1454,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsLoanCreatedByLoanProcessor__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1595,8 +1463,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsLoanDetailsFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1605,8 +1472,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsLoanFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1615,8 +1481,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsOrderAppraisalFlag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1625,8 +1490,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>IsSubjectPropertyFilled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1635,8 +1499,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Is_Application_Filled_Flag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1645,8 +1508,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Is_CashFlow_Viewed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1655,8 +1517,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Is_Client_Exist__c</fullName>
         <defaultValue>false</defaultValue>
         <description>To check whether the client exists or not</description>
@@ -1666,8 +1527,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Is_Loan_Created_Manually__c</fullName>
         <defaultValue>true</defaultValue>
         <description>Is the loan is create from FNM or from Manual.</description>
@@ -1677,8 +1537,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Is_there_a_POA_Name_Representing_and__c</fullName>
         <externalId>false</externalId>
         <label>Is there a POA? (Name, Representing and</label>
@@ -1703,8 +1562,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Legal_Description_of_Property__c</fullName>
         <externalId>false</externalId>
         <label>Legal Description of Property</label>
@@ -1714,8 +1572,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Lien_Balance__c</fullName>
         <externalId>false</externalId>
         <label>Lien Balance*</label>
@@ -1726,8 +1583,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Lien_Creditor__c</fullName>
         <externalId>false</externalId>
         <label>Lien Creditor</label>
@@ -1738,8 +1594,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Life_Expectancy__c</fullName>
         <externalId>false</externalId>
         <label>Life Expectancy*</label>
@@ -1750,8 +1605,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>LineOfCreditAfterFirstYear__c</fullName>
         <externalId>false</externalId>
         <label>LineOfCreditAfterFirstYear*</label>
@@ -1762,8 +1616,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>LoanCompleteFlag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1772,8 +1625,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>LoanNumber__c</fullName>
         <externalId>false</externalId>
         <label>LoanNumber*</label>
@@ -1784,8 +1636,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>LoanOfficer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1797,8 +1648,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>LoanStatus__c</fullName>
         <externalId>false</externalId>
         <label>LoanStatus*</label>
@@ -1894,12 +1744,11 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Number__c</fullName>
         <description>This is created to redirect to Loan Record when we click on Loan Number</description>
         <externalId>false</externalId>
-        <formula>HYPERLINK( LEFT($Api.Partner_Server_URL_260, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_260)) &amp; Id, LoanNumber__c)</formula>
+        <formula>HYPERLINK( LEFT($Api.Partner_Server_URL_260, FIND( '/services', $Api.Partner_Server_URL_260)) &amp; Id, LoanNumber__c)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Loan Number</label>
         <required>false</required>
@@ -1907,8 +1756,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Company_Identifier__c</fullName>
         <externalId>false</externalId>
         <label>Loan Origination Company Identifier</label>
@@ -1919,8 +1767,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Company_s_AddressNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Partner__r.BillingStreet</formula>
@@ -1931,8 +1778,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Company_s_CityNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Partner__r.BillingCity</formula>
@@ -1943,8 +1789,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Company_s_NameNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Partner__r.Name</formula>
@@ -1955,8 +1800,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Company_s_StateNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Partner__r.BillingState</formula>
@@ -1967,8 +1811,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Company_s_Zip_CodeNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Partner__r.BillingPostalCode</formula>
@@ -1979,8 +1822,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Fee_Calculation__c</fullName>
         <externalId>false</externalId>
         <label>Loan Origination Fee_Calculation</label>
@@ -2004,8 +1846,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Origination_Fee__c</fullName>
         <externalId>false</externalId>
         <label>Loan Origination Fee</label>
@@ -2016,8 +1857,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Originator_Identifier__c</fullName>
         <externalId>false</externalId>
         <label>Loan Originator Identifier</label>
@@ -2028,8 +1868,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Originator_s_First_NameNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Individual__r.FirstName</formula>
@@ -2040,8 +1879,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Originator_s_First_Name__c</fullName>
         <externalId>false</externalId>
         <label>Loan Originator’s First Name</label>
@@ -2052,8 +1890,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Originator_s_Last_NameNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Individual__r.LastName</formula>
@@ -2064,8 +1901,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Originator_s_Last_Name__c</fullName>
         <externalId>false</externalId>
         <label>Loan Originator’s Last Name</label>
@@ -2076,8 +1912,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Originator_s_Phone_NumberNew__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Individual__r.Office_Phone__c</formula>
@@ -2088,8 +1923,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Payment_Plan_Term__c</fullName>
         <externalId>false</externalId>
         <label>Loan_Payment_Plan_Term</label>
@@ -2100,8 +1934,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Processor__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -2138,8 +1971,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Loan_Status_Change_Date__c</fullName>
         <externalId>false</externalId>
         <label>Loan Status Change Date</label>
@@ -2148,8 +1980,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>MandatoryObligations__c</fullName>
         <externalId>false</externalId>
         <label>Mandatory Obligations*</label>
@@ -2160,8 +1991,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Margin__c</fullName>
         <externalId>false</externalId>
         <label>Margin*</label>
@@ -2230,8 +2060,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>MonthlyPaymentavailabletoClient__c</fullName>
         <externalId>false</externalId>
         <label>MonthlyPaymentavailabletoClient*</label>
@@ -2242,8 +2071,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Monthly_Flood_Insurance_Premium__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Flood Insurance Premium</label>
@@ -2254,8 +2082,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Monthly_Ground_Rents_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Ground Rents Amount</label>
@@ -2266,8 +2093,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Monthly_Mortgage_Payment__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Mortgage Payment</label>
@@ -2278,8 +2104,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Monthly_PUD_Fees_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Monthly PUD Fees Amount</label>
@@ -2290,8 +2115,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Mortgage_Applied_for__c</fullName>
         <externalId>false</externalId>
         <label>Mortgage Applied for</label>
@@ -2337,8 +2161,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Mortgage_and_Liens__c</fullName>
         <externalId>false</externalId>
         <label>Mortgage and Liens</label>
@@ -2349,8 +2172,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Name_of_Company__c</fullName>
         <externalId>false</externalId>
         <label>Name of Company</label>
@@ -2361,8 +2183,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Net_Rental_Income__c</fullName>
         <externalId>false</externalId>
         <label>Net Rental Income</label>
@@ -2373,8 +2194,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Next_Tax_Due_Date__c</fullName>
         <externalId>false</externalId>
         <label>Next Tax Due Date*</label>
@@ -2383,8 +2203,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>No_of_Units__c</fullName>
         <externalId>false</externalId>
         <label>No of Units</label>
@@ -2396,11 +2215,10 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>ORMS_AE__c</fullName>
         <externalId>false</externalId>
-        <formula>Related_Partner__r.Account_Executive_Name__r.FirstName + &apos; &apos; + Related_Partner__r.Account_Executive_Name__r.LastName</formula>
+        <formula>Related_Partner__r.Account_Executive_Name__r.FirstName + ' ' + Related_Partner__r.Account_Executive_Name__r.LastName</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>ORMS AE</label>
         <required>false</required>
@@ -2408,8 +2226,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Originating_Loan_Officer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -2421,8 +2238,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Other_Closing_Costs_URL__c</fullName>
         <description>Title, Closing &amp; Recording Fees PDF</description>
         <externalId>false</externalId>
@@ -2433,8 +2249,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Url</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Other_Closing_Costs__c</fullName>
         <description>Other Closing Costs</description>
         <externalId>false</externalId>
@@ -2447,8 +2262,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Other_ReDisclosure_Reason__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>This field gets cleared after saving the record. To view the details and reason, please go into the ReDisclosure History related list.</inlineHelpText>
@@ -2459,8 +2273,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>2</visibleLines>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Other_Relationship_Alternative_Contact__c</fullName>
         <description>Relationship to Alternative Contact</description>
         <externalId>false</externalId>
@@ -2472,8 +2285,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Other_Source_Of_Funds__c</fullName>
         <externalId>false</externalId>
         <label>Other Source Of Funds</label>
@@ -2484,8 +2296,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>PCS_at_Loan_Level__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -2518,11 +2329,10 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>PCS_at_Partner_Level__c</fullName>
         <externalId>false</externalId>
-        <formula>Related_Partner__r.Assigned_PCS__r.FirstName + &apos; &apos; +  Related_Partner__r.Assigned_PCS__r.LastName</formula>
+        <formula>Related_Partner__r.Assigned_PCS__r.FirstName + ' ' +  Related_Partner__r.Assigned_PCS__r.LastName</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>PCS at Partner Level</label>
         <required>false</required>
@@ -2530,8 +2340,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Paid_any_fees_to_the_partner__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Paid any fees to the partner for any services, excluding third party services</inlineHelpText>
@@ -2557,8 +2366,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Partner_State__c</fullName>
         <externalId>false</externalId>
         <formula>Related_Partner__r.BillingState</formula>
@@ -2568,8 +2376,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Payoff_Expiration_Date__c</fullName>
         <externalId>false</externalId>
         <label>Payoff Expiration Date</label>
@@ -2578,8 +2385,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Payoff_Order_Date__c</fullName>
         <externalId>false</externalId>
         <label>Payoff Order Date*</label>
@@ -2588,8 +2394,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>PipeLine_BestContactTime__c</fullName>
         <externalId>false</externalId>
         <label>PipeLine_BestContactTime*</label>
@@ -2600,8 +2405,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>PipeLine_BestContact__c</fullName>
         <externalId>false</externalId>
         <label>PipeLine_BestContact*</label>
@@ -2612,8 +2416,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>PipeLine_OtherContactFlag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2622,8 +2425,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Post_Suspense_Call_Date__c</fullName>
         <externalId>false</externalId>
         <label>Post Suspense Call Date</label>
@@ -2632,8 +2434,7 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Post_Suspense_Call__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2642,14 +2443,13 @@ HYPERLINK(&quot;http://documentviewer/documentviewer/#/&quot;&amp; LoanNumber__c
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Preferred_Contact_Name__c</fullName>
         <externalId>false</externalId>
         <formula>IF(  
- ISPICKVAL(Preferred_Contact_Type__c, &apos;Loan Officer&apos;), HYPERLINK(&quot;/&quot;+ LoanOfficer__c , LoanOfficer__r.FirstName + &quot; &quot; + LoanOfficer__r.LastName), 
+ ISPICKVAL(Preferred_Contact_Type__c, 'Loan Officer'), HYPERLINK("/"+ LoanOfficer__c , LoanOfficer__r.FirstName + " " + LoanOfficer__r.LastName), 
 IF(  
- ISPICKVAL(Preferred_Contact_Type__c, &apos;Loan Processor&apos;), HYPERLINK(&quot;/&quot;+ Loan_Processor__c , Loan_Processor__r.FirstName + &quot; &quot; + Loan_Processor__r.LastName),&apos;No Preferred Contact&apos;))</formula>
+ ISPICKVAL(Preferred_Contact_Type__c, 'Loan Processor'), HYPERLINK("/"+ Loan_Processor__c , Loan_Processor__r.FirstName + " " + Loan_Processor__r.LastName),'No Preferred Contact'))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Preferred Contact Name</label>
         <required>false</required>
@@ -2657,8 +2457,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Preferred_Contact_Type__c</fullName>
         <externalId>false</externalId>
         <label>Preferred Contact Type</label>
@@ -2683,8 +2482,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Present_Market_Value__c</fullName>
         <externalId>false</externalId>
         <label>Present Market Value</label>
@@ -2695,8 +2493,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>PrincipalLimit__c</fullName>
         <externalId>false</externalId>
         <label>PrincipalLimit*</label>
@@ -2707,8 +2504,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>ProceedsAvailableFirstYear__c</fullName>
         <defaultValue>0</defaultValue>
         <externalId>false</externalId>
@@ -2720,8 +2516,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Product_Type__c</fullName>
         <externalId>false</externalId>
         <label>Loan Type</label>
@@ -2746,8 +2541,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>PropertyAppraisalValue__c</fullName>
         <externalId>false</externalId>
         <label>PropertyAppraisalValue*</label>
@@ -2758,8 +2552,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Property_Charge_Payment_History_Result__c</fullName>
         <externalId>false</externalId>
         <label>Property Charge Payment History Result</label>
@@ -2770,8 +2563,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Property_Held_as__c</fullName>
         <externalId>false</externalId>
         <label>Property Held as</label>
@@ -2801,8 +2593,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Property_Title_is_Held_in_These_Names__c</fullName>
         <externalId>false</externalId>
         <label>Property Title is Held in These Names</label>
@@ -2813,8 +2604,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Property__c</fullName>
         <externalId>false</externalId>
         <label>Property Expenses As Percent Of Income</label>
@@ -2825,8 +2615,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Purchase_Price__c</fullName>
         <externalId>false</externalId>
         <label>Purchase Price</label>
@@ -2837,8 +2626,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Purpose_of_Loan__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>User can select more than one option. Please hold the Ctrl button on the keyboard to select more than one option.</inlineHelpText>
@@ -2895,8 +2683,7 @@ IF(
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Rate_Type__c</fullName>
         <externalId>false</externalId>
         <label>Rate Type</label>
@@ -2921,8 +2708,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Rate__c</fullName>
         <externalId>false</externalId>
         <label>Fixed Rate</label>
@@ -2934,8 +2720,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>ReDisclosure_Reason__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>This field gets cleared after saving the record. To view the details and reason, please go into the ReDisclosure History related list.</inlineHelpText>
@@ -3006,8 +2791,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Re_disclosure_Date__c</fullName>
         <externalId>false</externalId>
         <label>Re-disclosure Date*</label>
@@ -3016,8 +2800,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Real_Estate_Taxes__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Real Estate Taxes</label>
@@ -3028,8 +2811,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Recent_Re_disclosure_Date__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>To view the Re-disclosure history, please see the Re-disclosure History section under Related.</inlineHelpText>
@@ -3039,8 +2821,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Related_Individual__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -3053,8 +2834,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Related_Partner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -3067,8 +2847,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Relationship_to_Alternative_Contact__c</fullName>
         <externalId>false</externalId>
         <label>Relationship to Alternative Contact</label>
@@ -3143,8 +2922,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Remove_Dups_Loans__c</fullName>
         <externalId>false</externalId>
         <formula>1</formula>
@@ -3156,8 +2934,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>RepairEstimate__c</fullName>
         <externalId>false</externalId>
         <label>RepairEstimate*</label>
@@ -3168,8 +2945,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>RepairSetAside__c</fullName>
         <externalId>false</externalId>
         <label>RepairSetAside*</label>
@@ -3180,8 +2956,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Residence_Type__c</fullName>
         <externalId>false</externalId>
         <label>Residence Type</label>
@@ -3206,8 +2981,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Residential_Income_Required__c</fullName>
         <externalId>false</externalId>
         <label>Residual l Income Required*</label>
@@ -3218,8 +2992,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Residual_Income_Fulfilled__c</fullName>
         <externalId>false</externalId>
         <label>Percent Of Residual Income Fulfilled*</label>
@@ -3230,8 +3003,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Sale_Date__c</fullName>
         <externalId>false</externalId>
         <label>Sale Date</label>
@@ -3240,8 +3012,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Sale_Proceeds__c</fullName>
         <externalId>false</externalId>
         <label>Sale Proceeds</label>
@@ -3252,8 +3023,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Scheduled_Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Scheduled Closing Date*</label>
@@ -3262,8 +3032,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Selected_Loan_Payment_Plan__c</fullName>
         <externalId>false</externalId>
         <label>Selected Loan Payment Plan</label>
@@ -3318,8 +3087,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Servicing_Fee__c</fullName>
         <externalId>false</externalId>
         <label>Servicing Fee</label>
@@ -3331,8 +3099,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Source_Of_Funds__c</fullName>
         <externalId>false</externalId>
         <label>Source Of Funds</label>
@@ -3366,8 +3133,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Square_Footage__c</fullName>
         <externalId>false</externalId>
         <label>Square Footage</label>
@@ -3378,8 +3144,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Status_Of_Current_Address__c</fullName>
         <externalId>false</externalId>
         <label>Status Of Current Address</label>
@@ -3414,8 +3179,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>SubjectPropertyFlag__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -3424,8 +3188,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Subject_Property_Address__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property Address*</label>
@@ -3436,8 +3199,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Subject_Property_City__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property City</label>
@@ -3448,8 +3210,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Subject_Property_County__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property County</label>
@@ -3460,8 +3221,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Subject_Property_State__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property State</label>
@@ -3474,8 +3234,7 @@ IF(
             <restricted>true</restricted>
             <valueSetName>US_States</valueSetName>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Subject_Property_Type__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property Type</label>
@@ -3556,8 +3315,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Subject_Property_Zip_Code__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property Zip Code</label>
@@ -3568,8 +3326,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Suspended_Date__c</fullName>
         <externalId>false</externalId>
         <label>Suspended Date</label>
@@ -3578,20 +3335,19 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Team__c</fullName>
         <externalId>false</externalId>
-        <formula>IF (ORMS_AE__c  = &quot;Kathy Martinez&quot; , &quot;Braveheart&quot;,
-	IF (ORMS_AE__c = &quot;Josh Posner&quot; , &quot;Braveheart&quot;,
-		IF (ORMS_AE__c = &quot;Brian Burgan&quot; , &quot;Braveheart&quot;,
-			IF (ORMS_AE__c = &quot;James Raymond&quot; , &quot;Braveheart&quot;,
-				IF (ORMS_AE__c = &quot;Jesse Hanson&quot; , &quot;Braveheart&quot;,
-					IF ( ORMS_AE__c = &quot;Matt Smith&quot; , &quot;wORMS&quot;,
-						IF (ORMS_AE__c = &quot;Nathaniel Crusoe&quot; , &quot;wORMS&quot;,
-							IF (ORMS_AE__c = &quot;Scott Clarke&quot; , &quot;wORMS&quot;,
-								IF (ORMS_AE__c = &quot;Brad Stieber&quot; , &quot;wORMS&quot;,
-									IF (ORMS_AE__c = &quot;Josh Evink&quot; , &quot;wORMS&quot;, &quot; &quot;
+        <formula>IF (ORMS_AE__c  = "Kathy Martinez" , "Braveheart",
+	IF (ORMS_AE__c = "Josh Posner" , "Braveheart",
+		IF (ORMS_AE__c = "Brian Burgan" , "Braveheart",
+			IF (ORMS_AE__c = "James Raymond" , "Braveheart",
+				IF (ORMS_AE__c = "Jesse Hanson" , "Braveheart",
+					IF ( ORMS_AE__c = "Matt Smith" , "wORMS",
+						IF (ORMS_AE__c = "Nathaniel Crusoe" , "wORMS",
+							IF (ORMS_AE__c = "Scott Clarke" , "wORMS",
+								IF (ORMS_AE__c = "Brad Stieber" , "wORMS",
+									IF (ORMS_AE__c = "Josh Evink" , "wORMS", " "
 
 
 
@@ -3613,8 +3369,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Tell_the_story__c</fullName>
         <externalId>false</externalId>
         <label>Tell the story</label>
@@ -3624,8 +3379,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>20</visibleLines>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>This_application_was_taken_by__c</fullName>
         <externalId>false</externalId>
         <label>This application was taken by</label>
@@ -3660,18 +3414,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>TitleFeeIsComplete__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>TitleFeeIsComplete</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Title_Company__c</fullName>
         <externalId>false</externalId>
         <label>Title Company</label>
@@ -3682,8 +3425,7 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Title_Ordered_Date__c</fullName>
         <externalId>false</externalId>
         <label>Title Ordered Date*</label>
@@ -3692,8 +3434,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Title_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Title Received Date*</label>
@@ -3702,8 +3443,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>TotalLesa__c</fullName>
         <externalId>false</externalId>
         <label>TotalLesa*</label>
@@ -3714,8 +3454,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Total_Asset__c</fullName>
         <externalId>false</externalId>
         <formula>Adjusted_Discount__c  + Discounted_Value__c +  Gross_Value__c</formula>
@@ -3727,8 +3466,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Total_Assets__c</fullName>
         <externalId>false</externalId>
         <label>Total Assets</label>
@@ -3739,8 +3477,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Total_Expenses__c</fullName>
         <externalId>false</externalId>
         <label>Total Expenses*</label>
@@ -3751,8 +3488,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Total_Income__c</fullName>
         <externalId>false</externalId>
         <label>Total Income For Each Client*</label>
@@ -3763,8 +3499,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Total_Monthly_Property_Charge__c</fullName>
         <externalId>false</externalId>
         <formula>Total_Property_Charges__c +  Property__c</formula>
@@ -3776,8 +3511,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Total_Monthly_Property_Charges__c</fullName>
         <externalId>false</externalId>
         <label>Total Monthly Property Charges</label>
@@ -3788,8 +3522,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Total_Property_Charges__c</fullName>
         <externalId>false</externalId>
         <label>Total Property Charges</label>
@@ -3800,8 +3533,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Underwriting_clear_to_close_date__c</fullName>
         <externalId>false</externalId>
         <label>Underwriting clear to close date</label>
@@ -3810,8 +3542,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Using_Title_Source_as_the_Closing_Agent__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Using AmRock as the Closing Agent/Escrow Officer and Title Company?</inlineHelpText>
@@ -3837,8 +3568,7 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Waiting_for_Full_App_Date__c</fullName>
         <externalId>false</externalId>
         <label>Waiting for Full App Date</label>
@@ -3847,8 +3577,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Waiting_for_Full_Package_Date__c</fullName>
         <externalId>false</externalId>
         <label>Waiting for Full Package Date</label>
@@ -3857,8 +3586,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Withdrawn_Date__c</fullName>
         <externalId>false</externalId>
         <label>Withdrawn Date</label>
@@ -3867,8 +3595,7 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
+    </fields><fields>
         <fullName>Year_Built__c</fullName>
         <externalId>false</externalId>
         <label>Year Built</label>
@@ -3879,74 +3606,47 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <label>Loan</label>
-    <listViews>
-        <fullName>All_Active_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Subject_Property_State__c</columns>
-        <columns>Title_Company__c</columns>
-        <columns>PropertyAppraisalValue__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>ORMS_AE__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Loan_Status_Change_Date__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Team__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LoanStatus__c</field>
-            <operation>equals</operation>
-            <value>Proposal,Waiting for Full Package,Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
-        </filters>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>All Active Loans</label>
-    </listViews>
-    <listViews>
-        <fullName>All_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Subject_Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>PropertyAppraisalValue__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>ORMS_AE__c</columns>
-        <columns>Related_Partner__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>LAST_UPDATE</columns>
-        <columns>OWNER.FIRST_NAME</columns>
-        <columns>OWNER.LAST_NAME</columns>
-        <columns>Full_Package_Received_Date__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>LoanStatus__c</field>
-            <operation>notEqual</operation>
-            <value>Sandbox</value>
-        </filters>
-        <label>All Loans</label>
-    </listViews>
-    <nameField>
+    </fields><fields>
+        <fullName>SentToBayDocs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>App Package Request has been sent to Baydocs</description>
+        <externalId>false</externalId>
+        <inlineHelpText>App Package Request has been sent to Baydocs</inlineHelpText>
+        <label>Sent to BayDocs</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>TitleFeeEstimateResponse__c</fullName>
+        <description>Saved response from TitleFee response for reuse by Baydocs request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Saved response from TitleFee response for reuse by Baydocs request.</inlineHelpText>
+        <label>TitleFeeEstimateResponse</label>
+        <length>65536</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields><fields>
+        <fullName>TitleFeeIsComplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Title Fee Is Complete - Set when Title Fees are successfully returned from Amrock Service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title Fee Is Complete - Set when Title Fees are successfully returned from Amrock Service</inlineHelpText>
+        <label>Title Fee is Complete</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>Loan_Layout</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Loan</label><nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Loan ID</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Loans</pluralLabel>
-    <searchLayouts>
+    </nameField><pluralLabel>Loans</pluralLabel><searchLayouts>
         <customTabListAdditionalFields>Client_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IsActiveFlag__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>LoanNumber__c</customTabListAdditionalFields>
@@ -3980,110 +3680,148 @@ IF(
         <searchResultsAdditionalFields>LoanStatus__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Individual__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Partner__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
-    <sharingReasons>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><listViews>
+        <fullName>All_Active_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>Title_Company__c</columns>
+        <columns>PropertyAppraisalValue__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Team__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Proposal,Waiting for Full Package,Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans</label>
+    </listViews><listViews>
+        <fullName>All_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>PropertyAppraisalValue__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Related_Partner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Full_Package_Received_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Sandbox</value>
+        </filters>
+        <label>All Loans</label>
+    </listViews><sharingReasons>
         <fullName>Executive__c</fullName>
         <label>Executive</label>
-    </sharingReasons>
-    <sharingReasons>
+    </sharingReasons><sharingReasons>
         <fullName>LoanProcessor__c</fullName>
         <label>Loan Processor</label>
-    </sharingReasons>
-    <sharingReasons>
+    </sharingReasons><sharingReasons>
         <fullName>Loan_Officer__c</fullName>
         <label>Loan Officer</label>
-    </sharingReasons>
-    <sharingReasons>
+    </sharingReasons><sharingReasons>
         <fullName>Loan_Processor__c</fullName>
         <label>Loan Processor</label>
-    </sharingReasons>
-    <sharingReasons>
+    </sharingReasons><sharingReasons>
         <fullName>Manager__c</fullName>
         <label>Manager</label>
-    </sharingReasons>
-    <sharingReasons>
+    </sharingReasons><sharingReasons>
         <fullName>Origination_Loan_Officer__c</fullName>
         <label>Origination Loan Officer</label>
-    </sharingReasons>
-    <validationRules>
+    </sharingReasons><validationRules>
         <fullName>Closing_and_ReDisclosure_dates</fullName>
         <active>true</active>
         <description>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</description>
         <errorConditionFormula>(Recent_Re_disclosure_Date__c + 3) &gt;  Closing_Date__c</errorConditionFormula>
         <errorDisplayField>Closing_Date__c</errorDisplayField>
         <errorMessage>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</errorMessage>
-    </validationRules>
-    <validationRules>
+    </validationRules><validationRules>
         <fullName>Loan_Cannot_Update_If_LS_Incomplete</fullName>
         <active>true</active>
         <description>Loan Cannot Updated If Loan Status is Incomplete</description>
         <errorConditionFormula>AND( 
 NOT(ISNEW()), 
-ISPICKVAL(PRIORVALUE(LoanStatus__c),&apos;Incomplete&apos;),
-and($Profile.Name != &quot;Portal Loan Processors&quot;,
-				$Profile.Name != &quot;Portal Loan Processor&quot;,
-$Profile.Name != &quot;ORM Partners&quot;,
-				$Profile.Name != &quot;ORM Partner&quot;,
-$Profile.Name != &quot;System Administrator&quot;
+ISPICKVAL(PRIORVALUE(LoanStatus__c),'Incomplete'),
+and($Profile.Name != "Portal Loan Processors",
+				$Profile.Name != "Portal Loan Processor",
+$Profile.Name != "ORM Partners",
+				$Profile.Name != "ORM Partner",
+$Profile.Name != "System Administrator"
 )
 )</errorConditionFormula>
         <errorMessage>This loan has not yet been submitted. Once the application is submitted, the Loan Status will change to Proposal and the loan will become editable.</errorMessage>
-    </validationRules>
-    <validationRules>
+    </validationRules><validationRules>
         <fullName>Loan_Origination_fee_greater_than_6000</fullName>
         <active>true</active>
         <description>Loan Origination fee must be less than or equal to  $6000</description>
         <errorConditionFormula>Loan_Origination_Fee__c &gt; 6000</errorConditionFormula>
         <errorDisplayField>Loan_Origination_Fee__c</errorDisplayField>
         <errorMessage>Loan origination fee cannot be more than $6000</errorMessage>
-    </validationRules>
-    <validationRules>
+    </validationRules><validationRules>
         <fullName>Loan_Status_and_Counseling_Date</fullName>
         <active>true</active>
         <description>Loan Status cannot be changed until 8 days after the Counseling Date.</description>
-        <errorConditionFormula>((Today() - Counseling_Date__c )&lt;8)&amp;&amp;(ISPICKVAL(Subject_Property_State__c,&apos;California&apos;)) &amp;&amp; (!( 
-(ISPICKVAL(LoanStatus__c,&apos;Proposal&apos;)) || 
-(ISPICKVAL(LoanStatus__c,&apos;Incomplete&apos;)) ||(ISPICKVAL(LoanStatus__c,&apos;Waiting for Full Package&apos;)) || 
-(ISPICKVAL(LoanStatus__c,&apos;Application Package Received&apos;))) 
+        <errorConditionFormula>((Today() - Counseling_Date__c )&lt;8)&amp;&amp;(ISPICKVAL(Subject_Property_State__c,'California')) &amp;&amp; (!( 
+(ISPICKVAL(LoanStatus__c,'Proposal')) || 
+(ISPICKVAL(LoanStatus__c,'Incomplete')) ||(ISPICKVAL(LoanStatus__c,'Waiting for Full Package')) || 
+(ISPICKVAL(LoanStatus__c,'Application Package Received'))) 
 )</errorConditionFormula>
         <errorDisplayField>LoanStatus__c</errorDisplayField>
         <errorMessage>Loan Status cannot be changed until 8 days after the Counseling Date.</errorMessage>
-    </validationRules>
-    <validationRules>
+    </validationRules><validationRules>
         <fullName>Must_fill_ReDisclosure_change_reason</fullName>
         <active>true</active>
         <description>Must specify a reason while changing the ReDisclosure Date</description>
-        <errorConditionFormula>ISCHANGED(Recent_Re_disclosure_Date__c) &amp;&amp; (ispickval( ReDisclosure_Reason__c ,&apos;&apos;) &amp;&amp;  isblank(Other_ReDisclosure_Reason__c))|| isblank(Recent_Re_disclosure_Date__c) &amp;&amp; (!ispickval( ReDisclosure_Reason__c ,&apos;&apos;) ||  !isblank(Other_ReDisclosure_Reason__c))</errorConditionFormula>
+        <errorConditionFormula>ISCHANGED(Recent_Re_disclosure_Date__c) &amp;&amp; (ispickval( ReDisclosure_Reason__c ,'') &amp;&amp;  isblank(Other_ReDisclosure_Reason__c))|| isblank(Recent_Re_disclosure_Date__c) &amp;&amp; (!ispickval( ReDisclosure_Reason__c ,'') ||  !isblank(Other_ReDisclosure_Reason__c))</errorConditionFormula>
         <errorDisplayField>ReDisclosure_Reason__c</errorDisplayField>
-        <errorMessage>Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting &apos;Other&apos; in the picklist.</errorMessage>
-    </validationRules>
-    <validationRules>
+        <errorMessage>Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting 'Other' in the picklist.</errorMessage>
+    </validationRules><validationRules>
         <fullName>ReDiscloure_Other_Reason_fill_textbox</fullName>
         <active>true</active>
-        <description>If &apos;Other&apos; is selected in the ReDisclosure picklist, then the &apos;Other ReDisclosure Reason&apos; text box must be filled.</description>
-        <errorConditionFormula>ISPICKVAL( ReDisclosure_Reason__c , &apos;Other&apos;) &amp;&amp;  ISBLANK( Other_ReDisclosure_Reason__c )</errorConditionFormula>
+        <description>If 'Other' is selected in the ReDisclosure picklist, then the 'Other ReDisclosure Reason' text box must be filled.</description>
+        <errorConditionFormula>ISPICKVAL( ReDisclosure_Reason__c , 'Other') &amp;&amp;  ISBLANK( Other_ReDisclosure_Reason__c )</errorConditionFormula>
         <errorDisplayField>Other_ReDisclosure_Reason__c</errorDisplayField>
-        <errorMessage>If &apos;Other&apos; is selected in the ReDisclosure picklist, then the &apos;Other ReDisclosure Reason&apos; text box must be filled.</errorMessage>
-    </validationRules>
-    <validationRules>
+        <errorMessage>If 'Other' is selected in the ReDisclosure picklist, then the 'Other ReDisclosure Reason' text box must be filled.</errorMessage>
+    </validationRules><validationRules>
         <fullName>closing_and_appraisal_sent_to_clientDate</fullName>
         <active>true</active>
         <description>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</description>
         <errorConditionFormula>Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
         <errorDisplayField>Closing_Date__c</errorDisplayField>
         <errorMessage>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
-    </validationRules>
-    <validationRules>
+    </validationRules><validationRules>
         <fullName>validateAccountNumber</fullName>
         <active>true</active>
-        <errorConditionFormula>AND(Account_Number__c!=&apos;&apos;,
-OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Account_Number__c, &quot;^[1-9]([0-9]{1,45}$)&quot;))))</errorConditionFormula>
+        <errorConditionFormula>AND(Account_Number__c!='',
+OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Account_Number__c, "^[1-9]([0-9]{1,45}$)"))))</errorConditionFormula>
         <errorDisplayField>Account_Number__c</errorDisplayField>
         <errorMessage>Account Number should be a valid number</errorMessage>
-    </validationRules>
-    <visibility>Public</visibility>
-    <webLinks>
+    </validationRules><webLinks>
         <fullName>Export_Excel</fullName>
         <availability>online</availability>
         <displayType>button</displayType>
@@ -4093,8 +3831,7 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <openType>replace</openType>
         <protected>false</protected>
         <url>/apex/Loan_Export_excel?id={!Loan_New__c.Id}</url>
-    </webLinks>
-    <webLinks>
+    </webLinks><webLinks>
         <fullName>Export_to_XML</fullName>
         <availability>online</availability>
         <displayType>button</displayType>
@@ -4104,5 +3841,4 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <openType>replace</openType>
         <protected>false</protected>
         <url>/apex/Loan_Xml_download?id={!Loan_New__c.Id}</url>
-    </webLinks>
-</CustomObject>
+    </webLinks></CustomObject>

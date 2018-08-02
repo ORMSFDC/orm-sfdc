@@ -2700,6 +2700,7 @@
     <members>TriggerNonBorrowingResident</members>
     <members>UpdateDatesTrigger</members>
     <members>userTrigger</members>
+    <members>LoanAppSubmittedAfter</members>
     <name>ApexTrigger</name>
   </types>
   <types>
@@ -3439,6 +3440,8 @@
     <members>Updating_the_Record_Type_of_Account_Object-4</members>
     <members>Updating_the_Record_Type_of_Account_Object-5</members>
     <members>Withdrawn_Incomplete_Broker_Apps-1</members>
+    <members>QuickActionRequestAppPackage-10</members>
+    <members>QuickActionRequestTitleFees-2</members>
     <name>Flow</name>
   </types>
   <types>
