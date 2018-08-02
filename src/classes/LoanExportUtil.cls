@@ -6,6 +6,7 @@
 
 * changelog:
 * 07/26/2018: DWilson - construct fees section from captured title fee response: Loan_New__c.TitleFeeEstimateResponse__c
+* 02/08/2018: MGill -  Change Baydocs Param to not return Doc/PDF'SubmitOrderForProcessing'=> '0',
 *
 * @todo - SFDC-212 Create new section for Real Estate Schedule seperate from the liabilities
 * @todo - SFDC-213 Add Title Fees
@@ -607,7 +608,7 @@ global class LoanExportUtil {
 
         'UserID'=> '4738 ',
         'XMLPassword'=> 'lR7i61T74c3h0746Q8S7zC2Nt1DF1m16',
-        'SubmitOrderForProcessing'=> '1',
+        'SubmitOrderForProcessing'=> '0',
         'WaitForPDF'=> '1',
         'LenderID'=> '2364',
         //  'LoanType'=> '103',

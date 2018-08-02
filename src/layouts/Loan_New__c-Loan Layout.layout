@@ -55,11 +55,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CreditIsComplete__c</field>
+                <field>TitleFeeIsComplete__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>TitleFeeIsComplete__c</field>
+                <field>SentToBayDocs__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
