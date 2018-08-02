@@ -103,6 +103,7 @@
                                     <ui:inputSelectOption text="Term" label="Term" />
                                     <ui:inputSelectOption text="Modified Term" label="Modified Term" />
                                     <ui:inputSelectOption text="Tenure" label="Tenure" />
+                                    <ui:inputSelectOption text="Line of Credit" label="Line of Credit" />
                                     <ui:inputSelectOption text="Modified Tenure" label="Modified Tenure" />
                                     <ui:inputSelectOption text="Undecided" label="Undecided" />                                  
                                 </ui:inputSelect>
