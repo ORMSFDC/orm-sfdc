@@ -12,7 +12,6 @@ Complete SFDC codebase for ORM
 
 **Flow**
 
-1.  **All**: Clone this repo
 1.  **Release manager**: every new sprint:
     1.  creates a git branch for the sprint (ex: `git push origin sprint7`)
     1.  creates a gearsets CI job, connecting it to QA (ignoring `package.xml`) 
