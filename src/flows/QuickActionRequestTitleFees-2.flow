@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Call Invocable Method for Service AmrockBot</description>
+        <name>RequestTitleFeesService</name>
+        <label>Request Title Fees Service</label>
+        <locationX>654</locationX>
+        <locationY>303</locationY>
+        <actionName>ExternalServicePayloadGenerator</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>externalServiceType</name>
+            <value>
+                <stringValue>AmrockBot</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>objectAPIName</name>
+            <value>
+                <stringValue>Loan_New__c</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>idList</name>
+            <value>
+                <elementReference>collection</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>externalServiceId</assignToReference>
+            <name>output</name>
+        </outputParameters>
+    </actionCalls>
+    <assignments>
+        <description>Assign recordId to collection</description>
+        <name>AssignIdtoService</name>
+        <label>Assign Id to Service</label>
+        <locationX>471</locationX>
+        <locationY>304</locationY>
+        <assignmentItems>
+            <assignToReference>collection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>RequestTitleFeesService</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Decide if Title Fees required fields have been set</description>
+        <name>TitleFeesValid</name>
+        <label>Title Fees Valid?</label>
+        <locationX>263</locationX>
+        <locationY>175</locationY>
+        <defaultConnector>
+            <targetReference>RequestTitleFees</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>TitleFeesMissingFields</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Loan.Subject_Property_Zip_Code__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loan.Subject_Property_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loan.Estimate_of_Appraised_Value__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RequestNotValid</targetReference>
+            </connector>
+            <label>Title Fees Missing Fields</label>
+        </rules>
+    </decisions>
+    <description>Quick Action - Request Title Fees</description>
+    <interviewLabel>Quick Action - Request Title Fees {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quick Action - Request Title Fees</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Lookup Loan details specific for Title Fees</description>
+        <name>GetLoan</name>
+        <label>Get Loan</label>
+        <locationX>265</locationX>
+        <locationY>66</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>TitleFeesValid</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>Loan_New__c</object>
+        <outputReference>Loan</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Subject_Property_Type__c</queriedFields>
+        <queriedFields>Subject_Property_Zip_Code__c</queriedFields>
+        <queriedFields>Estimate_of_Appraised_Value__c</queriedFields>
+    </recordLookups>
+    <screens>
+        <description>Title Fees Request would not be valid if sent to AWS</description>
+        <name>RequestNotValid</name>
+        <label>Request Not Valid</label>
+        <locationX>652</locationX>
+        <locationY>177</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>TitleFeesRequiredMsg</name>
+            <fieldText>Following fields are required when requesting Title Fees 
+
+Subject Property Type: {!Loan.Subject_Property_Type__c}
+Subject Property Zip: {!Loan.Subject_Property_Zip_Code__c}
+Est Appraised Value: {!Loan.Estimate_of_Appraised_Value__c}
+
+Please click next and correct any missing values for the above.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Request Title Fees Message</description>
+        <name>RequestTitleFees</name>
+        <label>Request Title Fees</label>
+        <locationX>263</locationX>
+        <locationY>303</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>AssignIdtoService</targetReference>
+        </connector>
+        <fields>
+            <name>Request_Text</name>
+            <fieldText>Title, Recording, and Closing fees have been requested for the loan. Please refresh the loan in approximately 60 seconds to view the fees.
+
+Press next to continue.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>GetLoan</startElementReference>
+    <variables>
+        <name>collection</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>externalServiceId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Loan object</description>
+        <name>Loan</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Loan_New__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>
