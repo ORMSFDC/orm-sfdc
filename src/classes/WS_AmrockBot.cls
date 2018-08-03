@@ -24,9 +24,9 @@ public without sharing class WS_AmrockBot implements ExternalServiceDispatcher.D
 	*/
 	public static ExternalServiceDispatcher.serviceResponse invokeService( ExternalServiceDispatcher.serviceRequest serReq ) {
 
-		System.debug( '>>> WS_CreditReport.invokeService called... ' );
+		System.debug( '>>> WS_AmrockBot.invokeService called... ' );
 		Logger.push( 'invokeService', 'WS_AmrockBot' );
-		Logger.debug( 'WS_CreditReport.invokeService called...' );
+		Logger.debug( 'WS_AmrockBot.invokeService called...' );
 		ExternalServiceDispatcher.serviceResponse serResp = new ExternalServiceDispatcher.serviceResponse();
 		String serviceName = serReq.control.NamedCredential__c;
 		// ensure enough to make request
