@@ -3,11 +3,18 @@
  * @author GalaxE
  * @date 08/03/18 (MG/QDA)
  * @changelog Limited Refactoring, Added Logging Framework Hooks, Split out logic into new methods
- * @todo
+ * @todo see inline
  */
 
 global class ScenarioExportUtil {
 
+    /**
+     *
+     * @description get Data for Scenario
+     * @param scenarioId
+     * @return ScenarioWithRelatedObjects
+     * @todo Unnecessary/duplicate  SOQL out of here entirely and pass in the data from lookupController
+     */
     public static ScenarioWithRelatedObjects getExportForscenarioId(String scenarioId) {
         Logger.push('ScenarioWithRelatedObjects', 'ScenarioExportUtil');
 
@@ -42,6 +49,7 @@ global class ScenarioExportUtil {
         Scenario__c loanlead = Database.query('SELECT ' + joinKeys(SCENARIO_FIELDS) + ' FROM Scenario__c WHERE Id = :scenarioId');
 
         ScenarioExport.loanlead = objectToMap(loanlead, SCENARIO_FIELDS, loanlead);
+
         ScenarioExport.loanlead.put('Individual_id', loanlead1.PartnerId__r.ContactId);
         ScenarioExport.loanlead.put('Partner_id', loanlead1.PartnerId__r.Contact.AccountId);
         ScenarioExport.loanlead.put('Individual_Name', loanlead1.PartnerId__r.Contact.Name);
