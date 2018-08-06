@@ -40,6 +40,27 @@ Complete SFDC codebase for ORM
 
 - [ ] Grant visiblity on `New_Loan__C.Loan_Payment_Plan_Term`
 
+## New ExternalServiceRegistries entries
+
+- [ ] Add `BaydocsProductRateUpdate`
+    * Label: `BaydocsProductRateUpdate`
+    * Name:  `BaydocsProductRateUpdate`
+    * Named Credential:  `BaydocsAPI`
+    * Description: `API to update product rates, such as HELO LIBOR swap`
+    * Is Active: `yes`
+    * username: `4738`
+    * password: `see postman`
+    * rest of fields empty
+
+## New NamedCredential entries
+
+- [ ] `BaydocsAPI`
+    * Label: `BaydocsAPI`
+    * Name:  `BaydocsAPI`
+    * URL:  QA: `https://test.baydocs.net` Production: `https://www.baydocs.net`
+    * Callout Options: `leave all unchecked`
+
+
 
 
 
