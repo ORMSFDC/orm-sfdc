@@ -10,7 +10,8 @@
 *             MGill SFDC-216 Condominium name is not in the JSON when requesting app package
 *             MGill SFDC-227 Remove Liabilities from BayDocs JSON entirely
 *
-* @todo - Replace with CMT Config (Long term)
+*             @TODO SOQL Query Consolidation
+*
 */
 global class LoanExportUtil {
 
@@ -65,29 +66,55 @@ global class LoanExportUtil {
         Loan_New__c loan = Database.query('SELECT ' + joinKeys(LOAN_FIELDS) + ' FROM Loan_New__c WHERE Id = :loanId');
         loanExport.loan = objectToMap(loan, LOAN_FIELDS);
 
-        // add related individual contact NMLS (loan officer NMLS)
-        Loan_New__c loan2 = [select Related_Individual__c, Related_Individual__r.Contact_NMLS__c,Loan_Originator_s_First_NameNew__c,Loan_Originator_s_Last_NameNew__c, TitleFeeEstimateResponse__c from Loan_New__c WHERE Id = :loanId];
-        loanExport.loan.put('loan_officer_nmls', loan2.Related_Individual__r.Contact_NMLS__c);
+        // @TODO Could be combined with loanRateTypeQuery
+        Loan_New__c loan2 = [SELECT Related_Individual__c,
+                                    Related_Individual__r.Contact_NMLS__c,
+                                    Loan_Originator_s_First_NameNew__c,
+                                    Loan_Originator_s_Last_NameNew__c,
+                                    TitleFeeEstimateResponse__c
+                                FROM Loan_New__c WHERE Id = :loanId];
+
+        // Process related individual if Loan has one
+        if (loan2!=null && loan2.Related_Individual__c !=null){
+            loanExport.loan.put('loan_officer_nmls', loan2.Related_Individual__r.Contact_NMLS__c);
+            String relatedIndividualId = loan2.Related_Individual__c;
+
+            // @TODO Could be combined with loanRateTypeQuery
+            Contact relatedIndividual = [SELECT Email,
+                    MailingStreet,
+                    MailingCity,
+                    MailingCountry,
+                    MailingPostalCode,
+                    MailingState,
+                    Account.Phone ,
+                    Account.Account_Executive_Name__c,
+                    Account.Company_NMLS_ID__c,
+                    Account.Holding_Company_Federal_Tax_ID_Number_EI__c
+            FROM Contact WHERE Id = :relatedIndividualId];
+
+            if (relatedIndividual != null){
+                loanExport.loan.put('account_executive_id', relatedIndividual.Account.Account_Executive_Name__c);
+                loanExport.loan.put('company_nmls_id', relatedIndividual.Account.Company_NMLS_ID__c);
+                loanExport.loan.put('Holding_Company_Federal_Tax_ID_Number_EI', relatedIndividual.Account.Holding_Company_Federal_Tax_ID_Number_EI__c);
+                loanExport.loan.put('Loan_Originator_Full_Name', loan2.Loan_Originator_s_First_NameNew__c+' '+loan2.Loan_Originator_s_Last_NameNew__c);
+                loanExport.loan.put('Individual_City', relatedIndividual.MailingCity);
+                loanExport.loan.put('Individual_Country', relatedIndividual.MailingCountry);
+                loanExport.loan.put('Individual_Postal_Code', relatedIndividual.MailingPostalCode);
+                loanExport.loan.put('Individual_State', relatedIndividual.MailingState);
+                loanExport.loan.put('Individual_Street_Address', relatedIndividual.MailingStreet);
+                loanExport.loan.put('Individual_EmailAddress', relatedIndividual.email);
+                loanExport.loan.put('Individual_EmailAddress', relatedIndividual.email);
+                loanExport.loan.put('Partner_PhoneNumber', relatedIndividual.Account.phone);
+            }
+
+        }
+
 
         // add ORM account executive ID
-        String relatedIndividualId = loan2.Related_Individual__c;
-        Contact relatedIndividual = [select email,MailingStreet,	MailingCity,	MailingCountry,	MailingPostalCode,	MailingState,Account.phone , Account.Account_Executive_Name__c,Account.Company_NMLS_ID__c,Account.Holding_Company_Federal_Tax_ID_Number_EI__c from Contact where Id = :relatedIndividualId];
-        loanExport.loan.put('account_executive_id', relatedIndividual.Account.Account_Executive_Name__c);
-        loanExport.loan.put('company_nmls_id', relatedIndividual.Account.Company_NMLS_ID__c);
-        loanExport.loan.put('Holding_Company_Federal_Tax_ID_Number_EI', relatedIndividual.Account.Holding_Company_Federal_Tax_ID_Number_EI__c);
-        loanExport.loan.put('Loan_Originator_Full_Name', loan2.Loan_Originator_s_First_NameNew__c+' '+loan2.Loan_Originator_s_Last_NameNew__c);
 
-        //  loanExport.loan.put('Individual_City', relatedIndividual.MailingAddress);
-        loanExport.loan.put('Individual_City', relatedIndividual.MailingCity);
-        loanExport.loan.put('Individual_Country', relatedIndividual.MailingCountry);
-        loanExport.loan.put('Individual_Postal_Code', relatedIndividual.MailingPostalCode);
-        loanExport.loan.put('Individual_State', relatedIndividual.MailingState);
-        loanExport.loan.put('Individual_Street_Address', relatedIndividual.MailingStreet);
-        loanExport.loan.put('Individual_EmailAddress', relatedIndividual.email);
-        loanExport.loan.put('Individual_EmailAddress', relatedIndividual.email);
-        loanExport.loan.put('Partner_PhoneNumber', relatedIndividual.Account.phone);
 
-	    // add title fees section from cached response on loan record
+
+	    // SFDC-213 add title fees section from cached response on loan record
 	    // only attempt to process if appears well-formed
 	    if ( String.isNotBlank( loan2.TitleFeeEstimateResponse__c )
 		    && loan2.TitleFeeEstimateResponse__c.contains( AMROCK_TITLEFEE_SUMMARY )
@@ -111,27 +138,15 @@ global class LoanExportUtil {
         for (Client__c client : clients) {
             loanExport.clients.add(objectToMap(client, CLIENT_FIELDS));
         }
-        //  client__c cn = [select Non_Borrowing_Spouse_Name__c from client__c WHERE LoanId__c = :loanId];
 
-        for ( client__c c : clients){
+
+        for ( Client__c c : clients){
             try{
-                //String s1 = 'Force comp latform';
-                string s1 = c.Non_Borrowing_Spouse_Name__c;
-                //  system.debug('s1 ->'+s1);
 
+                String s1 = c.Non_Borrowing_Spouse_Name__c;
                 String s2 = s1.substringAfter(' ');
-                string s3= s2.substringAfter(' ');
-                //  system.debug('s2 '+s2);
-                //  system.debug('s3 '+s3);
+                String s3= s2.substringAfter(' ');
 
-                if (String.isBlank(s3)){
-                    system.debug('l1 last name -->'+s2);
-                    system.debug('first name ---> '+ s1.substringBeforeLast(' '));
-                }else
-                {
-                    system.debug('l2 Last Name -->'+s3);
-                    system.debug('first name ---> '+ s1.substringBeforeLast(' '));
-                }
             }catch(exception ex){}
         }
 
@@ -151,10 +166,12 @@ global class LoanExportUtil {
             loanExport.assets.add(objectToMap(asset, ASSET_FIELDS));
         }
 
+        /* SFDC-227
         List<Liability__c> liabilities = Database.query('SELECT ' + joinKeys(LIABILITY_FIELDS) + ' FROM Liability__c WHERE RelatedLoan__c = :loanId');
         for (Liability__c liability : liabilities) {
             loanExport.liabilities.add(objectToMap(liability, LIABILITY_FIELDS));
         }
+        */
 
         List<Declaration__c> declarations = Database.query('SELECT ' + joinKeys(DECLARATION_FIELDS) + ' FROM Declaration__c WHERE DeclarationLoan__c = :loanId');
         for (Declaration__c declaration : declarations) {
@@ -171,6 +188,7 @@ global class LoanExportUtil {
 
         //License__c data
         //new code Added by Ravi
+        // @TODO SOQL Query Consolidation Required
         Loan_New__C ln = [select Related_Partner__c,Subject_property_state__c,Originating_Loan_Officer__r.contactId from Loan_New__c where id=:loanId limit 1];
         String AccId = ln.Related_Partner__c ;
         string stateis = ln.Subject_property_state__c;
@@ -244,7 +262,7 @@ global class LoanExportUtil {
         public List<Map<String, Object>> nonBorrowingResidents {get; set;}
         public List<Map<String, Object>> incomes {get; set;}
         public List<Map<String, Object>> assets {get; set;}
-        public List<Map<String, Object>> liabilities {get; set;}
+        /* SFDC-227  public List<Map<String, Object>> liabilities {get; set;} */
         public List<Map<String, Object>> declarations {get; set;}
         public List<Map<String, Object>> statelicenses{get; set;}//Added by Ravi
         public List<Map<String, Object>> employments{get; set;}//Added by Ravi
@@ -256,7 +274,7 @@ global class LoanExportUtil {
             nonBorrowingResidents = new List<Map<String, Object>>();
             incomes = new List<Map<String, Object>>();
             assets = new List<Map<String, Object>>();
-            liabilities = new List<Map<String, Object>>();
+            /* SFDC-227 liabilities = new List<Map<String, Object>>(); */
             declarations = new List<Map<String, Object>>();
             statelicenses= new List<Map<String, Object>>();//Added by Ravi
             employments= new List<Map<String, Object>>();//Added by Ravi
@@ -470,6 +488,7 @@ global class LoanExportUtil {
         'Vested_Interest_in_Retirement_Fund__c'       => 'vested_interest_in_retirement_fund'
     };
 
+    /* SFDC-227
     private static final Map<String, String> LIABILITY_FIELDS = new Map<String, String>{
         'Account_Number__c'                         => 'account_number',
         'Additional_Remarks__c'                     => 'additional_remarks',
@@ -516,6 +535,7 @@ global class LoanExportUtil {
         'Type__c'                                   => 'type',
         'Zip__c'                                    => 'zip'
     };
+    */
 
     private static final Map<String, String> DECLARATION_FIELDS = new Map<String, String>{
         'Bankruptcy__c'                             => 'bankruptcy',
