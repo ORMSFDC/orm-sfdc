@@ -42,7 +42,7 @@ global class EnglishChannelClient {
 
         HttpRequest request = new HttpRequest();
 
-        if (body != null) Logger.debug(body); // This is the JSON Log
+        if (body != null) Logger.debug('JSON='+body); // This is the JSON Log
 
         request.setEndpoint(EnglishChannelConfig__c.getOrgDefaults().ApiGatewayEndpoint__c); // @TODO MG Add null check
         Logger.debug('request setEndpoint '+ EnglishChannelConfig__c.getOrgDefaults().ApiGatewayEndpoint__c); // @TODO MG Move into CMT
