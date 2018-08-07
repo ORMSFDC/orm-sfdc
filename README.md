@@ -39,6 +39,7 @@ Complete SFDC codebase for ORM
 ## New SFDC object/field permissions needed for this feature branch
 
 - [ ] Grant visiblity on `New_Loan__C.Loan_Payment_Plan_Term`
+- [ ] Give sys admins permission on `Daily Prodct Rate` permission set
 
 ## New ExternalServiceRegistries entries
 

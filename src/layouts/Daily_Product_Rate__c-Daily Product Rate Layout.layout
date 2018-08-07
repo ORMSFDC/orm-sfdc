@@ -24,8 +24,8 @@
                 <field>Rate__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Processed__c</field>
+                <behavior>Readonly</behavior>
+                <field>Processed_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
