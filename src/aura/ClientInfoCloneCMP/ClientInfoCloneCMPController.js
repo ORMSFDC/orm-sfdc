@@ -380,7 +380,7 @@
          debugger; 
         //Funds needed to Close calculations
         //for traditional loan
-        if(component.get('v.isTraditional')){ 
+        if(component.get('v.isTraditional')){ //SFDC-232
             component.set('v.LMortgageAppliedFor','FHA Traditional HECM');
             if(recId == 'adjust'){
                 if(AdjustMargins[selId].MaxAdditionalFirstYearDraw >= 0 ){
@@ -396,7 +396,7 @@
                 }else{
                     component.set('v.cashToClose', FixedMargins[selId].CashFromBorrower*-1);
                 }
-            }
+            } //end SFDC-232
         //for Purchase
         }else{
             component.set('v.LMortgageAppliedFor','HECM for Purchase');
