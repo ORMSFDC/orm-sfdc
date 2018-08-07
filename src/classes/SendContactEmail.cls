@@ -1,3 +1,12 @@
+/**
+ * @description: For sending Hot Transfer emails
+ * @author: Sahitya
+ * @date: 1/17/2018
+ *
+ * changelog:
+ * 08/06/2018: Sahitya - Eliminated email from Bcc
+ */
+ 
 global class SendContactEmail implements Database.batchable<sObject> , Database.Stateful{
 
     private EmailTemplate emailTemp;
@@ -5,26 +14,20 @@ global class SendContactEmail implements Database.batchable<sObject> , Database.
         emailTemp = [Select Id From EmailTemplate Where Name = 'Lead & Contact Template']; 
     }
 
-    global Database.QueryLocator start(Database.BatchableContext BC){
-    //String  con_recordtypeid = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('Banker').getRecordTypeId(); 
-    //String  led_recordtypeid = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('Banker').getRecordTypeId();    
-        
-        String query = 'Select Id, Lastname, Firstname, Email From Contact WHERE (Id IN (select Ql_Banker__c from Lead WHERE RecordTypeId = \'01239000000EGVI\' ) AND RecordTypeId = \'01239000000EGVH\'  )'; //QL_Banker__c field is reference to contact object
+    global Database.QueryLocator start(Database.BatchableContext bc){
+        String query = 'Select Id, Lastname, Firstname, Email From Contact WHERE (Id IN (select Ql_Banker__c from Lead WHERE RecordType.Name = \'Banker\' ) AND RecordType.Name = \'Banker\')'; 
         return Database.getQueryLocator(query);
     }
    
-    global void execute(Database.BatchableContext BC, List<Contact> scope){
+    global void execute(Database.BatchableContext bc, List<Contact> scope){
         system.debug('emailTemp 1------'+emailTemp);
         try{
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
         for(Contact con : scope) {
              if(emailTemp != null && con.Email != null && con.Email != '') {
                    Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
-                   email.setToAddresses(new List<String>{con.Email}); //List of recepient Emails to whom email will be sent all contacts who has atleast one or more lead records
-                   email.setTargetObjectId(con.Id); 
-                   email.setBccAddresses(new String[] {
-                       'balasahityadeekonda@quickenloans.com'
-                   }); 
+                   email.setToAddresses(new List<String>{con.Email});
+                   email.setTargetObjectId(con.Id);                     
                    email.setTemplateId(emailTemp.Id);
                    email.setTreatTargetObjectAsRecipient(true);        
                    emails.add(email);
@@ -34,10 +37,9 @@ global class SendContactEmail implements Database.batchable<sObject> , Database.
          Messaging.sendEmail(emails);
          }
          catch(exception ex){
-         
+             system.debug('Contact Email Exception'+ex);
          }
     }
    
-    global void finish(Database.BatchableContext BC){
-    }
+    global void finish(Database.BatchableContext bc){}
 }
