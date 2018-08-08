@@ -129,6 +129,7 @@
 
             component.set("v.EOF", finalEOF);
             if (lrateType == 'Helo') { //Helo, Financing Fee for Pie
+                component.set("v.EOF",origOrm); //Helo Origination to ORM 8/2
                 financingFees = origOrm + otherEcc;
                 console.log('helo finfee', financingFees);
             }
