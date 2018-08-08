@@ -131,10 +131,11 @@
         $A.get('e.force:refreshView').fire();
     },
     //For Request Package
-    sendmailrequest: function(component, event, helper) {
-        var ScenarioID = component.get("v.ScenarioID")        
-        var action2 = component.get("c.SendMailTMP");   
-        console.log('email sent');     
+    sendmailrequest: function (component, event, helper) {
+        var ScenarioID = component.get("v.ScenarioID")
+
+        var action2 = component.get("c.SendMailTMP");
+        console.log('email sent');
         action2.setParams({
             "ScenarioID": ScenarioID
         });        
@@ -381,13 +382,13 @@
         //Funds needed to Close calculations
         //for traditional loan
         if(component.get('v.isTraditional')){ //SFDC-232
-            component.set('v.LMortgageAppliedFor','FHA Traditional HECM');
-            if(recId == 'adjust'){
-                if(AdjustMargins[selId].MaxAdditionalFirstYearDraw >= 0 ){
-                    component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower);  
-                }else{
+            component.set('v.LMortgageAppliedFor', 'FHA Traditional HECM');
+            if (recId == 'adjust') {
+                if (AdjustMargins[selId].MaxAdditionalFirstYearDraw >= 0) {
+                    component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower);
+                } else {
                     //component.set('v.cashToClose',AdjustMargins[selId].MaxAdditionalFirstYearDraw*-1);
-                    component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower*-1);
+                    component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower * -1);
                 }
             }
             else if(recId == 'fixed'){
@@ -397,12 +398,16 @@
                     component.set('v.cashToClose', FixedMargins[selId].CashFromBorrower*-1);
                 }
             } //end SFDC-232
-        //for Purchase
-        }else{
-            component.set('v.LMortgageAppliedFor','HECM for Purchase');
-            if(recId == 'adjust'){
-                component.set('v.PrincipalLimitIs',AdjustMargins[selId].PrincipalLimit);
-                var pfnc = AdjustMargins[selId].CashFromBorrower ;
+            //for Purchase
+        } else {
+            component.set('v.LMortgageAppliedFor', 'HECM for Purchase');
+            if (recId == 'adjust') {
+                component.set('v.PrincipalLimitIs', AdjustMargins[selId].PrincipalLimit);
+                var pfnc = AdjustMargins[selId].CashFromBorrower;
+                component.set('v.cashToClose', pfnc);
+            } else if (recId == 'fixed') {
+                component.set('v.PrincipalLimitIs', FixedMargins[selId].PrincipalLimit);
+                var pfnc = FixedMargins[selId].CashFromBorrower;
                 component.set('v.cashToClose', pfnc);
             }else if(recId =='fixed'){
                 component.set('v.PrincipalLimitIs',FixedMargins[selId].PrincipalLimit);
