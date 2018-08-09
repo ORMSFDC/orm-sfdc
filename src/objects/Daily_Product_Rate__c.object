@@ -74,10 +74,10 @@
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>Product_Type__c</fullName>
-        <description>product type</description>
+        <fullName>Product_Rate_Type__c</fullName>
+        <description>product rate type</description>
         <externalId>false</externalId>
-        <label>Product Type</label>
+        <label>Product Rate Type</label>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -86,9 +86,9 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>HELO</fullName>
+                    <fullName>HELO-LIBOR</fullName>
                     <default>false</default>
-                    <label>HELO</label>
+                    <label>HELO-LIBOR</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -117,7 +117,7 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>UPDATEDBY_USER</columns>
-        <columns>Product_Type__c</columns>
+        <columns>Product_Rate_Type__c</columns>
         <columns>Rate__c</columns>
         <columns>Rate_Date__c</columns>
         <columns>Processed__c</columns>
@@ -131,17 +131,17 @@
     </nameField>
     <pluralLabel>Daily Product Rates</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>Product_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_Rate_Type__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Rate__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Rate_Date__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Processed__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>Processed__c</searchFilterFields>
-        <searchFilterFields>Product_Type__c</searchFilterFields>
+        <searchFilterFields>Product_Rate_Type__c</searchFilterFields>
         <searchFilterFields>Rate__c</searchFilterFields>
         <searchFilterFields>Rate_Date__c</searchFilterFields>
-        <searchResultsAdditionalFields>Product_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Rate_Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Rate__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Rate_Date__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Processed__c</searchResultsAdditionalFields>
