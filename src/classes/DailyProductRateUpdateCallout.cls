@@ -3,12 +3,7 @@ public with sharing class DailyProductRateUpdateCallout {
     public static void makeCallout(String productRateAsJson) {
         Daily_Product_Rate__c pr = (Daily_Product_Rate__c) JSON.deserialize(productRateAsJson, Daily_Product_Rate__c.class);
 
-        system.debug('DailyProductRateUpdateCallout got Product_Type_c: ' + pr.Product_Type__c);
-
-        if ('HELO' != pr.Product_Type__c) {
-            system.debug(LoggingLevel.ERROR, 'Invalid ProductRateUpdate type: ' + pr.Product_Type__c);
-            return;
-        }
+        system.debug('DailyProductRateUpdateCallout got Product_Rate_Type_c: ' + pr.Product_Rate_Type__c);
 
         system.debug('looking up BaydocsProductRateUpdate ExternalServiceRegistry__mdt entry');
 
@@ -28,17 +23,20 @@ public with sharing class DailyProductRateUpdateCallout {
         String endpoint;
 
         HttpRequest request = new HttpRequest();
-        if (pr.Product_Type__c == 'HELO') {
+        if ('HELO-LIBOR' == pr.Product_Rate_Type__c) {
             String namedCredential = esrEntries[0].NamedCredential__c;
 
             endpoint = 'callout:' + namedCredential + '/app/lib/integration/OneReverse/HELO/UpdateLIBORswap/index.php';
             gen.writeStartObject();
-            gen.writeStringField('UserCode', esrEntries[0].username__c);//'4738');
-            gen.writeStringField('PassCode', esrEntries[0].password__c);//'lR7i61T74c3h0746Q8S7zC2Nt1DF1m16');
+            gen.writeStringField('UserCode', esrEntries[0].username__c);
+            gen.writeStringField('PassCode', esrEntries[0].password__c);
             gen.writeStringField('DateFormat', 'Y-m-d');
             gen.writeStringField('RateDate', rateDateS);//'2018-08-01');
             gen.writeStringField('IndexValue', pr.Rate__c.toPlainString());
             gen.writeEndObject();
+        } else {
+            system.debug(LoggingLevel.ERROR, 'Invalid daily product rate type type: ' + pr.Product_Rate_Type__c);
+            return;
         }
 
         String jsonS = gen.getAsString();

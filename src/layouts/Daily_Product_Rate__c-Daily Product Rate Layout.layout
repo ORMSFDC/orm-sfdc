@@ -13,7 +13,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Product_Type__c</field>
+                <field>Product_Rate_Type__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
