@@ -98,14 +98,14 @@
 
                         <aura:if isTrue="{!v.NewLoan.Mortgage_Applied_for__c != 'HECM for Purchase'}">
                             <div style="margin-bottom:3%; " class="slds-size_1-of-2 inputHelpContainer">
-                                <ui:inputSelect aura:id="LoanPayment" required="true" label="Selected Loan Payment Plan " value="{!v.NewLoan.Selected_Loan_Payment_Plan__c }" disabled="{!(v.NewLoan.Rate_Type__c == 'Fixed') ? true  : false}" change="{!c.onchange_action}">                                    
-                                    <ui:inputSelectOption value="{!(v.NewLoan.Rate_Type__c == 'Fixed') ? true  : false}" text="Single Lump Sum" label="Single Lump Sum" />
-                                    <ui:inputSelectOption text="Term" label="Term" />
-                                    <ui:inputSelectOption text="Modified Term" label="Modified Term" />
-                                    <ui:inputSelectOption text="Tenure" label="Tenure" />
-                                    <ui:inputSelectOption text="Line of Credit" label="Line of Credit" />
-                                    <ui:inputSelectOption text="Modified Tenure" label="Modified Tenure" />
-                                    <ui:inputSelectOption text="Undecided" label="Undecided" />                                  
+                                <ui:inputSelect aura:id="LoanPayment" required="true" label="Selected Loan Payment Plan " value="{!v.NewLoan.Selected_Loan_Payment_Plan__c }" disabled="{!(v.NewLoan.Rate_Type__c == 'Fixed') ? true  : false}" change="{!c.onchange_action}">
+                                    <ui:inputSelectOption text="Single Lump Sum" label="Single Lump Sum" />
+                                    <ui:inputSelectOption text="Term" label="Term" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
+                                    <ui:inputSelectOption text="Modified Term" label="Modified Term" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
+                                    <ui:inputSelectOption text="Tenure" label="Tenure" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
+                                    <ui:inputSelectOption text="Line of Credit" label="Line of Credit" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
+                                    <ui:inputSelectOption text="Modified Tenure" label="Modified Tenure" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
+                                    <ui:inputSelectOption text="Undecided" label="Undecided" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
                                 </ui:inputSelect>
                                 <aura:if isTrue="{!v.NewLoan.Rate_Type__c == 'Fixed'}">
                                     <lightning:helptext class="inputHelpText" content="This is the only payment plan available for the fixed rate loan." />
