@@ -345,8 +345,8 @@ public without sharing class lookUpController {
             body += '<td>' + Phone_Number + '</td> </tr><tr> <td> Date of Birth : </td>';
             body += '<td>' + ClientDOB + '</td> </tr><tr> <td> Email : </td>';
             body += '<td>' + Email_Temp + '</td> </tr><tr> <td> Home value: </td>';
-            body += '<td>$' + objScenario.Estimated_home_value__c.format() +.00+ '</td> </tr><tr> <td> Mortgage Balance: </td>';
-            body += '<td>$' + objScenario.Current_Mortgage_Balance__c.format() +.00+ '</td> </tr><tr> <td> Current Interest Rate : </td>';
+            body += '<td>$' + objScenario.Estimated_home_value__c.format() +'.00'+ '</td> </tr><tr> <td> Mortgage Balance: </td>';
+            body += '<td>$' + objScenario.Current_Mortgage_Balance__c.format() +'.00'+ '</td> </tr><tr> <td> Current Interest Rate : </td>';
             body += '<td>' + objScenario.Current_Mortgage_Interest_Rate__c + '%</td> </tr><tr> <td>Current Mortgage Payment: </td>';
             body += '<td>$' + objScenario.Monthly_Mortgage_Payment__c + '</td> </tr><tr> <td>Margin : </td>';
             body += '<td>' + objScenario.Margin__c + '%</td> </tr><tr> <td>Scenario : </td>';
