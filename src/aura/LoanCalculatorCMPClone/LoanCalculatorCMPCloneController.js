@@ -97,30 +97,10 @@
     },
     //Validate Monthly Mortgage Payment
     validateADO: function (component, event, helper) {
-        //  var inputCmp = component.find('inputADO');   
-        var inz = component.get('v.ADO');
-        if (isNaN(inz) && inz) {
-            // alert(1);
-            component.set('v.ADO', inz.substring(0, inz.length - inz.length));
-            component.set("v.ErrorMsg", "");
-        }else{
-            // alert(2); 
-            var MaxAdoIs = parseInt(component.get('v.MaxAdo'));
-            console.log(inz,MaxAdoIs);
-            if(inz>MaxAdoIs){
-                component.set('v.show_MaxAdo',true);
-                // inputCmp.set("v.errors", [{ message: "This should be less than or equal to  " + MaxAdoIs  }]);   
-                
-            }else{
-                component.set('v.show_MaxAdo',false);
-                // inputCmp.set("v.errors",null);   
-                
-            }            
-        }
+        helper.validateAdo(component, event, helper);
     },
     AdoOnblur:function(component,event,helper){
-        helper.validateAdo(component,event,helper);
-        
+        helper.validateAdo(component,event,helper);        
     },
     
     //Validate Required Field
@@ -229,9 +209,8 @@
         }catch(err){}
         //    alert(5);
         var adoError= false;
-        try{
-            
-            adoError =    helper.validateAdo(component, event, helper);
+        try{            
+            adoError = helper.validateAdo(component, event, helper);
         }catch(err){}
         //      alert(6);
         if (Isrequired || IsCurrenyWorng || isdateworng || IsInterestrateWorng || adoError || bothFilled) {            
