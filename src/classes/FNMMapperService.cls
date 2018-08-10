@@ -61,18 +61,28 @@ public class FNMMapperService {
             }
         }    
     
+    //Fetch Authorised states from metadata table - SFDC-244 
+    private static Map<String, AuthorisedStates__mdt> stateMap{        
+        get{
+            try{
+                if(stateMap == Null){
+                    stateMap = new Map<String, AuthorisedStates__mdt>();        
+                    for (AuthorisedStates__mdt states : [SELECT Id, Label FROM AuthorisedStates__mdt]){            
+                        stateMap.put(states.Label, states);                    
+                    }                        
+                }
+            }
+            catch(Exception e){
+                System.debug('state Exception'+e);
+            }
+            return stateMap;                    
+        }
+        set;        
+    }
+    
     private static Loan_New__c saveLoan(FNMResponse.tenOhThree tt, Date applicationDate,String rateType,String loanMortgageAppliedFor) {
         
-        /*  Exception_log.Create_Custom_Logs('FNMMapper'+tt+': Purchase Price'+tt.DetailsOfTransaction
-,'fmnmapper','saveLoan','by jyoti if part');*/
-        
-        //Code by Bala for - SFDC-244       
-        List<String> allowStates = new List<String>();        
-        for (AuthorisedStates__mdt each : [SELECT Label FROM AuthorisedStates__mdt]){            
-            allowStates.add(each.Label);
-        }  
-        //End Code
-        
+        Logger.push('saveLoan','FNMMapperService');
         Loan_New__c loan = new Loan_New__c();
         
         // Setting related partner
@@ -81,8 +91,7 @@ public class FNMMapperService {
         String contactId = u.contactId;
         Contact contact = [select id, AccountId from Contact where id = : contactId];
         loan.Related_Partner__c = contact.AccountId;
-        loan.Related_Individual__c = contactId;
-        
+        loan.Related_Individual__c = contactId;        
         loan.Application_Date__c = applicationDate;
         
         FNMResponse.PropertyInformation pi = tt.propertyInformation;
@@ -93,7 +102,7 @@ public class FNMMapperService {
         //Exception_log.Create_Custom_Logs('Information'+pi +'Address  :'+pa,'fmnmapper','saveincome','by jyoti if part');
         
         //Code by Bala for - SFDC-244
-        if (!allowStates.contains(loan.Subject_Property_State__c)) {
+        if (!stateMap.containsKey(loan.Subject_Property_State__c)) {
             //throw new AuraHandledException('This file is not valid to upload, because at this time One Reverse Mortgage is only accepting loans for subject properties within the state of California,Florida,Michigan,Washington,Wiscosin and Minnesota. Please call your account executive to review this loan.');
             throw new AuraHandledException('Loans cannot be originated in this state.');
         }
@@ -212,7 +221,13 @@ public class FNMMapperService {
         //Need Verify and make false
         loan.IsSubjectPropertyFilled_Flag__c = false;
         //Modified By Nausad
-        insert loan;
+        
+        try{//Code modified by Bala - SFDC-244 
+            insert loan;        
+        }catch (Exception exc){ 
+            Logger.debugException(exc);
+        }
+        Logger.pop();
         
         return loan;
     }
