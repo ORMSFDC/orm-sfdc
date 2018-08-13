@@ -1,8 +1,16 @@
-/* Modified : prsn */
+/**
+ * @description: used for creating a Loan through FnM file on Start a new Loan  
+ * @author: Ravi
+ * @date: 8/25/2017
+ *
+ * changelog:
+ * 07/24/2018: Srini - removed NullPointerException for 
+ * 08/08/2018: Sahitya - Authorised stated were hardcoded, fetching the states from Metadata table
+ */
 
 public class FNMMapperService {
     
-    private static Set<String> ALLOWED_STATES = new Set<String>{'California','Florida','Michigan','Washington','Wisconsin','Minnesota'};
+    //private static Set<String> ALLOWED_STATES = new Set<String>{'California','Florida','Michigan','Washington','Wisconsin','Minnesota'};
         
         public static Loan_New__c createLoanFromFNMResponse(FNMResponse fnmResponse, Date applicationDate,String rateType,String loanMortgageAppliedFor) {
             try {
@@ -51,15 +59,30 @@ public class FNMMapperService {
                 Exception_log.Create_Custom_Logs(e.getMessage(),'createLoanFromFNMResponse','FNMMapper','Date'+system.today());
                 throw new AuraHandledException('Unknown Error occurred while importing the Fannie Mae file.');
             }
-        }
+        }    
     
+    //Fetch Authorised states from metadata table - SFDC-244 
+    private static Map<String, AuthorisedStates__mdt> stateMap{        
+        get{
+            try{
+                if(stateMap == Null){
+                    stateMap = new Map<String, AuthorisedStates__mdt>();        
+                    for (AuthorisedStates__mdt states : [SELECT Id, Label FROM AuthorisedStates__mdt]){            
+                        stateMap.put(states.Label, states);                    
+                    }                        
+                }
+            }
+            catch(Exception e){
+                System.debug('state Exception'+e);
+            }
+            return stateMap;                    
+        }
+        set;        
+    }
     
     private static Loan_New__c saveLoan(FNMResponse.tenOhThree tt, Date applicationDate,String rateType,String loanMortgageAppliedFor) {
         
-        /*  Exception_log.Create_Custom_Logs('FNMMapper'+tt+': Purchase Price'+tt.DetailsOfTransaction
-,'fmnmapper','saveLoan','by jyoti if part');*/
-        
-        
+        Logger.push('saveLoan','FNMMapperService');
         Loan_New__c loan = new Loan_New__c();
         
         // Setting related partner
@@ -68,8 +91,7 @@ public class FNMMapperService {
         String contactId = u.contactId;
         Contact contact = [select id, AccountId from Contact where id = : contactId];
         loan.Related_Partner__c = contact.AccountId;
-        loan.Related_Individual__c = contactId;
-        
+        loan.Related_Individual__c = contactId;        
         loan.Application_Date__c = applicationDate;
         
         FNMResponse.PropertyInformation pi = tt.propertyInformation;
@@ -78,7 +100,9 @@ public class FNMMapperService {
         loan.Subject_Property_City__c = pa.city;
         loan.Subject_Property_State__c = STATES.get(pa.state);
         //Exception_log.Create_Custom_Logs('Information'+pi +'Address  :'+pa,'fmnmapper','saveincome','by jyoti if part');
-        if (!ALLOWED_STATES.contains(loan.Subject_Property_State__c)) {
+        
+        //Code by Bala for - SFDC-244
+        if (!stateMap.containsKey(loan.Subject_Property_State__c)) {
             //throw new AuraHandledException('This file is not valid to upload, because at this time One Reverse Mortgage is only accepting loans for subject properties within the state of California,Florida,Michigan,Washington,Wiscosin and Minnesota. Please call your account executive to review this loan.');
             throw new AuraHandledException('Loans cannot be originated in this state.');
         }
@@ -176,11 +200,13 @@ public class FNMMapperService {
         
         //loan.Subject_Property_County__c='400';
         //loan.Subject_Property_County__c=tt.fhaAndVALoanData.propertyOfCounty;
-                         if (tt.fhaAndVALoanData != null ) {
-                            loan.Subject_Property_County__c=tt.fhaAndVALoanData.propertyOfCounty;
-                         }else {
-                            loan.Subject_Property_County__c='400';
-                        }    
+        //Srini
+        if (tt.fhaAndVALoanData != null ) {
+            loan.Subject_Property_County__c=tt.fhaAndVALoanData.propertyOfCounty;
+         }else {
+            loan.Subject_Property_County__c='400';
+        }
+        //End Srini    
         loan.IsActiveFlag__c = true;
         //Modified By Nausad
         //Always False
@@ -195,7 +221,13 @@ public class FNMMapperService {
         //Need Verify and make false
         loan.IsSubjectPropertyFilled_Flag__c = false;
         //Modified By Nausad
-        insert loan;
+        
+        try{//Code modified by Bala - SFDC-244 
+            insert loan;        
+        }catch (Exception exc){ 
+            Logger.debugException(exc);
+        }
+        Logger.pop();
         
         return loan;
     }
