@@ -1,6 +1,12 @@
-/* 
-Author *** prsn***
-*/
+/**
+ * @description: used for printing scenario results
+ * @author: Prsn
+ * @date: 2/24/2018
+ *
+ * changelog:
+ * 08/07/2018: Don - Modified Funds to Close - SFDC-241
+ * 
+ */
 public without sharing class PdfSavedScenarioController {
     
     public String scenarioID {get;set;}
@@ -31,7 +37,7 @@ public without sharing class PdfSavedScenarioController {
         if(contactList.size() > 0 && contactList != Null) {
             con = contactList[0];
         }
-        List<Scenario__c> scenarioList = [Select Id,Estimated_home_value__c,
+  List<Scenario__c> scenarioList = [Select Id,Estimated_home_value__c,
                                           MIP__c,
                                           PieChartResponse__c,
                                           Initial_Growth_Rate__c,
@@ -47,9 +53,14 @@ public without sharing class PdfSavedScenarioController {
                                           Cash_Flow_Remaining_months_Amount__c,
                                           Cash_Flow_12_months_Amount__c,
                                           Cash_Flow_60_months_Amount__c,
-                                          Cash_at_close__c,CashFlow1__c,CashFlow10__c,
-                                          CashFlow5__c,Scenario_Type__c,RateType__c
-                                          ,EOF__c
+                                          Cash_at_close__c,
+                                          Cash_to_close__c, //SFDC-241
+                                          CashFlow1__c,
+                                          CashFlow10__c,
+                                          CashFlow5__c,
+                                          Scenario_Type__c,
+                                          RateType__c,
+                                          EOF__c
                                           From Scenario__c Where Id =: scenarioID];
         
         if(scenarioList != Null && scenarioList.size()>0) {
@@ -83,7 +94,8 @@ public without sharing class PdfSavedScenarioController {
             cashAtClose                   = (Decimal)jsonMap.get('maxCash');
             fundsNeedToClose              = (Decimal)jsonMap.get('cashToClose');
             }else{
-            cashAtClose                   = Decimal.valueOf(scenario.Cash_at_close__c);  fundsNeedToClose              = Decimal.valueOf(scenario.Cash_at_close__c);
+              cashAtClose                   = Decimal.valueOf(scenario.Cash_at_close__c);
+              fundsNeedToClose              = Decimal.valueOf(scenario.Cash_to_close__c); //SFDC-241
                //hecm
                 if(scenario.Scenario_Type__c=='FHA Traditional HECM'){  isTraditional  = true;
                 }else{

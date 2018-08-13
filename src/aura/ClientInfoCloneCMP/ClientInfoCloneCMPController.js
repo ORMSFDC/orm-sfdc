@@ -353,14 +353,23 @@
         }
         debugger;
         //for traditional loan
-        if(component.get('v.isTraditional')){ //START BALA C1
+        if(component.get('v.isTraditional')){ //SFDC-232
             component.set('v.LMortgageAppliedFor','FHA Traditional HECM');
-            if(AdjustMargins[selId].MaxAdditionalFirstYearDraw > 0 ){
-                component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower);
-            }else{
-                component.set('v.cashToClose',AdjustMargins[selId].MaxAdditionalFirstYearDraw*-1);  
-                component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower);  
+            if(recId == 'adjust'){
+                if(AdjustMargins[selId].MaxAdditionalFirstYearDraw >= 0 ){
+                    component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower);  
+                }else{
+                    //component.set('v.cashToClose',AdjustMargins[selId].MaxAdditionalFirstYearDraw*-1);
+                    component.set('v.cashToClose', AdjustMargins[selId].CashFromBorrower*-1);
+                }
             }
+            else if(recId == 'fixed'){
+                if(FixedMargins[selId].MaxAdditionalFirstYearDraw >= 0 ){
+                    component.set('v.cashToClose', FixedMargins[selId].CashFromBorrower);
+                }else{
+                    component.set('v.cashToClose', FixedMargins[selId].CashFromBorrower*-1);
+                }
+            } //end SFDC-232
         }else{
             component.set('v.LMortgageAppliedFor','HECM for Purchase');
             if(recId == 'adjust'){
