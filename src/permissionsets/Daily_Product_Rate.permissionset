@@ -3,6 +3,11 @@
     <description>Users who have authority to update the daily product rates</description>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Daily_Product_Rate__c.Processed_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Daily_Product_Rate__c.Processed__c</field>
         <readable>true</readable>
     </fieldPermissions>
