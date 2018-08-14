@@ -204,7 +204,8 @@
                 }
             }
             component.set("v.NewLoan", result);
-            var loanCalaculayionType = component.find("newSelectlist").get("v.value");
+			component.set("v.ratePer", result.Rate__c); // SRINI
+			var loanCalaculayionType = component.find("newSelectlist").get("v.value");
             if (loanCalaculayionType == 'Calculate Maximum Fee' || loanCalaculayionType == 'Enter Fee Value ($0 - $6,000)') {
 
                 component.set("v.show_originate_fee", true);
