@@ -90,6 +90,11 @@
                     <default>false</default>
                     <label>HELO-LIBOR</label>
                 </value>
+                <value>
+                    <fullName>HELO-ORIGINATION</fullName>
+                    <default>false</default>
+                    <label>HELO-ORIGINATION</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

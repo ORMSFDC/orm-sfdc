@@ -34,7 +34,12 @@ public with sharing class DailyProductRateUpdateCallout {
             gen.writeStringField('RateDate', rateDateS);//'2018-08-01');
             gen.writeStringField('IndexValue', pr.Rate__c.toPlainString());
             gen.writeEndObject();
-        } else {
+        } else if ('HELO-ORIGINATION' == pr.Product_Rate_Type__c) {
+            //todo
+            system.debug('Daily product rate type type: ' + pr.Product_Rate_Type__c + ' not yet implemented');
+            return;
+        }
+        else {
             system.debug(LoggingLevel.ERROR, 'Invalid daily product rate type type: ' + pr.Product_Rate_Type__c);
             return;
         }
