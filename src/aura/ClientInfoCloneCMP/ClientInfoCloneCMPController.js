@@ -539,6 +539,7 @@
                         helper.applyCSS(component, event, helper,'TotalCapacityVal');                
                     }
                     
+                    /* SFDC-207
                     //code to remove the brackets
                     if(component.get("v.capacity_qualified")){
                         storeResponse.CashFlow = storeResponse.CashFlow.replace('(','').replace(')','');
@@ -547,7 +548,10 @@
                         
                         console.log('storeResponse.CapacityStorage ',storeResponse.CapacityStorage);
                     }
-                    if(CstoreResponse.apacityStorage.toString().indexOf("(") != -1 )
+                    */
+                    
+                    // SFDC-207
+                    if(storeResponse.CapacityStorage.toString().indexOf("(") != -1 )
                     {
                         component.set("v.capacity_qualified",false);
                         helper.applyCSS(component, event, helper,'CapacityShortageVal');                
