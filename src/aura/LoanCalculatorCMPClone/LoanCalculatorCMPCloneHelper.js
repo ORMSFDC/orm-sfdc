@@ -33,6 +33,7 @@
         
         return flagR;
     },
+    // SFDC-231
     validateAdo: function(component, event, helper)
     {
         var isAdoValid = false;

@@ -95,8 +95,9 @@
             component.set("v.ErrorMsg","");
         }    
     },
-    //Validate Monthly Mortgage Payment
+    //Validate Origination
     validateADO: function (component, event, helper) {
+        // SFDC-231
         helper.validateAdo(component, event, helper);
     },
     AdoOnblur:function(component,event,helper){
