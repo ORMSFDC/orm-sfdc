@@ -32,25 +32,29 @@
         }
         
         return flagR;
-    }, 
-    validateAdo:function(component, event, helper){
-         var flagR=false;
-            var inputCmp = component.find('inputADO');   
-        var EhvVal = component.get('v.EHV')
-           var val2= (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
-        //   alert(component.get('v.ADO'));
-        if (component.get('v.ADO') < 0 || component.get('v.ADO') > val2){
-            inputCmp.set("v.errors", [{ message: "This should be greater than 2500 and less than "+val2  }]);   
-            flagR=true;
-            return flagR;              
-        }else{
-              inputCmp.set("v.errors",null);
-            return flagR;
-        }
-        
-        return flagR;
     },
-     validateDatenew:function(component, event, helper) {
+    // SFDC-231
+    validateAdo: function(component, event, helper)
+    {
+        var isAdoValid = false;
+        var inz = component.get('v.ADO');
+        if (isNaN(inz) && inz) {
+            component.set('v.ADO', inz.substring(0, inz.length - inz.length));
+            component.set("v.ErrorMsg", "");
+            isAdoValid = false;
+        }else{
+            var maxAdo = parseInt(component.get('v.MaxAdo'));
+            if(inz > maxAdo){
+                component.set('v.show_MaxAdo',true);
+                isAdoValid = false;
+            }else{
+                component.set('v.show_MaxAdo',false);
+                isAdoValid = true;
+            }            
+        }
+        return !isAdoValid;
+    },
+    validateDatenew:function(component, event, helper) {
         var flagR=false;       
         var inputCmp = component.find('inputDOB');   
          if(component.get('v.DOB')=='' || component.get('v.DOB')==undefined){
