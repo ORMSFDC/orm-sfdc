@@ -511,6 +511,10 @@
     },
 
     populateFee: function (component, event, helper) {
+        if(!component.find('newSelectlist')){
+            return; //Not an ARM, so no Loan Origination Fee - Calculation Method
+        }
+
         var selVal = component.find('newSelectlist').get('v.value');
         var amountIs = component.find("LoanEstimateAppVal").get("v.value");
         var amount = parseInt(amountIs);
