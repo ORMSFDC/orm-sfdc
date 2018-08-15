@@ -20,6 +20,7 @@ Complete SFDC codebase for ORM
 1.  **Developer**: Create new branch from the sprint branch. Ex: `git checkout -b sprint7-ryan`
 1.  **Developer**: Go to production SFDC UI and [Refresh your sandbox](https://help.salesforce.com/articleView?id=data_sandbox_refresh.htm&type=5) from the QA enviornment.  Make sure to choose `Create From: QA` and `Auto Activate`
 1.  **Developer**: [Hookup Illuminated Cloud](./intellij-setup.md) to your sandbox.
+1.  **Developer**: Install [Salesforce Lightning Inspector](https://chrome.google.com/webstore/detail/salesforce-lightning-insp/pcpmcffcomlcjgpcheokdfcjipanjdpc?hl=en) plugin for google chrome.
 1.  **Developer**: As you develop, make note of profiles and permission changes this `README.md` (template below)
 1.  **Developer**: When ready to deliver to QA:    
     1.  [rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) your branch on top of the sprint branch to pull in any changes made since you branched from it.  Ex: `git fetch origin && git rebase sprint7`
