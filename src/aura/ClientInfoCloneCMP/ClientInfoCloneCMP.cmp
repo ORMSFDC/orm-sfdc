@@ -1300,9 +1300,8 @@
                                     </div><br/>
                                     <div class="slds-grid">
                                         <div class="slds-col">
-                                            <div style="text-align:left"> 
-                                                <!-- <button style="background-color:#6C9F2E !important;" disabled="{!v.isDisabled}" class="slds-button slds-button(double hipen)inverse" onclick="{!c.start_newloan}" >Start Application</button> prsn--> 
-                                                <button disabled="{!v.isDisabled}" style="background-color:#6C9F2E !important;" class="slds-button slds-button--inverse" onclick="{!c.start_newloan}" >Start Application</button>
+                                            <div style="text-align:left">
+                                                <button style="background-color:#6C9F2E !important;" class="slds-button slds-button--inverse" onclick="{!c.start_newloan}" >Start Application</button>
                                                 <button class="slds-button slds-button--inverse" onclick="{!c.shw_capacityPopupClose}" >Cancel</button>
                                                 <!--
               <div  style ="padding-top:6px;color:#2481BF;float:right;cursor:pointer;margin-right: 70%;"  onclick="{!c.shw_capacityPopupClose}">Cancel</div>
