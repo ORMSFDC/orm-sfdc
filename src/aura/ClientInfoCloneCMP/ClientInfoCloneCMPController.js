@@ -563,6 +563,10 @@
         }
     },
     start_newloan:function(component){
+        //Dont save info, just send them to SAL splash screen
+        window.open('/s/startnewloan');
+        return;
+
         //    alert('ClientInfo start_newloan ');
         component.set('v.showSpinnerLoan',true);
         var getdate = component.get("v.ApplicationDate");
