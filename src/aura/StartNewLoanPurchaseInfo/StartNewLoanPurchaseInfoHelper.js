@@ -814,7 +814,7 @@
         return flag;
     },
     changeSource: function (component, event, helper, controlID) {
-        var fundSource = (component.find("SourceOfFunds")) ? component.find("SourceOfFunds") : [];
+        var fundSource = (component.find("SourceOfFunds")) ? component.find("SourceOfFunds").get("v.value") : '';
         if (fundSource.includes("Sale Of Other Property")) {
             document.getElementById("SalDate").style.display = 'block';
         }
