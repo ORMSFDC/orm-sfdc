@@ -357,13 +357,10 @@
         ];
 
         if ('Fixed' === rtype) {
-            // IF condition added by SRINI
-            if(component.get("v.ratePer") == null){
-                valArray.push(
-                    { ar_id: "Ratedata", mes: "Please select a value for this field", reg: validateRequiredField },
-                    { ar_id: "CredittoBorrower", mes: "This is a required field", reg: validateRequiredField }
-                );    
-            }
+            valArray.push(
+                { ar_id: "Ratedata", mes: "Please select a value for this field", reg: validateRequiredField },
+                { ar_id: "CredittoBorrower", mes: "This is a required field", reg: validateRequiredField }
+            );
             if (component.get("v.show_originate_fee")) {
                 valArray.push({ ar_id: "LoanOriginationFee", mes: "This is a required field", reg: validateRequiredField });
             }

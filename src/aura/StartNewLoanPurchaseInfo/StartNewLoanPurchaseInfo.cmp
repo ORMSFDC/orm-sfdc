@@ -45,7 +45,6 @@
                                                           {'label': 'Yes', 'value': 'Yes'},
                                                           {'label': 'No', 'value': 'No'}
                                                           ]" />
-    <aura:attribute name="ratePer" type ="String" /> <!-- SRINI -->
 	<div>
         <div class="slds-form slds-form_compound">
             <fieldset class="slds-form-element">
