@@ -71,6 +71,7 @@
 
     },
     SaveLoans: function (component, event, helper) {
+        debugger;
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         var loanType = component.get("v.NewLoan.Product_Type__c");
 
@@ -204,7 +205,6 @@
                 }
             }
             component.set("v.NewLoan", result);
-			component.set("v.ratePer", result.Rate__c); // SRINI
 			var loanCalaculayionType = component.find("newSelectlist").get("v.value");
             if (loanCalaculayionType == 'Calculate Maximum Fee' || loanCalaculayionType == 'Enter Fee Value ($0 - $6,000)') {
 
