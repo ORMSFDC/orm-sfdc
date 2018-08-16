@@ -266,7 +266,7 @@
                         <aura:if isTrue="{!v.NewLoan.Product_Type__c == 'HELO'}">
                             <div style="margin-bottom:3%; " class="slds-size_1-of-2">
                                 <ui:inputSelect label="Servicing Fee ($)" aura:id="ServicingFee" disabled="true" value="{!v.NewLoan.Servicing_Fee__c}">
-                                    <ui:inputSelectOption text="30.00" label="30.00" />
+                                    <ui:inputSelectOption text="0.00" label="0.00" />
                                     <!-- <aura:iteration items="{!v.ServicingFeeList}" var="pOptions">
                                         <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" />
                                     </aura:iteration> -->
