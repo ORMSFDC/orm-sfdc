@@ -56,7 +56,7 @@ Complete SFDC codebase for ORM
 
 ## New NamedCredential entries
 
-- [ ] `BaydocsAPI`
+- [x] `BaydocsAPI`
     * Label: `BaydocsAPI`
     * Name:  `BaydocsAPI`
     * URL:  QA: `https://test.baydocs.net` Production: `https://www.baydocs.net`
