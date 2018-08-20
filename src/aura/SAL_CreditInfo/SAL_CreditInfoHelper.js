@@ -82,7 +82,13 @@
                 component.set("v.ReIssueCredit", false);
                 var a = component.get("v.ReIssueCredit");
             }
-
+            
+            if (result.Product_Type__c === 'HELO') {
+                component.set("v.isLoanHELO", true);
+            }
+            else {
+                component.set("v.isLoanHELO", false);
+            }
         });
         $A.enqueueAction(action);
     },
@@ -246,6 +252,25 @@
             }
         }
         return IsValid;
+    },
+    
+    CheckCreditScore: function (component, event, helper) {
+        var isValid = true;
+        
+        var creditScore = component.find("CreditScore").get("v.value");
+        if (!$A.util.isEmpty(creditScore) && creditScore < 640) {        
+            isValid = false;
+        }
+        
+        var invalidCreditScore = component.find("invalidCreditScore");
+        if (isValid === true) {
+        	invalidCreditScore.set("v.class", "slds-hide");
+    	}
+    	else {
+			invalidCreditScore.set("v.class", "slds-show");
+		}
+        
+        return isValid;
     },
 
     FormatRefNumberhelper: function (component, event, helper) {
