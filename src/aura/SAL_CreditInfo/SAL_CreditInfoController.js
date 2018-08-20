@@ -1,6 +1,5 @@
 ({
     doInit: function (component, event, helper) {
-
         helper.ValidationForPills(component, event, helper);
         var adrcc = component.find("BtnApplicationSubmit");
         $A.util.addClass(adrcc, 'defaultCls Enableddisabledcls');
@@ -81,19 +80,22 @@
             { ar_id: "CreditReissueVendor", mes: "This is a required field", reg: validateRequiredField },
             { ar_id: "SelectNewCredit", mes: "This is a required field", reg: validateRequiredField },
             { ar_id: "CreditReportType", mes: "This is a required field", reg: validateRequiredField },
-
+			{ ar_id: "CreditScore", mes: "This is a required field", reg: validateRequiredField },
         ];
         array_id = valArray.map(item => item.ar_id);
         array_mes = valArray.map(item => item.mes);
         array_reg = valArray.map(item => item.reg);
+            
         var Isrequired = helper.formatErrorMethod(component, array_reg, array_mes, array_id);
         var CheckCreditNumbers = helper.CheckCreditNumber(component, event, helper);
-        if (Isrequired || CheckCreditNumbers) {
+        var validCreditScore = helper.CheckCreditScore(component, event, helper);
+            
+        if (Isrequired || CheckCreditNumbers || !validCreditScore) {
             component.set("v.showError", true);
         }
         else {
             component.set("v.showError", false);
-            //Save CreditInfo           
+            //Save CreditInfo         
             component.set("v.showPopup_2", true);
         }
     },
