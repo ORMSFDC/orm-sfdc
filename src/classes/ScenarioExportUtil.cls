@@ -22,6 +22,7 @@ global class ScenarioExportUtil {
         ScenarioExport.BayDocs = BAYDOC_FIELDS;
 
         Scenario__c loanlead1 = [SELECT  RateType__c,
+        HeloMargin__c,
         Estimated_home_value__c,
         PartnerId__c,
         PartnerId__r.ContactId,
@@ -41,10 +42,16 @@ global class ScenarioExportUtil {
         FROM Scenario__c
         WHERE  Id = :scenarioId];
 
-        // @TODO Make Rate Code configurable
         String Loanrate;
-        if (loanlead1.RateType__c == 'Adjust') { Loanrate = '103'; } else { Loanrate = '9'; }
-
+        if (loanlead1.RateType__c == 'Adjust') { 
+            Loanrate = '103'; 
+        }     //Helo Fix
+        else if(loanlead1.RateType__c == 'Fixed') { 
+            Loanrate = '9'; 
+        }else{
+            Loanrate = '162';
+        }
+        
         ScenarioExport.BayDocs.put('LoanType', Loanrate);
         Scenario__c loanlead = Database.query('SELECT ' + joinKeys(SCENARIO_FIELDS) + ' FROM Scenario__c WHERE Id = :scenarioId');
 
@@ -69,13 +76,17 @@ global class ScenarioExportUtil {
         ScenarioExport.loanlead.put('Partner_State', loanlead1.PartnerId__r.Contact.Account.BillingState);
         ScenarioExport.loanlead.put('Partner_ZipCode', loanlead1.PartnerId__r.Contact.Account.BillingPostalcode);
         ScenarioExport.loanlead.put('Partner_Phone', loanlead1.PartnerId__r.Contact.Account.Phone);
-
+        //Helo fix
+        if(loanlead1.RateType__c == 'Helo'){
+            ScenarioExport.loanlead.put('Margin', loanlead1.HeloMargin__c);
+        }else{
+            ScenarioExport.loanlead.put('Margin', loanlead1.Margin__c);            
+        }
+        
         Map<String, Decimal> dataExportIs = getDataExportIds(loanlead1);
         if (!dataExportIs.isEmpty()){
             ScenarioExport.loanlead.put('origFees', dataExportIs);
         }
-
-
         Logger.pop();
         return ScenarioExport;
     }
@@ -242,7 +253,7 @@ global class ScenarioExportUtil {
             'Index__c' => 'Index',
             'Initial_Growth_Rate__c' => 'Initial_Growth_Rate',
             'MIP__c' => 'MIP',
-            'Margin__c' => 'Margin',
+            //'Margin__c' => 'Margin',
             'Monthly_Mortgage_Payment__c' => 'Monthly_Mortgage_Payment',
             'PartnerId__c' => 'PartnerId',
             'Priority__c' => 'Priority',
