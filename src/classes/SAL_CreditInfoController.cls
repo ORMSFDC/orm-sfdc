@@ -57,7 +57,7 @@ public with sharing class SAL_CreditInfoController {
         try {
             CreditInfo = [
                     SELECT Id,Is_Application_Filled_Flag__c, Client_s_credit_score__c, Credit_Indicator__c,Credit_Report_type__c, Credit_Reissue_Vendor__c, Credit_Reference_Number__c,
-                            Confirm_Credit_Reference_Number__c, LoanStatus__c
+                            Confirm_Credit_Reference_Number__c, LoanStatus__c, Product_Type__c
                     FROM Loan_New__c
                     where Id = :LoanId
             ];
