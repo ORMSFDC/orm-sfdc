@@ -230,6 +230,7 @@ public without sharing class lookUpController {
         objScenario.Funds_to_Close__c = sce.Funds_to_Close__c;
         objScenario.Age__c = sce.Age__c;
         objScenario.Origination_to_orm__c = sce.Origination_to_orm__c;
+        objScenario.HeloMargin__c = sce.HeloMargin__c;
         //End fields Bala 
         insert objScenario;
         /*  }

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
@@ -40,19 +39,6 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
-    <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>Age__c</fullName>
         <externalId>false</externalId>
@@ -652,30 +638,31 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <fields>
+        <fullName>HeloMargin__c</fullName>
+        <externalId>false</externalId>
+        <label>HeloMargin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Saved Scenario</label>
-    <listViews>
-        <fullName>All_Scenarios</fullName>
-        <columns>NAME</columns>
-        <columns>Client_Lead__c</columns>
-        <columns>ClientId__c</columns>
-        <columns>PartnerId__c</columns>
-        <columns>Margin__c</columns>
-        <columns>Estimated_home_value__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>OWNER.ALIAS</columns>
-        <columns>ORM_AE__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CREATED_DATE</field>
-            <operation>greaterOrEqual</operation>
-            <value>6/1/2018 12:00 AM</value>
-        </filters>
-        <filters>
-            <field>ORM_AE__c</field>
-            <operation>greaterThan</operation>
-        </filters>
-        <label>All Scenarios</label>
-    </listViews>
     <nameField>
         <displayFormat>{0}</displayFormat>
         <label>ScenarioId</label>
@@ -714,6 +701,30 @@
         <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <listViews>
+        <fullName>All_Scenarios</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Lead__c</columns>
+        <columns>ClientId__c</columns>
+        <columns>PartnerId__c</columns>
+        <columns>Margin__c</columns>
+        <columns>Estimated_home_value__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>ORM_AE__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>6/1/2018 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>ORM_AE__c</field>
+            <operation>greaterThan</operation>
+        </filters>
+        <label>All Scenarios</label>
+    </listViews>
     <sharingReasons>
         <fullName>Executive__c</fullName>
         <label>Executive</label>
@@ -722,5 +733,4 @@
         <fullName>Manager__c</fullName>
         <label>Manager</label>
     </sharingReasons>
-    <visibility>Public</visibility>
 </CustomObject>
