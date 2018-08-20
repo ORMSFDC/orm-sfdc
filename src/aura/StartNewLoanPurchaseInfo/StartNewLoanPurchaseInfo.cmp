@@ -208,7 +208,7 @@
 
                                     <ui:inputSelectOption text="6.000" label="6.000" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
                                     <ui:inputSelectOption text="6.500" label="6.500" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
-                                    <ui:inputSelectOption text="7.000" label="6.700" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
+                                    <ui:inputSelectOption text="7.000" label="0.000" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
                                 </ui:inputSelect>
                             </div>
                             <aura:if isTrue="{!v.NewLoan.Rate_Type__c == 'ARM'}">
