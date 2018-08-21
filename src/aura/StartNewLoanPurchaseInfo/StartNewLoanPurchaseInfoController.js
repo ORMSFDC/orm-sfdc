@@ -43,20 +43,23 @@
         var mortgageType = component.find("LoanMortgageAppliedFor").get("v.value");
 
         if ('HELO' == loanType) {
+            //HELO must always be Fixed, and Fixed must always be single lump sum
             component.set('v.NewLoan.Rate_Type__c', 'Fixed');
+            component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
             if (mortgageType.includes('HECM')) {    //set default
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'HELO Refinance');
             }
-            //If mortgageType is Refinance, the loan payment plan must be 'Single lump sum'
-            //however since HELO is always Fixed rate type, and Fixed rate type already forces 'Single lump sum'
-            //nothing has to be done here
-            // if ('HECM to HECM Refinance' == mortgageType) {
-            //     component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
-            // }
         } else if ('HECM' == loanType) {
             if (mortgageType.includes('HELO')) {    //set default
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'FHA Traditional HECM');
             }
+        }
+    },
+
+    onRateTypeChange: function (component, event, helper) {
+        var rateType = component.find("RateType").get("v.value");
+        if('Fixed' == rateType){
+            component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
         }
     },
 

@@ -76,7 +76,7 @@
                                 <ui:inputSelectOption text="HELO for Purchase" label="HELO for Purchase" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />                                    
                             </ui:inputSelect>
 
-                            <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.NewLoan.Rate_Type__c}" disabled="{!(v.NewLoan.Product_Type__c == 'HELO') ? true  : false}">
+                            <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.NewLoan.Rate_Type__c}" disabled="{!(v.NewLoan.Product_Type__c == 'HELO') ? true  : false}" change="{!c.onRateTypeChange}">
                                 <ui:inputSelectOption text="ARM" label="ARM" />
                                 <ui:inputSelectOption text="Fixed" label="Fixed" />                                 
                             </ui:inputSelect>
