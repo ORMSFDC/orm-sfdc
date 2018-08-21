@@ -23,6 +23,7 @@ global class ScenarioExportUtil {
 
         Scenario__c loanlead1 = [SELECT  RateType__c,
         HeloMargin__c,
+        Margin__c,
         Estimated_home_value__c,
         PartnerId__c,
         PartnerId__r.ContactId,

@@ -583,7 +583,15 @@
             sceis['Age__c'] = parseInt(component.get('v.Ageminus1'));
             sceis['Desired_Origination_for_Adjustable_Rate__c'] = parseFloat(component.get('v.ADO'));  
         	sceis['Utilization__c'] = parseFloat(selRec_is.MaxInitialUtilization);
-            if(marginType == 'Helo'){
+           /* if(marginType == 'Helo'){ //SFDC - 265
+                var upb1 = parseFloat(selRec_is.UPB);                
+                if(upb1 >= 4000000 ){
+                    sceis['Unpaid_Principal_Balance__c'] = parseFloat(4000000);
+                }else{
+                    sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.UPB);      
+                }            	
+            }*/
+        	if(marginType == 'Helo'){ //UNDO just this if condition - 265
                 sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.UPB);            	
             }
             else{
@@ -595,6 +603,7 @@
             sceis['Funds_Needed_to_Close__c'] = parseFloat(component.get('v.cashToClose'));            
             sceis['Funds_to_Close__c'] = parseFloat(component.get('v.cashToClose'));
         	sceis['Origination_to_orm__c'] = parseFloat(component.get('v.EOF'));
+        	sceis['HeloMargin__c'] = parseFloat(component.get('v.HeloMargin'));//Helo New field
         console.log('sceis>>>> ',sceis);
         //BalaC1
         action.setParams({
@@ -828,15 +837,20 @@
             var Parseddata = JSON.parse(data.getReturnValue()).LoanPrograms[0].margins;
             console.log('Parseddata -> ',JSON.parse(JSON.stringify(Parseddata))); 
             console.log('data >> ',JSON.parse(data.getReturnValue()));
+            //Helo fix
             var ParseddataHelo =[];
-            try{
-                 component.set('v.isDisplayHelo',true);
-            ParseddataHelo = JSON.parse(data.getReturnValue()).LoanPrograms[3].margins;
-            }catch(err){
-                component.set('v.isDisplayHelo',false);
-            }
-            console.log('ParseddataHelo -> ',JSON.parse(JSON.stringify(ParseddataHelo))); 
-            
+            var wsData = data.getReturnValue();
+            var wsJson = JSON.parse(wsData);
+            wsJson.LoanPrograms.forEach(function(item){
+                if(item.ProgramName == 'Home Equity Loan Optimizer'){
+                 		component.set('v.isDisplayHelo',true);
+            			ParseddataHelo = item.margins;
+                }
+                else{
+                    component.set('v.isDisplayHelo',false);
+                }
+            });
+            console.log('ParseddataHelo -> ',JSON.parse(JSON.stringify(ParseddataHelo)));             
             var AdjustableParseddata = JSON.parse(data.getReturnValue()).LoanPrograms[2].margins;
             for(var i=0;i<AdjustableParseddata.length;i++){
                 console.log('>>>> ' + parseFloat(AdjustableParseddata[i].Margin).toFixed(3));
@@ -911,7 +925,12 @@
                 console.log('fixedmetadata1',t);
                 pricing = fixedValues.fixed[t];
                 pricing1 = parseInt(fixedValues.fixed_orm[t]);
-                
+                //SFDC-250
+                var fixedRate = 0;
+                fixedRate = fixedValues.fixed_rate_orm[t];
+                Parseddata[i].FR = fixedRate;
+				//End 250
+				                
                 console.log('fixedmetadata12', pricing1);
                 //alert(pricing);
                 if(!pricing){
@@ -959,8 +978,17 @@
                 var heloValues = component.get('v.metadatavaluesHelo');
                         console.log('heloValues ',JSON.stringify(heloValues));
                 var t =  ParseddataHelo[i].InterestRate;
-                var upb = ParseddataHelo[i].UPB;
                 
+                //use upb local variable for all HELO calcs because it has a cap of 4000000 SFDC-265
+               /* var upb1 = ParseddataHelo[i].UPB;                
+                var upb = 0;
+                if(upb1 >= 4000000){
+                    var upb = 4000000;
+                }
+                else{
+                    var upb = ParseddataHelo[i].UPB;
+                }*/ 
+                 var upb = ParseddataHelo[i].UPB; //UNDO - 265
                 //TC calculation -> Displaying in the Helo table Total Compensation
                 pricing = heloValues.Helo[t]; //Broker comp price__c
                         console.log('Helo Pricing',pricing);
@@ -994,13 +1022,7 @@
                 //Cash at Close calculation -> Helo table Cash At Close/Funds to Close
                 if(component.get('v.ScenarioType')=='FHA Traditional HECM'){			
                                  
-                    var cashatclose = upb - cmb - origToOrm - ecc1;
-                    /*if(cashatclose >= 0){
-                    	ParseddataHelo[i].CC = cashatclose;   
-                    }
-                    else{
-                        ParseddataHelo[i].CC = cashatclose*-1;
-                    }*/
+                    var cashatclose = upb - cmb - origToOrm - ecc1;                    
                     ParseddataHelo[i].CC = cashatclose; 
                 }else{                    
                     var fundstoclose = ((ecc1 + origToOrm) + EhvVal) - upb;
@@ -1015,7 +1037,7 @@
 				//end service fee            
                 
                 if(component.get('v.ScenarioType')!='FHA Traditional HECM'){
-                    ParseddataHelo[i].MFD = (component.get('v.EHV') - ParseddataHelo[i].PrincipalLimit) +pricing1+ 3000;
+                    ParseddataHelo[i].MFD = (component.get('v.EHV') - upb) +pricing1+ 3000;
                     ParseddataHelo[i].MFD = ParseddataHelo[i].CashToBorrower;
                                      console.log('MFD 2',ParseddataHelo[i].CashToBorrower);
                     component.set("v.downPyt",ParseddataHelo[i].MFD);

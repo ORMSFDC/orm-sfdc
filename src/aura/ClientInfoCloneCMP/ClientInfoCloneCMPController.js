@@ -319,6 +319,7 @@
            component.set('v.MarginType','Rate');  //Helo Interst Rate
            component.set("v.Index", HeloMargins[selId].Index);  //Helo Index  
            component.set("v.MIP", 0); //There is no MIP for Helo
+           component.set("v.HeloMargin",HeloMargins[selId].Margin); //Helo Margin new
            var heloValues = component.get('v.metadatavaluesHelo');
            console.log('Helo values',component.get('v.metadatavaluesHelo'));            
            var t =  HeloMargins[selId].InterestRate; 
@@ -331,8 +332,17 @@
            component.set("v.TotalAmountAvailableLoc", 0);   
            var EhvVal = component.get('v.EHV'); 
            
+           //use upb local variable for all HELO calcs because it has a cap of 400000 SFDC-265
+           /*var upb1 = HeloMargins[selId].UPB;
+           var upb = 0;
+           if(upb1 >= 4000000){
+               var upb = 4000000;
+           }else{
+               var upb = HeloMargins[selId].UPB;
+           }*/
+           var upb = HeloMargins[selId].UPB; //UNDO 265
+           
            //Origination to ORM calc
-           var upb = HeloMargins[selId].UPB;
            var origToOrm = ((upb * pricing)/100) ;
            console.log('oorm', origToOrm );
            component.set("v.EOF",origToOrm);           
@@ -373,7 +383,8 @@
            }           
            //end of amt avail calc
            
-           component.set("v.TotalAmountAvailable",HeloMargins[selId].PrincipalLimit); //Helo Total Amount Available, Principal Limit, need to change this to UPB            
+           //component.set("v.TotalAmountAvailable",upb); //SFDC - 265       
+           component.set("v.TotalAmountAvailable",HeloMargins[selId].PrincipalLimit); //UNDO 265
            component.set('v.CF1MA',component.get('v.MMP')*(1*12));
            component.set('v.CF5MA',component.get('v.MMP')*(5*12));
            component.set('v.CF10MA',component.get('v.MMP')*(10*12));
@@ -416,7 +427,8 @@
                 console.log('pfnc fixed',pfnc);
             }
             else { //Helo
-                component.set('v.PrincipalLimitIs',HeloMargins[selId].UPB);
+                //component.set('v.PrincipalLimitIs',upb); //SFDC-265
+                 component.set('v.PrincipalLimitIs',HeloMargins[selId].UPB); //UNDO 265 this has to be PrincipalLimit as this is used in piechart
                 var pfnc = ((ecc1 + origToOrm) + EhvVal) - upb;
                 component.set('v.cashToClose',pfnc);
                 console.log('pfnc Helo',pfnc);

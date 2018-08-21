@@ -5,6 +5,7 @@
  *
  * changelog:
  * 07/17/2018: Sahitya - added method for fetching Helo metadata tables
+ * 08/20/2018: Sahitya -SFDC - 250
  */
 public class get_metadata{
     public static map<string,map<String,String>> get_tierData(String fetchFrom){
@@ -39,6 +40,7 @@ public class get_metadata{
         System.debug(metadataResults);
         map<String,String> percentage_and_Loc = new map<String,String>(); 
         map<String,String> percentage_and_LocNew = new map<String,String>(); 
+        map<String,String> fixed_rate = new map<String,String>(); //SFDC-250
         
         for(sObject eachsObject:metadataResults){
             percentage_and_Loc.put(String.valueOf(eachsObject.get('Rate__c')),String.valueOf(eachsObject.get('Price__c')));
@@ -48,6 +50,11 @@ public class get_metadata{
             percentage_and_LocNew.put(String.valueOf(eachsObject.get('Rate__c')),String.valueOf(eachsObject.get('Origination_to_ORM__c')));
         }
         metataDataFields.put('fixed_orm',percentage_and_LocNew);
+        //SFDC-250
+        for(sObject eachsObject:metadataResults){
+            fixed_rate.put(String.valueOf(eachsObject.get('Rate__c')),String.valueOf(eachsObject.get('Rate__c')));
+        }
+        metataDataFields.put('fixed_rate_orm',fixed_rate);
         return metataDataFields;
     }
     
