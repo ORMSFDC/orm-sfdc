@@ -331,16 +331,7 @@
            console.log('ADOVal Helo', ADOVal);
            component.set("v.TotalAmountAvailableLoc", 0);   
            var EhvVal = component.get('v.EHV'); 
-           
-           //use upb local variable for all HELO calcs because it has a cap of 400000 SFDC-265
-           /*var upb1 = HeloMargins[selId].UPB;
-           var upb = 0;
-           if(upb1 >= 4000000){
-               var upb = 4000000;
-           }else{
-               var upb = HeloMargins[selId].UPB;
-           }*/
-           var upb = HeloMargins[selId].UPB; //UNDO 265
+           var upb = HeloMargins[selId].UPB;
            
            //Origination to ORM calc
            var origToOrm = ((upb * pricing)/100) ;
@@ -383,8 +374,15 @@
            }           
            //end of amt avail calc
            
-           //component.set("v.TotalAmountAvailable",upb); //SFDC - 265       
-           component.set("v.TotalAmountAvailable",HeloMargins[selId].PrincipalLimit); //UNDO 265
+           //use Principal limit local variable for all HELO calcs because it has a cap of 4000000 SFDC-265
+           var pl1 = HeloMargins[selId].PrincipalLimit;
+           var pl = 0;
+           if(pl1 >= 4000000){
+               var pl = 4000000;
+           }else{
+               var pl = pl1;
+           }
+           component.set("v.TotalAmountAvailable",pl); //265
            component.set('v.CF1MA',component.get('v.MMP')*(1*12));
            component.set('v.CF5MA',component.get('v.MMP')*(5*12));
            component.set('v.CF10MA',component.get('v.MMP')*(10*12));
@@ -427,8 +425,7 @@
                 console.log('pfnc fixed',pfnc);
             }
             else { //Helo
-                //component.set('v.PrincipalLimitIs',upb); //SFDC-265
-                 component.set('v.PrincipalLimitIs',HeloMargins[selId].UPB); //UNDO 265 this has to be PrincipalLimit as this is used in piechart
+                component.set('v.PrincipalLimitIs',pl); //265
                 var pfnc = ((ecc1 + origToOrm) + EhvVal) - upb;
                 component.set('v.cashToClose',pfnc);
                 console.log('pfnc Helo',pfnc);

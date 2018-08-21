@@ -242,13 +242,12 @@
                                     <td data-label="" class="tbody_td" data-type="helo" data-MFD="{!obj.MFD}">
                                         <div data-MFD="{!obj.MFD}" data-type="helo" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">
                                             <span data-MFD="{!obj.MFD}" data-type="helo" id="{!indx}" onclick="{!c.get_loanFor_margin}" >
-                                               <!-- <aura:if isTrue="{!obj.PrincipalLimit >= 4000000}"> 
+                                               <aura:if isTrue="{!obj.PrincipalLimit >= 4000000}"> <!--265 -->
                                                     $4,000,000.00
                                                     <aura:set attribute="else">
                                                         <lightning:formattedNumber value="{!obj.PrincipalLimit}" style="currency" />
                                                     </aura:set>
-                                                </aura:if> -->
-                                                <lightning:formattedNumber value="{!obj.PrincipalLimit}" style="currency" />
+                                                </aura:if> 
                                             </span>
                                         </div>
                                     </td>
@@ -270,13 +269,7 @@
                                     
                                     <td data-MFD="{!obj.MFD}" data-type="helo" data-label="" class="tbody_td">
                                         <div data-MFD="{!obj.MFD}"  data-type="helo" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">
-                                            <span data-MFD="{!obj.MFD}" data-type="helo" id="{!indx}" onclick="{!c.get_loanFor_margin}" >
-                                               <!-- <aura:if isTrue="{!obj.UPB >= 4000000}">  
-                                                    $4,000,000.00
-                                                    <aura:set attribute="else">
-                                                        <lightning:formattedNumber value="{!obj.UPB}" style="currency" />
-                                                    </aura:set>
-                                                </aura:if> -->
+                                            <span data-MFD="{!obj.MFD}" data-type="helo" id="{!indx}" onclick="{!c.get_loanFor_margin}" >                                               
                                                 <lightning:formattedNumber value="{!obj.UPB}" style="currency" />
                                             </span>
                                         </div>
