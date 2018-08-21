@@ -5,6 +5,8 @@
     <aura:attribute name="ReIssueCredit" type="boolean" default="false" />
     <aura:attribute name="LoanId" type="String" />
     <aura:attribute name="NewCredit" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
+    <aura:attribute name="isLoanHELO" type="boolean" default="false" />
+    <aura:attribute name="clientCreditScore" type="Integer" />
     <aura:attribute name="ClientName" type="string"  />
     
     <aura:attribute name="showError_Decla" type="boolean" default="false"/>
@@ -51,9 +53,20 @@
     </aura:if> 
     <fieldset class="slds-box slds-theme--default slds-container--large">
         <form>
-            <div class="slds-size_1-of-2">
-                <!--<ui:inputNumber label="Client's credit score" aura:id="CreditScore" value="{!v.NewCredit.Client_s_credit_score__c}" class="slds-input" required="true" />-->
-            </div>
+            <aura:if isTrue="{!v.isLoanHELO}">            
+                <div style="margin-bottom:3%; " class="slds-size_1-of-2 inputHelpContainer">
+                    <label>
+                        <span>Client's credit score</span>
+                        <span class="required">*</span>
+                        <lightning:helptext style="position: relative; left: -0.8%; top: -10px;" content="For loan qualification, please use client's middle credit score. With multiple clients on a loan, use the lowest of middle scores." />
+                    </label>
+                    <ui:inputNumber aura:id="CreditScore" value="{!v.clientCreditScore}" class="slds-input" required="true" />
+                    <ui:message aura:id="invalidCreditScore" title="Error" severity="error" closable="false" class="slds-hide" >
+                        One Reverse HELO requires minimum mid credit score of 640 for all borrowers. If your client’s credit score is less than 640 please change the loan type in the Loan section.
+                    </ui:message>
+                </div>
+            </aura:if>
+            
             <div class="slds-size_1-of-2">
                 <ui:inputSelect label="Credit Indicator" required="true" aura:id="SelectNewCredit" value="{!v.NewCredit.Credit_Indicator__c}" change="{!c.CreditindicatorFunc}">
                     <ui:inputSelectOption text="" label="---Select Option---" value="true" />
