@@ -6,9 +6,9 @@
 
     openOpt1: function (component, event, helper) {
         $('li').not('.active').find('a')[0].setAttribute("data-toggle", "tab");
-        $A.getCallback(function (result) {
-            $('li#l1 a').click();
-        });
+//        $A.getCallback(function (result) {
+//            $('li#l1 a').click();
+//        });
         helper.closeAllSteps(component, event);
         component.set("v.opt1", "true");
         if (event.target.id = "loantab") {

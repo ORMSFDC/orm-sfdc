@@ -12,3 +12,7 @@
   list-style: decimal;
   width: auto;
 }
+
+.THIS .toggle {
+    display: none;
+}

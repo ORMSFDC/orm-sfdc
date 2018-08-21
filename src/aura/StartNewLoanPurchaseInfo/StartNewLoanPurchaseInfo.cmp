@@ -171,21 +171,21 @@
                                         <ui:inputSelectOption text="Others" label="Others"></ui:inputSelectOption>
                                     </ui:inputSelect>
                                 </div>
-                                <div id="SalDate" style="display:none">
+                                <div id="SalDate" aura:id="SalDateToggle" class="toggle">
                                         <ui:inputDate aura:id="SaleDate" label="Sale Date" required="true" value="{!v.NewLoan.Sale_Date__c}" displayDatePicker="true"
                                         format="MM/dd/yyyy" />
                                     <br/>
                                     <ui:inputCurrency label="Sale Proceeds" required="true" aura:id="SaleProceeds" value="{!v.NewLoan.Sale_Proceeds__c}" />
                                 </div>
-                                <div id="Assets" style="display:none">
+                                <div id="Assets" aura:id="AssetsToggle" class="toggle">
                                     <br/>
                                     <ui:inputCurrency label="Asset Amount" required="true" aura:id="AssetAmount" value="{!v.NewLoan.Assets_Amount__c}" />
                                 </div>
-                                <div id="Gift" style="display:none">
+                                <div id="Gift" aura:id="GiftToggle" class="toggle">
                                     <br/>
                                     <ui:inputCurrency label="Gift Amount" required="true" aura:id="GiftAmount" value="{!v.NewLoan.Gift_Amount__c}" />
                                 </div>
-                                <div id="Others" style="display:none">
+                                <div id="Others" aura:id="OthersToggle" class="toggle">
                                     <br/>
                                     <ui:inputText label="Other Source Of Funds " aura:id="OtherFundSource" value="{!v.NewLoan.Other_Source_Of_Funds__c}" class="slds-input"
                                         required="true" />

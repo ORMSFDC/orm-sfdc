@@ -160,51 +160,35 @@
             var result = data.getReturnValue();
 
             var rtype = result.Rate_Type__c;
+            var selectedRate = result.Rate__c;
 
-            if ('Fixed' === rtype) {
-                if (result.Rate__c == '' || result.Rate__c == undefined || result.Rate__c == null) {
-                    component.find("Ratedata").set("v.value", '');
-                }
-                else {
-                    var rateval = result.Rate__c;
-                    var ratePer3 = Number.parseFloat(rateval).toFixed(3);
-                    setTimeout($A.getCallback(setRateFunction), 1000, component, ratePer3);
-                }
-            }
             if (result.Children_Under_the_age_of_6_living_in_th__c == "" || result.Children_Under_the_age_of_6_living_in_th__c == undefined || result.Children_Under_the_age_of_6_living_in_th__c == null) {
                 result.Children_Under_the_age_of_6_living_in_th__c = 'No';
             }
+
+            component.set("v.NewLoan", result);
+
             if (result.Mortgage_Applied_for__c && result.Mortgage_Applied_for__c.includes('Purchase')) {
                 var fundSource = result.Source_Of_Funds__c;
                 if (fundSource != undefined) {
                     if (fundSource.includes("Sale Of Other Property")) {
-                        document.getElementById("SalDate").style.display = 'block';
-                    }
-                    else {
-                        document.getElementById("SalDate").style.display = 'none';
+                        $A.util.toggleClass(component.find("SalDateToggle"), "toggle");
                     }
 
                     if (fundSource.includes("Assets")) {
-                        document.getElementById("Assets").style.display = 'block';
+                        $A.util.toggleClass(component.find("AssetsToggle"), "toggle");
                     }
-                    else {
-                        document.getElementById("Assets").style.display = 'none';
-                    }
+
                     if (fundSource.includes("Gift")) {
-                        document.getElementById("Gift").style.display = 'block';
+                        $A.util.toggleClass(component.find("GiftToggle"), "toggle");
                     }
-                    else {
-                        document.getElementById("Gift").style.display = 'none';
-                    }
+
                     if (fundSource.includes("Others")) {
-                        document.getElementById("Others").style.display = 'block';
-                    }
-                    else {
-                        document.getElementById("Others").style.display = 'none';
+                        $A.util.toggleClass(component.find("OthersToggle"), "toggle");
                     }
                 }
             }
-            component.set("v.NewLoan", result);
+
 			var loanCalaculayionType = component.find("newSelectlist").get("v.value");
             if (loanCalaculayionType == 'Calculate Maximum Fee' || loanCalaculayionType == 'Enter Fee Value ($0 - $6,000)') {
 
@@ -222,14 +206,26 @@
             var state = data.getState();
 
             if (state === "SUCCESS" && component.get('v.NewStartLoan') == false) {
-                helper.ValidationForPills(component, event, helper);
-
-                component.set('v.Incomplete', false);
+                $A.getCallback(function(){
+                    helper.ValidationForPills(component, event, helper);
+                    component.set('v.Incomplete', false);
+                });
             }
 
             if ('ARM' === rtype) {
-                this.showHideMortgage(component, event, helper);
+//                this.showHideMortgage(component, event, helper);
                 helper.feecaluculationHelper(component, event, helper, 'init');
+            }
+
+            if ('Fixed' === rtype) {
+                if (!selectedRate) {
+                    component.find("Ratedata").set("v.value", '');
+                }
+                else {
+                    var rateval = selectedRate;
+                    var ratePer3 = Number.parseFloat(rateval).toFixed(3);
+                    setTimeout($A.getCallback(setRateFunction), 1500, component, ratePer3);
+                }
             }
         });
         $A.enqueueAction(action1);
