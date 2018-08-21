@@ -255,20 +255,25 @@
     },
     
     CheckCreditScore: function (component, event, helper) {
-        var isValid = true;
+        var isValid = true;        
+        var isLoanHELO = component.get("v.isLoanHELO");
         
-        var creditScore = component.find("CreditScore").get("v.value");
-        if (!$A.util.isEmpty(creditScore) && creditScore < 640) {        
-            isValid = false;
-        }
-        
-        var invalidCreditScore = component.find("invalidCreditScore");
-        if (isValid === true) {
-        	invalidCreditScore.set("v.class", "slds-hide");
-    	}
-    	else {
-			invalidCreditScore.set("v.class", "slds-show");
-		}
+        if (isLoanHELO) {
+            // Only checking credit score for HELO
+            var creditScore = component.find("CreditScore").get("v.value");
+
+            if (!$A.util.isEmpty(creditScore) && creditScore < 640) {        
+                isValid = false;
+            }
+            
+            var invalidCreditScore = component.find("invalidCreditScore");
+            if (isValid === true) {
+                invalidCreditScore.set("v.class", "slds-hide");
+            }
+            else {
+                invalidCreditScore.set("v.class", "slds-show");
+            }
+        }  
         
         return isValid;
     },
