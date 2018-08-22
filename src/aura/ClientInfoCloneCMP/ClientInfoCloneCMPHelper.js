@@ -583,8 +583,13 @@
             sceis['Age__c'] = parseInt(component.get('v.Ageminus1'));
             sceis['Desired_Origination_for_Adjustable_Rate__c'] = parseFloat(component.get('v.ADO'));  
         	sceis['Utilization__c'] = parseFloat(selRec_is.MaxInitialUtilization);          
-        	if(marginType == 'Helo'){ 
-                sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.UPB);            	
+        	if(marginType == 'Helo'){ //SFDC - 265_new
+                var upb1 = parseFloat(selRec_is.UPB);                
+                if(upb1 >= 4000000 ){
+                    sceis['Unpaid_Principal_Balance__c'] = parseFloat(4000000);
+                }else{
+                    sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.UPB);      
+                }            	
             }
             else{
                 sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.MaxInitialUPB);            	
@@ -970,7 +975,17 @@
                 var heloValues = component.get('v.metadatavaluesHelo');
                         console.log('heloValues ',JSON.stringify(heloValues));
                 var t =  ParseddataHelo[i].InterestRate;
-                var upb = ParseddataHelo[i].UPB; 
+                 
+                //use upb local variable for all HELO calcs because it has a cap of 4000000 SFDC-265_new
+                var upb1 = ParseddataHelo[i].UPB;                
+                var upb = 0;
+                if(upb1 >= 4000000){
+                    var upb = 4000000;
+                }
+                else{
+                    var upb = ParseddataHelo[i].UPB;
+                } 
+
                 //TC calculation -> Displaying in the Helo table Total Compensation
                 pricing = heloValues.Helo[t]; //Broker comp price__c
                         console.log('Helo Pricing',pricing);

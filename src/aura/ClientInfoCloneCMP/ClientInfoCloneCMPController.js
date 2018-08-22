@@ -331,8 +331,16 @@
            console.log('ADOVal Helo', ADOVal);
            component.set("v.TotalAmountAvailableLoc", 0);   
            var EhvVal = component.get('v.EHV'); 
-           var upb = HeloMargins[selId].UPB;
            
+           //use upb local variable for all HELO calcs because it has a cap of 4000000 SFDC-265_new
+           var upb1 = HeloMargins[selId].UPB;
+           var upb = 0;
+           if(upb1 >= 4000000){
+               var upb = 4000000;
+           }else{
+               var upb = HeloMargins[selId].UPB;
+           }
+
            //Origination to ORM calc
            var origToOrm = ((upb * pricing)/100) ;
            console.log('oorm', origToOrm );
