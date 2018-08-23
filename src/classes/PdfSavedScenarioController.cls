@@ -40,7 +40,7 @@ public without sharing class PdfSavedScenarioController {
         if(contactList.size() > 0 && contactList != Null) {
             con = contactList[0];
         }
-  List<Scenario__c> scenarioList = [Select Id,Estimated_home_value__c,
+      List<Scenario__c> scenarioList = [Select Id,Estimated_home_value__c,
                                           MIP__c,
                                           PieChartResponse__c,
                                           Initial_Growth_Rate__c,
@@ -67,46 +67,40 @@ public without sharing class PdfSavedScenarioController {
                                           Other_Estimated_Closing_Costs__c //SFDC -269
                                           From Scenario__c Where Id =: scenarioID];
         
-        if(scenarioList != Null && scenarioList.size()>0) {
-   //         try{
+        if(scenarioList != Null && scenarioList.size()>0) {   
             scenario = scenarioList[0];
             estClosingcost = scenario.Other_Estimated_Closing_Costs__c; //SFDC -269
             mmp = scenario.Monthly_Mortgage_Payment__c; //SFDC -269
             
-            if(scenario.Estimated_home_value__c<=200000) {
-             finalEOF = scenario.Estimated_home_value__c *0.02;
-              }
+            if(scenario.Estimated_home_value__c<=200000) {  finalEOF = scenario.Estimated_home_value__c *0.02;
+            }
             else { 
-            finalEOF = (200000 *0.02) + ((scenario.Estimated_home_value__c-200000)*0.01);
-             }  
-             
+                finalEOF = (200000 *0.02) + ((scenario.Estimated_home_value__c-200000)*0.01);
+            }               
             
-            if(finalEOF<2500)       { 
-            finalEOF = 2500;
-             }
-            else if (finalEOF>6000) {     finalEOF = 6000; 
-            
+            if(finalEOF<2500){ finalEOF = 2500;
+            }else if (finalEOF>6000){
+                 finalEOF = 6000;             
             }
             
-            if(null != scenario.EOF__c ){    finalEOF =    scenario.EOF__c;
+            if(null != scenario.EOF__c ){ finalEOF =    scenario.EOF__c;
             }
             
             if(scenario.Date_of_birth__c != Null)  
             age                           = System.today().year() - scenario.Date_of_birth__c.year(); 
             if(null != scenario.PieChartResponse__c){
-            isOld = true;
-            Map<String,Object> jsonMap    = (Map<String,Object>)JSON.deserializeUntyped(scenario.PieChartResponse__c);
-            
-            cashAtClose                   = (Decimal)jsonMap.get('maxCash');
-            fundsNeedToClose              = (Decimal)jsonMap.get('cashToClose');
+                isOld = true;
+                Map<String,Object> jsonMap    = (Map<String,Object>)JSON.deserializeUntyped(scenario.PieChartResponse__c);                
+                cashAtClose                   = (Decimal)jsonMap.get('maxCash');
+                fundsNeedToClose              = (Decimal)jsonMap.get('cashToClose');
             }else{
               //SFDC - 269
               if(scenario.Scenario_Type__c=='FHA Traditional HECM'){
-                    cashAtClose                   = Decimal.valueOf(scenario.Cash_at_close__c);
+                    cashAtClose               = Decimal.valueOf(scenario.Cash_at_close__c);
                 }else{
-                    cashAtClose                   = scenario.Principal_Limit__c;
+                    cashAtClose               = scenario.Principal_Limit__c;
               }//SFDC - 269
-              fundsNeedToClose              = Decimal.valueOf(scenario.Cash_to_close__c); //SFDC-241
+              fundsNeedToClose                = Decimal.valueOf(scenario.Cash_to_close__c); //SFDC-241
                //hecm
                 if(scenario.Scenario_Type__c=='FHA Traditional HECM'){  isTraditional  = true;
                 }else{
@@ -120,10 +114,10 @@ public without sharing class PdfSavedScenarioController {
             }
             equityReserves                = scenario.Estimated_home_value__c;
             financingFees                 =  finalEOF + estClosingcost; //SFDC -269
-           if(null != scenario.PieChartResponse__c) {
-            firstAmount                   = ((scenario.Principal_Limit__c-scenario.Current_Mortgage_Balance__c-scenario.MIP__c-financingFees).setScale(2, RoundingMode.HALF_UP));
+            if(null != scenario.PieChartResponse__c) {
+                firstAmount                   = ((scenario.Principal_Limit__c-scenario.Current_Mortgage_Balance__c-scenario.MIP__c-financingFees).setScale(2, RoundingMode.HALF_UP));
             }else{
-            firstAmount                   =decimal.valueOf(scenario.Cash_at_close__c);
+                firstAmount                   =decimal.valueOf(scenario.Cash_at_close__c);
             }
             
             //start SFDC -269
