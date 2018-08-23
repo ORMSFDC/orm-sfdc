@@ -124,19 +124,21 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td data-label="AA">
-                                                    <div class="slds-truncate"><b>Amount Available after Lien Payoff
-                                                                                                                    </b></div>
-                                                </td>
-                                                <td data-label="AA">
-                                                    <div class="slds-truncate slds-text-align_right">
-                                                        <apex:outputText value="{0, number, Currency}">
-                                                            <apex:param value="{!firstAmount}" />
-                                                        </apex:outputText>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <apex:outputText rendered="{!isTraditional}">  <!--SFDC - 269-->
+                                                <tr>
+                                                    <td data-label="AA">
+                                                        <div class="slds-truncate"><b>Amount Available after Lien Payoff
+                                                                                                                        </b></div>
+                                                    </td>
+                                                    <td data-label="AA">
+                                                        <div class="slds-truncate slds-text-align_right">
+                                                            <apex:outputText value="{0, number, Currency}">
+                                                                <apex:param value="{!firstAmount}" />
+                                                            </apex:outputText>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </apex:outputText>
                                             <tr>
                                                 <td data-label="FNC">
                                                     <div class="slds-truncate">
@@ -209,8 +211,8 @@
                                         </td>
                                         <td data-label="CMMP">
                                             <div class="slds-truncate slds-text-align_right">
-                                                <apex:outputText value="{0, number, Currency}">
-                                                    <apex:param value="{!scenario.Monthly_Mortgage_Payment__c}" />
+                                                <apex:outputText value="{0, number, Currency}"> <!--SFDC 269 -->
+                                                    <apex:param value="{!mmp}" />
                                                 </apex:outputText>
                                             </div>
                                         </td>
@@ -410,7 +412,9 @@
                                             </td>
                                             <td data-label="ECC">
                                                 <div class="slds-truncate slds-text-align_right">
-                                                    $2,500.00
+                                                    <apex:outputText value="{0, number, Currency}"> <!--SFDC 269 -->
+                                                        <apex:param value="{!estClosingcost}" />
+                                                    </apex:outputText>
                                                 </div>
                                             </td>
                                         </tr>
