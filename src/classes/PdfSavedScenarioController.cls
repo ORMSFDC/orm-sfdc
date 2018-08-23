@@ -100,7 +100,12 @@ public without sharing class PdfSavedScenarioController {
             cashAtClose                   = (Decimal)jsonMap.get('maxCash');
             fundsNeedToClose              = (Decimal)jsonMap.get('cashToClose');
             }else{
-              cashAtClose                   = Decimal.valueOf(scenario.Cash_at_close__c);
+              //SFDC - 269
+              if(scenario.Scenario_Type__c=='FHA Traditional HECM'){
+                    cashAtClose                   = Decimal.valueOf(scenario.Cash_at_close__c);
+                }else{
+                    cashAtClose                   = scenario.Principal_Limit__c;
+              }//SFDC - 269
               fundsNeedToClose              = Decimal.valueOf(scenario.Cash_to_close__c); //SFDC-241
                //hecm
                 if(scenario.Scenario_Type__c=='FHA Traditional HECM'){  isTraditional  = true;
@@ -123,7 +128,7 @@ public without sharing class PdfSavedScenarioController {
             
             //start SFDC -269
             heloEquity = scenario.Estimated_home_value__c - financingFees - firstAmount; 
-            Decimal calc = equityReserves - scenario.MIP__c + scenario.Line_of_Credit__c + financingFees + cashAtClose + scenario.Current_Mortgage_Balance__c;
+            Decimal calc = equityReserves - (scenario.MIP__c + scenario.Line_of_Credit__c + financingFees + cashAtClose + scenario.Current_Mortgage_Balance__c);
 
             if(scenario.Scenario_Type__c=='FHA Traditional HECM'){ 
                 if(Scenario.RateType__c == 'Helo'){
