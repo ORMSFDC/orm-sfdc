@@ -93,6 +93,7 @@
                 <value>
                     <fullName>HELO-ORIGINATION</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>HELO-ORIGINATION</label>
                 </value>
             </valueSetDefinition>
