@@ -43,7 +43,7 @@
             component.set("v.ErrorMsg", "");
             isAdoValid = false;
         }else{
-            var maxAdo = parseInt(component.get('v.MaxAdo'));
+            var maxAdo = component.get('v.MaxAdo');
             if(inz > maxAdo){
                 component.set('v.show_MaxAdo',true);
                 isAdoValid = false;
