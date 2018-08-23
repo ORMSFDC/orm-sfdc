@@ -1146,6 +1146,9 @@
                                                 <lightning:button aura:id="outputButton1" variant="brand" 
                                                                   label="Request Scenario Package" 
                                                                   onclick="{!c.sendmailrequest}" class="senario_button" />
+                                                <aura:if isTrue="{!v.showSpinnerLoan}"> <!-- Helo -->
+                                                	<lightning:spinner variant="brand" size="large"/>
+                                            	</aura:if> 
                                                 
                                             </span>&nbsp;
                                         	<aura:if isTrue = "{!V.MarginTypeiS == 'Helo'}">  <!-- Helo Temp fix SFDC-263 --> 

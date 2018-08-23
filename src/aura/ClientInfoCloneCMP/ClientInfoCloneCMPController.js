@@ -132,8 +132,8 @@
     },
     //For Request Package
     sendmailrequest: function (component, event, helper) {
+        component.set('v.showSpinnerLoan',true); //Helo fix
         var ScenarioID = component.get("v.ScenarioID")
-
         var action2 = component.get("c.SendMailTMP");
         console.log('email sent');
         action2.setParams({
@@ -143,6 +143,7 @@
             component.set("v.Messages", "Request sent successfully and will be emailed to you within 5 minutes. If you do not receive it, please check your junk and spam folders. If you cannot locate your scenario package, please contact your AE.");
             component.set("v.showAlert", true);            
             document.getElementById("requestbtn").style.display = "None";
+            component.set('v.showSpinnerLoan',false); //Helo fix
         });
         $A.enqueueAction(action2);
         
