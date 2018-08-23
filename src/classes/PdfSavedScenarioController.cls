@@ -5,7 +5,7 @@
  *
  * changelog:
  * 08/07/2018: Don - Modified Funds to Close - SFDC-241
- * 
+ * 08/22/2018: Sahitya - Updated results for Helo SFDC - 269
  */
 public without sharing class PdfSavedScenarioController {
     
@@ -21,9 +21,12 @@ public without sharing class PdfSavedScenarioController {
     public Decimal financingFees{get;set;}
     public Decimal firstAmount{get;set;}
     public boolean isTraditional {get;set;}
-    public string RateTypeis {get;set;}
-    
+    public string RateTypeis {get;set;}    
     public boolean isOld{get;set;}
+    //SFDC -229
+    public Decimal estclosingcost{get;set;} 
+    public Decimal heloEquity{get;set;} 
+    public Decimal mmp{get;set;}
     
     public PdfSavedScenarioController() {
     RateTypeis  = 'Margin';
@@ -60,12 +63,15 @@ public without sharing class PdfSavedScenarioController {
                                           CashFlow5__c,
                                           Scenario_Type__c,
                                           RateType__c,
-                                          EOF__c
+                                          EOF__c,
+                                          Other_Estimated_Closing_Costs__c //SFDC -269
                                           From Scenario__c Where Id =: scenarioID];
         
         if(scenarioList != Null && scenarioList.size()>0) {
    //         try{
             scenario = scenarioList[0];
+            estClosingcost = scenario.Other_Estimated_Closing_Costs__c; //SFDC -269
+            mmp = scenario.Monthly_Mortgage_Payment__c; //SFDC -269
             
             if(scenario.Estimated_home_value__c<=200000) {
              finalEOF = scenario.Estimated_home_value__c *0.02;
@@ -108,18 +114,31 @@ public without sharing class PdfSavedScenarioController {
                 }
             }
             equityReserves                = scenario.Estimated_home_value__c;
-            financingFees                 =  finalEOF+2500;
+            financingFees                 =  finalEOF + estClosingcost; //SFDC -269
            if(null != scenario.PieChartResponse__c) {
             firstAmount                   = ((scenario.Principal_Limit__c-scenario.Current_Mortgage_Balance__c-scenario.MIP__c-financingFees).setScale(2, RoundingMode.HALF_UP));
             }else{
             firstAmount                   =decimal.valueOf(scenario.Cash_at_close__c);
             }
-            if((equityReserves -(scenario.MIP__c + scenario.Line_of_Credit__c + financingFees + cashAtClose+scenario.Current_Mortgage_Balance__c )) < 0 ) { equityReserves = 0.00; } 
-            else { equityReserves = (equityReserves -(scenario.MIP__c + scenario.Line_of_Credit__c + financingFees + cashAtClose+scenario.Current_Mortgage_Balance__c )); } 
             
-     //       }catch(exception ex) {
-       //         System.debug('Exception'+ex);
-         //   } 
+            //start SFDC -269
+            heloEquity = scenario.Estimated_home_value__c - financingFees - firstAmount; 
+            Decimal calc = equityReserves - scenario.MIP__c + scenario.Line_of_Credit__c + financingFees + cashAtClose + scenario.Current_Mortgage_Balance__c;
+
+            if(scenario.Scenario_Type__c=='FHA Traditional HECM'){ 
+                if(Scenario.RateType__c == 'Helo'){
+                    equityReserves = heloEquity;
+                }
+                else{
+                    if(calc < 0 ) { 
+                        equityReserves = 0.00; 
+                    }else{
+                        equityReserves = calc; 
+                    } 
+                }
+            }else{
+                equityReserves = 0.00;
+            }  //end          
         }
     }
     
