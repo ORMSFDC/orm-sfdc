@@ -942,7 +942,12 @@
                             <div class="slds-form-element slds-size_1-of-1" style="">
                                 <h2 style="color: #0C4569;font-size: 28px !important;font-family: Lato Bold;">
                                     Enter Client Details
-                                </h2>                            
+                                </h2> 
+                                <aura:if isTrue="{!v.MarginTypeiS=='Helo'}">  <!--Helo Temp message-->   
+                                    <h1 style="color: red;font-size: 14px !important;font-family: Lato Bold;">
+                                        **These states are coming soon for the HELO product: Alabama, Maryland, Minnesota, New Hampshire, New Jersey and Wisconsin.
+                                    </h1>
+                                </aura:if>
                             </div>
                             
                         </div>
