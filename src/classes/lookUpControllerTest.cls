@@ -179,8 +179,8 @@ public with sharing class lookUpControllerTest {
             
             System.assertEquals(objScenario.modelType, 'test');
             
-            //DateTime DT=ClientList[0].DOB__c;
-            string ClientDOB='19890923';                
+            DateTime DT=LeadList[0].DOB__c;
+            string ClientDOB= DT.format('MM/dd/yyyy');                
             string Email_Optional ='d@k.com';
             //string Phone_Number = '123456';
             String getUserEmailID ='dkhar@galaxe.com';
