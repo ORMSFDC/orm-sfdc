@@ -1,12 +1,19 @@
-//Test daily product rate update code that is typically called by DailyProductRate trigger
+/**
+* @description test class for DailyProductRateUpdateCallout.cls, Test daily product rate update code that is typically called by DailyProductRate trigger
+*
+* @author Ryan Pendergast
+* @date 8/27/2018
+*
+*/
+
 @IsTest
 private class DailyProductRateUpdateCalloutTest {
     private class DailyProductRateUpdateCalloutTestGenerator implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
-//        // Optionally, only send a mock response for a specific endpoint
-//        // and method.
-//        System.assertEquals('http://example.com/example/test', req.getEndpoint());
-//        System.assertEquals('GET', req.getMethod());
+        // Optionally, only send a mock response for a specific endpoint
+        // and method.
+        //System.assertEquals('http://example.com/example/test', req.getEndpoint());
+        //System.assertEquals('GET', req.getMethod());
 
             HttpResponse res = new HttpResponse();
             res.setHeader('Content-Type', 'application/json');
