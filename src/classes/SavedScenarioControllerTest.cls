@@ -72,7 +72,7 @@ public with sharing class SavedScenarioControllerTest {
         System.assertEquals(ScenarioInsert.Id,ScenarioData.Id);
         
         savedScenarioController.get_searchInstance();
-        savedScenarioController.SendMailTMP(ScenarioId);
+        //savedScenarioController.SendMailTMP(ScenarioId);
         savedScenarioController.Senariodelete(new List<Id>{ScenarioId});
         //ScenarioExportUtil.getExportForscenarioId(ScenarioId);
         savedScenarioController.getScenario_nextPage(1,'Name','ASC');
