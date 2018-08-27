@@ -308,6 +308,7 @@
     <members>LoanExportUtilTest</members>
     <members>WS_CreditReport</members>
     <members>WS_CreditReport_Test</members>
+    <members>DailyProductRateUpdateCalloutTest</members>
     <name>ApexClass</name>
   </types>
   <types>
