@@ -3308,6 +3308,11 @@ IF(
                     <label>Land</label>
                 </value>
                 <value>
+                    <fullName>Planned Unit Development (PUD)</fullName>
+                    <default>false</default>
+                    <label>Planned Unit Development (PUD)</label>
+                </value>
+                <value>
                     <fullName>Mixed use - Residential</fullName>
                     <default>false</default>
                     <isActive>false</isActive>

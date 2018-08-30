@@ -164,6 +164,7 @@
                                 <ui:inputSelectOption text="Farm" label="Farm" />
                                 <ui:inputSelectOption text="Home and Business Combined" label="Home and Business Combined" />
                                 <ui:inputSelectOption text="Land" label="Land" />
+                                <ui:inputSelectOption text="Planned Unit Development (PUD)" label="Planned Unit Development (PUD)" />
 
                             </ui:inputSelect>
                         </div>
