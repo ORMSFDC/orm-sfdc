@@ -33,13 +33,13 @@ public class CreateLoanFromScenario_Test{
                 Partner_Lead_Status__c='New');
             insert portalAccount;
             Contact contact = new Contact(
-                LastName='LastName', 
+                LastName='LastName555', 
                 Title__c='Processor ', 
                 Cell__c='1234569874', 
-                Office_Phone__c='1234569874', 
+                Office_Phone__c='1234555874', 
                 Individual_Lead_source__c='Other', 
-                Email = 'Sam@gmail.com',
-                Contact_NMLS__c = '12345',
+                Email = 'Sam555@gmail.com',
+                Contact_NMLS__c = '1552345',
                 Source_Name__c='Michael',
                 AccountId = portalAccount.Id);
             insert contact;  
