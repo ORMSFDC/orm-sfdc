@@ -2,7 +2,7 @@
 public with sharing class DeactivateLoanControllerTest {
    
      @isTest Static void  setup() {
-          Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
+      /*    Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
         UserRole UR=[Select Id from UserRole where Name='Partner Care Specialist'];        
         String orgId = UserInfo.getOrganizationId();
         String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
@@ -12,10 +12,16 @@ public with sharing class DeactivateLoanControllerTest {
                               Username = uniqueName + '@test1' + orgId + '.org', 
                               EmailEncodingKey='UTF-8', LastName='Tester', LanguageLocaleKey='en_US', 
                               LocaleSidKey='en_US', ProfileId = p.Id,userroleid=UR.ID, 
-                              TimeZoneSidKey='America/Los_Angeles');
-        insert user1;       
+                              TimeZoneSidKey='America/Los_Angeles');*/
+
+        Profile p = [select Name from profile where Name = 'System Administrator'];
+       
+       User u = new User(Alias = 'standt1',Country='United States',Email='demo1@domain.com',EmailEncodingKey='UTF-8', 
+                           LastName='Testing', LanguageLocaleKey='en_US',LocaleSidKey='en_US',ProfileId = p.Id,                               
+                           TimeZoneSidKey='America/Los_Angeles', UserName='demo1@test.org');                      
+        insert u;       
    
-     system.runAs(user1)
+     system.runAs(u)
         {
              QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
             QLMSAE1.Email__c='abc@glx.com';
@@ -27,7 +33,7 @@ public with sharing class DeactivateLoanControllerTest {
                 Name='portalAccount',
                 Cell__c='1236547410',
                 QLMS_Account_Executive__c=QLMSAE1.ID,
-                Assigned_PCS__c=user1.Id,
+                //Assigned_PCS__c=u.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
                 Partner_Lead_Status__c='New');
