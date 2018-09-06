@@ -1147,26 +1147,23 @@
                                     &nbsp;
                                     <aura:if isTrue="{!v.Environment=='Community'}">                                       
                                     	 
-                                            <span id="requestbtn">
-                                                <lightning:button aura:id="outputButton1" variant="brand" 
-                                                                  label="Request Scenario Package" 
-                                                                  onclick="{!c.sendmailrequest}" class="senario_button" />
-                                                <aura:if isTrue="{!v.showSpinnerLoan}"> <!-- Helo -->
-                                                	<lightning:spinner variant="brand" size="large"/>
-                                            	</aura:if> 
-                                                
-                                            </span>&nbsp;
-                                        	<aura:if isTrue = "{!V.MarginTypeiS == 'Helo'}">  <!-- Helo Temp fix SFDC-263 --> 
-                                                <aura:set attribute="else">  
-                                                    <lightning:button aura:id="outputButton2" variant="brand" 
-                                                                      label="Run Capacity Qualifier" 
-                                                                      onclick="{!c.shw_capacityPopup}" class="senario_button" />
-                                                    &nbsp;
-                                                </aura:set>    
-                                        	</aura:if>    
-                                            <lightning:button aura:id="outputButton3" variant="brand" 
-                                                              label="Print" 
-                                                              onclick="{!c.printDocument}" class="senario_button" /> 
+                                        <span id="requestbtn">
+                                            <lightning:button aura:id="outputButton1" variant="brand" 
+                                                              label="Request Scenario Package" 
+                                                              onclick="{!c.sendmailrequest}" class="senario_button" />
+                                            <aura:if isTrue="{!v.showSpinner}"> <!-- Helo -->
+                                                <lightning:spinner variant="brand" size="large"/>
+                                            </aura:if> 
+                                            
+                                        </span>&nbsp;        
+                                        <lightning:button aura:id="outputButton2" variant="brand" 
+                                                          label="Run Capacity Qualifier" 
+                                                          onclick="{!c.shw_capacityPopup}" class="senario_button" />
+                                        &nbsp;
+                                        
+                                        <lightning:button aura:id="outputButton3" variant="brand" 
+                                                          label="Print" 
+                                                          onclick="{!c.printDocument}" class="senario_button" /> 
                                         
                                     </aura:if>  
                                     <aura:if isTrue="{!v.Environment!='Community'}">                                       
