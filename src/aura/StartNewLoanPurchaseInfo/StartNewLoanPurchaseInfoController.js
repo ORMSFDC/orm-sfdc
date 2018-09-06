@@ -11,9 +11,7 @@
 
     doInit: function (component, event, helper) {
         var rtype = component.get("v.NewLoan.Rate_Type__c");
-
         helper.PopulateRate(component, event, helper);
-
         // var LoanMortgageAppliedFor = component.get("v.LoanMortgageAppliedFor");
         window.scrollTo(0, 0);
         helper.DropdownPopulate(component, event, helper);
@@ -41,11 +39,13 @@
     onChangeLoanType: function (component, event, helper) {
         var loanType = component.find("LoanType").get("v.value");
         var mortgageType = component.find("LoanMortgageAppliedFor").get("v.value");
+        helper.PopulateRate(component, event, helper); //SFDC-237
 
         if ('HELO' == loanType) {
             //HELO must always be Fixed, and Fixed must always be single lump sum
             component.set('v.NewLoan.Rate_Type__c', 'Fixed');
             component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
+                    
             if (mortgageType.includes('HECM')) {    //set default
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'HELO Refinance');
             }
@@ -57,7 +57,7 @@
     },
 
     onRateTypeChange: function (component, event, helper) {
-        var rateType = component.find("RateType").get("v.value");
+        var rateType = component.find("RateType").get("v.value");        
         if('Fixed' == rateType){
             component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
         }
@@ -158,8 +158,6 @@
             } else {
                 return true;
             }
-
-
         }
 
         var valArray = [
@@ -588,24 +586,9 @@
 
         var productType = component.get("v.NewLoan.Product_Type__c");
 
-        if ('HELO' == productType) {
-            let origFee;
-            switch (Rate) {
-                case "6.000":
-                    origFee = '1.00';
-                    break;
-                case "6.500":
-                    origFee = '0.50';
-                    break;
-                case "7.000":
-                    origFee = '0.00';
-                    break;
-                default:
-                    origFee = '';
-                    break;
-            }
-            component.set("v.NewLoan.Loan_Origination_Fee__c", origFee);
-            component.set("v.NewLoan.Credit_to_Borrower__c", 0);
+        if ('HELO' == productType) { //SFDC-237
+            component.set("v.NewLoan.Credit_to_Borrower__c", 0); 
+            helper.getHeloOrigination(component, event, helper, Rate);
         } else {
             helper.getORMOrigination(component, event, helper, Rate);
             helper.getORMBorrower(component, event, helper, Rate);

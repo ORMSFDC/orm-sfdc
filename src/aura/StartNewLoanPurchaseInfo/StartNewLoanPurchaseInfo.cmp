@@ -20,6 +20,7 @@
     <aura:attribute name="showError" type="boolean" default="false" />
     <aura:attribute name="PageMsg" type="String" />
     <aura:attribute name="NameOfPOA" type="String" />
+
     <aura:attribute name="show_originate_fee" type="boolean" default="false" />
     <!--Code Modified by Dev4 for ORMSFDC-1471-->
     <aura:attribute name="show_originate_fee_disable" type="boolean" default="true" />
@@ -40,6 +41,7 @@
     <aura:handler name="change" value="{!v.Incomplete}" action="{!c.LoanFormatValidations}" />
     <aura:attribute name="PropertyValue" type="Currency" default="" />
     <aura:attribute name="RateList" type="List" />
+    <aura:attribute name="HeloRateList" type="List" />  <!--SFDC-237-->              
     <aura:registerEvent name="PillsEvent" type="c:NavPillsEvent" />
     <aura:attribute name="YesNoList" type="List" default="[
                                                           {'label': 'Yes', 'value': 'Yes'},
@@ -205,10 +207,10 @@
                                     <aura:iteration items="{!v.RateList}" var="pOptions">
                                         <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" disabled="{!v.NewLoan.Product_Type__c == 'HELO'}" />
                                     </aura:iteration>  
-
-                                    <ui:inputSelectOption text="6.000" label="6.000" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
-                                    <ui:inputSelectOption text="6.500" label="6.500" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
-                                    <ui:inputSelectOption text="7.000" label="7.000" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
+                                    <!--SFDC-237-->
+                                    <aura:iteration items="{!v.HeloRateList}" var="pOptions">
+                                        <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
+                                    </aura:iteration> 
                                 </ui:inputSelect>
                             </div>
                             <aura:if isTrue="{!v.NewLoan.Rate_Type__c == 'ARM'}">
@@ -242,7 +244,7 @@
                         
                         <div style="margin-bottom:3%; " class="slds-size_1-of-2 inputHelpContainer">
                             <ui:inputText disabled="{!v.show_originate_fee_disable}" label="{!if(v.NewLoan.Product_Type__c == 'HECM','Loan Origination Fee ($)','Loan Origination Fee (%)')}" required="true" aura:id="LoanOriginationFee"
-                                value="{!v.NewLoan.Loan_Origination_Fee__c}" class="slds-input" size="4" blur="{!c.fee_change}" /> 
+                                value="{!v.NewLoan.Loan_Origination_Fee__c}" class="slds-input" size="4"  blur="{!c.fee_change}"/> 
 
                             <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HECM',v.NewLoan.Rate_Type__c == 'ARM')}">                                
                                 <lightning:helptext class="inputHelpText" content="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6000."/>

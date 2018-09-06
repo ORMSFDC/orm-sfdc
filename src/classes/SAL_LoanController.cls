@@ -1,3 +1,11 @@
+/**
+* @description  SAL_LoanController - Used to fetch metadata,data for Start New Loan, Loan tab and Save Loan subtab contents.   
+* @author GalaxE 
+
+* changelog:
+* 09/06/2018: Sahitya: SFDC-237 - Fetch Helo rates, orig to orm from Metadata table
+*/
+
 public with sharing class SAL_LoanController {
     
     public static String formatphonenum (String s) {  
@@ -169,7 +177,7 @@ public with sharing class SAL_LoanController {
             //obj.OwnerId='005m0000002dh6OAAQ'        ;
             upsert obj;
             
-            UpdateLiability(ObjLoan,LoanId);		// do not delete // story no 1398
+            UpdateLiability(ObjLoan,LoanId);        // do not delete // story no 1398
             checkAndUpdateLiabilityClient(LoanId);
         }
         catch(Exception ex)
@@ -383,7 +391,7 @@ public with sharing class SAL_LoanController {
             }
             else{
                 FinaRateList= getRateFixedPriceTier1();
-            }  
+            }
         } 
         catch(Exception ex)
         {
@@ -392,6 +400,31 @@ public with sharing class SAL_LoanController {
         return FinaRateList;        
     }
     
+    //SFDC-237
+    @AuraEnabled
+    public static list<string>getHeloRate()
+    {
+        List<string>HeloRateList=new List<string>();
+        Boolean IsPremierParthner;
+        try{
+            Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
+            IsPremierParthner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
+            if(IsPremierParthner)
+            {
+                HeloRateList = getHeloRateTier2();
+            }
+            else{
+                HeloRateList = getHeloRateTier1();
+            } 
+        } 
+        catch(Exception ex)
+        {
+            system.debug('getRateFixProduct .....'+ ex.getMessage());
+        }
+        return HeloRateList;        
+    }
+
+
     @AuraEnabled
     public static string getOrigination(string rate)
     {
@@ -416,6 +449,24 @@ public with sharing class SAL_LoanController {
         return FinaOrigination;
         
     }
+
+    //SFDC-237
+    @AuraEnabled
+    public static string getHeloOrigination(string rate)
+    {
+        decimal ratevalue=decimal.valueOf(rate);
+        string HeloOrigination;
+        Boolean IsPremierParthner;
+        try{
+           HeloOrigination= getHeloOrigination(ratevalue);            
+        } 
+        catch(Exception ex)
+        {
+            system.debug('getOrigination .....'+ ex.getMessage());
+        }
+        return HeloOrigination;        
+    }
+
     @AuraEnabled
     public static string getBorrower(string rate)
     {
@@ -445,7 +496,7 @@ public with sharing class SAL_LoanController {
     {
         List<string> allrate=new List<string>();
         list<Fixed_Price_Tier1__mdt> lstPriceT1=new list<Fixed_Price_Tier1__mdt>();
-        lstPriceT1=[Select 	Rate__c from Fixed_Price_Tier1__mdt order by Rate__c ];
+        lstPriceT1=[Select  Rate__c from Fixed_Price_Tier1__mdt order by Rate__c ];
         for(Fixed_Price_Tier1__mdt rt:lstPriceT1)
         {
             string value= string.valueOf( rt.Rate__c);
@@ -458,7 +509,7 @@ public with sharing class SAL_LoanController {
     {
         List<string>allrate=new List<string>();
         list<Fixed_Price_Tier2__mdt> lstPriceT2=new list<Fixed_Price_Tier2__mdt>();
-        lstPriceT2=[Select 	Rate__c from Fixed_Price_Tier2__mdt order by Rate__c ];
+        lstPriceT2=[Select  Rate__c from Fixed_Price_Tier2__mdt order by Rate__c ];
         for(Fixed_Price_Tier2__mdt rt:lstPriceT2)
         {
             
@@ -468,6 +519,35 @@ public with sharing class SAL_LoanController {
         return allrate;
     }
     
+    //SFDC-237
+    public static list<string>getHeloRateTier1()
+    {
+        List<string> allrate=new List<string>();
+        list<Proprietary_Tier_1__mdt> lstPriceT1=new list<Proprietary_Tier_1__mdt>();
+        lstPriceT1=[Select  Rate__c from Proprietary_Tier_1__mdt order by Rate__c ];
+        for(Proprietary_Tier_1__mdt rt:lstPriceT1)
+        {
+            string value= string.valueOf( rt.Rate__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+    
+    //SFDC-237
+    public static list<string>getHeloRateTier2()
+    {
+        List<string>allrate=new List<string>();
+        list<Proprietary_Tier_2__mdt> lstPriceT2=new list<Proprietary_Tier_2__mdt>();
+        lstPriceT2=[Select  Rate__c from Proprietary_Tier_2__mdt order by Rate__c ];
+        for(Proprietary_Tier_2__mdt rt:lstPriceT2)
+        {
+            
+            string value= string.valueOf( rt.Rate__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+
     public static string getORMOriginationT1(decimal Rate)
     {
         string origtoorm;
@@ -475,14 +555,30 @@ public with sharing class SAL_LoanController {
         Orignation=[Select Origination_to_ORM__c from Fixed_Price_Tier1__mdt where Rate__c=:Rate].Origination_to_ORM__c;
         origtoorm=string.valueOf( Orignation);
         return origtoorm;
-    }
-    
+    }    
     
     public static string  getORMOriginationT2(decimal Rate)
     {
         string origtoorm;
         decimal Orignation;
         Orignation=[Select Origination_to_ORM__c from Fixed_Price_Tier2__mdt where Rate__c=:Rate].Origination_to_ORM__c;
+        origtoorm=string.valueOf( Orignation);
+        return origtoorm;
+    }
+    
+    //SFDC-237
+    public static string getHeloOrigination(decimal Rate)
+    {
+        string origtoorm;
+        decimal Orignation;
+        Boolean IsPremierPartner;
+        Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
+        IsPremierPartner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
+        if(IsPremierPartner){
+            Orignation=[Select Origination_to_Partner__c from Proprietary_Tier_2__mdt where Rate__c=:Rate].Origination_to_Partner__c;
+        }else{
+            Orignation=[Select Origination_to_Partner__c from Proprietary_Tier_1__mdt where Rate__c=:Rate].Origination_to_Partner__c;
+        }
         origtoorm=string.valueOf( Orignation);
         return origtoorm;
     }
