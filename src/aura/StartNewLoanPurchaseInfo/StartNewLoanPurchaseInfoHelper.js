@@ -649,20 +649,28 @@
             }
         }
     },
-    PopulateRate: function (component, event, helper) {
-        var loanType = component.find("LoanType").get("v.value");
-
-        // if (loanType == 'HECM') {
-        var action = component.get('c.getRateFixProduct');
-        action.setCallback(this, function (data) {
-            var result = data.getReturnValue();
-            var resultLength = result.length;
-            component.set("v.RateList", result);
-        });
-        $A.enqueueAction(action);
-        // } else if (loanType == 'HELO') {
-        //     component.set("v.RateList", ['6.000', '6.500', '7.000']);
-        // }
+    
+    //SFDC-237
+    PopulateRate: function (component, event, helper) { 
+        
+       var loanType = component.find("LoanType").get("v.value");
+       if (loanType == 'HECM') {
+            var action = component.get('c.getRateFixProduct');
+            action.setCallback(this, function (data) {
+                var result = data.getReturnValue();
+                var resultLength = result.length;
+                component.set("v.RateList", result);
+            });
+            $A.enqueueAction(action);
+        } else if (loanType == 'HELO') { 
+            var action = component.get('c.getHeloRate');
+            action.setCallback(this, function (data) {
+                var result = data.getReturnValue();
+                var resultLength = result.length;
+                component.set("v.HeloRateList", result);
+            });
+            $A.enqueueAction(action);
+        }
     },
 
     getORMOrigination: function (component, event, helper, Rate) {
@@ -678,6 +686,22 @@
         });
         $A.enqueueAction(action1);
     },
+	
+    //SFDC-237
+    getHeloOrigination: function (component, event, helper, Rate) {
+        var rateval = Rate;
+        var action1 = component.get("c.getHeloOrigination");
+
+        action1.setParams({
+            "rate": rateval
+        });
+        action1.setCallback(this, function (data) {
+            var result = data.getReturnValue();
+            component.set("v.NewLoan.Loan_Origination_Fee__c", result);
+        });
+        $A.enqueueAction(action1);
+    },
+
     getORMBorrower: function (component, event, helper, Rate) {
 
         var rateval = Rate;
