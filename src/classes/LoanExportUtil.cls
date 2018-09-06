@@ -11,7 +11,7 @@
 *             MGill SFDC-227 Remove Liabilities from BayDocs JSON entirely
 *
 *             @TODO SOQL Query Consolidation
-*
+* 09/06/2018: Sahitya: Add LoanType for HELO
 */
 global class LoanExportUtil {
 
@@ -48,16 +48,18 @@ global class LoanExportUtil {
 
         // Get Loan Rate Type
         // @TODO MG/QDA Any changes for HELO/Private?
-        Loan_New__c loanRateType = [select Rate_Type__c from Loan_New__c WHERE Id = :loanId]; // Query to get Rate_Type
+        Loan_New__c loanRateType = [select Rate_Type__c,Product_Type__c from Loan_New__c WHERE Id = :loanId]; // Query to get Rate_Type
         String loanType;
 
-        if (loanRateType.Rate_Type__c=='ARM'){
+        if (loanRateType.Rate_Type__c=='ARM' && loanRateType.Product_Type__c == 'HECM'){
             loanType = '103';
             Logger.debug('loanType='+loanType);
-        }else {
+        }else if(loanRateType.Rate_Type__c=='FIXED' && loanRateType.Product_Type__c == 'HECM' )  {
             loanType = '9';
-            Logger.debug('loanType='+loanType);
-
+            Logger.debug('loanType='+loanType); 
+        }else if(loanRateType.Product_Type__c == 'HELO'){
+            loanType = '162';
+            Logger.debug('loanType='+loanType); 
         }
         // End
 
@@ -114,25 +116,25 @@ global class LoanExportUtil {
 
 
 
-	    // SFDC-213 add title fees section from cached response on loan record
-	    // only attempt to process if appears well-formed
-	    if ( String.isNotBlank( loan2.TitleFeeEstimateResponse__c )
-		    && loan2.TitleFeeEstimateResponse__c.contains( AMROCK_TITLEFEE_SUMMARY )
-		    && loan2.TitleFeeEstimateResponse__c.contains( AMROCK_TITLEFEE_REQUIRED ) ) {
-		    // deserialize title fee payload
-		    Map<String, Object> titleFeeResponseMap = ( Map<String, Object> )JSON.deserializeUntyped( loan2.TitleFeeEstimateResponse__c );
-		    // extract the summary section -- only if it exists
-		    if ( titleFeeResponseMap.containsKey( AMROCK_TITLEFEE_SUMMARY ) ) {
-			    Map<String, Object> summarySectionMap = ( Map<String, Object> )titleFeeResponseMap.get( AMROCK_TITLEFEE_SUMMARY );
-			    // extract the required section -- only if it exists
-			    if ( summarySectionMap.containsKey( AMROCK_TITLEFEE_REQUIRED ) ) {
-				    List<Object> requiredList = ( List<Object> )summarySectionMap.get( AMROCK_TITLEFEE_REQUIRED );
-				    for ( Object obj : requiredList ) {
-					    loanExport.fees.add( obj );
-				    }
-			    }
-		    }
-	    }
+        // SFDC-213 add title fees section from cached response on loan record
+        // only attempt to process if appears well-formed
+        if ( String.isNotBlank( loan2.TitleFeeEstimateResponse__c )
+            && loan2.TitleFeeEstimateResponse__c.contains( AMROCK_TITLEFEE_SUMMARY )
+            && loan2.TitleFeeEstimateResponse__c.contains( AMROCK_TITLEFEE_REQUIRED ) ) {
+            // deserialize title fee payload
+            Map<String, Object> titleFeeResponseMap = ( Map<String, Object> )JSON.deserializeUntyped( loan2.TitleFeeEstimateResponse__c );
+            // extract the summary section -- only if it exists
+            if ( titleFeeResponseMap.containsKey( AMROCK_TITLEFEE_SUMMARY ) ) {
+                Map<String, Object> summarySectionMap = ( Map<String, Object> )titleFeeResponseMap.get( AMROCK_TITLEFEE_SUMMARY );
+                // extract the required section -- only if it exists
+                if ( summarySectionMap.containsKey( AMROCK_TITLEFEE_REQUIRED ) ) {
+                    List<Object> requiredList = ( List<Object> )summarySectionMap.get( AMROCK_TITLEFEE_REQUIRED );
+                    for ( Object obj : requiredList ) {
+                        loanExport.fees.add( obj );
+                    }
+                }
+            }
+        }
 
         List<Client__c> clients = Database.query('SELECT ' + joinKeys(CLIENT_FIELDS) + ' FROM Client__c WHERE LoanId__c = :loanId');
         for (Client__c client : clients) {
@@ -279,7 +281,7 @@ global class LoanExportUtil {
             statelicenses= new List<Map<String, Object>>();//Added by Ravi
             employments= new List<Map<String, Object>>();//Added by Ravi
             BayDocs = new map<string, object>();
-	        fees = new List<Object>();
+            fees = new List<Object>();
         }
     }
 
@@ -637,11 +639,11 @@ global class LoanExportUtil {
 
     };
 
-	/*******************************************************************************************************
-	* @description constants used for parsing the cached Amrock TitleFee response
-	*/
-	private static final String AMROCK_TITLEFEE_SUMMARY = 'summary';
-	private static final String AMROCK_TITLEFEE_REQUIRED = 'required';
+    /*******************************************************************************************************
+    * @description constants used for parsing the cached Amrock TitleFee response
+    */
+    private static final String AMROCK_TITLEFEE_SUMMARY = 'summary';
+    private static final String AMROCK_TITLEFEE_REQUIRED = 'required';
 
     public static string getStateCode(String stateName){
 
