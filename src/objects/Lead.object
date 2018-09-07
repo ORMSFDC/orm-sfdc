@@ -1,58 +1,77 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>AddToCampaign</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CallHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ChangeStatus</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Convert</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EmailHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>FindDup</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SmsHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><businessProcesses>
+    </actionOverrides>
+    <businessProcesses>
         <fullName>Banker</fullName>
         <isActive>true</isActive>
         <values>
@@ -67,7 +86,8 @@
             <fullName>Qualified</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Partner Lead</fullName>
         <isActive>true</isActive>
         <values>
@@ -102,7 +122,8 @@
             <fullName>Qualified</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Scenario Lead</fullName>
         <isActive>true</isActive>
         <values>
@@ -117,7 +138,8 @@
             <fullName>Scenario Converted</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><compactLayouts>
+    </businessProcesses>
+    <compactLayouts>
         <fullName>Leads_Custom_Compact_Layout</fullName>
         <fields>Name</fields>
         <fields>Company</fields>
@@ -126,7 +148,8 @@
         <fields>MobilePhone</fields>
         <fields>Email</fields>
         <label>Leads Custom Compact Layout</label>
-    </compactLayouts><fields>
+    </compactLayouts>
+    <fields>
         <fullName>Account_Executive_Name__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -150,7 +173,8 @@
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Activity_Timeline__c</fullName>
         <externalId>false</externalId>
         <formula>if((today()-Last_Activity_Date__c)&lt;2,"24 Hours",
@@ -162,13 +186,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Address</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>AnnualRevenue</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_PCS__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -178,7 +205,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Attempted_to_Contact_Days__c</fullName>
         <externalId>false</externalId>
         <label>Attempted to Contact Days</label>
@@ -188,7 +216,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Average_Growth_Rate__c</fullName>
         <externalId>false</externalId>
         <label>Average Growth Rate</label>
@@ -197,7 +226,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>3</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Banker_Common_Id__c</fullName>
         <externalId>false</externalId>
         <label>Banker Common Id</label>
@@ -206,7 +236,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>BillingAddress__c</fullName>
         <externalId>false</externalId>
         <label>Billing Address</label>
@@ -215,7 +246,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>BillingCity__c</fullName>
         <externalId>false</externalId>
         <label>City</label>
@@ -224,7 +256,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>BillingPostalCode__c</fullName>
         <externalId>false</externalId>
         <label>Zip/Postal Code</label>
@@ -233,7 +266,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>BillingState__c</fullName>
         <externalId>false</externalId>
         <label>State/Province</label>
@@ -242,17 +276,20 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>BillingStreet__c</fullName>
         <externalId>false</externalId>
         <label>Street</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CampaignId</fullName>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cash_Flow_12_Months_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Cash Flow 12 Months Amount</label>
@@ -261,7 +298,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cash_Flow_2_Month_Number__c</fullName>
         <externalId>false</externalId>
         <label>Cash Flow 2 Month Number</label>
@@ -271,7 +309,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cash_Flow_60_Months_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Cash Flow 60 Months Amount</label>
@@ -280,7 +319,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cash_Flow_Remaining_Month__c</fullName>
         <externalId>false</externalId>
         <label>Cash Flow Remaining Month</label>
@@ -290,7 +330,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cash_Flow_Remaining_Months_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Cash Flow Remaining Months Amount</label>
@@ -299,14 +340,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cell__c</fullName>
         <externalId>false</externalId>
         <label>Cell</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ClientId__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -317,17 +360,20 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Closed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Closed Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Company</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Company_NMLS_ID__c</fullName>
         <externalId>false</externalId>
         <label>Company NMLS ID</label>
@@ -336,7 +382,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Current_Mortgage_Balance__c</fullName>
         <externalId>false</externalId>
         <label>Current Mortgage Balance</label>
@@ -345,7 +392,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Current_Mortgage_Interest_Rate__c</fullName>
         <externalId>false</externalId>
         <label>Current Mortgage Interest Rate</label>
@@ -354,23 +402,28 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>3</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>DOB__c</fullName>
         <externalId>false</externalId>
         <label>Date of birth</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>DoNotCall</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Estimated_Home_Value__c</fullName>
         <externalId>false</externalId>
         <label>Estimated Home Value</label>
@@ -379,7 +432,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ext__c</fullName>
         <externalId>false</externalId>
         <label>Ext</label>
@@ -388,17 +442,20 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Fax__c</fullName>
         <externalId>false</externalId>
         <label>Business Partner Fax</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Federal_Tax_ID_EIN__c</fullName>
         <externalId>false</externalId>
         <label>Federal Tax ID/EIN</label>
@@ -407,7 +464,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>First_Name__c</fullName>
         <externalId>false</externalId>
         <label>First Name</label>
@@ -416,13 +474,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HasOptedOutOfEmail</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HasOptedOutOfFax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Home_Value_10_Years__c</fullName>
         <externalId>false</externalId>
         <label>Home Value 10 Years</label>
@@ -431,7 +492,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Index__c</fullName>
         <externalId>false</externalId>
         <label>Index</label>
@@ -440,11 +502,13 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>3</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Initial_Growth_Rate__c</fullName>
         <externalId>false</externalId>
         <label>Initial Growth Rate</label>
@@ -453,7 +517,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>3</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsLeadCreatedFromPortal__c</fullName>
         <defaultValue>false</defaultValue>
         <description>IsLeadCreatedFromPortal</description>
@@ -462,24 +527,28 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <label>Is Lead Created From Portal?</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_primary_contact_a_portal_user__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Is primary contact a portal user?</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Killed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Killed Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Killed_Lead__c</fullName>
         <externalId>false</externalId>
         <label>Killed Lead</label>
@@ -501,23 +570,27 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LastTransferDate</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity_Date_Time__c</fullName>
         <externalId>false</externalId>
         <label>Last Activity Date/Time</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity_Date__c</fullName>
         <externalId>false</externalId>
         <formula>LastActivityDate</formula>
         <label>Last Activity Date</label>
         <required>false</required>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity_Type__c</fullName>
         <externalId>false</externalId>
         <label>Last Activity Type</label>
@@ -540,7 +613,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity__c</fullName>
         <externalId>false</externalId>
         <label>Last Activity</label>
@@ -563,7 +637,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Name__c</fullName>
         <externalId>false</externalId>
         <label>Last Name</label>
@@ -572,11 +647,13 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LeadSource</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Attempted_Con_Days__c</fullName>
         <externalId>false</externalId>
         <formula>Today() - Lead_status_change_date__c</formula>
@@ -587,7 +664,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>0</scale>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Owner_Email__c</fullName>
         <externalId>false</externalId>
         <formula>Owner:User.Email</formula>
@@ -596,7 +674,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Owner_Name__c</fullName>
         <externalId>false</externalId>
         <formula>Owner:User.FirstName +' '+ Owner:User.LastName</formula>
@@ -605,7 +684,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Owner_Phone__c</fullName>
         <externalId>false</externalId>
         <formula>Owner:User.Phone</formula>
@@ -614,7 +694,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Owner_Title__c</fullName>
         <externalId>false</externalId>
         <formula>Owner:User.Title</formula>
@@ -623,14 +704,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_status_change_date__c</fullName>
         <externalId>false</externalId>
         <label>Lead status change date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -641,7 +724,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MIP__c</fullName>
         <externalId>false</externalId>
         <label>MIP</label>
@@ -650,7 +734,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>3</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Margin__c</fullName>
         <externalId>false</externalId>
         <label>Margin</label>
@@ -659,7 +744,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>3</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Middle_Name__c</fullName>
         <externalId>false</externalId>
         <label>Middle Name</label>
@@ -668,10 +754,12 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MobilePhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Monthly_Mortgage_Payment__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Mortgage Payment</label>
@@ -680,10 +768,12 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>No_Activity_Days__c</fullName>
         <externalId>false</externalId>
         <formula>TODAY() -  Last_Activity_Date__c</formula>
@@ -693,17 +783,20 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>0</scale>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_QLMS_Partner__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Non QLMS Partner</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NumberOfEmployees</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Number_of_Loan_Officers__c</fullName>
         <externalId>false</externalId>
         <label>Number of Loan Officers</label>
@@ -712,7 +805,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Account_Executive__c</fullName>
         <externalId>false</externalId>
         <label>ORM Account Executive</label>
@@ -721,14 +815,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_App_Date__c</fullName>
         <externalId>false</externalId>
         <label>ORM App Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Loan_Number__c</fullName>
         <externalId>false</externalId>
         <label>ORM Loan Number</label>
@@ -737,14 +833,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Office_Phone__c</fullName>
         <externalId>false</externalId>
         <label>Office Phone</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Orm_Banker__c</fullName>
         <externalId>false</externalId>
         <label>Orm Banker</label>
@@ -753,21 +851,24 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Orm_Folder_Date__c</fullName>
         <externalId>false</externalId>
         <label>Orm Folder Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Cell__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Cell</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Email</label>
@@ -775,7 +876,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Name__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Name</label>
@@ -784,14 +886,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Phone__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Phone</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Title</label>
@@ -854,7 +958,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Other Reason</label>
@@ -862,18 +967,21 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Source__c</fullName>
         <externalId>false</externalId>
         <label>Other Source</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PardotTestSahitya__c</fullName>
         <externalId>false</externalId>
         <label>PardotTestSahitya</label>
@@ -882,7 +990,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Pardot_list_id__c</fullName>
         <externalId>false</externalId>
         <label>Pardot_list_id</label>
@@ -891,10 +1000,12 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PartnerAccountId</fullName>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PartnerId__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -904,7 +1015,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Id__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -914,10 +1026,12 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Phone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Previous_QL_Status__c</fullName>
         <externalId>false</externalId>
         <label>Previous QL Status</label>
@@ -926,7 +1040,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Primary Contact Email</label>
@@ -934,14 +1049,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Contact_Phone_Number__c</fullName>
         <externalId>false</externalId>
         <label>Primary Contact Phone Number</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Primary Contact Title</label>
@@ -1003,7 +1120,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_contact_name__c</fullName>
         <externalId>false</externalId>
         <label>Primary contact name</label>
@@ -1012,7 +1130,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Principal_Limit__c</fullName>
         <externalId>false</externalId>
         <label>Principal Limit</label>
@@ -1021,7 +1140,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Priority__c</fullName>
         <externalId>false</externalId>
         <label>Priority</label>
@@ -1030,7 +1150,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMSLOCount__c</fullName>
         <externalId>false</externalId>
         <label>QLMS LO Count</label>
@@ -1040,7 +1161,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMSLeadRegistrationCount__c</fullName>
         <externalId>false</externalId>
         <label>QLMS Lead Registration Count</label>
@@ -1050,7 +1172,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMSSFDCBankID__c</fullName>
         <externalId>false</externalId>
         <label>QLMS SFDC Bank ID</label>
@@ -1059,7 +1182,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_AE_Email__c</fullName>
         <description>Used to send email alerts to QLMS when lead status is updated</description>
         <externalId>false</externalId>
@@ -1068,7 +1192,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Account_Executive__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1088,7 +1213,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_First_Name__c</fullName>
         <externalId>false</externalId>
         <formula>LEFT(QLMS_Account_Executive__r.Name, FIND(" ", QLMS_Account_Executive__r.Name))</formula>
@@ -1097,14 +1223,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Last_Registration_Date__c</fullName>
         <externalId>false</externalId>
         <label>QLMS Last Registration Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ql_Banker__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1115,7 +1243,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ql_Loan_Number__c</fullName>
         <externalId>false</externalId>
         <label>Ql Loan Number</label>
@@ -1124,11 +1253,13 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Rating</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reason_for_Not_being_Interested__c</fullName>
         <externalId>false</externalId>
         <label>Not Interested/Qualified Reason</label>
@@ -1182,7 +1313,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Request_Scenario_Package_Count__c</fullName>
         <externalId>false</externalId>
         <label>Request Scenario Package Count</label>
@@ -1192,19 +1324,22 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ScenarioId__c</fullName>
         <externalId>false</externalId>
         <label>ScenarioId</label>
         <type>AutoNumber</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Cell__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Cell</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Email</label>
@@ -1212,7 +1347,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Name__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Name</label>
@@ -1221,14 +1357,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Phone__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Phone</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Title</label>
@@ -1291,7 +1429,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>States_they_would_like_to_do_Business_in__c</fullName>
         <externalId>false</externalId>
         <label>States they would like to do Business in</label>
@@ -1303,11 +1442,13 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <valueSetName>US_States</valueSetName>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
@@ -1335,7 +1476,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Subject__c</fullName>
         <externalId>false</externalId>
         <label>Subject</label>
@@ -1368,7 +1510,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Suffix__c</fullName>
         <externalId>false</externalId>
         <label>Suffix</label>
@@ -1377,7 +1520,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>TaskPriority__c</fullName>
         <externalId>false</externalId>
         <label>Priority</label>
@@ -1400,42 +1544,12 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
-        <fullName>Team__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF ( Owner:User.LastName = "Martinez" , "Braveheart",
-	IF (Owner:User.LastName = "Posner" , "Braveheart",
-		IF (Owner:User.LastName = "Burgan" , "Braveheart",
-			IF (Owner:User.LastName = "Raymond" , "Braveheart",
-				IF (Owner:User.LastName = "Hanson" , "Braveheart",
-					IF ( Owner:User.LastName = "Smith" , "wORMS",
-						IF (Owner:User.LastName = "Crusoe" , "wORMS",
-							IF (Owner:User.LastName = "Clarke" , "wORMS",
-								IF (Owner:User.LastName = "Stieber" , "wORMS",
-									IF (Owner:User.LastName = "Evink" , "wORMS", "AWESOME"
-
-
-
-
-					)
-				)
-			)
-		)
-	)
-					)
-				)
-			)
-		)
-	)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Team</label>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Title__c</fullName>
         <externalId>false</externalId>
         <label>Title</label>
@@ -1444,14 +1558,16 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Transfer_Date__c</fullName>
         <externalId>false</externalId>
         <label>Transfer Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Type_of_Organization__c</fullName>
         <externalId>false</externalId>
         <label>Type of Organization</label>
@@ -1483,7 +1599,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>TypeofScenario__c</fullName>
         <externalId>false</externalId>
         <label>Type of Scenario</label>
@@ -1506,23 +1623,36 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>is_Active__c</fullName>
         <defaultValue>true</defaultValue>
         <externalId>false</externalId>
         <label>is Active</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>is_Converted__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>is Converted</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Executive_Name__r.Team__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Team</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields><compactLayoutAssignment>Leads_Custom_Compact_Layout</compactLayoutAssignment><enableFeeds>true</enableFeeds><enableHistory>false</enableHistory><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.COMPANY</customTabListAdditionalFields>
@@ -1551,7 +1681,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <searchResultsAdditionalFields>LEAD.EMAIL</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LEAD.STATUS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWriteTransfer</sharingModel><listViews>
+    </searchLayouts><sharingModel>ReadWriteTransfer</sharingModel>
+    <listViews>
         <fullName>AE_Leads_w_o_Activity</fullName>
         <columns>FULL_NAME</columns>
         <columns>Last_Activity_Date__c</columns>
@@ -1578,7 +1709,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>LAST_N_DAYS:2</value>
         </filters>
         <label>AE Leads w/o Activity</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>AllOpenLeads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1598,7 +1730,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>AL,AZ,CA,CO,FL,GA,MD,MI,MN,NH,NJ,PA,TX,VA,WA,WI</value>
         </filters>
         <label>All Open Leads</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Leads</fullName>
         <columns>LEAD.COMPANY</columns>
         <columns>FULL_NAME</columns>
@@ -1624,7 +1757,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>jhans,bburg,jposn,jraym,kmart</value>
         </filters>
         <label>All Leads</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Broker_Incomplete_Lead</fullName>
         <filterScope>Queue</filterScope>
         <label>Broker Incomplete</label>
@@ -1632,7 +1766,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Leads_Contacted_Presented1</fullName>
         <columns>LEAD.COMPANY</columns>
         <columns>FULL_NAME</columns>
@@ -1655,7 +1790,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Attempted to Contact,Contacted,Presented</value>
         </filters>
         <label>Leads - Contacted/Presented</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Leads_w_o_Activities_last_7_days1</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1675,7 +1811,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Attempted to Contact,Contacted,Presented</value>
         </filters>
         <label>Leads w/o Activities last 7 days</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Leads_with_NO_Activities</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1690,7 +1827,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Open Lead,New</value>
         </filters>
         <label>Leads with NO Activities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Leads_with_No_Activity</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1705,7 +1843,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Open Lead,New</value>
         </filters>
         <label>Leads with No Activity</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Loan_Leads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.EMAIL</columns>
@@ -1722,7 +1861,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Saved Scenario</value>
         </filters>
         <label>Scenario Leads</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyUnreadLeads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1739,7 +1879,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>1</value>
         </filters>
         <label>My Unread Leads</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>My_Leads_2</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1760,7 +1901,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Not_Interested_Not_Qualified_Leads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.EMAIL</columns>
@@ -1782,7 +1924,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Not Interested,Not Qualified</value>
         </filters>
         <label>Not Interested / Not Qualified Leads</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Open_Lead_Queue_Lead</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1799,7 +1942,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Scenario_Leads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.EMAIL</columns>
@@ -1816,7 +1960,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Lead.Scenario_Lead</value>
         </filters>
         <label>My Scenario Leads</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>TodaysLeads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1833,7 +1978,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>TODAY</value>
         </filters>
         <label>Today's Leads</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Web_Leads_Created_Last_30_Days</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.EMAIL</columns>
@@ -1860,7 +2006,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>1</value>
         </filters>
         <label>Web Leads Created Last 30 Days</label>
-    </listViews><recordTypes>
+    </listViews>
+    <recordTypes>
         <fullName>Banker</fullName>
         <active>true</active>
         <businessProcess>Banker</businessProcess>
@@ -2532,7 +2679,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Partner_Lead</fullName>
         <active>true</active>
         <businessProcess>Partner Lead</businessProcess>
@@ -3236,7 +3384,8 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Scenario_Lead</fullName>
         <active>true</active>
         <businessProcess>Scenario Lead</businessProcess>
@@ -3940,33 +4089,38 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <validationRules>
         <fullName>AE_Cannot_Change_Lead_Ownership</fullName>
         <active>true</active>
         <description>AE's cannot change the Lead Owner except AE Leaders</description>
         <errorConditionFormula>AND($UserRole.Name = 'Account Executive', ISCHANGED(OwnerId),  CONTAINS( PRIORVALUE(OwnerId), "00G39000005Ugxa") == false )</errorConditionFormula>
         <errorMessage>You do not have access to change the Lead Owner</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Cannot_Convert_Lead</fullName>
         <active>false</active>
         <description>Cannot Convert Lead if the status is Not Interested/Qualified</description>
         <errorConditionFormula>AND( IsConverted, NOT( TEXT( PRIORVALUE(Status) )  = "Qualified"),$RecordType.Name = 'Partner Lead' )</errorConditionFormula>
         <errorMessage>Only qualified leads can be converted!</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>MandatoryForOther</fullName>
         <active>true</active>
         <errorConditionFormula>AND(ISPICKVAL(Reason_for_Not_being_Interested__c,'Other'),
 ISBLANK(Other_Reason__c))</errorConditionFormula>
         <errorDisplayField>Other_Reason__c</errorDisplayField>
         <errorMessage>please specify the reason in brief</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>MandatoryForState_Rule</fullName>
         <active>true</active>
         <errorConditionFormula>AND(ISPICKVAL(Reason_for_Not_being_Interested__c,'States Available'), 
 ISBLANK(States_they_would_like_to_do_Business_in__c))</errorConditionFormula>
         <errorDisplayField>States_they_would_like_to_do_Business_in__c</errorDisplayField>
         <errorMessage>You must select a State</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>MandatoryPartnerLeadStatus_Rule</fullName>
         <active>true</active>
         <errorConditionFormula>AND($RecordType.Name='Partner Lead',
@@ -3976,7 +4130,8 @@ ISPICKVAL(Reason_for_Not_being_Interested__c,"")
 )</errorConditionFormula>
         <errorDisplayField>Reason_for_Not_being_Interested__c</errorDisplayField>
         <errorMessage>You must select one value</errorMessage>
-    </validationRules><webLinks>
+    </validationRules>
+    <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -3994,7 +4149,8 @@ ISPICKVAL(Reason_for_Not_being_Interested__c,"")
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Lead_Street}+{!Lead_City}+{!Lead_State}&amp;om=1</url>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <fullName>GoogleNews</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -4012,7 +4168,8 @@ ISPICKVAL(Reason_for_Not_being_Interested__c,"")
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/news?&amp;q={!Lead_Company}&amp;btnG=Search+News</url>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <fullName>GoogleSearch</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -4030,4 +4187,5 @@ ISPICKVAL(Reason_for_Not_being_Interested__c,"")
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/search?q={!Lead_Company}</url>
-    </webLinks></CustomObject>
+    </webLinks>
+</CustomObject>

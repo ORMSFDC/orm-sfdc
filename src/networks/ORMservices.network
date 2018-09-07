@@ -64,16 +64,16 @@
         </navigationMenuItem>
     </navigationLinkSet>
     <networkMemberGroups>
-        <profile>admin</profile>
-        <profile>orm partners</profile>
-        <profile>partner community user</profile>
-        <profile>trainer</profile>
-        <profile>portal loan processors</profile>
-        <profile>prospective partner user</profile>
-        <profile>portal loan processor</profile>
-        <profile>orm partner</profile>
-        <profile>prospective partner users</profile>
-        <profile>it business analyst</profile>
+        <profile>Admin</profile>
+        <profile>ORM Partners</profile>
+        <profile>Partner Community User</profile>
+        <profile>Trainer</profile>
+        <profile>Portal Loan Processors</profile>
+        <profile>Prospective Partner User</profile>
+        <profile>Portal Loan Processor</profile>
+        <profile>ORM Partner</profile>
+        <profile>Prospective Partner Users</profile>
+        <profile>IT Business Analyst</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>

@@ -25,6 +25,9 @@
     <enableDraftEmails>false</enableDraftEmails>
     <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
     <enableEmailActionDefaultsHandler>false</enableEmailActionDefaultsHandler>
+    <enableSuggestedArticlesApplication>false</enableSuggestedArticlesApplication>
+    <enableSuggestedArticlesCustomerPortal>false</enableSuggestedArticlesCustomerPortal>
+    <enableSuggestedArticlesPartnerPortal>false</enableSuggestedArticlesPartnerPortal>
     <enableSuggestedSolutions>true</enableSuggestedSolutions>
     <notifyContactOnCaseComment>false</notifyContactOnCaseComment>
     <notifyDefaultCaseOwner>false</notifyDefaultCaseOwner>

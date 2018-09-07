@@ -198,6 +198,12 @@
         <relatedList>RelatedEntityHistoryList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>TITLE</fields>
+        <fields>LAST_UPDATE</fields>
+        <fields>CREATEDBY_USER</fields>
+        <relatedList>RelatedArticleList</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>SOLUTION.ISSUE</fields>
         <fields>SOLUTION.SOLUTION_NUMBER</fields>
         <fields>SOLUTION.STATUS</fields>

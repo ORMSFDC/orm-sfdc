@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Processed Date --></label>
+        <name>Processed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processed --></label>
+        <name>Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Rate Type --></label>
+        <name>Product_Rate_Type__c</name>
+        <picklistValues>
+            <masterLabel>HELO-LIBOR</masterLabel>
+            <translation><!-- HELO-LIBOR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rate Date --></label>
+        <name>Rate_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <caseValues>
+        <plural>false</plural>
+        <value>Daily Product Rate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Daily Product Rates</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <layouts>
+        <layout>Daily Product Rate Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

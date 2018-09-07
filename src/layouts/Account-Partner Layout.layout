@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComClean</excludeButtons>
+    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
@@ -94,8 +93,16 @@
                 <behavior>Edit</behavior>
                 <field>ORMS_Folder_Loans__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Exclusionary_Category__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Scouting_Report__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>RecordTypeId</field>
