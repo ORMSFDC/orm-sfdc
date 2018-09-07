@@ -1986,98 +1986,6 @@
         <readable>true</readable>
     </fieldPermissions><fieldPermissions>
         <editable>true</editable>
-        <field>Event.zoom_app__Additional_Emails__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Duration_mins__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Host_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__IsExternal__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__IsZoomMeeting__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Join_Url__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Join_before_host__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Make_it_Zoom_Meeting__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Meeting_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Participant_Count__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Participants__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Send_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Start_Url_1__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Start_Url_2__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Start_Url_3__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__UUID__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Use_personal_Zoom_meeting_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Zoom_Meeting_Creation_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Zoom_Meeting_End_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Zoom_Meeting_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Zoom_Meeting_Start_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Zoom_Meeting_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Event.zoom_app__Zoom_Meeting_Status_fr__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
         <field>FAQ__c.FAQ_Detail__c</field>
         <readable>true</readable>
     </fieldPermissions><fieldPermissions>
@@ -4942,98 +4850,6 @@
         <readable>true</readable>
     </fieldPermissions><fieldPermissions>
         <editable>true</editable>
-        <field>Task.zoom_app__Additional_Emails__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Duration_mins__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Host_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__IsExternal__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__IsZoomMeeting__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Join_Url__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Join_before_host__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Make_it_Zoom_Meeting__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Meeting_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Participant_Count__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Participants__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Send_Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Start_Url_1__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Start_Url_2__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Start_Url_3__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__UUID__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Use_personal_Zoom_meeting_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Zoom_Meeting_Creation_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Zoom_Meeting_End_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Zoom_Meeting_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Zoom_Meeting_Start_Time__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Zoom_Meeting_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>Task.zoom_app__Zoom_Meeting_Status_fr__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
         <field>User.Booking_URL__c</field>
         <readable>true</readable>
     </fieldPermissions><fieldPermissions>
@@ -5047,18 +4863,6 @@
     </fieldPermissions><fieldPermissions>
         <editable>false</editable>
         <field>User.user_email_Id__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>User.zoom_app__Login_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>User.zoom_app__Send_Email_to_Attendee__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>User.zoom_app__isPMI_Enabled__c</field>
         <readable>true</readable>
     </fieldPermissions><fieldPermissions>
         <editable>true</editable>
@@ -5263,18 +5067,6 @@
     </fieldPermissions><fieldPermissions>
         <editable>true</editable>
         <field>YoutubeLinks__c.Video_sequence__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__External_Zoom_Meetings__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__Get_Zoom_Meeting_Information__c</field>
-        <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__Login_Type__c</field>
         <readable>true</readable>
     </fieldPermissions><layoutAssignments>
         <layout>Account-Account Layout</layout>
@@ -5721,14 +5513,6 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>YoutubeLinks__c</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions><objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>zoom_app__Zoom__c</object>
-        <viewAllRecords>false</viewAllRecords>
     </objectPermissions><recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -5948,54 +5732,6 @@
         <tab>YoutubeLinks__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities><tabVisibilities>
-        <tab>f2b__Mass_Contact_Transfer</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__EngageSalesTools</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Lead_Deck</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Pardot_LeadDeck</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__ProspectInsight</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Sales_Cloud_Engage_License_Assignment</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Sales_Edge</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Sales_Edge_Reports</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_All_Rollups</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Enable_Real_Time</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Getting_Started</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Import_Export</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Rollup_Helper</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__Rollup_Helper_Exceptions</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__Rollup_Helper_Help</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__Rollup_Helper_Home</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
         <tab>standard-Account</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities><tabVisibilities>
@@ -6079,12 +5815,6 @@
     </tabVisibilities><tabVisibilities>
         <tab>standard-WorkOrder</tab>
         <visibility>DefaultOff</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>zoom_app__Zoom_Config</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>zoom_app__Zoom_Meetings</tab>
-        <visibility>DefaultOn</visibility>
     </tabVisibilities><userPermissions>
         <enabled>true</enabled>
         <name>ChatterInternalUser</name>

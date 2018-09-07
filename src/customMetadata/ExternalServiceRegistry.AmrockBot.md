@@ -3,11 +3,39 @@
     <label>AmrockBot</label>
     <protected>false</protected>
     <values>
+        <field>AuthorizationHeaderToken__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>AuthorizationHeaderValue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
         <field>ExternalServiceClass__c</field>
         <value xsi:type="xsd:string">AmrockTitleFeesDomainService</value>
     </values>
     <values>
+        <field>ExternalServiceDescription__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>ExternalServiceDispatcherClass__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>IsActive__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
         <field>NamedCredential__c</field>
         <value xsi:type="xsd:string">AmrockBot</value>
+    </values>
+    <values>
+        <field>password__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>username__c</field>
+        <value xsi:nil="true"/>
     </values>
 </CustomMetadata>

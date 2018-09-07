@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <fullName>ExternalServiceClass__c</fullName>
         <description>External Service Class - Instantiated dynamically at runtime</description>
         <externalId>false</externalId>
@@ -9,7 +10,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NamedCredential__c</fullName>
         <description>The Named Credential connection parameters to use for this External Service.</description>
         <externalId>false</externalId>
@@ -20,4 +22,83 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><description>Entries represent control parameters for External Services.  Referenced by the ServiceName__c field of ExternalService__c records, and used within ExternalServiceDispatcher.cls</description><label>ExternalServiceRegistry</label><pluralLabel>ExternalServiceRegistries</pluralLabel><visibility>Public</visibility></CustomObject>
+    </fields>
+    <fields>
+        <fullName>AuthorizationHeaderToken__c</fullName>
+        <description>Authorization token to set in request header.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Authorization token to set in request header.</inlineHelpText>
+        <label>Authorization Header Token</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AuthorizationHeaderValue__c</fullName>
+        <description>Authorization value to set in request header.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Authorization value to set in request header.</inlineHelpText>
+        <label>Authorization Header Value</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExternalServiceDescription__c</fullName>
+        <description>External Service Description</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>External Service Description</inlineHelpText>
+        <label>External Service Description</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExternalServiceDispatcherClass__c</fullName>
+        <description>The Apex class invoked to dispatch this External Service requests.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Apex class invoked to dispatch this External Service requests.</inlineHelpText>
+        <label>External Service Dispatcher Class</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is Active</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Is Active</inlineHelpText>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>password__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>password</label>
+        <length>128</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>username__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>username</label>
+        <length>128</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><description>Entries represent control parameters for External Services.  Referenced by the ServiceName__c field of ExternalService__c records, and used within ExternalServiceDispatcher.cls</description><label>ExternalServiceRegistry</label><pluralLabel>ExternalServiceRegistries</pluralLabel><visibility>Public</visibility>
+</CustomObject>
