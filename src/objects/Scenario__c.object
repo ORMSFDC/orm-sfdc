@@ -275,19 +275,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Loan__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Loan</label>
-        <referenceTo>Loan_New__c</referenceTo>
-        <relationshipLabel>Scenarios</relationshipLabel>
-        <relationshipName>Scenarios</relationshipName>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Margin__c</fullName>
         <externalId>false</externalId>
         <label>Margin</label>
@@ -657,12 +644,41 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
-    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Saved Scenario</label><nameField>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Loan</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipName>Scenarios</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Saved Scenario</label>
+    <nameField>
         <displayFormat>{0}</displayFormat>
         <label>ScenarioId</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
-    </nameField><pluralLabel>Saved Scenarios</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>Saved Scenarios</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>ClientId__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Estimated_home_value__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>PartnerId__c</customTabListAdditionalFields>
@@ -686,12 +702,14 @@
         <searchFilterFields>PartnerId__c</searchFilterFields>
         <searchFilterFields>CREATED_DATE</searchFilterFields>
         <searchFilterFields>LAST_UPDATE</searchFilterFields>
-        <searchResultsAdditionalFields>ClientId__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Client_Lead__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PartnerId__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Estimated_home_value__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
     <listViews>
         <fullName>All_Scenarios</fullName>
         <columns>NAME</columns>

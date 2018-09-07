@@ -302,6 +302,34 @@
     <members>ZoomControllerTest</members>
     <members>DailyProductRateUpdateCallout</members>
     <members>DailyProductRateUpdateCalloutTest</members>
+    <members>AppConstants</members>
+    <members>CSVFileUtil</members>
+    <members>CustomMetadataLoaderController</members>
+    <members>CustomMetadataLoaderControllerTest</members>
+    <members>CustomMetadataUploadController</members>
+    <members>CustomMetadataUploadControllerTest</members>
+    <members>JsonUtilities</members>
+    <members>MDWrapperWebServiceMock</members>
+    <members>MetadataApexApiLoader</members>
+    <members>MetadataLoader</members>
+    <members>MetadataLoaderClient</members>
+    <members>MetadataLoaderFactory</members>
+    <members>MetadataMapper</members>
+    <members>MetadataMapperCustom</members>
+    <members>MetadataMapperDefault</members>
+    <members>MetadataMapperFactory</members>
+    <members>MetadataMapperSimple</members>
+    <members>MetadataMapperType</members>
+    <members>MetadataMappingInfo</members>
+    <members>MetadataMigrationController</members>
+    <members>MetadataMigrationException</members>
+    <members>MetadataObjectCreator</members>
+    <members>MetadataOpType</members>
+    <members>MetadataResponse</members>
+    <members>MetadataService</members>
+    <members>MetadataServiceTest</members>
+    <members>MetadataUtil</members>
+    <members>MetadataWrapperApiLoader</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -608,6 +636,12 @@
     <members>WorkThanks</members>
     <members>YoutubeLinks__c</members>
     <members>Daily_Product_Rate__c</members>
+    <members>CountryMapping__mdt</members>
+    <members>Fixed_Price_Tier3__mdt</members>
+    <members>Knowledge__kav</members>
+    <members>LinkedArticle</members>
+    <members>Proprietary_Tier_3__mdt</members>
+    <members>Tier_3__mdt</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -755,6 +789,11 @@
     <members>WorkOrderLineItem-Work Order Line Item Layout</members>
     <members>WorkThanks-Thanks Layout</members>
     <members>YoutubeLinks__c-YoutubeLink Layout</members>
+    <members>CountryMapping__mdt-CountryMapping Layout</members>
+    <members>Daily_Product_Rate__c-Daily Product Rate Layout</members>
+    <members>Fixed_Price_Tier3__mdt-Fixed Price Tier3 Layout</members>
+    <members>Proprietary_Tier_3__mdt-Proprietary Tier 3 Layout</members>
+    <members>Tier_3__mdt-Tier 3 Layout</members>
     <name>Layout</name>
   </types>
   <types>
@@ -2244,6 +2283,7 @@
     <members>VoiceInbound</members>
     <members>VoiceOutbound</members>
     <members>Daily_Product_Rate</members>
+    <members>Custom_Metadata_Loader</members>
     <name>PermissionSet</name>
   </types>
   <types>
@@ -2374,6 +2414,11 @@
     <members>TriggerExternalServiceOutbound__mdt-en_US</members>
     <members>TriggerLoan__mdt-en_US</members>
     <members>YoutubeLinks__c-en_US</members>
+    <members>CountryMapping__mdt-en_US</members>
+    <members>Daily_Product_Rate__c-en_US</members>
+    <members>Fixed_Price_Tier3__mdt-en_US</members>
+    <members>Proprietary_Tier_3__mdt-en_US</members>
+    <members>Tier_3__mdt-en_US</members>
     <name>CustomObjectTranslation</name>
   </types>
   <types>
@@ -2740,6 +2785,8 @@
     <members>Scenario__c</members>
     <members>YoutubeLinks__c</members>
     <members>Daily_Product_Rate__c</members>
+    <members>CMT_Migrator</members>
+    <members>Custom_Metadata_Loader</members>
     <name>CustomTab</name>
   </types>
   <types>
@@ -3484,6 +3531,9 @@
     <members>UnderConstruction</members>
     <members>UploadFilePage</members>
     <members>UserActiveStatus</members>
+    <members>CMTMigrator</members>
+    <members>CustomMetadataLoader</members>
+    <members>CustomMetadataRecordUploader</members>
     <name>ApexPage</name>
   </types>
   <types>
@@ -3654,6 +3704,10 @@
     <members>TriggerLoan.updatePartnerFields</members>
     <members>ExternalServiceRegistry.Baydocs</members>
     <members>ExternalServiceRegistry.BaydocsProductRateUpdate</members>
+    <members>Fixed_Price_Tier2.X4</members>
+    <members>Fixed_Price_Tier3.X1</members>
+    <members>Fixed_Price_Tier3.X2</members>
+    <members>Fixed_Price_Tier3.X3</members>
     <name>CustomMetadata</name>
   </types>
   <types>
@@ -3669,6 +3723,7 @@
     <members>mdapi</members>
     <members>Scenario</members>
     <members>UspsZipRemoteSite</members>
+    <members>Custom_Metadata_Loader</members>
     <name>RemoteSiteSetting</name>
   </types>
   <types>
@@ -3699,6 +3754,8 @@
     <members>standard__Sales</members>
     <members>standard__Service</members>
     <members>standard__ServiceConsole</members>
+    <members>Custom_Metadata_Loader</members>
+    <members>standard__LightningService</members>
     <name>CustomApplication</name>
   </types>
   <types>

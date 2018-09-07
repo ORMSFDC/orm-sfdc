@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Answer__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to document the answer to the question discussed in the Knowledge Article.</inlineHelpText>
+        <label>Answer</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Procedure_Audience__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to identify who should follow or execute this procedure.  If you have a set list of people or groups, you could convert it to a pre-defined picklist.</inlineHelpText>
+        <label>Procedure Audience</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Procedure_Purpose__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to describe the purpose of this procedure.</inlineHelpText>
+        <label>Procedure Purpose</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Procedure_Steps__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to track the ordered procedure steps.</inlineHelpText>
+        <label>Procedure Steps</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Procedure_Warnings__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to capture warnings and caveats that a user should know before following this procedure.  For example, you may want to include potential impacts or preparation needed before following this procedure.</inlineHelpText>
+        <label>Procedure Warnings</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Question__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to document the question being answered by this article.  Include important keywords to help users find this article.</inlineHelpText>
+        <label>Question</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <articleTypeChannelDisplay>
+        <articleTypeTemplates>
+            <channel>App</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Prm</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Csp</channel>
+            <template>Tab</template>
+        </articleTypeTemplates>
+        <articleTypeTemplates>
+            <channel>Pkb</channel>
+            <template>Toc</template>
+        </articleTypeTemplates>
+    </articleTypeChannelDisplay>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <label>Knowledge</label>
+    <pluralLabel>Knowledge</pluralLabel>
+    <searchLayouts />
+    <listViews>
+        <fullName>archived_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Archived Articles</label>
+    </listViews>
+    <listViews>
+        <fullName>draft_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Draft Articles</label>
+    </listViews>
+    <listViews>
+        <fullName>published_articles</fullName>
+        <columns>TITLE</columns>
+        <columns>ARTICLE_NUMBER</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>ABSTRACT</columns>
+        <columns>LANGUAGE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PUBLISH_STATUS</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </filters>
+        <filters>
+            <field>LANGUAGE</field>
+            <operation>equals</operation>
+            <value>en_US</value>
+        </filters>
+        <label>Published Articles</label>
+    </listViews>
+    <recordTypes>
+        <fullName>FAQ</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Recommended_Compact_Layout</compactLayoutAssignment>
+        <description>This can be used for simple question and answer articles.</description>
+        <label>FAQ</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Procedure</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Recommended_Compact_Layout</compactLayoutAssignment>
+        <description>This can be used for defining how to do something or the steps of a procedure.</description>
+        <label>Procedure</label>
+    </recordTypes>
+</CustomObject>

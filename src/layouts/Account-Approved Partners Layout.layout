@@ -95,6 +95,10 @@
                 <behavior>Readonly</behavior>
                 <field>No_of_Branches__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Exclusionary_Category__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
