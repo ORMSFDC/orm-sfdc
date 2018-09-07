@@ -1,34 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
-        <fullName>Credit_to_Borrower__c</fullName>
-        <externalId>false</externalId>
-        <fieldManageability>DeveloperControlled</fieldManageability>
-        <label>Credit to Borrower</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields><fields>
-        <fullName>Origination_to_Partner__c</fullName>
-        <externalId>false</externalId>
-        <fieldManageability>DeveloperControlled</fieldManageability>
-        <label>Origination to Partner</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields><fields>
-        <fullName>Price__c</fullName>
-        <externalId>false</externalId>
-        <fieldManageability>DeveloperControlled</fieldManageability>
-        <label>Price</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <fullName>Rate__c</fullName>
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
@@ -38,4 +9,49 @@
         <scale>3</scale>
         <type>Number</type>
         <unique>true</unique>
-    </fields><label>Proprietary Tier 2</label><pluralLabel>Proprietary Tier 2</pluralLabel><visibility>Public</visibility></CustomObject>
+    </fields>
+    <fields>
+        <fullName>Credit_to_Borrower__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>LPC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Origination_to_Partner__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Orig to ORM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Broker Comp</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Servicing_Fee__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Servicing Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><label>Proprietary Tier 2</label><pluralLabel>Proprietary Tier 2</pluralLabel><visibility>Public</visibility>
+</CustomObject>

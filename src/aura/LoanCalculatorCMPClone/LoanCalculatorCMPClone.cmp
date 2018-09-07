@@ -1,9 +1,10 @@
 <aura:component controller="ScenarioResponceUtil" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
-     <aura:attribute name="Show_table" type="boolean" default="true"   />
+    <aura:attribute name="Show_table" type="boolean" default="true"   />
     <aura:attribute name="show_MaxAdo" type="boolean" default="false"/>
     <aura:attribute name="Tier_Value" type="String" default="Tier1"/>  <!-- Bala-->
     <aura:attribute name="Show_FHA_Hecm" type="boolean" default="false"/>
     <aura:attribute name="Show_FHA_Purchase" type="boolean" default="false"/>
+    <aura:attribute name="displayHelo" type="boolean" default="false"/> <!--Helo-->
     <aura:attribute name="FHA_Hecm_data" type="object" />
     <aura:attribute name="ClientDiv" type="boolean" default="false"/>
     <aura:attribute name="ScenarioType" type="String"/>
@@ -17,14 +18,14 @@
     <aura:attribute name="CMIR" type="string" />
     <aura:attribute name="MMP" type="string" /> 
     <aura:attribute name="ADO" type="string" />
-     <aura:attribute name="MaxAdo" type="string" />
+    <aura:attribute name="MaxAdo" type="string" />
     <aura:attribute name="ApplicationDate" type="String"/>
     <aura:attribute name="myBool" type="Boolean" default="false"/>
     <aura:attribute name="showCalculation_info" type="Boolean" default="true"/>  
     <aura:attribute name="adoError" type="String" default=""/>
-   <!-- Handler -->
+    <!-- Handler -->
     <aura:handler name="change" value="{!v.showLoan}" action="{!c.optionChanged}"/>
-
+    <aura:registerEvent name="appEvent" type="c:LoanCalculatorEvent"/>  <!-- Helo fix -->
     <aura:attribute name="VisibleDefaultDiv" type="boolean" default="true" access="Global"/>
     <!-- <aura:attribute name="ErrorDiv" type="boolean" default="false"/>-->
     <aura:attribute name="showPopup" type="boolean" default="false" />
@@ -42,156 +43,102 @@
     <!-- calling events-->
     <aura:registerEvent name="nav" type="c:NavigatetoLoanMenu"/>
     <aura:if isTrue="{!!v.showLoan}">
-   
-    <div style="background: #e0e5ee;">
-    
-        <div class="slds-form slds-form_compound">
-            <div class="slds-col slds-col--padded slds-p-top--large">
-                <div aria-labelledby="newform">
-                    <fieldset class="slds-box slds-theme--default slds-container--xx-large">
-                        <h4>Please select Mortgage Type to Begin</h4>
-                      
-                        <div class="slds-grid slds-grid--pull-padded">                                
-                            <div class="slds-grid" style="margin-left:1%">
-                                <div class="slds-col slds-size--2-of-3">
-                                    <label><span style="color:red">*</span>Mortgage Type</label>
-                                    <ui:inputSelect aura:id="levels" multiple="false" change="{!c.onSelectChange}">
-                                        <ui:inputSelectOption text="Select One" label="" value="true"/> 
-                                        <ui:inputSelectOption text="FHA Traditional HECM" label="Refinance"/>
-                                        <ui:inputSelectOption text="HECM for Purchase" label="Purchase"/>
-                                    </ui:inputSelect> 
-                                </div> 
-                                </div>
-                                 
-                        </div>    
-                    </fieldset>
-                                <!-- Rearranged the fields made few changes to the view - Bala -->     
-                    <fieldset class="slds-box slds-theme--default slds-container--xx-large">
-                     <aura:if isTrue="{!v.Show_FHA_Hecm}">
-                      <div>
-                             <h5>Please enter values and click Calculate. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Fill in for Cash Flow Savings Information (optional)</h5>
-                         </div>
-                        <div class="slds-grid slds-grid--pull-padded">  
-                        <span><br/>
-                                 <div class="slds-col--padded customFont16" >                                    
-                                   <ui:inputDate aura:id="inputDOB" 
-                                                  class="slds-input Datecontrolwidth" 
-                                                  label="Date of Birth"                        
-                                                  value="{!v.DOB}"
-                                                  required="true"
-                                                  format="MM/dd/yyyy"
-                                                  displayDatePicker="true"
-                                                  updateOn="keypress, keyup, keydown"/>
-                                </div><br/>
-                                <div class="slds-col--padded customFont16">
-                                    <ui:inputcurrency label="Current Mortgage Balance" value="{!v.CMB}"
-                                                      keypress="{!c.validateCMB}" keyup="{!c.validateCMB}" keydown="{!c.validateCMB}" 
-                                                      updateOn="keypress, keyup, keydown"   
-                                                      aura:id="inputCMB" class="slds-input Datecontrolwidth" required="true"/>
-                                </div>
-                            </span><br/>
-                                     <div style="position: relative;left: -16.9%;  bottom: -15px;">
-                                         <lightning:helptext content="Use the Youngest DOB." />
-                                </div>
-                                <span><br/>  
-                                <div class="slds-col--padded customFont16">
-                                    <ui:inputcurrency label="Estimated Home Value"  aura:id="inputEHV" 
-                                                      keypress="{!c.validateEHV}" keyup="{!c.validateEHV}" keydown="{!c.validateEHV}" 
-                                                      change="{!c.validateEHV}"
-                                                      updateOn="keypress, keyup, keydown"
-                                                      class="slds-input Datecontrolwidth"  value="{!v.EHV}" required="true"/>
-                                </div><br/>
-                                <div class="slds-col--padded customFont16">
-                                <label>Desired Origination for Adjustable Rate Product
-                                      <lightning:helptext style="position: relative; left: -0.8%; top: -10px;" content="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6,000"/>
-                              </label>
-                                    <ui:inputcurrency value="{!v.ADO}" label="" keypress="{!c.validateMMP}"
-                                        keyup="{!c.validateADO}" keydown="{!c.validateADO}"
-                                        updateOn="keyup" 
-                                        aura:id="inputADO" class="slds-input Datecontrolwidth"
-                                        required="true" />
-                                           <aura:if isTrue="{!v.show_MaxAdo}">
-                            <label  style="color:#c23934;font-size: .75rem;">This should be less than or equal to ${!v.MaxAdo}</label>  
-                           </aura:if>
-                                </div>
-                                </span>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                           <fieldset class="slds-box">                            
-                                <div class="slds-col--padded customFont16"  >
-                                    <ui:inputText label="Current Mortgage Interest Rate"  value="{!v.CMIR}" 
-                                                  keypress="{!c.validateCMIR}" keyup="{!c.validateCMIR}" keydown="{!c.validateCMIR}" 
-                                                  updateOn="keypress, keyup, keydown"
-                                                  aura:id="inputCMIR" maxlength="5"
-                                                  class="slds-input Datecontrolwidth" />
-                                </div><br/>
-                                <div class="slds-col--padded customFont16" >
-                                    <label>Monthly Mortgage Payment  (<span style="font-size: 11px;">Excluding Taxes and  Insurance</span>)</label>
-                                    <ui:inputcurrency value="{!v.MMP}" label="" 
-                                                      keypress="{!c.validateMMP}" keyup="{!c.validateMMP}" keydown="{!c.validateMMP}" 
-                                                      updateOn="keypress, keyup, keydown"
-                                                      aura:id="inputMMP" 
-                                                      class="slds-input Datecontrolwidth" /> 
-                                </div><br/>
-                                </fieldset>
-                            </div>  
-                          
-                               <div class="slds-col--padded customFont16">
-                                   <aura:if isTrue="{!v.Environment!='Community'}">    <!-- Bala-->
-                                       <div style="width:25%">
-                                           <!-- picklist for tier-->
-                                           <label>Select Tier </label>         
-                                           <ui:inputSelect value="{!v.Tier_Value}" class="single" aura:id="InputSelectSingle" change="{!c.onSingleSelectChange}">
-                                               <ui:inputSelectOption text="Tier1" />
-                                               <ui:inputSelectOption text="Tier2" />
-                                           </ui:inputSelect>
-                                       </div>
-                                   </aura:if>  <!-- Bala-->
-                                 <br></br>
-                                <lightning:button variant="brand" label="Calculate" 
-                                                  onclick="{!c.Validations }" />                              
-                               </div>
-                           </aura:if>
-                         <aura:if isTrue="{!v.Show_FHA_Purchase}">
-                        <div class="slds-grid slds-grid--pull-padded">                                
-                                 <div class="slds-col--padded customFont16" >
-                                    
-                                   <ui:inputDate aura:id="inputDOB" 
-                                                  class="slds-input Datecontrolwidth" 
-                                                  label="Date of Birth"                        
-                                                  value="{!v.DOB}"
-                                                  required="true"
-                                                  format="MM/dd/yyyy"
-                                                  displayDatePicker="true"
-                                                  updateOn="keypress, keyup, keydown"/>
-                                </div>
-                                     <div style="position: relative;left: -10.5%;top: -5px;">
-                                         <lightning:helptext content="Use the Youngest DOB." />
+        
+        <div style="background: #e0e5ee;">
+            
+            <div class="slds-form slds-form_compound">
+                <div class="slds-col slds-col--padded slds-p-top--large">
+                    <div aria-labelledby="newform">
+                        <fieldset class="slds-box slds-theme--default slds-container--xx-large">
+                            <h4>Please select Mortgage Type to Begin</h4>
+                            
+                            <div class="slds-grid slds-grid--pull-padded">                                
+                                <div class="slds-grid" style="margin-left:1%">
+                                    <div class="slds-col slds-size--2-of-3">
+                                        <label><span style="color:red">*</span>Mortgage Type</label>
+                                        <ui:inputSelect aura:id="levels" multiple="false" change="{!c.onSelectChange}">
+                                            <ui:inputSelectOption text="Select One" label="" value="true"/> 
+                                            <ui:inputSelectOption text="FHA Traditional HECM" label="Refinance"/>
+                                            <ui:inputSelectOption text="HECM for Purchase" label="Purchase"/>
+                                        </ui:inputSelect> 
+                                    </div> 
                                 </div>
                                 
-                                <div class="slds-col--padded customFont16" style="width:16%">
-                                    <ui:inputcurrency label="Purchase Price"  aura:id="inputPP" 
-                                                    keypress="{!c.validateCMB}" keyup="{!c.validateCMB}" keydown="{!c.validateCMB}" 
-                                                    change="{!c.validateCMB}"
-                                                    updateOn="keypress, keyup, keydown"
-                                                    class="slds-input Datecontrolwidth"  value="{!v.EHV}" required="true"/>
+                            </div>    
+                        </fieldset>
+                        <!-- Rearranged the fields made few changes to the view - Bala -->     
+                        <fieldset class="slds-box slds-theme--default slds-container--xx-large">
+                            <aura:if isTrue="{!v.Show_FHA_Hecm}">
+                                <div>
+                                    <h5>Please enter values and click Calculate. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Fill in for Cash Flow Savings Information (optional)</h5>
                                 </div>
-                                <div class="slds-col--padded customFont16" style="width: 26%;margin-left:1%;">
-                                    <ui:inputcurrency value="{!v.ADO}" label="Desired Origination for Adjustable Rate Product" 
-                                        keypress="{!c.validateADO}" keyup="{!c.validateADO}"
-                                        keydown="{!c.validateADO}" updateOn="keyup" aura:id="inputADO" class="slds-input Datecontrolwidth" required="true"
-                                    />
-                                    <aura:if isTrue="{!v.show_MaxAdo}">
-                            <label  style="color:#c23934;font-size: .75rem;">This should be less than or equal to ${!v.MaxAdo}</label>  
-                           </aura:if>
+                                <div class="slds-grid slds-grid--pull-padded">  
+                                    <span><br/>
+                                        <div class="slds-col--padded customFont16" >                                    
+                                            <ui:inputDate aura:id="inputDOB" 
+                                                          class="slds-input Datecontrolwidth" 
+                                                          label="Date of Birth"                        
+                                                          value="{!v.DOB}"
+                                                          required="true"
+                                                          format="MM/dd/yyyy"
+                                                          displayDatePicker="true"
+                                                          updateOn="keypress, keyup, keydown"/>
+                                        </div><br/>
+                                        <div class="slds-col--padded customFont16">
+                                            <ui:inputcurrency label="Current Mortgage Balance" value="{!v.CMB}"
+                                                              keypress="{!c.validateCMB}" keyup="{!c.validateCMB}" keydown="{!c.validateCMB}" 
+                                                              updateOn="keypress, keyup, keydown"   
+                                                              aura:id="inputCMB" class="slds-input Datecontrolwidth" required="true"/>
+                                        </div>
+                                    </span><br/>
+                                    <div style="position: relative;left: -16.9%;  bottom: -15px;">
+                                        <lightning:helptext content="Use the Youngest DOB." />
                                     </div>
-                                <div style="position: relative;left: -1.5%;top: -2px;">
-                                    <lightning:helptext content="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6,000" />
-                                </div>
-
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                                <div class="slds-col--padded customFont16" style="width: 15%;margin-left:1%; ">
-                                    <aura:if isTrue="{!v.Environment!='Community'}">   <!-- Bala-->
-                                        <div style="width:35%">
+                                    <span><br/>  
+                                        <div class="slds-col--padded customFont16">
+                                            <ui:inputcurrency label="Estimated Home Value"  aura:id="inputEHV" 
+                                                              keypress="{!c.validateEHV}" keyup="{!c.validateEHV}" keydown="{!c.validateEHV}" 
+                                                              change="{!c.validateEHV}"
+                                                              updateOn="keypress, keyup, keydown"
+                                                              class="slds-input Datecontrolwidth"  value="{!v.EHV}" required="true"/>
+                                        </div><br/>
+                                        <div class="slds-col--padded customFont16">
+                                            <label>Desired Origination for Adjustable Rate Product
+                                                <lightning:helptext style="position: relative; left: -0.8%; top: -10px;" content="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6,000"/>
+                                            </label>
+                                            <ui:inputcurrency value="{!v.ADO}" label="" keypress="{!c.validateMMP}"
+                                                              keyup="{!c.validateADO}" keydown="{!c.validateADO}"
+                                                              updateOn="keyup" 
+                                                              aura:id="inputADO" class="slds-input Datecontrolwidth"
+                                                              required="true" />
+                                            <aura:if isTrue="{!v.show_MaxAdo}">
+                                                <label  style="color:#c23934;font-size: .75rem;">This should be less than or equal to ${!v.MaxAdo}</label>  
+                                            </aura:if>
+                                        </div>
+                                    </span>
+                                    <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <fieldset class="slds-box">                            
+                                        <div class="slds-col--padded customFont16"  >
+                                            <ui:inputText label="Current Mortgage Interest Rate"  value="{!v.CMIR}" 
+                                                          keypress="{!c.validateCMIR}" keyup="{!c.validateCMIR}" keydown="{!c.validateCMIR}" 
+                                                          updateOn="keypress, keyup, keydown"
+                                                          aura:id="inputCMIR" maxlength="5"
+                                                          class="slds-input Datecontrolwidth" />
+                                        </div><br/>
+                                        <div class="slds-col--padded customFont16" >
+                                            <label>Monthly Mortgage Payment  (<span style="font-size: 11px;">Excluding Taxes and  Insurance</span>)</label>
+                                            <ui:inputcurrency value="{!v.MMP}" label="" 
+                                                              keypress="{!c.validateMMP}" keyup="{!c.validateMMP}" keydown="{!c.validateMMP}" 
+                                                              updateOn="keypress, keyup, keydown"
+                                                              aura:id="inputMMP" 
+                                                              class="slds-input Datecontrolwidth" /> 
+                                        </div><br/>
+                                    </fieldset>
+                                </div>  
+                                
+                                <div class="slds-col--padded customFont16">
+                                    <aura:if isTrue="{!v.Environment!='Community'}">    <!-- Bala-->
+                                        <div style="width:25%">
                                             <!-- picklist for tier-->
                                             <label>Select Tier </label>         
                                             <ui:inputSelect value="{!v.Tier_Value}" class="single" aura:id="InputSelectSingle" change="{!c.onSingleSelectChange}">
@@ -199,31 +146,100 @@
                                                 <ui:inputSelectOption text="Tier2" />
                                             </ui:inputSelect>
                                         </div>
-                                    </aura:if> <!-- Bala-->
+                                    </aura:if>  <!-- Bala-->
+                                    <br></br>
+                                    <lightning:button variant="brand" label="Calculate" 
+                                                      onclick="{!c.Validations }" />                              
                                 </div>
-                               <div class="slds-col--padded customFont16">
-                                   
-                                 <br></br>
-                                <lightning:button variant="brand" label="Calculate" 
-                                                  onclick="{!c.ValidationsNew }" />
-                              
-                               </div>
-                            </div>  
-                           </aura:if>
-                        <!-- scenario results start-->
-                         <aura:if isTrue="{!v.ClientDiv}">
-                           <div> <!-- Bala-->
-                           		<c:ClientInfoCloneCMP Tier_Value="{!v.Tier_Value}" EHV="{!v.EHV}" CMB="{!v.CMB}" MMP="{!v.MMP}" DOB="{!v.DOB}" ADO="{!v.ADO}" ScenarioType="{!v.ScenarioType}" Environment="{!v.Environment}" displayTab="{!v.displayTab}" showLoanId="{!v.showLoanId}" showLoan="{!v.showLoan}" ApplicationDate="{!v.ApplicationDate}" senario_id="{!v.senario_id}"/>                            
-                           </div>
-                        </aura:if>
-                        <!--end of scenario results-->
-                    </fieldset>                   
-                </div>                 
+                            </aura:if>
+                            <aura:if isTrue="{!v.Show_FHA_Purchase}">
+                                <div class="slds-grid slds-grid--pull-padded">                                
+                                    <div class="slds-col--padded customFont16" >
+                                        
+                                        <ui:inputDate aura:id="inputDOB" 
+                                                      class="slds-input Datecontrolwidth" 
+                                                      label="Date of Birth"                        
+                                                      value="{!v.DOB}"
+                                                      required="true"
+                                                      format="MM/dd/yyyy"
+                                                      displayDatePicker="true"
+                                                      updateOn="keypress, keyup, keydown"/>
+                                    </div>
+                                    <div style="position: relative;left: -10.5%;top: -5px;">
+                                        <lightning:helptext content="Use the Youngest DOB." />
+                                    </div>
+                                    
+                                    <div class="slds-col--padded customFont16" style="width:16%">
+                                        <ui:inputcurrency label="Purchase Price"  aura:id="inputPP" 
+                                                          keypress="{!c.validateCMB}" keyup="{!c.validateCMB}" keydown="{!c.validateCMB}" 
+                                                          change="{!c.validateCMB}"
+                                                          updateOn="keypress, keyup, keydown"
+                                                          class="slds-input Datecontrolwidth"  value="{!v.EHV}" required="true"/>
+                                    </div>
+                                    <div class="slds-col--padded customFont16" style="width: 26%;margin-left:1%;">
+                                        <ui:inputcurrency value="{!v.ADO}" label="Desired Origination for Adjustable Rate Product" 
+                                                          keypress="{!c.validateADO}" keyup="{!c.validateADO}"
+                                                          keydown="{!c.validateADO}" updateOn="keyup" aura:id="inputADO" class="slds-input Datecontrolwidth" required="true"
+                                                          />
+                                        <aura:if isTrue="{!v.show_MaxAdo}">
+                                            <label  style="color:#c23934;font-size: .75rem;">This should be less than or equal to ${!v.MaxAdo}</label>  
+                                        </aura:if>
+                                    </div>
+                                    <div style="position: relative;left: -1.5%;top: -2px;">
+                                        <lightning:helptext content="The origination fee is calculated by 2% of the first $200,000 of the property's value and 1% of the amount over $200,000. The Maximum is $6,000" />
+                                    </div>
+                                    
+                                    <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="slds-col--padded customFont16" style="width: 15%;margin-left:1%; ">
+                                        <aura:if isTrue="{!v.Environment!='Community'}">   <!-- Bala-->
+                                            <div style="width:35%">
+                                                <!-- picklist for tier-->
+                                                <label>Select Tier </label>         
+                                                <ui:inputSelect value="{!v.Tier_Value}" class="single" aura:id="InputSelectSingle" change="{!c.onSingleSelectChange}">
+                                                    <ui:inputSelectOption text="Tier1" />
+                                                    <ui:inputSelectOption text="Tier2" />
+                                                </ui:inputSelect>
+                                            </div>
+                                        </aura:if> <!-- Bala-->
+                                    </div>
+                                    <div class="slds-col--padded customFont16">
+                                        
+                                        <br></br>
+                                        <lightning:button variant="brand" label="Calculate" 
+                                                          onclick="{!c.ValidationsNew }" />
+                                        
+                                    </div>
+                                </div>  
+                            </aura:if>
+                            <!-- scenario results start-->
+                            <aura:if isTrue="{!v.ClientDiv}">
+                                <div> <!-- Bala added show table, display helo-->
+                                    
+                                    <c:ClientInfoCloneCMP Tier_Value="{!v.Tier_Value}"                                                           
+                                                          EHV="{!v.EHV}" 
+                                                          CMB="{!v.CMB}" 
+                                                          MMP="{!v.MMP}" 
+                                                          DOB="{!v.DOB}" 
+                                                          ADO="{!v.ADO}" 
+                                                          ScenarioType="{!v.ScenarioType}" 
+                                                          Environment="{!v.Environment}" 
+                                                          displayTab="{!v.displayTab}" 
+                                                          showLoanId="{!v.showLoanId}" 
+                                                          showLoan="{!v.showLoan}" 
+                                                          ApplicationDate="{!v.ApplicationDate}" 
+                                                          senario_id="{!v.senario_id}"
+                                                          isDisplayHelo="true"/> <!-- Helo fix -->                           
+                                </div>
+                            </aura:if>
+                            <!-- Show_table="{!v.Show_table}" -->
+                            <!--end of scenario results-->
+                        </fieldset>                   
+                    </div>                 
+                </div>
             </div>
-         </div>
-    </div>    
-   </aura:if>    
+        </div>    
+    </aura:if>    
     <aura:if isTrue="{!v.showLoan}">
-    {!v.body}
+        {!v.body}
     </aura:if> 
 </aura:component>

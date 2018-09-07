@@ -1,4 +1,4 @@
-@isTest(SeeallData=true)
+@isTest
 public with sharing class ApexScheduler_LoanDeactivationTest {
  @isTest Static void  setup() {
           Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
@@ -32,21 +32,21 @@ public with sharing class ApexScheduler_LoanDeactivationTest {
                 Partner_Lead_Status__c='New');
             insert portalAccount;
             Contact contact = new Contact(
-                LastName='LastName', 
+                LastName='LastName777', 
                 Title__c='Processor ', 
-                Cell__c='1234569874', 
+                Cell__c='1237779874', 
                 Office_Phone__c='1234569874', 
                 Individual_Lead_source__c='Other', 
-                Email = 'Sam@gmail.com',
-                Contact_NMLS__c = '12345',
+                Email = 'Sam777@gmail.com',
+                Contact_NMLS__c = '12345777',
                 Potential_Portal_User_Status__c = 'Training In Process',
-                Source_Name__c='Michael',
+                Source_Name__c='Michael777',
                 AccountId = portalAccount.Id);
             insert contact;
              Loan_New__c LoanInsert = new Loan_New__c(
                 IsActiveFlag__c= true, 
                  LoanCompleteFlag__c= true,
-                 LoanStatus__c ='Incomplete',
+                 LoanStatus__c ='Proposal',
                  LoanNumber__c = '12345',
                 Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                                          
                 Related_Individual__c = contact.Id, 

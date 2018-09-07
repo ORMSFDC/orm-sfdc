@@ -300,6 +300,8 @@
     <members>zipDictionaryTest</members>
     <members>ZoomController</members>
     <members>ZoomControllerTest</members>
+    <members>DailyProductRateUpdateCallout</members>
+    <members>DailyProductRateUpdateCalloutTest</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -605,6 +607,7 @@
     <members>WorkOrderLineItem</members>
     <members>WorkThanks</members>
     <members>YoutubeLinks__c</members>
+    <members>Daily_Product_Rate__c</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -2240,6 +2243,7 @@
     <members>Trainers_Permissions</members>
     <members>VoiceInbound</members>
     <members>VoiceOutbound</members>
+    <members>Daily_Product_Rate</members>
     <name>PermissionSet</name>
   </types>
   <types>
@@ -2692,6 +2696,7 @@
     <members>TriggerNonBorrowingResident</members>
     <members>UpdateDatesTrigger</members>
     <members>userTrigger</members>
+    <members>DailyProductRateTrigger</members>
     <name>ApexTrigger</name>
   </types>
   <types>
@@ -2734,6 +2739,7 @@
     <members>RunScenario__c</members>
     <members>Scenario__c</members>
     <members>YoutubeLinks__c</members>
+    <members>Daily_Product_Rate__c</members>
     <name>CustomTab</name>
   </types>
   <types>
@@ -3435,6 +3441,7 @@
   </types>
   <types>
     <members>AmrockBot</members>
+    <members>BaydocsAPI</members>
     <name>NamedCredential</name>
   </types>
   <types>
@@ -3645,6 +3652,8 @@
     <members>TriggerLoan.trackLoanStatus</members>
     <members>TriggerLoan.updateLoanSharing</members>
     <members>TriggerLoan.updatePartnerFields</members>
+    <members>ExternalServiceRegistry.Baydocs</members>
+    <members>ExternalServiceRegistry.BaydocsProductRateUpdate</members>
     <name>CustomMetadata</name>
   </types>
   <types>

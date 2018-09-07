@@ -19,9 +19,12 @@ public class PricingTest {
             List<PricingResponse> lst=  Pricing.getBrokerPricing();
             List<PricingResponse> lst1=  Pricing.Tier2_Data();
             List<PricingResponse> lst2=  Pricing.Tier1_Data();   
-             List<FixedRateResponse> lst3=  Pricing.getFixedRateORM();
+            List<FixedRateResponse> lst3=  Pricing.getFixedRateORM();
             List<FixedRateResponse> lst4=  Pricing.FixedRateTier2_Data();
             List<FixedRateResponse> lst5=  Pricing.FixedRateTier1_Data(); 
+            List<HeloRateResponse> lst6=  Pricing.getHeloRateORM();
+            List<HeloRateResponse> lst7=  Pricing.HeloRateTier2_Data();
+            List<HeloRateResponse> lst8=  Pricing.HeloRateTier1_Data();
             Test.stopTest();
             
         }
