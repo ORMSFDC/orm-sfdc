@@ -701,6 +701,22 @@
         });
         $A.enqueueAction(action1);
     },
+    
+    //send Helo Margin
+    getHeloMargin: function (component, event, helper, Rate) {
+        var rateval = Rate;
+        var action1 = component.get("c.getHeloMargin");
+
+        action1.setParams({
+            "rate": rateval
+        });
+        action1.setCallback(this, function (data) {
+            var result = data.getReturnValue();
+            component.set("v.NewLoan.HeloMargin__c", result);
+        });
+        $A.enqueueAction(action1);
+    },
+    
 
     getORMBorrower: function (component, event, helper, Rate) {
 

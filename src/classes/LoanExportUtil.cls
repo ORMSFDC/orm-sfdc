@@ -12,6 +12,7 @@
 *
 *             @TODO SOQL Query Consolidation
 * 09/06/2018: Sahitya: Add LoanType for HELO
+* 09/07/2018: Sahitya: Add Margin for HELO
 */
 global class LoanExportUtil {
 
@@ -321,6 +322,7 @@ global class LoanExportUtil {
         'HOA_Monthly_Dues__c'                         => 'hoa_monthly_dues',
         'HOI_Effective_Date__c'                       => 'hoi_effective_date',
         'Household_Members__c'                        => 'household_members',
+        'HeloMargin__c'                               => 'helo_margin',
         'Id'                                          => 'id',
         'If_yes_Name_of_POA__c'                       => 'if_yes_name_of_poa',
         'InitialInterestRate__c'                      => 'InitialInterestRate',

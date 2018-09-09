@@ -589,6 +589,7 @@
         if ('HELO' == productType) { //SFDC-237
             component.set("v.NewLoan.Credit_to_Borrower__c", 0); 
             helper.getHeloOrigination(component, event, helper, Rate);
+            helper.getHeloMargin(component, event, helper, Rate); //send Helo Margin
         } else {
             helper.getORMOrigination(component, event, helper, Rate);
             helper.getORMBorrower(component, event, helper, Rate);
