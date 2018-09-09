@@ -434,6 +434,8 @@ public class SAL_LoanControllerTest {
                 String ReturnVal8 = SAL_LoanController.getORMBorrowerT2(5.060);
                 List<String> ReturnVal9 = SAL_LoanController.getHeloRateTier1();
                 List<String> ReturnVal10 = SAL_LoanController.getHeloRateTier2();
+                String ReturnVal11 = SAL_LoanController.getHeloOrigination('5.060');
+                String ReturnVal12 = SAL_LoanController.getHeloMargin('3.060');
                 
                 Test.stopTest();
             }

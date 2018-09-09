@@ -4,6 +4,7 @@
 
 * changelog:
 * 09/06/2018: Sahitya: SFDC-237 - Fetch Helo rates, orig to orm from Metadata table
+* 09/07/2018: Sahitya: Fetch Helo Margin from Metadata table
 */
 
 public with sharing class SAL_LoanController {
@@ -466,6 +467,23 @@ public with sharing class SAL_LoanController {
         }
         return HeloOrigination;        
     }
+    
+    //fetch helo margin
+    @AuraEnabled
+    public static string getHeloMargin(string rate)
+    {
+        decimal ratevalue=decimal.valueOf(rate);
+        string HeloMargin;
+        Boolean IsPremierParthner;
+        try{
+           HeloMargin= getHeloMargin(ratevalue);            
+        } 
+        catch(Exception ex)
+        {
+            system.debug('getOrigination .....'+ ex.getMessage());
+        }        
+        return HeloMargin;        
+    }
 
     @AuraEnabled
     public static string getBorrower(string rate)
@@ -581,6 +599,23 @@ public with sharing class SAL_LoanController {
         }
         origtoorm=string.valueOf( Orignation);
         return origtoorm;
+    }
+    
+    //Fetch Helo Margin
+    public static string getHeloMargin(decimal Rate)
+    {
+        string heloMargin;
+        decimal margin;
+        Boolean IsPremierPartner;
+        Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
+        IsPremierPartner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
+        if(IsPremierPartner){
+            margin=[Select Helomargin__c from Proprietary_Tier_2__mdt where Rate__c=:Rate].HeloMargin__c;
+        }else{
+            margin=[Select Helomargin__c from Proprietary_Tier_1__mdt where Rate__c=:Rate].Helomargin__c;
+        }
+        heloMargin=string.valueOf(margin);
+        return heloMargin;
     }
     
     public static string getORMBorrowerT1(decimal Rate)
