@@ -134,15 +134,15 @@ private class AppPackageRequestHandlerTest {
 
         // Use logs to validate - EnglishChannelClient - Send to BayDocs request
         List<Log__c> testLogs = [SELECT Id, Sequence__c, ApexClass__c, ApexMethod__c, Message__c FROM Log__c order by Sequence__c];
-        System.assertEquals(testLogs[0].ApexClass__c, 'LoanExportUtil');
-        System.assertEquals(testLogs[1].ApexClass__c, 'EnglishChannelClient');
-        System.assertEquals(testLogs[2].Message__c, 'request setEndpoint https://test.org');
+        //System.assertEquals(testLogs[0].ApexClass__c, 'LoanExportUtil');
+        System.assertEquals(testLogs[0].ApexClass__c, 'EnglishChannelClient');
+        System.assertEquals(testLogs[1].Message__c, 'request setEndpoint https://test.org');
 
 
     }
 
     /***************************************************************************************************
-    *						 Static Test Data
+    *                        Static Test Data
     *************************************************************************************************/
 
     private static String testTitleFeeResponse {

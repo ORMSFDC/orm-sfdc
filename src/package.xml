@@ -309,6 +309,7 @@
     <members>WS_CreditReport</members>
     <members>WS_CreditReport_Test</members>
     <members>DailyProductRateUpdateCalloutTest</members>
+    <members>AppPackageRequestHandlerTest</members>
     <name>ApexClass</name>
   </types>
   <types>
