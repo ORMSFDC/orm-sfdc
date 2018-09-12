@@ -229,6 +229,14 @@
             }
         });
         $A.enqueueAction(action1);
+	
+	var action = component.get('c.getHeloRate');
+            action.setCallback(this, function (data) {
+                var result = data.getReturnValue();
+                var resultLength = result.length;
+                component.set("v.HeloRateList", result);
+            });
+            $A.enqueueAction(action);
     },
     interviewdatevalidation: function (component, event, helper) {
         var isValid = false;
