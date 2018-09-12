@@ -70,48 +70,48 @@
                                                                                   top: 210px;
                                                                                   bottom: 20px;">
                             <li >
-                                <a id = "step1" data-toggle="collapse" style="background-color:#191970 !important" data-parent="#parent" href="#p1" >
+                                <a id = "step1" style="background-color:#191970 !important">
                                     <span style="color:white;font-size:150% !important">Step 1</span>
                                 </a>
-                                <ul class="nav nav-pills nav-stacked collapse in" id = "p1">
+                                <ul class="nav nav-pills nav-stacked in" id = "p1">
                                     <li id = "l1" class = "active">
-                                        <a data-toggle="tab" id="loantab" onclick = "{!c.openOpt1}">
+                                        <a id="loantab" onclick = "{!c.openOpt1}">
                                             <span style="font-size:110%">Loan</span>
                                             
                                         </a>
                                     </li>
                                     <li id = "l2">
-                                        <a data-toggle="tab"  id="SPTab" onclick = "{!c.openOpt2}" >
+                                        <a  id="SPTab" onclick = "{!c.openOpt2}" >
                                             <span style="font-size:110%">Subject Property</span>
                                         </a>                                        
                                     </li>
                                     <li id = "l3">
-                                        <a id="clientOption"  data-toggle="tab" onclick = "{!c.openOpt3}" >
+                                        <a id="clientOption"  onclick = "{!c.openOpt3}" >
                                             <span style="font-size:110%">Client</span>
                                         </a>
                                     </li>
                                     <!--<li id = "l4">
-                                        <a data-toggle="tab" onclick = "{!c.openOpt4}" >
+                                        <a onclick = "{!c.openOpt4}" >
                                             <span style="font-size:110%">Employment</span>
                                         </a>
                                     </li>-->
                                     <li id = "l5">
-                                        <a data-toggle="tab" id="IncomeTab" onclick = "{!c.openOpt5}">
+                                        <a id="IncomeTab" onclick = "{!c.openOpt5}">
                                             <span style="font-size:110%">Income</span>
                                         </a>
                                     </li>
                                     <li id = "l6">
-                                        <a data-toggle="tab" id="AssetsTab" onclick = "{!c.openOpt6}" >
+                                        <a id="AssetsTab" onclick = "{!c.openOpt6}" >
                                             <span style="font-size:110%">Assets</span>
                                         </a>
                                     </li>
                                     <li id = "l7">
-                                        <a data-toggle="tab" id="LaibilityTab" onclick = "{!c.openOpt7}">
+                                        <a id="LaibilityTab" onclick = "{!c.openOpt7}">
                                             <span style="font-size:110%">Liabilities</span>
                                         </a>
                                     </li>
                                     <li id = "l8">
-                                        <a data-toggle="tab" id="DeclarationTab" onclick = "{!c.openOpt8}">
+                                        <a id="DeclarationTab" onclick = "{!c.openOpt8}">
                                             <span style="font-size:110%">Declarations</span>
                                         </a>
                                     </li>
@@ -120,23 +120,23 @@
                                     
                                     <aura:if isTrue="{!v.fromPopup}">
                                         <li id = "step2Lock">
-                                            <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
+                                            <a id = "step2" style="background-color:#191970 !important" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
                                                 <span style="color:white;font-size:150%">Step 2 </span>
                                             </a>
                                         </li>  
                                         <li id = "l9" class="p2 " style="display:none">
-                                            <a data-toggle="tab" id="loandeatailclk" onclick = "{!c.openOpt9}">
+                                            <a id="loandeatailclk" onclick = "{!c.openOpt9}">
                                                 <span style="font-size:110%">Loan Details</span>
                                             </a>
                                         </li>
                                         <li id = "l10" class="p2 " style="display:none">
                                             
-                                            <a data-toggle="tab" id="CapacityTab" onclick = "{!c.openOpt10}">
+                                            <a id="CapacityTab" onclick = "{!c.openOpt10}">
                                                 <span style="font-size:110%">Capacity Test</span>
                                             </a>
                                         </li>
                                         <li id = "l11">
-                                            <a data-toggle="tab" id="LoanContactTab" onclick = "{!c.openOpt11}">
+                                            <a id="LoanContactTab" onclick = "{!c.openOpt11}">
                                                 <span style="font-size:110%">Credit Info</span>
                                             </a>
                                         </li>
@@ -149,29 +149,29 @@
                             <br/>
                             <aura:if isTrue="{!!v.fromPopup}">
                                 <li id = "step2Lock">
-                                    <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
+                                    <a id = "step2" style="background-color:#191970 !important" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
                                         <span style="color:white;font-size:150%">Step 2 </span>
                                     </a>
                                     
-                                    <ul class="nav nav-pills nav-stacked collapse out clc" id="p2">
+                                    <ul class="nav nav-pills nav-stacked out clc" id="p2">
                                         <li id = "l9">
-                                            <a data-toggle="tab" id="loandeatailclk" onclick = "{!c.openOpt9}">
+                                            <a id="loandeatailclk" onclick = "{!c.openOpt9}">
                                                 <span style="font-size:110%">Loan Details</span>
                                             </a>
                                         </li>
                                         <li id = "l10">
                                             
-                                            <a data-toggle="tab" id="CapacityTab" onclick = "{!c.openOpt10}">
+                                            <a id="CapacityTab" onclick = "{!c.openOpt10}">
                                                 <span style="font-size:110%">Capacity Test</span>
                                             </a>
                                         </li>
                                         <li id = "l11">
-                                            <a data-toggle="tab" id="LoanContactTab" onclick = "{!c.openOpt11}">
+                                            <a id="LoanContactTab" onclick = "{!c.openOpt11}">
                                                 <span style="font-size:110%">Credit Info</span>
                                             </a>
                                         </li>
                                         <!--  <li id = "l12">
-                                        <a data-toggle="tab" onclick = "{!c.openOpt12}">
+                                        <a onclick = "{!c.openOpt12}">
                                             <span style="font-size:110%">Credit Info</span>
                                         </a>
                                     </li>-->
