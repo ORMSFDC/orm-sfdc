@@ -1,81 +1,106 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>AddCampaign</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>AddToCampaign</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CallHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EmailHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EnableCustomerPortal</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EnablePartnerPortalUser</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EnableSelfService</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Merge</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>NewContact</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>RequestUpdate</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SmsHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Contact_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ViewCustomerPortal</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ViewPartnerPortalUser</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ViewSelfService</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Approval_Status__c</fullName>
         <externalId>false</externalId>
         <label>Approval Status</label>
@@ -144,7 +169,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Approval_Sub_Status__c</fullName>
         <externalId>false</externalId>
         <label>Approval Sub-Status</label>
@@ -192,7 +218,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Approved_Date__c</fullName>
         <description>ORMSFDC-1222</description>
         <externalId>false</externalId>
@@ -200,7 +227,8 @@
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_Credit_Risk_Analyst__c</fullName>
         <externalId>false</externalId>
         <formula>Account.Assigned_Credit_Risk_Analyst__r.FirstName + ' ' +  Account.Assigned_Credit_Risk_Analyst__r.LastName</formula>
@@ -209,7 +237,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_PCS__c</fullName>
         <externalId>false</externalId>
         <formula>Account.Assigned_PCS__r.FirstName + ' ' + Account.Assigned_PCS__r.LastName</formula>
@@ -218,23 +247,28 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>AssistantName</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>AssistantPhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Birthdate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cell__c</fullName>
         <externalId>false</externalId>
         <label>Cell</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Check_to_create_a_Prospective_User_Login__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -242,7 +276,8 @@
         <label>Check to create a Prospective User Login</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Comments__c</fullName>
         <externalId>false</externalId>
         <label>Comments</label>
@@ -250,7 +285,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Contact_Image__c</fullName>
         <externalId>false</externalId>
         <label>Contact Image</label>
@@ -258,7 +294,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Html</type>
         <visibleLines>10</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Contact_NMLS__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID</label>
@@ -267,21 +304,24 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Corporate_Resolution__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Corporate Resolution</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Date_of_Board_Approval__c</fullName>
         <externalId>false</externalId>
         <label>Date of Board Approval</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Days_since_Approval__c</fullName>
         <externalId>false</externalId>
         <formula>TODAY()-Approved_Date__c</formula>
@@ -292,19 +332,24 @@
         <scale>0</scale>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Department</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>DoNotCall</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ext__c</fullName>
         <externalId>false</externalId>
         <label>Ext.</label>
@@ -313,19 +358,24 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HasOptedOutOfEmail</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HasOptedOutOfFax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HomePhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>How_did_you_hear_about_us__c</fullName>
         <externalId>false</externalId>
         <label>How did you hear about us?</label>
@@ -393,7 +443,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Individual_Lead_source__c</fullName>
         <externalId>false</externalId>
         <label>Individual Lead source</label>
@@ -445,7 +496,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Individual_lead_Status__c</fullName>
         <externalId>false</externalId>
         <label>Individual lead Status</label>
@@ -524,46 +576,55 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_this_user_an_Owner__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Is this user an Owner?</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LastCURequestDate</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LastCUUpdateDate</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity_Date__c</fullName>
         <externalId>false</externalId>
         <formula>LastActivityDate</formula>
         <label>Last Activity Date</label>
         <required>false</required>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Login_Time__c</fullName>
         <externalId>false</externalId>
         <label>Last Login Time</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Significant_Contact_Date__c</fullName>
         <externalId>false</externalId>
         <label>Last Significant Contact Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LeadSource</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Officer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -574,10 +635,12 @@
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MailingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MailingCity__c</fullName>
         <externalId>false</externalId>
         <label>Mailing City</label>
@@ -586,7 +649,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MailingPostalCode__c</fullName>
         <externalId>false</externalId>
         <label>Mailing Zip/Postal Code</label>
@@ -595,7 +659,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MailingState__c</fullName>
         <externalId>false</externalId>
         <label>Mailing State/Province</label>
@@ -604,14 +669,16 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MailingStreet__c</fullName>
         <externalId>false</externalId>
         <label>Mailing Street</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Mailing_Address__c</fullName>
         <externalId>false</externalId>
         <formula>Account.BillingStreet + ' ' +  Account.BillingCity + ' ' +  Account.BillingState + ' ' +  Account.BillingPostalCode + ' ' +  Account.BillingCountry</formula>
@@ -620,27 +687,32 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MobilePhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID_Expiration_Date__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID Expiration Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID_Issued_Date__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID Issued Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Name__c</fullName>
         <externalId>false</externalId>
         <formula>FirstName + ' ' + LastName</formula>
@@ -648,7 +720,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Nickname__c</fullName>
         <externalId>false</externalId>
         <label>Nickname</label>
@@ -657,7 +730,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Account_Executive_Email__c</fullName>
         <externalId>false</externalId>
         <formula>Account.ORM_Email__c</formula>
@@ -666,7 +740,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Account_Executive_Name__c</fullName>
         <externalId>false</externalId>
         <formula>Account.Account_Executive_Name__r.FirstName + ' ' +  Account.Account_Executive_Name__r.LastName</formula>
@@ -675,7 +750,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Account_Executive_Title__c</fullName>
         <externalId>false</externalId>
         <formula>Account.ORM_Title__c</formula>
@@ -684,7 +760,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Anniversary__c</fullName>
         <externalId>false</externalId>
         <formula>IF( Days_since_Approval__c = 365, "1 year", 
@@ -714,24 +791,29 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Office_Phone__c</fullName>
         <externalId>false</externalId>
         <label>Office Phone</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>OtherAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>OtherPhone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ownership_Percentage__c</fullName>
         <externalId>false</externalId>
         <label>Ownership Percentage</label>
@@ -740,7 +822,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PPU_Loan_Production_Status__c</fullName>
         <externalId>false</externalId>
         <label>PPU Loan Production Status</label>
@@ -790,7 +873,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PPU_Total_Loan_Stage__c</fullName>
         <externalId>false</externalId>
         <label>PPU Total Loan Stage</label>
@@ -838,7 +922,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Denial_Reasons__c</fullName>
         <externalId>false</externalId>
         <label>Partner Denial Reasons</label>
@@ -891,10 +976,12 @@ IF( Days_since_Approval__c = 7304, "20 year",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Phone</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Potential_Portal_User_Status__c</fullName>
         <externalId>false</externalId>
         <label>Potential Portal User Status</label>
@@ -931,7 +1018,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Closing_Volume_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Closing Volume Purchase</label>
@@ -940,7 +1028,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Closing_Volume_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Closing Volume Refi</label>
@@ -949,7 +1038,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Closing_Volume__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Closing Volume</label>
@@ -958,7 +1048,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Closings_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Closings Purchase</label>
@@ -968,7 +1059,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Closings_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Closings Refi</label>
@@ -978,7 +1070,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Closings__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Closings</label>
@@ -988,7 +1081,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Folder_Volume_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Folder Volume Purchase</label>
@@ -997,7 +1091,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Folder_Volume_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Folder Volume Refi</label>
@@ -1006,7 +1101,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Folder_Volume__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Folder Volume</label>
@@ -1015,7 +1111,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Folders_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Folders Purchase</label>
@@ -1025,7 +1122,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Folders_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Folders Refi</label>
@@ -1035,7 +1133,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Folders__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 12 Month Folders</label>
@@ -1045,7 +1144,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Closing_Volume_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Closing Volume Purchase</label>
@@ -1054,7 +1154,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Closing_Volume_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Closing Volume Refi</label>
@@ -1063,7 +1164,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Closing_Volume__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Closing Volume</label>
@@ -1072,7 +1174,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Closings_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Closings Purchase</label>
@@ -1082,7 +1185,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Closings_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Closings Refi</label>
@@ -1092,7 +1196,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Closings__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Closings</label>
@@ -1102,7 +1207,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Folder_Volume_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Folder Volume Purchase</label>
@@ -1111,7 +1217,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Folder_Volume_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Folder Volume Refi</label>
@@ -1120,7 +1227,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Folder_Volume__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Folder Volume</label>
@@ -1129,7 +1237,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <scale>0</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Folders_Purchase__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Folders Purchase</label>
@@ -1139,7 +1248,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Folders_Refi__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Folders Refi</label>
@@ -1149,7 +1259,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_6_Month_Folders__c</fullName>
         <externalId>false</externalId>
         <label>QLMS 6 Month Folders</label>
@@ -1159,7 +1270,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Account_Executive__c</fullName>
         <externalId>false</externalId>
         <formula>Account.QLMS_Account_Executive__r.Name</formula>
@@ -1168,7 +1280,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Contact_ID__c</fullName>
         <externalId>false</externalId>
         <label>QLMS Contact ID</label>
@@ -1177,7 +1290,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_First_Name__c</fullName>
         <externalId>false</externalId>
         <formula>LEFT(QLMS_Account_Executive__c , FIND(" ", QLMS_Account_Executive__c ))</formula>
@@ -1186,7 +1300,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Branch__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -1206,11 +1321,13 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ReportsToId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>SSN__c</fullName>
         <externalId>false</externalId>
         <label>SSN</label>
@@ -1219,7 +1336,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <maskType>ssn</maskType>
         <required>false</required>
         <type>EncryptedText</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Email__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Email</label>
@@ -1227,7 +1345,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Source_Name__c</fullName>
         <externalId>false</externalId>
         <label>Source Name</label>
@@ -1236,7 +1355,8 @@ IF( Days_since_Approval__c = 7304, "20 year",
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Time_Zone__c</fullName>
         <externalId>false</externalId>
         <formula>if( ISBLANK(Office_Phone__c),"--", 
@@ -1264,10 +1384,12 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Title</fullName>
         <trackFeedHistory>false</trackFeedHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Title__c</fullName>
         <externalId>false</externalId>
         <label>Title</label>
@@ -1349,7 +1471,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Username__c</fullName>
         <externalId>false</externalId>
         <label>Username</label>
@@ -1357,7 +1480,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <trackFeedHistory>false</trackFeedHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>userLoginId__c</fullName>
         <externalId>false</externalId>
         <label>userLoginId</label>
@@ -1384,23 +1508,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <searchResultsAdditionalFields>CONTACT.PHONE1</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CONTACT.EMAIL</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ControlledByParent</sharingModel><listViews>
-        <fullName>AllContacts</fullName>
-        <columns>ORM_Account_Executive_Name__c</columns>
-        <columns>FULL_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CONTACT.RECORDTYPE</columns>
-        <columns>CONTACT.PHONE1</columns>
-        <columns>CONTACT.EMAIL</columns>
-        <columns>CONTACT.LAST_ACTIVITY</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CORE.USERS.LAST_NAME</field>
-            <operation>equals</operation>
-            <value>evink</value>
-        </filters>
-        <label>All Contacts</label>
-    </listViews><listViews>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel>
+    <listViews>
         <fullName>All_Approved_Individuals</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1413,7 +1522,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
             <value>Contact.Partner_Portal_User</value>
         </filters>
         <label>All Partner Portal Users</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Individual_Leads</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1427,7 +1537,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
             <value>Contact.Potential_Partner_Portal_User</value>
         </filters>
         <label>All Potential Partner Portal Users</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Individuals_Created_on_10_30_2017</fullName>
         <booleanFilter>1 OR 2</booleanFilter>
         <columns>FULL_NAME</columns>
@@ -1448,7 +1559,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
             <value>10/30/2017 12:00 AM</value>
         </filters>
         <label>Individuals Created on 10-30-2017</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyContacts</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1466,7 +1578,25 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
             <value>7/5/2018</value>
         </filters>
         <label>My Contacts</label>
-    </listViews><recordTypes>
+    </listViews>
+    <listViews>
+        <fullName>AllContacts</fullName>
+        <columns>ORM_Account_Executive_Name__c</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.RECORDTYPE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>equals</operation>
+            <value>Priority Financial Network</value>
+        </filters>
+        <label>All Contacts</label>
+    </listViews>
+    <recordTypes>
         <fullName>Approved_Individuals</fullName>
         <active>true</active>
         <label>Approved Individuals</label>
@@ -1830,7 +1960,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Banker</fullName>
         <active>true</active>
         <label>Banker</label>
@@ -2234,7 +2365,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Client_Portal_User</fullName>
         <active>true</active>
         <label>Client Portal User</label>
@@ -2590,7 +2722,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Committed_Partner_Portal_User</fullName>
         <active>true</active>
         <label>Committed Partner Portal User</label>
@@ -2954,7 +3087,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>General</fullName>
         <active>true</active>
         <label>General</label>
@@ -3262,7 +3396,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Individual_Leads</fullName>
         <active>true</active>
         <label>Individual Leads</label>
@@ -3610,7 +3745,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Partner_Portal_User</fullName>
         <active>true</active>
         <label>Partner Portal User</label>
@@ -3970,7 +4106,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Potential_Partner_Portal_User</fullName>
         <active>true</active>
         <label>Potential Partner Portal User</label>
@@ -4350,7 +4487,8 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <validationRules>
         <fullName>Contact_AE_Field_Validation_Rule</fullName>
         <active>false</active>
         <errorConditionFormula>AND( 
@@ -4359,7 +4497,8 @@ ISPICKVAL( Individual_lead_Status__c , 'Approved'),
 ISPICKVAL( Individual_lead_Status__c , 'Denied'), 
 $Profile.Name = "Account Executives Team")</errorConditionFormula>
         <errorMessage>Account Executive Team can choose only 'New'</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Contact_AE_Validation_Rule_for_New</fullName>
         <active>false</active>
         <errorConditionFormula>AND( 
@@ -4367,31 +4506,36 @@ NOT(
 ISPICKVAL( Individual_lead_Status__c  , 'New')), 
 $Profile.Name = "Account Executives Team")</errorConditionFormula>
         <errorMessage>You are not authorized for desired Action!</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>EmailMustBeAnEmailFormat</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(REGEX( Email,'([a-zA-Z0-9_\\-\\.]+)@((\\[a-z]{1,3}\\.[a-z]{1,3}\\.[a-z]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})'))</errorConditionFormula>
         <errorMessage>Email format doesn't exist</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Office_Phone_must_have_10_digit_no</fullName>
         <active>false</active>
         <description>Validate 10 digit number Office_Phone__c</description>
         <errorConditionFormula>NOT(REGEX(Office_Phone__c, "\\D*?(\\d\\D*?){10}"))</errorConditionFormula>
         <errorDisplayField>Office_Phone__c</errorDisplayField>
         <errorMessage>Phone number must be 10 digit number.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Phone10DigitNumber</fullName>
         <active>false</active>
         <errorConditionFormula>OR(NOT(REGEX(Office_Phone__c,"(\\d){10}")), IF( LEFT( Office_Phone__c, 1) == '0' , true,false))</errorConditionFormula>
         <errorMessage>Phone number must Contain 10 digits number,and should not start with 0.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Username_Required_if_checkbox_checked</fullName>
         <active>true</active>
         <description>if Check to create a Prospective Portal User is checked,then Username required</description>
         <errorConditionFormula>AND(  Check_to_create_a_Prospective_User_Login__c = TRUE, ISBLANK(  Username__c ))</errorConditionFormula>
         <errorDisplayField>Username__c</errorDisplayField>
         <errorMessage>This is a required field.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Username_cannot_change_while_Update</fullName>
         <active>true</active>
         <description>This cannot Allow user to change USERNAME while updating the record.</description>
@@ -4402,22 +4546,26 @@ ISCHANGED( Username__c)
 )</errorConditionFormula>
         <errorDisplayField>Username__c</errorDisplayField>
         <errorMessage>You Cannot change Username.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>cellMustContain10Digits</fullName>
         <active>false</active>
         <errorConditionFormula>OR(NOT(REGEX(Cell__c,"(\\d){10}")), IF( LEFT( Cell__c, 1) == '0' , true,false))</errorConditionFormula>
         <errorMessage>Cell must Contain 10 digits number,and should not start with 0.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>checkSourceName_LeadSource</fullName>
         <active>true</active>
         <errorConditionFormula>AND(ISPICKVAL(Individual_Lead_source__c, 'Other'), ISBLANK(  Source_Name__c ))</errorConditionFormula>
         <errorMessage>Source Name must contain value.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>checkTradeShow_LeadSource</fullName>
         <active>false</active>
         <errorConditionFormula>AND(ISPICKVAL(  Individual_Lead_source__c, 'TradeShow'), ISBLANK( Trade_Show__c ))</errorConditionFormula>
         <errorMessage>Trade Show must contain value.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>checkbox_cannot_change_while_update</fullName>
         <active>true</active>
         <errorConditionFormula>AND( 
@@ -4427,12 +4575,14 @@ PRIORVALUE(Check_to_create_a_Prospective_User_Login__c) =true,
 )</errorConditionFormula>
         <errorDisplayField>Check_to_create_a_Prospective_User_Login__c</errorDisplayField>
         <errorMessage>You cannot change the value, once it checked.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>partner_denial_reasons</fullName>
         <active>false</active>
         <errorConditionFormula>AND(ISPICKVAL(Individual_lead_Status__c,'Denied'),ISPICKVAL(Partner_Denial_Reasons__c,''))</errorConditionFormula>
         <errorMessage>Please choose the Partner Denial Reason</errorMessage>
-    </validationRules><webLinks>
+    </validationRules>
+    <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -4450,7 +4600,8 @@ PRIORVALUE(Check_to_create_a_Prospective_User_Login__c) =true,
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact_MailingStreet}+{!Contact_MailingCity}+{!Contact_MailingState}&amp;om=1</url>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <fullName>GoogleSearch</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -4468,4 +4619,5 @@ PRIORVALUE(Check_to_create_a_Prospective_User_Login__c) =true,
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
-    </webLinks></CustomObject>
+    </webLinks>
+</CustomObject>

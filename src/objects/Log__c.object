@@ -206,19 +206,6 @@
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
     <listViews>
-        <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>ApexClass__c</columns>
-        <columns>ApexMethod__c</columns>
-        <columns>CREATEDBY_USER</columns>
-        <columns>CREATEDBY_USER.ALIAS</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>ExceptionLine__c</columns>
-        <columns>ExceptionType__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
-    <listViews>
         <fullName>Today</fullName>
         <columns>NAME</columns>
         <columns>ApexClass__c</columns>
@@ -235,6 +222,20 @@
             <value>TODAY</value>
         </filters>
         <label>Today</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>ApexClass__c</columns>
+        <columns>ApexMethod__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>ExceptionLine__c</columns>
+        <columns>ExceptionType__c</columns>
+        <columns>Message__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
     </listViews>
     <webLinks>
         <fullName>Delete</fullName>

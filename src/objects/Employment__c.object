@@ -1124,8 +1124,8 @@
         <customTabListAdditionalFields>is_Active__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>EmployerName__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CurrentPosition__c</customTabListAdditionalFields>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Client_id__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>RelatedLoan__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>IncomeType__c</lookupDialogsAdditionalFields>
