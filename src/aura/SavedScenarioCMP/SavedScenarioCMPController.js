@@ -234,7 +234,7 @@
         var lnId= component.get("v.showLoanId");
         //  alert("showLoanId "+component.get("v.ApplicationDate"));
         $A.createComponent(
-            "c:StartNewLoanCmp",
+            "c:StartNewLoanProductContainer",
             
             {
                 "ApplicationDate":component.get("v.ApplicationDate"),

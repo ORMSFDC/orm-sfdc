@@ -8,6 +8,64 @@
             </componentInstanceProperties>
             <componentName>force:highlightsPanel</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size:48px;&quot;&gt;&lt;span style=&quot;color:#0000FF;&quot;&gt;&lt;b&gt;HECM&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+            <visibilityRule>
+                <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                <criteria>
+                    <leftValue>{!Record.Product_Type__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HECM</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>FHA Traditional HECM</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HECM to HECM Refinance</rightValue>
+                </criteria>
+            </visibilityRule>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color:#008000;&quot;&gt;&lt;span style=&quot;font-size:48px;&quot;&gt;&lt;b&gt;HELO&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+            <visibilityRule>
+                <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                <criteria>
+                    <leftValue>{!Record.Product_Type__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HELO</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HELO Refinance</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HELO for Purchase</rightValue>
+                </criteria>
+            </visibilityRule>
+        </componentInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>

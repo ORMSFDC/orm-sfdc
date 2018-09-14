@@ -101,4 +101,16 @@
         <type>Text</type>
         <unique>false</unique>
     </fields><description>Entries represent control parameters for External Services.  Referenced by the ServiceName__c field of ExternalService__c records, and used within ExternalServiceDispatcher.cls</description><label>ExternalServiceRegistry</label><pluralLabel>ExternalServiceRegistries</pluralLabel><visibility>Public</visibility>
+    <listViews>
+        <fullName>All_Settings</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>ExternalServiceClass__c</columns>
+        <columns>ExternalServiceDispatcherClass__c</columns>
+        <columns>NamedCredential__c</columns>
+        <columns>IsActive__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Settings</label>
+    </listViews>
 </CustomObject>

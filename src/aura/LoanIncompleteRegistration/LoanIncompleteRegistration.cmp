@@ -12,6 +12,7 @@
     <aura:attribute name="idIs" type="String" default="null" />
     <aura:attribute name="showSpinner" type="boolean" default="false" />
       <aura:attribute name="showPopup" type="boolean" default="false"/>
+    <!-- todo: ^make false -->
     
     <aura:if isTrue="{!v.showPopup}">
         <!--###### MODAL BOX Start From Here ######--> 

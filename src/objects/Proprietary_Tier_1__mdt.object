@@ -53,5 +53,16 @@
         <scale>3</scale>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HeloMargin__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>HeloMargin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <type>Number</type>
+        <unique>false</unique>
     </fields><label>Proprietary Tier 1</label><pluralLabel>Proprietary Tier 1</pluralLabel><visibility>Public</visibility>
 </CustomObject>

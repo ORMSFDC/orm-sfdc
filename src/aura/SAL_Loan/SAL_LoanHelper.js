@@ -1,5 +1,5 @@
 ({
-    DropdownPopulate: function(component, event, helper) {        
+    DropdownPopulate: function (component, event, helper) {
         var States = [
             { text: "Alabama", value: "Alabama" },
             { text: "Alaska", value: "Alaska" },
@@ -51,9 +51,9 @@
             { text: "West Virginia", value: "West Virginia" },
             { text: "Wisconsin", value: "Wisconsin" },
             { text: "Wyoming", value: "Wyoming" },
-            
+
         ];
-            var Num = [
+        var Num = [
             { text: "1", Label: "1" },
             { text: "2", Label: "2" },
             { text: "3", Label: "3" },
@@ -65,34 +65,33 @@
             { text: "9", Label: "9" },
             { text: "10", Label: "10" }
         ];
-        
+
         component.set('v.UsState', States);
-        component.set('v.Number', Num);        
-        
+        component.set('v.Number', Num);
+
     },
-    SaveLoans: function(component, event, helper) {
-        
+    SaveLoans: function (component, event, helper) {
+
         var action = component.get("c.SaveLoan");
-        var valueChildren_Under_the_age = helper.getRadioGroupValue(component, event, helper,"Children_Under_the_age","v.NewLoan.Children_Under_the_age_of_6_living_in_th__c");
+        var valueChildren_Under_the_age = helper.getRadioGroupValue(component, event, helper, "Children_Under_the_age", "v.NewLoan.Children_Under_the_age_of_6_living_in_th__c");
         var loid;
         var RelationshipDDvalue = component.find("relationshipContact").get("v.value");
-        if(RelationshipDDvalue!='Other'){
-            component.set("v.NewLoan.Other_Relationship_Alternative_Contact__c",'');            
+        if (RelationshipDDvalue != 'Other') {
+            component.set("v.NewLoan.Other_Relationship_Alternative_Contact__c", '');
         }
         //For HECM for Purchase
-        var mortgageAppliedFor=component.find("LoanMortgageAppliedFor").get("v.value");
-        if(mortgageAppliedFor=='HECM for Purchase')
-        {
-            component.set("v.NewLoan.Purpose_of_Loan__c",'');
-            component.set("v.NewLoan.Selected_Loan_Payment_Plan__c",'');
+        var mortgageAppliedFor = component.find("LoanMortgageAppliedFor").get("v.value");
+        if (mortgageAppliedFor.includes('Purchase')) {
+            component.set("v.NewLoan.Purpose_of_Loan__c", '');
+            component.set("v.NewLoan.Selected_Loan_Payment_Plan__c", '');
         }
         //end
-        console.log('component.get("v.NewLoan") ',component.get("v.NewLoan"));
+        console.log('component.get("v.NewLoan") ', component.get("v.NewLoan"));
         action.setParams({
             "ObjLoan": component.get("v.NewLoan")
         });
-        action.setCallback(this, function(data) {
-            var state = data.getState();            
+        action.setCallback(this, function (data) {
+            var state = data.getState();
             var loanid = data.getReturnValue();
             var savedLoanObject = data.getReturnValue();
             component.set("v.NuLoan", component.get("v.NewLoan"));
@@ -102,10 +101,10 @@
         });
         $A.enqueueAction(action);
     },
-    
-    PopulateLoanName : function(component, event, helper) {
-        var LoanId ;
-        if(component.get("v.popupLoanId") == "default"){
+
+    PopulateLoanName: function (component, event, helper) {
+        var LoanId;
+        if (component.get("v.popupLoanId") == "default") {
             LoanId = component.get("v.LoanId");
         }
         else
@@ -114,195 +113,183 @@
         action2.setParams({
             "LoanID": LoanId
         });
-        
-        action2.setCallback(this, function(data) {
-            var state = data.getState();            
-            document.getElementById("lblLoanID").innerHTML="Loan ID &nbsp;&nbsp;"+data.getReturnValue();
+
+        action2.setCallback(this, function (data) {
+            var state = data.getState();
+            document.getElementById("lblLoanID").innerHTML = "Loan ID &nbsp;&nbsp;" + data.getReturnValue();
             this.PopulateLoanBasedonId(component, event, helper);
             //Goes to the next Step            
             this.Loan_Next(component, event, helper);
         });
         $A.enqueueAction(action2);
-    }, 
-    
-    PopulateLoanBasedonId: function(component, event, helper) {        
-        var LoanId ;
-        if(component.get("v.popupLoanId") == "default"){
+    },
+
+    PopulateLoanBasedonId: function (component, event, helper) {
+        debugger;
+        var LoanId;
+        if (component.get("v.popupLoanId") == "default") {
             LoanId = component.get("v.LoanId");
         }
-        else
+        else {
             LoanId = component.get("v.popupLoanId");
-        var action1 = component.get("c.getLoanById");        
+        }
+
+        var action1 = component.get("c.getLoanById");
         action1.setParams({
             "RecordId": LoanId
         });
-        action1.setCallback(this, function(data) {
+        action1.setCallback(this, function (data) {
             debugger;
-            var result=data.getReturnValue();
-            console.log('>>>>>> result ',result);
-            if(result.Children_Under_the_age_of_6_living_in_th__c=="" || result.Children_Under_the_age_of_6_living_in_th__c==undefined || result.Children_Under_the_age_of_6_living_in_th__c==null)
-            {
-                result.Children_Under_the_age_of_6_living_in_th__c='No';
+            var result = data.getReturnValue();
+            console.log('>>>>>> result ', result);
+            if (result.Children_Under_the_age_of_6_living_in_th__c == "" || result.Children_Under_the_age_of_6_living_in_th__c == undefined || result.Children_Under_the_age_of_6_living_in_th__c == null) {
+                result.Children_Under_the_age_of_6_living_in_th__c = 'No';
             }
-            if(result.Mortgage_Applied_for__c=='HECM for Purchase')
-            {
-                var fundSource=result.Source_Of_Funds__c;
-                if(fundSource!=undefined)
-                {
-                    if(fundSource.includes("Sale Of Other Property"))
-                    {
-                        document.getElementById("SalDate").style.display='block';   
+            if (result.Mortgage_Applied_for__c && result.Mortgage_Applied_for__c.includes('Purchase')) {
+                var fundSource = result.Source_Of_Funds__c;
+                if (fundSource != undefined) {
+                    if (fundSource.includes("Sale Of Other Property")) {
+                        document.getElementById("SalDate").style.display = 'block';
                     }
-                    else
-                    {
-                        document.getElementById("SalDate").style.display='none';   
+                    else {
+                        document.getElementById("SalDate").style.display = 'none';
                     }
-                    
-                    if(fundSource.includes("Assets"))
-                    {
-                        document.getElementById("AssetAmt").style.display='block';   
+
+                    if (fundSource.includes("Assets")) {
+                        document.getElementById("AssetAmt").style.display = 'block';
                     }
-                    else
-                    {
-                        document.getElementById("AssetAmt").style.display='none';   
+                    else {
+                        document.getElementById("AssetAmt").style.display = 'none';
                     }
-                    if(fundSource.includes("Gift"))
-                    {
-                        document.getElementById("GiftAmt").style.display='block';   
+                    if (fundSource.includes("Gift")) {
+                        document.getElementById("GiftAmt").style.display = 'block';
                     }
-                    else
-                    {
-                        document.getElementById("GiftAmt").style.display='none';   
-                    } 
-                    if(fundSource.includes("Others"))
-                    {
-                        document.getElementById("OtherSrcFund").style.display='block';   
+                    else {
+                        document.getElementById("GiftAmt").style.display = 'none';
                     }
-                    else
-                    {
-                        document.getElementById("OtherSrcFund").style.display='none';   
-                    } 
+                    if (fundSource.includes("Others")) {
+                        document.getElementById("OtherSrcFund").style.display = 'block';
+                    }
+                    else {
+                        document.getElementById("OtherSrcFund").style.display = 'none';
+                    }
                 }
-   
+
             }
-          //  debugger;
+            //  debugger;
             component.set("v.NewLoan", result);
-             var daata=component.get("v.NewLoan");
+            var daata = component.get("v.NewLoan");
             var loanCalaculayionType = component.find("newSelectlist").get("v.value");
-            if(loanCalaculayionType=='Calculate Maximum Fee' || loanCalaculayionType == 'Enter Fee Value ($0 - $6,000)'){
-                if(loanCalaculayionType === 'Calculate Maximum Fee')
-                    component.set("v.show_originate_fee_disable",true);
+            if (loanCalaculayionType == 'Calculate Maximum Fee' || loanCalaculayionType == 'Enter Fee Value ($0 - $6,000)') {
+                if (loanCalaculayionType === 'Calculate Maximum Fee')
+                    component.set("v.show_originate_fee_disable", true);
                 else
-                    component.set("v.show_originate_fee_disable",false);
+                    component.set("v.show_originate_fee_disable", false);
             }
             var RelationshipDDvalue = component.find("relationshipContact").get("v.value");
-            if(RelationshipDDvalue=='Other'){
-                component.set("v.Relationship_to_Alternative_Contact",true);
+            if (RelationshipDDvalue == 'Other') {
+                component.set("v.Relationship_to_Alternative_Contact", true);
             }
-            component.set("v.newSelectlistdisable",false);
+            component.set("v.newSelectlistdisable", false);
             var state = data.getState();
-            if (state === "SUCCESS"&& component.get('v.NewStartLoan')==false) {
+            if (state === "SUCCESS" && component.get('v.NewStartLoan') == false) {
                 helper.ValidationForPills(component, event, helper);
-                
-                component.set('v.Incomplete',false);
-            }            
+
+                component.set('v.Incomplete', false);
+            }
             this.showHideMortgage(component, event, helper);
-             helper.feecaluculationHelper(component, event, helper,'init');
+            helper.feecaluculationHelper(component, event, helper, 'init');
 
         });
         $A.enqueueAction(action1);
-    },    
-    interviewdatevalidation: function(component, event, helper) {
-        var isValid = false;    
-        var inputCmp = component.find('ApplicationDate');       
+    },
+    interviewdatevalidation: function (component, event, helper) {
+        var isValid = false;
+        var inputCmp = component.find('ApplicationDate');
         var value = inputCmp.get("v.value");
-        if (typeof value ==='undefined' || value==null || value=='')
-        {
+        if (typeof value === 'undefined' || value == null || value == '') {
             inputCmp.set("v.errors", [{ message: 'This is a required field.' }]);
             isValid = true;
-            
+
         } else {
             inputCmp.set("v.errors", null);
-            isValid=false;
+            isValid = false;
         }
         return isValid;
-        
-    },    
-    FutureDate: function(component, event, helper) {
-        var isValid = false;      
-        var inputCmp = component.find('ApplicationDate');       
+
+    },
+    FutureDate: function (component, event, helper) {
+        var isValid = false;
+        var inputCmp = component.find('ApplicationDate');
         var value = inputCmp.get("v.value");
-        if (typeof value ==='undefined' || value==null || value=='')
-        {}
-        else{
+        if (typeof value === 'undefined' || value == null || value == '') { }
+        else {
             var myDate = new Date(value);
             var today = new Date();
             var timeDiff = Math.abs(today.getTime() - myDate.getTime());
             var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-            if (myDate > today) {                
+            if (myDate > today) {
                 inputCmp.set("v.errors", [{ message: 'Application date cannot be a future date.' }]);
-                isValid = true;                
+                isValid = true;
             }
-            else if(diffDays > 3)
-            {
+            else if (diffDays > 3) {
                 inputCmp.set("v.errors", [{ message: 'We apologize for the inconvenience. One Reverse Mortgage Services requires 1 day to send out Good Faith\nEstimate to meet regulatory requirements and the date you selected exceeds the tolerance.' }]);
-                isValid = true;  
+                isValid = true;
             }
-                else {
-                    inputCmp.set("v.errors", null);
-                    isValid=false;                    
-                }}
-        return isValid;        
+            else {
+                inputCmp.set("v.errors", null);
+                isValid = false;
+            }
+        }
+        return isValid;
     },
-    formatErrorMethod: function(component, regex, msg, aura_id) {
+    formatErrorMethod: function (component, regex, msg, aura_id) {
         var flag = false;
         for (var i = 0; i < aura_id.length; i++) {
             var inputCmp = component.find(aura_id[i]);
             var value = inputCmp.get("v.value");
             var isValid = false;
-            if (typeof regex[i] != "string") {                
+            if (typeof regex[i] != "string") {
                 isValid = regex[i](value);
-            } 
+            }
             if (isValid) {
                 inputCmp.set("v.errors", null);
             } else {
-                inputCmp.set("v.errors", [{ message: msg[i] + "."  }]);              
+                inputCmp.set("v.errors", [{ message: msg[i] + "." }]);
                 flag = true;
             }
         }
         return flag;
     },
-    formatErrorMethodr: function(component, regexr, msgr, aura_idr) {        
+    formatErrorMethodr: function (component, regexr, msgr, aura_idr) {
         //Code if button is clicked
         var flagR = false;
         for (var i = 0; i < aura_idr.length; i++) {
             var inputCmp = component.find(aura_idr[i]);
-            if(typeof inputCmp==='undefined' )
-            {}else {
+            if (typeof inputCmp === 'undefined') { } else {
                 var value = inputCmp.get("v.value");
                 var isRegValid = false;
-                if(typeof value==='undefined' || value==null || value=='')
-                {}
-                else{                    
-                    if (value.length !=0 ) {
+                if (typeof value === 'undefined' || value == null || value == '') { }
+                else {
+                    if (value.length != 0) {
                         var rxp = new RegExp(regexr[i]);
                         isRegValid = rxp.test(value);
                         if (isRegValid) {
                             inputCmp.set("v.errors", null);
-                        } 
+                        }
                         else {
                             inputCmp.set("v.errors", [{ message: msgr[i] + ":" + value }]);
-                            flagR = true;                            
-                        } 
-                        
-                    } 
+                            flagR = true;
+                        }
+
+                    }
                 }
             }
         }
         return flagR;
     },
-    
-    ZipFormat: function(component, event) {
+
+    ZipFormat: function (component, event) {
         var inputCmp = component.find("Zip");
         var value = inputCmp.get("v.value");
         var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(value);
@@ -312,50 +299,52 @@
         } else {
             inputCmp.set("v.errors", [{ message: "Not a valid Zip Code: " + value }]);
             component.set("v.LoanErr", true);
-        }        
+        }
     },
-    
-    doErrorAction: function(component, event) {
+
+    doErrorAction: function (component, event) {
         var inputCmp = component.find("LoanOriginationFee");
         var value = inputCmp.get("v.value");
         if (value < 0) {
             inputCmp.set("v.errors", [{ message: "Input is negative: " + value }]);
-            component.set("v.LoanErr", true);            
+            component.set("v.LoanErr", true);
         } else {
             component.set("v.LoanErr", false);
             inputCmp.set("v.errors", null);
         }
     },
-    
+
     //Phone format validation
-    PhoneFormatValidation: function(component, regex, msg, aura_id) {
+    PhoneFormatValidation: function (component, regex, msg, aura_id) {
         var inputCmp = component.find(aura_id);
         var value = inputCmp.get("v.value");
         var isValid = regex.test(value);
-        if (isValid) {            
+        if (isValid) {
             component.set("v.LoanErr", false);
             inputCmp.set("v.errors", null);
-        } else {            
+        } else {
             inputCmp.set("v.errors", [{ message: msg + value }]);
             component.set("v.LoanErr", true);
         }
     },
-    
-    Loan_Next: function(component, event, helper) {
+
+    Loan_Next: function (component, event, helper) {
         $('li#l2').removeClass('disabled');
-        $('li#l2 a').attr("data-toggle","tab");
-        $('li#l2 a').click();
-        component.set('v.itemsClicked','opt2');
+        $('li#l2 a').attr("data-toggle", "tab");
+        $A.getCallback(function (result) {
+            $('li#l2 a').click();
+        });
+        component.set('v.itemsClicked', 'opt2');
         component.set("v.nextOpt", "true");
-        component.set("v.currentOpt", "false");        
+        component.set("v.currentOpt", "false");
     },
-    loanFormatErrorMethod: function(component, regex, msg, aura_id) {
+    loanFormatErrorMethod: function (component, regex, msg, aura_id) {
         //Code if button is clicked
         var flag = false;
         for (var i = 0; i < aura_id.length; i++) {
             var inputCmp = component.find(aura_id[i]);
             var value = inputCmp.get("v.value");
-            var isValid = false;            
+            var isValid = false;
             if (typeof regex[i] != "string") {
                 isValid = regex[i](value); // Please return true if there is an error or else false
             } else {
@@ -364,510 +353,459 @@
             }
             if (isValid) {
                 inputCmp.set("v.errors", null);
-                
+
             } else {
                 inputCmp.set("v.errors", [{ message: msg[i] }]);
                 flag = true;
             }
         }
-        return flag;        
+        return flag;
     },
-    validateEnteredValue:function(component, event, helper,compId) {
+    validateEnteredValue: function (component, event, helper, compId) {
         var inz = component.get(compId);
         var digit = inz.toString()[0];
-        if(digit=='0')
-        {            
+        if (digit == '0') {
             component.set(compId, inz.substring(0, inz.length - 1));
         }
-        if(isNaN(inz))
-        {
+        if (isNaN(inz)) {
             component.set(compId, inz.substring(0, inz.length - 1));
         }
     },
-    
-    FormatPhonehelper: function(component, event, helper){
-        var a = component.find("AltConphoneName").get("v.value"); 
+
+    FormatPhonehelper: function (component, event, helper) {
+        var a = component.find("AltConphoneName").get("v.value");
         var rxp = new RegExp("^(\\d)\\1{9}$");
-        var  isRegValid = rxp.test(a);
-        if(isRegValid)
-        {
-            component.set("v.NewLoan.Alternate_Contact_Phone_number__c",'');
-        }else{
-            var s2 = (""+a).replace(/\D/g, '');
-            var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);    
-            var result= (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];
-            component.set("v.NewLoan.Alternate_Contact_Phone_number__c",result);
+        var isRegValid = rxp.test(a);
+        if (isRegValid) {
+            component.set("v.NewLoan.Alternate_Contact_Phone_number__c", '');
+        } else {
+            var s2 = ("" + a).replace(/\D/g, '');
+            var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+            var result = (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];
+            component.set("v.NewLoan.Alternate_Contact_Phone_number__c", result);
         }
     },
-    
-    RestrictZeroInPhoneFirstTime:function(component, event, helper,compId) {
+
+    RestrictZeroInPhoneFirstTime: function (component, event, helper, compId) {
         var inz = component.get(compId);
         var digit = parseInt(inz[0]);
-        if(digit == 0)
-        {            
+        if (digit == 0) {
             component.set(compId, inz.substring(0, inz.length - 1));
-        }              
+        }
     },
-    calculate_fee:function(component, event, helper) {
+    calculate_fee: function (component, event, helper) {
         var amountIs = component.find("LoanEstimateAppVal").get("v.value");
         var amount = parseInt(amountIs);
-        if(!isNaN(amount) && amount !=0 ){
-            component.set("v.newSelectlistdisable",false);
-        }else{
-            component.set("v.newSelectlistdisable",true);
+        if (!isNaN(amount) && amount != 0) {
+            component.set("v.newSelectlistdisable", false);
+        } else {
+            component.set("v.newSelectlistdisable", true);
         }
-        if(amount <= 200000){
+        if (amount <= 200000) {
             var loanfee = amount * 0.02;
-            if(loanfee > 6000){
-                component.set('v.NewLoan.Loan_Origination_Fee__c',6000);
-            }else if(loanfee <=2500 ){
-                component.set('v.NewLoan.Loan_Origination_Fee__c',2500);
-            } else{   
+            if (loanfee > 6000) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', 6000);
+            } else if (loanfee <= 2500) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', 2500);
+            } else {
                 component.set('v.NewLoan.Loan_Origination_Fee__c', Math.round(loanfee));
             }
-        }else{            
-            var initialAmount = 200000;
-            var remaining = amount - initialAmount;            
-            var loanfeeonInitial = initialAmount * 0.02;
-            var loanfeeonRemaining = remaining * 0.01;
-            var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
-            var totalLoanFee = Math.round(totalLoanFee1);
-            if(totalLoanFee <=6000 && totalLoanFee >2500){
-                component.set('v.NewLoan.Loan_Origination_Fee__c',totalLoanFee);
-            }else if(totalLoanFee < 2500){                
-                if(!isNaN(amount) && amount !=0 ){
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',2500);
-                }else{
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',0);                    
-                }
-            }else{
-                if(!isNaN(amount) && amount !=0 ){
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',6000);
-                }else{
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',0);                    
-                }
-                
-            }
-            
-        }
-    },
-    calculateFromPurchasePrice:function(component, event, helper) {
-        var amountIs = component.find("PurchasePrice").get("v.value");
-        var amount = parseInt(amountIs);
-        if(!isNaN(amount) && amount !=0 ){
-            component.set("v.newSelectlistdisable",false);
-        }else{
-            component.set("v.newSelectlistdisable",true);
-        }
-        if(amount <= 200000){
-            var loanfee = amount * 0.02;
-            if(loanfee > 6000){
-                component.set('v.NewLoan.Loan_Origination_Fee__c',6000);
-            }else if(loanfee <=2500 ){
-                component.set('v.NewLoan.Loan_Origination_Fee__c',2500);
-            } else{   
-                component.set('v.NewLoan.Loan_Origination_Fee__c', Math.round(loanfee));
-            }
-        }else{
-            var initialAmount = 200000;
-            var remaining = amount - initialAmount;            
-            var loanfeeonInitial = initialAmount * 0.02;
-            var loanfeeonRemaining = remaining * 0.01;
-            var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
-            var totalLoanFee = Math.round(totalLoanFee1);
-            if(totalLoanFee <=6000 && totalLoanFee >2500){
-                component.set('v.NewLoan.Loan_Origination_Fee__c',totalLoanFee);
-            }else if(totalLoanFee < 2500){                
-                if(!isNaN(amount) && amount !=0 ){
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',2500);
-                }else{
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',0);                    
-                }
-            }else{
-                if(!isNaN(amount) && amount !=0 ){
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',6000);
-                }else{
-                    component.set('v.NewLoan.Loan_Origination_Fee__c',0);                    
-                }                
-            }            
-        }
-    },
-    calculate_feeforCustomValue:function(component, event, helper,cmpId) {       
-        var amountIs = component.find(cmpId).get("v.value");
-        var amount = parseInt(amountIs);
-        if(amount <= 200000){
-            var loanfee = amount * 0.02;
-            if(loanfee > 6000){
-                component.set('v.PropertyValue',6000);
-            }else if(loanfee <=2500 ){
-                component.set('v.PropertyValue',2500);
-            } else{   
-                component.set('v.PropertyValue', Math.round(loanfee));
-            }
-        }else{            
+        } else {
             var initialAmount = 200000;
             var remaining = amount - initialAmount;
             var loanfeeonInitial = initialAmount * 0.02;
             var loanfeeonRemaining = remaining * 0.01;
             var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
             var totalLoanFee = Math.round(totalLoanFee1);
-            if(totalLoanFee <=6000 && totalLoanFee >2500){
-                component.set('v.PropertyValue',totalLoanFee);                
-            }else if(totalLoanFee < 2500){
-                
-                if(!isNaN(amount) && amount !=0 ){
-                    component.set('v.PropertyValue',2500);
-                }else{
-                    component.set('v.PropertyValue',0);
+            if (totalLoanFee <= 6000 && totalLoanFee > 2500) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', totalLoanFee);
+            } else if (totalLoanFee < 2500) {
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 2500);
+                } else {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 0);
                 }
-            }else{
-                if(!isNaN(amount) && amount !=0 ){
-                    component.set('v.PropertyValue',6000);
-                }else{
-                    component.set('v.PropertyValue',0);                    
-                }                
-            }            
+            } else {
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 6000);
+                } else {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 0);
+                }
+
+            }
+
         }
     },
-    Relationship_to_Alternative_Contact__Check:function(component, event, helper) {
-        var inputCmp = component.find('othRlsnshp');       
-        var value = inputCmp.get("v.value");       
-        var isValid = false;        
-        if (typeof value === "undefined" || value==null || value=='') {
+    calculateFromPurchasePrice: function (component, event, helper) {
+        var amountIs = component.find("PurchasePrice").get("v.value");
+        var amount = parseInt(amountIs);
+        if (!isNaN(amount) && amount != 0) {
+            component.set("v.newSelectlistdisable", false);
+        } else {
+            component.set("v.newSelectlistdisable", true);
+        }
+        if (amount <= 200000) {
+            var loanfee = amount * 0.02;
+            if (loanfee > 6000) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', 6000);
+            } else if (loanfee <= 2500) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', 2500);
+            } else {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', Math.round(loanfee));
+            }
+        } else {
+            var initialAmount = 200000;
+            var remaining = amount - initialAmount;
+            var loanfeeonInitial = initialAmount * 0.02;
+            var loanfeeonRemaining = remaining * 0.01;
+            var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
+            var totalLoanFee = Math.round(totalLoanFee1);
+            if (totalLoanFee <= 6000 && totalLoanFee > 2500) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', totalLoanFee);
+            } else if (totalLoanFee < 2500) {
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 2500);
+                } else {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 0);
+                }
+            } else {
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 6000);
+                } else {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 0);
+                }
+            }
+        }
+    },
+    calculate_feeforCustomValue: function (component, event, helper, cmpId) {
+        var amountIs = component.find(cmpId).get("v.value");
+        var amount = parseInt(amountIs);
+        if (amount <= 200000) {
+            var loanfee = amount * 0.02;
+            if (loanfee > 6000) {
+                component.set('v.PropertyValue', 6000);
+            } else if (loanfee <= 2500) {
+                component.set('v.PropertyValue', 2500);
+            } else {
+                component.set('v.PropertyValue', Math.round(loanfee));
+            }
+        } else {
+            var initialAmount = 200000;
+            var remaining = amount - initialAmount;
+            var loanfeeonInitial = initialAmount * 0.02;
+            var loanfeeonRemaining = remaining * 0.01;
+            var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
+            var totalLoanFee = Math.round(totalLoanFee1);
+            if (totalLoanFee <= 6000 && totalLoanFee > 2500) {
+                component.set('v.PropertyValue', totalLoanFee);
+            } else if (totalLoanFee < 2500) {
+
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.PropertyValue', 2500);
+                } else {
+                    component.set('v.PropertyValue', 0);
+                }
+            } else {
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.PropertyValue', 6000);
+                } else {
+                    component.set('v.PropertyValue', 0);
+                }
+            }
+        }
+    },
+    Relationship_to_Alternative_Contact__Check: function (component, event, helper) {
+        var inputCmp = component.find('othRlsnshp');
+        var value = inputCmp.get("v.value");
+        var isValid = false;
+        if (typeof value === "undefined" || value == null || value == '') {
             inputCmp.set("v.errors", [{ message: 'This is a required field.' }]);
-            isValid = true;   
+            isValid = true;
         }
-        else
-        {
+        else {
             inputCmp.set("v.errors", null);
-            isValid = false; 
+            isValid = false;
         }
-        return isValid;       
+        return isValid;
     },
-    calculate_fee_Value:function(component, event, helper) {        
-        var finalFlg=false;
-        var inputCmp= component.find("LoanOriginationFee")
-        var mortgageAppliedFor=component.find("LoanMortgageAppliedFor").get("v.value");
-        if(mortgageAppliedFor=='HECM for Purchase')
-        {
-            var amountIs = component.find("PurchasePrice").get("v.value");    
+    calculate_fee_Value: function (component, event, helper) {
+        var finalFlg = false;
+        var inputCmp = component.find("LoanOriginationFee")
+        var mortgageAppliedFor = component.find("LoanMortgageAppliedFor").get("v.value");
+        if (mortgageAppliedFor.includes('Purchase')) {
+            var amountIs = component.find("PurchasePrice").get("v.value");
         }
-        else
-        {
-            var amountIs = component.find("LoanEstimateAppVal").get("v.value");   
+        else {
+            var amountIs = component.find("LoanEstimateAppVal").get("v.value");
         }
-        
+
         var amountEntered = component.find("LoanOriginationFee").get("v.value");
-        var amount = parseInt(amountIs);               
-        if(!isNaN(amountEntered) && amountEntered>0){
-            if(amount <= 200000){
+        var amount = parseInt(amountIs);
+        if (!isNaN(amountEntered) && amountEntered > 0) {
+            if (amount <= 200000) {
                 var loanfee = amount * 0.02;
-                if(amountEntered>loanfee){
-                    var msg='Loan origination fee is capped at $6,000.00 but the max amount allowed in this case is $'+ loanfee +' based on 2% of the first $200,000.00 of your home value plus 1% of the amount over $200,000.00';
+                if (amountEntered > loanfee) {
+                    var msg = 'Loan origination fee is capped at $6,000.00 but the max amount allowed in this case is $' + loanfee + ' based on 2% of the first $200,000.00 of your home value plus 1% of the amount over $200,000.00';
                     inputCmp.set("v.errors", [{ message: msg }]);
-                    finalFlg=true;
-                } 
-                else{   
-                    inputCmp.set("v.errors",null);
-                    finalFlg= false;
+                    finalFlg = true;
                 }
-            }else{            
+                else {
+                    inputCmp.set("v.errors", null);
+                    finalFlg = false;
+                }
+            } else {
                 var initialAmount = 200000;
-                var remaining = amount - initialAmount;            
+                var remaining = amount - initialAmount;
                 var loanfeeonInitial = initialAmount * 0.02;
                 var loanfeeonRemaining = remaining * 0.01;
                 var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
                 //var totalLoanFee = Math.round(totalLoanFee1);
-                if(amountEntered <=6000 && amountEntered>totalLoanFee1 ){ 
-                    var msg='Loan origination fee is capped at $6,000.00 but the max amount allowed in this case is $'+ totalLoanFee1 +' based on 2% of the first $200,000.00 of your home value plus 1% of the amount over $200,000.00';
-                    inputCmp.set("v.errors", [{ message: msg}]);
-                    finalFlg=true;                
-                } else{                    
+                if (amountEntered <= 6000 && amountEntered > totalLoanFee1) {
+                    var msg = 'Loan origination fee is capped at $6,000.00 but the max amount allowed in this case is $' + totalLoanFee1 + ' based on 2% of the first $200,000.00 of your home value plus 1% of the amount over $200,000.00';
+                    inputCmp.set("v.errors", [{ message: msg }]);
+                    finalFlg = true;
+                } else {
                     inputCmp.set("v.errors", null);
-                    finalFlg=false;
-                }            
+                    finalFlg = false;
+                }
             }
         }
-        else
-        {            
-            if(isNaN(amountEntered) || amountEntered==0 || amountEntered==null)
-            {
+        else {
+            if (isNaN(amountEntered) || amountEntered == 0 || amountEntered == null) {
                 inputCmp.set("v.errors", [{ message: 'This is a required field.' }]);
-                finalFlg=true; 
+                finalFlg = true;
             }
-            else
-            {
+            else {
                 inputCmp.set("v.errors", [{ message: 'Please enter a valid number (non negative).' }]);
-                finalFlg=true;   
+                finalFlg = true;
             }
         }
         return finalFlg;
     },
-    ValidationForPills: function(component, event, helper) {
+    ValidationForPills: function (component, event, helper) {
         var LoanId = component.get('v.LoanId');
-        var action1 = component.get("c.TabsValidatedData");        
+        var action1 = component.get("c.TabsValidatedData");
         action1.setParams({
             "RecordId": LoanId
         });
-        action1.setCallback(this, function(data) {
-            var result=data.getReturnValue();  
-            if(result.IsLoanFilled_Flag__c==false)
-            {
-                document.getElementById('targetID').innerHTML ='l1';    
+        action1.setCallback(this, function (data) {
+            var result = data.getReturnValue();
+            if (result.IsLoanFilled_Flag__c == false) {
+                document.getElementById('targetID').innerHTML = 'l1';
             }
-            if(result.Is_Loan_Created_Manually__c==false)
-            {
-                var evt=$A.get("e.c:NavPillsEvent");
-                evt.setParams({"IsPillsValidationRequired":true});       
-                evt.fire();     
+            if (result.Is_Loan_Created_Manually__c == false) {
+                var evt = $A.get("e.c:NavPillsEvent");
+                evt.setParams({ "IsPillsValidationRequired": true });
+                evt.fire();
             }
         });
         $A.enqueueAction(action1);
     },
-    getRadioGroupValue: function(component, event, helper,id,controlId){
-        var R_ID=id;
+    getRadioGroupValue: function (component, event, helper, id, controlId) {
+        var R_ID = id;
         var getValue = component.find(R_ID).get('v.value');
-        if($A.util.isUndefinedOrNull(getValue) || getValue=="")
-        {          
+        if ($A.util.isUndefinedOrNull(getValue) || getValue == "") {
         }
-        else
-        {
-            if(getValue[0].length<2)
-            {
-                component.set(controlId,getValue);
+        else {
+            if (getValue[0].length < 2) {
+                component.set(controlId, getValue);
                 return getValue;
             }
-            else
-            { component.set(controlId,getValue[0]);
-             return getValue[0];  
+            else {
+                component.set(controlId, getValue[0]);
+                return getValue[0];
             }
         }
     },
-    showHideMortgage:function(component,event,helper)
-    {
+    showHideMortgage: function (component, event, helper) {
         this.addDelayMortgage(component, event, helper);
     },
-    addDelayMortgage: function(component, event, helper){
-        var delay=1000; //4 seconds
-        setTimeout(function() {
-            var mortgageValue=component.find("LoanMortgageAppliedFor").get("v.value"); 
-            if(mortgageValue=='HECM for Purchase')
-            {
-                document.getElementById("loanPurpose").style.display='none';
-                document.getElementById("hecm").style.display='block';
+    addDelayMortgage: function (component, event, helper) {
+        var delay = 1000; //4 seconds
+        setTimeout(function () {
+            var mortgageValue = component.find("LoanMortgageAppliedFor").get("v.value");
+            if (mortgageValue.includes('Purchase')) {
+                document.getElementById("loanPurpose").style.display = 'none';
+                document.getElementById("hecm").style.display = 'block';
             }
-            else
-            {
-                document.getElementById("loanPurpose").style.display='block';
-                document.getElementById("hecm").style.display='none';
-            }  
+            else {
+                document.getElementById("loanPurpose").style.display = 'block';
+                document.getElementById("hecm").style.display = 'none';
+            }
         }, delay);
-    },  
-    DateCheck : function(component, event, helper) {
+    },
+    DateCheck: function (component, event, helper) {
         debugger;
-        var isValid = false; 
-        var contractDateCmp=component.find("ContractDate");
-        var ClosingContractCmp= component.find("ContractClosingDate");
-        var StartDate= component.find("ContractDate").get("v.value");
+        var isValid = false;
+        var contractDateCmp = component.find("ContractDate");
+        var ClosingContractCmp = component.find("ContractClosingDate");
+        var StartDate = component.find("ContractDate").get("v.value");
         var EndDate = component.find("ContractClosingDate").get("v.value");
-        if (StartDate == undefined  || StartDate=='')
-        {
+        if (StartDate == undefined || StartDate == '') {
             isValid = true;
         }
-        else
-        {
-            if ((StartDate == undefined  || StartDate=='')&&
-                (EndDate == undefined || EndDate==''))
-            {
+        else {
+            if ((StartDate == undefined || StartDate == '') &&
+                (EndDate == undefined || EndDate == '')) {
                 isValid = true;
             }
-            else{  
+            else {
                 var eDate = new Date(EndDate);
-                var sDate = new Date(StartDate);                
-                if(StartDate!= '' && EndDate!= '' && sDate> eDate)
-                {
+                var sDate = new Date(StartDate);
+                if (StartDate != '' && EndDate != '' && sDate > eDate) {
                     document.getElementById("errorcontractClosingDate").innerHTML = "Contract Closing Date must be greater or equal to the Contract Date.!";
-                    isValid = true;   
+                    isValid = true;
                 }
-                else
-                {
+                else {
                     document.getElementById("errorcontractClosingDate").innerHTML = "";
-                    isValid = false;   
+                    isValid = false;
                 }
-                
+
             }
         }
         return isValid;
     },
-    
-    fee_changeHelper :function(component, event, helper,cmpId) {
-        var cmp=component.find(cmpId);
+
+    fee_changeHelper: function (component, event, helper, cmpId) {
+        var cmp = component.find(cmpId);
         var amountIs = event.getSource().get('v.value');
         var amount = parseFloat(amountIs).toFixed(2);
-        var mortgageAppliedFor=component.find("LoanMortgageAppliedFor").get("v.value");
-        if(mortgageAppliedFor=='HECM for Purchase')
-        {
-            helper.calculate_feeforCustomValue(component, event, helper,'PurchasePrice');
+        var mortgageAppliedFor = component.find("LoanMortgageAppliedFor").get("v.value");
+        if (mortgageAppliedFor.includes('Purchase')) {
+            helper.calculate_feeforCustomValue(component, event, helper, 'PurchasePrice');
         }
-        else
-        {
-            helper.calculate_feeforCustomValue(component, event, helper,'LoanEstimateAppVal');
-        }          
-        var FormulaCalculatedamt=component.get("v.PropertyValue");
-        if(!isNaN(amount))
-        {
-            if(amount > FormulaCalculatedamt && amount<6000 )
-            {
-                component.set('v.NewLoan.Loan_Origination_Fee__c',FormulaCalculatedamt);
-                cmp.set("v.errors", [{ message: "Loan origination fee is capped at $6000 but the max amount allowed in this case is "+"$"+ FormulaCalculatedamt+" based on 2% of the first $200,000 of your home's value plus 1% of the amount over $200,000." }]);
-                component.set("v.show_msg",false);
-            }
-            else
-            {
-                cmp.set("v.errors",null);
-                component.set("v.show_msg",false);
-            }
-            if(amount>6000 && FormulaCalculatedamt==6000 ) {
-                component.set("v.show_msg",true);
-                component.set('v.NewLoan.Loan_Origination_Fee__c',6000);
-            }
-            else if(amount>=6000 && FormulaCalculatedamt<6000)
-            {
-                component.set('v.NewLoan.Loan_Origination_Fee__c',FormulaCalculatedamt);
-                cmp.set("v.errors", [{ message: "Loan origination fee is capped at $6000 but the max amount allowed in this case is "+"$"+ FormulaCalculatedamt+" based on 2% of the first $200,000 of your home's value plus 1% of the amount over $200,000."
-                                     }]);
-                component.set("v.show_msg",false);
-            }
-                else if(amount==6000 && FormulaCalculatedamt==6000)
-                {
-                    cmp.set("v.errors",null);
-                    component.set("v.show_msg",false);
-                    
-                }
-                    else{
-                        component.set("v.show_msg",false);
-                    }
+        else {
+            helper.calculate_feeforCustomValue(component, event, helper, 'LoanEstimateAppVal');
         }
-        
+        var FormulaCalculatedamt = component.get("v.PropertyValue");
+        if (!isNaN(amount)) {
+            if (amount > FormulaCalculatedamt && amount < 6000) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', FormulaCalculatedamt);
+                cmp.set("v.errors", [{ message: "Loan origination fee is capped at $6000 but the max amount allowed in this case is " + "$" + FormulaCalculatedamt + " based on 2% of the first $200,000 of your home's value plus 1% of the amount over $200,000." }]);
+                component.set("v.show_msg", false);
+            }
+            else {
+                cmp.set("v.errors", null);
+                component.set("v.show_msg", false);
+            }
+            if (amount > 6000 && FormulaCalculatedamt == 6000) {
+                component.set("v.show_msg", true);
+                component.set('v.NewLoan.Loan_Origination_Fee__c', 6000);
+            }
+            else if (amount >= 6000 && FormulaCalculatedamt < 6000) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', FormulaCalculatedamt);
+                cmp.set("v.errors", [{
+                    message: "Loan origination fee is capped at $6000 but the max amount allowed in this case is " + "$" + FormulaCalculatedamt + " based on 2% of the first $200,000 of your home's value plus 1% of the amount over $200,000."
+                }]);
+                component.set("v.show_msg", false);
+            }
+            else if (amount == 6000 && FormulaCalculatedamt == 6000) {
+                cmp.set("v.errors", null);
+                component.set("v.show_msg", false);
+
+            }
+            else {
+                component.set("v.show_msg", false);
+            }
+        }
+
     },
-    ValidateDateFormat : function(component, event, helper,controlID) {   
-        var flag=false;
+    ValidateDateFormat: function (component, event, helper, controlID) {
+        var flag = false;
         var contractDate = component.find(controlID);
         var getcontractDate = contractDate.get("v.value");
-        if(!$A.util.isEmpty(getcontractDate))
-        {
-            var yearcontractDate=getcontractDate.substring(0,4);         
-            var monthcontractDate=getcontractDate.substring(5,7);         
-            var daycontractDate=getcontractDate.substring(8,10);         
-            getcontractDate=monthcontractDate+'/'+daycontractDate+'/'+yearcontractDate;        
-            var date_regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;        
-            if(!(date_regex.test(getcontractDate)))
-            {
-                contractDate.set("v.errors", [{ message: "Please enter a valid date format in MM/DD/YYYY!"}]);
-                flag=true;
+        if (!$A.util.isEmpty(getcontractDate)) {
+            var yearcontractDate = getcontractDate.substring(0, 4);
+            var monthcontractDate = getcontractDate.substring(5, 7);
+            var daycontractDate = getcontractDate.substring(8, 10);
+            getcontractDate = monthcontractDate + '/' + daycontractDate + '/' + yearcontractDate;
+            var date_regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+            if (!(date_regex.test(getcontractDate))) {
+                contractDate.set("v.errors", [{ message: "Please enter a valid date format in MM/DD/YYYY!" }]);
+                flag = true;
             }
-            else{
-                contractDate.set("v.errors", null); 
+            else {
+                contractDate.set("v.errors", null);
             }
         }
-        else{
-            if(controlID=='ContractClosingDate')
-            {
-                contractDate.set("v.errors", null);   
+        else {
+            if (controlID == 'ContractClosingDate') {
+                contractDate.set("v.errors", null);
             }
         }
         return flag;
     },
-    changeSource : function(component, event, helper,controlID) {
-        var fundSource=component.find("SourceOfFunds").get("v.value");
-        var fSource=fundSource.split(';');        
-        if(fundSource.includes("Sale Of Other Property"))
-        {
-            document.getElementById("SalDate").style.display='block';
-            
+    changeSource: function (component, event, helper, controlID) {
+        var fundSource = component.find("SourceOfFunds").get("v.value");
+        var fSource = fundSource.split(';');
+        if (fundSource.includes("Sale Of Other Property")) {
+            document.getElementById("SalDate").style.display = 'block';
+
         }
-        else
-        {
-            document.getElementById("SalDate").style.display='none';
-            component.set("v.NewLoan.Sale_Date__c",'');
-            component.set("v.NewLoan.Sale_Proceeds__c",'');
+        else {
+            document.getElementById("SalDate").style.display = 'none';
+            component.set("v.NewLoan.Sale_Date__c", '');
+            component.set("v.NewLoan.Sale_Proceeds__c", '');
         }
-        
-        if(fundSource.includes("Assets"))
-        {
-            document.getElementById("AssetAmt").style.display='block';   
+
+        if (fundSource.includes("Assets")) {
+            document.getElementById("AssetAmt").style.display = 'block';
         }
-        else
-        {
-            document.getElementById("AssetAmt").style.display='none';
-            component.set("v.NewLoan.Assets_Amount__c",'');
+        else {
+            document.getElementById("AssetAmt").style.display = 'none';
+            component.set("v.NewLoan.Assets_Amount__c", '');
         }
-        if(fundSource.includes("Gift"))
-        {
-            document.getElementById("GiftAmt").style.display='block';   
+        if (fundSource.includes("Gift")) {
+            document.getElementById("GiftAmt").style.display = 'block';
         }
-        else
-        {
-            document.getElementById("GiftAmt").style.display='none';
-            component.set("v.NewLoan.Gift_Amount__c",'');
-        } 
-        if(fundSource.includes("Others"))
-        {
-            document.getElementById("OtherSrcFund").style.display='block';   
+        else {
+            document.getElementById("GiftAmt").style.display = 'none';
+            component.set("v.NewLoan.Gift_Amount__c", '');
         }
-        else
-        {
-            document.getElementById("OtherSrcFund").style.display='none'; 
-            component.set("v.NewLoan.Other_Source_Of_Funds__c",'');
-            component.set("v.NewLoan.Amount_Of_Other_Funds__c",'');
+        if (fundSource.includes("Others")) {
+            document.getElementById("OtherSrcFund").style.display = 'block';
+        }
+        else {
+            document.getElementById("OtherSrcFund").style.display = 'none';
+            component.set("v.NewLoan.Other_Source_Of_Funds__c", '');
+            component.set("v.NewLoan.Amount_Of_Other_Funds__c", '');
         }
     },
-    feecaluculationHelper:function(component, event, helper,selvalueis){
-        
-        var cmp=component.find('LoanOriginationFee');
-        console.log('cmp  -->');
-       console.log('cmp  -->', component.find('LoanOriginationFee') );
-        console.log('event', event.getSource().get('v.value'));
-        console.log('event1', event.getSource().getLocalId());
-       var selVal = '';
-        try{
-        selVal = event.getSource().get('v.value');
-        }catch(err){
-            
-            console.log('err ',err);
+    feecaluculationHelper: function (component, event, helper, selvalueis) {
+
+        var cmp = component.find('LoanOriginationFee');
+        var selVal = '';
+        try {
+            selVal = event.getSource().get('v.value');
+        } catch (err) {
+
+            console.log('err ', err);
         }
-        if(!selVal){
+        if (!selVal) {
             selVal = component.get('v.NewLoan.Loan_Origination_Fee_Calculation__c');
         }
-    //    alert('amount is ',component.get('v.NewLoan.Loan_Origination_Fee__c'));
-               console.log('selval ->', selVal);
-     		console.log('selvalueis ',selvalueis);	
-       // debugger;
-        if(selvalueis!='init' ){
-      	//alert(1);
-            selVal= event.getSource().get('v.value');
-        
-        }else{
-      //	alert(2);
-        if(selVal!='Enter Fee Value ($0 - $6,000)')
-            selVal = 'Calculate Maximum Fee';
-        }
-       // alert(selVal);
-        if(selVal != ''){
-            if(selVal == 'Calculate Maximum Fee'){
-                component.set("v.show_originate_fee_disable",true);                
-                helper.calculate_fee(component, event, helper);
-                component.set("v.show_msg",false);
-                cmp.set("v.errors",null);                
+
+        if (selvalueis != 'init') {
+            selVal = event.getSource().get('v.value');
+        } else {
+            if (selVal != 'Enter Fee Value ($0 - $6,000)') {
+                selVal = 'Calculate Maximum Fee';
             }
-            else{
+
+        }
+        if (selVal != '') {
+            if (selVal == 'Calculate Maximum Fee') {
+                component.set("v.show_originate_fee_disable", true);
+                helper.calculate_fee(component, event, helper);
+                component.set("v.show_msg", false);
+                cmp.set("v.errors", null);
+            }
+            else {
                 var amountIs = component.find("LoanOriginationFee").get("v.value");
                 var amount = parseInt(amountIs);
-                console.log('amount ', amount);
-                component.set('v.NewLoan.Loan_Origination_Fee__c', amount);                
-                component.set("v.show_originate_fee_disable",false); 
-         //       alert(component.get("v.show_originate_fee_disable")  );             
-            }              
+                component.set('v.NewLoan.Loan_Origination_Fee__c', amount);
+                component.set("v.show_originate_fee_disable", false);
+            }
         }
     }
 })

@@ -644,47 +644,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Credit_Reissue_Vendor__c</fullName>
-        <externalId>false</externalId>
-        <label>Credit Reissue Vendor</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>KFD</fullName>
-                    <default>false</default>
-                    <label>KFD</label>
-                </value>
-                <value>
-                    <fullName>CredStar</fullName>
-                    <default>false</default>
-                    <label>CredStar</label>
-                </value>
-                <value>
-                    <fullName>Credco</fullName>
-                    <default>false</default>
-                    <label>Credco</label>
-                </value>
-                <value>
-                    <fullName>Equifax</fullName>
-                    <default>false</default>
-                    <label>Equifax</label>
-                </value>
-                <value>
-                    <fullName>FundingSuite</fullName>
-                    <default>false</default>
-                    <label>FundingSuite</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Credit_Report_Date__c</fullName>
         <externalId>false</externalId>
         <label>Credit Report Date*</label>
@@ -2094,43 +2053,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Mortgage_Applied_for__c</fullName>
-        <externalId>false</externalId>
-        <label>Mortgage Applied for</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>FHA Traditional HECM</fullName>
-                    <default>false</default>
-                    <label>FHA Traditional HECM</label>
-                </value>
-                <value>
-                    <fullName>HECM to HECM Refinance</fullName>
-                    <default>false</default>
-                    <label>HECM to HECM Refinance</label>
-                </value>
-                <value>
-                    <fullName>HECM for Purchase</fullName>
-                    <default>false</default>
-                    <label>HECM for Purchase</label>
-                </value>
-                <value>
-                    <fullName>FHA Refinance HECM</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>FHA Refinance HECM</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Mortgage_and_Liens__c</fullName>
         <externalId>false</externalId>
         <label>Mortgage and Liens</label>
@@ -3195,88 +3117,6 @@ IF(
         </valueSet>
     </fields>
     <fields>
-        <fullName>Subject_Property_Type__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property Type</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Single Family</fullName>
-                    <default>false</default>
-                    <label>Single Family</label>
-                </value>
-                <value>
-                    <fullName>Condominium</fullName>
-                    <default>false</default>
-                    <label>Condominium</label>
-                </value>
-                <value>
-                    <fullName>Townhouse</fullName>
-                    <default>false</default>
-                    <label>Townhouse</label>
-                </value>
-                <value>
-                    <fullName>Co-operative</fullName>
-                    <default>false</default>
-                    <label>Co-operative</label>
-                </value>
-                <value>
-                    <fullName>Two-to-four unit property</fullName>
-                    <default>false</default>
-                    <label>Two-to-four unit property</label>
-                </value>
-                <value>
-                    <fullName>Multifamily (more than 4 units)</fullName>
-                    <default>false</default>
-                    <label>Multifamily (more than 4 units)</label>
-                </value>
-                <value>
-                    <fullName>Manufactured/Mobile Home</fullName>
-                    <default>false</default>
-                    <label>Manufactured/Mobile Home</label>
-                </value>
-                <value>
-                    <fullName>Commercial - Non-Residential</fullName>
-                    <default>false</default>
-                    <label>Commercial - Non-Residential</label>
-                </value>
-                <value>
-                    <fullName>Mixed Use – Residential</fullName>
-                    <default>false</default>
-                    <label>Mixed Use – Residential</label>
-                </value>
-                <value>
-                    <fullName>Farm</fullName>
-                    <default>false</default>
-                    <label>Farm</label>
-                </value>
-                <value>
-                    <fullName>Home and Business Combined</fullName>
-                    <default>false</default>
-                    <label>Home and Business Combined</label>
-                </value>
-                <value>
-                    <fullName>Land</fullName>
-                    <default>false</default>
-                    <label>Land</label>
-                </value>
-                <value>
-                    <fullName>Mixed use - Residential</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Mixed use - Residential</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Subject_Property_Zip_Code__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property Zip Code</label>
@@ -3601,6 +3441,278 @@ IF(
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CreditIsComplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CreditIsComplete</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Reissue_Vendor__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Reissue Vendor</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CredStar</fullName>
+                    <default>false</default>
+                    <label>CredStar</label>
+                </value>
+                <value>
+                    <fullName>Credco</fullName>
+                    <default>false</default>
+                    <label>Credco</label>
+                </value>
+                <value>
+                    <fullName>Equifax</fullName>
+                    <default>false</default>
+                    <label>Equifax</label>
+                </value>
+                <value>
+                    <fullName>FundingSuite</fullName>
+                    <default>false</default>
+                    <label>FundingSuite</label>
+                </value>
+                <value>
+                    <fullName>KFD</fullName>
+                    <default>false</default>
+                    <label>KFD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HeloMargin__c</fullName>
+        <externalId>false</externalId>
+        <label>HeloMargin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Mortgage_Applied_for__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Applied for</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FHA Traditional HECM</fullName>
+                    <default>false</default>
+                    <label>FHA Traditional HECM</label>
+                </value>
+                <value>
+                    <fullName>HECM to HECM Refinance</fullName>
+                    <default>false</default>
+                    <label>HECM to HECM Refinance</label>
+                </value>
+                <value>
+                    <fullName>HECM for Purchase</fullName>
+                    <default>false</default>
+                    <label>HECM for Purchase</label>
+                </value>
+                <value>
+                    <fullName>HELO Refinance</fullName>
+                    <default>false</default>
+                    <label>HELO Refinance</label>
+                </value>
+                <value>
+                    <fullName>HELO for Purchase</fullName>
+                    <default>false</default>
+                    <label>HELO for Purchase</label>
+                </value>
+                <value>
+                    <fullName>FHA Refinance HECM</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>FHA Refinance HECM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HECM</fullName>
+                    <default>false</default>
+                    <label>HECM</label>
+                </value>
+                <value>
+                    <fullName>HELO</fullName>
+                    <default>false</default>
+                    <label>HELO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SentToBayDocs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>App Package Request has been sent to Baydocs</description>
+        <externalId>false</externalId>
+        <inlineHelpText>App Package Request has been sent to Baydocs</inlineHelpText>
+        <label>Sent to BayDocs</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Servicing_Fee__c</fullName>
+        <externalId>false</externalId>
+        <label>Servicing Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Subject Property Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Family</fullName>
+                    <default>false</default>
+                    <label>Single Family</label>
+                </value>
+                <value>
+                    <fullName>Condominium</fullName>
+                    <default>false</default>
+                    <label>Condominium</label>
+                </value>
+                <value>
+                    <fullName>Townhouse</fullName>
+                    <default>false</default>
+                    <label>Townhouse</label>
+                </value>
+                <value>
+                    <fullName>Co-operative</fullName>
+                    <default>false</default>
+                    <label>Co-operative</label>
+                </value>
+                <value>
+                    <fullName>Two-to-four unit property</fullName>
+                    <default>false</default>
+                    <label>Two-to-four unit property</label>
+                </value>
+                <value>
+                    <fullName>Multifamily (more than 4 units)</fullName>
+                    <default>false</default>
+                    <label>Multifamily (more than 4 units)</label>
+                </value>
+                <value>
+                    <fullName>Manufactured/Mobile Home</fullName>
+                    <default>false</default>
+                    <label>Manufactured/Mobile Home</label>
+                </value>
+                <value>
+                    <fullName>Commercial - Non-Residential</fullName>
+                    <default>false</default>
+                    <label>Commercial - Non-Residential</label>
+                </value>
+                <value>
+                    <fullName>Mixed Use – Residential</fullName>
+                    <default>false</default>
+                    <label>Mixed Use – Residential</label>
+                </value>
+                <value>
+                    <fullName>Farm</fullName>
+                    <default>false</default>
+                    <label>Farm</label>
+                </value>
+                <value>
+                    <fullName>Home and Business Combined</fullName>
+                    <default>false</default>
+                    <label>Home and Business Combined</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
+                </value>
+                <value>
+                    <fullName>Planned Unit Development (PUD)</fullName>
+                    <default>false</default>
+                    <label>Planned Unit Development (PUD)</label>
+                </value>
+                <value>
+                    <fullName>Mixed use - Residential</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mixed use - Residential</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TitleFeeEstimateResponse__c</fullName>
+        <description>Saved response from TitleFee response for reuse by Baydocs request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Saved response from TitleFee response for reuse by Baydocs request.</inlineHelpText>
+        <label>TitleFeeEstimateResponse</label>
+        <length>65536</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TitleFeeIsComplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Title Fee Is Complete - Set when Title Fees are successfully returned from Amrock Service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title Fee Is Complete - Set when Title Fees are successfully returned from Amrock Service</inlineHelpText>
+        <label>Title Fee is Complete</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>Loan_Layout</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Loan</label><nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Loan ID</label>

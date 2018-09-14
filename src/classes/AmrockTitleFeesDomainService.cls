@@ -2,145 +2,104 @@
  * @description Amrock Title Fees Domain Class
  * @author Mike Gill
  * @date 17th May 2018
+ *
+ * changelog:
+ * 06/21/2018: DWilson - fix to guard failing Loan_New__c update
+ * 07/11/2018: DWilson - added update to TitleFeeIsComplete__c status field
+ * 07/24/2018: DWilson - added update to TitleFeeEstimateResponse__c status field
  */
-public with sharing class AmrockTitleFeesDomainService implements ExternalServiceInterface {
+public without sharing class AmrockTitleFeesDomainService implements ExternalServiceInterface {
 
-    // Static Constants
+	/*******************************************************************************************************
+	* @description constants for ExternalService__c status and JSON tokens to parse
+	*/
     private static final String ES_PRODUCT_UPDATED = 'Product Updated';
     private static final String ES_UPDATE_ERROR = 'Error/Exception';
-    private static final String TOKEN_QUOTE_TITLE = 'quoteTotal';
+    private static final String TOKEN_QUOTE_TOTAL = 'quoteTotal';
     private static final String TOKEN_QUOTE_URL = 'pdfShortUrl';
 
 	/*******************************************************************************************************
 	* @description used to induce exception coverage by test methods
 	*/
 	@TestVisible
-	private static Boolean testException = FALSE;
+	private Boolean testException = FALSE;
 
-    /**
-     * @description Prepare & Process Response Data
-     * @param  sourceIds   External Service record Ids
-     * @param  targetIds   Loan records
-     * @param  payloadList Json responses
-     * @return List of external service ids which have been updated
-     */
-    public List<Id> processResponse(List<Id> sourceIds, List<Id> externalServiceIds, List<String> payloadList) { 
-        
-        Logger.push('processResponse', 'AmrockTitleFeesDomainService');
-        
-        Map<Id, SObject> dataMap = ExternalServiceConfigComposer.getSobjectDataFromIdList(sourceIds);
-        Map<Id, SObject> serviceDataMap = ExternalServiceConfigComposer.getSobjectDataFromIdList(externalServiceIds);
-       
-        Map<Id, Map<Id, String>> sourceToExternalServiceMap = new Map<Id, Map<Id, String>>();
+	/*******************************************************************************************************
+	* @description custom exception for error situations
+	*/
+	public class AmrockTitleFeesDomainServiceException extends Exception {}
 
-        for (Sobject s: serviceDataMap.values()){
-            
-            ExternalService__c e = (ExternalService__c)s; 
-            Map<Id, String> innerMap = sourceToExternalServiceMap.containsKey(e.SourceID__c) ? sourceToExternalServiceMap.get(e.SourceID__c) : new Map<Id, String>();
-            innerMap.put( e.Id, e.ResponsePayload__c );            
-            sourceToExternalServiceMap.put(e.SourceID__c, innerMap);
-        }
+	/**
+	 * @description Prepare & Process Response Data
+	 * @param  sourceIds   External Service records from AmrockBot service to process
+	 */
+	public void processResponses( List<ExternalService__c> esList ) {
 
-    
-        List<Id> processedRecordIds = processRecords(sourceToExternalServiceMap);
-   
-        Logger.pop();
-        return new List<Id>();
-         
-    }
-
-    /**
-     * @description Process records based on responses
-     * @param Nested map of External Service Id and Payload by Source Ids 
-     * @return List of record Ids which have been processed
-     */
-	@testVisible
-    private static List<Id> processRecords(Map<Id, Map<Id, String>> data){
-        Logger.push('processRecords', 'AmrockTitleFeesDomainService');
-        
-        Logger.debug('Starting processing records');
-        
-        List<Id> listOfUpdatedIds = new List<Id>();
-        List<Loan_New__c> loanUpdates = new List<Loan_New__c>();
-    
-
-        // Process Loan records
-        for (Id sourceId : data.keySet()){
-            
-                Map<Id, String> responseMap = (Map<Id, String>)data.get(sourceId);
-                Decimal quoteTotal = 0.00;
-                String titleUrl = '';
-                String strQuoteTotal = '';
-        
-                for (Id esId : responseMap.keySet()){
-                        strQuoteTotal = getPayloadTokenValue(responseMap.get(esId), TOKEN_QUOTE_TITLE);
-                        titleUrl = getPayloadTokenValue(responseMap.get(esId), TOKEN_QUOTE_URL);
-                        quoteTotal = Decimal.valueOf(strQuoteTotal);
-                }
-
-                Loan_New__c l = new Loan_New__c (Id = sourceId, 
-                                                    Other_Closing_Costs__c = quoteTotal,
-                                                    Other_Closing_Costs_URL__c = titleUrl);
-                loanUpdates.add(l);
-
-        }
-
-/*
-        Database.SaveResult[] results;
-        try{
-            results = Database.update(loanUpdates); // Update Loan records
-        } catch (Exception e){
-            Logger.debugException(e);
-        }
-*/
+		System.debug( '>>> esList: ' + esList );
+		Logger.push( 'processResponses', 'AmrockTitleFeesDomainService' );
+		Logger.debug( 'Starting processing records' );
+		// list of loans to update
+		List<Loan_New__c> loanUpdateList = new List<Loan_New__c>();
+		// list of external service records to update
+		List<ExternalService__c> esUpdateList = new List<ExternalService__c>();
+		// iterate through incoming list of external service records
+		for ( ExternalService__c es : esList ) {
+			// pull values for loan from external service record
+			// safe convert Id
+			Id loanId;
+			try { loanId = Id.valueOf( es.SourceID__c ); }
+			catch ( Exception e ) {}
+			// safe convert quote total
+			String strQuoteTotal = getPayloadTokenValue( es.ResponsePayload__c, TOKEN_QUOTE_TOTAL );
+			Decimal quoteTotal;
+			try { quoteTotal = Decimal.valueOf( strQuoteTotal ); }
+			catch ( Exception e ) {}
+			String titleUrl = getPayloadTokenValue( es.ResponsePayload__c, TOKEN_QUOTE_URL );
+			// ensure we've got everything needed
+			if ( loanId != NULL && quoteTotal != NULL && String.isNotBlank( titleUrl ) ) {
+				// loan values to update
+				Loan_New__c loan = new Loan_New__c (
+					Id = loanId,
+					Other_Closing_Costs__c = quoteTotal,
+					Other_Closing_Costs_URL__c = titleUrl,
+					TitleFeeIsComplete__c = TRUE,
+					TitleFeeEstimateResponse__c = es.ResponsePayload__c
+				);
+				loanUpdateList.add( loan );
+				esUpdateList.add( es );
+			}
+		}
 		// allow for partial success, and test each individual update result
-		Database.SaveResult[] results = Database.update( loanUpdates, FALSE );
-
-        Map<Id, ExternalService__c> externalServiceUpdates = new Map<Id, ExternalService__c>();
-        
-
-        // Process Loan update results
-        for (Database.SaveResult result : results) {
-            
-            // If Loan has been successfully updated, update the related External Service record
-            Map<Id, String> esMap = data.get( result.getId() );
-            if ( result.isSuccess() && !testException ) {
-                
-                
-                for (Id esId : esMap.keySet()){
-                    ExternalService__c es = new ExternalService__c (Id = esId, Status__c = ES_PRODUCT_UPDATED );
-                    externalServiceUpdates.put(esId, es);
-
-                }
-                
-            } else {
-
-               
-                for (Id esId : esMap.keySet()){
-	                // only update external
-                    ExternalService__c es = new ExternalService__c (Id = esId, Status__c = ES_UPDATE_ERROR );
-                    externalServiceUpdates.put(esId, es);
-
-                }
-
-            }
-
-        }
-
-        try{
-            update externalServiceUpdates.values();
-        }
-        catch (DmlException e){
-            Logger.debugException(e);
-        }
-        
-        listOfUpdatedIds = new List<Id>(externalServiceUpdates.keySet());
-
-        
-        Logger.pop();
-        return listOfUpdatedIds;
-
-    }
+		// note that ordering of save results matches order of external service update list
+		List<Database.SaveResult> saveResultList = Database.update( loanUpdateList, FALSE );
+		// iterate through results, update external service appropriately
+		Integer listIndex = 0;
+		for ( Database.SaveResult result : saveResultList ) {
+			if ( result.isSuccess() && !testException ) {
+				// update es with success
+				esUpdateList[listIndex].Status__c = ES_PRODUCT_UPDATED;
+			} else {
+				// update es with failure
+				esUpdateList[listIndex].Status__c = ES_UPDATE_ERROR;
+				String errorInfo ='\r\n[Loan Update Errors:]\r\n' + String.join( result.getErrors(), ', ' );
+				String currentPayload = esUpdateList[listIndex].ResponsePayload__c;
+				// protect against null payload
+				esUpdateList[listIndex].ResponsePayload__c = ( String.isNotBlank( currentPayload ) ? currentPayload + errorInfo : errorInfo );
+			}
+			// advance to the next pair of loan update result and external service record in parallel lists
+			listIndex++;
+		}
+		try {
+			if ( saveResultList.size() > 0 ) {
+				Database.update( esUpdateList );
+			} else {
+				throw new AmrockTitleFeesDomainServiceException( 'No Loan Records Updated.' );
+			}
+		}
+		catch ( Exception e ){
+			Logger.debugException( e );
+		}
+	}
 
     /*******************************************************************************************************
 	* @description Retrieves a token value in a JSON payload.
@@ -169,10 +128,4 @@ public with sharing class AmrockTitleFeesDomainService implements ExternalServic
 		catch ( Exception e ) {}
 		return tokenValue;
 	}
-
-   
-
-   
-
-
 }

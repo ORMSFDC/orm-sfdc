@@ -1095,15 +1095,32 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Employment</label><nameField>
+    </fields>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Employment</label>
+    <nameField>
         <displayFormat>EMP-{00000}</displayFormat>
         <label>Employment ID</label>
         <type>AutoNumber</type>
-    </nameField><pluralLabel>Employments</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>Employments</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>Client_id__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>RelatedLoan__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SelfEmployment__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IncomeType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>IncomeCategory__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>is_Active__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>EmployerName__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CurrentPosition__c</customTabListAdditionalFields>
@@ -1111,34 +1128,36 @@
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>Client_id__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>RelatedLoan__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>SelfEmployment__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>IncomeType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>IncomeCategory__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>is_Active__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>EmployerName__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CurrentPosition__c</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Client_id__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>RelatedLoan__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>SelfEmployment__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>IncomeType__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>IncomeCategory__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>is_Active__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>EmployerName__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CurrentPosition__c</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>Client_id__c</searchFilterFields>
         <searchFilterFields>RelatedLoan__c</searchFilterFields>
-        <searchFilterFields>SelfEmployment__c</searchFilterFields>
         <searchFilterFields>IncomeType__c</searchFilterFields>
+        <searchFilterFields>IncomeCategory__c</searchFilterFields>
         <searchFilterFields>is_Active__c</searchFilterFields>
         <searchFilterFields>EmployerName__c</searchFilterFields>
         <searchFilterFields>CurrentPosition__c</searchFilterFields>
         <searchResultsAdditionalFields>Client_id__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>RelatedLoan__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>SelfEmployment__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>IncomeType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>IncomeCategory__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>is_Active__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>EmployerName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CurrentPosition__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
     <listViews>
         <fullName>All_Employment_information</fullName>
         <columns>NAME</columns>

@@ -336,7 +336,8 @@ public class SAL_LoanControllerTest {
             Test.startTest();
             String Name =  SAL_LoanController.getLoanName(LoanId);
             List<string> lst1=SAL_LoanController.getZipData('90001');
-            List<string> lst2=SAL_LoanController.getRateFixProduct();            
+            List<string> lst2=SAL_LoanController.getRateFixProduct(); 
+            List<string> lst3=SAL_LoanController.getHeloRate();           
             Test.stopTest();
         }
         }
@@ -426,10 +427,16 @@ public class SAL_LoanControllerTest {
                 String ReturnVal2 = SAL_LoanController.getBorrower('5.060');
                 List<String> ReturnVal3 = SAL_LoanController.getRateFixedPriceTier1();
                 List<String> ReturnVal4 = SAL_LoanController.getRateFixedPriceTier2();
+                
                 String ReturnVal5 = SAL_LoanController.getORMOriginationT1(5.060);
                 String ReturnVal6 = SAL_LoanController.getORMOriginationT2(5.060);
                 String ReturnVal7 = SAL_LoanController.getORMBorrowerT1(5.060);
                 String ReturnVal8 = SAL_LoanController.getORMBorrowerT2(5.060);
+                List<String> ReturnVal9 = SAL_LoanController.getHeloRateTier1();
+                List<String> ReturnVal10 = SAL_LoanController.getHeloRateTier2();
+                String ReturnVal11 = SAL_LoanController.getHeloOrigination('5.060');
+                String ReturnVal12 = SAL_LoanController.getHeloMargin('3.060');
+                
                 Test.stopTest();
             }
       

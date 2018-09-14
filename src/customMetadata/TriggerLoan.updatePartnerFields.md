@@ -4,6 +4,6 @@
     <protected>false</protected>
     <values>
         <field>Enable__c</field>
-        <value xsi:type="xsd:boolean">true</value>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
 </CustomMetadata>

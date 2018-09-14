@@ -5,6 +5,8 @@
 * @date 05/20/2018
 *
 * changelog:
+* 06/27/2018: Dennis W. - update to match class changes
+*
 *
 */
 @IsTest
@@ -34,7 +36,7 @@ private class ExternalServicePayloadResponder_Test {
 		// override any ExternalServiceRegistry__mdt entries for ExternalServicePayloadResponder
 		ExternalServicePayloadResponder.esrControlMap = testESRcontrolMap;
 		// call invocable with request list
-		ExternalServicePayloadResponder.updateDomainRecords( testRequestList );
+		ExternalServicePayloadResponder.updateDomainRecords( new List<Id>{ testExternalService.Id } );
 		Test.stopTest();
 		// check results
 		Loan_New__c checkLoan = [SELECT Id, Other_Closing_Costs__c, Other_Closing_Costs_URL__c FROM Loan_New__c LIMIT 1];
@@ -115,6 +117,7 @@ private class ExternalServicePayloadResponder_Test {
 		private set;
 	}
 
+/*
 	// request passed to ExternalServicePayloadResponder.updateDomainRecords() invocable method
 	private static List<ExternalServicePayloadResponder.Request> testRequestList{
 		get {
@@ -128,4 +131,5 @@ private class ExternalServicePayloadResponder_Test {
 		}
 		private set;
 	}
+*/
 }

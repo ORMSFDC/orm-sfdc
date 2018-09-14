@@ -8,6 +8,7 @@
 * @date 5/9/2018
 *
 * changelog:
+* 06/15/2018: DWilson - added Logger
 *
 */
 public without sharing class TriggerHandlerExternalService extends TriggerHandler {
@@ -68,11 +69,13 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 	*/
 	private void publishEvents( List<SObject> newSOList ) {
 
+		Logger.push( 'publishEvents', 'TriggerHandlerExternalService' );
 		System.debug( '>>> executing TriggerHandlerExternalService.publishEvent() method...' );
+		Logger.debug( 'executing TriggerHandlerExternalService.publishEvent() method...' );
 
 		// need to update these ExternalService__c records, so re-query
 		Map<Id, ExternalService__c> newExternalServiceMap = new Map<Id,ExternalService__c> ( [
-			SELECT Id, Status__c, RequestPayload__c, ServiceName__c
+			SELECT Id, Status__c, RequestPayload__c, ServiceName__c, RequestingUserID__c
 			FROM ExternalService__c
 			WHERE Id IN :newSOList
 		] );
@@ -87,6 +90,7 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 				ServiceName__c = extSrvc.ServiceName__c
 			);
 			System.debug( '>>> TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
+			Logger.debug( 'TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
 			publishExternalServiceEventList.add( newESOevent );
 		}
 		// publish events and update ExternalService__c records
@@ -97,6 +101,8 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 		// (i.e. chicken/egg problem)
 		// so for now, using non-bulkified publishing loop in order to "know" which ExternalServiceOutbound__e succeeds or fails
 		for ( ExternalServiceOutbound__e eso : publishExternalServiceEventList ) {
+			// capture requesting user id in external service
+			newExternalServiceMap.get( eso.ExternalServiceID__c ).RequestingUserID__c = System.UserInfo.getUserId();
 			// publish this event
 			Database.SaveResult publishSR = EventBus.publish( eso );
 			// check for errors
@@ -104,35 +110,17 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 				// update ExternalService__c status to reflect success
 				newExternalServiceMap.get( eso.ExternalServiceID__c ).Status__c = 'Requested';
 				System.debug( 'Successfully published event: ' + publishSR.getId() );
+				Logger.debug( 'Successfully published event: ' + publishSR.getId() );
 			} else {
 				// update status to reflect failure
 				newExternalServiceMap.get( eso.ExternalServiceID__c ).Status__c = 'Error/Exception';
 				for ( Database.Error error : publishSR.getErrors() ) {
-					System.debug( 'Error returned: ' + error.getStatusCode() + ' - ' + error.getMessage());
+					System.debug( 'Error returned: ' + error.getStatusCode() + ' - ' + error.getMessage() );
+					Logger.debug( 'Error returned: ' + error.getStatusCode() + ' - ' + error.getMessage() );
 				}
 			}
 		}
-/*
-		List<Database.SaveResult> publishResults;
-		if ( !publishExternalServiceEventList.isEmpty() ) {
-			publishResults = EventBus.publish( publishExternalServiceEventList );
-			// check each result for any errors
-			for ( Database.SaveResult sr : publishResults ) {
-				if ( sr.isSuccess() ) {
-					System.debug( 'Successfully published event: ' + sr.getId() );
-					// todo: update appropriate ExternalService__c.Status__c
-					// change status of ExternalService__c
-					extSrvc.Status__c = 'Requested';
-					updateExternalServiceList.add( extSrvc );
-
-				} else {
-					for ( Database.Error error : sr.getErrors() ) {
-
-					}
-				}
-			}
-		}
-*/
 		Database.update( newExternalServiceMap.values() );
+		Logger.pop();
 	}
 }

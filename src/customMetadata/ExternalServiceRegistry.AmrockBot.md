@@ -16,15 +16,15 @@
     </values>
     <values>
         <field>ExternalServiceDescription__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Amrock Title Fees</value>
     </values>
     <values>
         <field>ExternalServiceDispatcherClass__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">WS_AmrockBot</value>
     </values>
     <values>
         <field>IsActive__c</field>
-        <value xsi:type="xsd:boolean">false</value>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
     <values>
         <field>NamedCredential__c</field>

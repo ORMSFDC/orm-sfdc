@@ -4,7 +4,7 @@
 * @author Mike Gill
 * @date 14th May 2018
 *
-* changelog:
+* changelog: Sprint 5 - Refactor for dynamic Payload Generator & Credit Report
 *
 */
 public without sharing class ExternalServiceConfigComposer {
@@ -19,9 +19,15 @@ public without sharing class ExternalServiceConfigComposer {
            SELECT Id, DeveloperName, 
                         FieldAPIName__c,
                         ObjectAPIName__c,
+                        ParentFieldAPIName__c,
                         DefaultValue__c,
-                        MappingProperty__c
-            FROM ExternalServicesObjectFieldMapping__mdt WHERE ServiceName__c =: esType
+                        MappingProperty__c,
+                        JSON_Object_Property__c,
+                        JSON_Parent_Object_Property__c,
+                        Order__c,
+                        SOQLWhereCriteria__c
+
+            FROM ExternalServicesObjectFieldMapping__mdt WHERE ServiceName__c =: esType order by Order__c desc
         ];
     }
 
@@ -35,10 +41,42 @@ public without sharing class ExternalServiceConfigComposer {
            SELECT Id, DeveloperName, 
                         NamedCredential__c,
                         ExternalServiceClass__c
-                        
-                        
-            FROM ExternalServiceRegistry__mdt WHERE DeveloperName =: esType
+           FROM ExternalServiceRegistry__mdt
+           WHERE DeveloperName =: esType
+           AND IsActive__c = TRUE
         ];
+    }
+
+     /**
+    * @Description  Generate Set Field API Names ***W50-S3**** @TODO 
+    */
+    public static Map<String, Map<String, String>> getFieldObjectAPIs(List<ExternalServicesObjectFieldMapping__mdt> cmt, Boolean outputJSONMap){
+        Logger.push('getFieldObjectAPIs', 'ExternalServiceConfigComposer');
+        Map<String, Map<String, String>> mainMap = new Map<String, Map<String,String>>(); 
+        
+        //Generate list of field API names
+        for(ExternalServicesObjectFieldMapping__mdt esc : cmt){
+            
+            if (esc.FieldAPIName__c!=null){
+
+                Map<String, String> innerMap = mainMap.containsKey( esc.ObjectAPIName__c ) ? mainMap.get( esc.ObjectAPIName__c ) : new Map<String, String>();
+                if (!outputJSONMap) {
+                    innerMap.put( esc.FieldAPIName__c, esc.ParentFieldAPIName__c != null ? esc.ParentFieldAPIName__c :  esc.FieldAPIName__c);
+                }   
+                else {
+                    innerMap.put( esc.FieldAPIName__c, esc.MappingProperty__c != null ? esc.MappingProperty__c :  esc.JSON_Object_Property__c);
+                }
+                
+                mainMap.put( esc.ObjectAPIName__c, innerMap );
+            
+                   
+            }
+            
+        }
+        //Logger.debug('mainMap='+mainMap);
+        Logger.pop();
+        return mainMap;
+
     }
 
     /**
