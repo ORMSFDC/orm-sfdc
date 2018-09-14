@@ -11,12 +11,32 @@
         <value xsi:type="xsd:string">Estimate_of_Appraised_Value__c</value>
     </values>
     <values>
+        <field>JSON_Object_Property__c</field>
+        <value xsi:type="xsd:string">root</value>
+    </values>
+    <values>
+        <field>JSON_Parent_Object_Property__c</field>
+        <value xsi:type="xsd:string">root</value>
+    </values>
+    <values>
         <field>MappingProperty__c</field>
         <value xsi:type="xsd:string">estAppraisedValue</value>
     </values>
     <values>
         <field>ObjectAPIName__c</field>
         <value xsi:type="xsd:string">Loan_New__c</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">5.0</value>
+    </values>
+    <values>
+        <field>ParentFieldAPIName__c</field>
+        <value xsi:type="xsd:string">Id</value>
+    </values>
+    <values>
+        <field>SOQLWhereCriteria__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>ServiceName__c</field>

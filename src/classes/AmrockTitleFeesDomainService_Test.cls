@@ -5,6 +5,8 @@
 * @date 05/20/2018
 *
 * changelog:
+* 06/29/2018: DWilson - revised interface to processResponse()
+* 07/24/2018: DWilson - updated for exception coverage
 *
 */
 @IsTest
@@ -15,6 +17,7 @@ private class AmrockTitleFeesDomainService_Test {
 	private static final String EXTERNAL_SERVICE_STATUS_RESPONSERECEIVED = 'Response Received';
 	private static final Decimal EXPECTED_CLOSING_COSTS = 1234;
 	private static final String EXPECTED_CLOSING_COST_URL = 'https://test.org';
+	private static final String EXPECTED_STATUS = 'Error/Exception';
 
 	@TestSetup
 	static void setup() {
@@ -31,12 +34,9 @@ private class AmrockTitleFeesDomainService_Test {
 		// disable outbound external service trigger processing
 		TriggerHandlerExternalServiceOutbound.tesoControlMap = testTESOmdtMap;
 		Test.startTest();
-
 		AmrockTitleFeesDomainService handler = new AmrockTitleFeesDomainService();
-		handler.processResponse(
-			new List<Id>{ testExternalService.SourceID__c },
-			new List<Id>{ testExternalService.Id },
-			new List<String>{ testExternalService.ResponsePayload__c }
+		handler.processResponses(
+			new List<ExternalService__c>{ testExternalServiceGood }
 		);
 		Test.stopTest();
 		// check results
@@ -50,26 +50,43 @@ private class AmrockTitleFeesDomainService_Test {
 	}
 
 	/*******************************************************************************************************
-	* @description test of processRecords method exceptions
+	* @description test of processResponse method exceptions
 	*/
-	static testMethod void testProcessRecordsException() {
+	static testMethod void testProcessResponseDatabaseException() {
 
 		// disable outbound external service trigger processing
 		TriggerHandlerExternalServiceOutbound.tesoControlMap = testTESOmdtMap;
 		Test.startTest();
-		// create nested maps as per processRecords arg:  Map<Id, Map<Id, String>>
-		// outermap:  [key = ExternalService__c.SourceID__c] [value = innermap]
-		// innermap:  [key = ExternalService__c.Id] [value = ExternalService__c.ResponsePayload__c
-		Map<Id, Map<Id, String>> testMap = new Map<Id, Map<Id, String>>{
-			testExternalService.SourceID__c => new Map<Id, String> {
-				testExternalService.Id => testExternalService.ResponsePayload__c
-			}
-		};
-		// induce exception handling logic through use of embedded static variable
-		AmrockTitleFeesDomainService.testException = TRUE;
-		AmrockTitleFeesDomainService.processRecords( testMap );
+		AmrockTitleFeesDomainService handler = new AmrockTitleFeesDomainService();
+		// induce exception by probing test visible property
+		handler.testException = TRUE;
+		handler.processResponses(
+			new List<ExternalService__c>{ testExternalServiceGood }
+		);
 		Test.stopTest();
 		// check results
+		ExternalService__c checkES = [SELECT Id, Status__c FROM ExternalService__c LIMIT 1];
+		System.debug( '>>> checkES.Status__c: ' + checkES.Status__c );
+		// expect an error status on external service record
+		System.assertEquals( checkES.Status__c, EXPECTED_STATUS );
+	}
+
+	/*******************************************************************************************************
+	* @description test of processResponse method exceptions
+	*/
+	static testMethod void testProcessResponseTypeException() {
+
+		// disable outbound external service trigger processing
+		TriggerHandlerExternalServiceOutbound.tesoControlMap = testTESOmdtMap;
+		Test.startTest();
+		AmrockTitleFeesDomainService handler = new AmrockTitleFeesDomainService();
+		// induce exception by probing test visible property
+		handler.testException = TRUE;
+		handler.processResponses(
+			new List<ExternalService__c>{ testExternalServiceBad }
+		);
+		Test.stopTest();
+
 	}
 
 	/*******************************************************************************************************
@@ -81,9 +98,9 @@ private class AmrockTitleFeesDomainService_Test {
 		// pass an impossible to parse JSON payload
 		String badPayload = '{ "bad" :  }';
 		String checkTokenValue = AmrockTitleFeesDomainService.getPayloadTokenValue( badPayload, 'doesNotExist' );
+		Test.stopTest();
 		System.debug( '>>> checkTokenValue: ' + checkTokenValue );
 		System.assertEquals( checkTokenValue, NULL );
-		Test.stopTest();
 	}
 
 	/***************************************************************************************************
@@ -128,9 +145,9 @@ private class AmrockTitleFeesDomainService_Test {
 		private set;
 	}
 
-	private static ExternalService__c testExternalService {
+	private static ExternalService__c testExternalServiceGood{
 		get {
-			if ( testExternalService == NULL ) {
+			if ( testExternalServiceGood == NULL ) {
 				Map<String, String> testResponseMap = new Map<String, String>{
 					'pdfUrl'        => EXPECTED_CLOSING_COST_URL,
 					'pdfShortUrl'   => EXPECTED_CLOSING_COST_URL,
@@ -138,34 +155,40 @@ private class AmrockTitleFeesDomainService_Test {
 					'quoteTotal'    => EXPECTED_CLOSING_COSTS.format().replaceAll( ',', '' )
 				};
 				System.debug( '>>> JSON.serialize( testResponseMap ): ' + JSON.serialize( testResponseMap ) );
-				testExternalService = new ExternalService__c(
+				testExternalServiceGood = new ExternalService__c(
 					ReplayID__c = '1',
 					ServiceName__c = EXTERNAL_SERVICE_NAME,
 					SourceID__c = testLoan.Id,
 					Status__c = EXTERNAL_SERVICE_STATUS_RESPONSERECEIVED,
 					ResponsePayload__c = JSON.serialize( testResponseMap )
 				);
-				Database.insert( testExternalService );
+				Database.insert( testExternalServiceGood );
 			}
-			return testExternalService;
+			return testExternalServiceGood;
 		}
 		private set;
 	}
 
-/*
-	// request passed to ExternalServicePayloadResponder.updateDomainRecords() invocable method
-	private static List<ExternalServicePayloadResponder.Request> testRequestList{
+	private static ExternalService__c testExternalServiceBad{
 		get {
-			ExternalServicePayloadResponder.Request testRequest = new ExternalServicePayloadResponder.Request();
-			testRequest.idList = new List<Id>{ testExternalService.Id };
-			testRequest.sourceIdList = new List<Id>{ testExternalService.SourceID__c };
-			testRequest.payloadResponseList = new List<String>{ testExternalService.ResponsePayload__c };
-			testRequest.objectAPIName = 'Loan_New__c';
-			testRequest.externalServiceType = EXTERNAL_SERVICE_NAME;
-			return new List<ExternalServicePayloadResponder.Request>{ testRequest };
+			if ( testExternalServiceBad == NULL ) {
+				Map<String, String> testResponseMap = new Map<String, String>{
+					'pdfUrl'        => EXPECTED_CLOSING_COST_URL,
+					'pdfShortUrl'   => EXPECTED_CLOSING_COST_URL,
+					'quoteTotal'    => 'ThisIsBadData'
+				};
+				System.debug( '>>> JSON.serialize( testResponseMap ): ' + JSON.serialize( testResponseMap ) );
+				testExternalServiceBad = new ExternalService__c(
+					ReplayID__c = '1',
+					ServiceName__c = EXTERNAL_SERVICE_NAME,
+					SourceID__c = 'BadId',
+					Status__c = EXTERNAL_SERVICE_STATUS_RESPONSERECEIVED,
+					ResponsePayload__c = JSON.serialize( testResponseMap )
+				);
+				Database.insert( testExternalServiceBad );
+			}
+			return testExternalServiceBad;
 		}
 		private set;
 	}
-*/
-
 }

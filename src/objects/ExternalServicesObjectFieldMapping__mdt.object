@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <fullName>DefaultValue__c</fullName>
         <description>Default Value</description>
         <externalId>false</externalId>
@@ -9,7 +10,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FieldAPIName__c</fullName>
         <description>Field API Name</description>
         <externalId>false</externalId>
@@ -20,7 +22,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MappingProperty__c</fullName>
         <description>Mapping Property</description>
         <externalId>false</externalId>
@@ -31,7 +34,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ObjectAPIName__c</fullName>
         <description>Object API Name</description>
         <externalId>false</externalId>
@@ -42,7 +46,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ServiceName__c</fullName>
         <description>Service Name</description>
         <externalId>false</externalId>
@@ -53,4 +58,104 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><description>External Service Object / Field Mapping Configuration</description><label>External Services Object/Field Mapping</label><pluralLabel>External Services Object/Field Mapping</pluralLabel><visibility>Public</visibility></CustomObject>
+    </fields>
+    <fields>
+        <fullName>JSON_Object_Property__c</fullName>
+        <description>JSON Object Property</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>JSON Object Property</inlineHelpText>
+        <label>JSON Object Property</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JSON_Parent_Object_Property__c</fullName>
+        <description>JSON Parent Object Property</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>JSON Parent Object Property</inlineHelpText>
+        <label>JSON Parent Object Property</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <description>Order</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Order</inlineHelpText>
+        <label>Order</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentFieldAPIName__c</fullName>
+        <description>Parent Field API Name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Parent Field API Name</inlineHelpText>
+        <label>Parent Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOQLWhereCriteria__c</fullName>
+        <description>Additional SOQL where criteria - inject additional criteria into SOQL where clause</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Additional SOQL where criteria</inlineHelpText>
+        <label>SOQL Where Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><description>External Service Object / Field Mapping Configuration</description><label>External Services Object/Field Mapping</label><pluralLabel>External Services Object/Field Mapping</pluralLabel><visibility>Public</visibility>
+    <listViews>
+        <fullName>All_Details</fullName>
+        <columns>ServiceName__c</columns>
+        <columns>Order__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>DefaultValue__c</columns>
+        <columns>FieldAPIName__c</columns>
+        <columns>MappingProperty__c</columns>
+        <columns>ObjectAPIName__c</columns>
+        <columns>JSON_Parent_Object_Property__c</columns>
+        <columns>ParentFieldAPIName__c</columns>
+        <columns>SOQLWhereCriteria__c</columns>
+        <columns>JSON_Object_Property__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Details</label>
+    </listViews>
+    <listViews>
+        <fullName>Baydocs</fullName>
+        <columns>Order__c</columns>
+        <columns>ServiceName__c</columns>
+        <columns>MasterLabel</columns>
+        <columns>DefaultValue__c</columns>
+        <columns>FieldAPIName__c</columns>
+        <columns>ObjectAPIName__c</columns>
+        <columns>ParentFieldAPIName__c</columns>
+        <columns>MappingProperty__c</columns>
+        <columns>JSON_Object_Property__c</columns>
+        <columns>JSON_Parent_Object_Property__c</columns>
+        <columns>SOQLWhereCriteria__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ServiceName__c</field>
+            <operation>equals</operation>
+            <value>Baydocs</value>
+        </filters>
+        <label>Baydocs</label>
+    </listViews>
+</CustomObject>

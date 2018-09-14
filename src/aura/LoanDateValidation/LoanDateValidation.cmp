@@ -29,26 +29,23 @@
  	 	</ui:message>
        </aura:renderIf>  
    -->
-    <div class="fontCss"> 
-      
-       
+    <div class="fontCss">        
        <!-- <h1 style="font-weight:bold;">{!$Label.c.PartnerAppDateLabel}</h1> --> 
         
         <form class="slds-form--inline">
             
-             <div style="margin-bottom:3%; " class="slds-size_1-of-3">
-                            <ui:inputSelect aura:id="LoanMortgageAppliedFor" required="true" label="Mortgage Applied for " value="{!v.LMortgageAppliedFor}" class="fontCss">
+             <!-- <div style="margin-bottom:3%; " class="slds-size_1-of-3">
+                            <ui:inputSelect aura:id="LoanMortgageAppliedFor" required="true" label="Mortgage Type " value="{!v.LMortgageAppliedFor}" class="fontCss">
                                 
-                                <ui:inputSelectOption value="true" text="FHA Traditional HECM" label="FHA Traditional HECM"/>
-                                <!--<ui:inputSelectOption text="FHA Refinance HECM" label="FHA Refinance HECM"/>-->
-                                <ui:inputSelectOption text="HECM to HECM Refinance" label="HECM to HECM Refinance"/>
-                                <ui:inputSelectOption text="HECM for Purchase" label="HECM for Purchase"/>
+                                <ui:inputSelectOption value="true" text="FHA Traditional HECM" label="Traditional"/>
+                                <ui:inputSelectOption text="HECM to HECM Refinance" label="Refinance"/>
+                                <ui:inputSelectOption text="HECM for Purchase" label="Purchase"/>
                             </ui:inputSelect>
             			
                 
-                        </div>
+                        </div> -->
             
-           <div style="margin-bottom:3%; " class="slds-size_1-of-3">
+           <!-- <div style="margin-bottom:3%; " class="slds-size_1-of-3">
                             <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.LRateType}" >
                                 
                                 
@@ -56,7 +53,7 @@
                                 <ui:inputSelectOption text="Fixed" label="Fixed"/>
                             </ui:inputSelect>
                             
-                        </div>
+                        </div> -->
             
             <div class="slds-form-element__control">
                 <input type = "hidden" id = "secret"/>
@@ -72,7 +69,7 @@
                 <label id = "error" style = "color:red" class="fontCss"/>
             </div>
             
-            <div class="slds-form-element" style="margin-top: -32%;margin-left: 48%;">
+            <div class="slds-form-element" style="margin-left: 48%;">
 			 <div style="border-style: solid;border-width: 5px;padding: 15px;border-color:5px solid green;color:#81AD4D;">
               <!--   Have an existing package from another lender ?<br/>
                  Upload it here and we'll do the rest!  -->
@@ -86,8 +83,7 @@
 			<!--<aura:if isTrue="{!v.attFile}">-->
                  
                 </div>
-                 <input id="upFile" type="file" style=" width: 24%;color: #2081bf;" class="file slds-file-selector__button slds-button slds-button_neutral email_att" aura:id="myFile" onchange="{!c.upload_attachment}"/> 
-                 &nbsp;&nbsp; {!v.upload_file}&nbsp;&nbsp;&nbsp;
+                 <input id="upFile" type="file" class="file email_att" aura:id="myFile" onchange="{!c.upload_attachment}"/>                  
                 <ui:button disabled="{!if(v.fileName=='notExist',true,false)}"  label="Upload" class="uploadButton" press="{!c.upload_file}" />
 		<!--	</aura:if> -->
 				

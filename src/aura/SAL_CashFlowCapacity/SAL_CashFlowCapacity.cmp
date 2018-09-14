@@ -197,6 +197,7 @@
             </div>
             <br/>
             <div class="slds-size_1-of-1">
+                <p><b>Review our One Reverse HELO Cash Flow Requirements <a href="{!$Resource.HELOCashFlowTable}" target="_blank">here</a>.</b></p>
                 <ui:outputText value="*These values are static. If you would like to make a change, please modify application inputs." />
             </div>
             <br/>           
@@ -209,7 +210,7 @@
             <br></br>
             <div align="left"><aura:if isTrue="{!v.showError}"> 
                 <ui:message title="Warning" severity="warning" closable="false">
-                    The Capacity calculations use values from the previous tabs. Please review the red tabs above to see Cash Flow results.
+                    The Capacity calculations use values from the previous tabs. Please review the red tabs above to see Cash Flow results
                 </ui:message>
                 </aura:if></div>
             <br/>            

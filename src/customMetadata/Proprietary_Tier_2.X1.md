@@ -7,6 +7,10 @@
         <value xsi:type="xsd:double">0.0</value>
     </values>
     <values>
+        <field>HeloMargin__c</field>
+        <value xsi:type="xsd:double">3.125</value>
+    </values>
+    <values>
         <field>Origination_to_Partner__c</field>
         <value xsi:type="xsd:double">0.5</value>
     </values>

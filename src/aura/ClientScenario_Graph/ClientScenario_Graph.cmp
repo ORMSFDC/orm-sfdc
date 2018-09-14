@@ -485,13 +485,9 @@
                             </div>
                             <br/>
                         </div>
-                        <aura:if isTrue="{!!v.isConveted}">
+                        <aura:if isTrue="{!!v.isConveted}">                            
                             
-                            <aura:if isTrue = "{!v.LRateType == 'Helo'}"> <!-- Helo Temp fix SFDC-263 -->                                         
-                                <aura:set attribute="else">
-                                    <button class="slds-button slds-button_brand" onclick="{!c.Start_newloan}">Start A New Loan</button>
-                                </aura:set>
-                            </aura:if>
+                            <button class="slds-button slds-button_brand" onclick="{!c.Start_newloan}">Start A New Loan</button>
                             
                             <span id="requestbtn">&nbsp;&nbsp;&nbsp;
                                 <lightning:button aura:id="outputButton1" variant="brand" 
