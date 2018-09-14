@@ -70,14 +70,50 @@
         component.set('v.Number', Num);
 
     },
+    unsetFields: function(component,field){
+        component.set(field,"");
+    },
     SaveLoans: function (component, event, helper) {
         debugger;
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         var loanType = component.get("v.NewLoan.Product_Type__c");
+        var mortAppliedFor = component.get("v.NewLoan.Mortgage_Applied_for__c");
 
+        // Unset fields that do not apply to selected Product type (Product_Type__c) loan type (Mortgage_Applied_for__c) and Rate type (Rate_Type__c)
+        // TODO: also check Purpose_of_Loan__c
         if ('HELO' != loanType) {
             component.set("v.NewLoan.Servicing_Fee__c", 0.00);
         }
+
+        if('HECM for Purchase' == mortAppliedFor){  //.includes('Purchase')
+            ['Selected_Loan_Payment_Plan__c','Loan_Payment_Plan_Term__c','Estimate_of_Appraised_Value__c'].forEach(function(f){
+                helper.unsetFields(component,'v.NewLoan.'+f);
+            });
+        }
+
+        if(!mortAppliedFor.includes('Purchase')){
+            [
+                'Purchase_Price__c','Earnest_Money_Deposit__c','Contract_Date__c','Contract_Closing_Date__c','Status_Of_Current_Address__c',
+                'Source_Of_Funds__c','Sale_Date__c','Sale_Proceeds__c','Assets_Amount__c','Gift_Amount__c','Other_Source_Of_Funds__c',
+                'Amount_Of_Other_Funds__c'
+            ].forEach(function(f){
+                helper.unsetFields(component,'v.NewLoan.'+f);
+            });
+        }
+
+        if ('Fixed' != rtype) {
+            ['Rate__c','Credit_to_Borrower__c'].forEach(function(f){
+                helper.unsetFields(component,'v.NewLoan.'+f);
+            });
+        }
+
+        if ('ARM' != rtype) {
+            ['Margin__c','Loan_Origination_Fee_Calculation__c'].forEach(function(f){
+                helper.unsetFields(component,'v.NewLoan.'+f);
+            });
+        }
+        // End: un-setting non-applicable values
+
 
         if ('Fixed' === rtype) {
             var ratevalue = component.find("Ratedata").get("v.value");
@@ -98,6 +134,7 @@
                 component.set("v.NewLoan.Selected_Loan_Payment_Plan__c", '');
             }
         }
+
         console.log('component.get("v.NewLoan") ', component.get("v.NewLoan"));
         action.setParams({
             "ObjLoan": component.get("v.NewLoan")
