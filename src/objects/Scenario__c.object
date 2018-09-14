@@ -634,11 +634,11 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>ClientId__c</fullName>
+        <fullName>Client_Lead__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Client Name</label>
-        <referenceTo>ClientInfo__c</referenceTo>
+        <label>Client Lead</label>
+        <referenceTo>Lead</referenceTo>
         <relationshipLabel>Scenarios</relationshipLabel>
         <relationshipName>Scenarios</relationshipName>
         <required>false</required>
@@ -647,12 +647,11 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Client_Lead__c</fullName>
+        <fullName>ClientId__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Client Lead</label>
-        <referenceTo>Lead</referenceTo>
-        <relationshipLabel>Scenarios</relationshipLabel>
+        <label>Client Name</label>
+        <referenceTo>ClientInfo__c</referenceTo>
         <relationshipName>Scenarios</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -686,8 +685,8 @@
         <customTabListAdditionalFields>PartnerId__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
         <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>ClientId__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Estimated_home_value__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PartnerId__c</lookupDialogsAdditionalFields>
@@ -713,10 +712,25 @@
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
     <listViews>
+        <fullName>Saved_Scenarios_Last_month</fullName>
+        <columns>NAME</columns>
+        <columns>Loan__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>ORM_AE__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>Saved Scenarios Last month</label>
+    </listViews>
+    <listViews>
         <fullName>All_Scenarios</fullName>
         <columns>NAME</columns>
         <columns>Client_Lead__c</columns>
-        <columns>ClientId__c</columns>
+        <columns>Client_State__c</columns>
         <columns>PartnerId__c</columns>
         <columns>Margin__c</columns>
         <columns>Estimated_home_value__c</columns>
@@ -735,21 +749,6 @@
             <operation>greaterThan</operation>
         </filters>
         <label>All Scenarios</label>
-    </listViews>
-    <listViews>
-        <fullName>Saved_Scenarios_Last_month</fullName>
-        <columns>NAME</columns>
-        <columns>Loan__c</columns>
-        <columns>OWNER.FIRST_NAME</columns>
-        <columns>OWNER.LAST_NAME</columns>
-        <columns>ORM_AE__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>LAST_MONTH</value>
-        </filters>
-        <label>Saved Scenarios Last month</label>
     </listViews>
     <sharingReasons>
         <fullName>Executive__c</fullName>

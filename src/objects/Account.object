@@ -3944,6 +3944,16 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Updated_Broker_Comp_Rec_d__c</fullName>
+        <description>Broker comp addendum has been received from partner.</description>
+        <externalId>false</externalId>
+        <label>Updated Broker Comp Rec'd</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
     </fields><compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
@@ -3994,31 +4004,6 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>Documents Required</value>
         </filters>
         <label>AE Docs Needed</label>
-    </listViews>
-    <listViews>
-        <fullName>AllAccounts</fullName>
-        <columns>QLMS_Account_Executive__c</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>Approval_Status__c</columns>
-        <columns>Approval_Sub_Status__c</columns>
-        <columns>ACCOUNT.ADDRESS1_STATE</columns>
-        <columns>ACCOUNT.PHONE1</columns>
-        <columns>Original_Approved_Date__c</columns>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
-        <columns>Email__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Approval_Status__c</field>
-            <operation>equals</operation>
-            <value>Active</value>
-        </filters>
-        <filters>
-            <field>CORE.USERS.LAST_NAME</field>
-            <operation>equals</operation>
-            <value>Stieber</value>
-        </filters>
-        <label>All Accounts</label>
     </listViews>
     <listViews>
         <fullName>All_Partner_Leads</fullName>
@@ -4105,6 +4090,26 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>Withdrawn</value>
         </filters>
         <label>Withdrawn Partners</label>
+    </listViews>
+    <listViews>
+        <fullName>AllAccounts</fullName>
+        <columns>QLMS_Account_Executive__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>Approval_Sub_Status__c</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>Original_Approved_Date__c</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>Email__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Clarke</value>
+        </filters>
+        <label>All Accounts</label>
     </listViews>
     <recordTypes>
         <fullName>Approved_Partners</fullName>

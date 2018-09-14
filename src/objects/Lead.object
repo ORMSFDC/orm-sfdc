@@ -1711,54 +1711,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <label>AE Leads w/o Activity</label>
     </listViews>
     <listViews>
-        <fullName>AllOpenLeads</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.COMPANY</columns>
-        <columns>LEAD.TITLE</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.LAST_ACTIVITY</columns>
-        <columns>LEAD.PHONE</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
-        <columns>QLMS_Account_Executive__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>LEAD.STATE</field>
-            <operation>contains</operation>
-            <value>AL,AZ,CA,CO,FL,GA,MD,MI,MN,NH,NJ,PA,TX,VA,WA,WI</value>
-        </filters>
-        <label>All Open Leads</label>
-    </listViews>
-    <listViews>
-        <fullName>All_Leads</fullName>
-        <columns>LEAD.COMPANY</columns>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>QLMS_Account_Executive__c</columns>
-        <columns>LEAD.RECORDTYPE</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>LEAD.UNREAD</columns>
-        <columns>LEAD.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>LEAD.PHONE</columns>
-        <columns>Last_Activity_Date__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LEAD.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Lead.Partner_Lead</value>
-        </filters>
-        <filters>
-            <field>CORE.USERS.ALIAS</field>
-            <operation>notContain</operation>
-            <value>jhans,bburg,jposn,jraym,kmart</value>
-        </filters>
-        <label>All Leads</label>
-    </listViews>
-    <listViews>
         <fullName>Broker_Incomplete_Lead</fullName>
         <filterScope>Queue</filterScope>
         <label>Broker Incomplete</label>
@@ -2006,6 +1958,38 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>1</value>
         </filters>
         <label>Web Leads Created Last 30 Days</label>
+    </listViews>
+    <listViews>
+        <fullName>AllOpenLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.TITLE</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.LAST_ACTIVITY</columns>
+        <columns>LEAD.PHONE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.STATE</field>
+            <operation>equals</operation>
+            <value>CA</value>
+        </filters>
+        <label>All Open Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <columns>LEAD.RECORDTYPE</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Leads</label>
     </listViews>
     <recordTypes>
         <fullName>Banker</fullName>
