@@ -204,13 +204,17 @@
                             <div class="{!if(v.NewLoan.Rate_Type__c == 'Fixed','slds-show','slds-hide')}">                                
                                 <ui:inputSelect label="Rate (%)" aura:id="Ratedata" required="true" value="{!v.NewLoan.Rate__c}" change="{!c.RateChange}">
                                     <ui:inputSelectOption value="true" text="" label="---Select Option---" />
-                                    <aura:iteration items="{!v.RateList}" var="pOptions">
-                                        <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" disabled="{!v.NewLoan.Product_Type__c == 'HELO'}" />
-                                    </aura:iteration>  
-                                    <!--SFDC-237-->
-                                    <aura:iteration items="{!v.HeloRateList}" var="pOptions">
-                                        <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
-                                    </aura:iteration> 
+                                    <aura:if isTrue="{!v.NewLoan.Product_Type__c == 'HECM'}">
+                                        <aura:iteration items="{!v.RateList}" var="pOptions">
+                                        	<ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" disabled="{!v.NewLoan.Product_Type__c == 'HELO'}" />
+                                        </aura:iteration>  
+                                    </aura:if>
+                                        <!--SFDC-237-->
+                                    <aura:if isTrue="{!v.NewLoan.Product_Type__c == 'HELO'}">
+                                        <aura:iteration items="{!v.HeloRateList}" var="pOptions">
+                                            <ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
+                                        </aura:iteration> 
+                                    </aura:if>
                                 </ui:inputSelect>
                             </div>
                             <aura:if isTrue="{!v.NewLoan.Rate_Type__c == 'ARM'}">
