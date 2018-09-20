@@ -300,7 +300,53 @@
                 <div id="unpaidloanError" class="DivStyle"></div>
                 <br/>
             </div>
-            
+            <!-- Start SFDC 282, Bala  -->
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    i. Was the ethnicity of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_l1"
+                                      name="radioButtonGroup_l1"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Borrower_Ethnicity__c }"
+                                      onchange="{! c.onAIfieldsChange }"/>
+            </div>
+            <label id="lbl_group_l1" class="lblRemarkStyle"></label>
+            <br/>
+
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    ii. Was the sex of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_l2"
+                                      name="radioButtonGroup_l2"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Borrower_Sex__c }"
+                                      onchange="{! c.onAIfieldsChange }"/>
+            </div>
+            <label id="lbl_group_l2" class="lblRemarkStyle"></label>
+            <br/>
+
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    iii. Was the race of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">   
+                <lightning:radioGroup aura:id="group_l3"
+                                      name="radioButtonGroup_l3"
+                                      options="{! v.options }"
+                                      value="{!v.NewDeclaration.Borrower_Race__c }"
+                                      onchange="{! c.onAIfieldsChange }"/>
+            </div>
+            <label id="lbl_group_l3" class="lblRemarkStyle"></label>
+            <br/>
+            <!-- end SFDC 282, Bala  -->
+
             <div id="DivshowRemarks" class="slds-size_1-of-2 ">
                 
                 <div class="LabelDiv" >
