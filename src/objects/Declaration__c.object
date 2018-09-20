@@ -121,11 +121,11 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Yes</fullName>
+                    <fullName>Y</fullName>
                     <default>false</default>
                 </value>
                 <value>
-                    <fullName>No</fullName>
+                    <fullName>N</fullName>
                     <default>false</default>
                 </value>
             </valueSetDefinition>
