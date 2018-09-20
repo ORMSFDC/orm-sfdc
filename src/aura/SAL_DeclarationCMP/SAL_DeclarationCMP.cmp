@@ -25,7 +25,7 @@
                                                         {'label': 'No', 'value': 'No'}
                                                         ]"/>
     <aura:attribute name="value" type="String" default="No"/>
-    <aura:attribute name="itemsClicked" type="String" />
+    <aura:attribute name="itemsClicked" type="String" />       
     
     <fieldset class="slds-box slds-theme--default slds-container--large">
         <div class="slds-form slds-form_compound">
@@ -345,7 +345,7 @@
             </div>
             <label id="lbl_group_l3" class="lblRemarkStyle"></label>
             <br/>
-            <!-- end SFDC 282, Bala  -->
+            <!--end SFDC 282 -->
 
             <div id="DivshowRemarks" class="slds-size_1-of-2 ">
                 
