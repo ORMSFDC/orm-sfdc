@@ -237,7 +237,7 @@
                         </div>
                         
                         <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
-                            <ui:inputCurrency label="Annual Hazard Insurance " aura:id="HazardInsuranceId" value="{!v.subjectProperty.Hazard_Insurance__c}" class="slds-input" required="true"/>
+                            <ui:inputCurrency label="Monthly Hazard Insurance " aura:id="HazardInsuranceId" value="{!v.subjectProperty.Hazard_Insurance__c}" class="slds-input" required="true"/>
                             <div id="HazardInsuranceError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
                         </div>
                         
