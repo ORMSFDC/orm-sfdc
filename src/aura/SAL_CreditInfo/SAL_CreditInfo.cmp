@@ -126,6 +126,7 @@
                 <br />
                 <div class="slds-size_1-of-2">
                     <ui:inputSelect aura:id="CreditReissueVendor" label="Credit Reissue Vendor" value="{!v.NewCredit.Credit_Reissue_Vendor__c}">
+                            <!--BALA SFDC 288 -->
                             <ui:inputSelectOption text="CD" label="CREDCO" value="true"/>
                             <!-- <ui:inputSelectOption text="ADV" label="ADVANTAGE CREDIT" value="true"/>
                             <ui:inputSelectOption text="ADVPLUS" label="ADVANTAGE PLUS" value="true"/>
