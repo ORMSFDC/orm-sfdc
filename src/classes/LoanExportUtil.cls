@@ -1,6 +1,6 @@
 /**
 * @description  LoanExportUtil - Used to generate JSON Payload for Baydocs
-*               Not Released to production
+*               
 * @author GalaxE (original) / Updated by MG/QDA
 * @date 16th July - Sprint 6
 
@@ -13,6 +13,7 @@
 *             @TODO SOQL Query Consolidation
 * 09/06/2018: Sahitya: Add LoanType for HELO
 * 09/07/2018: Sahitya: Add Margin for HELO
+* 09/19/2018: Sahitya: Added Borrower fields for Declaration Json req, SFDC - 282
 */
 global class LoanExportUtil {
 
@@ -544,6 +545,9 @@ global class LoanExportUtil {
     private static final Map<String, String> DECLARATION_FIELDS = new Map<String, String>{
         'Bankruptcy__c'                             => 'bankruptcy',
         'Bankruptcy_Reason__c'                      => 'bankruptcy_reason',
+        'Borrower_Ethnicity__c'                     => 'borrower_ethnicity',
+        'Borrower_Race__c'                          => 'borrower_race',
+        'Borrower_Sex__c'                           => 'borrower_sex',
         'CashtoClose__c'                            => 'cash_to_close',
         'CashtoClose_Borrowed_Money__c'             => 'cash_to_close_borrowed_money',
         'Declaration_Reason__c'                     => 'declaration_reason',
