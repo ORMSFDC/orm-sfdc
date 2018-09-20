@@ -24,6 +24,11 @@
                                                         {'label': 'Yes', 'value': 'Yes'},
                                                         {'label': 'No', 'value': 'No'}
                                                         ]"/>
+    <!--SFDC 282-->
+    <aura:attribute name="options2" type="List" default="[
+                                                        {'label': 'Yes', 'value': 'Y'},
+                                                        {'label': 'No', 'value': 'N'}
+                                                        ]"/>
     <aura:attribute name="value" type="String" default="No"/>
     <aura:attribute name="itemsClicked" type="String" />       
     
@@ -309,7 +314,7 @@
             <div class="slds-size_1-of-2">
                 <lightning:radioGroup aura:id="group_l1"
                                       name="radioButtonGroup_l1"
-                                      options="{! v.options }"
+                                      options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Ethnicity__c }"
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
@@ -324,7 +329,7 @@
             <div class="slds-size_1-of-2">
                 <lightning:radioGroup aura:id="group_l2"
                                       name="radioButtonGroup_l2"
-                                      options="{! v.options }"
+                                      options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Sex__c }"
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
@@ -339,7 +344,7 @@
             <div class="slds-size_1-of-2">   
                 <lightning:radioGroup aura:id="group_l3"
                                       name="radioButtonGroup_l3"
-                                      options="{! v.options }"
+                                      options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Race__c }"
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
