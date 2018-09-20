@@ -141,6 +141,10 @@
         var j = helper.getRadioGroupValue(component, event, helper,"group_j","v.NewDeclaration.ReverseMortgage__c");
         var k = helper.getRadioGroupValue(component, event, helper,"group_k","v.NewDeclaration.FHA_Insured_Loan__c");
         var l = helper.getRadioGroupValue(component, event, helper,"reason_d","v.NewDeclaration.CashtoClose_Borrowed_Money__c");
+        //SFDC-282
+        var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");  
+        var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+        var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
         if(a == 'Yes' || b == 'Yes' || c == 'Yes' || d == 'Yes' || e == 'Yes' || g == 'Yes' || i == 'Yes' || j=='Yes' || k=='Yes' || l=='Yes')
         {
             document.getElementById('DivshowRemarks').style.display = 'block';
@@ -299,6 +303,10 @@
         document.getElementById("lbl_group_i").innerText = '';
         document.getElementById("lbl_group_j").innerText = '';
         document.getElementById("lbl_group_k").innerText = '';   
+        //SFDC-282
+        document.getElementById("lbl_group_l1").innerText = '';
+        document.getElementById("lbl_group_l2").innerText = '';
+        document.getElementById("lbl_group_l3").innerText = '';
         
         /*document.getElementById("group_lError").innerHTML = '';
         var group_lCmp = component.find("group_l");
@@ -335,6 +343,11 @@
         var group_iVal = component.find("group_i").get('v.value'); 
         var group_jVal = component.find("group_j").get('v.value'); 
         var group_kVal = component.find("group_k").get('v.value'); 
+        //SFDC-282
+        var group_l1Val = component.find("group_l1").get('v.value'); //new
+        var group_l2Val = component.find("group_l2").get('v.value');
+        var group_l3Val = component.find("group_l3").get('v.value');
+
         //Code Added/Changed by Dev4 for ORMSFDC-1432
         var ethnicityMainVal = component.find("group_mainEthnicity").get('v.value');
         var subEthnicityVal = component.find("groupSubEthnicity").get('v.value'); 
@@ -363,7 +376,11 @@
         var isValid_l=true;
         var isValid_m=true;
         var isValid_n=true;
-        
+        //SFDC-282
+        var isValid_l1=true;
+        var isValid_l2=true;
+        var isValid_l3=true;
+
         if($A.util.isUndefinedOrNull(group_aVal))
         { 
             document.getElementById("lbl_group_a").innerText = 'Please check at least one option.';
@@ -477,6 +494,39 @@
             document.getElementById("lbl_group_k").innerText = '';
             isValid_k = true;
         }
+        //SFDC-282
+        if($A.util.isUndefinedOrNull(group_l1Val))
+        { 
+            document.getElementById("lbl_group_l1").innerText = 'Please check at least one option.';
+            isValid_l1 = false;
+        }
+        else
+        {
+            document.getElementById("lbl_group_l1").innerText = '';
+            isValid_l1 = true;
+        }
+
+        if($A.util.isUndefinedOrNull(group_l2Val))
+        { 
+            document.getElementById("lbl_group_l2").innerText = 'Please check at least one option.';
+            isValid_l2 = false;
+        }
+        else
+        {
+            document.getElementById("lbl_group_l2").innerText = '';
+            isValid_l2 = true;
+        }
+        
+        if($A.util.isUndefinedOrNull(group_l3Val))
+        { 
+            document.getElementById("lbl_group_l3").innerText = 'Please check at least one option.';
+            isValid_l3 = false;
+        }
+        else
+        {
+            document.getElementById("lbl_group_l3").innerText = '';
+            isValid_l3 = true;
+        }//end SFDC-282
         // Code Added by Dev4 for ORMSFDC-1432
         if($A.util.isUndefinedOrNull(ethnicityMainVal) || ethnicityMainVal=="")
         { 
@@ -520,7 +570,7 @@
             $A.util.removeClass(group_mCmp, 'errorComponent');
             isValid_m = true;
         }
-        if($A.util.isUndefinedOrNull(group_nVal) || group_nVal=="")
+        if($A.util.isUndefinedOrNull(group_nVal) || group_nVal=="")          
         { 
             
             document.getElementById("group_nError").innerText = 'Please select at least one option.';
@@ -536,7 +586,7 @@
         
         if(!isValid_a || !isValid_b || !isValid_c || !isValid_d || !isValid_e || 
            !isValid_f || !isValid_g || !isValid_h || !isValid_i || !isValid_j || 
-           !isValid_k || !isValid_m || !isValid_n)
+           !isValid_k || !isValid_m || !isValid_n || !isValid_l1 || !isValid_l2 || !isValid_l3)
         {
             isValid=false;
         }
