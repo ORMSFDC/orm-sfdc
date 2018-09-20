@@ -1290,7 +1290,7 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
     <fields>
         <fullName>Hazard_Insurance__c</fullName>
         <externalId>false</externalId>
-        <label>Annual Hazard Insurance</label>
+        <label>Monthly Hazard Insurance</label>
         <precision>17</precision>
         <required>false</required>
         <scale>2</scale>
