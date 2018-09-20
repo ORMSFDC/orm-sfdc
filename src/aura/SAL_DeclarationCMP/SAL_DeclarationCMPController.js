@@ -100,6 +100,10 @@
         var j = helper.getRadioGroupValue(component, event, helper,"group_j","v.NewDeclaration.ReverseMortgage__c");
         var k = helper.getRadioGroupValue(component, event, helper,"group_k","v.NewDeclaration.FHA_Insured_Loan__c");
         var l = helper.getRadioGroupValue(component, event, helper,"reason_d","v.NewDeclaration.CashtoClose_Borrowed_Money__c");
+        //SFDC - 282
+        var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
+        var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+        var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
         if(h=='No')
         {
             component.set("v.showPrimaryRsdnce",true); 
@@ -340,6 +344,10 @@
         document.getElementById("lbl_group_j").innerText = '';
         document.getElementById("lbl_group_k").innerText = ''; 
         document.getElementById("lbl_reason_d").innerText = ''; 
+        //Sfdc-282
+        document.getElementById("lbl_group_l1").innerText = '';
+        document.getElementById("lbl_group_l2").innerText = '';
+        document.getElementById("lbl_group_l3").innerText = '';
         var msg = '';
         var selectedClient = component.get("v.ClientID");
         
@@ -349,7 +357,7 @@
         if ($A.util.isEmpty(selectedClient)) {
             validDeclr = false;
         } else {
-            //Additional Remarks             
+            //Additional Remarks                                         
             var a = helper.getRadioGroupValue(component, event, helper,"group_a","v.NewDeclaration.Outstanding_Judgments__c");
             var b = helper.getRadioGroupValue(component, event, helper,"group_b","v.NewDeclaration.Lawsuit__c");
             var c = helper.getRadioGroupValue(component, event, helper,"group_c","v.NewDeclaration.Delinquent__c");
@@ -362,6 +370,10 @@
             var j = helper.getRadioGroupValue(component, event, helper,"group_j","v.NewDeclaration.ReverseMortgage__c");
             var k = helper.getRadioGroupValue(component, event, helper,"group_k","v.NewDeclaration.FHA_Insured_Loan__c");
             var l = helper.getRadioGroupValue(component, event, helper,"reason_d","v.NewDeclaration.CashtoClose_Borrowed_Money__c");
+            //SFDC-282
+            var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
+            var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+            var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
             if(h=='No')            {
                 component.set("v.showPrimaryRsdnce",true);
                 document.getElementById("lbl_group_h").innerText = '';
