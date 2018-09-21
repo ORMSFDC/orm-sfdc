@@ -615,6 +615,9 @@
     <members>WorkOrderLineItem</members>
     <members>WorkThanks</members>
     <members>YoutubeLinks__c</members>
+    <members>Fixed_Price_Tier3__mdt</members>
+    <members>Proprietary_Tier_3__mdt</members>
+    <members>Tier3__mdt</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -3658,6 +3661,24 @@
     <members>TriggerLoan.trackLoanStatus</members>
     <members>TriggerLoan.updateLoanSharing</members>
     <members>TriggerLoan.updatePartnerFields</members>
+    <members>Fixed_Price_Tier3.X1</members>
+    <members>Fixed_Price_Tier3.X2</members>
+    <members>Fixed_Price_Tier3.X3</members>
+    <members>Fixed_Price_Tier3.X4</members>
+    <members>Proprietary_Tier_3.X1</members>
+    <members>Proprietary_Tier_3.X2</members>
+    <members>Proprietary_Tier_3.X3</members>
+    <members>Tier3.X1</members>
+    <members>Tier3.X10</members>
+    <members>Tier3.X11</members>
+    <members>Tier3.X2</members>
+    <members>Tier3.X3</members>
+    <members>Tier3.X4</members>
+    <members>Tier3.X5</members>
+    <members>Tier3.X6</members>
+    <members>Tier3.X7</members>
+    <members>Tier3.X8</members>
+    <members>Tier3.X9</members>
     <name>CustomMetadata</name>
   </types>
   <types>
