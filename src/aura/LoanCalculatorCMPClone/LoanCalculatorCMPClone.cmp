@@ -144,6 +144,7 @@
                                             <ui:inputSelect value="{!v.Tier_Value}" class="single" aura:id="InputSelectSingle" change="{!c.onSingleSelectChange}">
                                                 <ui:inputSelectOption text="Tier1" />
                                                 <ui:inputSelectOption text="Tier2" />
+                                                <ui:inputSelectOption text="Tier3" />  <!--SFDC - 289-->
                                             </ui:inputSelect>
                                         </div>
                                     </aura:if>  <!-- Bala-->
@@ -198,6 +199,7 @@
                                                 <ui:inputSelect value="{!v.Tier_Value}" class="single" aura:id="InputSelectSingle" change="{!c.onSingleSelectChange}">
                                                     <ui:inputSelectOption text="Tier1" />
                                                     <ui:inputSelectOption text="Tier2" />
+                                                    <ui:inputSelectOption text="Tier3" />  <!--SFDC - 289-->
                                                 </ui:inputSelect>
                                             </div>
                                         </aura:if> <!-- Bala-->

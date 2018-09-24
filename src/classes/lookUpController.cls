@@ -5,7 +5,8 @@
  *
  * changelog:
  * 07/19/2018: Sahitya - added new fields for saving scenarios, added Helo metadata
- * 03/08/2018: Mike Gill - Debugging SendMailTMP--Exception---System.NullPointerException: Attempt to de-reference a null object
+ * 08/03/2018: Mike Gill - Debugging SendMailTMP--Exception---System.NullPointerException: Attempt to de-reference a null object
+ * 09/20/2018: Sahitya -SFDC - 289 Added 3rd Tier for Portal and Backend Calculator
  */
 public without sharing class lookUpController {
     @AuraEnabled
@@ -124,53 +125,17 @@ public without sharing class lookUpController {
             string BarChartResponse, decimal P_Limit, decimal lineOfCredit,
             String ScenarioType, String Scenario_Response,
             String cash1, string cash5, String cash10, String CaC, String MarginType, String CtoC, decimal Eofis, Scenario__c sce)
-
     {
+        Logger.push('SaveScenario', 'lookUpController');
         Lead myLead = (Lead) objClient;
         System.debug('>>> ' + objClient);
-        system.debug('Date_of_birth__c Dob >> ' + Dob);
-        system.debug('Home_Value_10_years__c HV10yr >> ' + HV10yr);
-        system.debug(' Estimated_home_value__c hv  >> ' + hv);
-        system.debug(' Current_Mortgage_Balance__c mb  >> ' + mb);
-        system.debug(' Monthly_Mortgage_Payment__c mp  >> ' + mp);
-        system.debug('Current_Mortgage_Interest_Rate__c  ir >> ' + ir);
-        system.debug('Index__c Index  >> ' + Index);
-        system.debug('Margin__c Margin  >> ' + Margin);
-        system.debug('MIP >> ' + MIP);
-        system.debug('Initial_Growth_Rate__c IGR  >> ' + IGR);
-        system.debug('Average_Growth_Rate__c AGR  >> ' + AGR);
-        system.debug('Priority__c Priority  >> ' + Priority);
-        system.debug('Cash_Flow_12_months_Amount__c CF12MA >> ' + CF12MA);
-        system.debug('Cash_Flow_60_months_Amount__c CF60MA >> ' + CF60MA);
-        system.debug('Cash_Flow_Remaining_months_Amount__c CFRMA >> ' + CFRMA);
-        system.debug('Cash_Flow_Remaining_Month__c CFRM >> ' + CFRM);
-        system.debug('Cash_Flow_2_Month_Number__c secMN  >> ' + secMN);
-        system.debug('PieChartResponse__c PieChartResponse >> ' + PieChartResponse);
-        system.debug('BarChartResponse__c BarChartResponse  >> ' + BarChartResponse);
-        system.debug('Principal_Limit__c P_Limit >> ' + P_Limit);
-        system.debug('Line_of_Credit__c lineOfCredit >> ' + lineOfCredit);
-        system.debug(' Scenario_Type__c ScenarioType >> ' + ScenarioType);
-        system.debug('Scenario_Response__c Scenario_Response  >> ' + Scenario_Response);
-        system.debug('CashFlow1__c cash1 >> ' + cash1);
-        system.debug('CashFlow5__c cash5 >> ' + cash5);
-        system.debug('CashFlow10__c cash10 >> ' + cash10);
-        system.debug('Cash_at_close__c CaC >> ' + CaC);
-        system.debug('RateType__c MarginType >> ' + MarginType);
-        system.debug('Cash_to_close__c CtoC >> ' + CtoC);
-        system.debug('EOF__c Eofis >> ' + Eofis);
-        //system.debug('Desired_Origination_for_Adjustable_Rate__c ADOis >> ' +ADOis );
         Scenario__c objScenario = new Scenario__c();
-        // try{
-        //1923/04/19
         String[] dates = Dob.split('-');
         String fnlDate = dates[1] + '/' + dates[2] + '/' + dates[0];
         if (test.isRunningTest()) {
             fnlDate = '1923/04/19';
         }
-        //date mydate = date.parse(fnlDate);
-        // date mydate = date.parse(Dob.replace('-','/'));
         myLead.PartnerID__c = userinfo.getuserid();
-        //  myLead.DOB__c=mydate;
         Id Lead_rec_id = Schema.SObjectType.Lead.getRecordTypeInfosByName().get('Scenario Lead').getRecordTypeId();
         myLead.RecordTypeid = Lead_rec_id;
         myLead.Company = objClient.FirstName;
@@ -233,11 +198,7 @@ public without sharing class lookUpController {
         objScenario.HeloMargin__c = sce.HeloMargin__c;
         //End fields Bala 
         insert objScenario;
-        /*  }
-    catch(exception e)
-    {
-    system.debug('SaveScenario--Exception---'+ e);
-    }*/
+        Logger.Pop();
         return objScenario.id;
     }
 
@@ -248,13 +209,11 @@ public without sharing class lookUpController {
      */
     @AuraEnabled
     public static string createAETask() {
-
+        Logger.push('createAETask', 'lookUpController');
         user u = [SELECT contactId, contact.AccountId FROM user WHERE id = :userinfo.getUserId()];
         Task t = new Task();
         Account a = new Account();
-
         a = [SELECT name, Account_Executive_Name__c FROM Account WHERE id = :u.contact.AccountId];
-
         String accname = a.Name;
         t.Subject = +userinfo.getfirstname() + ' ' + userinfo.getLastName() + ' ' + 'from Account:' + ' ' + accname + ' ' + 'has requested a Scenario Package.';
         t.Status = 'Open';
@@ -263,9 +222,8 @@ public without sharing class lookUpController {
         t.ActivityDate = Date.Today();
         t.OwnerId = a.Account_Executive_Name__c;
         t.WhoId = u.contactId;
-
         insert t;
-
+        Logger.pop();
         return t.Id;
     }
 
@@ -301,13 +259,11 @@ public without sharing class lookUpController {
                         PartnerId__r.Contact.AccountId,
                         PartnerId__r.Contact.Account.Account_Executive_Name__r.Email,
                         PartnerId__r.Contact.Account.Account_Executive_Name__r.Username
-
                 FROM Scenario__c
                 WHERE id = :ScenarioID
         ];
 
         ScenarioExportUtil.ScenarioWithRelatedObjects scenarioExport = ScenarioExportUtil.getExportForscenarioId(ScenarioID);
-
         ScenarioChannelClient.sendEvent('LoanAppSubmitted', scenarioExport, ScenarioID);
 
         DateTime DT = objScenario.Client_Lead__r.DOB__c;
@@ -321,7 +277,6 @@ public without sharing class lookUpController {
         } else {
             Phone_Number = FormatPhone(Phone_Number);
         }
-
 
         // Send Scenario Package to AE
         if (objScenario!=null && objScenario.PartnerId__r.Contact.Account.Account_Executive_Name__r.Email != null){
@@ -357,12 +312,7 @@ public without sharing class lookUpController {
             mail.setHtmlBody(body);
             mails.add(mail);
             Messaging.sendEmail(mails);
-
-
         }
-
-
-
         Logger.pop();
     }
 
@@ -401,8 +351,7 @@ public without sharing class lookUpController {
             decimal MonthlyMaintenance,
             String senarioid,
             integer Household_Members) {
-        CashFlowResponse Responseobj = new CashFlowResponse();
-        //  try{
+        CashFlowResponse Responseobj = new CashFlowResponse();        
         String state = [select id,ClientId__r.Client_State__c,Client_Lead__r.State from Scenario__c where id = :senarioid].Client_Lead__r.State;//ClientId__r.Client_State__c;
         //For CashFlow
         //1st Start
@@ -412,8 +361,7 @@ public without sharing class lookUpController {
             MonthlyAsset_income = GetMonthlyAssetIncome(senarioid, MonthlyAssetIncome);
         } else {
             MonthlyAsset_income = 100;
-        }
-        // decimal Totalcashflow=((MonthlyExpense.setScale(2, RoundingMode.HALF_UP)+MonthlyPropertyCharge.setScale(2, RoundingMode.HALF_UP)+MonthlyMaintenance.setScale(2, RoundingMode.HALF_UP))-(MonthlyExpense.setScale(2, RoundingMode.HALF_UP)+MonthlyAsset_income.setScale(2, RoundingMode.HALF_UP)));
+        }        
         decimal Totalcashflow = ((MonthlyIncome.setScale(2, RoundingMode.HALF_UP) + MonthlyAsset_income.setScale(2, RoundingMode.HALF_UP)) - (MonthlyExpense.setScale(2, RoundingMode.HALF_UP) + MonthlyPropertyCharge.setScale(2, RoundingMode.HALF_UP) + MonthlyMaintenance.setScale(2, RoundingMode.HALF_UP)));
 
         system.debug('total MonthlyExpense ' + MonthlyExpense.setScale(2, RoundingMode.HALF_UP) + 'monthly maintence ' + MonthlyMaintenance.setScale(2, RoundingMode.HALF_UP) + ' monthly property charge' + MonthlyPropertyCharge.setScale(2, RoundingMode.HALF_UP) + '-->' + (MonthlyExpense.setScale(2, RoundingMode.HALF_UP) + MonthlyPropertyCharge.setScale(2, RoundingMode.HALF_UP) + MonthlyPropertyCharge.setScale(2, RoundingMode.HALF_UP)));
@@ -452,7 +400,6 @@ public without sharing class lookUpController {
         Decimal RequiredCashFlow = RequiredCashFlowValue ;
         system.debug('RequiredCashFlow' + RequiredCashFlow);
         Responseobj.RequiredCashFlow = RequiredCashFlow;
-
         //2nd end
 
         //3rd
@@ -472,12 +419,6 @@ public without sharing class lookUpController {
         Responseobj.CapacityStorage = CapacityStorage;
         //For CashFlow
         Responseobj.CashFlow = CashFlow;
-
-        /*    }
-catch(Exception ex)
-{
-system.debug(' getCashFlowData----Exception---'+ex);
-}*/
         system.debug(Responseobj);
         return Responseobj;
     }
@@ -491,10 +432,8 @@ system.debug(' getCashFlowData----Exception---'+ex);
         sn.Loan__c = loanId;
         try {
             upsert sn;
-
         } catch (Exception ex) {
         }
-
         Loan_New__c ln = [select id,Household_Members__c,Square_Footage__c from Loan_New__c where id = :loanId];
         ln.Household_Members__c = '' + hhm;
         ln.Square_Footage__c = '' + sft;
@@ -503,17 +442,16 @@ system.debug(' getCashFlowData----Exception---'+ex);
         } catch (Exception ex) {
         }
         return loanId;
-
     }
 
     @AuraEnabled
     public Static Loan_New__c createLoan(String senarioid, Integer hhm, integer sft) {
+        Logger.push('createLoan','lookupController');
         Loan_New__c ln = CreateLoanFromScenario.createLoan(senarioid);
         Scenario__c sn = [select id,is_Converted__c,Loan__c from Scenario__c where id = :senarioid];
         sn.is_Converted__c = true;
         sn.Loan__c = ln.id;
         upsert sn;
-
         ln.Household_Members__c = '' + hhm;
         ln.Square_Footage__c = '' + sft;
 
@@ -522,19 +460,20 @@ system.debug(' getCashFlowData----Exception---'+ex);
                 update ln;
         } catch (exception ex) {
         }
-        return ln;
-
+        Logger.pop();
+        return ln;        
     }
 
 
     public static decimal GetMonthlyAssetIncome(String senarioId, Decimal passedAsset) {
+        Logger.push('GetMonthlyAssetIncome','lookupController');
         List<integer> DOBList = new List<integer>();
         List<date> FinalDOBList = new List<date>();
         integer LifeExpectancyYear;
         Integer LifeExpectancyAgeInMonth;
         decimal TotalAssetAgaintLoan;
         List<Scenario__c> sen = new List<Scenario__c> ();
-        //   try{
+        
         sen = [select ClientId__r.DOB__c,Client_Lead__r.DOB__c from Scenario__c where id = :senarioId];
         for (Scenario__c clientobj : sen) {
             //  date dob=clientobj.ClientId__r.DOB__c;
@@ -542,7 +481,6 @@ system.debug(' getCashFlowData----Exception---'+ex);
             if (null == dob && test.isRunningTest()) {
                 dob = System.today();
                 DOBList.add(100);
-
             }
             Date TodayDate = System.today();
             integer Age = (dob.monthsBetween(TodayDate) / 12);
@@ -566,46 +504,31 @@ system.debug(' getCashFlowData----Exception---'+ex);
         system.debug('LifeExpectancyAgeInMonth' + LifeExpectancyAgeInMonth);
         TotalAssetAgaintLoan = passedAsset * 0.85;
         system.debug('TotalAssetAgaintLoan' + TotalAssetAgaintLoan);
-
-        /*  }
-catch(Exception ex)
-{
-system.debug(' GetMonthlyAssetIncome----Exception---'+ex);
-}*/
         system.debug('TotalAssetAgaintLoan/LifeExpectancyAgeInMonth  -->' + TotalAssetAgaintLoan / LifeExpectancyAgeInMonth);
+        Logger.pop();
         return TotalAssetAgaintLoan / LifeExpectancyAgeInMonth;
     }
-
-
     public static void doUpdateCount() {
-
         try {
-
             user usr = [select contactId,Contact.Accountid,Id from user where id = :userinfo.getUserId() limit 1];
             Integer countOfRunScenario = [select count() from RunScenario__c where Business_individual__c = :usr.contactId];
-
             if (countOfRunScenario != 0) {
                 RunScenario__c RS = [select id,Scenarios_Run__c from RunScenario__c where Business_individual__c = :usr.contactId];
                 RS.Scenarios_Run__c = RS.Scenarios_Run__c + 1;
-
                 update RS;
-
             } else {
                 RunScenario__c NRS = new RunScenario__c();
                 NRS.Business_individual__c = usr.contactId;
                 NRS.Scenarios_Run__c = 1;
                 Insert NRS;
-
             }
-
-        } catch (exception ex) {
-
-            System.debug('>>>> exception ' + ex);
-        }
-
+        } catch (exception ex) {System.debug('>>>> exception ' + ex);}
     }
+
     @AuraEnabled
-    public static list< map<string, map<string, String>>> get_metadataValues(String Tieris) { //Bala - Added Tier1, Tier2 in the backend Calculator, added Helo metadata
+    public static list< map<string, map<string, String>>> get_metadataValues(String Tieris) { 
+        //Bala - Added Tier1, Tier2 in the backend Calculator, added Helo metadata
+        Logger.push('get_metadataValues','lookupController');
         list< map<string, map<string, String>>> data = new list< map<string, map<string, String>>>();
         String MetaDataTable = '';
         String MetaDataTableFixed = '';
@@ -621,25 +544,49 @@ system.debug(' GetMonthlyAssetIncome----Exception---'+ex);
 
         //try{
         if (isCommunityUser) {
-            boolean isAccPremier = [select id,Contact.AccountId,Contact.Account.Premier_Partner__c from user where id = :userinfo.getUserId()].Contact.Account.Premier_Partner__c;
-            MetaDataTable = isAccPremier ? 'Tier2__mdt' : 'Tier1__mdt';
-            MetaDataTableFixed = isAccPremier ? 'Fixed_Price_Tier2__mdt' : 'Fixed_Price_Tier1__mdt';
-            MetaDataTableHelo = isAccPremier ? 'Proprietary_Tier_2__mdt' : 'Proprietary_Tier_1__mdt';
+            //Start SFDC - 289
+            String partnerType = [select id,Contact.AccountId,Contact.Account.Partner_Type__c from user where id=:userinfo.getUserId()].Contact.Account.Partner_Type__c;
+            if(partnerType == 'Non Premier'){
+                MetaDataTable = 'Tier1__mdt';
+                MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';
+                MetaDataTableHelo = 'Proprietary_Tier_1__mdt';
+            }
+            else if(partnerType == 'Premier'){
+                MetaDataTable = 'Tier2__mdt';
+                MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';
+                MetaDataTableHelo = 'Proprietary_Tier_2__mdt';
+            }
+            else if(partnerType == 'Premier Plus'){
+                MetaDataTable = 'Tier3__mdt';
+                MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';
+                MetaDataTableHelo = 'Proprietary_Tier_3__mdt';
+            }
         } else {
-            MetaDataTable = (Tieris != 'Tier1') ? 'Tier2__mdt' : 'Tier1__mdt';
-            MetaDataTableFixed = (Tieris != 'Tier1') ? 'Fixed_Price_Tier2__mdt' : 'Fixed_Price_Tier1__mdt';
-            MetaDataTableHelo = (Tieris != 'Tier1') ? 'Proprietary_Tier_2__mdt' : 'Proprietary_Tier_1__mdt';
-        }
-        // }catch(exception ex){
-        //  System.debug('Exception is '+ex);
-        //}        
+            //new 9/20 need to update tier 3 in the backend calc ToDo
+            if(Tieris == 'Tier1'){
+                MetaDataTable = 'Tier1__mdt';
+                MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';
+                MetaDataTableHelo = 'Proprietary_Tier_1__mdt';
+            }
+            else if(Tieris == 'Tier2'){
+                MetaDataTable = 'Tier2__mdt';
+                MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';
+                MetaDataTableHelo = 'Proprietary_Tier_2__mdt';
+            }
+            else if(Tieris == 'Tier3'){
+                MetaDataTable = 'Tier3__mdt';
+                MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';
+                MetaDataTableHelo = 'Proprietary_Tier_3__mdt';
+            }
+        }//end SFDC - 289
         data.add(get_metadata.get_tierData(MetaDataTable));
         data.add(get_metadata.get_tierData_fixed(MetaDataTableFixed));
         system.debug('helo metadata ' + get_metadata.get_tierData_Helo(MetaDataTableHelo));
         data.add(get_metadata.get_tierData_Helo(MetaDataTableHelo));
-
-        return data;//get_metadata.get_tierData(MetaDataTable);
+        Logger.pop();
+        return data;
     }
+
     @AuraEnabled
     public static List<string> getZipData(string ZIP) {
         List<string> ob = new List<string>();
@@ -651,7 +598,6 @@ system.debug(' GetMonthlyAssetIncome----Exception---'+ex);
 
     @AuraEnabled
     public static list<String> get_states() {
-
         list<String> states = new list<String>();
         for (AuthorisedStates__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM AuthorisedStates__mdt]) {
             states.add(each.MasterLabel);
@@ -659,76 +605,24 @@ system.debug(' GetMonthlyAssetIncome----Exception---'+ex);
         return states;
     }
 
+    //new HELO state fix 289 remove this while deploying to QA
+   /* @AuraEnabled
+    public static list<String> get_helostates() {
+
+        list<String> states = new list<String>();
+        for (HeloState__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM HeloState__mdt]) {
+            states.add(each.MasterLabel);
+        }
+        return states;
+    }*/
 
     @AuraEnabled
-    public static void sendEmailAfterBaydocsAdded(String ScenarioID) {
-
-
-        // try{
-        /*      Scenario__c objScenario=[Select  id,Name,Request_Scenario_Package_Count__c,Client_Lead__r.Name, Client_Lead__r.Lastname , Client_Lead__r.Street, 
-Client_Lead__r.DOB__c,  Client_Lead__r.Email , Client_Lead__r.postalcode , Client_Lead__r.Phone , 
-Client_Lead__r.state , Estimated_home_value__c , Margin__c , 
-Current_Mortgage_Balance__c , Current_Mortgage_Interest_Rate__c, 
-Monthly_Mortgage_Payment__c from scenario__c where id=: ScenarioID ];
-
-
-DateTime DT=objScenario.Client_Lead__r.DOB__c;
-string ClientDOB = '';
-try{
-ClientDOB=DT.format('MM/dd/yyyy');
-}catch(exception ex){}//=DT.format('MM/dd/yyyy');
-string Email_Optional=objScenario.Client_Lead__r.Email;
-if(Email_Optional==null || Email_Optional=='')
-Email_Optional='';        
-string Phone_Number=objScenario.Client_Lead__r.Phone;
-if(Phone_Number==null || Phone_Number=='')
-{Phone_Number='';}
-else{Phone_Number=FormatPhone(Phone_Number);}            
-String getUserEmailID =UserInfo.getUserEmail();
-String getUsername =UserInfo.getName();
-List<Messaging.SingleEmailMessage> mails = 
-new List<Messaging.SingleEmailMessage>();
-// Step 1: Create a new Email
-Messaging.SingleEmailMessage mail = 
-new Messaging.SingleEmailMessage();
-// Step 2: Set list of people who should get the email
-List<String> sendTo = new List<String>();
-string a=Label.Request_Calculator_Package_EmailID;
-sendTo.add(a);
-mail.setToAddresses(sendTo);
-mail.setReplyTo(getUserEmailID);
-mail.setSubject('Request for Scenario Package.');
-String body ;             
-body='<html><body><div>Hello ORM Support,</div><div><br></br></div><div>'+ getUsername +' Requested the calculation Package.</div><div><br></br></div>';
-body+='<table> <tr><td></td><td></td></tr><tr> <td> First Name : </td>';
-body+='<td>'+objScenario.Client_Lead__r.Name+'</td> </tr> <tr> <td>Scenario Id : </td>'; //Added Scenario Id Bala            
-body+='<td>'+objScenario.Name+'</td> </tr> <tr> <td>Last Name : </td>'; //Added Scenario Id Bala            
-body+='<td>'+objScenario.Client_Lead__r.LastName+'</td> </tr> <tr> <td> Address : </td>';
-body+='<td>'+objScenario.Client_Lead__r.Street+'</td> </tr> <tr> <td> State : </td>';
-body+='<td>'+objScenario.Client_Lead__r.State+'</td> </tr> <tr> <td> ZIP : </td>';
-body+='<td>'+objScenario.Client_Lead__r.Postalcode+'</td> </tr></tr> <tr> <td> Phone : </td>';
-body+='<td>'+Phone_Number+'</td> </tr><tr> <td> Date of Birth : </td>';
-body+='<td>'+ClientDOB+'</td> </tr><tr> <td> Email : </td>';
-body+='<td>'+Email_Optional+'</td> </tr><tr> <td> Home value: </td>';
-body+='<td>$'+objScenario.Estimated_home_value__c.format()+0.00+'</td> </tr><tr> <td> Mortgage Balance: </td>';
-body+='<td>$'+objScenario.Current_Mortgage_Balance__c.format()+0.00+'</td> </tr><tr> <td> Current Interest Rate : </td>';
-body+='<td>'+objScenario.Current_Mortgage_Interest_Rate__c+'%</td> </tr><tr> <td>Current Mortgage Payment: </td>';
-body+='<td>$'+objScenario.Monthly_Mortgage_Payment__c+'</td> </tr><tr> <td>Margin : </td>';            
-body+='<td>'+objScenario.Margin__c+'%</td> </tr> <tr><td colspan="1"></td></tr> <td colspan="1"></td><br/></tr> <tr> <td colspan="1">Thanks, </td> </tr> <tr>'; 
-body+='<td colspan="1">'+getUsername+'</td> </tr>'; 
-body+=  ' </table> </body> </html>';      
-mail.setHtmlBody(body);
-mails.add(mail);
-Messaging.sendEmail(mails);*/
-        //  }
-        //  catch(exception e)
-        //  {
-        //  system.debug('SendMailTMP--Exception---'+ e);
-        //}
-
+    public static void sendEmailAfterBaydocsAdded(String ScenarioID) { //@TODO need to remove this method
     }
+
     @AuraEnabled
-    public static String getScenariData(String dob, String ev, String pm, String ADOValIs) {
+    public static String getScenariData(String dob, String ev, String pm, String ADOValIs, String Tieris) { //SFDC - 289 added new string Tieris
+        Logger.push('getScenariData','lookupController');
         System.debug('>>>> dob ' + dob);
         System.debug('>>>> ev ' + ev);
         System.debug('>>>> pm ' + pm);
@@ -770,16 +664,47 @@ Messaging.sendEmail(mails);*/
             gen.writeStringField('DesiredOriginationFee', ADOValIs);
         }
         //write metadata rate and Originaed orm fee ino JSON String
-        boolean isAccPremier = [select id,Contact.AccountId,Contact.Account.Premier_Partner__c from user where id = :userinfo.getUserId()].Contact.Account.Premier_Partner__c;
-        String MetaDataTableFixed = isAccPremier ? 'Fixed_Price_Tier2__mdt' : 'Fixed_Price_Tier1__mdt';
+        //Start SFDC - 289
+        boolean isCommunityUser = true;
+        user u = [select id,ContactId from user where id = :userinfo.getUserId()];
+        if (u.ContactId != null) {
+            isCommunityUser = true;
+        } else {
+            isCommunityUser = false;
+        }
+        String MetaDataTableFixed = '';
+        if(isCommunityUser){
+            String partnerType = [select id,Contact.AccountId,Contact.Account.Partner_Type__c from user where id=:userinfo.getUserId()].Contact.Account.Partner_Type__c;
+            
+            if(partnerType == 'Non Premier'){                
+                MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';                
+            }
+            else if(partnerType == 'Premier'){
+                MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';
+            }
+            else if(partnerType == 'Premier Plus'){
+                MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';
+            }
+        }
+        else{
+            if(Tieris == 'Tier1'){                
+                MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';
+            }
+            else if(Tieris == 'Tier2'){
+                MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';
+            }
+            else if(Tieris == 'Tier3'){
+                MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';
+            }
+        }
+        //end SFDC - 289
         String metadataQuery = 'SELECT Id, DeveloperName,  Origination_to_ORM__c, Rate__c FROM ' + MetaDataTableFixed;
         gen.writeFieldName('origFees');
         gen.writeStartObject();
 
         list<sObject>metadataResults = database.query(metadataQuery);
         for (sObject eachsObject : metadataResults) {
-            decimal mapingValue = (HUDis < Decimal.valueOf(String.valueOf(eachsObject.get('Origination_to_ORM__c')))) ? HUDis : Decimal.valueOf(String.valueOf(eachsObject.get('Origination_to_ORM__c')));
-            //gen.writeObjectField(String.valueOf(eachsObject.get('Rate__c')), String.valueOf(mapingValue));
+            decimal mapingValue = (HUDis < Decimal.valueOf(String.valueOf(eachsObject.get('Origination_to_ORM__c')))) ? HUDis : Decimal.valueOf(String.valueOf(eachsObject.get('Origination_to_ORM__c')));            
             Decimal keyIs = Decimal.valueOf(String.valueOf(eachsObject.get('Rate__c'))).setScale(2);
             Decimal roundedkeyIs = Math.round(keyIs * 100) / 100.0;
             system.debug(roundedkeyIs);
@@ -787,15 +712,12 @@ Messaging.sendEmail(mails);*/
             gen.writeObjectField(String.valueOf(roundedkeyIs), Decimal.valueOf(String.valueOf(mapingValue)).setScale(2));
             system.debug('t ->' + Decimal.valueOf(String.valueOf(mapingValue)).setScale(2));
             system.debug('s  -> ' + Decimal.valueOf(String.valueOf(eachsObject.get('Rate__c'))).setScale(2));
-            //system.debug('ss ' +Decimal.valueOf(eachsObject.get('Rate__c')) );
         }
         gen.writeEndObject();
         gen.writeEndObject();
 
         String pretty = gen.getAsString();
-        System.debug('firstValue ,secondValue ' + firstValue + ' ,' + secondValue);
         System.debug('>>>>> HUDis ' + HUDis);
-
         system.debug('reques is  -->' + pretty);
         req.setBody(pretty);
         //yyy/mm/dd
@@ -807,6 +729,7 @@ Messaging.sendEmail(mails);*/
             doUpdateCount();
             return res.getBody();
         }
+        Logger.pop();
         return null;
     }
 }

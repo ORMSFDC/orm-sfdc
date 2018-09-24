@@ -74,9 +74,9 @@
     <!--Response Attribute-->
     <aura:attribute name="PieChartResponse" type="string" />
     <aura:attribute name="BarChartResponse" type="string" />
-    <aura:attribute name="Margins" type="Object"/>                                                         
-    <aura:attribute name="chartobj" type="Object" access="public"/>                                               
-    <aura:attribute name="dynamic_cash" type="Aura.component[]"/>                                               
+    <aura:attribute name="Margins" type="Object"/>
+    <aura:attribute name="chartobj" type="Object" access="public"/>
+    <aura:attribute name="dynamic_cash" type="Aura.component[]"/>
     <aura:attribute name="data_is" type="Object"/>
     <aura:attribute name="MarginType" type="String"/>       
     <aura:handler name="init" value="{!this}" action="{!c.doinit}"/> <!--Helo-->

@@ -1,34 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>Asian_race__c</fullName>
         <externalId>false</externalId>
         <label>Asian_race</label>
@@ -77,7 +88,8 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Bankruptcy_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Bankruptcy Reason</label>
@@ -85,7 +97,8 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>2</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Bankruptcy__c</fullName>
         <externalId>false</externalId>
         <label>Bankruptcy</label>
@@ -105,72 +118,6 @@
                     <fullName>Yes</fullName>
                     <default>false</default>
                     <label>Yes</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Borrower_Ethnicity__c</fullName>
-        <externalId>false</externalId>
-        <label>Borrower_Ethnicity</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Y</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>N</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Borrower_Race__c</fullName>
-        <externalId>false</externalId>
-        <label>Borrower_Race</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Borrower_Sex__c</fullName> 
-        <externalId>false</externalId>
-        <label>Borrower_Sex</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Yes</fullName>
-                    <default>false</default>
-                </value>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -198,7 +145,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CashtoClose__c</fullName>
         <externalId>false</externalId>
         <label>CashtoClose</label>
@@ -221,7 +169,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>DeclarationClient__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -232,7 +181,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>DeclarationLoan__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -243,7 +193,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Declaration_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Declaration Reason</label>
@@ -252,14 +203,16 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Declaration_Remarks__c</fullName>
         <externalId>false</externalId>
         <label>Declaration Remarks</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Delinquent_Address__c</fullName>
         <externalId>false</externalId>
         <label>Delinquent Address</label>
@@ -268,14 +221,16 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Delinquent_Date_of_the_Debt__c</fullName>
         <externalId>false</externalId>
         <label>Delinquent Date  of the Debt</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Delinquent_FHA_VA_Case__c</fullName>
         <externalId>false</externalId>
         <label>Delinquent FHA VA Case</label>
@@ -284,7 +239,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Delinquent_Name__c</fullName>
         <externalId>false</externalId>
         <label>Delinquent Name</label>
@@ -293,7 +249,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Delinquent_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Delinquent Reason</label>
@@ -301,7 +258,8 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>2</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Delinquent__c</fullName>
         <externalId>false</externalId>
         <label>Delinquent</label>
@@ -324,7 +282,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Endorser__c</fullName>
         <externalId>false</externalId>
         <label>Endorser</label>
@@ -347,7 +306,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Enrolled_tribe__c</fullName>
         <externalId>false</externalId>
         <label>Enrolled_tribe</label>
@@ -356,7 +316,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ethnicity_New__c</fullName>
         <externalId>false</externalId>
         <label>Sub-Ethnicity</label>
@@ -400,7 +361,8 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ethnicity__c</fullName>
         <externalId>false</externalId>
         <label>Ethnicity</label>
@@ -428,7 +390,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Acc_No__c</fullName>
         <externalId>false</externalId>
         <label>FHA Acc No</label>
@@ -438,7 +401,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Amount__c</fullName>
         <externalId>false</externalId>
         <label>FHA Amount</label>
@@ -447,7 +411,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Creditor__c</fullName>
         <externalId>false</externalId>
         <label>FHA Creditor</label>
@@ -455,7 +420,8 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Insured_Loan__c</fullName>
         <externalId>false</externalId>
         <label>FHA Insured Loan</label>
@@ -478,7 +444,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Property_Address__c</fullName>
         <externalId>false</externalId>
         <label>FHA Property Address</label>
@@ -486,7 +453,8 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Unpaid_Loan__c</fullName>
         <externalId>false</externalId>
         <label>FHA Unpaid Loan</label>
@@ -495,21 +463,24 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsActive__c</fullName>
         <defaultValue>true</defaultValue>
         <externalId>false</externalId>
         <label>IsActive</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsDeclaration_Filled_From_Tab__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Is Declaration Filled From Tab</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lawsuit__c</fullName>
         <externalId>false</externalId>
         <label>Lawsuit</label>
@@ -532,7 +503,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Outstanding_Judgments__c</fullName>
         <description>Are there any outstanding judgements against you?</description>
         <externalId>false</externalId>
@@ -556,7 +528,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Permanent_Resident__c</fullName>
         <externalId>false</externalId>
         <label>Permanent Resident</label>
@@ -579,7 +552,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Residence__c</fullName>
         <externalId>false</externalId>
         <label>Primary Residence</label>
@@ -602,7 +576,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Race__c</fullName>
         <externalId>false</externalId>
         <label>Race</label>
@@ -690,7 +665,8 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>5</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ReverseMortgage_Cost__c</fullName>
         <externalId>false</externalId>
         <label>ReverseMortgage Cost</label>
@@ -699,7 +675,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ReverseMortgage__c</fullName>
         <externalId>false</externalId>
         <label>ReverseMortgage</label>
@@ -722,14 +699,16 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ReverseMortgage_finproduct__c</fullName>
         <externalId>false</externalId>
         <label>ReverseMortgage Finproduct</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Sex_New__c</fullName>
         <externalId>false</externalId>
         <label>Sex_New</label>
@@ -758,7 +737,8 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>3</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Sex__c</fullName>
         <externalId>false</externalId>
         <label>Sex</label>
@@ -791,7 +771,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Sub_Ethnicity__c</fullName>
         <externalId>false</externalId>
         <label>Sub_Ethnicity</label>
@@ -825,7 +806,8 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>US_Citizen__c</fullName>
         <externalId>false</externalId>
         <label>US Citizen</label>
@@ -845,6 +827,78 @@
                     <fullName>Yes</fullName>
                     <default>false</default>
                     <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Borrower_Ethnicity__c</fullName>
+        <externalId>false</externalId>
+        <label>Borrower_Ethnicity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Borrower_Race__c</fullName>
+        <externalId>false</externalId>
+        <label>Borrower_Race</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Borrower_Sex__c</fullName>
+        <externalId>false</externalId>
+        <label>Borrower_Sex</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -875,7 +929,8 @@
         <searchResultsAdditionalFields>DeclarationLoan__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>IsActive__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>US_Citizen__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><listViews>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>DeclarationClient__c</columns>
@@ -886,13 +941,17 @@
         <columns>Ethnicity__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Declarations</label>
-    </listViews><sharingReasons>
+    </listViews>
+    <sharingReasons>
         <fullName>LoanProcessor__c</fullName>
         <label>LoanProcessor</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Loan_Officer__c</fullName>
         <label>Loan Officer</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Origination_Loan_Officer__c</fullName>
         <label>Origination Loan Officer</label>
-    </sharingReasons></CustomObject>
+    </sharingReasons>
+</CustomObject>

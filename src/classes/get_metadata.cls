@@ -6,9 +6,11 @@
  * changelog:
  * 07/17/2018: Sahitya - added method for fetching Helo metadata tables
  * 08/20/2018: Sahitya -SFDC - 250
+ * 09/20/2018: Sahitya -SFDC - 289 - adding 3rd tier for Pricing
  */
-public class get_metadata{
+public class get_metadata{    
     public static map<string,map<String,String>> get_tierData(String fetchFrom){
+        Logger.push('get_tierData', 'get_metadata');
         //craete a map which store map<margin,map<percentage,LOC>>()  data
         map<string,map<String,String>> metataDataFields = new map<string,map<String,String>>();
         IF(fetchFrom==NULL || fetchFrom==''){
@@ -25,15 +27,27 @@ public class get_metadata{
             }
             metataDataFields.put(String.valueOf(eachsObject.get('Margin__c')),percentage_and_Loc);
         }
-        return metataDataFields;
+        Logger.pop();
+        return metataDataFields;        
     }
     
     public static map<string,map<String,String>> get_tierData_fixed(String fetchFrom){
+        Logger.push('get_tierData', 'get_tierData_fixed');
         //craete a map which store map<margin,map<percentage,LOC>>()  data
         map<string,map<String,String>> metataDataFields = new map<string,map<String,String>>();
-        IF(fetchFrom==NULL || fetchFrom==''){
+        //SFDC - 289 start
+        String partnerType = [select id,Contact.AccountId,Contact.Account.Partner_Type__c from user where id=:userinfo.getUserId()].Contact.Account.Partner_Type__c;
+        
+        IF((fetchFrom==NULL || fetchFrom=='') && partnerType == 'Non Premier'){
             fetchFrom = 'Fixed_Price_Tier1__mdt';
         }
+        ELSE IF((fetchFrom==NULL || fetchFrom=='') && partnerType == 'Premier'){
+            fetchFrom = 'Fixed_Price_Tier2__mdt';
+        }
+        ELSE IF((fetchFrom==NULL || fetchFrom=='') && partnerType == 'Premier Plus'){
+            fetchFrom = 'Fixed_Price_Tier3__mdt';
+        }    
+        //SFDC - 289 end
         list<string> metadatfields = 'Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Credit_to_Borrower__c, Origination_to_ORM__c, Price__c, Rate__c'.split(',');
         String metadataQuery = 'SELECT Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Credit_to_Borrower__c, Origination_to_ORM__c, Price__c, Rate__c FROM '+fetchFrom;
         list<sObject>metadataResults = database.query(metadataQuery);
@@ -55,25 +69,29 @@ public class get_metadata{
             fixed_rate.put(String.valueOf(eachsObject.get('Rate__c')),String.valueOf(eachsObject.get('Rate__c')));
         }
         metataDataFields.put('fixed_rate_orm',fixed_rate);
+        Logger.pop();
         return metataDataFields;
     }
     
     //Fetch Helo Tier data
     public static map<string,map<String,String>> get_tierData_Helo(String fetchFrom){
+        Logger.push('get_tierData', 'get_tierData_Helo');
         system.debug('fetchFrom '+fetchFrom);
-        
-        boolean isAccPremier = [select id,Contact.AccountId,Contact.Account.Premier_Partner__c from user where id=:userinfo.getUserId()].Contact.Account.Premier_Partner__c;        
-        
+        //SFDC - 289 start
+        String partnerType = [select id,Contact.AccountId,Contact.Account.Partner_Type__c from user where id=:userinfo.getUserId()].Contact.Account.Partner_Type__c;
         map<string,map<String,String>> metataDataFields = new map<string,map<String,String>>();
-        IF((fetchFrom==NULL || fetchFrom=='') && isAccPremier == false){
+        
+        IF((fetchFrom==NULL || fetchFrom=='') && partnerType == 'Non Premier'){
             fetchFrom = 'Proprietary_Tier_1__mdt';
         }
-        ELSE IF((fetchFrom==NULL || fetchFrom=='') && isAccPremier == true){
+        ELSE IF((fetchFrom==NULL || fetchFrom=='') && partnerType == 'Premier'){
             fetchFrom = 'Proprietary_Tier_2__mdt';
         }
-        fetchFrom = fetchFrom.replace(',','');
-         system.debug('fetchFrom '+fetchFrom);
-       
+        ELSE IF((fetchFrom==NULL || fetchFrom=='') && partnerType == 'Premier Plus'){
+            fetchFrom = 'Proprietary_Tier_3__mdt';
+        }    
+        //SFDC - 289 end
+        fetchFrom = fetchFrom.replace(',','');               
         list<string> metadatfields = 'Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Credit_to_Borrower__c, Origination_to_Partner__c, Price__c, Rate__c, Servicing_Fee__c'.split(',');
         String metadataQuery = 'SELECT Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Credit_to_Borrower__c, Origination_to_Partner__c, Price__c, Rate__c, Servicing_Fee__c FROM '+fetchFrom;
         list<sObject>metadataResults = database.query(metadataQuery);
@@ -103,7 +121,7 @@ public class get_metadata{
         }
         system.debug('>>>rateToServiceFee '+rateToServiceFee);
         metataDataFields.put('Helo_service',rateToServiceFee);
-        
+        Logger.pop();
         return metataDataFields;
     }
 }

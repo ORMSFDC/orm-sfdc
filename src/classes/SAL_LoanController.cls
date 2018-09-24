@@ -5,6 +5,7 @@
 * changelog:
 * 09/06/2018: Sahitya: SFDC-237 - Fetch Helo rates, orig to orm from Metadata table
 * 09/07/2018: Sahitya: Fetch Helo Margin from Metadata table
+* 09/20/2018: Sahitya: SFDC-289 - Added 3rd Tier
 */
 
 public with sharing class SAL_LoanController {
@@ -188,6 +189,7 @@ public with sharing class SAL_LoanController {
         }
         return obj.Id;
     }
+
     @AuraEnabled
     public static void UpdateLiability(Loan_New__c ObjLoan,string LoanId)
     {
@@ -248,6 +250,7 @@ public with sharing class SAL_LoanController {
             Exception_log.Create_Custom_Logs(ex.getMessage(),'liability','date:'+System.today(),'UpdateLiability');
         }
     }
+
     public static void checkAndUpdateLiabilityClient(string LoanId)
     {
         Loan_New__c objLoan = new Loan_New__c();
@@ -381,18 +384,21 @@ public with sharing class SAL_LoanController {
     @AuraEnabled
     public static list<string>getRateFixProduct()
     {
-        List<string>FinaRateList=new List<string>();
-        Boolean IsPremierParthner;
+        List<string>FinaRateList=new List<string>();        
+        String partnerType;
         try{
-            Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
-            IsPremierParthner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
-            if(IsPremierParthner)
-            {
+            id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+            //SFDC-289
+            partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c;                        
+            if(partnerType == 'Premier'){
                 FinaRateList= getRateFixedPriceTier2();
             }
-            else{
+            else if(partnerType == 'Non Premier'){
                 FinaRateList= getRateFixedPriceTier1();
-            }
+            }  
+            else if(partnerType == 'Premier Plus'){
+                FinaRateList= getRateFixedPriceTier3();
+            }      
         } 
         catch(Exception ex)
         {
@@ -406,17 +412,20 @@ public with sharing class SAL_LoanController {
     public static list<string>getHeloRate()
     {
         List<string>HeloRateList=new List<string>();
-        Boolean IsPremierParthner;
+        String partnerType;
         try{
-            Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
-            IsPremierParthner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
-            if(IsPremierParthner)
-            {
-                HeloRateList = getHeloRateTier2();
+            Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+            //SFDC-289
+            partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+            if(partnerType == 'Premier'){
+                HeloRateList= getHeloRateTier2();
             }
-            else{
-                HeloRateList = getHeloRateTier1();
-            } 
+            else if(partnerType == 'Non Premier'){
+                HeloRateList= getHeloRateTier1();
+            }  
+            else if(partnerType == 'Premier Plus'){
+                HeloRateList= getHeloRateTier3();
+            }    
         } 
         catch(Exception ex)
         {
@@ -431,17 +440,20 @@ public with sharing class SAL_LoanController {
     {
         decimal ratevalue=decimal.valueOf(rate);
         string FinaOrigination;
-        Boolean IsPremierParthner;
+        String partnerType;
         try{
-            Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
-            IsPremierParthner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
-            if(IsPremierParthner)
-            {
+            Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+            //SFDC-289
+            partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+            if(partnerType == 'Premier'){
                 FinaOrigination= getORMOriginationT2(ratevalue);
             }
-            else{
+            else if(partnerType == 'Non Premier'){
                 FinaOrigination= getORMOriginationT1(ratevalue);
             }  
+            else if(partnerType == 'Premier Plus'){
+                FinaOrigination= getORMOriginationT3(ratevalue);
+            }                
         } 
         catch(Exception ex)
         {
@@ -457,7 +469,6 @@ public with sharing class SAL_LoanController {
     {
         decimal ratevalue=decimal.valueOf(rate);
         string HeloOrigination;
-        Boolean IsPremierParthner;
         try{
            HeloOrigination= getHeloOrigination(ratevalue);            
         } 
@@ -474,7 +485,6 @@ public with sharing class SAL_LoanController {
     {
         decimal ratevalue=decimal.valueOf(rate);
         string HeloMargin;
-        Boolean IsPremierParthner;
         try{
            HeloMargin= getHeloMargin(ratevalue);            
         } 
@@ -490,24 +500,26 @@ public with sharing class SAL_LoanController {
     {
         decimal ratevalue=decimal.valueOf(rate);
         string FinaBorrower;
-        Boolean IsPremierParthner;
+        String partnerType;
         try{
-            Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
-            IsPremierParthner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
-            if(IsPremierParthner)
-            {
+            Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+            //SFDC-289
+            partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+            if(partnerType == 'Premier'){
                 FinaBorrower= getORMBorrowerT2(ratevalue);
             }
-            else{
+            else if(partnerType == 'Non Premier'){
                 FinaBorrower= getORMBorrowerT1(ratevalue);
             }  
+            else if(partnerType == 'Premier Plus'){
+                FinaBorrower= getORMBorrowerT3(ratevalue);
+            }    
         } 
         catch(Exception ex)
         {
             system.debug('getBorrower .....'+ ex.getMessage());
         }
         return FinaBorrower;
-        
     }
     
     public static list<string>getRateFixedPriceTier1()
@@ -531,6 +543,20 @@ public with sharing class SAL_LoanController {
         for(Fixed_Price_Tier2__mdt rt:lstPriceT2)
         {
             
+            string value= string.valueOf( rt.Rate__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+
+    //SFDC-289
+    public static list<string>getRateFixedPriceTier3()
+    {
+        List<string>allrate=new List<string>();
+        list<Fixed_Price_Tier3__mdt> lstPriceT3=new list<Fixed_Price_Tier3__mdt>();
+        lstPriceT3=[Select  Rate__c from Fixed_Price_Tier3__mdt order by Rate__c ];
+        for(Fixed_Price_Tier3__mdt rt:lstPriceT3)
+        {            
             string value= string.valueOf( rt.Rate__c);
             allrate.add(value);
         }
@@ -566,6 +592,22 @@ public with sharing class SAL_LoanController {
         return allrate;
     }
 
+    //SFDC-289
+    public static list<string>getHeloRateTier3()
+    {
+        List<string>allrate=new List<string>();
+        list<Proprietary_Tier_3__mdt> lstPriceT2=new list<Proprietary_Tier_3__mdt>();
+        lstPriceT2=[Select  Rate__c from Proprietary_Tier_3__mdt order by Rate__c ];
+        for(Proprietary_Tier_3__mdt rt:lstPriceT2)
+        {
+            
+            string value= string.valueOf( rt.Rate__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+
+
     public static string getORMOriginationT1(decimal Rate)
     {
         string origtoorm;
@@ -583,20 +625,35 @@ public with sharing class SAL_LoanController {
         origtoorm=string.valueOf( Orignation);
         return origtoorm;
     }
+
+    //SFDC-289
+    public static string  getORMOriginationT3(decimal Rate)
+    {
+        string origtoorm;
+        decimal Orignation;
+        Orignation=[Select Origination_to_ORM__c from Fixed_Price_Tier3__mdt where Rate__c=:Rate].Origination_to_ORM__c;
+        origtoorm=string.valueOf( Orignation);
+        return origtoorm;
+    }
     
     //SFDC-237
     public static string getHeloOrigination(decimal Rate)
     {
         string origtoorm;
         decimal Orignation;
-        Boolean IsPremierPartner;
-        Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
-        IsPremierPartner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
-        if(IsPremierPartner){
+        String partnerType;       
+        Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+        //SFDC-289
+        partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+        if(partnerType == 'Premier'){
             Orignation=[Select Origination_to_Partner__c from Proprietary_Tier_2__mdt where Rate__c=:Rate].Origination_to_Partner__c;
-        }else{
-            Orignation=[Select Origination_to_Partner__c from Proprietary_Tier_1__mdt where Rate__c=:Rate].Origination_to_Partner__c;
         }
+        else if(partnerType == 'Non Premier'){
+            Orignation=[Select Origination_to_Partner__c from Proprietary_Tier_1__mdt where Rate__c=:Rate].Origination_to_Partner__c;
+        }  
+        else if(partnerType == 'Premier Plus'){
+            Orignation=[Select Origination_to_Partner__c from Proprietary_Tier_3__mdt where Rate__c=:Rate].Origination_to_Partner__c;
+        }   
         origtoorm=string.valueOf( Orignation);
         return origtoorm;
     }
@@ -606,14 +663,19 @@ public with sharing class SAL_LoanController {
     {
         string heloMargin;
         decimal margin;
-        Boolean IsPremierPartner;
-        Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
-        IsPremierPartner=[select Premier_Partner__c from account where id=:AccountID].Premier_Partner__c;
-        if(IsPremierPartner){
+        String partnerType;       
+        Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+        //SFDC-289
+        partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+        if(partnerType == 'Premier'){
             margin=[Select Helomargin__c from Proprietary_Tier_2__mdt where Rate__c=:Rate].HeloMargin__c;
-        }else{
-            margin=[Select Helomargin__c from Proprietary_Tier_1__mdt where Rate__c=:Rate].Helomargin__c;
         }
+        else if(partnerType == 'Non Premier'){
+            margin=[Select Helomargin__c from Proprietary_Tier_1__mdt where Rate__c=:Rate].HeloMargin__c;
+        }  
+        else if(partnerType == 'Premier Plus'){
+            margin=[Select Helomargin__c from Proprietary_Tier_3__mdt where Rate__c=:Rate].HeloMargin__c;
+        }   
         heloMargin=string.valueOf(margin);
         return heloMargin;
     }
@@ -636,6 +698,18 @@ public with sharing class SAL_LoanController {
         origtoorm=string.valueOf( Orignation);
         return origtoorm;
     }
+
+    //SFDC-289
+    public static string  getORMBorrowerT3(decimal Rate)
+    {
+        string origtoorm;
+        decimal Orignation;
+        Orignation=[Select Credit_to_Borrower__c from Fixed_Price_Tier3__mdt where Rate__c=:Rate].Credit_to_Borrower__c;
+        origtoorm=string.valueOf( Orignation);
+        return origtoorm;
+    }
+
+
     @AuraEnabled
     public static List<LoanOfficerResponse>  getLoanOfficerList() {
         List<LoanOfficerResponse> ListLoanOfficer = New List<LoanOfficerResponse>();
