@@ -820,7 +820,8 @@
             'dob':dobIs,
             'ev':''+component.get('v.EHV'),
             'pm':''+pmIs,
-            'ADOValIs':''+ADOVal
+            'ADOValIs':''+ADOVal,
+            'Tieris':component.get('v.Tier_Value') //SFDC - 289 Added this for 3rd tier backend calculator
         });
         
         action.setCallback(this,function(data){            

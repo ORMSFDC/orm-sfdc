@@ -8,11 +8,11 @@
     </values>
     <values>
         <field>Origination_to_ORM__c</field>
-        <value xsi:type="xsd:double">1000.0</value>
+        <value xsi:type="xsd:double">3100.0</value>
     </values>
     <values>
         <field>Price__c</field>
-        <value xsi:type="xsd:double">4.0</value>
+        <value xsi:type="xsd:double">2.5</value>
     </values>
     <values>
         <field>Rate__c</field>

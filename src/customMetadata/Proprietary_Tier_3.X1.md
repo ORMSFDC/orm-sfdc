@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Origination_to_Partner__c</field>
-        <value xsi:type="xsd:double">1.5</value>
+        <value xsi:type="xsd:double">0.5</value>
     </values>
     <values>
         <field>Price__c</field>

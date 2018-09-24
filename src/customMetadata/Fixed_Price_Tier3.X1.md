@@ -4,18 +4,18 @@
     <protected>false</protected>
     <values>
         <field>Credit_to_Borrower__c</field>
-        <value xsi:type="xsd:double">0.735</value>
-    </values>
-    <values>
-        <field>Origination_to_ORM__c</field>
         <value xsi:type="xsd:double">0.0</value>
     </values>
     <values>
+        <field>Origination_to_ORM__c</field>
+        <value xsi:type="xsd:double">4600.0</value>
+    </values>
+    <values>
         <field>Price__c</field>
-        <value xsi:type="xsd:double">2.5</value>
+        <value xsi:type="xsd:double">102.5</value>
     </values>
     <values>
         <field>Rate__c</field>
-        <value xsi:type="xsd:double">5.06</value>
+        <value xsi:type="xsd:double">4.5</value>
     </values>
 </CustomMetadata>

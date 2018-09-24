@@ -4,6 +4,8 @@
  * @date 08/03/18 (MG/QDA)
  * @changelog Limited Refactoring, Added Logging Framework Hooks, Split out logic into new methods
  * @todo see inline
+ * 9/04/2018: Sahitya: Added Margin for HELO
+ * 9/20/2018: Sahitya: SFDC-289 - Added 3rd Tier
  */
 
 global class ScenarioExportUtil {
@@ -42,7 +44,7 @@ global class ScenarioExportUtil {
         PartnerId__r.Contact.Account.Company_NMLS_ID__c
         FROM Scenario__c
         WHERE  Id = :scenarioId];
-
+    
         String Loanrate;
         if (loanlead1.RateType__c == 'Adjust') { 
             Loanrate = '103'; 
@@ -77,7 +79,7 @@ global class ScenarioExportUtil {
         ScenarioExport.loanlead.put('Partner_State', loanlead1.PartnerId__r.Contact.Account.BillingState);
         ScenarioExport.loanlead.put('Partner_ZipCode', loanlead1.PartnerId__r.Contact.Account.BillingPostalcode);
         ScenarioExport.loanlead.put('Partner_Phone', loanlead1.PartnerId__r.Contact.Account.Phone);
-        //Helo fix
+        //Helo margin fix
         if(loanlead1.RateType__c == 'Helo'){
             ScenarioExport.loanlead.put('Margin', loanlead1.HeloMargin__c);
         }else{
@@ -118,13 +120,22 @@ global class ScenarioExportUtil {
         Decimal HUDis = firstValue + secondValue;
         HUDis = (HUDis > 6000) ? 6000 : HUDis;
 
-        //Get rate and Originaed orm fee ino JSON String from custom metadata
-
-        // Get Account Premier boolean value
-        boolean isAccPremier = s.PartnerId__r.Contact.Account.Premier_Partner__c;
-
+        //Get rate and Originaed orm fee ino JSON String from custom metadata        
+        // Get Account Premier Type value
+        //SFDC - 289
+        String partnerType = [select id,Contact.AccountId,Contact.Account.Partner_Type__c from user where id=:userinfo.getUserId()].Contact.Account.Partner_Type__c;
+        
         // Determine source CMT object
-        String MetaDataTableFixed = isAccPremier ? 'Fixed_Price_Tier2__mdt' : 'Fixed_Price_Tier1__mdt';
+        String MetaDataTableFixed = '';
+        if(partnerType == 'Non Premier'){                
+                MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';                
+            }
+            else if(partnerType == 'Premier'){
+                MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';
+            }
+            else if(partnerType == 'Premier Plus'){
+                MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';
+            }       
 
         // Build cmt query string
         String metadataQuery = 'SELECT Id, DeveloperName,  Origination_to_ORM__c, Rate__c FROM ' + MetaDataTableFixed;
