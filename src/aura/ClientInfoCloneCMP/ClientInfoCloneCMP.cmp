@@ -1081,7 +1081,7 @@
                             <aura:if isTrue="{!v.showAlert}">  
                                 <ui:message title="Confirmation" severity="confirm" closable="false">
                                     <b> {!v.Messages}</b>
-                                </ui:message>
+                                </ui:message>                                                                                    
                             </aura:if>
                             <aura:if isTrue="{!v.showError}">  
                                 <ui:message title="Error" severity="error" closable="false">
