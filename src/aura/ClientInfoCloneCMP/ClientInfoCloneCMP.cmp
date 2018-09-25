@@ -461,14 +461,14 @@
                                 <th scope="col" class="tabhead">
                                     <div class="slds-truncate customFont17" title="Cash At Close"  style="text-align:center;">
                                         {!v.typeOfFunds}
-                                        <!-- added if condition - SRINI -->
+                                        <!-- added if condition-SRINI -->
                                         <aura:if isTrue="{! v.typeOfFunds == 'Cash at close'}">
                                             <lightning:helptext content="Maximum Cash Available at Close" />
                                             <aura:set attribute="else">
                                                 <lightning:helptext content="This is the amount your client will need to bring to close" /><!--Maximum Cash Available at Close-->
                                             </aura:set>
                                         </aura:if>
-                                        <!-- if condition ends- SRINI -->
+                                        <!-- if condition ends-SRINI -->
                                     </div>
                                 </th>
                                 
