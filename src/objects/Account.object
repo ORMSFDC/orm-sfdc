@@ -1,56 +1,73 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>CallHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EmailHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EnableCustomerPortalUser</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ListClean</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>RequestUpdate</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SmsHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Account_Record_Page1</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ViewCustomerPortalUser</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>WebsiteHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><compactLayouts>
+    </actionOverrides>
+    <compactLayouts>
         <fullName>Account_Compact_Layout</fullName>
         <fields>Name</fields>
         <fields>Phone</fields>
@@ -58,7 +75,8 @@
         <fields>Website</fields>
         <fields>OwnerId</fields>
         <label>Account Compact Layout</label>
-    </compactLayouts><fields>
+    </compactLayouts>
+    <fields>
         <fullName>AE_Transfer_Date__c</fullName>
         <externalId>false</externalId>
         <label>AE Transfer Date</label>
@@ -66,16 +84,19 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>AccountNumber</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>AccountSource</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Account_Executive_Name__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -106,7 +127,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Addendum Received Date</label>
@@ -114,7 +136,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -122,7 +145,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Required__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -130,7 +154,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Affiliated_Entities_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Affiliated Entities Received Date</label>
@@ -138,7 +163,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Affiliated_Entities__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -146,7 +172,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Age__c</fullName>
         <description>Number of days since the initial application review.</description>
         <externalId>false</externalId>
@@ -160,11 +187,13 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>AnnualRevenue</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>App_Outstanding_Count__c</fullName>
         <externalId>false</externalId>
         <label>App Outstanding Count</label>
@@ -175,7 +204,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>App_Processed__c</fullName>
         <externalId>false</externalId>
         <label>App Processed</label>
@@ -183,7 +213,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>App_Received__c</fullName>
         <externalId>false</externalId>
         <label>App Received</label>
@@ -191,7 +222,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>App_Sent__c</fullName>
         <externalId>false</externalId>
         <label>App Sent</label>
@@ -199,7 +231,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Approval_Status__c</fullName>
         <externalId>false</externalId>
         <label>Approval Status</label>
@@ -227,7 +260,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Approval_Sub_Status__c</fullName>
         <externalId>false</externalId>
         <label>Approval Sub-Status</label>
@@ -280,7 +314,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_Credit_Risk_Analyst__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -305,7 +340,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_PCS__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -336,7 +372,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assistance_Type__c</fullName>
         <externalId>false</externalId>
         <label>Assistance Type</label>
@@ -366,11 +403,13 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>BillingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Billing_Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Billing Contact Email</label>
@@ -379,7 +418,8 @@
         <trackHistory>false</trackHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Billing_Contact_Name__c</fullName>
         <externalId>false</externalId>
         <label>Billing Contact Name</label>
@@ -389,7 +429,8 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Billing_Contact_Phone_Number__c</fullName>
         <externalId>false</externalId>
         <label>Billing Contact Phone Number</label>
@@ -397,7 +438,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Billing_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Billing Contact Title</label>
@@ -407,7 +449,8 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Broker_Agreement_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Broker Agreement Received Date</label>
@@ -415,7 +458,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Broker_Agreement__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -423,7 +467,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cell__c</fullName>
         <externalId>false</externalId>
         <label>Cell</label>
@@ -431,7 +476,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Certification_and_Authorization_Date__c</fullName>
         <externalId>false</externalId>
         <label>Certification and Authorization Date</label>
@@ -439,7 +485,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Certification_and_Authorization__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -447,11 +494,14 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ChannelProgramLevelName</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ChannelProgramName</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Character_Checks_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Character Checks Received Date</label>
@@ -459,7 +509,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Character_Checks__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -467,7 +518,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
         <label>City</label>
@@ -477,7 +529,8 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Com_percent__c</fullName>
         <externalId>false</externalId>
         <label>Com percent</label>
@@ -488,7 +541,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Comp_Flat_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Comp Flat Amount</label>
@@ -498,7 +552,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Comp_Maximum__c</fullName>
         <externalId>false</externalId>
         <label>Comp Maximum</label>
@@ -508,7 +563,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Comp_Minimum__c</fullName>
         <externalId>false</externalId>
         <label>Comp Minimum</label>
@@ -518,7 +574,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Company_NMLS_ID_Expiration_Date__c</fullName>
         <externalId>false</externalId>
         <label>Company NMLS ID Expiration Date</label>
@@ -526,7 +583,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Company_NMLS_ID_Issued_Date__c</fullName>
         <externalId>false</externalId>
         <label>Company NMLS ID Issued Date</label>
@@ -534,7 +592,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Company_NMLS_ID__c</fullName>
         <externalId>false</externalId>
         <label>Company NMLS ID</label>
@@ -544,7 +603,8 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Contacts_Count__c</fullName>
         <externalId>false</externalId>
         <label>Contacts Count</label>
@@ -555,7 +615,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Corporate_Resolution_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Corporate Resolution Received Date</label>
@@ -563,7 +624,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Corporate_Resolution__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -571,7 +633,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>County__c</fullName>
         <externalId>false</externalId>
         <label>County</label>
@@ -581,7 +644,8 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CreditRisk_Brokerpckg_Days__c</fullName>
         <externalId>false</externalId>
         <label>CreditRisk Brokerpckg Days</label>
@@ -592,7 +656,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CreditRisk_Complete_Days__c</fullName>
         <externalId>false</externalId>
         <label>CreditRisk Complete Days</label>
@@ -603,7 +668,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CreditRisk_Days__c</fullName>
         <externalId>false</externalId>
         <label>CreditRisk Escalated Days</label>
@@ -614,7 +680,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CreditRisk_Days_to_Process__c</fullName>
         <externalId>false</externalId>
         <label>CreditRisk Days to Process</label>
@@ -625,7 +692,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CreditRisk_FullReview_Days__c</fullName>
         <externalId>false</externalId>
         <label>CreditRisk FullReview Days</label>
@@ -636,7 +704,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CreditRisk_Inprocess_Days__c</fullName>
         <externalId>false</externalId>
         <label>CreditRisk InitialReview Days</label>
@@ -647,7 +716,8 @@
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Credit_Risk_Package_Change_Date__c</fullName>
         <externalId>false</externalId>
         <label>Credit Risk Package Change Date</label>
@@ -655,7 +725,8 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Credit_Risk_Package_Status__c</fullName>
         <description>Pending Review: Not yet reviewed; 
 Reviewing Documents: Received conditions, In line for review ;
@@ -729,7 +800,8 @@ Escalated Review: Decision pending escalated review</description>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Credit_Risk_Process_Days__c</fullName>
         <externalId>false</externalId>
         <formula>IF( 
@@ -745,7 +817,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Current_user_is_Assigned_User__c</fullName>
         <externalId>false</externalId>
         <formula>Assigned_Credit_Risk_Analyst__c = $User.Id ||  Assigned_PCS__c = $User.Id ||  Account_Executive_Name__c = $User.Id</formula>
@@ -754,7 +827,8 @@ Escalated Review: Decision pending escalated review</description>
         <label>Current user is Assigned User?</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Date_Trained__c</fullName>
         <externalId>false</externalId>
         <label>Date Trained</label>
@@ -762,7 +836,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Days_to_Process__c</fullName>
         <externalId>false</externalId>
         <formula>App_Processed__c  -  App_Received__c</formula>
@@ -774,7 +849,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Denial_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Denial Reason</label>
@@ -859,11 +935,13 @@ Escalated Review: Decision pending escalated review</description>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Docs_Needed_Days__c</fullName>
         <externalId>false</externalId>
         <formula>TODAY() -  Documents_Required_Date__c</formula>
@@ -875,7 +953,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Documents_Required_Date__c</fullName>
         <externalId>false</externalId>
         <label>Documents Required Date</label>
@@ -883,7 +962,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Dups__c</fullName>
         <externalId>false</externalId>
         <formula>1</formula>
@@ -895,7 +975,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum_Provider__c</fullName>
         <externalId>false</externalId>
         <label>E-sign Addendum Provider</label>
@@ -929,7 +1010,8 @@ Escalated Review: Decision pending escalated review</description>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -937,7 +1019,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email__c</fullName>
         <externalId>false</externalId>
         <label>Email</label>
@@ -946,7 +1029,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Exclusionary_Lists_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Exclusionary Lists Received Date</label>
@@ -954,7 +1038,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Exclusionary_Lists__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -962,7 +1047,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ext__c</fullName>
         <externalId>false</externalId>
         <label>Ext</label>
@@ -972,7 +1058,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FDIC_NCUA_Certificate_Number__c</fullName>
         <externalId>false</externalId>
         <label>FDIC/NCUA Certificate Number</label>
@@ -982,11 +1069,13 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Financials_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Financials Amount</label>
@@ -996,7 +1085,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Financials_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Financials Received Date</label>
@@ -1004,7 +1094,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Financials__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1012,7 +1103,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Formation_Documents_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Formation Documents Received Date</label>
@@ -1020,7 +1112,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Formation_Documents__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1028,7 +1121,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Holding_Company_Federal_Tax_ID_Number_EI__c</fullName>
         <externalId>false</externalId>
         <label>Federal Tax ID/EIN</label>
@@ -1038,7 +1132,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Holding_Company_Federal_Tax_ID__c</fullName>
         <externalId>false</externalId>
         <label>Holding Company Federal Tax ID</label>
@@ -1048,7 +1143,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Holding_Company_Name__c</fullName>
         <externalId>false</externalId>
         <label>Holding Company Name (if applicable)</label>
@@ -1058,7 +1154,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>How_does_partner_obtain_leads__c</fullName>
         <externalId>false</externalId>
         <label>How does partner obtain leads?</label>
@@ -1098,12 +1195,14 @@ Escalated Review: Decision pending escalated review</description>
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Initial_Review_Date_Time__c</fullName>
         <description>The date the application package was initially reviewed</description>
         <externalId>false</externalId>
@@ -1113,7 +1212,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Interested_in_ORM_Supplied_Leads__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1121,15 +1221,18 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsPartner</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LO__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Created by Rollup Helper</description>
@@ -1142,7 +1245,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity_Date__c</fullName>
         <externalId>false</externalId>
         <formula>LastActivityDate</formula>
@@ -1150,7 +1254,8 @@ Escalated Review: Decision pending escalated review</description>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Contact_Registration_date__c</fullName>
         <externalId>false</externalId>
         <label>Last Contact Registration date</label>
@@ -1160,7 +1265,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Individual_Lead_Activity__c</fullName>
         <externalId>false</externalId>
         <label>Last Individual Lead Activity</label>
@@ -1168,7 +1274,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_AppSent_Days__c</fullName>
         <externalId>false</externalId>
         <label>Lead AppSent Days</label>
@@ -1179,7 +1286,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Approved_Days__c</fullName>
         <externalId>false</externalId>
         <label>Lead Approved Days</label>
@@ -1190,7 +1298,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Days_to_Process__c</fullName>
         <description>This field is to calculate the total no of days for Lead status, In process to Approved</description>
         <externalId>false</externalId>
@@ -1202,7 +1311,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Inprocess_days__c</fullName>
         <externalId>false</externalId>
         <label>Lead InProcess Days</label>
@@ -1213,7 +1323,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Process_Days__c</fullName>
         <externalId>false</externalId>
         <formula>IF(
@@ -1228,7 +1339,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_Prospect_Days__c</fullName>
         <externalId>false</externalId>
         <label>Lead Prospect Days</label>
@@ -1239,7 +1351,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Lead_status_change_date__c</fullName>
         <externalId>false</externalId>
         <label>Lead status change date</label>
@@ -1247,7 +1360,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Related_Fees_and_Related_PolicyDate__c</fullName>
         <externalId>false</externalId>
         <label>Loan Related Fees &amp; Related Policy Date</label>
@@ -1255,7 +1369,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Related_Fees_and_Related_Policy__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1263,7 +1378,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Logo__c</fullName>
         <externalId>false</externalId>
         <label>Logo</label>
@@ -1272,7 +1388,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Html</type>
         <visibleLines>10</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MARI_Background_Check_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>MARI Background Check Received Date</label>
@@ -1280,7 +1397,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MARI_Background_Check__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1288,7 +1406,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MARI_Information__c</fullName>
         <externalId>false</externalId>
         <label>MARI Information</label>
@@ -1298,7 +1417,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MLO__c</fullName>
         <description>Created by Rollup Helper</description>
         <externalId>false</externalId>
@@ -1310,7 +1430,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MaillingAddress__c</fullName>
         <externalId>false</externalId>
         <label>Mailling Address</label>
@@ -1320,7 +1441,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MaillingState__c</fullName>
         <externalId>false</externalId>
         <label>Mailling State</label>
@@ -1330,7 +1452,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MaillingStreet__c</fullName>
         <externalId>false</externalId>
         <label>Mailling Street</label>
@@ -1340,7 +1463,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MaillingZipcode__c</fullName>
         <externalId>false</externalId>
         <label>Mailling Zipcode</label>
@@ -1350,7 +1474,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Main_Phone__c</fullName>
         <externalId>false</externalId>
         <label>Main Phone</label>
@@ -1358,7 +1483,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID Received Date</label>
@@ -1366,7 +1492,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1374,11 +1501,13 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Next_Recertification_Date__c</fullName>
         <externalId>false</externalId>
         <formula>Original_Approved_Date__c + 365</formula>
@@ -1387,7 +1516,8 @@ Escalated Review: Decision pending escalated review</description>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Next_Renewal_Date__c</fullName>
         <description>The date of this Approved Partner's next renewal date.</description>
         <externalId>false</externalId>
@@ -1397,7 +1527,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>No_of_Affiliated_Partners__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Number of Affiliated Partners to the Business Partner. Please see 'Related' for more details.</inlineHelpText>
@@ -1406,7 +1537,8 @@ Escalated Review: Decision pending escalated review</description>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>No_of_Branches__c</fullName>
         <externalId>false</externalId>
         <label>No. of Branches</label>
@@ -1414,7 +1546,8 @@ Escalated Review: Decision pending escalated review</description>
         <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_QLMS_Partner__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1422,11 +1555,13 @@ Escalated Review: Decision pending escalated review</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NumberOfEmployees</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Number_of_HECMs_Closed_in_Last_Year__c</fullName>
         <externalId>false</externalId>
         <label>Number of HECMs Closed in Last Year</label>
@@ -1437,7 +1572,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Number_of_Registrations_in_last_12_month__c</fullName>
         <externalId>false</externalId>
         <label>QLMS Loan Registrations in last 12months</label>
@@ -1448,7 +1584,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Number_of_loan_officers__c</fullName>
         <externalId>false</externalId>
         <label>Number of loan officers</label>
@@ -1459,7 +1596,8 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_Closed_Loans__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Number and loan amounts of closed loans. 
@@ -1472,7 +1610,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_Date_of_last_loan_registration__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Date of the last loan application request</inlineHelpText>
@@ -1481,7 +1620,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_Folder_Loans__c</fullName>
         <externalId>false</externalId>
         <label>ORMS Folder Loans</label>
@@ -1492,7 +1632,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_Number_of_Scenarios_Run__c</fullName>
         <defaultValue>0</defaultValue>
         <externalId>false</externalId>
@@ -1504,7 +1645,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_Registrations__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Number of registrations the partner has requested</inlineHelpText>
@@ -1516,7 +1658,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_Saved_Scenarios__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Number of scenarios that the partner has saved</inlineHelpText>
@@ -1528,7 +1671,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_Scenario_Packages__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Number of scenario packages the Partner has generated</inlineHelpText>
@@ -1540,7 +1684,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Account_Executive_Email__c</fullName>
         <externalId>false</externalId>
         <label>ORM Account Executive Email</label>
@@ -1550,7 +1695,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Email__c</fullName>
         <description>This field has been created to use in Email Templates</description>
         <externalId>false</externalId>
@@ -1561,7 +1707,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Phone__c</fullName>
         <description>This field is created to use in Email template</description>
         <externalId>false</externalId>
@@ -1572,7 +1719,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Title__c</fullName>
         <description>This field has been created to use in Email Templates</description>
         <externalId>false</externalId>
@@ -1582,7 +1730,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Onboarding_status_change_date__c</fullName>
         <externalId>false</externalId>
         <label>Onboarding status change date</label>
@@ -1590,7 +1739,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Opt_In_Lead_Sharing__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1598,7 +1748,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Organization_Ownership_select_one__c</fullName>
         <externalId>false</externalId>
         <label>Organization Ownership (select one)</label>
@@ -1622,7 +1773,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Original_Approved_Date__c</fullName>
         <description>Date when the Partner Lead is marked as Approved in the System</description>
         <externalId>false</externalId>
@@ -1632,7 +1784,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Cell__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Cell</label>
@@ -1640,7 +1793,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Email</label>
@@ -1649,7 +1803,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Name__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Name</label>
@@ -1659,7 +1814,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Phone__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Phone</label>
@@ -1667,7 +1823,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Other Contact Title</label>
@@ -1731,7 +1888,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Other Reason</label>
@@ -1740,7 +1898,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>2</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_source_to_obtain_leads__c</fullName>
         <externalId>false</externalId>
         <label>Other source to obtain leads</label>
@@ -1750,7 +1909,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Outstanding_Days__c</fullName>
         <externalId>false</externalId>
         <formula>TODAY() -  App_Sent__c</formula>
@@ -1761,17 +1921,20 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ownership</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Paid_Amount_to_QLMS_AE__c</fullName>
         <defaultValue>0</defaultValue>
         <externalId>false</externalId>
@@ -1783,7 +1946,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PardotTest__c</fullName>
         <externalId>false</externalId>
         <label>PardotTest</label>
@@ -1793,12 +1957,14 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ParentId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Hierarchy</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Denial_Reasons__c</fullName>
         <externalId>false</externalId>
         <label>Partner Denial Reasons</label>
@@ -1930,7 +2096,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
             </valueSetDefinition>
         </valueSet>
         <visibleLines>5</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Lead_Status__c</fullName>
         <externalId>false</externalId>
         <label>Partner Lead Status</label>
@@ -2067,7 +2234,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Loan_Production_Stage__c</fullName>
         <externalId>false</externalId>
         <label>Partner Loan Production Stage</label>
@@ -2106,7 +2274,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Onboarding_Status__c</fullName>
         <externalId>false</externalId>
         <label>Partner Onboarding Status</label>
@@ -2170,7 +2339,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Total_Loan_Stage__c</fullName>
         <externalId>false</externalId>
         <label>Partner Total Loan Stage</label>
@@ -2204,12 +2374,14 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Phone</fullName>
         <inlineHelpText>Phone numbers are a great way to call people on phones.  Phones are what we call our pocket computers even though we use them for games, selfies, and facebook.</inlineHelpText>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Premier_Partner__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Check the checkbox of this Partner a Premier partner</description>
@@ -2219,7 +2391,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Previous_ORM_AE__c</fullName>
         <externalId>false</externalId>
         <label>Previous ORM AE</label>
@@ -2229,7 +2402,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Primary Contact Email</label>
@@ -2238,7 +2412,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Contact_Phone_Number__c</fullName>
         <externalId>false</externalId>
         <label>Office Phone</label>
@@ -2246,7 +2421,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Primary Contact Title</label>
@@ -2256,7 +2432,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Regulator__c</fullName>
         <externalId>false</externalId>
         <label>Primary Regulator</label>
@@ -2266,7 +2443,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_contact_name__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -2288,7 +2466,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_12_Month_Total_Closings__c</fullName>
         <description>Created by Rollup Helper</description>
         <externalId>false</externalId>
@@ -2300,7 +2479,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Account_Executive__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -2321,7 +2501,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Email__c</fullName>
         <description>This field has been created to use in Email Alerts, and it's value is populated by Workflow Process Field Update</description>
         <externalId>false</externalId>
@@ -2331,7 +2512,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_First_Name__c</fullName>
         <externalId>false</externalId>
         <formula>LEFT(QLMS_Account_Executive__r.Name , FIND(" ", QLMS_Account_Executive__r.Name))</formula>
@@ -2341,7 +2523,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_HECM_Count_2017__c</fullName>
         <externalId>false</externalId>
         <label>QLMS HECM Count 2017</label>
@@ -2352,7 +2535,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_LO_Count__c</fullName>
         <externalId>false</externalId>
         <label>QLMS LO Count</label>
@@ -2363,7 +2547,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Last_Registration_Date__c</fullName>
         <externalId>false</externalId>
         <label>QLMS Last Registration Date</label>
@@ -2371,7 +2556,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Lead_Registration_Count__c</fullName>
         <externalId>false</externalId>
         <label>QLMS Lead Registration Count</label>
@@ -2382,7 +2568,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_SFDC_Bank_ID__c</fullName>
         <externalId>false</externalId>
         <label>QLMS SFDC Bank ID</label>
@@ -2392,7 +2579,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Quality_Control_Policy_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Quality Control Policy Received Date</label>
@@ -2400,7 +2588,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Quality_Control_Policy__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2408,12 +2597,14 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Rating</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reapplication_Status__c</fullName>
         <externalId>false</externalId>
         <label>Reapplication Status</label>
@@ -2457,7 +2648,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reason_for_Not_being_Interested__c</fullName>
         <externalId>false</externalId>
         <label>Reason for Not being Interested</label>
@@ -2506,7 +2698,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Recertification_Approval_Date__c</fullName>
         <externalId>false</externalId>
         <label>Recertification Approval Date</label>
@@ -2514,7 +2707,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Recertification_Approved__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Check Yes if Approved</description>
@@ -2524,7 +2718,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Remaining_QLMS_AE_Payout__c</fullName>
         <externalId>false</externalId>
         <formula>Total_QLMS_AE_Payout__c -  Paid_Amount_to_QLMS_AE__c</formula>
@@ -2536,7 +2731,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <scale>2</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Renewal Questionnaire Received Date</label>
@@ -2544,7 +2740,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2552,7 +2749,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Status__c</fullName>
         <description>Has the Partner completed the Renewal Questionnaire?</description>
         <externalId>false</externalId>
@@ -2583,7 +2781,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reputation_Check_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Reputation Check Received Date</label>
@@ -2591,7 +2790,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reputation_Check__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2599,7 +2799,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Request__c</fullName>
         <defaultValue>0</defaultValue>
         <externalId>false</externalId>
@@ -2611,7 +2812,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Resumes_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Resumes Received Date</label>
@@ -2619,7 +2821,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Resumes__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2627,7 +2830,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reverse_Only_Partner__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -2635,7 +2839,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Cell__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Cell</label>
@@ -2643,7 +2848,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Email__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Email</label>
@@ -2652,7 +2858,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Name__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Name</label>
@@ -2662,7 +2869,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Phone__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Phone</label>
@@ -2670,7 +2878,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Secondary_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Secondary Contact Title</label>
@@ -2734,11 +2943,13 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ShippingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Shipping_Address__c</fullName>
         <externalId>false</externalId>
         <label>Shipping Address</label>
@@ -2747,19 +2958,23 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Sic</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>SicDesc</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Site</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Source_Name__c</fullName>
         <description>If you choose Other as your Partner Lead source, you must enter a source name here</description>
         <externalId>false</externalId>
@@ -2771,7 +2986,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State_of_Holding_Company__c</fullName>
         <externalId>false</externalId>
         <label>State of Holding Company</label>
@@ -3035,7 +3251,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>States_they_would_like_to_do_Business_in__c</fullName>
         <externalId>false</externalId>
         <label>States they would like to do Business in</label>
@@ -3474,7 +3691,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
             </valueSettings>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
@@ -3498,7 +3716,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Submission_Date_Time__c</fullName>
         <description>When was the full application package accepted?</description>
         <externalId>false</externalId>
@@ -3508,7 +3727,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Subsidiary__c</fullName>
         <externalId>false</externalId>
         <label>Subsidiary</label>
@@ -3518,7 +3738,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Team__c</fullName>
         <description>Team - ORM AE (Source ORM Account Executive Name)</description>
         <externalId>false</externalId>
@@ -3530,11 +3751,13 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>TickerSymbol</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Total_QLMS_AE_Payout__c</fullName>
         <externalId>false</externalId>
         <formula>IF(ISBLANK(QLMS_Account_Executive__c), 0,
@@ -3552,12 +3775,14 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Type_of_Institution__c</fullName>
         <externalId>false</externalId>
         <label>Type of Institution</label>
@@ -3586,7 +3811,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Type_of_Organization__c</fullName>
         <externalId>false</externalId>
         <label>Type of Organization</label>
@@ -3614,7 +3840,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Updated Financial Received Date</label>
@@ -3622,7 +3849,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -3630,7 +3858,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Status__c</fullName>
         <description>Has the Partner sent in updated Financials?</description>
         <externalId>false</externalId>
@@ -3661,7 +3890,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Validated__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -3669,7 +3899,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>W_9_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>W-9 Received Date</label>
@@ -3677,7 +3908,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>W_9__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -3685,10 +3917,41 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Website</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Partner_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Premier</fullName>
+                    <default>false</default>
+                    <label>Premier</label>
+                </value>
+                <value>
+                    <fullName>Non Premier</fullName>
+                    <default>false</default>
+                    <label>Non Premier</label>
+                </value>
+                <value>
+                    <fullName>Premier Plus</fullName>
+                    <default>false</default>
+                    <label>Premier Plus</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields><compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
@@ -3704,7 +3967,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
         <searchResultsAdditionalFields>ACCOUNT.PHONE1</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Approval_Sub_Status__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><listViews>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel>
+    <listViews>
         <fullName>AE_Apps_Out</fullName>
         <columns>ACCOUNT.NAME</columns>
         <columns>ACCOUNT.ADDRESS1_STATE</columns>
@@ -3720,7 +3984,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>App Outstanding</value>
         </filters>
         <label>AE Apps Out</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>AE_Docs_Needed</fullName>
         <columns>ACCOUNT.NAME</columns>
         <columns>ACCOUNT.ADDRESS1_STATE</columns>
@@ -3737,7 +4002,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>Documents Required</value>
         </filters>
         <label>AE Docs Needed</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>AllAccounts</fullName>
         <columns>QLMS_Account_Executive__c</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -3761,7 +4027,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>Stieber</value>
         </filters>
         <label>All Accounts</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Partner_Leads</fullName>
         <columns>ACCOUNT.NAME</columns>
         <columns>ACCOUNT.ADDRESS1_STATE</columns>
@@ -3779,7 +4046,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>Account.Potential_Partners</value>
         </filters>
         <label>All Potential Partners</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyAccounts</fullName>
         <columns>ACCOUNT.NAME</columns>
         <columns>ACCOUNT.RECORDTYPE</columns>
@@ -3803,7 +4071,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <role>Credit_Risk_Analyst</role>
             <role>Inside_Account_Executive</role>
         </sharedTo>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>My_Outstanding_Accounts</fullName>
         <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
         <columns>ACCOUNT.NAME</columns>
@@ -3830,7 +4099,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>App Ready</value>
         </filters>
         <label>My Outstanding Accounts or Apps Not Sent</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Not_Interested_Partner_Leads</fullName>
         <columns>ACCOUNT.NAME</columns>
         <columns>Partner_Onboarding_Status__c</columns>
@@ -3843,7 +4113,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
             <value>Withdrawn</value>
         </filters>
         <label>Withdrawn Partners</label>
-    </listViews><recordTypes>
+    </listViews>
+    <recordTypes>
         <fullName>Approved_Partners</fullName>
         <active>true</active>
         <label>Approved Partners</label>
@@ -5082,7 +5353,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Committed_Partner</fullName>
         <active>true</active>
         <label>Committed Partner</label>
@@ -6317,7 +6589,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Partner_Leads</fullName>
         <active>true</active>
         <label>Partner Leads</label>
@@ -7556,7 +7829,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Partners</fullName>
         <active>true</active>
         <label>Partners</label>
@@ -8799,7 +9073,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Potential_Partners</fullName>
         <active>true</active>
         <label>Potential Partners</label>
@@ -10050,7 +10325,8 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <validationRules>
         <fullName>AE_Account_Stage_Change</fullName>
         <active>true</active>
         <description>AE's cannot change the Account stage after App Pending Review</description>
@@ -10066,7 +10342,8 @@ ISPICKVAL(Partner_Onboarding_Status__c, 'Withdrawn')
 ) 
 )</errorConditionFormula>
         <errorMessage>You do not have access to update this stage</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Assigned_CRA</fullName>
         <active>true</active>
         <description>Assigned CRA cannot be blank if Lead Status is In process</description>
@@ -10076,13 +10353,15 @@ ISPICKVAL(Partner_Onboarding_Status__c, 'Withdrawn')
 )</errorConditionFormula>
         <errorDisplayField>Assigned_Credit_Risk_Analyst__c</errorDisplayField>
         <errorMessage>Please update Kelly Moreno as the Assigned CRA</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>HoldingCompanyFederalFiledvalidationrule</fullName>
         <active>true</active>
         <errorConditionFormula>AND(NOT(ISBLANK(Holding_Company_Name__c)), ISBLANK( Holding_Company_Federal_Tax_ID__c ))</errorConditionFormula>
         <errorDisplayField>Holding_Company_Federal_Tax_ID__c</errorDisplayField>
         <errorMessage>Fill Holding Company Federal Tax ID Number/EI Field</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Must_fill_Other_Reason</fullName>
         <active>true</active>
         <description>Must fill other Reason if the Reason for not being interested is selected as 'Other'</description>
@@ -10090,7 +10369,8 @@ ISPICKVAL(Partner_Onboarding_Status__c, 'Withdrawn')
 ISBLANK( Other_Reason__c )</errorConditionFormula>
         <errorDisplayField>Other_Reason__c</errorDisplayField>
         <errorMessage>Must fill other Reason if the Reason for not being interested is selected as 'Other'</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Must_select_States_to_do_business_in</fullName>
         <active>true</active>
         <description>Must select the states Partners wants to do Business in if the Reason for not being interested is 'States Available	'</description>
@@ -10098,26 +10378,30 @@ ISBLANK( Other_Reason__c )</errorConditionFormula>
 ISBLANK( States_they_would_like_to_do_Business_in__c )</errorConditionFormula>
         <errorDisplayField>States_they_would_like_to_do_Business_in__c</errorDisplayField>
         <errorMessage>Must select the states Partners wants to do Business in if the Reason for not being interested is 'States Available	'</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Other_ways_to_obtain_leads_for_partner</fullName>
         <active>true</active>
         <description>Please fill "Other source to obtain leads' textbox if Other is selected as choice in 'How does partner obtain leads?' field</description>
         <errorConditionFormula>Includes(  How_does_partner_obtain_leads__c  , 'Other')&amp;&amp; ISBLANK( Other_source_to_obtain_leads__c  )</errorConditionFormula>
         <errorDisplayField>Other_source_to_obtain_leads__c</errorDisplayField>
         <errorMessage>Please fill "Other source to obtain leads' textbox if Other is selected as choice in 'How does partner obtain leads?' field</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Partner_Denial_Reasons</fullName>
         <active>true</active>
         <description>Must choose a partner denial reason if the Partner Lead Status is Denied</description>
         <errorConditionFormula>ISPICKVAL(Partner_Lead_Status__c,'Denied')&amp;&amp;
  ISBLANK(Partner_Denial_Reasons__c)</errorConditionFormula>
         <errorMessage>Please choose Partner Denial Reason(s)</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Phone10DigitNumber</fullName>
         <active>false</active>
         <errorConditionFormula>OR(NOT(REGEX(Main_Phone__c,"(\\d){10}")), IF( LEFT( Main_Phone__c, 1) == '0' , true,false))</errorConditionFormula>
         <errorMessage>Phone number must Contain 10 digits number,and should not start with 0.</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>QLMS_AE_Email</fullName>
         <active>true</active>
         <errorConditionFormula>OR(
@@ -10154,7 +10438,8 @@ ISBLANK(QLMS_Account_Executive__r.Email__c ))
 )</errorConditionFormula>
         <errorDisplayField>QLMS_Account_Executive__c</errorDisplayField>
         <errorMessage>Please update the Email address for this QLMS AE</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Reason_for_Not_being_interested</fullName>
         <active>true</active>
         <description>Must pick a reason for Partner not being interested</description>
@@ -10162,27 +10447,32 @@ ISBLANK(QLMS_Account_Executive__r.Email__c ))
 ISBLANK( Text(Reason_for_Not_being_Interested__c ))</errorConditionFormula>
         <errorDisplayField>Reason_for_Not_being_Interested__c</errorDisplayField>
         <errorMessage>Must pick a reason for Partner not being interested</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Source_Name_validation_Rule</fullName>
         <active>true</active>
         <errorConditionFormula>AND(ISPICKVAL( AccountSource , 'Other'), ISBLANK( Source_Name__c ))</errorConditionFormula>
         <errorMessage>Source Name Filed is mandatory for Partner lead source as 'Other'</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Subsidiary_is_Mandatory</fullName>
         <active>true</active>
         <errorConditionFormula>AND(ISPICKVAL( Type_of_Institution__c , 'Subsidiary'), ISBLANK( Subsidiary__c ))</errorConditionFormula>
         <errorMessage>Subsidiary field is mandatory</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Trade_Show_Validation_Rule</fullName>
         <active>false</active>
         <errorConditionFormula>AND(ISPICKVAL( AccountSource , 'TradeShow'), ISBLANK( Trade_Show__c ))</errorConditionFormula>
         <errorMessage>Field is mandatory for Partner Lead Source as TradeShow</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>cellmustcontain10numbers</fullName>
         <active>false</active>
         <errorConditionFormula>OR(NOT(REGEX(Cell__c,"(\\d){10}")), IF( LEFT( Cell__c, 1) == '0' , true,false))</errorConditionFormula>
         <errorMessage>Cell must contain 10 digits number,and should not start with 0.</errorMessage>
-    </validationRules><webLinks>
+    </validationRules>
+    <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -10200,7 +10490,8 @@ ISBLANK( Text(Reason_for_Not_being_Interested__c ))</errorConditionFormula>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Account_BillingStreet}+{!Account_BillingCity}+{!Account_BillingState}&amp;om=1</url>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <fullName>GoogleNews</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -10218,7 +10509,8 @@ ISBLANK( Text(Reason_for_Not_being_Interested__c ))</errorConditionFormula>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/news?&amp;q={!Account_Name}&amp;btnG=Search+News</url>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <fullName>GoogleSearch</fullName>
         <availability>online</availability>
         <displayType>link</displayType>
@@ -10236,4 +10528,5 @@ ISBLANK( Text(Reason_for_Not_being_Interested__c ))</errorConditionFormula>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/search?q={!Account_Name}</url>
-    </webLinks></CustomObject>
+    </webLinks>
+</CustomObject>
