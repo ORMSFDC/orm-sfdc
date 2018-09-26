@@ -25,8 +25,7 @@
         $A.enqueueAction(action); 
         
         //get states
-        var action1 = component.get("c.get_states");
-        
+        var action1 = component.get("c.get_states");       
         // set a callBack    
         action1.setCallback(this, function(response) {
             if (response.getState() === "SUCCESS") {
@@ -322,7 +321,7 @@
            component.set("v.MIP", 0); //There is no MIP for Helo
            component.set("v.HeloMargin",HeloMargins[selId].Margin); //Helo Margin new
            var heloValues = component.get('v.metadatavaluesHelo');
-           console.log('Helo values',component.get('v.metadatavaluesHelo'));            
+           console.log('Helo values',heloValues);            
            var t =  HeloMargins[selId].InterestRate; 
            var rate = heloValues.Helo_rate[t];
            component.set("v.Margin",rate); //Helo Interst Rate
@@ -853,12 +852,32 @@
                 debugger;
                 var result=data.getReturnValue(); 
                 console.log('states ',result);
-                var n=result.length; //result!=null ||
+                var n=result.length; 
                 if(n!=0)
                 {
                     var state=result[0];
                     var city=result[1];
-                    var action1 = component.get("c.get_states");
+                   
+                    //SFDC-275 start
+                    var rateType = component.get('v.LRateType'); 
+                    var mortType = component.get("v.LMortgageAppliedFor");
+                    //Helo Purchase states
+                    if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
+                        var action1 = component.get("c.get_helostatesPur");                         
+                    }
+                    //Helo Refinance States
+                    else if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){ 
+                        var action1 = component.get("c.get_helostatesRefi");
+                    }
+                    //ARM and Fixed Purchase states
+                    else if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){ 
+                        var action1 = component.get("c.get_statesPur");
+                    }
+                    //ARM and Fixed Refinance states
+                    else if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){ 
+                        var action1 = component.get("c.get_states");
+                    }
+                    //SFDC-275 end
                     action1.setCallback(this,function(data){
                         var result1=data.getReturnValue();
                         var i;

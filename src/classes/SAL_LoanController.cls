@@ -6,6 +6,7 @@
 * 09/06/2018: Sahitya: SFDC-237 - Fetch Helo rates, orig to orm from Metadata table
 * 09/07/2018: Sahitya: Fetch Helo Margin from Metadata table
 * 09/20/2018: Sahitya: SFDC-289 - Added 3rd Tier
+* 09/26/2018: Sahitya: SFDC - 275 Divided Authorised states into two metadata tables based on product type
 */
 
 public with sharing class SAL_LoanController {
@@ -103,7 +104,7 @@ public with sharing class SAL_LoanController {
                        Check_If_Title_is_also_Held_As__c, Real_Estate_Taxes__c, Hazard_Insurance__c, IsActiveFlag__c,HOA_Monthly_Dues__c,
                        Monthly_PUD_Fees_Amount__c,Monthly_Ground_Rents_Amount__c,Monthly_Flood_Insurance_Premium__c,Condominium_FHA_Approved__c,Condominium_Name__c,
                        Present_Market_Value__c,Mortgage_and_Liens__c,Name_of_Company__c,Account_Number__c,Gross_Rental_Income__c,Monthly_Mortgage_Payment__c
-                       ,Net_Rental_Income__c,Originating_Loan_Officer__c
+                       ,Net_Rental_Income__c,Originating_Loan_Officer__c, Product_Type__c,Mortgage_Applied_for__c //SFDC - 275
                        FROM Loan_New__c  where Id=: RecordId];
             //Code Ended by Dev4 for ORMSFDC-1423
         }
@@ -376,10 +377,30 @@ public with sharing class SAL_LoanController {
         }        
         return objFc;        
     }
+
+
+    //SFDC - 275 start
     @AuraEnabled
     public static list<AuthorisedStates__mdt> getStates(){        
-        return [Select MasterLabel from AuthorisedStates__mdt where isActive__c=:true];        
+        return [Select MasterLabel from AuthorisedStates__mdt where isActive__c=:true and isRefinance__c=:true];        
     }
+
+    @AuraEnabled
+    public static list<AuthorisedStates__mdt> getStatesPur(){        
+        return [Select MasterLabel from AuthorisedStates__mdt where isActive__c=:true and isPurchase__c=:true];        
+    }
+    
+    @AuraEnabled
+    public static list<HeloState__mdt> get_heloStatesPur() {
+        return [Select MasterLabel from HeloState__mdt where isActive__c=:true and isPurchase__c=:true];                
+    }
+
+    @AuraEnabled
+    public static list<HeloState__mdt> get_heloStatesRefi() {
+        return [Select MasterLabel from HeloState__mdt where isActive__c=:true and isRefinance__c=:true];                
+    }
+    //SFDC - 275 end
+
     
     @AuraEnabled
     public static list<string>getRateFixProduct()

@@ -16,7 +16,10 @@
     <aura:attribute name="isZipExist" type="boolean" default="false"/>
     <aura:attribute name="requiredZip" type="boolean" default="false"/>    
     <aura:attribute name="itemsClicked" type="String" />
-   
+    
+   	<aura:attribute name="prodType" type="String" /> <!--SFDC - 275-->
+    <aura:attribute name="rateType" type="String" /> <!--SFDC - 275-->
+    
     <aura:attribute name="myBool" type="Boolean" default="false"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="options" type="List" default="[

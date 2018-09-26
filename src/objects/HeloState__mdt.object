@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
         <fullName>isActive__c</fullName>
-        <defaultValue>true</defaultValue>
+        <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <fieldManageability>SubscriberControlled</fieldManageability>
+        <fieldManageability>DeveloperControlled</fieldManageability>
         <label>isActive</label>
         <type>Checkbox</type>
     </fields>
@@ -22,5 +22,8 @@
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>isRefinance</label>
         <type>Checkbox</type>
-    </fields><label>AuthorisedStates</label><pluralLabel>AuthorisedStates</pluralLabel><visibility>Public</visibility>
+    </fields>
+    <label>HeloState</label>
+    <pluralLabel>HeloStates</pluralLabel>
+    <visibility>Public</visibility>
 </CustomObject>
