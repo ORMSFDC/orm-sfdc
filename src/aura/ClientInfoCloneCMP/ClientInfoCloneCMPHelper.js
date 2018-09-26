@@ -821,7 +821,7 @@
             'ev':''+component.get('v.EHV'),
             'pm':''+pmIs,
             'ADOValIs':''+ADOVal,
-            'Tieris':component.get('v.Tier_Value') //SFDC - 289 Added this for 3rd tier backend calculator
+            'Tieris':component.get('v.Tier_Value') //SFDC - 289 Added this for 3rd tier backend calculator 
         });
         
         action.setCallback(this,function(data){            
@@ -1041,7 +1041,7 @@
                     component.set("v.downPyt",ParseddataHelo[i].MFD);
                 }else{
                     ParseddataHelo[i].MFD    = 0;
-                    console.log('down payment parse ', component.get('v.downPyt'));
+                    console.log('down payment parse helo ', component.get('v.downPyt'));
                 }
             }
             try{

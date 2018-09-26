@@ -7,6 +7,7 @@
  * 07/19/2018: Sahitya - added new fields for saving scenarios, added Helo metadata
  * 08/03/2018: Mike Gill - Debugging SendMailTMP--Exception---System.NullPointerException: Attempt to de-reference a null object
  * 09/20/2018: Sahitya -SFDC - 289 Added 3rd Tier for Portal and Backend Calculator
+ * 09/26/2018: Sahitya -SFDC - 275 Divided Authorised states into two metadata tables based on product type
  */
 public without sharing class lookUpController {
     @AuraEnabled
@@ -596,25 +597,49 @@ public without sharing class lookUpController {
         return ob;
     }
 
+    //start SFDC - 275
     @AuraEnabled
     public static list<String> get_states() {
         list<String> states = new list<String>();
-        for (AuthorisedStates__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM AuthorisedStates__mdt]) {
+        for (AuthorisedStates__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM AuthorisedStates__mdt
+                                           WHERE isActive__c=:true and isRefinance__c=:true]) {
             states.add(each.MasterLabel);
         }
         return states;
     }
 
-    //new HELO state fix 289 remove this while deploying to QA
-   /* @AuraEnabled
-    public static list<String> get_helostates() {
-
+    @AuraEnabled
+    public static list<String> get_statesPur() {
         list<String> states = new list<String>();
-        for (HeloState__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM HeloState__mdt]) {
+        for (AuthorisedStates__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM AuthorisedStates__mdt 
+                                           WHERE isActive__c=:true and isPurchase__c=:true]) {
             states.add(each.MasterLabel);
         }
         return states;
-    }*/
+    }
+
+    @AuraEnabled
+    public static list<String> get_helostatesRefi() {
+        system.debug('helo1');
+        list<String> states = new list<String>();
+        for (HeloState__mdt each : [SELECT MasterLabel FROM HeloState__mdt
+                                    WHERE isActive__c=:true and isRefinance__c=:true]) {
+            states.add(each.MasterLabel);
+        }
+        return states;
+    }
+
+    @AuraEnabled
+    public static list<String> get_heloStatesPur() {
+        system.debug('helo2');
+        list<String> states = new list<String>();
+        for (HeloState__mdt each : [SELECT MasterLabel FROM HeloState__mdt 
+                                    WHERE isActive__c=:true and isPurchase__c=:true]) {
+            states.add(each.MasterLabel);
+        }
+        return states;
+    }
+    //SFDC - 275 end
 
     @AuraEnabled
     public static void sendEmailAfterBaydocsAdded(String ScenarioID) { //@TODO need to remove this method

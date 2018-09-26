@@ -247,11 +247,14 @@ public with sharing class lookUpControllerTest {
         }catch(exception ex){}        
     } 
     
-    
+    //SFDC-275
     @istest static void getZipDataTest()
     {
         lookUpController.getZipData('12345');
         lookupcontroller.get_states();
+        lookupcontroller.get_statesPur();
+        lookupcontroller.get_helostatesRefi();
+        lookupcontroller.get_heloStatesPur();
         lookupController.get_metadataValues('Tier1');
         lookupController.FormatPhone('1234567890');
         lookupController.getScenarioMarginsResponse('10/10/1967',1200,1000,1000,'12');

@@ -414,6 +414,9 @@ public class SAL_LoanControllerTest {
         Test.startTest();
         SAL_LoanController.getLoanOfficerList();
         SAL_LoanController.getStates();
+        SAL_LoanController.getStatesPur();
+        SAL_LoanController.get_heloStatesPur();
+        SAL_LoanController.get_heloStatesRefi();
         Test.stopTest();
         
     }/**/
