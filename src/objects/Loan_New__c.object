@@ -205,17 +205,6 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Appraisal_Expiration_Date__c</fullName>
-        <externalId>false</externalId>
-        <formula>Appraisal_Effective_Date__c  + 180</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Appraisal Expiration Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Appraisal_Ordered_Date__c</fullName>
         <externalId>false</externalId>
         <label>Appraisal Ordered Date*</label>
@@ -3909,6 +3898,17 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Appraisal_Effective_Date__c  + 120</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Appraisal Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>Loan_Layout</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Loan</label><nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Loan ID</label>
