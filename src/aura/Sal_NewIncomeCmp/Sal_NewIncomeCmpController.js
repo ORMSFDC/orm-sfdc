@@ -52,35 +52,35 @@
             text: "Housing Choice Voucher (Sec 8)",
             value: "Housing Choice Voucher (Sec 8)"
         }, {
-            text: "Millitary Base Pay",
-            value: "Millitary Base Pay"
+            text: "Military Base Pay",
+            value: "Military Base Pay"
         }, {
-            text: "Millitary Clothes Allowance",
-            value: "Millitary Clothes Allowance"
+            text: "Military Clothes Allowance",
+            value: "Military Clothes Allowance"
         }, {
-            text: "Millitary Combat Pay",
-            value: "Millitary Combat Pay"
+            text: "Military Combat Pay",
+            value: "Military Combat Pay"
         }, {
-            text: "Millitary Flight Pay",
-            value: "Millitary Flight Pay"
+            text: "Military Flight Pay",
+            value: "Military Flight Pay"
         }, {
-            text: "Millitary Hazard Pay",
-            value: "Millitary Hazard Pay"
+            text: "Military Hazard Pay",
+            value: "Military Hazard Pay"
         }, {
-            text: "Millitary Overseas Pay",
-            value: "Millitary Overseas Pay"
+            text: "Military Overseas Pay",
+            value: "Military Overseas Pay"
         }, {
-            text: "Millitary Prop Pay",
-            value: "Millitary Prop Pay"
+            text: "Military Prop Pay",
+            value: "Military Prop Pay"
         }, {
-            text: "Millitary Quarters Allowance",
-            value: "Millitary Quarters Allowance"
+            text: "Military Quarters Allowance",
+            value: "Military Quarters Allowance"
         }, {
-            text: "Millitary Rations Allowance",
-            value: "Millitary Rations Allowance"
+            text: "Military Rations Allowance",
+            value: "Military Rations Allowance"
         }, {
-            text: "Millitary Variable Housing Allowance",
-            value: "Millitary Variable Housing Allowance"
+            text: "Military Variable Housing Allowance",
+            value: "Military Variable Housing Allowance"
         }, {
             text: "Mortgage Credit Certificate",
             value: "Mortgage Credit Certificate"
