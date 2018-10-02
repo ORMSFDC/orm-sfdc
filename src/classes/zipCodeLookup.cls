@@ -1,3 +1,12 @@
+/**
+ * @description: used to fetch City and State for a zip code
+ * @author: Ravi
+ * @date: 1/28/2018
+ *
+ * changelog:
+ * 10/02/2018: Sahitya - SFDC-356 Capitalize first letters in city
+ */
+ 
 public with sharing class zipCodeLookup {
     public static List<string> lookup(String zipCode){
         List<string> det=new List<string>();
@@ -27,12 +36,12 @@ public with sharing class zipCodeLookup {
             
             det.add(stateName);
             
-            //converting city value to sentence case
-            String res0 = city.substring(0, 1);
-            string res1= city.substring(1, city.length());
-            string citi=res0.toUpperCase()+res1.toLowerCase();
-            System.debug(citi);
-            det.add(citi);   
+            //capitalize first letters in the city name SFDC - 356
+            String city1 = city.toLowerCase(); List<String> val = city1.split(' ');   city1 = '';  
+            for (String x : val){ city1 += x.substring(0,1).toUpperCase()+x.substring(1,x.length()) + ' ';} 
+            System.debug('>>>'+city1); 
+            det.add(city1);
+            //end    
         }
         catch(Exception ex)
         {
