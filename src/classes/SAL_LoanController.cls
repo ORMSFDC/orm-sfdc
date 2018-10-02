@@ -7,6 +7,7 @@
 * 09/07/2018: Sahitya: Fetch Helo Margin from Metadata table
 * 09/20/2018: Sahitya: SFDC-289 - Added 3rd Tier
 * 09/26/2018: Sahitya: SFDC - 275 Divided Authorised states into two metadata tables based on product type
+* 09/26/2018: Sahitya: SFDC - 275 Divided Authorised states into two metadata tables based on product type
 */
 
 public with sharing class SAL_LoanController {
