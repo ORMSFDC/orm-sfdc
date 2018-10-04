@@ -34,6 +34,17 @@ public with sharing class DailyProductRateUpdateCallout {
             gen.writeStringField('RateDate', rateDateS);//'2018-08-01');
             gen.writeStringField('IndexValue', pr.Rate__c.toPlainString());
             gen.writeEndObject();
+        } else if ('HELO-BrokerComp' == pr.Product_Rate_Type__c) {
+            String namedCredential = esrEntries[0].NamedCredential__c;
+
+            endpoint = 'callout:' + namedCredential + '/app/lib/integration/OneReverse/HELO/UpdateBrokerComp/index.php';
+            gen.writeStartObject();
+            gen.writeStringField('UserCode', esrEntries[0].username__c);
+            gen.writeStringField('PassCode', esrEntries[0].password__c);
+            gen.writeStringField('DateFormat', 'Y-m-d');
+            gen.writeStringField('EffectiveDate', rateDateS);//'2018-08-01');
+            gen.writeStringField('BrokerPrice', pr.Rate__c.toPlainString());
+            gen.writeEndObject();
         }
 //        else if ('HELO-ORIGINATION' == pr.Product_Rate_Type__c) {
 //            //todo
