@@ -91,6 +91,11 @@
                     <label>HELO-LIBOR</label>
                 </value>
                 <value>
+                    <fullName>HELO-BrokerComp</fullName>
+                    <default>false</default>
+                    <label>HELO-Broker Comp</label>
+                </value>
+                <value>
                     <fullName>HELO-ORIGINATION</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
