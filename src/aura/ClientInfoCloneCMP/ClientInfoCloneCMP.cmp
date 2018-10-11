@@ -25,6 +25,12 @@
     <aura:attribute name="Scenarioindex" type="Integer" /><!--prsn-->   
     <aura:attribute name="disabled" type="boolean"  default="false"/>
     <aura:attribute name="stateZip" type="boolean"  default="false"/>
+    <!--SFDC-363-->
+    <aura:attribute name="stateZip2" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip3" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip4" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip5" type="boolean"  default="false"/>
+    <!--SFDC-363-->
     <aura:attribute name="isDisplayHelo" type="boolean"  default="true"/> <!--Helo-->
     <aura:attribute name="DOB" type="string" />
     <aura:attribute name="EHV" type="decimal"  />
@@ -1040,13 +1046,26 @@
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2">                            
                                     <ui:inputText value="{!v.selectedRecord.PostalCode}" maxlength="5" blur="{!c.checkZip}" updateOn="keyup,keypress,keydown" label="Zip" aura:id="inputZip" class="slds-input" required="true"/>
-                                    <aura:if isTrue="{!v.zip_error}">            
-                                        
+                                    <aura:if isTrue="{!v.zip_error}">      
                                         <span style="color:red">This is a required field.</span>
                                     </aura:if>
                                     <aura:if isTrue='{!v.stateZip}'>
                                         <h6 style="color:red;">Loan cannot be originated in this state.</h6>
                                     </aura:if>
+                                    <!--SFDC-363-->
+                                    <aura:if isTrue='{!v.stateZip2}'>
+                                        <h6 style="color:red;">We do not offer the HELO for Refinance in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip3}'>
+                                        <h6 style="color:red;">We do not offer the HELO for Purchase in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip4}'>
+                                            <h6 style="color:red;">We do not offer the HECM for Purchase in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip5}'>
+                                            <h6 style="color:red;">We do not offer the HECM for Refinance in this state.</h6>
+                                    </aura:if>
+                                    <!--SFDC-363-->
                                 </div>
                             </div>
                             <div class="slds-form-element__row">   

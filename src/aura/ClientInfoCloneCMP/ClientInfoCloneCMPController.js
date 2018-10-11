@@ -210,7 +210,12 @@
         else
         { 
             var sZip=component.get('v.stateZip');
-            if(sZip==false)
+            //SFDC-363
+            var sZip2=component.get('v.stateZip2'); //Helo Refi Error
+            var sZip3=component.get('v.stateZip3'); //Helo Purchase error
+            var sZip4=component.set('v.stateZip4'); //HECM Purchase error
+            var sZip5=component.set('v.stateZip5'); //HECM Refi error
+            if(sZip==false && sZip2==false && sZip3==false && sZip4 == false && sZip5 == false)
             {
                 helper.SaveScenario(component,event,helper);
             }
@@ -892,13 +897,33 @@
                                 component.set("v.selectedRecord.City",city);
                                 
                                 component.set("v.stateZip",false);
+                                //SFDC-363
+                                component.set("v.stateZip2",false);
+                                component.set("v.stateZip3",false);
+                                component.set("v.stateZip4",false);
+                                component.set("v.stateZip5",false);
                                 break;
-                            }else{
-                                
+                            }else{                                
                                 component.set("v.selectedRecord.State","");
                                 component.set("v.selectedRecord.City","");
                                 component.set("v.stateZip",true);
-                                
+                                //SFDC-363
+                                if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){
+                                    component.set("v.stateZip2",true);
+                                    component.set("v.stateZip",false);
+                                }if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
+                                    component.set("v.stateZip3",true);
+                                    component.set("v.stateZip",false);
+                                }
+                                if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){
+                                    component.set("v.stateZip4",true);
+                                    component.set("v.stateZip",false);
+                                }
+                                if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){
+                                    component.set("v.stateZip5",true);
+                                    component.set("v.stateZip",false);
+                                }
+                                //SFDC-363
                             }
                         }
                         
@@ -908,6 +933,11 @@
                 else
                 {
                     component.set("v.stateZip",true);
+                    //SFDC-363
+                    component.set("v.stateZip2",false);
+                    component.set("v.stateZip3",false);
+                    component.set("v.stateZip4",false);
+                    component.set("v.stateZip5",false);                    
                 }
                 
             });
@@ -916,6 +946,11 @@
         else
         {
             component.set("v.stateZip",false);
+            //SFDC-363
+            component.set("v.stateZip2",false);
+            component.set("v.stateZip3",false);
+            component.set("v.stateZip4",false);
+            component.set("v.stateZip5",false);
         }
     },
     share_popup:function(component, event, helper){
