@@ -11,6 +11,16 @@
         <field>Daily_Product_Rate__c.Processed__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Daily_Product_Rate__c.Rate2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Daily_Product_Rate__c.Rate3__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Daily Product Rate</label>
     <objectPermissions>
