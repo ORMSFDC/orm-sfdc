@@ -215,7 +215,7 @@
             var sZip3=component.get('v.stateZip3'); //Helo Purchase error
             var sZip4=component.set('v.stateZip4'); //HECM Purchase error
             var sZip5=component.set('v.stateZip5'); //HECM Refi error
-            if(sZip==false && sZip2==false && sZip3==false && sZip4 == false && sZip5 == false)
+            if(sZip==false && sZip2==false && sZip3==false && Zip4 != true && sZip5 != true)
             {
                 helper.SaveScenario(component,event,helper);
             }
