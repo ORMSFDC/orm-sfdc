@@ -868,7 +868,7 @@
                     var mortType = component.get("v.LMortgageAppliedFor");
                     //Helo Purchase states
                     if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
-                        var action1 = component.get("c.get_helostatesPur");                         
+                        var action1 = component.get("c.get_heloStatesPur");                         
                     }
                     //Helo Refinance States
                     else if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){ 
