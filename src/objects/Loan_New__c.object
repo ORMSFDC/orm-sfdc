@@ -4079,7 +4079,21 @@ $Profile.Name != "System Administrator"
         <fullName>Must_fill_ReDisclosure_change_reason</fullName>
         <active>true</active>
         <description>Must specify a reason while changing the ReDisclosure Date</description>
-        <errorConditionFormula>ISCHANGED(Recent_Re_disclosure_Date__c) &amp;&amp; (ispickval( ReDisclosure_Reason__c ,'') &amp;&amp;  isblank(Other_ReDisclosure_Reason__c))|| isblank(Recent_Re_disclosure_Date__c) &amp;&amp; (!ispickval( ReDisclosure_Reason__c ,'') ||  !isblank(Other_ReDisclosure_Reason__c))</errorConditionFormula>
+        <errorConditionFormula>(
+    NOT(isblank(Re_disclosure_Date__c)) 
+    &amp;&amp;
+    (ispickval(ReDisclosure_Reason__c ,&apos;&apos;) &amp;&amp; 
+    isblank(Other_ReDisclosure_Reason__c))
+)
+
+||
+
+(
+    isblank(Re_disclosure_Date__c) 
+    &amp;&amp; 
+    (NOT(ispickval(ReDisclosure_Reason__c ,&apos;&apos;)) || 
+    NOT(isblank(Other_ReDisclosure_Reason__c)))
+)</errorConditionFormula>
         <errorDisplayField>ReDisclosure_Reason__c</errorDisplayField>
         <errorMessage>Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting 'Other' in the picklist.</errorMessage>
     </validationRules>
