@@ -96,6 +96,11 @@
                     <label>HELO-Broker Comp</label>
                 </value>
                 <value>
+                    <fullName>HELO-OrigFee</fullName>
+                    <default>false</default>
+                    <label>HELO-Origination Fee</label>
+                </value>
+                <value>
                     <fullName>HELO-ORIGINATION</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -103,6 +108,28 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rate2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Required if Helo-Origination Fee is selected</inlineHelpText>
+        <label>Rate 2 (HELO-Orig Fee)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Rate3__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Required if Helo-Origination Fee is selected</inlineHelpText>
+        <label>Rate 3 (HELO-Orig Fee)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Rate_Date__c</fullName>
@@ -144,6 +171,8 @@
     <searchLayouts>
         <customTabListAdditionalFields>Product_Rate_Type__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Rate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Rate2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Rate3__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Rate_Date__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Processed__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
@@ -151,12 +180,82 @@
         <searchFilterFields>Processed__c</searchFilterFields>
         <searchFilterFields>Product_Rate_Type__c</searchFilterFields>
         <searchFilterFields>Rate__c</searchFilterFields>
+        <searchFilterFields>Rate2__c</searchFilterFields>
+        <searchFilterFields>Rate3__c</searchFilterFields>
         <searchFilterFields>Rate_Date__c</searchFilterFields>
         <searchResultsAdditionalFields>Product_Rate_Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Rate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Rate2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Rate3__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Rate_Date__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Processed__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>DailyProductRateOrigFeeValidRate2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Product_Rate_Type__c, &apos;HELO-OrigFee&apos;), 
+OR(OR(Rate2__c &lt; 0.00000, ISBLANK(Rate2__c)), 
+OR(Rate3__c &lt; 0.00000, ISBLANK(Rate3__c)), 
+OR(Rate__c &lt; 0.00000, ISBLANK(Rate__c))) 
+)</errorConditionFormula>
+        <errorDisplayField>Product_Rate_Type__c</errorDisplayField>
+        <errorMessage>HELO-Origination Fee REQUIRES a value in Rate, Rate2, and Rate3</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOBrokerCompValidRate</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Product_Rate_Type__c, &apos;HELO-BrokerComp&apos;), 
+OR(Rate__c &lt; 100, ISBLANK(Rate__c))
+)</errorConditionFormula>
+        <errorDisplayField>Rate__c</errorDisplayField>
+        <errorMessage>Must be greater than 100</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOOrigFeeValidateRate2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Product_Rate_Type__c, &apos;HELO-OrigFee&apos;),
+OR(
+ISBLANK(Rate2__c),
+NOT(Rate2__c&lt;0.01)
+))</errorConditionFormula>
+        <errorDisplayField>Rate2__c</errorDisplayField>
+        <errorMessage>Must be a number between 1.0 and 0.0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOOrigFeeValidateRate3</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Product_Rate_Type__c, &apos;HELO-OrigFee&apos;), 
+OR( 
+ISBLANK(Rate3__c), 
+NOT(Rate3__c&lt;0.01) 
+))</errorConditionFormula>
+        <errorDisplayField>Rate3__c</errorDisplayField>
+        <errorMessage>Must be a value between 1.0 and 0.0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NotOrigFeeValidateRate2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT(ISPICKVAL(Product_Rate_Type__c, &apos;HELO-OrigFee&apos;)), 
+NOT(ISBLANK(Rate2__c))
+)</errorConditionFormula>
+        <errorDisplayField>Rate2__c</errorDisplayField>
+        <errorMessage>Rate 2 is not used for the selected Product Rate. Remove this value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NotOrigFeeValidateRate3</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT(ISPICKVAL(Product_Rate_Type__c, &apos;HELO-OrigFee&apos;)), 
+NOT(ISBLANK(Rate3__c))
+)</errorConditionFormula>
+        <errorDisplayField>Rate3__c</errorDisplayField>
+        <errorMessage>Rate 3 is not used for the selected Product Rate. Remove this value.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
