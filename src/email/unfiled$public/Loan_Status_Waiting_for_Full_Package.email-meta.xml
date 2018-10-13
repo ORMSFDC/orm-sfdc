@@ -4,12 +4,14 @@
     <encodingKey>ISO-8859-1</encodingKey>
     <name>Loan Status Waiting for Full Package</name>
     <style>none</style>
-    <subject>Application Disclosure Request Loan #{!Loan_New__c.LoanNumber__c}, Loan ID: {!Loan_New__c.Name}, Client: {!Loan_New__c.Client_Name__c}.</subject>
-    <textOnly>A new application has been sent out! To be in compliance, mail the following 3 disclosures to the client’s mailing address today:
+    <subject>Initial RESPA Disclosure Request Loan #{!Loan_New__c.LoanNumber__c}, Loan ID: {!Loan_New__c.Name}, Client: {!Loan_New__c.Client_Name__c}.</subject>
+    <textOnly>A new loan has been Folder Received! To be in compliance, mail the following disclosures to the client’s mailing address today:
 
 1.       Affiliated Business Arrangement
 2.       Settlement Service Providers
 3.       Good Faith Estimate
+4.       Truth In Lending (Fixed-rate only)
+5.       TX Mortgage Broker Disclosure (TX only)
 
 Regards,
 ORMS Support Team.</textOnly>
