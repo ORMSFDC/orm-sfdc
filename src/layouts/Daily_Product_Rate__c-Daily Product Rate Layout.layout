@@ -20,16 +20,20 @@
                 <field>Rate_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Rate__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Rate2__c</field>
+                <field>RateMargin1__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Rate3__c</field>
+                <field>RateMargin2__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RateMargin3__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
