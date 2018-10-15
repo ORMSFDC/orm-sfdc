@@ -1045,8 +1045,9 @@
                                     </aura:if>
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2">                            
-                                    <ui:inputText value="{!v.selectedRecord.PostalCode}" maxlength="5" blur="{!c.checkZip}" updateOn="keyup,keypress,keydown" label="Zip" aura:id="inputZip" class="slds-input" required="true"/>
-                                    <aura:if isTrue="{!v.zip_error}">      
+                                    <ui:inputText value="{!v.selectedRecord.PostalCode}" maxlength="5" keyup="{!c.checkZip}" keypress= "{!c.checkZip}" keydown ="{!c.checkZip}"
+				    updateOn="keyup,keypress,keydown" label="Zip" aura:id="inputZip" class="slds-input" required="true"/>
+                                    <aura:if isTrue="{!v.zip_error}"> <!--SFDC-363 added Key actions for immediate erros on zipcode-->     
                                         <span style="color:red">This is a required field.</span>
                                     </aura:if>
                                     <aura:if isTrue='{!v.stateZip}'>
