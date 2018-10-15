@@ -208,7 +208,7 @@ OR(Rate__c &lt; 0.00000, ISBLANK(Rate__c)))
         <active>true</active>
         <errorConditionFormula>AND( 
 ISPICKVAL(Product_Rate_Type__c, &apos;HELO-BrokerComp&apos;), 
-OR(Rate__c &lt; 100, ISBLANK(Rate__c))
+OR(Rate__c &lt; 1.0, ISBLANK(Rate__c))
 )</errorConditionFormula>
         <errorDisplayField>Rate__c</errorDisplayField>
         <errorMessage>Must be greater than 100</errorMessage>
