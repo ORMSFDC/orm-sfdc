@@ -47,16 +47,15 @@ public with sharing class DailyProductRateUpdateCallout {
             gen.writeEndObject();
         } else if ('HELO-OrigFee' == pr.Product_Rate_Type__c) {
             String namedCredential = esrEntries[0].NamedCredential__c;
-
             endpoint = 'callout:' + namedCredential + '/app/lib/integration/OneReverse/HELO/UpdateOrigFee/index.php';
             gen.writeStartObject();
             gen.writeStringField('UserCode', esrEntries[0].username__c);
             gen.writeStringField('PassCode', esrEntries[0].password__c);
             gen.writeStringField('DateFormat', 'Y-m-d');
             gen.writeStringField('EffectiveDate', rateDateS);//'2018-08-01');
-            gen.writeStringField('OrigFeeMargin1', pr.Rate__c.toPlainString());
-            gen.writeStringField('OrigFeeMargin2', pr.Rate2__c.toPlainString());
-            gen.writeStringField('OrigFeeMargin3', pr.Rate3__c.toPlainString());
+            gen.writeStringField('OrigFeeMargin1', pr.RateMargin1__c.toPlainString());
+            gen.writeStringField('OrigFeeMargin2', pr.RateMargin2__c.toPlainString());
+            gen.writeStringField('OrigFeeMargin3', pr.RateMargin3__c.toPlainString());
             gen.writeEndObject();
 //        else if ('HELO-ORIGINATION' == pr.Product_Rate_Type__c) {
 //            //todo
