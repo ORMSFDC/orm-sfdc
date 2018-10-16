@@ -213,9 +213,9 @@
             //SFDC-363
             var sZip2=component.get('v.stateZip2'); //Helo Refi Error
             var sZip3=component.get('v.stateZip3'); //Helo Purchase error
-            var sZip4=component.set('v.stateZip4'); //HECM Purchase error
-            var sZip5=component.set('v.stateZip5'); //HECM Refi error
-            if(sZip==false && sZip2==false && sZip3==false && sZip4 != true && sZip5 != true)
+            var sZip4=component.get('v.stateZip4'); //HECM Purchase error
+            var sZip5=component.get('v.stateZip5'); //HECM Refi error
+            if(sZip==false && sZip2==false && sZip3==false && sZip4 ==false && sZip5 ==false)
             {
                 helper.SaveScenario(component,event,helper);
             }
@@ -911,15 +911,15 @@
                                 if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){
                                     component.set("v.stateZip2",true);
                                     component.set("v.stateZip",false);
-                                }if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
+                                }else if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
                                     component.set("v.stateZip3",true);
                                     component.set("v.stateZip",false);
                                 }
-                                if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){
+                                else if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){
                                     component.set("v.stateZip4",true);
                                     component.set("v.stateZip",false);
                                 }
-                                if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){
+                                else if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){
                                     component.set("v.stateZip5",true);
                                     component.set("v.stateZip",false);
                                 }
