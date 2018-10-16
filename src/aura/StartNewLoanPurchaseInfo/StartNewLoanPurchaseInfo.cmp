@@ -75,8 +75,10 @@
                                 <ui:inputSelectOption text="HECM for Purchase" label="HECM for Purchase" disabled="{!v.NewLoan.Product_Type__c == 'HELO'}" />  
 
                                 <ui:inputSelectOption text="HELO Refinance" label="HELO Refinance" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />
-                                <ui:inputSelectOption text="HELO for Purchase" label="HELO for Purchase" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />                                    
-                            </ui:inputSelect>
+                               <!-- SFDC - 364
+			       <ui:inputSelectOption text="HELO for Purchase" label="HELO for Purchase" disabled="{!v.NewLoan.Product_Type__c == 'HECM'}" />                                    
+                            	-->
+			    </ui:inputSelect>
 
                             <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.NewLoan.Rate_Type__c}" disabled="{!(v.NewLoan.Product_Type__c == 'HELO') ? true  : false}" change="{!c.onRateTypeChange}">
                                 <ui:inputSelectOption text="ARM" label="ARM" />
