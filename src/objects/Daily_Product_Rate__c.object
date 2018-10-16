@@ -110,28 +110,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Rate2__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>Required if Helo-Origination Fee is selected</inlineHelpText>
-        <label>Rate 2 (HELO-Orig Fee)</label>
-        <precision>12</precision>
-        <required>false</required>
-        <scale>5</scale>
-        <trackTrending>false</trackTrending>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Rate3__c</fullName>
-        <externalId>false</externalId>
-        <inlineHelpText>Required if Helo-Origination Fee is selected</inlineHelpText>
-        <label>Rate 3 (HELO-Orig Fee)</label>
-        <precision>12</precision>
-        <required>false</required>
-        <scale>5</scale>
-        <trackTrending>false</trackTrending>
-        <type>Percent</type>
-    </fields>
-    <fields>
         <fullName>RateMargin1__c</fullName>
         <externalId>false</externalId>
         <label>Rate1</label>
