@@ -245,6 +245,12 @@
         component.set("v.selectedRecord.Street","");
         component.set("v.selectedRecord.PostalCode","");
         component.set("v.selectedRecord.Email","");
+	//SFDC-363
+	component.set("v.stateZip",false);
+        component.set("v.stateZip2",false);
+        component.set("v.stateZip3",false);
+        component.set("v.stateZip4",false);
+        component.set("v.stateZip5",false);
         // Code Added by Dev4 for ORMSFDC-1447
         component.set("v.selectedRecord.State","");
         component.set("v.showError",false);
