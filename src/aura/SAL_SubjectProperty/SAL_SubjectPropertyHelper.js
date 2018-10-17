@@ -725,16 +725,26 @@
                         component.set("v.requiredZip", false);
                         component.set("v.requiredZip1",false); //SFDC-365
                         component.set("v.requiredZip2",false); //SFDC-365
+                        component.set("v.requiredZip3",false);
+                        component.set("v.requiredZip4",false);
                     }
                     else {
                         component.set("v.requiredZip", true);
                         //SFDC-365
-                        if((prodType == 'HECM' &&  (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance' || 'HECM for Purchase'))  ){
+                        if((prodType == 'HECM' &&  (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance'))  ){
                             component.set("v.requiredZip1", true);
                             component.set("v.requiredZip", false);
                         }    
-                        if((prodType == 'HELO' && (rateType == 'HELO Refinance' || rateType == 'HELO for Purchase'))){
+                        if(prodType == 'HELO' && rateType == 'HELO Refinance'){
                             component.set("v.requiredZip2", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        if(prodType == 'HECM' &&  rateType == 'HECM for Purchase'){
+                            component.set("v.requiredZip3", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        if(prodType == 'HELO' && rateType == 'HELO for Purchase'){
+                            component.set("v.requiredZip4", true);
                             component.set("v.requiredZip", false);
                         }
                         //SFDC-365
