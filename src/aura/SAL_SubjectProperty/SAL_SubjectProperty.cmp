@@ -15,8 +15,12 @@
     <aura:attribute name="showError" type="boolean" default="false"/>
     <aura:attribute name="isZipExist" type="boolean" default="false"/>
     <aura:attribute name="requiredZip" type="boolean" default="false"/>	
-    <aura:attribute name="requiredZip1" type="boolean" default="false"/> <!--SFDC - 365-->
-    <aura:attribute name="requiredZip2" type="boolean" default="false"/> <!--SFDC - 365-->    
+    <!--SFDC - 365-->
+    <aura:attribute name="requiredZip1" type="boolean" default="false"/> 
+    <aura:attribute name="requiredZip2" type="boolean" default="false"/>
+    <aura:attribute name="requiredZip3" type="boolean" default="false"/> 
+    <aura:attribute name="requiredZip4" type="boolean" default="false"/> 
+    <!--SFDC - 365-->
     <aura:attribute name="itemsClicked" type="String" />
     
    	<aura:attribute name="prodType" type="String" /> <!--SFDC - 275-->
@@ -86,10 +90,16 @@
                             </aura:if>
                             <!-- SFDC-365 -->
                             <aura:if isTrue='{!v.requiredZip1}'>
-                                <h6 style="color:red;">We do not offer the HECM in this state.</h6>
+                                <h6 style="color:red;">We do not offer the HECM for Refinance in this state.</h6>
                             </aura:if>
                             <aura:if isTrue='{!v.requiredZip2}'>
-                                <h6 style="color:red;">We do not offer the HELO in this state.</h6>
+                                <h6 style="color:red;">We do not offer the HELO for Refinance in this state.</h6>
+                            </aura:if>
+                            <aura:if isTrue='{!v.requiredZip3}'>
+                                <h6 style="color:red;">We do not offer the HECM for Purchase in this state.</h6>
+                            </aura:if>
+                            <aura:if isTrue='{!v.requiredZip4}'>
+                                <h6 style="color:red;">We do not offer the HELO for Purchase in this state.</h6>
                             </aura:if>
                         </div>
                         
