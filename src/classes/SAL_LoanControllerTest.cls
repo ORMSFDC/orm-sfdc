@@ -314,6 +314,7 @@ public class SAL_LoanControllerTest {
             List<string> lst1=SAL_LoanController.getZipData('90001');
             List<string> lst2=SAL_LoanController.getRateFixProduct(); 
             List<string> lst3=SAL_LoanController.getHeloRate();           
+            List<string> lst4=SAL_LoanController.getARMRate();  //SFDC-377
             Test.stopTest();
         }
         }
@@ -405,7 +406,9 @@ public class SAL_LoanControllerTest {
                 List<String> ReturnVal14 = SAL_LoanController.getHeloRateTier3();
                 String ReturnVal11 = SAL_LoanController.getHeloOrigination('5.060');
                 String ReturnVal12 = SAL_LoanController.getHeloMargin('3.060');
-                
+                List<String> ReturnVal02 = SAL_LoanController.getArmRateTier1(); //SFDC-377
+                List<String> ReturnVal03 = SAL_LoanController.getArmRateTier2();
+                List<String> ReturnVal04 = SAL_LoanController.getArmRateTier3();
                 Test.stopTest();
             }
       
