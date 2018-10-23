@@ -866,6 +866,7 @@
                 try{
                     console.log(Adjmetadatavalues,AdjustableParseddata[i].Margin);
                     pricingValuesfromMetadata =    Adjmetadatavalues[AdjustableParseddata[i].Margin];
+		    AdjustableParseddata[i].No_Margin = pricingValuesfromMetadata; //SFDC-377
                 }catch(err){
                     
                     console.log('errr ',err);

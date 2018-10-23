@@ -41,7 +41,8 @@
     <aura:handler name="change" value="{!v.Incomplete}" action="{!c.LoanFormatValidations}" />
     <aura:attribute name="PropertyValue" type="Currency" default="" />
     <aura:attribute name="RateList" type="List" />
-    <aura:attribute name="HeloRateList" type="List" />  <!--SFDC-237-->              
+    <aura:attribute name="HeloRateList" type="List" />  <!--SFDC-237-->   
+    <aura:attribute name="ArmRateList" type="List" /> <!--SFDC-377--> 
     <aura:registerEvent name="PillsEvent" type="c:NavPillsEvent" />
     <aura:attribute name="YesNoList" type="List" default="[
                                                           {'label': 'Yes', 'value': 'Yes'},
@@ -221,7 +222,13 @@
                             </div>
                             <aura:if isTrue="{!v.NewLoan.Rate_Type__c == 'ARM'}">
                                 <ui:inputSelect aura:id="marginoptions" required="true" label="Margin" value="{!v.NewLoan.Margin__c}" change="{!c.marginoption}">
-                                    <ui:inputSelectOption value="" text="" label="--Select option--" />
+                                    <ui:inputSelectOption value="true" text="" label="--Select option--" />
+                                    <!--SFDC-377--> 
+                                    <aura:iteration items="{!v.ArmRateList}" var="pOptions">
+                                        	<ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" />
+                                    </aura:iteration>  
+                                    <!-- <ui:inputSelectOption text="1.500" label="1.500" />
+                                    <ui:inputSelectOption text="1.625" label="1.625" />
                                     <ui:inputSelectOption text="1.750" label="1.750" />
                                     <ui:inputSelectOption text="1.875" label="1.875" />
                                     <ui:inputSelectOption text="2.000" label="2.000" />
@@ -232,7 +239,7 @@
                                     <ui:inputSelectOption text="2.625" label="2.625" />
                                     <ui:inputSelectOption text="2.750" label="2.750" />
                                     <ui:inputSelectOption text="2.875" label="2.875" />
-                                    <ui:inputSelectOption text="3.000" label="3.000" />
+                                    <ui:inputSelectOption text="3.000" label="3.000" /> -->
                                 </ui:inputSelect>                                
                             </aura:if>
                         </div>

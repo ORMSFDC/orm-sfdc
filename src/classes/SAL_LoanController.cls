@@ -7,7 +7,7 @@
 * 09/07/2018: Sahitya: Fetch Helo Margin from Metadata table
 * 09/20/2018: Sahitya: SFDC-289 - Added 3rd Tier
 * 09/26/2018: Sahitya: SFDC - 275 Divided Authorised states into two metadata tables based on product type
-* 09/26/2018: Sahitya: SFDC - 275 Divided Authorised states into two metadata tables based on product type
+* 10/22/2018: Sahitya: SFDC - 377 Added Two new values for Tier1, 2, and 3 and made changes to fetch margin from Metadata Table
 */
 
 public with sharing class SAL_LoanController {
@@ -455,7 +455,33 @@ public with sharing class SAL_LoanController {
         }
         return HeloRateList;        
     }
-
+    
+    //SFDC-377
+    @AuraEnabled
+    public static list<string>getARMRate()
+    {
+        List<string>ArmRateList=new List<string>();
+        String partnerType;
+        try{
+            Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+            //SFDC-289
+            partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+            if(partnerType == 'Premier'){
+                ArmRateList= getArmRateTier2();
+            }
+            else if(partnerType == 'Non Premier'){
+                ArmRateList= getArmRateTier1();
+            }  
+            else if(partnerType == 'Premier Plus'){
+                ArmRateList= getArmRateTier3();
+            }    
+        } 
+        catch(Exception ex)
+        {
+            system.debug('getArmFixProduct .....'+ ex.getMessage());
+        }
+        return ArmRateList;        
+    }
 
     @AuraEnabled
     public static string getOrigination(string rate)
@@ -629,7 +655,47 @@ public with sharing class SAL_LoanController {
         return allrate;
     }
 
-
+     //SFDC-377
+    public static list<string>getArmRateTier1()
+    {
+        List<string> allrate=new List<string>();
+        list<Tier1__mdt> lstPriceT1=new list<Tier1__mdt>();
+        lstPriceT1=[Select  Margin__c from Tier1__mdt order by Margin__c ];
+        for(Tier1__mdt rt:lstPriceT1)
+        {
+            string value= string.valueOf( rt.Margin__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+    
+    public static list<string>getArmRateTier2()
+    {
+        List<string> allrate=new List<string>();
+        list<Tier2__mdt> lstPriceT1=new list<Tier2__mdt>();
+        lstPriceT1=[Select  Margin__c from Tier2__mdt order by Margin__c ];
+        for(Tier2__mdt rt:lstPriceT1)
+        {
+            string value= string.valueOf( rt.Margin__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+    
+    public static list<string>getArmRateTier3()
+    {
+        List<string> allrate=new List<string>();
+        list<Tier3__mdt> lstPriceT1=new list<Tier3__mdt>();
+        lstPriceT1=[Select  Margin__c from Tier3__mdt order by Margin__c ];
+        for(Tier3__mdt rt:lstPriceT1)
+        {
+            string value= string.valueOf( rt.Margin__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+    //end SFDC-377
+    
     public static string getORMOriginationT1(decimal Rate)
     {
         string origtoorm;

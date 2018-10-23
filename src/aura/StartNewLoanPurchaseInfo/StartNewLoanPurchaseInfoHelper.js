@@ -716,6 +716,14 @@
             });
             $A.enqueueAction(action);
         }
+	//SFDC-377
+        var action2 = component.get('c.getARMRate');
+        action2.setCallback(this, function (data) {
+            var result = data.getReturnValue();
+            var resultLength = result.length;
+            component.set("v.ArmRateList", result);
+        });
+        $A.enqueueAction(action2);
     },
 
     getORMOrigination: function (component, event, helper, Rate) {
