@@ -154,7 +154,7 @@
         
     },  
     //Validate Form and SAve Scenario
-    Save: function(component, event, helper) {
+    Save: function(component, event, helper) {        
         var msg = "";
         var reg = '';
         var array_id = new Array();
@@ -189,21 +189,25 @@
         var chkZip=helper.ValidZip(component, event, helper,'inputZip');
         var IsemailPhoneWrong=helper.EmailOrPhoneRequired(component, event, helper);
         var IsValidEmail= helper.EmailValidation(component, event, helper);
+        var IsValidPhone= helper.FormatPhonehelper(component, event, helper); //SFDC-378
         //  debugger;
-        if (Isrequired ||chkZip|| IsemailPhoneWrong || IsValidEmail) {              
+        if (Isrequired ||chkZip|| IsemailPhoneWrong || IsValidEmail || IsValidPhone) {   //SFDC-378           
             component.set("v.showError", true); 
             if(IsemailPhoneWrong)
             {
                 component.set("v.EmailPhoneMessages","Please enter either Email or Phone Number.");
+                component.set("v.EmailMessage",""); //SFDC-378, email error
             }
             else{
                 component.set("v.EmailPhoneMessages","");
                 if(IsValidEmail)
                 {
                     component.set("v.EmailPhoneMessages",""); 
+                    component.set("v.EmailMessage","Please enter a valid email address"); //SFDC-378, email error
                 }
                 else{
                     component.set("v.EmailPhoneMessages","");
+                    component.set("v.EmailMessage",""); //SFDC-378, email error
                 }
             }
         }        
@@ -224,7 +228,7 @@
                 component.set("v.showError", true);   
             }
             
-        }      
+        }    
     },
     //Validate PhoneFormat
     FormatPhone: function(component, event, helper){

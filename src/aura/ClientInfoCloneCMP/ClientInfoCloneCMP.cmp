@@ -116,6 +116,7 @@
     <!--Validation attributes--> 
     <aura:attribute name="Messages" type="String" default=""/>
     <aura:attribute name="EmailPhoneMessages" type="String" default=""/>
+    <aura:attribute name="EmailMessage" type="String" default=""/> <!--SFDC-378-->
     <aura:attribute name="showError" type="boolean" default="false"/>  
     <aura:attribute name="IsSpinner" type="boolean" default="false" />
     <aura:attribute name="rerender_section" type="boolean" default="true" />
@@ -374,8 +375,8 @@
                         <tbody>
                             <aura:iteration items="{!v.FHA_Hecm_AdjustableMargin}" var="obj" indexVar="indx">
                                 <tr class="{!'each_row row_adjust_'+indx}">
-				<aura:if isTrue="{!obj.No_Margin == undefined}"> <!--SFDC-377 (added to eliminate margin if it is not in metadata table) -->
-                                <aura:set attribute="else">
+                                <aura:if isTrue="{!obj.No_Margin == undefined}">  <!--SFDC-377 (added to eliminate margin if it is not in metadata table) -->
+                                <aura:set attribute="else">    
                                     <th scope="row" data-label="Margin" data-type="Adjust"  class="slds-box" style="background-color: #2081bf; ">
                                         <div title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" data-type="adjust" data-MFD="{!obj.MFD}" style="cursor:pointer;text-align:center;"> 
                                             <button id="{!indx}" data-type="adjust" data-MFD="{!obj.MFD}" style="color:white; background-color:#13547c" class="slds-button slds-button--inverse" onclick="{!!c.get_loanFor_margin}" >Select</button>
@@ -431,7 +432,7 @@
                                             </span>
                                         </div>
                                     </td>
-				    </aura:set>
+                                    </aura:set>
                                     </aura:if>
                                 </tr>
                             </aura:iteration>
@@ -1092,15 +1093,11 @@
                                     <ui:inputemail label="Email" aura:id="inputEmail"  value="{!v.selectedRecord.Email}"  class="slds-input" />
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2">                            
-                                    <ui:inputPhone label="Phone Number " required="false" aura:id="inputPhone" 
-                                                   value="{!v.selectedRecord.Phone}"   class="slds-input" maxlength="10" 
-                                                   blur="{!c.FormatPhone}"  keypress="{!c.RestrictZeroInAlternatePhoneFirstTime}" keyup="{!c.RestrictZeroInAlternatePhoneFirstTime}"
-                                                   keydown="{!c.RestrictZeroInAlternatePhoneFirstTime}"  updateOn="keypress, keyup, keydown" />
-                                    <!-- <ui:inputtext value="{!v.selectedRecord.Phone_Number__c}"  
-                                          maxlength="10" keypress="{!c.validatePhone}" 
-                                          keyup="{!c.validatePhone}" keydown="{!c.validatePhone}" 
-                                          updateOn="keypress, keyup, keydown" label="Phone" aura:id="inputPhone1" class="slds-input"  />
-                       --></div>
+                                    <ui:inputPhone label="Phone Number" required="false" aura:id="inputPhone" value="{!v.selectedRecord.Phone}"
+                                                   class="slds-input" maxlength="10" blur="{!c.FormatPhone}" keypress="{!c.RestrictZeroInAlternatePhoneFirstTime}"
+                                                   keyup="{!c.RestrictZeroInAlternatePhoneFirstTime}" keydown="{!c.RestrictZeroInAlternatePhoneFirstTime}"
+                                                   updateOn="keypress, keyup, keydown" /> <!--SFDC-378 -->
+                       		</div>
                             </div>
                             <aura:if isTrue="{!v.showAlert}">  
                                 <ui:message title="Confirmation" severity="confirm" closable="false">
@@ -1111,6 +1108,7 @@
                                 <ui:message title="Error" severity="error" closable="false">
                                     <b> Please review all errors and save.</b><br></br>
                                     <b> {!v.EmailPhoneMessages}</b>
+                                    <b> {!v.EmailMessage}</b> <!--SFDC-378 -->
                                 </ui:message>
                             </aura:if>
                             
@@ -1152,14 +1150,13 @@
                             <br/>
                             <div class="slds-form-element__row"  id="savebtn"> 
                                 
-                                <div class="slds-form-element slds-size_1-of-2" >                            
-                                    <!-- <lightning:button aura:id="outputButton" variant="brand" 
-                                              label="Save Scenario" onclick="{!c.Save1}" />-->
+                                <div class="slds-form-element slds-size_1-of-2" >  
                                     <lightning:button aura:id="outputButton" variant="brand" 
-                                                      label="Save Scenario" onclick="{!c.Save}"  class="senario_button"/>
+                                                      label="Save Scenario" onclick="{!c.Save}"  class="senario_button"/>                                     
                                     &nbsp;                            
-                                    <!--          <ui:outputURL value="{!v.myURL}"   
-                                          label="Start a Loan" /> -->
+                                    <aura:if isTrue="{!v.showSpinner}">  
+                                    	<lightning:spinner variant="brand" size="large"/>
+                                    </aura:if> 
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2"  >
                                 </div>                        
