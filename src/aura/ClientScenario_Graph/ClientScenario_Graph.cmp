@@ -62,7 +62,14 @@
                 <div id="LOCandCashFlows"  style="display:none">
                     <fieldset class="slds-form-element">   
                         <div> 
-                            <h1  id="loc">Scenario Results</h1>                    
+                            <h1  id="loc">Scenario Results
+			    <!--SFDC-375-->
+			    <aura:if isTrue="{!v.isTraditional}">                                                                    
+                                (<ui:outputText value="{!v.LRateType}"></ui:outputText>, Refinance)
+                            <aura:set attribute="else">
+                                (<ui:outputText value="{!v.LRateType}"></ui:outputText>, Purchase) 
+                            </aura:set>
+                            </aura:if></h1>                    
                         </div>
                         <fieldset class="slds-form-element">            
                             <div class="slds-form-element__group" >
