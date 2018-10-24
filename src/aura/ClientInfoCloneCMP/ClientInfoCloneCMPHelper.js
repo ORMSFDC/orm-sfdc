@@ -445,10 +445,14 @@
     RestrictZeroInPhoneFirstTime:function(component, event, helper,compId) {
         var inz = component.get(compId);
         var digit = parseInt(inz[0]);
+	var alphabet = (""+inz).replace(/\D/g, ''); //SFDc-378
         if(digit == 0)
         {            
             component.set(compId, inz.substring(0, inz.length - 1));
-        }              
+        }   
+	else{ //SFDc-378
+            component.set(compId, alphabet);
+        }
     },
     
     //Validate Phone //SFDC-378
@@ -463,8 +467,9 @@
         }else{
             var s2 = (""+a).replace(/\D/g, '');
             var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);    
-            var result= (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];            
-            if (result == null){
+            var result= (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];  
+	    var EmailInputValue = component.get("v.selectedRecord.Email"); //SFDc-378
+            if (result == null && $A.util.isEmpty(EmailInputValue)){
                 flagR = true;
             }else{
             	component.set("v.selectedRecord.Phone",result); 
