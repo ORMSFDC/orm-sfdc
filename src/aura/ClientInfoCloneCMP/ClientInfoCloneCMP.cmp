@@ -584,6 +584,12 @@
                         <div class="slds-form-element__group"> 
                             <div class="customFont28">                      
                                 Scenario Results
+				<aura:if isTrue="{!v.isTraditional}">     <!--SFDC-375-->                                                                
+                                	(<ui:outputText value="{!v.LRateType}"></ui:outputText>, Refinance)
+				    <aura:set attribute="else">
+                                        (<ui:outputText value="{!v.LRateType}"></ui:outputText>, Purchase) 
+				    </aura:set>
+				</aura:if>
                             </div>
                             <div class="slds-form-element__row">
                                 
