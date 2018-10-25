@@ -579,18 +579,28 @@
             <div id="loc_hra">
                 <div id="LOCandCashFlow"  style="display:none">
                     <fieldset class="slds-form-element">   
-                        
-                        
                         <div class="slds-form-element__group"> 
-                            <div class="customFont28">                      
-                                Scenario Results
-				<aura:if isTrue="{!v.isTraditional}">     <!--SFDC-375-->                                                                
-                                	(<ui:outputText value="{!v.LRateType}"></ui:outputText>, Refinance)
-				    <aura:set attribute="else">
-                                        (<ui:outputText value="{!v.LRateType}"></ui:outputText>, Purchase) 
-				    </aura:set>
-				</aura:if>
-                            </div>
+                            <div class="customFont28">     <!--SFDC-375-->                 
+                                Scenario Results   <br/>                                      
+                                <div class="customFont29"> 
+                                    <aura:if isTrue="{!v.isTraditional}"> 
+                                        <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
+                                            HELO Refinance    
+                                            <aura:set attribute="else">   
+                                                HECM Refinance <ui:outputText value="{!v.LRateType}"></ui:outputText>
+                                            </aura:set>
+                                        </aura:if>
+                                        <aura:set attribute="else">
+                                            <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
+                                                HELO Purchase
+                                                <aura:set attribute="else">   
+                                                    HECM Purchase <ui:outputText value="{!v.LRateType}"></ui:outputText>
+                                                </aura:set>
+                                            </aura:if>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>                                             
+                            </div><br/>
                             <div class="slds-form-element__row">
                                 
                                 <div class="slds-form-element slds-size_1-of-2" 

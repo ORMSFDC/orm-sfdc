@@ -23,6 +23,12 @@ clear: both;
     margin-bottom: 0;
     text-align: justify
 }
+.THIS .customFont28{    
+     
+    font-size: 15px !important;
+    font-weight:bold !important;
+    color:#2081BF;
+}
 .THIS .btn {
     -webkit-appearance: none;
     background-color: #562d84;

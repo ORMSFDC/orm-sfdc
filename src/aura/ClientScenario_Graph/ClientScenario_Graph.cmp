@@ -61,15 +61,27 @@
             <div id="twosec">
                 <div id="LOCandCashFlows"  style="display:none">
                     <fieldset class="slds-form-element">   
-                        <div> 
-                            <h1  id="loc">Scenario Results
-			    <!--SFDC-375-->
-			    <aura:if isTrue="{!v.isTraditional}">                                                                    
-                                (<ui:outputText value="{!v.LRateType}"></ui:outputText>, Refinance)
-                            <aura:set attribute="else">
-                                (<ui:outputText value="{!v.LRateType}"></ui:outputText>, Purchase) 
-                            </aura:set>
-                            </aura:if></h1>                    
+                        <div> <!--SFDC-375 -->
+                            <h1  id="loc">Scenario Results  <br/>
+                                    <div class="customFont28"> 
+                                        <aura:if isTrue="{!v.isTraditional}"> 
+                                            <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
+                                                HELO Refinance    
+                                                <aura:set attribute="else">   
+                                                HECM Refinance <ui:outputText value="{!v.LRateType}"></ui:outputText>
+                                                </aura:set>
+                                            </aura:if>
+                                        <aura:set attribute="else">
+                                            <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
+                                                HELO Purchase
+                                                <aura:set attribute="else">   
+                                                HECM Purchase <ui:outputText value="{!v.LRateType}"></ui:outputText>
+                                                </aura:set>
+                                            </aura:if>
+                                        </aura:set>
+                                        </aura:if>
+                                    </div>
+                               </h1>                    
                         </div>
                         <fieldset class="slds-form-element">            
                             <div class="slds-form-element__group" >
