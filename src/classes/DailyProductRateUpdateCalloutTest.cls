@@ -31,10 +31,7 @@ private class DailyProductRateUpdateCalloutTest {
 
         System.runAs(testUser) {
             Daily_Product_Rate__c dpr = new Daily_Product_Rate__c(
-                    Product_Rate_Type__c = 'HELO-OrigFee',
-                    Rate__c = 0.01,
-                    Rate2__c = 0.0,
-                    Rate3__c = 0.0,
+                    Product_Rate_Type__c = 'HELO-OrigFee',                    
                     Rate_Date__c = Date.newInstance(2018, 2, 17),
                     RateMargin1__c = 0.0,
                     RateMargin2__c = 0.0,
