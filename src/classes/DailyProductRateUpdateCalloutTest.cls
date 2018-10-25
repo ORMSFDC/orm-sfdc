@@ -3,18 +3,15 @@
 *
 * @author Ryan Pendergast
 * @date 8/27/2018
-*
+* changelog:
+* 10/24/2018: Sahitya - added test data to increase code coverage dpr2, dpr3
 */
 
 @IsTest
 private class DailyProductRateUpdateCalloutTest {
     private class DailyProductRateUpdateCalloutTestGenerator implements HttpCalloutMock {
         public HTTPResponse respond(HTTPRequest req) {
-        // Optionally, only send a mock response for a specific endpoint
-        // and method.
-        //System.assertEquals('http://example.com/example/test', req.getEndpoint());
-        //System.assertEquals('GET', req.getMethod());
-
+        // Optionally, only send a mock response for a specific endpoint and method.
             HttpResponse res = new HttpResponse();
             res.setHeader('Content-Type', 'application/json');
             res.setBody('{"example":"test"}');
@@ -34,12 +31,29 @@ private class DailyProductRateUpdateCalloutTest {
 
         System.runAs(testUser) {
             Daily_Product_Rate__c dpr = new Daily_Product_Rate__c(
+                    Product_Rate_Type__c = 'HELO-OrigFee',
+                    Rate__c = 0.01,
+                    Rate2__c = 0.0,
+                    Rate3__c = 0.0,
+                    Rate_Date__c = Date.newInstance(2018, 2, 17),
+                    RateMargin1__c = 0.0,
+                    RateMargin2__c = 0.0,
+                    RateMargin3__c = 0.0
+            );
+            Daily_Product_Rate__c dpr2 = new Daily_Product_Rate__c(
                     Product_Rate_Type__c = 'HELO-LIBOR',
-                    Rate__c = 3.01,
+                    Rate__c = 0.01,
+                    Rate_Date__c = Date.newInstance(2018, 2, 17)
+            );
+            Daily_Product_Rate__c dpr3 = new Daily_Product_Rate__c(
+                    Product_Rate_Type__c = 'HELO-BrokerComp',
+                    Rate__c = 101,
                     Rate_Date__c = Date.newInstance(2018, 2, 17)
             );
             Test.startTest();
             Database.insert(dpr); //the insert causes DailyProductRate trigger to fire, which inherently tests DailyProductRateUpdateCallout.makeCallout()
+            Database.insert(dpr2);
+            Database.insert(dpr3);
             Test.stopTest();
         }
     }
