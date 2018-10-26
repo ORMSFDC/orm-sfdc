@@ -740,7 +740,7 @@ Please call your account executive with any questions or if you need assistance!
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>account_link</shortDescription>
-        <value>https://ormmortgageservices--balaqa.lightning.force.com/lightning/r/Account/</value>
+        <value>https://ormmortgageservices--qa.lightning.force.com/lightning/r/Account/</value>
     </labels>
     <labels>
         <fullName>account_link2</fullName>
