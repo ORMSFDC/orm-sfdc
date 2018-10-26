@@ -222,7 +222,14 @@ public with sharing class LoanDateControllerTest {
         
         Loan_New__c LC1 = new Loan_New__c(Client_Name__c=clientInfo.Id);
         insert LC1;
-        return LC1;
-        
+        return LC1;        
     }
+    
+    //SFDC-370
+    @isTest static void createTaskTest()
+    { 
+    try{
+        LoanDateController.createAETask('test','test');
+    }catch(Exception ex){}
+    } 
 }
