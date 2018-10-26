@@ -1,7 +1,5 @@
 @isTest
 public with sharing class LoanDateControllerTest {
-    
-    
     @isTest static void SaveLoanMethodTest(){
         
         Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
@@ -114,7 +112,6 @@ public with sharing class LoanDateControllerTest {
             objAttachment.Body = FileData;
             objAttachment.ParentId = LoanInsert.Id;
             objAttachment.contentType = 'Application/PDF';
-            //(Id)apexPages.CurrentPage().getParameters().put('id',string.valueOf());
             insert objAttachment;
             string Base64Data = 'test Base64Data';
             string applicationDate = Date.today().year() + '-' + Date.today().month() + '-' + Date.today().day();
