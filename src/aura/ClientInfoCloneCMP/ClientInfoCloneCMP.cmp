@@ -177,6 +177,12 @@
             <aura:if isTrue="{!!v.isDisplayHelo}">
             	<span style="margin:auto; display:table; font-size: 15pt;">Please select your pricing from the HECM ARM or HECM Fixed options below.</span>
             </aura:if>
+	    <!--SFDC-379-->
+	    <aura:if isTrue="{!and(v.isDisplayHelo ,!v.isTraditional)}">
+            	<span style="margin:auto; display:table; font-size: 15pt;">Please select your pricing from the HECM ARM or HECM Fixed options below.</span> <!--fixed helo purchase-->
+            </aura:if>
+            <aura:if isTrue="{!!v.isTraditional}">
+            <aura:set attribute="else"><!--end SFDC-379-->
             <aura:if isTrue="{!v.isDisplayHelo}">
                 <span style="margin:auto; display:table; font-size: 15pt;">Please select your pricing from the One Reverse HELO, HECM ARM or HECM Fixed Options below.</span>
                 <h4>One Reverse HELO</h4>
@@ -306,6 +312,8 @@
                         </tbody>
                     </table>
                 </div>
+		 </aura:if><!--SFDC - 379-->
+                </aura:set><!--SFDC - 379-->
             </aura:if>
             <br/>
             <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
