@@ -1,13 +1,8 @@
 ({
-
-
     doInit: function (component, event, helper) {
         $A.createComponent(
-            "c:SAL_Loan",
-
-            {
-
-            },
+            "c:StartNewLoanPurchaseInfo", //SFDC-360
+            {},
             function (newCmp) {
                 if (component.isValid()) {
                     component.set("v.body", newCmp);

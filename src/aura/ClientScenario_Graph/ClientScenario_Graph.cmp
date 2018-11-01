@@ -47,7 +47,7 @@
     <aura:attribute name="isConveted" type="Boolean" default="false"/>
     <aura:attribute name="showLoan" type="Boolean" />
     <aura:attribute name="showLoanId" type="String" />
-    
+     <aura:handler name="change" value="{!v.myBool}" action="{!c.populateLoanid}"/> <!--SFDC-360 -->
     <!---Use Salesforce Lightning Design System CSS From Static resources-->
     <aura:attribute name="IsSpinner" type="boolean" default="false" />
      <ltng:require scripts="{!$Resource.jquery}" ></ltng:require>
@@ -541,6 +541,14 @@
     </aura:if>
     <aura:if isTrue="{!v.showLoan}">
         {!v.body}
-    </aura:if>    
-    <c:Strat_newloanFromSavedsenarioPopup ApplicationDate="{!v.ApplicationDate}" displayTab="{!v.displayTab}" showLoanId="{!v.showLoanId}" showLoan="{!v.showLoan}" render_popup="{!v.render_popup}" senario_id="{!v.ScenarioID}" LRateType="{!v.LRateType}" LMortgageAppliedFor="{!v.LMortgageAppliedFor}"/>
+    </aura:if>   
+    <!--SFDC-360-->
+    <c:Strat_newloanFromSavedsenarioPopup ApplicationDate="{!v.ApplicationDate}" 
+                                          displayTab="{!v.displayTab}" 
+                                          showLoanId="{!v.showLoanId}" 
+                                          showLoan="{!v.showLoan}" 
+                                          render_popup="{!v.render_popup}" 
+                                          senario_id="{!v.ScenarioID}" 
+                                          LRateType="{!v.LRateType}" 
+                                          LMortgageAppliedFor="{!v.LMortgageAppliedFor}"/>
 </aura:component>

@@ -342,6 +342,19 @@
         });
         $A.enqueueAction(action);
     },
+    
+    //SFDC - 360
+    helperMethod : function(component,loanid,senarioid) {        
+	var action = component.get("c.updateSenario");
+        action.setParams({
+    		senarioid:senarioid,
+		loanId:loanid
+        });        
+        action.setCallback(this,function(data){       
+        });
+        $A.enqueueAction(action);       
+    }, 
+    
     //Cash Flow Graph
     cshflow: function (component, event, helper, cashflowdata) {
         var jdata = cashflowdata;

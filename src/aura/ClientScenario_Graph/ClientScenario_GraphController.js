@@ -6,12 +6,7 @@
         helper.hlperscriptsLoaded(component, event, helper);
     },
     Start_newloan: function (component, event, helper) {
-        // component.set("v.render_popup", true);
-
-        //Dont save info, just send them to SAL splash screen
-        // $A.getCallback(function (result) {
-        window.open('/s/startnewloan');
-        // });
+        component.set("v.render_popup", true); //SFDC-360
     },
     //For Request Package
     sendmailrequest: function (component, event, helper) {

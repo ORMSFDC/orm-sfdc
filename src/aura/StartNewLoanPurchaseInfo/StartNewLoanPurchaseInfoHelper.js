@@ -195,14 +195,13 @@
         });
         action1.setCallback(this, function (data) {
             var result = data.getReturnValue();
-
             var rtype = result.Rate_Type__c;
-            var selectedRate = result.Rate__c;
+            var Rate = result.Rate__c;
 
-            if (result.Children_Under_the_age_of_6_living_in_th__c == "" || result.Children_Under_the_age_of_6_living_in_th__c == undefined || result.Children_Under_the_age_of_6_living_in_th__c == null) {
+            if (result.Children_Under_the_age_of_6_living_in_th__c == "" || result.Children_Under_the_age_of_6_living_in_th__c == undefined || 
+                result.Children_Under_the_age_of_6_living_in_th__c == null) {
                 result.Children_Under_the_age_of_6_living_in_th__c = 'No';
             }
-
             component.set("v.NewLoan", result);
 
             if (result.Mortgage_Applied_for__c && result.Mortgage_Applied_for__c.includes('Purchase')) {
@@ -250,17 +249,17 @@
             }
 
             if ('ARM' === rtype) {
-//                this.showHideMortgage(component, event, helper);
                 helper.feecaluculationHelper(component, event, helper, 'init');
             }
 
             if ('Fixed' === rtype) {
-                if (!selectedRate) {
+                if (!Rate) {
                     component.find("Ratedata").set("v.value", '');
                 }
                 else {
-                    var rateval = selectedRate;
+                    var rateval = Rate;
                     var ratePer3 = Number.parseFloat(rateval).toFixed(3);
+                    helper.originationBorrowerPopup(component, event, helper, Rate); //SFDC - 360
                     setTimeout($A.getCallback(setRateFunction), 1500, component, ratePer3);
                 }
             }
@@ -932,11 +931,36 @@
             component.set("v.NewLoan.Amount_Of_Other_Funds__c", '');
         }
     },
+    //SFDC - 360
+    originationBorrowerPopup: function(component, event, helper, Rate){
+        var value = Rate;        
+        var rate= Number.parseFloat(value).toFixed(3);
+        var productType = component.get("v.NewLoan.Product_Type__c");
+        var rtype = component.get("v.NewLoan.Rate_Type__c");
+        if ('Fixed' === rtype) {
+
+            if ('HELO' === productType) { //SFDC-237
+                component.set("v.NewLoan.Credit_to_Borrower__c", 0);
+                helper.getHeloOrigination(component, event, helper, rate);
+                helper.getHeloMargin(component, event, helper, rate); //send Helo Margin
+               
+    
+            } else {                
+                helper.getORMOrigination(component, event, helper, rate);
+                helper.getORMBorrower(component, event, helper, rate);               
+            }
+            //component.set("v.show_originate_fee_disable", false);
+            component.set("v.show_originate_fee_disable", true);
+            
+        }
+    },
+    
     feecaluculationHelper: function (component, event, helper, selvalueis) {
         var rtype = component.get("v.NewLoan.Rate_Type__c");
 
         if ('Fixed' === rtype) {
-            var cmp = component.find('LoanOriginationFee');
+            //Commenting this part as we do not display calculate max fee field for Fixed Rate - SFDC - 360
+           /* var cmp = component.find('LoanOriginationFee');
             var selVal = event.getSource().get('v.value');
             console.log('selVal ' + selVal);
             if (selVal != '') {
@@ -955,7 +979,7 @@
                 component.set("v.show_originate_fee", true);
             } else {
                 component.set("v.show_originate_fee", false);
-            }
+            }*/
         } else if ('ARM' === rtype) {
             var cmp = component.find('LoanOriginationFee');
             var selVal = '';
