@@ -344,12 +344,11 @@
     },
     
     //SFDC - 360
-    helperMethod : function(component,loanid,senarioid) {
-        alert(senarioid);
-		 var action = component.get("c.updateSenario");
+    helperMethod : function(component,loanid,senarioid) {        
+	var action = component.get("c.updateSenario");
         action.setParams({
-            senarioid:senarioid,
-			loanId:loanid
+    		senarioid:senarioid,
+		loanId:loanid
         });        
         action.setCallback(this,function(data){       
         });
