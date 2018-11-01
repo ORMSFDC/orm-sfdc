@@ -1,4 +1,4 @@
-@isTest(seeAlldata=true)
+@isTest
 public with sharing class SavedScenarioControllerTest {
     
     @isTest static void getScenarioListTest(){
@@ -48,6 +48,21 @@ public with sharing class SavedScenarioControllerTest {
          //ScenarioExportUtil.getExportForscenarioId(ScenarioId);
          savedScenarioController.getScenario_nextPage(1,'Name','ASC');
          savedScenarioController.fetchAccount('test');
-         //savedScenarioController.updateSenario(ScenarioInsert.id,null);
+    }
+    
+    //SFDC-566
+    @istest static void printTest(){
+        Scenario__c s = new Scenario__c(Estimated_home_value__c = 360500.00, Scenario_Type__c='FHA Traditional HECM',RateType__c = 'Helo', 
+                                                      Current_Mortgage_Balance__c = 200.00, Current_Mortgage_Interest_Rate__c = 300.00, Margin__c = 3.125,
+                                                      Monthly_Mortgage_Payment__c = 400.00, priority__c = 'LOC And CashFlow', saved_print_count__c =5);        
+        insert s;
+        string ScenarioId = s.Id;
+        Loan_New__c l = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true, LoanStatus__c ='In Processing',
+                                                     LoanNumber__c = '12345',Appraisal_Received_Date__c= Date.parse('10/10/2017'),
+                                                     Household_Members__c='2');
+        insert l;
+        update s;        
+        savedScenarioController.getPrintCount(10,s.id); 
+        savedScenarioController.updateSenario(s.id,l.id);
     }
 }

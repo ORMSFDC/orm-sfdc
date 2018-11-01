@@ -661,6 +661,7 @@
             component.set("v.selected_record",result);
             console.log('result ',result);
             component.set('v.showSpinner',false);
+            component.set('v.printcounter',0);//SFDC-566
         });        
         $A.enqueueAction(action);       
     },

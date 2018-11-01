@@ -34,7 +34,7 @@
     <aura:attribute name="Client_Lead__rStreet" type="boolean" default="true"/>
     <aura:attribute name="IsSpinner" type="boolean" default="false"/>
   
-    
+    <aura:attribute name="printcounter" default="0" type="integer"/> <!--SFDC-566--> 
     <aura:attribute name="Margin__c" type="boolean" default="true"/>
     <aura:attribute name="showtable" type="boolean" default="false"/>
 	<aura:attribute name="showAll" type="boolean" default="true"/>

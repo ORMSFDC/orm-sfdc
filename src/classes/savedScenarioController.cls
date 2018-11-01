@@ -6,6 +6,7 @@
  * changelog:
  * 07/19/2018: Sahitya - added new fields for Helo PieGraph(Other_Estimated_Closing_Costs__c,Origination_to_orm__c)
  * 10/31/2018: Sahitya SFDC - 360 
+ * 11/01/2018: Sahitya -SFDC - 566 capture Print button count from saved scenarios
  */
 public class savedScenarioController {
     
@@ -36,6 +37,16 @@ public class savedScenarioController {
         
         se.is_Converted__c = true;        
         update se;        
+    }
+    
+    //SFDC-566
+    @AuraEnabled
+    public static integer getPrintCount(Integer countval, String scenarioID){
+       Scenario__c sn = [select id,saved_print_count__c from Scenario__c where id = :scenarioID];
+       Integer count = Integer.valueOf(sn.saved_print_count__c);
+       sn.saved_print_count__c = count+1;
+       upsert sn;
+       return null;
     }
 
     @AuraEnabled
