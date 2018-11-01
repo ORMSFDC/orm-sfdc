@@ -8,6 +8,7 @@
  * 08/03/2018: Mike Gill - Debugging SendMailTMP--Exception---System.NullPointerException: Attempt to de-reference a null object
  * 09/20/2018: Sahitya -SFDC - 289 Added 3rd Tier for Portal and Backend Calculator
  * 09/26/2018: Sahitya -SFDC - 275 Divided Authorised states into two metadata tables based on product type
+ * 11/01/2018: Sahitya -SFDC - 566 capture Print button count
  */
 public without sharing class lookUpController {
     @AuraEnabled
@@ -465,7 +466,15 @@ public without sharing class lookUpController {
         return ln;        
     }
 
-
+    //SFDC-566
+    @AuraEnabled
+    public static integer getPrintCount(Integer countval, String scenarioID){
+       Scenario__c sn = [select id,Print_Count__c from Scenario__c where id = :scenarioID];
+       sn.Print_Count__c = Integer.valueOf(countval);
+       upsert sn;
+       return null;
+    }
+    
     public static decimal GetMonthlyAssetIncome(String senarioId, Decimal passedAsset) {
         Logger.push('GetMonthlyAssetIncome','lookupController');
         List<integer> DOBList = new List<integer>();

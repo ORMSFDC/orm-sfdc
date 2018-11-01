@@ -175,21 +175,25 @@
 	var host = window.location.hostname;
         var frameSrc = 'https://' + host + '/apex/pdfSavedScenario?id=' + component.get('v.Scenario_ID');
         window.open(frameSrc, '_blank');        
-
+		//SFDC-566        
+        var counterval = component.get('v.printcounter')+1;  
+        component.set('v.printcounter',counterval);
+        var action = component.get("c.getPrintCount");
+        action.setParams({
+            scenarioID:component.get("v.Scenario_ID"),
+            countval: counterval
+        });
+        
+        action.setCallback(this,function(data){            
+            component.set("v.printcounter",counterval);            
+        });
+        $A.enqueueAction(action);
+        //SFDC-566 end
     },
     
     draw :function(component, event, helper){
-        
-        //var spinner = component.find("mySpinner");
-       // $A.util.toggleClass(spinner, "slds-show");
-        
-       // $('#sampleTable').DataTable().destroy();
-        //   $('#sampleTable').DataTable().columns(1).search('Amanda').draw();
-       // component.set('v.showAllTables',false);
-       component.set("v.page",1);
+        component.set("v.page",1);
         helper.getCaseListBasedonSearch(component);
-        
-        
     },
     
     reset_filters : function(component, event, helper){
@@ -202,10 +206,6 @@
         sel.LoanOriginatorFormatPhone = '';
         component.set("v.searchValues",sel);
              helper.getCaseList(component);  
-   
-       // helper.do_reset_filters(component,event,helper);
-        // location.reload();
-       //  $A.get('e.force:refreshView').fire();
     },
     LoanOriginatorFormatPhone: function(component, event, helper){
         //    alert(component.get("v.searchValues.Phone"));

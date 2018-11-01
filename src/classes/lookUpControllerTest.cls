@@ -272,7 +272,8 @@ public with sharing class lookUpControllerTest {
         Scenario__c s =   [select id,Client_Lead__c from Scenario__c  limit 1];
         s.Client_Lead__c = [select id from lead limit 1].id;
         update s;
-        lookUpController.createLoan(s.id ,10,10);      
+        lookUpController.createLoan(s.id ,10,10);
+        lookUpController.getPrintCount(10, s.id);//SFDC-566 
     }
        
     @istest static void getCashFlowDataTest(){

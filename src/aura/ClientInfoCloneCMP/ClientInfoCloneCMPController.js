@@ -973,6 +973,19 @@
         var host = window.location.hostname;
         var frameSrc = 'https://' + host + '/apex/pdfSavedScenario?id=' + component.get('v.ScenarioID');
         window.open(frameSrc, '_blank'); 
+       
+        //SFDC-566
+        var counterval = component.get('v.printcounter')+1;
+        var action = component.get("c.getPrintCount");
+        action.setParams({
+            scenarioID:component.get("v.senario_id"),
+            countval: counterval
+        });        
+        action.setCallback(this,function(data){            
+            component.set("v.printcounter",counterval);            
+        });
+        $A.enqueueAction(action);
+        //SFDC-566 end
     },
     getserviceData :function(component,event,helper){
         //    alert('ClientInfo cmp getserviceData');
