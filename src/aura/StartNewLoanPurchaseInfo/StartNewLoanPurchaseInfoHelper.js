@@ -933,10 +933,8 @@
     },
     //SFDC - 360
     originationBorrowerPopup: function(component, event, helper, Rate){
-        var value = Rate;
-        alert(Rate);
-        var rate= Number.parseFloat(value).toFixed(3); 
-        alert(rate); 
+        var value = Rate;        
+        var rate= Number.parseFloat(value).toFixed(3);
         var productType = component.get("v.NewLoan.Product_Type__c");
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         if ('Fixed' === rtype) {
