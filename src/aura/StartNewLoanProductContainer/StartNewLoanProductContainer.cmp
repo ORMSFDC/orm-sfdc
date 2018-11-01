@@ -69,24 +69,23 @@
                                                                                   overflow-x: hidden;
                                                                                   top: 210px;
                                                                                   bottom: 20px;">
-                            <li >
-                                <a id = "step1" style="background-color:#191970 !important">
+                            <li > <!--SFDC-360 start -->
+                                <a id = "step1" data-toggle="collapse" style="background-color:#191970 !important" data-parent="#parent" href="#p1">
                                     <span style="color:white;font-size:150% !important">Step 1</span>
                                 </a>
-                                <ul class="nav nav-pills nav-stacked in" id = "p1">
+                                <ul class="nav nav-pills nav-stacked collapse in" id = "p1">
                                     <li id = "l1" class = "active">
-                                        <a id="loantab" onclick = "{!c.openOpt1}">
+                                        <a data-toggle="tab" href="#Loan" id="loantab" onclick = "{!c.openOpt1}">
                                             <span style="font-size:110%">Loan</span>
-                                            
                                         </a>
                                     </li>
                                     <li id = "l2">
-                                        <a  id="SPTab" onclick = "{!c.openOpt2}" >
+                                        <a data-toggle="tab" id="SPTab" href="#subject" onclick = "{!c.openOpt2}" >
                                             <span style="font-size:110%">Subject Property</span>
-                                        </a>                                        
+                                        </a>
                                     </li>
                                     <li id = "l3">
-                                        <a id="clientOption"  onclick = "{!c.openOpt3}" >
+                                        <a data-toggle="tab" id="clientOption" href="#client" onclick = "{!c.openOpt3}" >
                                             <span style="font-size:110%">Client</span>
                                         </a>
                                     </li>
@@ -96,22 +95,22 @@
                                         </a>
                                     </li>-->
                                     <li id = "l5">
-                                        <a id="IncomeTab" onclick = "{!c.openOpt5}">
+                                        <a data-toggle="tab" id="IncomeTab" href="#income" onclick = "{!c.openOpt5}">
                                             <span style="font-size:110%">Income</span>
                                         </a>
                                     </li>
                                     <li id = "l6">
-                                        <a id="AssetsTab" onclick = "{!c.openOpt6}" >
+                                        <a data-toggle="tab" id="AssetsTab" href="#assets" onclick = "{!c.openOpt6}" >
                                             <span style="font-size:110%">Assets</span>
                                         </a>
                                     </li>
                                     <li id = "l7">
-                                        <a id="LaibilityTab" onclick = "{!c.openOpt7}">
+                                        <a data-toggle="tab" id="LaibilityTab" href="#liabilities" onclick = "{!c.openOpt7}">
                                             <span style="font-size:110%">Liabilities</span>
                                         </a>
                                     </li>
                                     <li id = "l8">
-                                        <a id="DeclarationTab" onclick = "{!c.openOpt8}">
+                                        <a data-toggle="tab" id="DeclarationTab" href="#declarations" onclick = "{!c.openOpt8}">
                                             <span style="font-size:110%">Declarations</span>
                                         </a>
                                     </li>
@@ -120,18 +119,18 @@
                                     
                                     <aura:if isTrue="{!v.fromPopup}">
                                         <li id = "step2Lock">
-                                            <a id = "step2" style="background-color:#191970 !important" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
+                                            <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
                                                 <span style="color:white;font-size:150%">Step 2 </span>
                                             </a>
                                         </li>  
+                                        <ul class="nav nav-pills nav-stacked collapse out clc" id="p2">
                                         <li id = "l9" class="p2 " style="display:none">
                                             <a id="loandeatailclk" onclick = "{!c.openOpt9}">
                                                 <span style="font-size:110%">Loan Details</span>
                                             </a>
                                         </li>
                                         <li id = "l10" class="p2 " style="display:none">
-                                            
-                                            <a id="CapacityTab" onclick = "{!c.openOpt10}">
+                                            <a  id="CapacityTab" onclick = "{!c.openOpt10}">
                                                 <span style="font-size:110%">Capacity Test</span>
                                             </a>
                                         </li>
@@ -140,8 +139,8 @@
                                                 <span style="font-size:110%">Credit Info</span>
                                             </a>
                                         </li>
-                                        <!-- <li class="nav-divider"></li> -->
-                                        <!-- <hr style="clear: both" /> -->
+                                        </ul>
+                                        
                                     </aura:if>
                                 </ul>
                                 <hr style="clear: both" />
@@ -149,7 +148,7 @@
                             <br/>
                             <aura:if isTrue="{!!v.fromPopup}">
                                 <li id = "step2Lock">
-                                    <a id = "step2" style="background-color:#191970 !important" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
+                                    <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
                                         <span style="color:white;font-size:150%">Step 2 </span>
                                     </a>
                                     
@@ -170,16 +169,9 @@
                                                 <span style="font-size:110%">Credit Info</span>
                                             </a>
                                         </li>
-                                        <!--  <li id = "l12">
-                                        <a onclick = "{!c.openOpt12}">
-                                            <span style="font-size:110%">Credit Info</span>
-                                        </a>
-                                    </li>-->
-                                        <!-- <li class="nav-divider"></li> -->
                                     </ul> </li>
                             </aura:if>
-                            <!--<li><a data-toggle="pill" onclick = "{!c.click_step3}">Step 3</a></li> -->
-                        </ul>
+                             </ul>
                         <hr style="clear: both" />
                     </div>
                     <div class="col-md-9">
@@ -191,30 +183,20 @@
                             <!-- Reverse Loan starts  LoanContact-->
                             <aura:if isTrue="{!v.opt1}">                                
                                 <div name = "l1" id="Loan" class="tab-pane fade in active" >
-                                    <h4 class="h4Css">Reverse Loan </h4>
-                                    <c:StartNewLoanPurchaseInfo 
-                                        itemsClicked="{!v.itemsClicked}" popupLoanId="{!v.LoanId}" NewStartLoan="{!v.NewStartLoan}" 
-                                        ApplicationDate="{!v.ApplicationDate}" Incomplete="{!v.Incomplete}"
-                                        LoanId="{!v.LoanId}" LoanErr="{!v.LoanErr}" NuLoan="{!v.NewLoan}" nextOpt="{!v.opt2}"
+                                    <h4 class="h4Css">Reverse Loan</h4>
+                                    <c:StartNewLoanPurchaseInfo
+                                        itemsClicked="{!v.itemsClicked}"
+                                        popupLoanId="{!v.LoanId}"
+                                        NewStartLoan="{!v.NewStartLoan}"
+                                        ApplicationDate="{!v.ApplicationDate}"
+                                        Incomplete="{!v.Incomplete}"
+                                        LoanId="{!v.LoanId}"
+                                        LoanErr="{!v.LoanErr}"
+                                        NuLoan="{!v.NewLoan}"
+                                        nextOpt="{!v.opt2}"
                                         currentOpt="{!v.opt1}" />
-
-                                    <!-- <aura:if isTrue="{!v.RateType == 'Fixed'}">
-                                        <c:SAL_Loan_FixedProduct 
-                                            itemsClicked="{!v.itemsClicked}" popupLoanId="{!v.LoanId}" NewStartLoan="{!v.NewStartLoan}" LoanMortgageAppliedFor="{!v.LoanMortgageAppliedFor}"
-                                            RateType="{!v.RateType}" ApplicationDate="{!v.ApplicationDate}" Incomplete="{!v.Incomplete}"
-                                            LoanId="{!v.LoanId}" LoanErr="{!v.LoanErr}" NuLoan="{!v.NewLoan}" nextOpt="{!v.opt2}"
-                                            currentOpt="{!v.opt1}" />
-                                    </aura:if>
-
-                                    <aura:if isTrue="{!v.RateType == 'ARM'}">
-                                        <c:SAL_Loan 
-                                            itemsClicked="{!v.itemsClicked}" popupLoanId="{!v.LoanId}" NewStartLoan="{!v.NewStartLoan}" LoanMortgageAppliedFor="{!v.LoanMortgageAppliedFor}"
-                                            RateType="{!v.RateType}" ApplicationDate="{!v.ApplicationDate}" Incomplete="{!v.Incomplete}"
-                                            LoanId="{!v.LoanId}" LoanErr="{!v.LoanErr}" NuLoan="{!v.NewLoan}" nextOpt="{!v.opt2}" 
-                                            currentOpt="{!v.opt1}" />
-                                    </aura:if>                                     -->
                                 </div>
-                            </aura:if>  
+                            </aura:if>  <!--SFDC-360 end -->
                             <aura:if isTrue="{!v.opt2}">
                                 
                                 <div id="subject" class="tab-pane fade in active">

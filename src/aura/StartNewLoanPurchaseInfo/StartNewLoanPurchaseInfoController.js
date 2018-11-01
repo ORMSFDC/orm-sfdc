@@ -12,7 +12,6 @@
     doInit: function (component, event, helper) {
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         helper.PopulateRate(component, event, helper);
-        // var LoanMortgageAppliedFor = component.get("v.LoanMortgageAppliedFor");
         window.scrollTo(0, 0);
         helper.DropdownPopulate(component, event, helper);
         var ApplicationDate = component.get("v.ApplicationDate");
@@ -25,11 +24,8 @@
         var checkId = component.get("v.LoanId");
         if (typeof checkId === "undefined" || checkId == null) {
             component.set('v.NewLoan.Children_Under_the_age_of_6_living_in_th__c', 'No');
-            // component.set("v.NewLoan.Mortgage_Applied_for__c", LoanMortgageAppliedFor);
-            // component.set("v.NewLoan.Rate_Type__c",rtype);            
         }
         else {
-            // component.set("v.NewLoan.Mortgage_Applied_for__c", LoanMortgageAppliedFor);
             component.set("v.NewStartLoan", false);
             helper.PopulateLoanBasedonId(component, event, helper);
         }

@@ -481,7 +481,12 @@
                                                       onclick="{!c.printDocument}" /> 
                                     </div>
                                     <div>  
-                                        <c:ClientScenario_Graph ApplicationDate="{!v.ApplicationDate}" displayTab="{!v.displayTab}" showLoanId="{!v.showLoanId}" ScenarioID="{!v.Scenario_ID}"  showLoan="{!v.showLoan}"/>
+                                        <c:ClientScenario_Graph 
+                                         ApplicationDate="{!v.ApplicationDate}" 
+                                         displayTab="{!v.displayTab}" 
+                                         showLoanId="{!v.showLoanId}" 
+                                         ScenarioID="{!v.Scenario_ID}"  
+                                         showLoan="{!v.showLoan}"/>
                                     </div>
                                 </aura:if>
                             </div>

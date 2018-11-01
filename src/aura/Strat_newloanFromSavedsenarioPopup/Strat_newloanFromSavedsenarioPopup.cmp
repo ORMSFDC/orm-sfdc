@@ -6,11 +6,16 @@
     <aura:attribute name="fileupload" type="boolean" default="false"/>
     <aura:attribute name="showLoan" type="boolean" />
     <aura:attribute name="showLoanId" type="String" />
-      <aura:attribute name="displayTab" type="Boolean" />
-        <aura:attribute name="LRateType" type="String" />
-        <aura:attribute name="LMortgageAppliedFor" type="String" />
-     <aura:attribute name="showSpinnerLoan" type="boolean" default="false"/>
- 
+    <aura:attribute name="displayTab" type="Boolean" />
+    <!--SFDC - 360 -->
+    <aura:attribute name="NewLoan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
+    <aura:attribute name="ProductType" type="String" />
+    <aura:attribute name="baseUrl" type="String" default=""></aura:attribute>
+    <aura:registerEvent name="n" type="c:NavigatetoLoanMenu"/>
+    <!--SFDC - 360 end -->
+    <aura:attribute name="LRateType" type="String" />
+    <aura:attribute name="LMortgageAppliedFor" type="String" />
+    <aura:attribute name="showSpinnerLoan" type="boolean" default="false"/>
     <aura:attribute name="datepick" type="String"/>
     <aura:attribute name="senario_id" type="String"/>
     <aura:attribute name="isDisabled" type="Boolean" default="true"/>

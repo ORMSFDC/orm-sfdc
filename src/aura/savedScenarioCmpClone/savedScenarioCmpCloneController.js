@@ -251,9 +251,8 @@
         //    alert(component.get("v.showLoan"));
         var lnId= component.get("v.showLoanId");
         //  alert("showLoanId "+component.get("v.ApplicationDate"));
-        $A.createComponent(
-            "c:StartNewLoanCmp",
-            
+        $A.createComponent( //SFDC - 360
+            "c:StartNewLoanProductContainer",            
             {
                 "ApplicationDate":component.get("v.ApplicationDate"),
                 "LoanId":component.get("v.showLoanId"), 

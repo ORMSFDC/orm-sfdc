@@ -7,7 +7,7 @@
     <aura:attribute name="LoanErr" type="boolean"/>
     <aura:attribute name="NewLoan" type="Loan_New__c"  />
       <!--application Date-->
-    <aura:attribute name="ApplicationDateOnLoanCMP" type="Date" default=""/>
+    <aura:attribute name="ApplicationDate" type="Date" default=""/>
     <!--Flag for new application-->
     <aura:attribute name="NewStartLoan" type="boolean" default="true"/>
     
@@ -17,7 +17,16 @@
      <aura:attribute name="nextOpt" type="boolean"/>
      <aura:attribute name="currentOpt" type="boolean"/>
     <!--Remove-->
-    <c:SAL_Loan NewStartLoan="{!v.NewStartLoan}" ApplicationDate="{!v.ApplicationDateOnLoanCMP}" Incomplete="{!v.Incomplete}" LoanId="{!v.ChildParentNewLoanId}" LoanErr="{!v.LoanErr}" NuLoan="{!v.NewLoan}" nextOpt="{!v.nextOpt}" currentOpt="{!v.currentOpt}"/>
+    <!--SFDC - 360-->
+    <c:StartNewLoanPurchaseInfo 
+    NewStartLoan="{!v.NewStartLoan}" 
+    ApplicationDate="{!v.ApplicationDate}" 
+    Incomplete="{!v.Incomplete}"        
+    LoanId="{!v.ChildParentNewLoanId}" 
+    LoanErr="{!v.LoanErr}" 
+    NuLoan="{!v.NewLoan}" 
+    nextOpt="{!v.nextOpt}" 
+    currentOpt="{!v.currentOpt}"/>  
 
    <!--{!v.body}-->
 </aura:component>

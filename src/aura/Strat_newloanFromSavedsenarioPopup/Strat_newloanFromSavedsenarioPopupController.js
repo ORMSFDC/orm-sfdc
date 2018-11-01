@@ -27,35 +27,22 @@
     close: function (component, event, helper) {
         component.set("v.render_popup", false);
     },
+        
+    //SFDC-360
     start_newloan: function (component) {
-        //Dont save info, just send them to SAL splash screen
-        window.open('/s/startnewloan');
-        return;
-
-        component.set('v.showSpinnerLoan', true);
-
+        component.set('v.showSpinnerLoan',true);
         //  debugger;
         var getdate = component.get("v.ApplicationDate");
-        //   alert('applicationDate 1123 '+getdate);
-        // alert('date pick '+component.get("v.datepick"));
 
         var fileInput = document.getElementById('fileInput').value;
-        console.log('fileInput ', fileInput);
-        //  var datecontrol= component.find('expname');
-        //    var date = datecontrol.get('v.value');
         var applicationDate = getdate;//component.get("v.datepick");
         //Check whether File is selected or not
-        if (!$A.util.isEmpty(fileInput)) {
+        if (!$A.util.isEmpty(fileInput)){
             var fileInput = component.find("file").getElement();
             var file = fileInput.files[0];
-
-            //        var spinner = component.find("spinner");        
-            //      $A.util.toggleClass(spinner, "slds-hide");
             var data = component.get("v.filedata");
-
             var dd = document.getElementById('inputtxt').value;
             var action = component.get("c.getFNMData");
-            //  alert(component.get("v.senario_id"));
             action.setParams({
                 "filedata": dd,
                 fileName: file.name,
@@ -67,14 +54,9 @@
 
             action.setCallback(this, function (a) {
                 component.set('v.showSpinnerLoan', false);
-
-                //			alert('in call back');
                 var errors = action.getError();
-                //alert(errors);
                 if (errors && errors[0]) {
-
                     console.error("getFNMData error", errors);
-
                     // display error in toast
                     var toastEvent = $A.get("e.force:showToast");
                     toastEvent.setParams({
@@ -96,42 +78,32 @@
                     component.set("v.render_popup", false);
                     component.set("v.showLoan", true);
                     component.set("v.displayTab", false);
-
-
-                    // alert("Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");                 
-                    // component.set('v.show_success',true);
-                    // component.set('v.show_success1',"Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");
-
-                    //alert("Thank you! Your Fannie Mae file has been successfully uploaded and saved. We are processing the file and will get back to you about next steps as soon as possible.");                 
-                    // $A.get('e.force:refreshView').fire(); 
-
-                    //Code for redirect to Start a Loan Page
-                    // var evt = $A.get("e.c:NavigatetoLoanMenu");
-                    // evt.setParams({LoanId:Id})
-                    // evt.fire();
                 }
             });
             $A.enqueueAction(action);
-
         }
         else {
             var action = component.get("c.createLoan");
             action.setParams({
                 senarioid: component.get("v.senario_id")
             });
-
             action.setCallback(this, function (data) {
-                var urlEvent = $A.get("e.force:navigateToURL");
-                urlEvent.setParams({
-                    "url": "/startnewloan"
+                component.set('v.showSpinnerLoan',false);
+                component.set("v.showLoanId",data.getReturnValue().Id);
+                var toastEvent = $A.get("e.force:showToast");
+                toastEvent.setParams({
+                    "title": "Success!",
+                    "message": data.getReturnValue().Name + " is Created."
                 });
-                urlEvent.fire();
+                toastEvent.fire();
+                component.set("v.render_popup",false);
+                component.set("v.showLoan",true);
+                component.set("v.displayTab",false);  
             });
             $A.enqueueAction(action);
-            // location.open('/s/startnewloan');
-            // 
         }
     },
+    
     openchk: function (component, event, helper) {
         debugger;
         var t = component.get("v.isOpen_c");
