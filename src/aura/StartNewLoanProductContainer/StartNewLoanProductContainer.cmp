@@ -113,23 +113,18 @@
                                         <a data-toggle="tab" id="DeclarationTab" href="#declarations" onclick = "{!c.openOpt8}">
                                             <span style="font-size:110%">Declarations</span>
                                         </a>
-                                    </li>
-                                    <!-- <li class="nav-divider"></li> -->
-                                    <!-- <hr style="clear: both" /> -->
-                                    
-                                    <aura:if isTrue="{!v.fromPopup}">
-                                        <li id = "step2Lock">
+                                    </li>                                    
+                                    <li id = "step2Lock">
                                             <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
                                                 <span style="color:white;font-size:150%">Step 2 </span>
                                             </a>
                                         </li>  
-                                        <ul class="nav nav-pills nav-stacked collapse out clc" id="p2">
-                                        <li id = "l9" class="p2 " style="display:none">
+                                        <li id = "l9">
                                             <a id="loandeatailclk" onclick = "{!c.openOpt9}">
                                                 <span style="font-size:110%">Loan Details</span>
                                             </a>
                                         </li>
-                                        <li id = "l10" class="p2 " style="display:none">
+                                        <li id = "l10" >
                                             <a  id="CapacityTab" onclick = "{!c.openOpt10}">
                                                 <span style="font-size:110%">Capacity Test</span>
                                             </a>
@@ -139,8 +134,6 @@
                                                 <span style="font-size:110%">Credit Info</span>
                                             </a>
                                         </li>
-                                        </ul>
-                                        
                                     </aura:if>
                                 </ul>
                                 <hr style="clear: both" />
@@ -150,16 +143,14 @@
                                 <li id = "step2Lock">
                                     <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
                                         <span style="color:white;font-size:150%">Step 2 </span>
-                                    </a>
-                                    
-                                    <ul class="nav nav-pills nav-stacked out clc" id="p2">
+                                    </a>                                    
+                                    <ul class="nav nav-pills nav-stacked collapse out clc" id="p2">
                                         <li id = "l9">
                                             <a id="loandeatailclk" onclick = "{!c.openOpt9}">
                                                 <span style="font-size:110%">Loan Details</span>
                                             </a>
                                         </li>
-                                        <li id = "l10">
-                                            
+                                        <li id = "l10">                                            
                                             <a id="CapacityTab" onclick = "{!c.openOpt10}">
                                                 <span style="font-size:110%">Capacity Test</span>
                                             </a>
@@ -169,9 +160,10 @@
                                                 <span style="font-size:110%">Credit Info</span>
                                             </a>
                                         </li>
-                                    </ul> </li>
+                                    </ul> 
+                                    </li>
                             </aura:if>
-                             </ul>
+                            </ul>
                         <hr style="clear: both" />
                     </div>
                     <div class="col-md-9">
