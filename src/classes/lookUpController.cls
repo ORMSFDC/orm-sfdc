@@ -9,6 +9,7 @@
  * 09/20/2018: Sahitya -SFDC - 289 Added 3rd Tier for Portal and Backend Calculator
  * 09/26/2018: Sahitya -SFDC - 275 Divided Authorised states into two metadata tables based on product type
  * 11/01/2018: Sahitya -SFDC - 566 capture Print button count
+ * 11/05/2018: Sahitya -SFDC - 567 SaNL from Run Capacity Qualifier
  */
 public without sharing class lookUpController {
     @AuraEnabled
@@ -446,6 +447,7 @@ public without sharing class lookUpController {
         return loanId;
     }
 
+    //SFDC - 567
     @AuraEnabled
     public Static Loan_New__c createLoan(String senarioid, Integer hhm, integer sft) {
         Logger.push('createLoan','lookupController');

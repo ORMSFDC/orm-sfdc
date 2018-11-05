@@ -156,7 +156,6 @@ public class CreateLoanFromScenario {
         newLoan.Subject_Property_State__c =se.Client_Lead__r.State;
         newLoan.Subject_Property_Zip_Code__c =se.Client_Lead__r.Postalcode;
         newLoan.Related_Partner__c = [select Contact.AccountId from user Where id=:userinfo.getUserid()].Contact.AccountId;
-        newLoan.Account_Number__c = '1234';
         newLoan.BayDocsOrderNumber__c = se.BayDocsOrderNumber__c;
         try{
         insert newLoan;
