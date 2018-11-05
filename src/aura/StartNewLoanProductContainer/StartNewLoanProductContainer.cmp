@@ -113,7 +113,8 @@
                                         <a data-toggle="tab" id="DeclarationTab" href="#declarations" onclick = "{!c.openOpt8}">
                                             <span style="font-size:110%">Declarations</span>
                                         </a>
-                                    </li>                                    
+                                    </li> 
+                                    <aura:if isTrue="{!v.fromPopup}">
                                     <li id = "step2Lock">
                                             <a id = "step2" style="background-color:#191970 !important" data-toggle="collapse" data-parent="#parent" href="#p2" onclick = "{!c.click_step2}">
                                                 <span style="color:white;font-size:150%">Step 2 </span>
