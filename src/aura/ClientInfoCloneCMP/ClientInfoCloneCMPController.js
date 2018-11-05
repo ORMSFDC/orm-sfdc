@@ -594,33 +594,24 @@
             $A.enqueueAction(action);
         }
     },
-    start_newloan:function(component){
-        //Dont save info, just send them to SAL splash screen
-        window.open('/s/startnewloan');
-        return;
-
-        //    alert('ClientInfo start_newloan ');
+    
+    //SFDC-567
+    start_newloan:function(component){        
         component.set('v.showSpinnerLoan',true);
         var getdate = component.get("v.ApplicationDate");
         
         var fileInput = document.getElementById('fileInput').value;        
         console.log('fileInput ',fileInput);
-        //  var datecontrol= component.find('expname');
-        //    var date = datecontrol.get('v.value');
-        var applicationDate = getdate;//component.get("v.datepick");
+        var applicationDate = getdate;
         //Check whether File is selected or not
         if (!$A.util.isEmpty(fileInput))
         {
             var fileInput = component.find("file").getElement();
             var file = fileInput.files[0];
-            
-            //        var spinner = component.find("spinner");        
-            //      $A.util.toggleClass(spinner, "slds-hide");
             var data=component.get("v.filedata");
             
             var dd=document.getElementById('inputtxt').value;
             var action = component.get("c.getFNMData");
-            //  alert(component.get("v.senario_id"));
             action.setParams({
                 "filedata" : dd,
                 fileName: file.name,
@@ -629,20 +620,14 @@
                 applicationDate: applicationDate,
                 senario_id:component.get("v.senario_id"),
                 hhm:component.get('v.HHM'),
-                sft:component.get('v.SFT')
-                
-            });
-            
-            action.setCallback(this, function(a) {
-                
+                sft:component.get('v.SFT')                
+            });            
+            action.setCallback(this, function(a) {                
                 component.set('v.showSpinnerLoan',false);
-                //          alert('in call back');
                 var errors = action.getError();
                 //alert(errors);
-                if (errors && errors[0]) {
-                    
+                if (errors && errors[0]) {                    
                     console.error("getFNMData error", errors);
-                    
                     // display error in toast
                     var toastEvent = $A.get("e.force:showToast");
                     toastEvent.setParams({
@@ -651,8 +636,7 @@
                         "title": "Upload Failed!",
                         "message": errors[0].message
                     });
-                    toastEvent.fire();
-                    
+                    toastEvent.fire();                    
                     // hide loading spinner
                     var spinner = component.find("spinner");
                     $A.util.toggleClass(spinner, "slds-hide");
@@ -663,8 +647,7 @@
                     component.set("v.showLoanId",Id);
                     component.set("v.render_popup",false);
                     component.set("v.showLoan",true);
-                    component.set("v.displayTab",false);
-                    
+                    component.set("v.displayTab",false);                    
                 }
             });
             $A.enqueueAction(action);
@@ -672,10 +655,6 @@
         }
         else
         {   
-            //  alert('normal');
-            //    alert(component.get("v.senario_id"));
-            
-            //   alert(component.get('v.SFT'));
             var action = component.get("c.createLoan");
             action.setParams({
                 senarioid:component.get("v.senario_id"),
@@ -686,27 +665,19 @@
             action.setCallback(this,function(data){
                 
                 component.set('v.showSpinnerLoan',false);
-                // alert(data.getReturnValue()+'is created ');
                 component.set("v.showLoanId",data.getReturnValue().Id);
-                //        console.log('data.getReturnValue().Id ',data.getReturnValue().Id);
                 var toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Success!",
                     "message": data.getReturnValue().Name + " is Created."
                 });
                 toastEvent.fire();
-                //$('.tabs__nav').hide();
-                // 
-                //           alert('application date is '+component.get("v.ApplicationDate"));
                 component.set("v.render_popup",false);
                 component.set("v.showLoan",true);
                 component.set("v.displayTab",false);
-                //     alert('ad');
                 
             });
             $A.enqueueAction(action);
-            // location.open('/s/startnewloan');
-            // 
         }
     },    
     openchk : function(component, event, helper) {
