@@ -10,6 +10,7 @@
  * 09/26/2018: Sahitya -SFDC - 275 Divided Authorised states into two metadata tables based on product type
  * 11/01/2018: Sahitya -SFDC - 566 capture Print button count
  * 11/05/2018: Sahitya -SFDC - 567 SaNL from Run Capacity Qualifier
+ * 11/21/2018: Sahitya -SFDC - 584 Production Support - Scenario Package DOB 
  */
 public without sharing class lookUpController {
     @AuraEnabled
@@ -269,7 +270,8 @@ public without sharing class lookUpController {
         ScenarioExportUtil.ScenarioWithRelatedObjects scenarioExport = ScenarioExportUtil.getExportForscenarioId(ScenarioID);
         ScenarioChannelClient.sendEvent('LoanAppSubmitted', scenarioExport, ScenarioID);
 
-        DateTime DT = objScenario.Client_Lead__r.DOB__c;
+        DateTime DT1 = objScenario.Client_Lead__r.DOB__c;
+        DateTime DT = DT1.addDays(1);//SFDC-584
         string ClientDOB = DT.format('MM/dd/yyyy');
         string Email_Temp = objScenario.Client_Lead__r.Email;
         if (Email_Temp == null || Email_Temp == '')
