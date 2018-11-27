@@ -257,7 +257,7 @@
                                             </th>
                                         </thead>
                                         <tbody>   
-                                            <tr>                                
+                                            <!-- SFDC_480 <tr>                               
                                                 <td data-label="HEADER">
                                                     <div class="slds-truncate">
                                                         <b>
@@ -270,7 +270,7 @@
                                                         {!v.Index}%
                                                     </div>
                                                 </td>                                
-                                            </tr>
+                                            </tr> -->
                                             
                                             <tr>                                    
                                                 <td data-label="MIP">
