@@ -364,20 +364,18 @@
                                             Rate and Cost</th>
                                     </thead>
                                     <tbody>
-                                        <tr>
-
+                                        <!--SFDC_480 <tr>
                                             <td data-label="RAC">
                                                 <div class="slds-truncate">
                                                     <b>{!$Label.Scenario_Header5}
-                                </b></div>
-                                            </td>
-                                            <td data-label="RAC">
-                                                <div class="slds-truncate  slds-text-align_right">{!scenario.Index__c}%
-                                                    <!--{!v.Index}% -->
+                                                    </b>
                                                 </div>
                                             </td>
-
-                                        </tr>
+                                            <td data-label="RAC">
+                                                <div class="slds-truncate  slds-text-align_right">{!scenario.Index__c}%                                                    
+                                                </div>
+                                            </td>
+                                        </tr> -->
 
                                         <tr>
                                             <td data-label="MIP">

@@ -784,8 +784,8 @@
                                             </div>
                                         </th>
                                     </thead>
-                                    <tbody>       <tr>
-                                        
+                                    <tbody>       
+				    <!-- SFDC_480 <tr>                                        
                                         <td data-label="RAC">
                                             <div class="slds-truncate customFont16">
                                                 <b>
@@ -795,9 +795,8 @@
                                         <td data-label="RAC">
                                             <div class="slds-truncate  slds-text-align_right customFont16">
                                                 {!v.Index}%</div>
-                                        </td>
-                                        
-                                        </tr>
+                                        </td>                                        
+                                    </tr> -->
                                         
                                         <tr>                                    
                                             <td data-label="MIP">
