@@ -7,6 +7,7 @@
  * 08/07/2018: Don - Modified Funds to Close - SFDC-241
  * 08/22/2018: Sahitya - Updated results for Helo SFDC - 269
  * 10/25/2018: Sahitya - added a message to print screen - SFDC-375
+ * 11/28/2018: Sahitya - change Age - SFDC - 380
  */
 public without sharing class PdfSavedScenarioController {
     
@@ -67,6 +68,7 @@ public without sharing class PdfSavedScenarioController {
                                           Scenario_Type__c,
                                           RateType__c,
                                           EOF__c,
+                                          Age__c, //SFDC-380
                                           Other_Estimated_Closing_Costs__c //SFDC -269
                                           From Scenario__c Where Id =: scenarioID];
         
@@ -96,7 +98,7 @@ public without sharing class PdfSavedScenarioController {
             }
             
             if(scenario.Date_of_birth__c != Null)  
-            age                           = System.today().year() - scenario.Date_of_birth__c.year(); 
+            age = scenario.Age__c;//SFDC-380
             if(null != scenario.PieChartResponse__c){
                 isOld = true;
                 Map<String,Object> jsonMap    = (Map<String,Object>)JSON.deserializeUntyped(scenario.PieChartResponse__c);                
