@@ -15,7 +15,7 @@ public without sharing class PdfSavedScenarioController {
     public user u {get;set;}
     public contact con{get;set;}
     public Scenario__c scenario {get;set;}
-    public Integer age{get;set;}
+    public Decimal age{get;set;}
     public Decimal finalEOF{get;set;}
     public Decimal cashAtClose{get;set;}
     public Decimal fundsNeedToClose{get;set;}
