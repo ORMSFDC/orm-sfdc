@@ -7,6 +7,7 @@
  * 07/19/2018: Sahitya - added new fields for Helo PieGraph(Other_Estimated_Closing_Costs__c,Origination_to_orm__c)
  * 10/31/2018: Sahitya SFDC - 360 
  * 11/01/2018: Sahitya -SFDC - 566 capture Print button count from saved scenarios
+ * 11/28/2018: Sahitya -SFDC - 380
  */
 public class savedScenarioController {
     
@@ -82,7 +83,8 @@ public class savedScenarioController {
       scenario__c  Scenariodata = new scenario__c();
       system.debug('ScenarioID from getScenarioData --> '+ ScenarioID);
       try{
-        Scenariodata=[select Id,RateType__c,is_Converted__c,Principal_Limit__c,MIP__c, Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,
+        Scenariodata=[select Id,RateType__c,is_Converted__c,Principal_Limit__c,MIP__c,Age__c, //SFDC - 380
+                      Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,
                       Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,Date_of_birth__c, CreatedDate,piechartresponse__c,barchartresponse__c,
                       Line_of_Credit__c,Index__c,Margin__c,Scenario_Type__c,CashFlow1__c,CashFlow10__c,
                       CashFlow5__c,Cash_at_close__c,Cash_to_close__c,EOF__c,Other_Estimated_Closing_Costs__c,Origination_to_orm__c
