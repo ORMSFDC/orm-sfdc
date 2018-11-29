@@ -129,8 +129,8 @@
         //  alert();
         $A.get('e.force:refreshView').fire();
     },
-    //For Request Package
-    sendmailrequest: function (component, event, helper) {
+    //For Request Package  SFDC - 487 commented this
+    /*sendmailrequest: function (component, event, helper) {
         component.set('v.showSpinner',true); //Helo fix
         var ScenarioID = component.get("v.ScenarioID")
         var action2 = component.get("c.SendMailTMP");
@@ -152,7 +152,7 @@
         });       
         $A.enqueueAction(action);
         
-    },  
+    }, */  
     //Validate Form and SAve Scenario
     Save: function(component, event, helper) {        
         var msg = "";
@@ -595,6 +595,11 @@
         }
     },
     
+    //For SaNL SFDC - 487 
+    Start_newloan2: function (component, event, helper) { 
+        component.set("v.render_popup", true);
+    },
+
     //SFDC-567
     start_newloan:function(component){        
         component.set('v.showSpinnerLoan',true);
