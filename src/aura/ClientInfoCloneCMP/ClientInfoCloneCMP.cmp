@@ -32,7 +32,8 @@
     <aura:attribute name="stateZip5" type="boolean"  default="false"/>
     <!--SFDC-363-->
     <aura:attribute name="isDisplayHelo" type="boolean"  default="true"/> <!--Helo-->
-    <aura:attribute name="printcounter" default="0" type="integer"/> <!--SFDC-566--> 
+    <aura:attribute name="printcounter" default="0" type="integer"/> <!--SFDC-566-->
+    <aura:attribute name="render_popup" type="Boolean" default="false"/>  <!--SFDC-487-->
     <aura:attribute name="DOB" type="string" />
     <aura:attribute name="EHV" type="decimal"  />
     <aura:attribute name="CMB" type="decimal" />
@@ -784,8 +785,8 @@
                                             </div>
                                         </th>
                                     </thead>
-                                    <tbody>       
-				    <!-- SFDC_480 <tr>                                        
+                                    <tbody>
+                                        <!-- SFDC_480 <tr>                                        
                                         <td data-label="RAC">
                                             <div class="slds-truncate customFont16">
                                                 <b>
@@ -796,7 +797,7 @@
                                             <div class="slds-truncate  slds-text-align_right customFont16">
                                                 {!v.Index}%</div>
                                         </td>                                        
-                                    </tr> -->
+                                        </tr> -->
                                         
                                         <tr>                                    
                                             <td data-label="MIP">
@@ -1175,8 +1176,16 @@
                             <div class="slds-form-element__row"  id="savebtn"> 
                                 
                                 <div class="slds-form-element slds-size_1-of-2" >  
-                                    <lightning:button aura:id="outputButton" variant="brand" 
-                                                      label="Save Scenario" onclick="{!c.Save}"  class="senario_button"/>                                     
+
+                                    <!-- SFDC-487-->
+                                        <aura:if isTrue="{!v.Environment=='Community'}">                                                     
+                                        <lightning:button aura:id="outputButton" variant="brand" label="Save and Request Scenario Package" onclick="{!c.Save}"  class="senario_button"/>
+                                            &nbsp;
+                                            <aura:set attribute="else"> 
+                                                <lightning:button aura:id="outputButton" variant="brand" label="Save" onclick="{!c.Save}"  class="senario_button"/>
+                                        </aura:set>
+                                        </aura:if>
+                                    <!-- SFDC-487-->                                   
                                     &nbsp;                            
                                     <aura:if isTrue="{!v.showSpinner}">  
                                     	<lightning:spinner variant="brand" size="large"/>
@@ -1191,7 +1200,9 @@
                                                       label="New Scenario" onclick="{!c.reset}" class="senario_button" />
                                     &nbsp;
                                     <aura:if isTrue="{!v.Environment=='Community'}">                                       
-                                    	 
+                                    	 <!-- SFDC-487 -->   <lightning:button aura:id="sal" variant="brand" 
+                                         label="Start Application" onclick="{!c.Start_newloan2}" class="senario_button" />
+                                         &nbsp;  
                                         <span id="requestbtn">
                                             <lightning:button aura:id="outputButton1" variant="brand" 
                                                               label="Request Scenario Package" 
@@ -1206,9 +1217,9 @@
                                                           onclick="{!c.shw_capacityPopup}" class="senario_button" />
                                         &nbsp;
                                         
-                                        <lightning:button aura:id="outputButton3" variant="brand" 
+                                       <!-- SFDC-487 <lightning:button aura:id="outputButton3" variant="brand" 
                                                           label="Print" 
-                                                          onclick="{!c.printDocument}" class="senario_button" /> 
+                                                          onclick="{!c.printDocument}" class="senario_button" /> -->                                                          
                                         
                                     </aura:if>  
                                     <aura:if isTrue="{!v.Environment!='Community'}">                                       
@@ -1464,4 +1475,13 @@
     <aura:if isTrue="{!v.show_sharing_popup}">
         <c:ShareScenarioCmp selected_record="{!v.selected_record}" isShared="{!v.isShared}" show_sharing_popup="{!v.show_sharing_popup}"/>
     </aura:if>
+    <!-- SFDC-487-->
+    <c:Strat_newloanFromSavedsenarioPopup ApplicationDate="{!v.ApplicationDate}" 
+                                          displayTab="{!v.displayTab}" 
+                                          showLoanId="{!v.showLoanId}" 
+                                          showLoan="{!v.showLoan}" 
+                                          render_popup="{!v.render_popup}" 
+                                          senario_id="{!v.ScenarioID}" 
+                                          LRateType="{!v.LRateType}" 
+                                          LMortgageAppliedFor="{!v.LMortgageAppliedFor}"/> 
 </aura:component>

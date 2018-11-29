@@ -660,8 +660,33 @@
             document.getElementById("savebtn").style.display = "None";
             component.set("v.selected_record",result);
             console.log('result ',result);
-            component.set('v.showSpinner',false);
+            //component.set('v.showSpinner',false);  SFDC-487
             component.set('v.printcounter',0);//SFDC-566
+            //SFDC-487 start
+            var comm = component.get("v.Environment");
+            if(comm == "Community"){
+            var ScenarioID = component.get("v.ScenarioID")
+            var action2 = component.get("c.SendMailTMP");
+            
+            console.log('comm',comm);
+            action2.setParams({
+                "ScenarioID": ScenarioID
+            });        
+            action2.setCallback(this, function(data) {
+                component.set("v.Messages", "Scenario saved, request was sent successfully and will be emailed to you within 5 minutes. If you do not receive it, please check your junk and spam folders. If you cannot locate your scenario package, please contact your AE.");
+                component.set("v.showAlert", true);            
+                document.getElementById("requestbtn").style.display = "None";
+                component.set('v.showSpinner',false); //Helo fix
+            });
+            $A.enqueueAction(action2);
+            
+            //Task for AE, added by Bala
+            var action3 = component.get("c.createAETask");
+            action3.setCallback(this,function(){          
+            });       
+            $A.enqueueAction(action3);
+        }
+            //SFDC-487 end
         });        
         $A.enqueueAction(action);       
     },
@@ -798,12 +823,12 @@
     optionChanged:function(component, event, helper){
         var lnId= component.get("v.showLoanId");
         $A.createComponent(
-            "c:StartNewLoanCmp",
+            "c:StartNewLoanProductContainer",
             
             {
                 "ApplicationDate":component.get("v.ApplicationDate"),
                 "LoanId":component.get("v.showLoanId"), 
-                "fromPopup":true
+                "fromPopup":false
             },
             function(newCmp){
                 if (component.isValid()) {
