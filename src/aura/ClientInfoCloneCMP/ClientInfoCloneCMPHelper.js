@@ -680,8 +680,11 @@
             });
             $A.enqueueAction(action2);
             
-            //Task for AE, added by Bala
+            //SFDC-396
             var action3 = component.get("c.createAETask");
+	    action3.setParams({
+                "ScenarioID": ScenarioID
+            }); 
             action3.setCallback(this,function(){          
             });       
             $A.enqueueAction(action3);

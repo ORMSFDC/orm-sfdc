@@ -625,6 +625,13 @@
         <value>https://api.rockfin.com/orms/nu62/LineOfCredit/FullCalculator</value>
     </labels>
     <labels>
+        <fullName>Scenario_link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario link</shortDescription>
+        <value>https://ormmortgageservices--qa.lightning.force.com/lightning/r/Scenario__c/</value>
+    </labels>
+    <labels>
         <fullName>Scenario_calculate_1</fullName>
         <language>en_US</language>
         <protected>false</protected>

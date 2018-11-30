@@ -11,6 +11,7 @@
  * 11/01/2018: Sahitya -SFDC - 566 capture Print button count
  * 11/05/2018: Sahitya -SFDC - 567 SaNL from Run Capacity Qualifier
  * 11/21/2018: Sahitya -SFDC - 584 Production Support - Scenario Package DOB 
+ * 11/29/2018: Sahitya -SFDC - 396
  */
 public without sharing class lookUpController {
     @AuraEnabled
@@ -206,14 +207,15 @@ public without sharing class lookUpController {
         return objScenario.id;
     }
 
-    /*Bala - A task will be created for AE when a Scenario Package is Requested*/
-    /**
-     * @description create AE task
-     * @todo this should not in Apex and moved into PB/FLOW
-     */
+    /*SFDC-396*/
     @AuraEnabled
-    public static string createAETask() {
+    public static string createAETask(id ScenarioID) {
         Logger.push('createAETask', 'lookUpController');
+        Scenario__c objScenario = [
+                SELECT id, Name
+                FROM Scenario__c
+                WHERE id = :ScenarioID
+        ];
         user u = [SELECT contactId, contact.AccountId FROM user WHERE id = :userinfo.getUserId()];
         Task t = new Task();
         Account a = new Account();
@@ -226,6 +228,7 @@ public without sharing class lookUpController {
         t.ActivityDate = Date.Today();
         t.OwnerId = a.Account_Executive_Name__c;
         t.WhoId = u.contactId;
+        t.description = 'Scenario Url :'+Label.Scenario_link+objScenario.Id + '/view';
         insert t;
         Logger.pop();
         return t.Id;
@@ -269,7 +272,8 @@ public without sharing class lookUpController {
 
         ScenarioExportUtil.ScenarioWithRelatedObjects scenarioExport = ScenarioExportUtil.getExportForscenarioId(ScenarioID);
         ScenarioChannelClient.sendEvent('LoanAppSubmitted', scenarioExport, ScenarioID);
-
+        string scenName = objScenario.Name;
+        string Link ='<a href='+Label.Scenario_link+ScenarioID+Label.account_link2+'>'+scenName+'</a>';   
         DateTime DT1 = objScenario.Client_Lead__r.DOB__c;
         DateTime DT = DT1.addDays(1);//SFDC-584
         string ClientDOB = DT.format('MM/dd/yyyy');
@@ -311,7 +315,7 @@ public without sharing class lookUpController {
             body += '<td>' + objScenario.Current_Mortgage_Interest_Rate__c + '%</td> </tr><tr> <td>Current Mortgage Payment: </td>';
             body += '<td>$' + objScenario.Monthly_Mortgage_Payment__c + '</td> </tr><tr> <td>Margin : </td>';
             body += '<td>' + objScenario.Margin__c + '%</td> </tr><tr> <td>Scenario : </td>';
-            body += '<td>' + objScenario.Name + '</td> </tr> <tr><td colspan="1"></td></tr> <td colspan="1"></td><br/></tr> <tr> <td colspan="1">Thanks, </td> </tr> <tr>';
+            body += '<td>' + Link + '</td> </tr> <tr><td colspan="1"></td></tr> <td colspan="1"></td><br/></tr> <tr> <td colspan="1">Thanks, </td> </tr> <tr>';
             body += '<td colspan="1">' + getUsername + '</td> </tr>';
             body += ' </table> </body> </html>';
             mail.setHtmlBody(body);
