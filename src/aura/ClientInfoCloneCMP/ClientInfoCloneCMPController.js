@@ -503,9 +503,20 @@
         
         // component.set("v.senario_id",null);
         component.set('v.HHM',null);
-        component.set("v.show_capacityform",true);
-        
+        component.set("v.show_capacityform",true);        
         component.set("v.show_capacity_Popup",true);
+	
+     	var counterval = component.get('v.capacitycounter')+1;
+        var action = component.get("c.getcapacityCount");
+        action.setParams({
+            scenarioID:component.get("v.senario_id"),
+            runcounterval: counterval
+        });
+        
+        action.setCallback(this,function(data){            
+            component.set("v.capacitycounter",counterval);            
+        });
+        $A.enqueueAction(action);
     },
     shw_capacityPopupClose : function(component, event, helper){
         //   alert('ClientInfo shw_capacityPopupClose ');

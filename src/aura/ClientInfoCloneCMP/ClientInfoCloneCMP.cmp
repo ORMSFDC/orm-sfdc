@@ -33,6 +33,7 @@
     <!--SFDC-363-->
     <aura:attribute name="isDisplayHelo" type="boolean"  default="true"/> <!--Helo-->
     <aura:attribute name="printcounter" default="0" type="integer"/> <!--SFDC-566-->
+    <aura:attribute name="capacitycounter" default="0" type="integer"/>
     <aura:attribute name="render_popup" type="Boolean" default="false"/>  <!--SFDC-487-->
     <aura:attribute name="DOB" type="string" />
     <aura:attribute name="EHV" type="decimal"  />
