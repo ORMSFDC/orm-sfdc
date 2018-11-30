@@ -51,35 +51,6 @@ public with sharing class lookUpControllerTest {
         lead ReturnValue = lookUpController.getClientDetails(ClientId); 
     } 
     
-    @isTest 
-    Public Static void createAETaskTest()
-    {
-        Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
-        UserRole UR=[Select Id from UserRole where Name='Partner Care Specialist'];        
-        String orgId = UserInfo.getOrganizationId();
-        String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
-        Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
-        String uniqueName = orgId + dateString + randomInt;        
-        User u = [SELECT id from User where ContactId =: System.Label.Con_Id];      
-        Contact c = [SELECT id, AccountId from Contact where Id =: System.Label.Con_Id ];       
-        system.runAs(u)
-        {            
-            Loan_New__c LoanInsert = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true, LoanStatus__c ='In Processing',
-                                                     LoanNumber__c = '12345',Appraisal_Received_Date__c= Date.parse('10/10/2017'),
-                                                     Household_Members__c='2', Real_Estate_Taxes__c = 1200.00,
-                                                     Hazard_Insurance__c = 350.00,HOA_PUD_Condo_Fees__c = 400.00,
-                                                     Square_Footage__c = '2000', Subject_Property_State__c = 'California',Related_Individual__c = c.Id,
-                                                     Related_Partner__c = c.AccountId);
-           
-            insert LoanInsert; 
-            string LoanId = LoanInsert.Id;
-            
-            Test.startTest();       
-               lookUpController.createAETask();                   
-            Test.stopTest();
-        }        
-    }    
-    
     //SFDC - 289
     @isTest
     Public static void SendMailTMPTest()  
@@ -173,6 +144,7 @@ public with sharing class lookUpControllerTest {
                 lookUpController.SendMailTMP(ScenarioList[0].id); 
                 lookUpController.SendMailTMP(ScenarioList[1].id);
                 lookUpController.doUpdateCount(); 
+                lookUpController.createAETask(ScenarioList[0].id);//SFDC_396
             }catch(exception ex){}
             test.stopTest();        
         }        
