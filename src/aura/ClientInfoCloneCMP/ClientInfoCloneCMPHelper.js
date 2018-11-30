@@ -662,6 +662,7 @@
             console.log('result ',result);
             //component.set('v.showSpinner',false);  SFDC-487
             component.set('v.printcounter',0);//SFDC-566
+	    component.set('v.capacitycounter',0);
             //SFDC-487 start
             var comm = component.get("v.Environment");
             if(comm == "Community"){
