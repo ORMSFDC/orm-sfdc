@@ -246,6 +246,7 @@ public with sharing class lookUpControllerTest {
         update s;
         lookUpController.createLoan(s.id ,10,10);
         lookUpController.getPrintCount(10, s.id);//SFDC-566 
+        lookUpController.getcapacityCount(10,s.id);    
     }
        
     @istest static void getCashFlowDataTest(){
