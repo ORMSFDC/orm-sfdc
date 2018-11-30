@@ -484,6 +484,14 @@ public without sharing class lookUpController {
        return null;
     }
     
+    @AuraEnabled
+    public static integer getcapacityCount(Integer runcounterval, String scenarioID){
+       Scenario__c sn = [select id,Run_Capacity_Count__c from Scenario__c where id = :scenarioID];
+       sn.Run_Capacity_Count__c = Integer.valueOf(runcounterval);
+       upsert sn;
+       return null;
+    }
+    
     public static decimal GetMonthlyAssetIncome(String senarioId, Decimal passedAsset) {
         Logger.push('GetMonthlyAssetIncome','lookupController');
         List<integer> DOBList = new List<integer>();
