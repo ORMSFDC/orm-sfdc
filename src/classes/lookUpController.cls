@@ -265,7 +265,8 @@ public without sharing class lookUpController {
                         PartnerId__r.ContactId,
                         PartnerId__r.Contact.AccountId,
                         PartnerId__r.Contact.Account.Account_Executive_Name__r.Email,
-                        PartnerId__r.Contact.Account.Account_Executive_Name__r.Username
+                        PartnerId__r.Contact.Account.Account_Executive_Name__r.Username,
+                        PartnerId__r.FirstName
                 FROM Scenario__c
                 WHERE id = :ScenarioID
         ];
@@ -303,7 +304,7 @@ public without sharing class lookUpController {
             mail.setSubject('Request for Scenario Package.');
             String body;
 
-            body = '<html><body><div>Hello ' + objScenario.ORM_AE__c + ',</div><div><br></br></div><div>' + getUsername + ' Requested the calculation Package.</div><div><br></br></div>';
+            body = '<html><body><div>Hello ' + objScenario.ORM_AE__c + ',</div><div><br></br></div><div>' + objScenario.PartnerId__r.FirstName + ' Requested the calculation Package.</div><div><br></br></div>';
             body += '<table> <tr><td></td><td></td></tr><tr> <td> Name : </td>';
             body += '<td>' + objScenario.Client_Lead__r.LastName + '  ' + objScenario.Client_Lead__r.FirstName + '</td> </tr> <tr> <td>Address : </td>';
             body += '<td>' + objScenario.Client_Lead__r.Street + '  ' + objScenario.Client_Lead__r.State + '  ' + objScenario.Client_Lead__r.PostalCode + '</td> </tr> <tr> <td> Phone : </td>';
