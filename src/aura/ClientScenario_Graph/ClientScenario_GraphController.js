@@ -10,14 +10,13 @@
     },
     //For Request Package
     sendmailrequest: function (component, event, helper) {
+        component.set("v.IsSpinner", true);
         var ScenarioID = component.get("v.ScenarioID");
-
         var action = component.get("c.SendMailTMP");
         action.setParams({
             "ScenarioID": ScenarioID
         });
-        action.setCallback(this, function (data) {
-            component.set("v.IsSpinner", true);
+        action.setCallback(this, function (data) {           
             var toastEvent = $A.get("e.force:showToast");
             toastEvent.setParams({
                 "title": "Success!",
