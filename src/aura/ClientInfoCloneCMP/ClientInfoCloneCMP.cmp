@@ -176,18 +176,18 @@
         <!-- margin table starts -->
         <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
             <br/>
-            <h4>Pricing Options</h4>
-            <aura:if isTrue="{!!v.isDisplayHelo}">
-            	<span style="margin:auto; display:table; font-size: 15pt;">HECM ARM, HECM Fixed options below.</span>
+            <h4>Pricing Options</h4>            
+	    <aura:if isTrue="{!!v.isDisplayHelo}"> <!-- removing text below but may be added in future-->
+            	<span style="margin:auto; display:table; font-size: 15pt;"></span>
             </aura:if>
 	    <!--SFDC-379-->
 	    <aura:if isTrue="{!and(v.isDisplayHelo ,!v.isTraditional)}">
-            	<span style="margin:auto; display:table; font-size: 15pt;">HECM ARM, HECM Fixed options below.</span> <!--fixed helo purchase-->
+            	<span style="margin:auto; display:table; font-size: 15pt;"></span> <!--fixed helo purchase-->
             </aura:if>
             <aura:if isTrue="{!!v.isTraditional}">
             <aura:set attribute="else"><!--end SFDC-379-->
             <aura:if isTrue="{!v.isDisplayHelo}">
-                <span style="margin:auto; display:table; font-size: 15pt;">One Reverse HELO, HECM ARM and HECM Fixed Options below.</span>
+                <span style="margin:auto; display:table; font-size: 15pt;"></span>
                 <h4>One Reverse HELO</h4>
                 
                 <div style="">
