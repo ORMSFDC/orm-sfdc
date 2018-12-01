@@ -151,6 +151,12 @@ public class savedScenarioController {
       public static void SendMailTMP(id ScenarioID){
         lookUpController.SendMailTMP(ScenarioID);
       }
+      //SFDC_568
+      @AuraEnabled
+      public static void createAETask(id ScenarioID)
+      {
+        lookUpController.createAETask(ScenarioID);
+      }
     
       @AuraEnabled
       public static void Senariodelete(List<id> sel_sn){
