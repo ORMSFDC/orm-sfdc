@@ -48,6 +48,7 @@
         } else if ('HECM' == loanType) {
             if (mortgageType.includes('HELO')) {    //set default
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'FHA Traditional HECM');
+                component.set('v.NewLoan.Rate_Type__c', 'ARM'); //SFDC - 592
             }
         }
     },
