@@ -188,7 +188,7 @@
             <aura:set attribute="else"><!--end SFDC-379-->
             <aura:if isTrue="{!v.isDisplayHelo}">
                 <span style="margin:auto; display:table; font-size: 15pt;"></span>
-                <h4>One Reverse HELO</h4>
+                <h4>HELO FIXED Jumbo</h4>
                 
                 <div style="">
                     <table class="margin_table slds-table slds-table_bordered slds-table_cell-buffer" style="border: 1px solid #d4d4d4;">
@@ -453,9 +453,10 @@
                 
             </aura:if>
             <br/>
-            <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
-                <h4>HECM Fixed</h4>
-                
+            <aura:if isTrue="{!v.ScenarioType == 'FHA Traditional HECM'}"> <!--588-->
+            <aura:set attribute="else">
+	    <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
+                <h4>HECM Fixed</h4>                
                 <div style="">
                     <table class="margin_table slds-table slds-table_bordered slds-table_cell-buffer" style="border: 1px solid #d4d4d4;">
                         <thead class="margin-table-head" >
@@ -576,7 +577,8 @@
                     </table>
                 </div>
             </aura:if>
-            
+            </aura:set>
+            </aura:if>
         </aura:if>
         
         <!-- end of margin table-->
