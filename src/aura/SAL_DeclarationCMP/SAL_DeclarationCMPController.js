@@ -48,8 +48,19 @@
             });
             $A.enqueueAction(action1);
             document.getElementById('targetID').innerHTML ='l8';
-        });
-        
+        });        
+            //SFDC-578
+            var action2 = component.get("c.getApptaken");            
+            action2.setParams({
+                "loanID": _Loanid
+            });
+            action2.setCallback(this, function(data) {
+                var ReturnData = data.getReturnValue();                
+                console.log('return data',ReturnData);
+                component.set("v.appTakenBy", ReturnData);
+            });
+            $A.enqueueAction(action2);
+            //SFDC-578
         $A.enqueueAction(action);
     },
     //Client PickList Change
@@ -326,6 +337,7 @@
     // Save declaration
     SaveDeclarations: function(component, event, helper) {
         debugger;
+        var appTaken = component.get("v.appTakenBy"); //SFDC-578
         component.set("v.showWarning",false);
         component.set("v.showSuccess",false);
         component.set("v.showError",false);
@@ -345,9 +357,11 @@
         document.getElementById("lbl_group_k").innerText = ''; 
         document.getElementById("lbl_reason_d").innerText = ''; 
         //Sfdc-282
-        document.getElementById("lbl_group_l1").innerText = '';
-        document.getElementById("lbl_group_l2").innerText = '';
-        document.getElementById("lbl_group_l3").innerText = '';
+        if(appTaken == 'Face to Face'){ //SFDC-587
+            document.getElementById("lbl_group_l1").innerText = '';
+            document.getElementById("lbl_group_l2").innerText = '';
+            document.getElementById("lbl_group_l3").innerText = '';
+        }
         var msg = '';
         var selectedClient = component.get("v.ClientID");
         
@@ -371,9 +385,11 @@
             var k = helper.getRadioGroupValue(component, event, helper,"group_k","v.NewDeclaration.FHA_Insured_Loan__c");
             var l = helper.getRadioGroupValue(component, event, helper,"reason_d","v.NewDeclaration.CashtoClose_Borrowed_Money__c");
             //SFDC-282
-            var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
-            var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
-            var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
+            if(appTaken == 'Face to Face'){ //SFDC-587
+                var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
+                var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+                var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
+            }    
             if(h=='No')            {
                 component.set("v.showPrimaryRsdnce",true);
                 document.getElementById("lbl_group_h").innerText = '';

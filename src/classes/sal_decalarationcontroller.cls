@@ -4,6 +4,7 @@
 * @author GalaxE (original)
 * changelog:
 * 09/19/2018: Sahitya: Added Borrower fields to display in declaration tab for SaNL, SFDC - 282
+* 12/06/2018: Sahitya: SFDC-578
 */
 public class sal_decalarationcontroller {
     
@@ -17,8 +18,7 @@ public class sal_decalarationcontroller {
         Loan_New__c objLoan = new Loan_New__c();  
         try
         { 
-            objLoan  = GenericController.TabsData(RecordId);
-            
+            objLoan  = GenericController.TabsData(RecordId);            
         }
         catch(Exception ex)
         {
@@ -162,4 +162,25 @@ public class sal_decalarationcontroller {
             return false;
         }
     }
+    
+    //SFDC - 578
+    @AuraEnabled
+    public static string getApptaken(String loanID){
+        Loan_New__c apptaken=new Loan_New__c();
+        apptaken = [SELECT This_application_was_taken_by__c FROM Loan_New__c WHERE id=:Loanid];
+        String apptakenval = apptaken.This_application_was_taken_by__c;
+        if(apptaken.This_application_was_taken_by__c != 'Face to Face'){                      
+            List<Declaration__c> ethnicitydec = new List<Declaration__c>();
+            ethnicitydec = [SELECT id,Borrower_Ethnicity__c,Borrower_Race__c,Borrower_Sex__c FROM Declaration__c where DeclarationLoan__c = :LoanId];
+            for(Declaration__c obj:ethnicitydec)
+            {
+                obj.Borrower_Ethnicity__c = 'N';
+                obj.Borrower_Race__c = 'N';
+                obj.Borrower_Sex__c = 'N';
+            }
+            update ethnicitydec;
+        }
+        return apptakenval;        
+    } 
+    
 }
