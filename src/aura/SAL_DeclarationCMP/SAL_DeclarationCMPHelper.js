@@ -331,7 +331,7 @@
     validateDeclarations: function(component, event, helper){
         debugger;
         var isValid = true;
-        
+         var appTaken = component.get("v.appTakenBy"); //SFDC-578
         var group_aVal = component.find("group_a").get('v.value'); 
         var group_bVal = component.find("group_b").get('v.value'); 
         var group_cVal = component.find("group_c").get('v.value'); 
@@ -344,10 +344,11 @@
         var group_jVal = component.find("group_j").get('v.value'); 
         var group_kVal = component.find("group_k").get('v.value'); 
         //SFDC-282
-        var group_l1Val = component.find("group_l1").get('v.value'); //new
-        var group_l2Val = component.find("group_l2").get('v.value');
-        var group_l3Val = component.find("group_l3").get('v.value');
-
+        if(appTaken == 'Face to Face'){
+            var group_l1Val = component.find("group_l1").get('v.value'); 
+            var group_l2Val = component.find("group_l2").get('v.value');
+            var group_l3Val = component.find("group_l3").get('v.value');
+        }
         //Code Added/Changed by Dev4 for ORMSFDC-1432
         var ethnicityMainVal = component.find("group_mainEthnicity").get('v.value');
         var subEthnicityVal = component.find("groupSubEthnicity").get('v.value'); 
@@ -495,38 +496,40 @@
             isValid_k = true;
         }
         //SFDC-282
-        if($A.util.isUndefinedOrNull(group_l1Val))
-        { 
-            document.getElementById("lbl_group_l1").innerText = 'Please check at least one option.';
-            isValid_l1 = false;
-        }
-        else
-        {
-            document.getElementById("lbl_group_l1").innerText = '';
-            isValid_l1 = true;
-        }
+        if(appTaken == 'Face to Face'){//SFDC_578
+            if($A.util.isUndefinedOrNull(group_l1Val))
+            { 
+                document.getElementById("lbl_group_l1").innerText = 'Please check at least one option.';
+                isValid_l1 = false;
+            }
+            else
+            {
+                document.getElementById("lbl_group_l1").innerText = '';
+                isValid_l1 = true;
+            }
 
-        if($A.util.isUndefinedOrNull(group_l2Val))
-        { 
-            document.getElementById("lbl_group_l2").innerText = 'Please check at least one option.';
-            isValid_l2 = false;
-        }
-        else
-        {
-            document.getElementById("lbl_group_l2").innerText = '';
-            isValid_l2 = true;
-        }
-        
-        if($A.util.isUndefinedOrNull(group_l3Val))
-        { 
-            document.getElementById("lbl_group_l3").innerText = 'Please check at least one option.';
-            isValid_l3 = false;
-        }
-        else
-        {
-            document.getElementById("lbl_group_l3").innerText = '';
-            isValid_l3 = true;
-        }//end SFDC-282
+            if($A.util.isUndefinedOrNull(group_l2Val))
+            { 
+                document.getElementById("lbl_group_l2").innerText = 'Please check at least one option.';
+                isValid_l2 = false;
+            }
+            else
+            {
+                document.getElementById("lbl_group_l2").innerText = '';
+                isValid_l2 = true;
+            }
+
+            if($A.util.isUndefinedOrNull(group_l3Val))
+            { 
+                document.getElementById("lbl_group_l3").innerText = 'Please check at least one option.';
+                isValid_l3 = false;
+            }
+            else
+            {
+                document.getElementById("lbl_group_l3").innerText = '';
+                isValid_l3 = true;
+            }
+        }//end SFDC-282    
         // Code Added by Dev4 for ORMSFDC-1432
         if($A.util.isUndefinedOrNull(ethnicityMainVal) || ethnicityMainVal=="")
         { 
