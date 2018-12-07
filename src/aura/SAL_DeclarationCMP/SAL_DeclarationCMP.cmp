@@ -2,7 +2,7 @@
     <aura:attribute name="NewDeclaration" type="Declaration__c" default="{'sobjectType':'Declaration__c'}" />
     <aura:attribute name="clientList" type="List" />
     <aura:attribute name="clientRecords" type="Object" />
-    <aura:attribute name="LoanId" type="String" />
+    <aura:attribute name="LoanId" type="String" />    
     <aura:attribute name="DecLoanId" type="String" />
     <aura:attribute name="nextOpt" type="boolean" />
     <aura:attribute name="currentOpt" type="boolean" />
@@ -31,7 +31,7 @@
                                                         ]"/>
     <aura:attribute name="value" type="String" default="No"/>
     <aura:attribute name="itemsClicked" type="String" />       
-    
+    <aura:attribute name="appTakenBy" type="String" default = "Face to Face" /><!--SFDC 578-->
     <fieldset class="slds-box slds-theme--default slds-container--large">
         <div class="slds-form slds-form_compound">
             <h4>Client(s)</h4>            
@@ -306,6 +306,8 @@
                 <br/>
             </div>
             <!-- Start SFDC 282, Bala  -->
+            <aura:if isTrue="{!v.appTakenBy != 'Face to Face'}">  <!--SFDC 578 -->
+            <aura:set attribute="else">
             <div class="slds-size_1-of-1 LabelDiv">
                 <div>
                     i. Was the ethnicity of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
@@ -350,6 +352,8 @@
             </div>
             <label id="lbl_group_l3" class="lblRemarkStyle"></label>
             <br/>
+            </aura:set>
+            </aura:if>
             <!--end SFDC 282 -->
 
             <div id="DivshowRemarks" class="slds-size_1-of-2 ">
