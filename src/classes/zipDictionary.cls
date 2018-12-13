@@ -54,7 +54,7 @@ global with sharing class zipDictionary {
         stateCodes.put('WV', 'West Virginia');
         stateCodes.put('WI', 'Wisconsin');
         stateCodes.put('WY', 'Wyoming');
-        
+        stateCodes.put('DC', 'Washington DC');
         String code = stateCodes.get(sCode);
         system.debug(code);
 		return code;
