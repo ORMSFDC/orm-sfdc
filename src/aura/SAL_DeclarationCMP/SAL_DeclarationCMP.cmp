@@ -2,7 +2,7 @@
     <aura:attribute name="NewDeclaration" type="Declaration__c" default="{'sobjectType':'Declaration__c'}" />
     <aura:attribute name="clientList" type="List" />
     <aura:attribute name="clientRecords" type="Object" />
-    <aura:attribute name="LoanId" type="String" />    
+    <aura:attribute name="LoanId" type="String" />
     <aura:attribute name="DecLoanId" type="String" />
     <aura:attribute name="nextOpt" type="boolean" />
     <aura:attribute name="currentOpt" type="boolean" />
@@ -377,28 +377,28 @@
             
             <div class="slds-form-element__row">
                 <div style=""  class="slds-form-element slds-size_1-of-1" id="CheckHispanicDIV">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="ethnicitymain" value="{!v.NewDeclaration.Hispanic_or_Latino__c}" disabled = "{!v.borrowerEthn == 'N'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="ethnicitymain" value="{!v.NewDeclaration.Hispanic_or_Latino__c}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Hispanic or Latino</span>
                     </label>
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="mexicanEth" value="{!v.NewDeclaration.mexican__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="mexicanEth" value="{!v.NewDeclaration.mexican__c}" disabled = "{!v.borrowerEthn == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Mexican</span>
                     </label>
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="puertoEth" value="{!v.NewDeclaration.Puerto_Rican__c}"  disabled = "{!v.borrowerEthn == 'N'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="puertoEth" value="{!v.NewDeclaration.Puerto_Rican__c}" disabled = "{!v.borrowerEthn == 'Y'}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Puerto Rican</span>
                     </label>
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="cubanEth" value="{!v.NewDeclaration.Cuban__c}" disabled = "{!v.borrowerEthn == 'N'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="cubanEth" value="{!v.NewDeclaration.Cuban__c}" disabled = "{!v.borrowerEthn == 'Y'}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Cuban</span>
@@ -408,7 +408,7 @@
                 <div style="margin-left:4%;"  class="slds-form-element slds-col slds-size_1-of-1" >
                      <lightning:layout multipleRows="true" horizontalAlign="left" verticalAlign="end">
                         <lightning:layoutItem flexibility="auto" size="3">
-                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="otherHispEth" change="{!c.callCheckboxMethod }" value="{!v.NewDeclaration.Other_Hispanic_or_Latino__c}" />                                        
+                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="otherHispEth" change="{!c.callCheckboxMethod }" value="{!v.NewDeclaration.Other_Hispanic_or_Latino__c}" disabled = "{!v.borrowerEthn == 'Y'}" />                                        
                             <label class="uiLabel-right slds-form-element__label uiLabel ">
                                 <span>&nbsp; Other Hispanic or Latino </span>
                             </label>
@@ -427,14 +427,14 @@
                 </div>                
                 
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="notHispLatino" value="{!v.NewDeclaration.Not_Hispanic_or_Latino__c}" disabled = "{!v.borrowerEthn == 'Y'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="notHispLatino" value="{!v.NewDeclaration.Not_Hispanic_or_Latino__c}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label " >
                         <span>Not Hispanic or Latino </span>
                     </label>
                 </div>
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doNotWishEth" value="{!v.NewDeclaration.Does_not_wish_to_provide__c}" disabled = "{!v.borrowerEthn == 'Y'}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doNotWishEth" value="{!v.NewDeclaration.Does_not_wish_to_provide__c}"  />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Does not wish to provide</span>
@@ -450,29 +450,28 @@
                 
             <div class="slds-form-element__row">
                 <div style=""  class="slds-form-element slds-size_1-of-1" id="CheckRaceDIV">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="americanIndRace" value="{!v.NewDeclaration.American_Indian_or_Alaska_Native__c}" 
-                                        disabled = "{!or(v.borrowerRace == 'Y',v.borrowerRace == 'N')}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="americanIndRace" value="{!v.NewDeclaration.American_Indian_or_Alaska_Native__c}"  />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>American Indian or Alaska Native </span>
                     </label>
                 </div>
                 <div style=""  class="slds-form-element slds-size_1-of-1">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="asianRace" value="{!v.NewDeclaration.Asian__c}" disabled = "{!v.borrowerRace == 'N'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="asianRace" value="{!v.NewDeclaration.Asian__c}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Asian</span>
                     </label>
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="asianIndRace" value="{!v.NewDeclaration.Asian_Indian__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="asianIndRace" value="{!v.NewDeclaration.Asian_Indian__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Asian Indian</span>
                     </label>
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="chineseRace" value="{!v.NewDeclaration.Chinese__c}" disabled = "{!v.borrowerRace == 'N'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="chineseRace" value="{!v.NewDeclaration.Chinese__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Chinese</span>
@@ -480,21 +479,21 @@
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
                     
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="filipinoRace" value="{!v.NewDeclaration.Filipino__c}"  disabled = "{!v.borrowerRace == 'N'}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="filipinoRace" value="{!v.NewDeclaration.Filipino__c}" disabled = "{!v.borrowerRace == 'Y'}"  />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Filipino</span>
                     </label>                                 
                 </div>            
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="japRace" value="{!v.NewDeclaration.Japanese__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="japRace" value="{!v.NewDeclaration.Japanese__c}" disabled = "{!v.borrowerRace == 'Y'}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Japanese</span>
                     </label>
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="koreanRace" value="{!v.NewDeclaration.Korean__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="koreanRace" value="{!v.NewDeclaration.Korean__c}" disabled = "{!v.borrowerRace == 'Y'}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Korean</span>
@@ -502,7 +501,7 @@
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
                 
-                <ui:inputCheckbox class="myCheckbox" label="" aura:id="vietnamRace" value="{!v.NewDeclaration.Vietnamese__c}" />
+                <ui:inputCheckbox class="myCheckbox" label="" aura:id="vietnamRace" value="{!v.NewDeclaration.Vietnamese__c}" disabled = "{!v.borrowerRace == 'Y'}" />
                 &nbsp;            
                 <label class="uiLabel-right slds-form-element__label uiLabel">
                     <span>Vietnamese</span>
@@ -512,7 +511,7 @@
                 <div style="margin-left:4%;"  class="slds-form-element slds-col slds-size_3-of-10" >
                     <lightning:layout multipleRows="true" horizontalAlign="left" verticalAlign="end">
                         <lightning:layoutItem flexibility="auto" size="2">
-                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="othAsianRace" value="{!v.NewDeclaration.Other_Asian__c}" change="{!c.callCheckboxMethod2 }"/>                                        
+                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="othAsianRace" value="{!v.NewDeclaration.Other_Asian__c}" change="{!c.callCheckboxMethod2 }" disabled = "{!v.borrowerRace == 'Y'}"/>                                        
                             <label class="uiLabel-right slds-form-element__label uiLabel ">
                                 <span>&nbsp; Other Asian </span>
                             </label>
@@ -532,7 +531,7 @@
                 <br/>
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
                     
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="blackAfrRace" value="{!v.NewDeclaration.Black_or_African_American__c}"  disabled = "{!v.borrowerRace == 'N'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="blackAfrRace" value="{!v.NewDeclaration.Black_or_African_American__c}"  />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Black or African American</span>
@@ -548,21 +547,21 @@
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
                     
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="nativeHawRace" value="{!v.NewDeclaration.Native_Hawaiian__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="nativeHawRace" value="{!v.NewDeclaration.Native_Hawaiian__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Native Hawaiian</span>
                     </label>                                 
                 </div>   
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >                    
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="guamanianRace" value="{!v.NewDeclaration.Guamanian_or_Chamorro__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="guamanianRace" value="{!v.NewDeclaration.Guamanian_or_Chamorro__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Guamanian or Chamorro</span>
                     </label>                                 
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >                    
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="samoanRace" value="{!v.NewDeclaration.Samoan__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="samoanRace" value="{!v.NewDeclaration.Samoan__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Samoan</span>
@@ -571,7 +570,7 @@
                 <div style="margin-left:4%;"  class="slds-form-element slds-col slds-size_1-of-1" >
                     <lightning:layout multipleRows="true" horizontalAlign="left" verticalAlign="end">
                         <lightning:layoutItem flexibility="auto" size="3">
-                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="otherPacificRace" value="{!v.NewDeclaration.Other_Pacific_Islander__c}" change="{!c.callCheckboxMethod3 }"/>                                        
+                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="otherPacificRace" value="{!v.NewDeclaration.Other_Pacific_Islander__c}" change="{!c.callCheckboxMethod3 }" disabled = "{!v.borrowerRace == 'Y'}"/>                                        
                             <label class="uiLabel-right slds-form-element__label uiLabel ">
                                 <span>&nbsp; Other Pacific Islander: </span>
                             </label>
@@ -598,8 +597,7 @@
                 </div>  
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
                     
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishRace" value="{!v.NewDeclaration.Does_not_wish_to_provide_Race__c}" 
-                    disabled = "{!v.borrowerRace == 'Y'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishRace" value="{!v.NewDeclaration.Does_not_wish_to_provide_Race__c}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Does not wish to provide</span>
@@ -614,7 +612,7 @@
             </div>                            
             <div class="slds-form-element__row">
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="femaleSex" value="{!v.NewDeclaration.Female__c}" disabled = "{!or(v.borrowerSex == 'Y',v.borrowerSex == 'N')}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="femaleSex" value="{!v.NewDeclaration.Female__c}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Female</span>
@@ -622,7 +620,7 @@
                 </div>
                 
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="maleSex" value="{!v.NewDeclaration.Male__c}" disabled = "{!or(v.borrowerSex == 'Y',v.borrowerSex == 'N')}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="maleSex" value="{!v.NewDeclaration.Male__c}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Male</span>
@@ -630,7 +628,7 @@
                 </div>
 
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishSex" value="{!v.NewDeclaration.Does_not_wish_to_provide_Sex__c}" disabled = "{!v.borrowerSex == 'Y'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishSex" value="{!v.NewDeclaration.Does_not_wish_to_provide_Sex__c}" />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Does not wish to provide</span>
