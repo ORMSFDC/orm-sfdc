@@ -5,7 +5,7 @@
     <aura:attribute name="FirstName_error" type="boolean" default="false"/>
     <aura:attribute name="zip_error" type="boolean" default="false"/>
     <aura:attribute name="Tier_Value" type="String" default="Tier1"/> <!--Bala-->
-    <aura:attribute name="lineOfCreditIs" type="String"/> <!--BalaC1-->
+    <aura:attribute name="lineOfCreditIs" type="String"/> <!--BalaC1-->       
     <aura:attribute name="PrincipalLimitIs" type="String"/>
     <aura:attribute name="FHA_Hecm_AdjustableMargin" type="object[]" />
     <aura:attribute name="FHA_Hecm_FixedMargin" type="object[]" /> 
