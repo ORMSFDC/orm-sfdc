@@ -5,6 +5,7 @@
 * changelog:
 * 09/19/2018: Sahitya: Added Borrower fields to display in declaration tab for SaNL, SFDC - 282
 * 12/06/2018: Sahitya: SFDC-578
+* 12/13/2018: Sahitya: SFDC-579
 */
 public class sal_decalarationcontroller {
     
@@ -31,16 +32,16 @@ public class sal_decalarationcontroller {
         Declaration__c objDeclr =new Declaration__c(); 
         try
         {
-            //Code Added/Changed by Dev4 for ORMSFDC-1432
-            objDeclr = [SELECT Id, Bankruptcy__c,CashtoClose__c,CashtoClose_Borrowed_Money__c, Declaration_Reason__c,
-                        Delinquent__c,Delinquent_Address__c,Delinquent_Date_of_the_Debt__c,Delinquent_FHA_VA_Case__c,  
-                        Delinquent_Name__c,Delinquent_Reason__c,Endorser__c,Ethnicity_New__c,FHA_Insured_Loan__c, 
-                        FHA_Property_Address__c, FHA_Acc_No__c, FHA_Creditor__c, FHA_Amount__c, FHA_Unpaid_Loan__c, 
-                        Lawsuit__c, Outstanding_Judgments__c, Permanent_Resident__c, Primary_Residence__c, Race__c, 
-                        DeclarationClient__c, DeclarationLoan__c, ReverseMortgage__c, ReverseMortgage_Cost__c,
-                        Enrolled_tribe__c,Declaration_Remarks__c,Ethnicity__c, Borrower_Ethnicity__c,Borrower_Race__c, Borrower_Sex__c,
-                        ReverseMortgage_finproduct__c, Sex_New__c, US_Citizen__c FROM Declaration__c where DeclarationClient__c = :ClientId limit 1];
-//Code Ended by Dev4 for ORMSFDC-1432
+            //SFDC-579
+            objDeclr = [SELECT Id, Bankruptcy__c,CashtoClose__c,CashtoClose_Borrowed_Money__c,  Declaration_Reason__c,Delinquent__c,Delinquent_Address__c,Delinquent_Date_of_the_Debt__c,Delinquent_FHA_VA_Case__c,  
+                        Delinquent_Name__c,Delinquent_Reason__c,Endorser__c,Ethnicity_New__c,FHA_Insured_Loan__c,FHA_Property_Address__c, FHA_Acc_No__c, FHA_Creditor__c, FHA_Amount__c, FHA_Unpaid_Loan__c, 
+                        Lawsuit__c, Outstanding_Judgments__c, Permanent_Resident__c, Primary_Residence__c, Race__c,DeclarationClient__c, DeclarationLoan__c, ReverseMortgage__c, ReverseMortgage_Cost__c,
+                        Enrolled_tribe__c,Declaration_Remarks__c,Ethnicity__c, Borrower_Ethnicity__c,Borrower_Race__c, Borrower_Sex__c,ReverseMortgage_finproduct__c, Sex_New__c,
+                        US_Citizen__c, Hispanic_or_Latino__c, mexican__c,Puerto_Rican__c,Cuban__c,Other_Hispanic_or_Latino__c,Other_Hispanic_or_Latino_desc__c,Not_Hispanic_or_Latino__c,
+                        Does_not_wish_to_provide__c,American_Indian_or_Alaska_Native__c,Asian__c,Asian_Indian__c,Chinese__c,Filipino__c,Japanese__c,Korean__c,Vietnamese__c,
+                        Other_Asian__c,Other_Asian_Desc__c,Black_or_African_American__c,Native_Hawaiian_or_Other_Pacific_Islan__c,Native_Hawaiian__c,Guamanian_or_Chamorro__c,Samoan__c,
+                        Other_Pacific_Islander__c,Other_Pacific_Islander_Desc__c,White__c,Does_not_wish_to_provide_Race__c,Female__c,Male__c, Does_not_wish_to_provide_Sex__c
+                        FROM Declaration__c where DeclarationClient__c = :ClientId limit 1];
         }
         catch(Exception ex)
         {
