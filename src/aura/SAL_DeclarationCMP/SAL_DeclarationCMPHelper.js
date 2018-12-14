@@ -100,35 +100,7 @@
             
             document.getElementById('FHADetails').style.display = 'None';
         }          
-        var SelectedValue = component.find('group_m').get('v.value');        
-        var American=SelectedValue.indexOf("American Indian or Alaska Native");
-        //var Asian=SelectedValue.indexOf("Asian");        
-        if(American!=-1)
-        {
-            document.getElementById('DivshowRaceNative').style.display = 'block';
-            
-        }
-        else { 
-            document.getElementById('DivshowRaceNative').style.display = 'none';
-        }
         
-        /*if(Asian!=-1)
-        {
-            document.getElementById('DivshowAsian').style.display = 'block';
-        }
-        else{ 
-            document.getElementById('DivshowAsian').style.display = 'None';
-        }
-        
-        var SelectedEthenicity = component.find('group_l').get('v.value');
-        if(SelectedEthenicity == 'Hispanic or Latino')
-        {
-            document.getElementById('DivshowEthnicity').style.display = 'block';           
-            
-        }
-        else{
-            document.getElementById('DivshowEthnicity').style.display = 'None';
-        }*/
         var a = helper.getRadioGroupValue(component, event, helper,"group_a","v.NewDeclaration.Outstanding_Judgments__c");
         var b = helper.getRadioGroupValue(component, event, helper,"group_b","v.NewDeclaration.Lawsuit__c");
         var c = helper.getRadioGroupValue(component, event, helper,"group_c","v.NewDeclaration.Delinquent__c");
@@ -271,27 +243,10 @@
         var unpaidloan = component.find("unpaidloan");
         $A.util.removeClass(unpaidloan, 'errorComponent');
         
-        document.getElementById("EnrolledTribeError").innerHTML = '';
-        var EnrolledTribecc = component.find("EnrolledTribeText");
-        $A.util.removeClass(EnrolledTribecc, 'errorComponent');
-        
-        /*document.getElementById("groupAsianError").innerHTML = '';
-        var groupAsiancc = component.find("groupAsian");
-        $A.util.removeClass(groupAsiancc, 'errorComponent');*/
-        
         document.getElementById("RemarksError").innerHTML = '';
         var RemarksVal = component.find("DeclComments");
         $A.util.removeClass(RemarksVal, 'errorComponent');
         
-        //Code Added/Changed by Dev4 for ORMSFDC-1432
-        document.getElementById("show_ethnicityError").innerHTML = '';
-        var ethenicityMain_Cmp = component.find("group_mainEthnicity");
-        $A.util.removeClass(ethenicityMain_Cmp, 'errorComponent');
-        
-        document.getElementById("subEthnicityError").innerHTML = '';
-        var ethenicitycc = component.find("groupSubEthnicity");
-        $A.util.removeClass(ethenicitycc, 'errorComponent');
-        // Code Ended by Dev4 for ORMSFDC-1432
         document.getElementById("lbl_group_a").innerText = '';
         document.getElementById("lbl_group_b").innerText = '';
         document.getElementById("lbl_group_c").innerText = '';
@@ -306,19 +261,7 @@
         //SFDC-282
         document.getElementById("lbl_group_l1").innerText = '';
         document.getElementById("lbl_group_l2").innerText = '';
-        document.getElementById("lbl_group_l3").innerText = '';
-        
-        /*document.getElementById("group_lError").innerHTML = '';
-        var group_lCmp = component.find("group_l");
-        $A.util.removeClass(group_lCmp, 'errorComponent');*/
-        
-        document.getElementById("group_mError").innerHTML = '';
-        var group_mCmp = component.find("group_m");
-        $A.util.removeClass(group_mCmp, 'errorComponent');
-        
-        document.getElementById("group_nError").innerHTML = '';
-        var group_nCmp = component.find("group_n");
-        $A.util.removeClass(group_nCmp, 'errorComponent');
+        document.getElementById("lbl_group_l3").innerText = '';   
     },
     showRemarksLabel: function(id,selected_group) {
         
@@ -349,20 +292,36 @@
             var group_l2Val = component.find("group_l2").get('v.value');
             var group_l3Val = component.find("group_l3").get('v.value');
         }
-        //Code Added/Changed by Dev4 for ORMSFDC-1432
-        var ethnicityMainVal = component.find("group_mainEthnicity").get('v.value');
-        var subEthnicityVal = component.find("groupSubEthnicity").get('v.value'); 
-        //Code Ended by Dev4 for ORMSFDC-1432-->
-        var group_mVal = component.find("group_m").get('v.value'); 
-        var group_nVal = component.find("group_n").get('v.value'); 
         
-        //Code Added/Changed by Dev4 for ORMSFDC-1432
-        var ethnicityMainCmp=component.find('group_mainEthnicity');
-        var subEthnicityCmp=component.find('groupSubEthnicity');
-        //Code Added/Changed by Dev4 for ORMSFDC-1432
-        var group_mCmp=component.find('group_m');
-        var group_nCmp=component.find('group_n');
-        
+        //SFDC-579
+        var ethGroup1 = component.find("ethnicitymain").get('v.value');
+        var ethGroup2 = component.find("mexicanEth").get('v.value');
+        var ethGroup3 = component.find("puertoEth").get('v.value');
+        var ethGroup4 = component.find("cubanEth").get('v.value');
+        var ethGroup5 = component.find("otherHispEth").get('v.value');
+        var ethGroup6 = component.find("notHispLatino").get('v.value');
+        var ethGroup7 = component.find("doNotWishEth").get('v.value');
+        var raceGroup1 = component.find("americanIndRace").get('v.value');
+        var raceGroup2 = component.find("asianRace").get('v.value');
+        var raceGroup3 = component.find("asianIndRace").get('v.value');
+        var raceGroup4 = component.find("chineseRace").get('v.value');
+        var raceGroup5 = component.find("filipinoRace").get('v.value');
+        var raceGroup6 = component.find("japRace").get('v.value');
+        var raceGroup7 = component.find("koreanRace").get('v.value');
+        var raceGroup8 = component.find("vietnamRace").get('v.value');
+        var raceGroup9 = component.find("othAsianRace").get('v.value');
+        var raceGroup10 = component.find("blackAfrRace").get('v.value');
+        var raceGroup11 = component.find("nativeHawaPacRace").get('v.value');
+        var raceGroup12 = component.find("nativeHawRace").get('v.value');
+        var raceGroup13 = component.find("guamanianRace").get('v.value');
+        var raceGroup14 = component.find("otherPacificRace").get('v.value');
+        var raceGroup15 = component.find("whiteRace").get('v.value');
+        var raceGroup16 = component.find("doesNotWishRace").get('v.value');
+        var raceGroup17 = component.find("samoanRace").get('v.value');
+        var sexGroup1 = component.find("femaleSex").get('v.value');
+        var sexGroup2 = component.find("maleSex").get('v.value');
+        var sexGroup3 = component.find("doesNotWishSex").get('v.value');
+
         var isValid_a=true;
         var isValid_b=true;
         var isValid_c=true;
@@ -374,13 +333,14 @@
         var isValid_i=true;
         var isValid_j=true;
         var isValid_k=true;
-        var isValid_l=true;
-        var isValid_m=true;
-        var isValid_n=true;
         //SFDC-282
         var isValid_l1=true;
         var isValid_l2=true;
         var isValid_l3=true;
+        //SFDC-579      
+        var isValid_l4=true;
+        var isValid_l5=true;
+        var isValid_l6=true;
 
         if($A.util.isUndefinedOrNull(group_aVal))
         { 
@@ -529,67 +489,39 @@
                 document.getElementById("lbl_group_l3").innerText = '';
                 isValid_l3 = true;
             }
-        }//end SFDC-282    
-        // Code Added by Dev4 for ORMSFDC-1432
-        if($A.util.isUndefinedOrNull(ethnicityMainVal) || ethnicityMainVal=="")
-        { 
-            
-            document.getElementById("show_ethnicityError").innerText = 'Please select Ethinicity.';
-            $A.util.addClass(ethnicityMainCmp, 'errorComponent');
-            isValid_l = false;
+        }//end SFDC-282
+        
+        //SFDC-579
+        if(ethGroup1 == false && ethGroup2 == false && ethGroup3 == false && ethGroup4 == false && ethGroup5 == false && ethGroup6 == false && ethGroup7 == false){
+            document.getElementById("ethnicityGroup").innerText = 'Please check at least one option.';
+            isValid_l4 = false;
+        }else{
+            document.getElementById("ethnicityGroup").innerText = '';
+            isValid_l4 = true;
         }
-        else
-        {
-            document.getElementById("show_ethnicityError").innerText = '';
-            $A.util.removeClass(ethnicityMainCmp, 'errorComponent');
-            isValid_l = true;
+
+        if(raceGroup1 == false && raceGroup2 == false && raceGroup3 == false && raceGroup4 == false && raceGroup5 == false && raceGroup6 == false && raceGroup7 == false &&
+            raceGroup8 == false && raceGroup9 == false && raceGroup10 == false && raceGroup11 == false && raceGroup12 == false && raceGroup13 == false && raceGroup14 == false && 
+            raceGroup15 == false && raceGroup16 == false && raceGroup17 == false){
+            document.getElementById("RaceGroup").innerText = 'Please check at least one option.';
+            isValid_l5 = false;
+        }else{
+            document.getElementById("RaceGroup").innerText = '';
+            isValid_l5 = true;
         }
-        //Code Ended by Dev4 for ORMSFDC-1432-->
-        // Code Changed by Dev4 for ORMSFDC-1432
-        if($A.util.isUndefinedOrNull(subEthnicityVal) || subEthnicityVal=="")
-        { 
-            
-            document.getElementById("subEthnicityError").innerText = 'Please select at least one option.';
-            $A.util.addClass(subEthnicityCmp, 'errorComponent');
-            isValid_l = false;
-        }
-        else
-        {
-            document.getElementById("subEthnicityError").innerText = '';
-            $A.util.removeClass(subEthnicityCmp, 'errorComponent');
-            isValid_l = true;
-        }
-        //Code Ended by Dev4 for ORMSFDC-1432
-        if($A.util.isUndefinedOrNull(group_mVal) || group_mVal=="")
-        { 
-            
-            document.getElementById("group_mError").innerText = 'Please select at least one option.';
-            $A.util.addClass(group_mCmp, 'errorComponent');
-            isValid_m = false;
-        }
-        else
-        {
-            document.getElementById("group_mError").innerText = '';
-            $A.util.removeClass(group_mCmp, 'errorComponent');
-            isValid_m = true;
-        }
-        if($A.util.isUndefinedOrNull(group_nVal) || group_nVal=="")          
-        { 
-            
-            document.getElementById("group_nError").innerText = 'Please select at least one option.';
-            $A.util.addClass(group_nCmp, 'errorComponent');
-            isValid_n = false;
-        }
-        else
-        {
-            document.getElementById("group_nError").innerText = '';
-            $A.util.removeClass(group_nCmp, 'errorComponent');
-            isValid_n = true;
+
+        if(sexGroup1 == false && sexGroup2 == false && sexGroup3 == false){
+            document.getElementById("sexGroup").innerText = 'Please check at least one option.';
+            isValid_l6 = false;
+        }else{
+            document.getElementById("sexGroup").innerText = '';
+            isValid_l6 = true;
         }
         
         if(!isValid_a || !isValid_b || !isValid_c || !isValid_d || !isValid_e || 
            !isValid_f || !isValid_g || !isValid_h || !isValid_i || !isValid_j || 
-           !isValid_k || !isValid_m || !isValid_n || !isValid_l1 || !isValid_l2 || !isValid_l3)
+           !isValid_k || !isValid_l1 || !isValid_l2 || !isValid_l3 || !isValid_l4 || 
+           !isValid_l5 || !isValid_l6)
         {
             isValid=false;
         }
