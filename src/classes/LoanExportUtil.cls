@@ -14,6 +14,7 @@
 * 09/06/2018: Sahitya: Add LoanType for HELO
 * 09/07/2018: Sahitya: Add Margin for HELO
 * 09/19/2018: Sahitya: Added Borrower fields for Declaration Json req, SFDC - 282
+* 12/13/2018: Sahitya: SFDC - 579 added new fields for declaration mapping
 */
 global class LoanExportUtil {
 
@@ -583,7 +584,37 @@ global class LoanExportUtil {
         'ReverseMortgage_Cost__c'                   => 'reverse_mortgage_cost',
         'ReverseMortgage_finproduct__c'             => 'reverse_mortgage_finproduct',
         'Sex_New__c'                                => 'sex',
-        'US_Citizen__c'                             => 'us_citizen'
+        'US_Citizen__c'                             => 'us_citizen',
+        'Hispanic_or_Latino__c'                     => 'hispanic_latino',
+        'mexican__c'                                => 'mexican',
+        'Puerto_Rican__c'                           => 'Puerto_Rican',
+        'Cuban__c'                                  => 'Cuban',
+        'Other_Hispanic_or_Latino__c'               => 'Other_Hispanic_Latino',
+        'Other_Hispanic_or_Latino_desc__c'          => 'Other_Hispanic_Latino_Desc',
+        'Not_Hispanic_or_Latino__c'                 => 'Not_Hispanic_Latino',
+        'Does_not_wish_to_provide__c'               => 'Does_not_provide_eth',
+        'American_Indian_or_Alaska_Native__c'       => 'American_Indian_Alaska_Native',
+        'Asian__c'                                  => 'Asian',
+        'Asian_Indian__c'                           => 'Asian_Indian',
+        'Chinese__c'                                => 'Chinese',
+        'Filipino__c'                               => 'Filipino',
+        'Japanese__c'                               => 'Japanese',
+        'Korean__c'                                 => 'Korean',
+        'Vietnamese__c'                             => 'Vietnamese',
+        'Other_Asian__c'                            => 'other_asian',
+        'Other_Asian_Desc__c'                       => 'Other_Asian_Desc',
+        'Black_or_African_American__c'              => 'Black_or_African_American',
+        'Native_Hawaiian_or_Other_Pacific_Islan__c' => 'Native_Hawaiian_Other_Pacific_Islan',
+        'Native_Hawaiian__c'                        => 'Native_Hawaiian',
+        'Guamanian_or_Chamorro__c'                  => 'Guamanian_Chamorro',
+        'Samoan__c'                                 => 'Samoan',
+        'Other_Pacific_Islander__c'                 => 'Other_Pacific_Islander',
+        'Other_Pacific_Islander_Desc__c'            => 'Other_Pacific_Islander_Desc',
+        'White__c'                                  => 'White',
+        'Does_not_wish_to_provide_Race__c'          => 'Does_not_provide_race',
+        'Female__c'                                 => 'Female_s',
+        'Male__c'                                   => 'Male_s',
+        'Does_not_wish_to_provide_Sex__c'           => 'Does_not_provide_sex'
     };
 
     //Added by Ravi
