@@ -3,11 +3,6 @@
     <aura:attribute name="clientList" type="List" />
     <aura:attribute name="clientRecords" type="Object" />
     <aura:attribute name="LoanId" type="String" />
-    <aura:attribute name="appTakenBy" type="String" default = "Face to Face" /> <!-- F2F-->
-    <aura:attribute name="borrowerEthn" type="String" default="null"/> <!--SFDC-579-->
-    <aura:attribute name="borrowerSex" type="String" default="null"/>
-    <aura:attribute name="borrowerRace" type="String" default="null"/>
-
     <aura:attribute name="DecLoanId" type="String" />
     <aura:attribute name="nextOpt" type="boolean" />
     <aura:attribute name="currentOpt" type="boolean" />
