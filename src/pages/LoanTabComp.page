@@ -1,4 +1,4 @@
-<apex:page standardController="Loan_New__c">
+<apex:page standardController="Loan_New__c" sidebar="false" showHeader="false">
     <apex:form >   
     <br/><br/>
         &nbsp; <font color="{!if(Loan_new__c.Banner__c='#FF0000','#FF0000','#FF0000')}" size="+1" face="Georgia"> 
