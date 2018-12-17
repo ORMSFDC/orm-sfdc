@@ -163,7 +163,7 @@
             component.set("v.NewDeclaration.Other_Hispanic_or_Latino_desc__c","");
         }
 
-        else if(l3 == "Y"){
+        if(l3 == "Y"){
             component.set("v.NewDeclaration.Asian_Indian__c",false);
             component.set("v.NewDeclaration.Chinese__c",false);
             component.set("v.NewDeclaration.Filipino__c",false);
