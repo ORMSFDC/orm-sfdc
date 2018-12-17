@@ -479,6 +479,7 @@
     <members>ticker</members>
     <members>toast</members>
     <members>YoutubeVideoLists</members>
+    <members>LoanBanner</members>
     <name>AuraDefinitionBundle</name>
   </types>
   <types>
@@ -3494,6 +3495,7 @@
     <members>UnderConstruction</members>
     <members>UploadFilePage</members>
     <members>UserActiveStatus</members>
+    <members>LoanTabComp</members>
     <name>ApexPage</name>
   </types>
   <types>

@@ -1,0 +1,15 @@
+<apex:page standardController="Loan_New__c">
+    <apex:form >   
+    <br/><br/>
+        &nbsp; <font color="{!if(Loan_new__c.Banner__c='#FF0000','#FF0000','#FF0000')}" size="+1" face="Georgia"> 
+            <apex:outputtext value="{!Loan_New__c.Banner__c}" />             
+        </font>
+        <font color="{Loan_new__c.Banner__c='#FF0000'}" face="Georgia" >
+        </font> 
+
+        <font color="{!if(Loan_new__c.Name='#FFFFFF','#FFFFFF','#FFFFFF')}"> 
+            <apex:inputField value="{!Loan_New__c.Name}" />
+        </font>
+   
+    </apex:form>
+</apex:page>

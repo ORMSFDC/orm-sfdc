@@ -1,0 +1,3 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+        <iframe src="{!'https://ormmortgageservices--balaqa.cs13.my.salesforce.com/apex/LoanTabComp?Id=' + v.recordId }" width="100%" height="100" frameBorder="0"/>
+</aura:component>
