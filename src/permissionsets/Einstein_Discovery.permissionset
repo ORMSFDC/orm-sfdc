@@ -1,25 +1,34 @@
-﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><hasActivationRequired>false</hasActivationRequired><label>Einstein Discovery</label><license>SmartDataDiscoveryAnalystPsl</license><applicationVisibilities>
+﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><hasActivationRequired>false</hasActivationRequired><label>Einstein Discovery</label><license>SmartDataDiscoveryAnalystPsl</license>
+    <applicationVisibilities>
         <application>standard__EinsteinDataDiscovery</application>
         <visible>true</visible>
-    </applicationVisibilities><userPermissions>
+    </applicationVisibilities>
+    <userPermissions>
         <enabled>true</enabled>
         <name>CreateUpdateSDDDataset</name>
-    </userPermissions><userPermissions>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>CreateUpdateSDDStory</name>
-    </userPermissions><userPermissions>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>GetSmartDataDiscovery</name>
-    </userPermissions><userPermissions>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ManageSmartDataDiscovery</name>
-    </userPermissions><userPermissions>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ManageSmartDataDiscoveryModel</name>
-    </userPermissions><userPermissions>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>ShareSmartDataDiscoveryStory</name>
-    </userPermissions><userPermissions>
+    </userPermissions>
+    <userPermissions>
         <enabled>true</enabled>
         <name>UseSmartDataDiscovery</name>
-    </userPermissions></PermissionSet>
+    </userPermissions>
+</PermissionSet>

@@ -44,8 +44,8 @@
             <label>Start a New Loan</label>
             <position>3</position>
             <publiclyAvailable>false</publiclyAvailable>
-            <target>/startnewloan</target>
-            <type>InternalLink</type>
+            <target>https://ormmortgageservices.na53.force.com/s/startnewloan</target>
+            <type>ExternalLink</type>
         </navigationMenuItem>
         <navigationMenuItem>
             <label>Pipeline</label>
@@ -64,16 +64,16 @@
         </navigationMenuItem>
     </navigationLinkSet>
     <networkMemberGroups>
-        <profile>Admin</profile>
-        <profile>ORM Partners</profile>
-        <profile>Partner Community User</profile>
-        <profile>Trainer</profile>
-        <profile>Portal Loan Processors</profile>
-        <profile>Prospective Partner User</profile>
-        <profile>Portal Loan Processor</profile>
-        <profile>ORM Partner</profile>
-        <profile>Prospective Partner Users</profile>
-        <profile>IT Business Analyst</profile>
+        <profile>admin</profile>
+        <profile>orm partners</profile>
+        <profile>partner community user</profile>
+        <profile>trainer</profile>
+        <profile>portal loan processors</profile>
+        <profile>prospective partner user</profile>
+        <profile>portal loan processor</profile>
+        <profile>orm partner</profile>
+        <profile>prospective partner users</profile>
+        <profile>it business analyst</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>

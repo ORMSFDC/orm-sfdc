@@ -1,58 +1,75 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>CallHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>DeleteBannerPhotoAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EditUserAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>EmailHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>FreezeUserAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>LinkToSetupUserDetailAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ManagePermSetsAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>PasswordUnlockAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ResetPasswordAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SmsHighlightAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>UpdateBannerPhotoAction</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>UserActivationAction</actionName>
         <type>Default</type>
-    </actionOverrides><compactLayouts>
+    </actionOverrides>
+    <compactLayouts>
         <fullName>User_Layout</fullName>
         <fields>Name</fields>
         <fields>Title</fields>
         <label>User Layout</label>
-    </compactLayouts><fields>
+    </compactLayouts>
+    <fields>
         <fullName>Booking_URL__c</fullName>
         <externalId>false</externalId>
         <label>Booking URL</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Url</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Check_Profile__c</fullName>
         <externalId>false</externalId>
         <formula>IF(
@@ -62,11 +79,13 @@ true, false)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Check Profile</label>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ManagerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Hierarchy</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Owner_is_Me__c</fullName>
         <externalId>false</externalId>
         <formula>OR(
@@ -74,7 +93,8 @@ Account.OwnerId = $User.Id
 )</formula>
         <label>Owner is Me</label>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Team__c</fullName>
         <description>Team - Used for Reporting</description>
         <externalId>false</externalId>
@@ -85,7 +105,8 @@ Account.OwnerId = $User.Id
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>user_email_Id__c</fullName>
         <externalId>false</externalId>
         <formula>Email</formula>
@@ -94,6 +115,87 @@ Account.OwnerId = $User.Id
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FUll_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>FirstName &amp; " " &amp; LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FUll Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Run_Scenarios__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Run Scenarios</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Login_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify Your Zoom Login Type</inlineHelpText>
+        <label>Login Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>API</fullName>
+                    <default>false</default>
+                    <label>API</label>
+                </value>
+                <value>
+                    <fullName>Facebook</fullName>
+                    <default>false</default>
+                    <label>Facebook</label>
+                </value>
+                <value>
+                    <fullName>Google</fullName>
+                    <default>false</default>
+                    <label>Google</label>
+                </value>
+                <value>
+                    <fullName>SSO</fullName>
+                    <default>false</default>
+                    <label>SSO</label>
+                </value>
+                <value>
+                    <fullName>Work Email</fullName>
+                    <default>true</default>
+                    <label>Work Email</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Send_Email_to_Attendee__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Provides an interface to send email to attendees while Launching Zoom Meeting from Start Zoom Meeting button.</inlineHelpText>
+        <label>Send Email to Attendees at Launch</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__isPMI_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enable it if you want to use your Zoom PMI for creating instant meetings.</inlineHelpText>
+        <label>PMI Enabled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields><compactLayoutAssignment>User_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><externalSharingModel>Read</externalSharingModel><searchLayouts>
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupDialogsAdditionalFields>
@@ -106,7 +208,8 @@ Account.OwnerId = $User.Id
         <searchResultsAdditionalFields>CORE.USERS.TITLE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.PHONE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.EMAIL</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>Read</sharingModel><listViews>
+    </searchLayouts><sharingModel>Read</sharingModel>
+    <listViews>
         <fullName>ActiveUsers</fullName>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -128,7 +231,8 @@ Account.OwnerId = $User.Id
             <value>S</value>
         </filters>
         <label>Active Standard Users</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>AdminUsers</fullName>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -151,7 +255,8 @@ Account.OwnerId = $User.Id
             <value>1</value>
         </filters>
         <label>Admin Users</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Admin_Users_Inactive</fullName>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -174,7 +279,8 @@ Account.OwnerId = $User.Id
             <value>0</value>
         </filters>
         <label>Admin Users - Inactive</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>AllUsers</fullName>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -185,7 +291,8 @@ Account.OwnerId = $User.Id
         <columns>CORE.PROFILE.NAME</columns>
         <filterScope>Everything</filterScope>
         <label>All Users</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Backend_users</fullName>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -208,7 +315,8 @@ Account.OwnerId = $User.Id
             <value>1</value>
         </filters>
         <label>All Backend users</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Portal_Users</fullName>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -228,7 +336,8 @@ Account.OwnerId = $User.Id
             <value>Partner</value>
         </filters>
         <label>All Portal Users</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Integration_Users</fullName>
         <columns>FULL_NAME</columns>
         <columns>CORE.USERS.ALIAS</columns>
@@ -251,4 +360,5 @@ Account.OwnerId = $User.Id
             <value>1</value>
         </filters>
         <label>Integration Users</label>
-    </listViews></CustomObject>
+    </listViews>
+</CustomObject>

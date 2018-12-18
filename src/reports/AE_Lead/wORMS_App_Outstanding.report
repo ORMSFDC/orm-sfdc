@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>USERS.NAME</groupingColumn>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
     <columns>
         <field>ACCOUNT.NAME</field>
     </columns>
@@ -15,18 +39,24 @@
     <columns>
         <field>DUE_DATE</field>
     </columns>
+    <columns>
+        <field>Account.Team__c</field>
+    </columns>
+    <columns>
+        <field>User.Team__c</field>
+    </columns>
     <filter>
-        <criteriaItems>
-            <column>Account.Team__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>wORMS</value>
-        </criteriaItems>
         <criteriaItems>
             <column>Account.Partner_Onboarding_Status__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>App Outstanding</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Team__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>wORMS</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

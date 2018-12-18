@@ -1,38 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Client_Record_Page</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>Address_Mailing__c</fullName>
         <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
         <externalId>false</externalId>
@@ -43,7 +54,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Address_Same_As_SubjectProperty__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -51,7 +63,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Check_if_Mailing_Address_is_similar_to_P__c</fullName>
         <defaultValue>false</defaultValue>
         <description>If this checkbox is checked then the next address, state, city and zip fields need not be visible on the page; otherwise they must be filled</description>
@@ -61,7 +74,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>City_Mailing__c</fullName>
         <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
         <externalId>false</externalId>
@@ -72,7 +86,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
         <label>Current City</label>
@@ -82,7 +97,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Client_Address_Same_As_Primary_Client__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -90,7 +106,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Client_State__c</fullName>
         <externalId>false</externalId>
         <label>Current State</label>
@@ -102,7 +119,8 @@
             <restricted>true</restricted>
             <valueSetName>US_States</valueSetName>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Client_has_Email_Address__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -110,7 +128,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>DOB__c</fullName>
         <description>Cannot be the Future date</description>
         <externalId>false</externalId>
@@ -119,7 +138,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email_Optional__c</fullName>
         <externalId>false</externalId>
         <label>Client Email Address</label>
@@ -128,7 +148,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Insured_Loan__c</fullName>
         <externalId>false</externalId>
         <label>FHA Insured Loan</label>
@@ -152,7 +173,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>First_Name__c</fullName>
         <externalId>false</externalId>
         <label>First Name</label>
@@ -162,7 +184,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Home_Phone__c</fullName>
         <description>Validate it to phone format -10 digits, not starting with 0 and must not accept all same digits like 4444444444</description>
         <externalId>false</externalId>
@@ -171,7 +194,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>If_yes_Name_of_POA__c</fullName>
         <externalId>false</externalId>
         <label>If yes, Name of POA</label>
@@ -181,7 +205,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsNBSAvaliable__c</fullName>
         <defaultValue>false</defaultValue>
         <description>field data will true if nbs is added into client at client level</description>
@@ -190,7 +215,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_Client_Validated__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Make true when edit and save from Start new loan tab</description>
@@ -199,7 +225,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_Non_Borrowing_Resident__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -207,7 +234,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_Non_Borrowing_Spouse_Filled__c</fullName>
         <defaultValue>false</defaultValue>
         <description>At Loan Level</description>
@@ -216,7 +244,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_there_a_POA__c</fullName>
         <externalId>false</externalId>
         <label>Is there a POA?</label>
@@ -240,7 +269,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Name__c</fullName>
         <externalId>false</externalId>
         <label>Last Name</label>
@@ -250,7 +280,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LoanId__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -262,7 +293,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Marital_Status__c</fullName>
         <externalId>false</externalId>
         <label>Marital Status</label>
@@ -291,7 +323,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Middle_Name__c</fullName>
         <externalId>false</externalId>
         <label>Middle Name</label>
@@ -301,7 +334,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Monthly_Income__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Income</label>
@@ -311,7 +345,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Date_of_Birth__c</fullName>
         <description>Can't be the future date</description>
         <externalId>false</externalId>
@@ -320,7 +355,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Relation__c</fullName>
         <externalId>false</externalId>
         <label>Non-Borrower Relationship</label>
@@ -351,7 +387,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Resident__c</fullName>
         <externalId>false</externalId>
         <label>Non-Borrowing Resident</label>
@@ -375,7 +412,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Spouse_Addres__c</fullName>
         <externalId>false</externalId>
         <label>Non-Borrowing Spouse Address</label>
@@ -385,7 +423,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Spouse_City__c</fullName>
         <externalId>false</externalId>
         <label>Non-Borrowing Spouse City</label>
@@ -395,7 +434,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Spouse_Name__c</fullName>
         <externalId>false</externalId>
         <label>Non-Borrowing Spouse Name</label>
@@ -405,7 +445,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Spouse_Phone_Number__c</fullName>
         <description>Must be filled in the UI and mandatory in the backend if the Non-Borrowing spouse picklist is marked as yes, otherwise this section must be hidden in the UI</description>
         <externalId>false</externalId>
@@ -415,7 +456,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Spouse_State__c</fullName>
         <externalId>false</externalId>
         <label>Non-Borrowing Spouse State</label>
@@ -427,7 +469,8 @@
             <restricted>true</restricted>
             <valueSetName>US_States</valueSetName>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Spouse_Zip__c</fullName>
         <description>Can have only numbers and one - (Hyphen)</description>
         <externalId>false</externalId>
@@ -438,7 +481,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Non_Borrowing_Spouse__c</fullName>
         <externalId>false</externalId>
         <label>Non-Borrowing Spouse</label>
@@ -462,19 +506,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
-        <fullName>Number_of_years__c</fullName>
-        <description>Must be greater than 0</description>
-        <externalId>false</externalId>
-        <label>Number of years</label>
-        <precision>4</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Phone_Number__c</fullName>
         <externalId>false</externalId>
         <label>Mobile Phone</label>
@@ -482,7 +515,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Place_of_Celebration__c</fullName>
         <externalId>false</externalId>
         <label>Place of Celebration</label>
@@ -492,7 +526,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Primary_Client_for_the_Loan__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -500,7 +535,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_type__c</fullName>
         <externalId>false</externalId>
         <label>Property type</label>
@@ -554,7 +590,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Residence__c</fullName>
         <externalId>false</externalId>
         <label>Residence</label>
@@ -583,7 +620,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Social_Security_Number__c</fullName>
         <description>Validate it to be a proper Social security number; Try to mask it with * if possible</description>
         <externalId>false</externalId>
@@ -594,7 +632,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Spouse_Mailing_Address_same_as_client__c</fullName>
         <defaultValue>false</defaultValue>
         <description>Whether the spouse mailing address is same as client</description>
@@ -603,7 +642,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State_Mailing__c</fullName>
         <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
         <externalId>false</externalId>
@@ -616,7 +656,8 @@
             <restricted>true</restricted>
             <valueSetName>US_States</valueSetName>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <externalId>false</externalId>
         <label>Current State</label>
@@ -626,7 +667,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Street_Address__c</fullName>
         <externalId>false</externalId>
         <label>Current Address</label>
@@ -634,7 +676,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Zip_Mailing__c</fullName>
         <description>Mandatory if the 'Check if Mailing address is similar to Present Address' checkbox is checked</description>
         <externalId>false</externalId>
@@ -645,7 +688,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Zip__c</fullName>
         <externalId>false</externalId>
         <label>Current Zip</label>
@@ -655,7 +699,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>is_Active__c</fullName>
         <defaultValue>true</defaultValue>
         <externalId>false</externalId>
@@ -663,6 +708,19 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_years__c</fullName>
+        <description>Must be greater than 0</description>
+        <externalId>false</externalId>
+        <label>Number of years in current address</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Client</label><nameField>
         <label>Client Name</label>
         <trackHistory>false</trackHistory>
@@ -696,13 +754,17 @@
         <searchResultsAdditionalFields>Street_Address__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>State__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><sharingReasons>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    <sharingReasons>
         <fullName>LoanProcessor__c</fullName>
         <label>Loan Processor</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Loan_Officer__c</fullName>
         <label>Loan Officer</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Origination_Loan_Officer__c</fullName>
         <label>Origination Loan Officer</label>
-    </sharingReasons></CustomObject>
+    </sharingReasons>
+</CustomObject>

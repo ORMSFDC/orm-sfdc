@@ -22,7 +22,14 @@
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
     <columns>
+        <field>Loan_New__c.Anticipated_Closing_Date__c</field>
+    </columns>
+    <columns>
         <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Loan_New__c.PropertyAppraisalValue__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.ORMS_AE__c</field>
@@ -30,12 +37,9 @@
     <columns>
         <field>Loan_New__c.Related_Partner__c</field>
     </columns>
-    <columns>
-        <field>Loan_New__c.PCS_at_Loan_Level__c</field>
-    </columns>
     <filter>
         <criteriaItems>
-            <column>Loan_New__c.PCS_at_Partner_Level__c</column>
+            <column>Loan_New__c.PCS_at_Loan_Level__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Keith Cassidy</value>
@@ -74,9 +78,7 @@
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
-    <sortColumn>Loan_New__c.PCS_at_Loan_Level__c</sortColumn>
-    <sortOrder>Desc</sortOrder>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

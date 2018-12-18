@@ -59,9 +59,21 @@
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>Rate_Date__c</fullName>
+        <description>Date this rate is valid for</description>
+        <externalId>false</externalId>
+        <label>Rate Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Product_Rate_Type__c</fullName>
         <description>product rate type</description>
         <externalId>false</externalId>
+        <inlineHelpText>HELO-LIBOR requires the Rate field to be filled out.
+HELO-Broker Comp requires the Rate field to be filled out.
+HELO-Origination Fee requires the Rate1, Rate2, and Rate3 fields to be filled out.</inlineHelpText>
         <label>Product Rate Type</label>
         <required>true</required>
         <trackTrending>false</trackTrending>
@@ -76,6 +88,16 @@
                     <label>HELO-LIBOR</label>
                 </value>
                 <value>
+                    <fullName>HELO-BrokerComp</fullName>
+                    <default>false</default>
+                    <label>HELO-Broker Comp</label>
+                </value>
+                <value>
+                    <fullName>HELO-OrigFee</fullName>
+                    <default>false</default>
+                    <label>HELO-Origination Fee</label>
+                </value>
+                <value>
                     <fullName>HELO-ORIGINATION</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
@@ -85,20 +107,49 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Rate_Date__c</fullName>
-        <description>Date this rate is valid for</description>
+        <fullName>RateMargin1__c</fullName>
         <externalId>false</externalId>
-        <label>Rate Date</label>
-        <required>true</required>
+        <inlineHelpText>If HELO-Orig Fee is the selected product rate type, then enter a value between 0 and 0.05.  The value in Rate 1 is the Orig fee we want to charge for our lowest margin in our HELO pricing table.</inlineHelpText>
+        <label>Rate1(Lower)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>5</scale>
         <trackTrending>false</trackTrending>
-        <type>Date</type>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RateMargin2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If HELO-Orig Fee is the selected product rate type, then enter a value between 0 and 0.05.  The value in Rate 2 is the Orig fee we want to charge for our middle margin in our HELO pricing table.</inlineHelpText>
+        <label>Rate2(Medium)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RateMargin3__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If HELO-Orig Fee is the selected product rate type, then enter a value between 0 and 0.05.  The value in Rate 3 is the Orig fee we want to charge for our highest margin in our HELO pricing table.</inlineHelpText>
+        <label>Rate3(Highest)</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Rate__c</fullName>
+        <description>The Rate for HELO-LIBOR and HELO-Broker Comp</description>
         <externalId>false</externalId>
+        <inlineHelpText>If HELO-Libor is the selected product rate type, then enter a value &gt;= 0.00. If HELO-Broker Comp is the selected product rate type, then enter a value &gt;= 100.00.</inlineHelpText>
         <label>Rate</label>
         <precision>12</precision>
-        <required>true</required>
+        <required>false</required>
         <scale>5</scale>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
@@ -128,15 +179,24 @@
         <customTabListAdditionalFields>Product_Rate_Type__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Rate__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Rate_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RateMargin1__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RateMargin2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RateMargin3__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Processed__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
         <searchFilterFields>Processed__c</searchFilterFields>
         <searchFilterFields>Product_Rate_Type__c</searchFilterFields>
         <searchFilterFields>Rate__c</searchFilterFields>
+        <searchFilterFields>RateMargin1__c</searchFilterFields>
+        <searchFilterFields>RateMargin2__c</searchFilterFields>
+        <searchFilterFields>RateMargin3__c</searchFilterFields>
         <searchFilterFields>Rate_Date__c</searchFilterFields>
         <searchResultsAdditionalFields>Product_Rate_Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Rate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RateMargin1__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RateMargin2__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RateMargin3__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Rate_Date__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Processed__c</searchResultsAdditionalFields>
     </searchLayouts>
@@ -144,13 +204,126 @@
     <visibility>Public</visibility>
     <listViews>
         <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>UPDATEDBY_USER</columns>
         <columns>Product_Rate_Type__c</columns>
         <columns>Rate__c</columns>
         <columns>Rate_Date__c</columns>
+        <columns>RateMargin1__c</columns>
+        <columns>RateMargin2__c</columns>
+        <columns>RateMargin3__c</columns>
         <columns>Processed__c</columns>
+        <columns>UPDATEDBY_USER</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <validationRules>
+        <fullName>DailyProductRateOrigFeeValidRate2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee'), 
+OR(
+OR(RateMargin1__c &lt; 0.00000, ISBLANK(RateMargin1__c)), 
+OR(RateMargin2__c &lt; 0.00000, ISBLANK(RateMargin2__c)), 
+OR(RateMargin3__c &lt; 0.00000, ISBLANK(RateMargin3__c))
+),
+NOT(ISBLANK(Rate__c))
+)</errorConditionFormula>
+        <errorDisplayField>Product_Rate_Type__c</errorDisplayField>
+        <errorMessage>Requires a value in Rate1, Rate2, and Rate3.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOBrokerCompValidRate</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Product_Rate_Type__c, 'HELO-BrokerComp'), 
+OR(Rate__c &lt; 1.0, ISBLANK(Rate__c))
+)</errorConditionFormula>
+        <errorDisplayField>Rate__c</errorDisplayField>
+        <errorMessage>Value must be 100 or greater.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOLIBORValidRate</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Product_Rate_Type__c, 'HELO-LIBOR'),
+ISBLANK(Rate__c)
+)</errorConditionFormula>
+        <errorDisplayField>Rate__c</errorDisplayField>
+        <errorMessage>Please enter a numeric value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOOrigFeeInvalidRate</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee'),
+NOT(ISBLANK(Rate__c))
+)</errorConditionFormula>
+        <errorDisplayField>Rate__c</errorDisplayField>
+        <errorMessage>This field cannot be used with the selected product rate type.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOOrigFeeValidateRateMargin1</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee'),
+OR(
+ISBLANK(RateMargin1__c),
+AND(RateMargin1__c&gt;0.05,NOT(ISBLANK(RateMargin1__c)))
+))</errorConditionFormula>
+        <errorDisplayField>RateMargin1__c</errorDisplayField>
+        <errorMessage>Enter a value between 0 and 0.05.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOOrigFeeValidateRateMargin2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee'), 
+OR( 
+ISBLANK(RateMargin2__c), 
+AND(RateMargin2__c&gt;0.05,NOT(ISBLANK(RateMargin2__c))) 
+))</errorConditionFormula>
+        <errorDisplayField>RateMargin2__c</errorDisplayField>
+        <errorMessage>Enter a value between 0 and 0.05.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HELOOrigFeeValidateRateMargin3</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee'), 
+OR( 
+ISBLANK(RateMargin3__c), 
+AND(RateMargin3__c&gt;0.05,NOT(ISBLANK(RateMargin3__c))) 
+))</errorConditionFormula>
+        <errorDisplayField>RateMargin3__c</errorDisplayField>
+        <errorMessage>Enter a value between 0 and 0.05.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NotOrigFeeValidateRateMargin1</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+NOT(ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee')), 
+NOT(ISBLANK(RateMargin1__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>RateMargin1__c</errorDisplayField>
+        <errorMessage>This field cannot be used with the selected product rate type.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NotOrigFeeValidateRateMargin2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+NOT(ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee')), 
+NOT(ISBLANK(RateMargin2__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>RateMargin2__c</errorDisplayField>
+        <errorMessage>This field cannot be used with the selected product rate type.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NotOrigFeeValidateRateMargin3</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+NOT(ISPICKVAL(Product_Rate_Type__c, 'HELO-OrigFee')), 
+NOT(ISBLANK(RateMargin3__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>RateMargin3__c</errorDisplayField>
+        <errorMessage>This field cannot be used with the selected product rate type.</errorMessage>
+    </validationRules>
 </CustomObject>

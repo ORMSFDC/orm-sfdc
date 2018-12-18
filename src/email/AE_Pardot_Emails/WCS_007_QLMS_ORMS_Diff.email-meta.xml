@@ -5,22 +5,6 @@
     <name>Lead: What&apos;s the Diff?</name>
     <style>none</style>
     <subject>The Same But Different</subject>
-    <textOnly>Hello {!Contact.FirstName},
-
-
-
-
-Best,
-
-{!User.Name} | {!User.Title}
-Phone: {!User.Phone}
-Email: {!User.Email}
-Web: &lt;a href=&quot;http://www.OneReverseMortgageServices.com/&quot;&gt;OneReverseMortgageServices.com&lt;/a&gt;
-
-Our mailing address is:
-4445 Eastgate Mall, Ste 320, San Diego, CA 92121
-&lt;a href=&quot;mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}&quot;&gt;Unsubscribe&lt;/a&gt;
-Equal Housing Lender. Licensed in all 50 states.  NMLS #2052</textOnly>
     <type>custom</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

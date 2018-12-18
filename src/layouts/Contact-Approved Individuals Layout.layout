@@ -69,6 +69,10 @@
                 <behavior>Edit</behavior>
                 <field>QLMS_12_Month_Closing_Volume_Purchase__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>EmailOptOut__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

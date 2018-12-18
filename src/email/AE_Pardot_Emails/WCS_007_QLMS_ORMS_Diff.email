@@ -84,7 +84,7 @@
 											<tr>
 												<td pardot-region="header_image" style="border-collapse: collapse;" valign="middle" width="294"><img alt="" height="50" id="headerImage campaign-icon" src="http://go.pardot.com/l/476012/2018-02-25/9fg9w/476012/28138/Colored_Logo.png" style="width: 294px;border: 0;height: 50px;outline: none;text-decoration: none;" width="235"></td>
 												<td class="rightHeaderContent" style="border-collapse: collapse;">
-												<div pardot-region="header_content_right" style="color: #000000;font-family: Arial;font-size: 16px;line-height: 32px;text-align: center;vertical-align: middle;"><strong>{!User.Phone}</strong></div>
+												<div pardot-region="header_content_right" style="color: #000000;font-family: Arial;font-size: 16px;line-height: 32px;text-align: center;vertical-align: middle;"><strong>{!Lead.OwnerPhone}</strong></div>
 												</td>
 											</tr>
 										</tbody>
@@ -117,7 +117,7 @@
 										<tbody>
 											<tr>
 												<td style="border-collapse: collapse;" valign="top">
-												<div pardot-data="link-color:#ffffff;" pardot-region="std_content00" style="color: #505050;font-family: Arial;font-size: 14px;line-height: 21px;text-align: left;">Hello {!Contact.FirstName},<br><br>
+												<div pardot-data="link-color:#ffffff;" pardot-region="std_content00" style="color: #505050;font-family: Arial;font-size: 14px;line-height: 21px;text-align: left;">Hello {!Lead.FirstName},<br><br>
 												<table class="row cell-container table-column-labels bgc-blue" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;width: 100%;position: relative;display: table;">
 													<tbody>
 														<tr style="padding: 0;vertical-align: top;text-align: left;">
@@ -308,10 +308,11 @@
 												&nbsp;<br>
 												Best,<br>
 												<br>
-												<strong>{!User.Name} |  {!User.Title}</strong><br>
-												Phone: {!User.Phone}<br>
-												Email: {!User.Email}<br>
-												Web: <a href="http://www.OneReverseMortgageServices.com/" style="color: #336699;font-weight: normal;text-decoration: underline;">OneReverseMortgageServices.com</a></div>
+<strong>{!Lead.OwnerFullName}</strong><br>
+{!Lead.OwnerEmail}<br>
+{!Lead.OwnerTitle}<br>
+{!Lead.OwnerPhone}<br>
+Web: <a href="http://www.OneReverseMortgageServices.com/" style="color: #336699;font-weight: normal;text-decoration: underline;">OneReverseMortgageServices.com</a></div>
 												</td>
 											</tr>
 										</tbody>
@@ -332,7 +333,7 @@
 										<tbody>
 											<tr pardot-removable="">
 												<td id="social" style="border-collapse: collapse;background-color: #1ba9d1;border: 0;" valign="middle">
-												<div pardot-region="std_social" style="color: #FFFFFF;font-family: Arial;font-size: 16px;text-align: center;">Contact me at {!User.Phone} or just hit reply to this email.</div>
+												<div pardot-region="std_social" style="color: #FFFFFF;font-family: Arial;font-size: 16px;text-align: center;">Contact me at {!Lead.OwnerPhone} or just hit reply to this email.</div>
 												</td>
 											</tr>
 										</tbody>
@@ -346,13 +347,6 @@
 												<br>
 												<strong>Our mailing address is:</strong><br>
 												4445 Eastgate Mall, Ste 320, San Diego, CA 92121</div>
-												</td>
-											</tr>
-											<tr>
-												<td colspan="2" id="utility" style="border-collapse: collapse;background-color: #FAFAFA;border-top: 0;" valign="middle">
-												<div class="original-only" pardot-region="std_utility" style="color: #707070;font-family: Arial;font-size: 12px;line-height: 15px;text-align: center;"><a href="mailto:ormsunsubscribe@onereverse.com?subject=Unsubscribe%20{!Contact.Email}" style="color: #336699;font-weight: normal;text-decoration: underline;">unsubscribe from all emails</a><br>
-												<b>Equal Housing Lender. Licensed in all 50 states.&nbsp; NMLS #2052</b><br>
-												<img alt="" border="0" src="http://go.pardot.com/l/476012/2018-04-16/dh5l3/476012/32376/Equal_Housing_Opportunity.png" style="border-width: 0px; border-style: solid;">&nbsp;</div>
 												</td>
 											</tr>
 										</tbody>

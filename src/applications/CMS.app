@@ -420,6 +420,7 @@
         <profile>Trainer</profile>
     </profileActionOverrides>
     <tabs>Activities</tabs>
+    <tabs>OnBoarding</tabs>
     <tabs>Calculator</tabs>
     <tabs>LenderLink__c</tabs>
     <tabs>HomePageContent__c</tabs>

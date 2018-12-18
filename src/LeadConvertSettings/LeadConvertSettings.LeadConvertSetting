@@ -103,6 +103,10 @@
             <inputField>Primary_Contact_Email__c</inputField>
             <outputField>Secondary_Email__c</outputField>
         </mappingFields>
+        <mappingFields>
+            <inputField>Primary_Contact_Title__c</inputField>
+            <outputField>Title__c</outputField>
+        </mappingFields>
         <outputObject>Contact</outputObject>
     </objectMapping>
     <objectMapping>

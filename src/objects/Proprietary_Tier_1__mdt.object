@@ -65,4 +65,16 @@
         <type>Number</type>
         <unique>false</unique>
     </fields><label>Proprietary Tier 1</label><pluralLabel>Proprietary Tier 1</pluralLabel><visibility>Public</visibility>
+    <listViews>
+        <fullName>All_New</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Rate__c</columns>
+        <columns>Price__c</columns>
+        <columns>Origination_to_Partner__c</columns>
+        <columns>HeloMargin__c</columns>
+        <columns>Credit_to_Borrower__c</columns>
+        <columns>Servicing_Fee__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All New</label>
+    </listViews>
 </CustomObject>

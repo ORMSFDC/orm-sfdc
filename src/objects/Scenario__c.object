@@ -658,6 +658,82 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scenario_Contact__r.Account.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HELO_Scenario_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(ISPICKVAL(Scenario_Type__c, "FHA Traditional HECM"), ISPICKVAL(RateType__c, "Helo")),'HELO Refinance', 
+IF(
+AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Helo")),'HELO Purchase',"")
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HELO Scenario Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ORMS_AE__c</fullName>
+        <externalId>false</externalId>
+        <formula>Scenario_Contact__r.Account.Owner.FUll_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ORMS AE</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_count__c</fullName>
+        <externalId>false</externalId>
+        <label>Print count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Run_Capacity_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Run Capacity Count</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>saved_print_count__c</fullName>
+        <defaultValue>1*0</defaultValue>
+        <externalId>false</externalId>
+        <label>saved print count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -734,20 +810,12 @@
         <columns>PartnerId__c</columns>
         <columns>Margin__c</columns>
         <columns>Estimated_home_value__c</columns>
-        <columns>CREATED_DATE</columns>
         <columns>OWNER.ALIAS</columns>
         <columns>ORM_AE__c</columns>
         <columns>LAST_UPDATE</columns>
+        <columns>Print_count__c</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>CREATED_DATE</field>
-            <operation>greaterOrEqual</operation>
-            <value>6/1/2018 12:00 AM</value>
-        </filters>
-        <filters>
-            <field>ORM_AE__c</field>
-            <operation>greaterThan</operation>
-        </filters>
         <label>All Scenarios</label>
     </listViews>
     <sharingReasons>

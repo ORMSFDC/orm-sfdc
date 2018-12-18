@@ -662,6 +662,22 @@
         $A.enqueueAction(action1);
     },
     getStateCity: function (component, event, helper, ZIP) {
+        //Fetch States based on Product and rate types SFDC - 275 
+        var action2 = component.get("c.getSubjectPropertyByLoanId");
+        var LoanId = component.get('v.subjectPropertyLoanId');
+        action2.setParams({
+            "RecordId": LoanId
+        });
+        action2.setCallback(this, function (data) {
+            var rateData = data.getReturnValue();                   
+            component.set("v.prodType",rateData.Product_Type__c);
+            component.set("v.rateType",rateData.Mortgage_Applied_for__c);
+            console.log('prodtype!',component.get("v.prodType"));
+
+        });
+        $A.enqueueAction(action2);
+        //end 
+        
         var action = component.get("c.getZipData");
         action.setParams({
             "ZIP": ZIP
@@ -672,7 +688,29 @@
             var a = false;
             var n = result.length;
             if (n != 0) {
-                var action1 = component.get("c.getStates");
+                //SFDC-275 start
+                var prodType = component.get('v.prodType'); 
+                var rateType = component.get('v.rateType');
+                console.log('prodtypeinside',prodType); 
+                //HECM Refinance
+                if(prodType == 'HECM' && (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance')){
+                    var action1 = component.get("c.getStates");
+                }
+                //HECM Purchase
+                else if(prodType == 'HECM' && rateType == 'HECM for Purchase'){
+                    var action1 = component.get("c.getStatesPur");
+                }
+                //HELO Purchase
+                else if(prodType == 'HELO' && rateType == 'HELO for Purchase'){                    
+                    var action1 = component.get("c.get_heloStatesPur");
+                }
+                //HELO Refinance
+                else if(prodType == 'HELO' && rateType == 'HELO Refinance'){                    
+                    var action1 = component.get("c.get_heloStatesRefi");
+                }
+                //var action1 = component.get("c.getStates");
+                //SFDC-275 end
+                
                 action1.setCallback(this, function (data) {
                     var result1 = data.getReturnValue();
                     var i;
@@ -685,9 +723,31 @@
                     }
                     if (a == true) {
                         component.set("v.requiredZip", false);
+                        component.set("v.requiredZip1",false); //SFDC-365
+                        component.set("v.requiredZip2",false); //SFDC-365
+                        component.set("v.requiredZip3",false);
+                        component.set("v.requiredZip4",false);
                     }
                     else {
                         component.set("v.requiredZip", true);
+                        //SFDC-365
+                        if((prodType == 'HECM' &&  (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance'))  ){
+                            component.set("v.requiredZip1", true);
+                            component.set("v.requiredZip", false);
+                        }    
+                        if(prodType == 'HELO' && rateType == 'HELO Refinance'){
+                            component.set("v.requiredZip2", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        if(prodType == 'HECM' &&  rateType == 'HECM for Purchase'){
+                            component.set("v.requiredZip3", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        if(prodType == 'HELO' && rateType == 'HELO for Purchase'){
+                            component.set("v.requiredZip4", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        //SFDC-365
                     }
                 });
                 $A.enqueueAction(action1);

@@ -18,6 +18,10 @@
     <columns>
         <field>RECORDTYPE</field>
     </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Doc_Required_Days__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>STAGE_NAME</column>

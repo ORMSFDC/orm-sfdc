@@ -21,6 +21,9 @@
     <columns>
         <field>FK_$Account.QLMS_Account_Executive__c</field>
     </columns>
+    <columns>
+        <field>Loan_New__c.Mortgage_Applied_for__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>

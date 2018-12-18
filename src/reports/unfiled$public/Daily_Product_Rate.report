@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Daily_Product_Rate__c.Product_Rate_Type__c</field>
+    </columns>
+    <columns>
+        <field>Daily_Product_Rate__c.Rate__c</field>
+    </columns>
+    <columns>
+        <field>Daily_Product_Rate__c.Rate_Date__c</field>
+    </columns>
+    <columns>
+        <field>Daily_Product_Rate__c.Processed_Date__c</field>
+    </columns>
+    <columns>
+        <field>Daily_Product_Rate__c.Processed__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Daily Product Rate</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Daily_Product_Rate__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

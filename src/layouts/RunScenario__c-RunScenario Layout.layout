@@ -16,8 +16,8 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Scenarios_Run__c</field>
+                <behavior>Readonly</behavior>
+                <field>Total_Scenarios_Run__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

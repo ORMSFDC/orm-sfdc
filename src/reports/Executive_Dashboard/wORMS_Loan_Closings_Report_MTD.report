@@ -11,16 +11,16 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>Loan_New__c.Team__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>wORMS</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Loan_New__c.Closing_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>THIS_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.Team__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>wORMS</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

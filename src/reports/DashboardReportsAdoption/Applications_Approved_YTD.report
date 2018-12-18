@@ -15,6 +15,9 @@
     <columns>
         <field>Account.App_Processed__c</field>
     </columns>
+    <columns>
+        <field>Account.Company_NMLS_ID__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>RECORDTYPE</column>
@@ -33,6 +36,12 @@
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value>Test Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Approval_Sub_Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Approved</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

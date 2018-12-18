@@ -51,7 +51,7 @@ Status Equals Full Package Received</description>
             <column>Loan_New__c.LoanStatus__r$Status__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Full Package Received</value>
+            <value>Application Package Received,Full Package Received</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

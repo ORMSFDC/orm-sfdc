@@ -17,7 +17,7 @@
             <column>USERS.NAME</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Anubhav Varma,Ravi Addanki</value>
+            <value>Anubhav Varma,Ravi Addanki,Danny McGuffin</value>
         </criteriaItems>
         <criteriaItems>
             <column>ACCOUNT.NAME</column>

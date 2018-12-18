@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+        <field>Contact.Last_Activity_Date__c</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
         <field>ACCOUNT.NAME</field>
     </columns>
     <columns>
@@ -10,16 +19,16 @@
         <field>CONTACT_OWNER</field>
     </columns>
     <columns>
-        <field>FIRST_NAME</field>
+        <field>PHONE1</field>
     </columns>
     <columns>
-        <field>LAST_NAME</field>
+        <field>Contact.Cell__c</field>
     </columns>
     <columns>
-        <field>Contact.Title__c</field>
+        <field>EMAIL</field>
     </columns>
     <columns>
-        <field>Contact.Last_Activity_Date__c</field>
+        <field>Account.Approval_Sub_Status__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -32,13 +41,13 @@
             <column>Contact.Title__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Principal,Loan Officer,Branch Manager,Regional Manager</value>
+            <value>Principal,Loan Officer,Processor,Branch Manager,Regional Manager,Assistant Loan Officer,Processing manager</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Contact.Contact_NMLS__c</field>
+        <field>Contact.Title__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>AE Approved Contacts2</name>
@@ -51,8 +60,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>Contact.Title__c</sortColumn>
-    <sortOrder>Asc</sortOrder>
+    <sortColumn>Contact.Last_Activity_Date__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

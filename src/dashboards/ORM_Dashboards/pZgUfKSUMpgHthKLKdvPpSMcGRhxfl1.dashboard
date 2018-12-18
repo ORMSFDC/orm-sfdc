@@ -9,6 +9,66 @@
     <dashboardColorPalette>unity</dashboardColorPalette>
     <dashboardGridLayout>
         <dashboardGridComponents>
+            <colSpan>5</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <axisBinding>y</axisBinding>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Donut</componentType>
+                <displayUnits>Integer</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>true</expandOthers>
+                <groupingColumn>OWNER_FULL_NAME</groupingColumn>
+                <header>Braveheart App Partners No Login Cred</header>
+                <legendPosition>Right</legendPosition>
+                <maxValuesDisplayed>6</maxValuesDisplayed>
+                <report>Danny_Shared_Reports/Braveheart_App_Partners_No_Login_Cred_Hk2</report>
+                <showPercentage>false</showPercentage>
+                <showTotal>true</showTotal>
+                <showValues>true</showValues>
+                <sortBy>RowValueDescending</sortBy>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>0</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
+            <columnIndex>5</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <axisBinding>y</axisBinding>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Donut</componentType>
+                <displayUnits>Integer</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>true</expandOthers>
+                <groupingColumn>OWNER_FULL_NAME</groupingColumn>
+                <header>Braveheart App Partners w/ Login No Act</header>
+                <legendPosition>Right</legendPosition>
+                <maxValuesDisplayed>6</maxValuesDisplayed>
+                <report>Danny_Shared_Reports/Approved_Partners_w_Login_No_Logins_d0j11</report>
+                <showPercentage>false</showPercentage>
+                <showTotal>true</showTotal>
+                <showValues>true</showValues>
+                <sortBy>RowValueDescending</sortBy>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>0</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
             <colSpan>3</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
@@ -27,7 +87,7 @@
                 <report>AE_Lead/Braveheart_Docs_Needed</report>
                 <showRange>false</showRange>
             </dashboardComponent>
-            <rowIndex>0</rowIndex>
+            <rowIndex>4</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -71,7 +131,7 @@
                 <header>Braveheart Docs Needed</header>
                 <report>AE_Lead/Braveheart_Docs_Needed</report>
             </dashboardComponent>
-            <rowIndex>0</rowIndex>
+            <rowIndex>4</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -93,7 +153,7 @@
                 <report>AE_Lead/Braveheart_App_Outstanding</report>
                 <showRange>false</showRange>
             </dashboardComponent>
-            <rowIndex>4</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -142,7 +202,7 @@
                 <header>Braveheart App Outstanding</header>
                 <report>AE_Lead/Braveheart_App_Outstanding</report>
             </dashboardComponent>
-            <rowIndex>4</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -162,67 +222,6 @@
                 <indicatorLowColor>#408000</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
                 <report>AE_Lead/Braveheart_Leads_Contacted_Presented</report>
-                <showRange>false</showRange>
-            </dashboardComponent>
-            <rowIndex>8</rowIndex>
-            <rowSpan>4</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>6</colSpan>
-            <columnIndex>3</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <componentType>FlexTable</componentType>
-                <flexComponentProperties>
-                    <flexTableColumn>
-                        <reportColumn>OWNER</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>COMPANY</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>LAST_ACTIVITY</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>Lead.No_Activity_Days__c</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableSortInfo>
-                        <sortColumn>Lead.No_Activity_Days__c</sortColumn>
-                        <sortOrder>2</sortOrder>
-                    </flexTableSortInfo>
-                    <hideChatterPhotos>true</hideChatterPhotos>
-                </flexComponentProperties>
-                <header>Braveheart Leads Contacted/Presented</header>
-                <report>AE_Lead/Braveheart_Leads_Contacted_Presented</report>
-            </dashboardComponent>
-            <rowIndex>8</rowIndex>
-            <rowSpan>4</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>3</colSpan>
-            <columnIndex>0</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartSummary>
-                    <column>RowCount</column>
-                </chartSummary>
-                <componentType>Metric</componentType>
-                <displayUnits>Integer</displayUnits>
-                <header>Braveheart Leads with No activity 7 Days</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
-                <indicatorHighColor>#FF0000</indicatorHighColor>
-                <indicatorLowColor>#408000</indicatorLowColor>
-                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>AE_Lead/Braveheart_Leads_with_No_activity_7_Days</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>12</rowIndex>
@@ -261,10 +260,71 @@
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
+                <header>Braveheart Leads Contacted/Presented</header>
+                <report>AE_Lead/Braveheart_Leads_Contacted_Presented</report>
+            </dashboardComponent>
+            <rowIndex>12</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <displayUnits>Integer</displayUnits>
+                <header>Braveheart Leads with No activity 7 Days</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#FF0000</indicatorHighColor>
+                <indicatorLowColor>#408000</indicatorLowColor>
+                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
+                <report>AE_Lead/Braveheart_Leads_with_No_activity_7_Days</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>16</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>6</colSpan>
+            <columnIndex>3</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <componentType>FlexTable</componentType>
+                <flexComponentProperties>
+                    <flexTableColumn>
+                        <reportColumn>OWNER</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>COMPANY</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>LAST_ACTIVITY</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Lead.No_Activity_Days__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableSortInfo>
+                        <sortColumn>Lead.No_Activity_Days__c</sortColumn>
+                        <sortOrder>2</sortOrder>
+                    </flexTableSortInfo>
+                    <hideChatterPhotos>true</hideChatterPhotos>
+                </flexComponentProperties>
                 <header>Braveheart Leads with No activity 7 Days</header>
                 <report>AE_Lead/Braveheart_Leads_with_No_activity_7_Days</report>
             </dashboardComponent>
-            <rowIndex>12</rowIndex>
+            <rowIndex>16</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -286,7 +346,7 @@
                 <report>AE_Lead/Braveheart_Leads_with_0_Activity</report>
                 <showRange>false</showRange>
             </dashboardComponent>
-            <rowIndex>16</rowIndex>
+            <rowIndex>20</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -320,7 +380,7 @@
                 <header>Braveheart Leads with 0 Activity</header>
                 <report>AE_Lead/Braveheart_Leads_with_0_Activity</report>
             </dashboardComponent>
-            <rowIndex>16</rowIndex>
+            <rowIndex>20</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -359,7 +419,7 @@
                 <header>Partners w Scenario Activity WTD</header>
                 <report>AE_Lead/Partners_w_Scenario_Activity_WTD</report>
             </dashboardComponent>
-            <rowIndex>20</rowIndex>
+            <rowIndex>24</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -398,7 +458,7 @@
                 <header>Partners w Scenario Activity MTD</header>
                 <report>AE_Lead/Partners_w_Scenario_Activity_MTD</report>
             </dashboardComponent>
-            <rowIndex>20</rowIndex>
+            <rowIndex>24</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -437,7 +497,7 @@
                 <header>Partners w Scenario Activity YTD</header>
                 <report>AE_Lead/Partners_w_Scenario_Activity_YTD</report>
             </dashboardComponent>
-            <rowIndex>20</rowIndex>
+            <rowIndex>24</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>9</numberOfColumns>

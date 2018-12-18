@@ -50,24 +50,6 @@
             }
         });
         $A.enqueueAction(action);
-        
-        // Added New 
-        var action2 = component.get("c.saveTaskStatus2");
-        action2.setParams(
-            {
-                "taskId": taskId,
-                "status": statusVal
-            }
-        );
-        action2.setCallback(this, function(response) {
-            var state = response.getState();
-            if(component.isValid() && state == "SUCCESS"){
-                var c = response.getReturnValue();
-            } else {
-                console.log('There was a problem : '+response.getError());
-            }
-        });
-        $A.enqueueAction(action2); 
 	},
     
 	sortDueDate: function(component, event, helper) {

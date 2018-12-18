@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>Recommended_Compact_Layout</fullName>
+        <fields>Title</fields>
+        <fields>ArticleNumber</fields>
+        <fields>RecordTypeId</fields>
+        <fields>VersionNumber</fields>
+        <fields>PublishStatus</fields>
+        <fields>ValidationStatus</fields>
+        <fields>LastModifiedDate</fields>
+        <label>Recommended Compact Layout</label>
+    </compactLayouts>
     <fields>
         <fullName>Answer__c</fullName>
         <externalId>false</externalId>

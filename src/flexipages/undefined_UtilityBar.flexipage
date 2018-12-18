@@ -34,9 +34,6 @@
             </componentInstanceProperties>
             <componentName>opencti:softPhone</componentName>
         </componentInstances>
-        <componentInstances>
-            <componentName>voice:callHandlerContainer</componentName>
-        </componentInstances>
         <name>utilityItems</name>
         <type>Region</type>
     </flexiPageRegions>

@@ -209,6 +209,10 @@
                 <behavior>Edit</behavior>
                 <field>Exclusionary_Category__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Partner_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

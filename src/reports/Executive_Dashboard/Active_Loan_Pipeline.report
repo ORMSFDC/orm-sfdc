@@ -27,6 +27,9 @@
     <columns>
         <field>FK_$Account.Company_NMLS_ID__c</field>
     </columns>
+    <columns>
+        <field>Loan_New__c.Mortgage_Applied_for__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>
@@ -39,6 +42,12 @@
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value>Funded,Sandbox,Denied,Withdrawn</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.IsActiveFlag__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

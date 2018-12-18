@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>FieldAPIName__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Mortgage_Applied_for__c</value>
     </values>
     <values>
         <field>JSON_Object_Property__c</field>

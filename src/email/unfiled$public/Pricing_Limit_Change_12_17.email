@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Pricing Limist Change</title>
+    
+  </head>
+    <body>
+		
+<span style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #505050; font-family: Helvetica; font-size: 14px; line-height: 21px; text-align: left;" valign="top">Hi {!Contact.FirstName},
+										<br><br>
+Great news!
+										<br><br>
+For the third consecutive year in a row, the lending limit is rising for federally insured reverse mortgages. You will now be able to <strong>offer your HECM clients $726,525</strong> as the maximum lending limit in 2019, up from $679,650 in 2018. This new loan limit will take effect for loans with case numbers assigned on or after January 1, 2019 through December 31, 2019. Keep in mind that borrowers will receive a loan amount corresponding to their available home equity, age, and other factors.
+										<br><br>
+If your clients would benefit from a higher lending limit, tell them about the <strong>HELO</strong>! Our proprietary reverse mortgage features a <strong>maximum loan amount of $4 million</strong>.
+										<br><br>
+Please reach out if you have any questions. I am happy to help!
+										<br><br>
+										Thank you for your business!
+										<br><br>
+Best,<br>
+{!Contact.OwnerFullName}<br>
+{!Contact.OwnerEmail}<br>
+{!Contact.OwnerTitle}<br>
+{!Contact.OwnerPhone}<br>
+</span>
+	</body>
+</html>

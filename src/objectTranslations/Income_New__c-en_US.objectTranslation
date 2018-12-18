@@ -1,7 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <label><!-- Source Name --></label>
         <name>Income_Source__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
+        <label><!-- Income Value --></label>
+        <name>Income_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsActive --></label>
+        <name>IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Income Validated? --></label>
+        <name>Is_Income_Validated__c</name>
+    </fields>
+    <fields>
+        <label><!-- RelatedClient --></label>
+        <name>RelatedClient__c</name>
+        <relationshipLabel><!-- Incomes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Loan --></label>
+        <name>Related_Loan__c</name>
+        <relationshipLabel><!-- Incomes --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Income Type --></label>
         <name>Income_Types__c</name>
         <picklistValues>
@@ -61,44 +85,44 @@
             <translation><!-- Housing Choice Voucher (Sec 8) --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Base Pay</masterLabel>
-            <translation><!-- Millitary Base Pay --></translation>
+            <masterLabel>Military Base Pay</masterLabel>
+            <translation><!-- Military Base Pay --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Clothes Allowance</masterLabel>
-            <translation><!-- Millitary Clothes Allowance --></translation>
+            <masterLabel>Military Clothes Allowance</masterLabel>
+            <translation><!-- Military Clothes Allowance --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Combat Pay</masterLabel>
-            <translation><!-- Millitary Combat Pay --></translation>
+            <masterLabel>Military Combat Pay</masterLabel>
+            <translation><!-- Military Combat Pay --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Flight Pay</masterLabel>
-            <translation><!-- Millitary Flight Pay --></translation>
+            <masterLabel>Military Flight Pay</masterLabel>
+            <translation><!-- Military Flight Pay --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Hazard Pay</masterLabel>
-            <translation><!-- Millitary Hazard Pay --></translation>
+            <masterLabel>Military Hazard Pay</masterLabel>
+            <translation><!-- Military Hazard Pay --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Overseas Pay</masterLabel>
-            <translation><!-- Millitary Overseas Pay --></translation>
+            <masterLabel>Military Overseas Pay</masterLabel>
+            <translation><!-- Military Overseas Pay --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Prop Pay</masterLabel>
-            <translation><!-- Millitary Prop Pay --></translation>
+            <masterLabel>Military Prop Pay</masterLabel>
+            <translation><!-- Military Prop Pay --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Quarters Allowance</masterLabel>
-            <translation><!-- Millitary Quarters Allowance --></translation>
+            <masterLabel>Military Quarters Allowance</masterLabel>
+            <translation><!-- Military Quarters Allowance --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Rations Allowance</masterLabel>
-            <translation><!-- Millitary Rations Allowance --></translation>
+            <masterLabel>Military Rations Allowance</masterLabel>
+            <translation><!-- Military Rations Allowance --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Millitary Variable Housing Allowance</masterLabel>
-            <translation><!-- Millitary Variable Housing Allowance --></translation>
+            <masterLabel>Military Variable Housing Allowance</masterLabel>
+            <translation><!-- Military Variable Housing Allowance --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Mortgage Credit Certificate</masterLabel>
@@ -168,42 +192,30 @@
             <masterLabel>VA Benefits (Non Educational)</masterLabel>
             <translation><!-- VA Benefits (Non Educational) --></translation>
         </picklistValues>
-    </fields><fields>
-        <label><!-- Income Value --></label>
-        <name>Income_Value__c</name>
-    </fields><fields>
-        <label><!-- IsActive --></label>
-        <name>IsActive__c</name>
-    </fields><fields>
-        <label><!-- Is Income Validated? --></label>
-        <name>Is_Income_Validated__c</name>
-    </fields><fields>
-        <label><!-- RelatedClient --></label>
-        <name>RelatedClient__c</name>
-        <relationshipLabel><!-- Incomes --></relationshipLabel>
-    </fields><fields>
-        <label><!-- Related Loan --></label>
-        <name>Related_Loan__c</name>
-        <relationshipLabel><!-- Incomes --></relationshipLabel>
     </fields><caseValues>
         <plural>false</plural>
         <value>Income</value>
     </caseValues><caseValues>
         <plural>true</plural>
         <value>Incomes</value>
-    </caseValues><startsWith>Consonant</startsWith><layouts>
+    </caseValues><startsWith>Consonant</startsWith>
+    <layouts>
         <layout>Income New Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts><sharingReasons>
+    </layouts>
+    <sharingReasons>
         <label><!-- Loan Processor --></label>
         <name>LoanProcessor</name>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <label><!-- Loan Officer --></label>
         <name>Loan_Officer</name>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <label><!-- Origination Loan Officer --></label>
         <name>Origination_Loan_Officer</name>
-    </sharingReasons></CustomObjectTranslation>
+    </sharingReasons>
+</CustomObjectTranslation>

@@ -1,34 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>Account_License_Type__c</fullName>
         <externalId>false</externalId>
         <label>Account License Type</label>
@@ -608,7 +619,8 @@
                 <valueName>DRE - Mortgage Entity License</valueName>
             </valueSettings>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Contact_License_Type__c</fullName>
         <externalId>false</externalId>
         <label>Contact License Type</label>
@@ -882,21 +894,24 @@
                 <valueName>DRE - Lending Manager License</valueName>
             </valueSettings>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>License_Expiration__c</fullName>
         <externalId>false</externalId>
         <label>License Expiration</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>License_Issued_Date__c</fullName>
         <externalId>false</externalId>
         <label>License Issued Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>License_Number__c</fullName>
         <externalId>false</externalId>
         <label>License Number</label>
@@ -905,7 +920,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>License_Type__c</fullName>
         <externalId>false</externalId>
         <label>License Type</label>
@@ -914,7 +930,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -924,7 +941,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Branch__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -944,7 +962,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Contact__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -964,7 +983,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <externalId>false</externalId>
         <label>State</label>
@@ -1003,7 +1023,8 @@
         <searchResultsAdditionalFields>License_Expiration__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Account__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Contact__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><listViews>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    <listViews>
         <fullName>All_Licenses</fullName>
         <columns>NAME</columns>
         <columns>Related_Account__c</columns>
@@ -1013,7 +1034,29 @@
         <columns>State__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Licenses</label>
-    </listViews><recordTypes>
+    </listViews>
+    <listViews>
+        <fullName>HI_State_Licenses</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Contact_License_Type__c</columns>
+        <columns>License_Number__c</columns>
+        <columns>License_Type__c</columns>
+        <columns>State__c</columns>
+        <columns>Related_Contact__c</columns>
+        <columns>Related_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>State__c</field>
+            <operation>equals</operation>
+            <value>Hawaii</value>
+        </filters>
+        <label>HI State Licenses</label>
+        <sharedTo>
+            <role>Account_Executive_Lead</role>
+        </sharedTo>
+    </listViews>
+    <recordTypes>
         <fullName>Branch_Licenses</fullName>
         <active>true</active>
         <label>Branch Licenses</label>
@@ -1546,7 +1589,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Individual_Licenses</fullName>
         <active>true</active>
         <label>Individual Licenses</label>
@@ -2079,7 +2123,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Partner_Licenses</fullName>
         <active>true</active>
         <label>Partner Licenses</label>
@@ -2620,7 +2665,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <validationRules>
         <fullName>Account_License_Type_Required</fullName>
         <active>true</active>
         <description>License type is required for certain states, for Partner Record Type</description>
@@ -2681,7 +2727,8 @@ ISPICKVAL( State__c , "Wyoming")
 )</errorConditionFormula>
         <errorDisplayField>Account_License_Type__c</errorDisplayField>
         <errorMessage>License Type is required for this State</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Contact_License_Type_Required</fullName>
         <active>true</active>
         <description>License type is required for certain states, for Individual Record Type</description>
@@ -2734,7 +2781,8 @@ ISPICKVAL( State__c , "Washington")
 )</errorConditionFormula>
         <errorDisplayField>Contact_License_Type__c</errorDisplayField>
         <errorMessage>License Type is required for this State</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>License_Number_Required</fullName>
         <active>true</active>
         <errorConditionFormula>AND(
@@ -2786,4 +2834,5 @@ ISPICKVAL( State__c , "Washington")
 )</errorConditionFormula>
         <errorDisplayField>License_Number__c</errorDisplayField>
         <errorMessage>License Number cannot be blank for this State.</errorMessage>
-    </validationRules></CustomObject>
+    </validationRules>
+</CustomObject>

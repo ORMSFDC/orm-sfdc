@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <label><!-- Asian_race --></label>
         <name>Asian_race__c</name>
         <picklistValues>
@@ -29,10 +30,12 @@
             <masterLabel>Vietnamese</masterLabel>
             <translation><!-- Vietnamese --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Bankruptcy Reason --></label>
         <name>Bankruptcy_Reason__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Bankruptcy --></label>
         <name>Bankruptcy__c</name>
         <picklistValues>
@@ -43,7 +46,8 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CashtoClose Borrowed Money --></label>
         <name>CashtoClose_Borrowed_Money__c</name>
         <picklistValues>
@@ -54,7 +58,8 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CashtoClose --></label>
         <name>CashtoClose__c</name>
         <picklistValues>
@@ -65,36 +70,46 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Related Client --></label>
         <name>DeclarationClient__c</name>
         <relationshipLabel><!-- Declarations --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Related Loan --></label>
         <name>DeclarationLoan__c</name>
         <relationshipLabel><!-- Declarations --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Declaration Reason --></label>
         <name>Declaration_Reason__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Declaration Remarks --></label>
         <name>Declaration_Remarks__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Delinquent Address --></label>
         <name>Delinquent_Address__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Delinquent Date  of the Debt --></label>
         <name>Delinquent_Date_of_the_Debt__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Delinquent FHA VA Case --></label>
         <name>Delinquent_FHA_VA_Case__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Delinquent Name --></label>
         <name>Delinquent_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Delinquent Reason --></label>
         <name>Delinquent_Reason__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Delinquent --></label>
         <name>Delinquent__c</name>
         <picklistValues>
@@ -105,7 +120,8 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Endorser --></label>
         <name>Endorser__c</name>
         <picklistValues>
@@ -116,10 +132,12 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Enrolled_tribe --></label>
         <name>Enrolled_tribe__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Sub-Ethnicity --></label>
         <name>Ethnicity_New__c</name>
         <picklistValues>
@@ -146,7 +164,8 @@
             <masterLabel>Puerto Rican</masterLabel>
             <translation><!-- Puerto Rican --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Ethnicity --></label>
         <name>Ethnicity__c</name>
         <picklistValues>
@@ -161,16 +180,20 @@
             <masterLabel>Not Hispanic or Latino</masterLabel>
             <translation><!-- Not Hispanic or Latino --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- FHA Acc No --></label>
         <name>FHA_Acc_No__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- FHA Amount --></label>
         <name>FHA_Amount__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- FHA Creditor --></label>
         <name>FHA_Creditor__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- FHA Insured Loan --></label>
         <name>FHA_Insured_Loan__c</name>
         <picklistValues>
@@ -181,19 +204,24 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- FHA Property Address --></label>
         <name>FHA_Property_Address__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- FHA Unpaid Loan --></label>
         <name>FHA_Unpaid_Loan__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- IsActive --></label>
         <name>IsActive__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Is Declaration Filled From Tab --></label>
         <name>IsDeclaration_Filled_From_Tab__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lawsuit --></label>
         <name>Lawsuit__c</name>
         <picklistValues>
@@ -204,7 +232,8 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Outstanding Judgments --></label>
         <name>Outstanding_Judgments__c</name>
         <picklistValues>
@@ -215,7 +244,8 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Permanent Resident --></label>
         <name>Permanent_Resident__c</name>
         <picklistValues>
@@ -226,7 +256,8 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Primary Residence --></label>
         <name>Primary_Residence__c</name>
         <picklistValues>
@@ -237,7 +268,8 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Race --></label>
         <name>Race__c</name>
         <picklistValues>
@@ -300,10 +332,12 @@
             <masterLabel>White</masterLabel>
             <translation><!-- White --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ReverseMortgage Cost --></label>
         <name>ReverseMortgage_Cost__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ReverseMortgage --></label>
         <name>ReverseMortgage__c</name>
         <picklistValues>
@@ -314,10 +348,12 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ReverseMortgage Finproduct --></label>
         <name>ReverseMortgage_finproduct__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Sex_New --></label>
         <name>Sex_New__c</name>
         <picklistValues>
@@ -332,7 +368,8 @@
             <masterLabel>Male</masterLabel>
             <translation><!-- Male --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Sex --></label>
         <name>Sex__c</name>
         <picklistValues>
@@ -351,7 +388,8 @@
             <masterLabel>Male and Female</masterLabel>
             <translation><!-- Male and Female --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Sub_Ethnicity --></label>
         <name>Sub_Ethnicity__c</name>
         <picklistValues>
@@ -370,9 +408,46 @@
             <masterLabel>Puerto Rican</masterLabel>
             <translation><!-- Puerto Rican --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- US Citizen --></label>
         <name>US_Citizen__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Borrower_Ethnicity --></label>
+        <name>Borrower_Ethnicity__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Borrower_Race --></label>
+        <name>Borrower_Race__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Borrower_Sex --></label>
+        <name>Borrower_Sex__c</name>
         <picklistValues>
             <masterLabel>No</masterLabel>
             <translation><!-- No --></translation>
@@ -387,19 +462,24 @@
     </caseValues><caseValues>
         <plural>true</plural>
         <value>Declarations</value>
-    </caseValues><startsWith>Consonant</startsWith><layouts>
+    </caseValues><startsWith>Consonant</startsWith>
+    <layouts>
         <layout>Declaration Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts><sharingReasons>
+    </layouts>
+    <sharingReasons>
         <label><!-- LoanProcessor --></label>
         <name>LoanProcessor</name>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <label><!-- Loan Officer --></label>
         <name>Loan_Officer</name>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <label><!-- Origination Loan Officer --></label>
         <name>Origination_Loan_Officer</name>
-    </sharingReasons></CustomObjectTranslation>
+    </sharingReasons>
+</CustomObjectTranslation>

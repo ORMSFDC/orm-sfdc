@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Veteran&apos;S Day 2018</name>
+    <style>none</style>
+    <subject>Happy Veteran&apos;s Day</subject>
+    <textOnly>Happy Veteran&apos;s Day
+November 12, 2018
+
+Hi {!Contact.FirstName}
+
+One Reverse Mortgage Services will be open for business while observing Veteran&apos;s Day on Monday,  November 12th. Our office will be open during regular business hours. Please be aware that this day is a non-funding, non-closing, non-rescission bank holiday.
+
+As a member of the Rock Family of Companies, we would like to thank all those who have served in our armed forces. We appreciate the sacrifices that they have made and continue to make while defending our freedom. We’re proud to have more than 600 veteran team members working alongside us. These friends, family members, neighbors, and leaders within our community have made an outstanding impact on the path of this country. That’s why we’ve decided to stand by veterans – not only those who work among us, but also those in the community who could use our help. Side by side with Quicken Loans, we have committed ourselves to combating veteran homelessness. After all – they’ve fought for us. Now, it’s our turn to fight for them.
+
+Since beginning our partnership with Community Solutions in June of this year, we’ve helped nearly 6,000 homeless veterans find a permanent home. Thanks to these and other efforts, we’ve seen veteran homelessness decrease by 11% in Detroit and 19% in Phoenix. We’re proud to be part of a company that not only talks the talk but walks the walk.
+
+Thank you to all those who have risked their lives to defend ours. We honor your bravery, courage, and sacrifice.
+
+Thank you for your business!
+
+Best,
+{!Contact.OwnerFullName}
+{!Contact.OwnerEmail}
+{!Contact.OwnerTitle}
+{!Contact.OwnerPhone}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

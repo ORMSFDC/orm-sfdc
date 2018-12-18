@@ -256,6 +256,11 @@
         <label>Wyoming</label>
     </customValue>
     <customValue>
+        <fullName>CA</fullName>
+        <default>false</default>
+        <label>CA</label>
+    </customValue>
+    <customValue>
         <fullName>Illinois Indiana</fullName>
         <default>false</default>
         <isActive>false</isActive>

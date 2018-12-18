@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Pricing Limit Change 12-17</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Pricing Limit Change 12-17</name>
+    <style>none</style>
+    <subject>Reverse Mortgage Lending Limits to Increase in 2019</subject>
+    <textOnly>Pricing Limist Change
+
+Hi {!Contact.FirstName},
+
+Great news!
+
+For the third consecutive year in a row, the lending limit is rising for federally insured reverse mortgages. You will now be able to offer your HECM clients $726,525 as the maximum lending limit in 2019, up from $679,650 in 2018. This new loan limit will take effect for loans with case numbers assigned on or after January 1, 2019 through December 31, 2019. Keep in mind that borrowers will receive a loan amount corresponding to their available home equity, age, and other factors.
+
+If your clients would benefit from a higher lending limit, tell them about the HELO! Our proprietary reverse mortgage features a maximum loan amount of $4 million.
+
+Please reach out if you have any questions. I am happy to help!
+
+Thank you for your business!
+
+Best,
+{!Contact.OwnerFullName}
+{!Contact.OwnerEmail}
+{!Contact.OwnerTitle}
+{!Contact.OwnerPhone}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

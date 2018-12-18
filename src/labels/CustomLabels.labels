@@ -7,13 +7,6 @@
         <value>Average Growth Rate</value>
     </labels>
     <labels>
-        <fullName>BrokerPricingDateText</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BrokerPricingDateText</shortDescription>
-        <value>7/24-7/30 (margins and pricing are subject to change at any time). Once a margin is selected, you cannot raise the margin at a later time.</value>
-    </labels>
-    <labels>
         <fullName>CIC_Email_Url</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -910,5 +903,33 @@ Please call your account executive with any questions or if you need assistance!
         <protected>false</protected>
         <shortDescription>Please choose a valid custom metadata type.</shortDescription>
         <value>Please choose a valid custom metadata type.</value>
+    </labels>
+    <labels>
+        <fullName>BrokerPricingDateText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BrokerPricingDateText</shortDescription>
+        <value>12/18 - 12/24 (margins and pricing are subject to change at any time). Once a margin is selected, you cannot raise the margin at a later time.</value>
+    </labels>
+    <labels>
+        <fullName>Scenario_link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scenario link</shortDescription>
+        <value>https://ormmortgageservices.lightning.force.com/lightning/r/Scenario__c/</value>
+    </labels>
+    <labels>
+        <fullName>account_link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>account_link</shortDescription>
+        <value>https://ormmortgageservices.lightning.force.com/lightning/r/Account/</value>
+    </labels>
+    <labels>
+        <fullName>account_link2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>account_link2</shortDescription>
+        <value>/view</value>
     </labels>
 </CustomLabels>

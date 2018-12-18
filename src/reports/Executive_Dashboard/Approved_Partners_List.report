@@ -39,13 +39,7 @@
             <column>USERS.NAME</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Anubhav Varma</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>Account.Account_Executive_Name__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Laura Gutierrez</value>
+            <value>Anubhav Varma,Danny McGuffin</value>
         </criteriaItems>
         <criteriaItems>
             <column>ACCOUNT.NAME</column>

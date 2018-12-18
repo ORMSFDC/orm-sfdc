@@ -16,6 +16,12 @@
             <operator>equals</operator>
             <value>THIS_WEEK</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Danny McGuffin</value>
+        </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>

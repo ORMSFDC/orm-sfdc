@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>%%subject%%</title>
+		
+	</head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: none;margin: 0;padding: 0;background-color: #CCCCCC; width: 100%;">
+<center>
+<table border="0" cellpadding="0" cellspacing="0" height="100%" id="backgroundTable" style="margin: 0;padding: 0;background-color: #CCCCCC;height: 100%;width: 100%;" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Preheader \ -->
+			<table border="0" cellpadding="10" cellspacing="0" id="templatePreheader" style="background-color: #FAFAFA;" width="600">
+				<tbody>
+					<tr>
+						<td class="preheaderContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Preheader  -->
+						<table border="0" cellpadding="10" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="border-collapse: collapse;" valign="top">
+									<div pardot-region="std_preheader_content" style="color: #707070;font-family: Arial;font-size: 10px;line-height: 10px;text-align: left;">Introducing our newest reverse mortgage product created exclusively to help your clients</div>
+									</td>
+									<td style="border-collapse: collapse;" valign="top" width="170">
+									<div pardot-region="std_preheader_links" style="color: #707070;font-family: Arial;font-size: 10px;line-height: 10px;text-align: left;">Email not displaying correctly?<br>
+									<a href="%%view_online%%" style="color: #336699;font-weight: normal;text-decoration: underline;" target="_blank">View it in your browser</a>.</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Module: Standard Preheader  --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // End Template Preheader \ -->
+
+			<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="border: 0;background-color: #FDFDFD;" width="600">
+				<tbody>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Header \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateHeader" style="background-color: #FFFFFF;border-bottom: 0px solid #505050;" width="600">
+							<tbody>
+								<tr>
+									<td class="headerContent" style="border-collapse: collapse;"><!-- // Begin Module: Letterhead, Center Header Image \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td pardot-region="header_image" style="border-collapse: collapse;" valign="middle" width="294"><img alt="" height="50" id="headerImage campaign-icon" src="http://go.pardot.com/l/476012/2018-02-25/9fg9w/476012/28138/Colored_Logo.png" style="width: 294px;border: 0;height: 50px;outline: none;text-decoration: none;" width="235"></td>
+												<td class="rightHeaderContent" style="border-collapse: collapse;">
+												<div pardot-region="header_content_right" style="color: #000000;font-family: Arial;font-size: 16px;text-align: center;vertical-align: middle;">{!Contact.OwnerPhone}</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table border="0" cellpadding="10" cellspacing="0" style="background-color: #6C9F2E;" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;">
+												<h1 class="email-content-sub-header text-center collapse" style="color: #fefefe;font-family: Helvetica; margin: 0;text-align: center;font-size: 25px;padding-bottom: 20px; padding-top: 20px;">Introducing our newest reverse mortgage product created exclusively to help your clients!</h1>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // End Module: Letterhead, Center Header Image \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Header \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Body \ -->
+						<table border="0" cellpadding="10" cellspacing="0" id="templateBody" width="600">
+							<tbody>
+								<tr>
+									<td class="bodyContent" style="border-collapse: collapse;background-color: #FDFDFD;" valign="top"><!-- // Begin Module: Standard Content \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;" valign="top"><img alt="Introducing our newest reverse mortgage product created exclusively to help your clients!" height="351" src="http://bookoforms.com/wp-content/uploads/2018/08/HELO-Intro.png" width="560">
+												<div pardot-data="link-color:#ffffff;" pardot-region="std_content00" style="color: #505050;font-family: Arial;font-size: 14px;line-height: 45px;text-align: left;">Hi {!Contact.FirstName},
+												<p class="main-txt" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding: 0;text-align: left;line-height: 1.3;font-size: 16px; padding-bottom: 15px;"><em>The traditional FHA Reverse Mortgage product has limitations that can exclude some of your clients. So we created our own proprietary mortgage solution. <strong>HELO</strong> allows many clients with higher home values, condominiums, solar panels and other FHA-restricted home features to qualify and take advantage of all the benefits a reverse mortgage can offer!</em></p>
+
+												<p class="main-txt" style="margin: 0;margin-bottom: 3px;color: #5d5d5d;font-family: Helvetica, Arial, sans-serif;font-weight: normal;padding-bottom: 10px;text-align: left;line-height: 1.3;font-size: 16px;">The table below outlines the features of our <strong>HELO</strong>.</p>
+												</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table border="0" cellpadding="10" cellspacing="0" style="background-color: #2581bd; padding-top: 15px; padding-bottom: 15px;" width="100%">
+										<tbody>
+											<tr>
+												<td style="border-collapse: collapse;">
+												<div align="center">
+												<table style="border-collapse: collapse; border: 1px solid black; " width="90%">
+													<tbody>
+														<tr>
+															<td style="border-collapse: collapse; border: 1px solid black; background-color: #000000; color: #FFFFFF; text-align: center; font-family: Arial; font-weight: 600; padding-top: 15px; padding-bottom: 15px;">FEATURES</td>
+															<td 15px="" padding-left:="" style="border-collapse: collapse; border: 1px solid black; background-color: #000000; color: #FFFFFF; text-align: center; font-family: Arial; font-weight: 600;">ORM<br>
+															HELO</td>
+															<td style="border-collapse: collapse; border: 1px solid black; background-color: #000000; color: #FFFFFF; text-align: center; font-family: Arial; font-weight: 600; padding-top: 10px; padding-bottom: 10px; padding-left: 15px; padding-right: 15px;">FHA REVERSE<br>
+															MORTGAGE</td>
+														</tr>
+														<tr>
+															<td style="border-collapse: collapse; border: 1px solid black;text-align: center; font-family: Arial; background-color: #FFFFFF; padding-top: 15px; padding-bottom: 15px;">Max Loan Amount</td>
+															<td style="border-collapse: collapse; border: 1px solid black;text-align: center; font-family: Arial; padding-left: 15px; padding-right: 15px; background-color: #FFFFFF;">$4 Million</td>
+															<td style="border-collapse: collapse; border: 1px solid black;text-align: center; font-family: Arial; background-color: #FFFFFF;">$509,738</td>
+														</tr>
+														<tr>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF; padding-top: 15px; padding-bottom: 15px;">MIP Required</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">No</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">Yes</td>
+														</tr>
+														<tr>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; padding-left: 15px; padding-right: 15px; background-color: #FFFFFF; padding-top: 15px; padding-bottom: 15px;">Property Type Flexibility</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">Yes</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">No</td>
+														</tr>
+														<tr>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF; padding-top: 15px; padding-bottom: 15px;">100% of Funds<br>
+															Always Available<br>
+															at Closing</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">Yes</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">No</td>
+														</tr>
+														<tr>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF; padding-top: 15px; padding-bottom: 15px;">Debt Consolidation<br>
+															Included in<br>
+															Loan Process</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">Yes</td>
+															<td style="border-collapse: collapse; border: 1px solid black; text-align: center; font-family: Arial; background-color: #FFFFFF;">No</td>
+														</tr>
+													</tbody>
+												</table>
+												</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div pardot-data="link-color:#ffffff;" pardot-region="std_content00" style="color: #505050;font-family: Arial;font-size: 14px;line-height: 21px;text-align: left;"><br>
+									<br>
+									Best,<br>
+									<br>
+									<strong>{!Contact.OwnerFullName}</strong><br>
+{!Contact.OwnerEmail}<br>
+{!Contact.OwnerTitle}<br>
+{!Contact.OwnerPhone}<br>
+										<br></div>
+									<!-- // End Module: Standard Content \ --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // End Template Body \ --></td>
+					</tr>
+					<tr>
+						<td align="center" style="border-collapse: collapse;" valign="top"><!-- // Begin Template Footer \ -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateFooter" style="background-color: #FAFAFA;" width="600">
+							<tbody>
+								<tr>
+									<td class="footerContent" style="border-collapse: collapse;" valign="top"><!-- // Begin Module: Standard Footer \ -->
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+											<tr pardot-removable="">
+												<td id="social" style="border-collapse: collapse;background-color: #6C9F2E;border: 0;" valign="middle">
+												<div pardot-region="std_social" style="color: #FFFFFF;font-family: Arial;font-size: 16px;text-align: center;">Let's get started.<br>
+												Contact me at {!Contact.OwnerPhone} or just hit reply to this email.</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table border="0" cellpadding="10" cellspacing="0" width="100%">
+										<tbody>
+
+											<tr>
+												<td colspan="2" id="utility" style="border-collapse: collapse;background-color: #FAFAFA;border-top: 0;" valign="middle">
+												<div class="original-only" pardot-region="std_utility" style="color: #707070;font-family: Arial;font-size: 12px;line-height: 15px;text-align: center;"><br>
+												<b>Equal Housing Lender. Licensed in all 50 states.&nbsp; NMLS #2052</b><br></div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+
+</body>
+</html>

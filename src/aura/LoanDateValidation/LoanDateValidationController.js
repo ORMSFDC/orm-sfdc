@@ -182,19 +182,14 @@
         action.setParams({
             "filename": component.get("v.fileName"),
             "fileData": component.get("v.fileString")
-
         });
         action.setCallback(this, function (a) {
-            //    component.set('v.fileString','');
             component.set("v.attFile", false);
             var toastEvent = $A.get("e.force:showToast");
 
             toastEvent.setParams({
-
                 "title": "Success!",
-
                 "message": "Thank you for submitting an application package! Your Account Executive will be in touch shortly."
-
             });
 
             toastEvent.fire();
@@ -205,5 +200,14 @@
         });
         $A.enqueueAction(action);
 
+         //SFDC-370
+        var action2 = component.get("c.createAETask");
+        action2.setParams({
+            "filename": component.get("v.fileName"),
+            "fileData": component.get("v.fileString")          
+        });
+        action2.setCallback(this,function(){          
+        });       
+        $A.enqueueAction(action2);
     },
 })

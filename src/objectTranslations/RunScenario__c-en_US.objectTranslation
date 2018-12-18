@@ -1,33 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <label><!-- Business Partner Name --></label>
         <name>Business_Partner_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Business_individual --></label>
         <name>Business_individual__c</name>
         <relationshipLabel><!-- RunScenarios --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORM Account Executive --></label>
         <name>ORM_Account_Executive__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Related Account --></label>
         <name>Related_Account__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Scenarios Run --></label>
         <name>Scenarios_Run__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name) --></help>
         <label><!-- Team --></label>
         <name>Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Scenarios Run --></label>
+        <name>Total_Scenarios_Run__c</name>
     </fields><caseValues>
         <plural>false</plural>
         <value>RunScenario</value>
     </caseValues><caseValues>
         <plural>true</plural>
         <value>RunScenarios</value>
-    </caseValues><startsWith>Consonant</startsWith><layouts>
+    </caseValues><startsWith>Consonant</startsWith>
+    <layouts>
         <layout>RunScenario Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts></CustomObjectTranslation>
+    </layouts>
+</CustomObjectTranslation>

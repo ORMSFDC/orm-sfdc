@@ -20,12 +20,6 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>Account.Team__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Braveheart</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Account.Partner_Onboarding_Status__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
@@ -36,6 +30,12 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Account.Potential_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Team__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Braveheart</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

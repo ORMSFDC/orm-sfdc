@@ -15,6 +15,9 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
+                <field>ValidationStatus</field>
+            </layoutItems>
+            <layoutItems>
                 <field>Summary</field>
             </layoutItems>
         </layoutColumns>
@@ -76,6 +79,13 @@
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
+    <layoutSections>
+        <customLabel>false</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <layoutColumns/>
+        <style>CustomLinks</style>
+    </layoutSections>
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
@@ -89,4 +99,22 @@
             <sortOrder>1</sortOrder>
         </platformActionListItems>
     </platformActionList>
+    <relatedLists>
+        <fields>CASES.SUBJECT</fields>
+        <fields>CASES.CASE_NUMBER</fields>
+        <fields>CA_CREATED_BY</fields>
+        <fields>CA_CREATED_DATE</fields>
+        <fields>CASES.CREATED_DATE</fields>
+        <fields>CASES.STATUS</fields>
+        <fields>CASES.CLOSED</fields>
+        <fields>CASES.PRIORITY</fields>
+        <relatedList>KnowledgeArticleCaseRelatedList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>KnowledgeArticleVersionFilesRelatedList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>Query</fields>
+        <relatedList>KavSearchPromotionRuleRelatedList</relatedList>
+    </relatedLists>
 </Layout>

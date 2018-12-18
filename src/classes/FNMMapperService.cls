@@ -204,7 +204,7 @@ public class FNMMapperService {
         if (tt.fhaAndVALoanData != null ) {
             loan.Subject_Property_County__c=tt.fhaAndVALoanData.propertyOfCounty;
          }else {
-            loan.Subject_Property_County__c='400';
+            loan.Subject_Property_County__c='';
         }
         //End Srini    
         loan.IsActiveFlag__c = true;

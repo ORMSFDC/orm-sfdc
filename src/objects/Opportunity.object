@@ -1,38 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>AddInfluence</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Opportunity_Record_Page7</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-    </actionOverrides><businessProcesses>
+    </actionOverrides>
+    <businessProcesses>
         <fullName>NewProcess</fullName>
         <isActive>true</isActive>
         <values>
@@ -55,7 +66,8 @@
             <fullName>Proposal</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Partner Onboarding</fullName>
         <isActive>true</isActive>
         <values>
@@ -98,7 +110,8 @@
             <fullName>Withdrawn</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Portal User Onboarding</fullName>
         <isActive>true</isActive>
         <values>
@@ -121,7 +134,8 @@
             <fullName>Withdrawn</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Renewals</fullName>
         <isActive>true</isActive>
         <values>
@@ -160,7 +174,8 @@
             <fullName>Ready</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><compactLayouts>
+    </businessProcesses>
+    <compactLayouts>
         <fullName>New_Awesome_Companct_Layout</fullName>
         <fields>Name</fields>
         <fields>AccountId</fields>
@@ -168,13 +183,15 @@
         <fields>Amount</fields>
         <fields>OwnerId</fields>
         <label>New Awesome Compact Layout</label>
-    </compactLayouts><fields>
+    </compactLayouts>
+    <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Addendum Received Date</label>
@@ -183,7 +200,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -192,7 +210,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Required__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -201,7 +220,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Affiliated_Entities_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Affiliated Entities Received Date</label>
@@ -210,7 +230,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Affiliated_Entities__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -219,12 +240,14 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Amount</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>App_Sent__c</fullName>
         <externalId>false</externalId>
         <label>App Sent</label>
@@ -233,7 +256,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Application_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Date</label>
@@ -242,7 +266,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_Credit_Risk_Analyst__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -254,7 +279,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_PCS__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -266,7 +292,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_Trainer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -287,7 +314,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Broker_Agreement_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Broker Agreement Received Date</label>
@@ -296,7 +324,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Broker_Agreement__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -305,7 +334,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Budget_Confirmed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -314,13 +344,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CampaignId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cash__c</fullName>
         <externalId>false</externalId>
         <label>Cash</label>
@@ -331,7 +363,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Certification_and_Authorization_Date__c</fullName>
         <externalId>false</externalId>
         <label>Certification and Authorization Date</label>
@@ -340,7 +373,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Certification_and_Authorization__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -349,7 +383,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Character_Checks_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Character Checks Received Date</label>
@@ -358,7 +393,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Character_Checks__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -367,7 +403,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
         <label>City</label>
@@ -378,7 +415,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ClientID__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -391,12 +429,14 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CloseDate</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -409,13 +449,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ContractId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Corporate_Resolution_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Corporate Resolution Received Date</label>
@@ -424,7 +466,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Corporate_Resolution__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -433,7 +476,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Credit_Risk_Package_Status__c</fullName>
         <externalId>false</externalId>
         <label>Credit Risk Package Status</label>
@@ -473,7 +517,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Credit_risk_package_status_changed_date__c</fullName>
         <externalId>false</externalId>
         <label>Credit risk package status changed date</label>
@@ -482,7 +527,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Current_RV_User__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -491,12 +537,14 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Discovery_Completed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -505,42 +553,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
-        <fullName>E_sign_Addendum_Provider__c</fullName>
-        <externalId>false</externalId>
-        <label>E-sign Addendum Provider</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Doc Magic</fullName>
-                    <default>false</default>
-                    <label>Doc Magic</label>
-                </value>
-                <value>
-                    <fullName>DocuSign</fullName>
-                    <default>false</default>
-                    <label>DocuSign</label>
-                </value>
-                <value>
-                    <fullName>Calyx</fullName>
-                    <default>false</default>
-                    <label>Calyx</label>
-                </value>
-                <value>
-                    <fullName>Ellie Mae</fullName>
-                    <default>false</default>
-                    <label>Ellie Mae</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>E-sign Addendum Received Date</label>
@@ -549,7 +563,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -558,7 +573,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email__c</fullName>
         <externalId>false</externalId>
         <label>Email</label>
@@ -568,7 +584,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Equity__c</fullName>
         <externalId>false</externalId>
         <label>Equity</label>
@@ -579,7 +596,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Estimated_Home_Value__c</fullName>
         <externalId>false</externalId>
         <label>Estimated Home Value</label>
@@ -590,7 +608,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Exclusionary_Lists_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Exclusionary Lists Received Date</label>
@@ -599,7 +618,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Exclusionary_Lists__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -608,10 +628,12 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ExpectedRevenue</fullName>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ext__c</fullName>
         <externalId>false</externalId>
         <label>Ext</label>
@@ -622,7 +644,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHAC_Sponsored_Originator__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -631,7 +654,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Connection_Link__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK("https://entp.hud.gov/clas/index.cfm/" , 'Please click here to be taken to FHA Connection.')</formula>
@@ -642,7 +666,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Financials_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Financials Received Date</label>
@@ -651,7 +676,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Financials__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -660,7 +686,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FirstName__c</fullName>
         <externalId>false</externalId>
         <label>First Name</label>
@@ -671,7 +698,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Formation_Documents_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Formation Documents Received Date</label>
@@ -680,7 +708,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Formation_Documents__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -689,15 +718,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IqScore</fullName>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsPrivate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LO_Comp_2018__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -706,7 +738,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LastName__c</fullName>
         <externalId>false</externalId>
         <label>Last Name</label>
@@ -717,13 +750,15 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LeadSource</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LoanOfficerName__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -736,7 +771,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Officer_Name__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -749,7 +785,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Related_Fees_Related_Policy_Date__c</fullName>
         <externalId>false</externalId>
         <label>Loan Related Fees &amp; Related Policy Date</label>
@@ -758,7 +795,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Related_Fees_and_Related_Policy__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -767,7 +805,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -780,7 +819,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loss_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Loss Reason</label>
@@ -819,7 +859,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MARI_Background_Check_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>MARI Background Check Received Date</label>
@@ -828,7 +869,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MARI_Background_Check__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -837,7 +879,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Margin__c</fullName>
         <externalId>false</externalId>
         <label>Margin</label>
@@ -848,7 +891,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID_Verified_Date__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID Verified Date</label>
@@ -857,7 +901,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID</label>
@@ -868,12 +913,14 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>New_CRA_Status__c</fullName>
         <externalId>false</externalId>
         <label>New CRA Status</label>
@@ -884,12 +931,14 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NextStep</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Next_Recertification_Date__c</fullName>
         <externalId>false</externalId>
         <label>Next Recertification Date</label>
@@ -898,7 +947,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Account_Executive_Name__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -910,7 +960,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Old_CRA_Status__c</fullName>
         <externalId>false</externalId>
         <label>Old CRA Status</label>
@@ -921,7 +972,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Opt_In_Lead_Sharing__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -930,7 +982,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Original_Approved_Date__c</fullName>
         <externalId>false</externalId>
         <label>Original Approved Date</label>
@@ -939,17 +992,20 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PartnerAccountId</fullName>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Addendum_Signed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Partner Addendum Signed Date</label>
@@ -958,7 +1014,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Addendum_Signed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -967,7 +1024,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Denial_Reasons__c</fullName>
         <externalId>false</externalId>
         <label>Partner Denial Reasons</label>
@@ -1053,7 +1111,8 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Phone__c</fullName>
         <externalId>false</externalId>
         <label>Phone</label>
@@ -1062,16 +1121,19 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Pricebook2Id</fullName>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Probability</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Proper_Addendum_sent_to_RV_Date__c</fullName>
         <externalId>false</externalId>
         <label>Proper Addendum sent to RV Date</label>
@@ -1080,7 +1142,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Proper_Addendum_sent_to_RV__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1089,7 +1152,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Account_Executive__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1102,7 +1166,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ROI_Analysis_Completed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1111,7 +1176,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>RV_Agreement_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1120,7 +1186,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reapplication_Status__c</fullName>
         <externalId>false</externalId>
         <label>Reapplication Status</label>
@@ -1165,7 +1232,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Recertification_Approval_Date__c</fullName>
         <externalId>false</externalId>
         <label>Recertification Approval Date</label>
@@ -1174,7 +1242,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Recertification_Approved__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1183,7 +1252,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Branch__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1196,7 +1266,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Individual__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1208,7 +1279,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Renewal Questionnaire Received Date</label>
@@ -1217,7 +1289,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1226,7 +1299,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Status__c</fullName>
         <externalId>false</externalId>
         <label>Renewal Questionnaire Status</label>
@@ -1256,7 +1330,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reputation_Check_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Reputation Check Received Date</label>
@@ -1265,7 +1340,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reputation_Check__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1274,7 +1350,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Resumes_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Resumes Received Date</label>
@@ -1283,7 +1360,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Resumes__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1292,13 +1370,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>StageName</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <externalId>false</externalId>
         <label>State</label>
@@ -1309,7 +1389,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Completed_Approved__c</fullName>
         <externalId>false</externalId>
         <label>Status App Completed/Approved</label>
@@ -1318,7 +1399,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Completed_Denied__c</fullName>
         <externalId>false</externalId>
         <label>Status App Completed/Denied</label>
@@ -1327,7 +1409,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Outstanding__c</fullName>
         <externalId>false</externalId>
         <label>Status App Outstanding</label>
@@ -1336,7 +1419,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Pending_Review__c</fullName>
         <externalId>false</externalId>
         <label>Status App Pending Review</label>
@@ -1345,7 +1429,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Ready__c</fullName>
         <externalId>false</externalId>
         <label>Status App Ready</label>
@@ -1354,7 +1439,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Documents_Required__c</fullName>
         <externalId>false</externalId>
         <label>Status Documents Required</label>
@@ -1363,7 +1449,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Escalated_Review__c</fullName>
         <externalId>false</externalId>
         <label>Status Escalated Review</label>
@@ -1372,7 +1459,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Reviewing_Docs__c</fullName>
         <externalId>false</externalId>
         <label>Status Reviewing Docs</label>
@@ -1381,7 +1469,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Withdrawn__c</fullName>
         <externalId>false</externalId>
         <label>Status Withdrawn</label>
@@ -1390,7 +1479,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
@@ -1415,7 +1505,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>StreetAddress__c</fullName>
         <externalId>false</externalId>
         <label>Street Address</label>
@@ -1424,13 +1515,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>SyncedQuoteId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Title__c</fullName>
         <externalId>false</externalId>
         <label>Title</label>
@@ -1441,12 +1534,14 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>TotalOpportunityQuantity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_Complete_Date__c</fullName>
         <externalId>false</externalId>
         <label>Training Complete Date</label>
@@ -1455,7 +1550,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_In_Process_Date__c</fullName>
         <externalId>false</externalId>
         <label>Training In Process Date</label>
@@ -1464,7 +1560,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_Sent_to_Trainer_Date__c</fullName>
         <externalId>false</externalId>
         <label>Training Sent to Trainer Date</label>
@@ -1473,7 +1570,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_Status__c</fullName>
         <externalId>false</externalId>
         <label>Training Status</label>
@@ -1503,13 +1601,15 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Updated Financial Received Date</label>
@@ -1518,7 +1618,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1527,7 +1628,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Status__c</fullName>
         <externalId>false</externalId>
         <label>Updated Financial Status</label>
@@ -1557,7 +1659,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>W_9_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>W-9 Received Date</label>
@@ -1566,7 +1669,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>W_9__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1575,7 +1679,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Zip__c</fullName>
         <externalId>false</externalId>
         <label>Zip</label>
@@ -1586,7 +1691,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>validated__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1595,6 +1701,802 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Account_NMLS__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Company_NMLS_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account NMLS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Doc_Required_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( StageName , "Documents Required",  (TODAY() -  Status_Documents_Required__c)  , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Docs Required Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>E_sign_Addendum_Provider__c</fullName>
+        <externalId>false</externalId>
+        <label>E-sign Addendum Provider</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calyx</fullName>
+                    <default>false</default>
+                    <label>Calyx</label>
+                </value>
+                <value>
+                    <fullName>Doc Magic</fullName>
+                    <default>false</default>
+                    <label>Doc Magic</label>
+                </value>
+                <value>
+                    <fullName>DocuSign</fullName>
+                    <default>false</default>
+                    <label>DocuSign</label>
+                </value>
+                <value>
+                    <fullName>Ellie Mae</fullName>
+                    <default>false</default>
+                    <label>Ellie Mae</label>
+                </value>
+                <value>
+                    <fullName>4identify</fullName>
+                    <default>false</default>
+                    <label>4identify</label>
+                </value>
+                <value>
+                    <fullName>Accordium</fullName>
+                    <default>false</default>
+                    <label>Accordium</label>
+                </value>
+                <value>
+                    <fullName>Adobe Document Cloud</fullName>
+                    <default>false</default>
+                    <label>Adobe Document Cloud</label>
+                </value>
+                <value>
+                    <fullName>Adobe Sign</fullName>
+                    <default>false</default>
+                    <label>Adobe Sign</label>
+                </value>
+                <value>
+                    <fullName>ADSS Signing Server</fullName>
+                    <default>false</default>
+                    <label>ADSS Signing Server</label>
+                </value>
+                <value>
+                    <fullName>AS2Gateway</fullName>
+                    <default>false</default>
+                    <label>AS2Gateway</label>
+                </value>
+                <value>
+                    <fullName>Assently E-Sign</fullName>
+                    <default>false</default>
+                    <label>Assently E-Sign</label>
+                </value>
+                <value>
+                    <fullName>AssureSign</fullName>
+                    <default>false</default>
+                    <label>AssureSign</label>
+                </value>
+                <value>
+                    <fullName>Autenti.com</fullName>
+                    <default>false</default>
+                    <label>Autenti.com</label>
+                </value>
+                <value>
+                    <fullName>Canvas</fullName>
+                    <default>false</default>
+                    <label>Canvas</label>
+                </value>
+                <value>
+                    <fullName>Carizma First</fullName>
+                    <default>false</default>
+                    <label>Carizma First</label>
+                </value>
+                <value>
+                    <fullName>Certify</fullName>
+                    <default>false</default>
+                    <label>Certify</label>
+                </value>
+                <value>
+                    <fullName>CognaSign</fullName>
+                    <default>false</default>
+                    <label>CognaSign</label>
+                </value>
+                <value>
+                    <fullName>ComsignTrust</fullName>
+                    <default>false</default>
+                    <label>ComsignTrust</label>
+                </value>
+                <value>
+                    <fullName>contractbook</fullName>
+                    <default>false</default>
+                    <label>contractbook</label>
+                </value>
+                <value>
+                    <fullName>Contractually</fullName>
+                    <default>false</default>
+                    <label>Contractually</label>
+                </value>
+                <value>
+                    <fullName>Corporate Signer</fullName>
+                    <default>false</default>
+                    <label>Corporate Signer</label>
+                </value>
+                <value>
+                    <fullName>Countasign</fullName>
+                    <default>false</default>
+                    <label>Countasign</label>
+                </value>
+                <value>
+                    <fullName>Creativity 365</fullName>
+                    <default>false</default>
+                    <label>Creativity 365</label>
+                </value>
+                <value>
+                    <fullName>DealHub</fullName>
+                    <default>false</default>
+                    <label>DealHub</label>
+                </value>
+                <value>
+                    <fullName>DeliverySlip</fullName>
+                    <default>false</default>
+                    <label>DeliverySlip</label>
+                </value>
+                <value>
+                    <fullName>Digio eSign</fullName>
+                    <default>false</default>
+                    <label>Digio eSign</label>
+                </value>
+                <value>
+                    <fullName>DigiSigner</fullName>
+                    <default>false</default>
+                    <label>DigiSigner</label>
+                </value>
+                <value>
+                    <fullName>DiguSign</fullName>
+                    <default>false</default>
+                    <label>DiguSign</label>
+                </value>
+                <value>
+                    <fullName>Docsmore</fullName>
+                    <default>false</default>
+                    <label>Docsmore</label>
+                </value>
+                <value>
+                    <fullName>Dotloop</fullName>
+                    <default>false</default>
+                    <label>Dotloop</label>
+                </value>
+                <value>
+                    <fullName>E-Lock</fullName>
+                    <default>false</default>
+                    <label>E-Lock</label>
+                </value>
+                <value>
+                    <fullName>E-Sign</fullName>
+                    <default>false</default>
+                    <label>E-Sign</label>
+                </value>
+                <value>
+                    <fullName>E-Sign Dashboard</fullName>
+                    <default>false</default>
+                    <label>E-Sign Dashboard</label>
+                </value>
+                <value>
+                    <fullName>e-Sign Live by Silanis</fullName>
+                    <default>false</default>
+                    <label>e-Sign Live by Silanis</label>
+                </value>
+                <value>
+                    <fullName>E-Signature by DocVerify</fullName>
+                    <default>false</default>
+                    <label>E-Signature by DocVerify</label>
+                </value>
+                <value>
+                    <fullName>eOriginal SmartSign</fullName>
+                    <default>false</default>
+                    <label>eOriginal SmartSign</label>
+                </value>
+                <value>
+                    <fullName>eSign Genie</fullName>
+                    <default>false</default>
+                    <label>eSign Genie</label>
+                </value>
+                <value>
+                    <fullName>eSign+</fullName>
+                    <default>false</default>
+                    <label>eSign+</label>
+                </value>
+                <value>
+                    <fullName>eSignature for SharePoint</fullName>
+                    <default>false</default>
+                    <label>eSignature for SharePoint</label>
+                </value>
+                <value>
+                    <fullName>eSigner by Orion Systems</fullName>
+                    <default>false</default>
+                    <label>eSigner by Orion Systems</label>
+                </value>
+                <value>
+                    <fullName>eSignly</fullName>
+                    <default>false</default>
+                    <label>eSignly</label>
+                </value>
+                <value>
+                    <fullName>Eversign</fullName>
+                    <default>false</default>
+                    <label>Eversign</label>
+                </value>
+                <value>
+                    <fullName>Exelaonline</fullName>
+                    <default>false</default>
+                    <label>Exelaonline</label>
+                </value>
+                <value>
+                    <fullName>FaxNgo</fullName>
+                    <default>false</default>
+                    <label>FaxNgo</label>
+                </value>
+                <value>
+                    <fullName>Fingerink</fullName>
+                    <default>false</default>
+                    <label>Fingerink</label>
+                </value>
+                <value>
+                    <fullName>Fluix Sign</fullName>
+                    <default>false</default>
+                    <label>Fluix Sign</label>
+                </value>
+                <value>
+                    <fullName>FormFast</fullName>
+                    <default>false</default>
+                    <label>FormFast</label>
+                </value>
+                <value>
+                    <fullName>FormSwift</fullName>
+                    <default>false</default>
+                    <label>FormSwift</label>
+                </value>
+                <value>
+                    <fullName>GetAccept</fullName>
+                    <default>false</default>
+                    <label>GetAccept</label>
+                </value>
+                <value>
+                    <fullName>HelloSign</fullName>
+                    <default>false</default>
+                    <label>HelloSign</label>
+                </value>
+                <value>
+                    <fullName>IdenTrust Trust Sign</fullName>
+                    <default>false</default>
+                    <label>IdenTrust Trust Sign</label>
+                </value>
+                <value>
+                    <fullName>iFill PDF</fullName>
+                    <default>false</default>
+                    <label>iFill PDF</label>
+                </value>
+                <value>
+                    <fullName>Inkdit</fullName>
+                    <default>false</default>
+                    <label>Inkdit</label>
+                </value>
+                <value>
+                    <fullName>InsureSign</fullName>
+                    <default>false</default>
+                    <label>InsureSign</label>
+                </value>
+                <value>
+                    <fullName>iPEGS</fullName>
+                    <default>false</default>
+                    <label>iPEGS</label>
+                </value>
+                <value>
+                    <fullName>iSign</fullName>
+                    <default>false</default>
+                    <label>iSign</label>
+                </value>
+                <value>
+                    <fullName>KeepSolid Sign</fullName>
+                    <default>false</default>
+                    <label>KeepSolid Sign</label>
+                </value>
+                <value>
+                    <fullName>Lawfice</fullName>
+                    <default>false</default>
+                    <label>Lawfice</label>
+                </value>
+                <value>
+                    <fullName>Leafinbox</fullName>
+                    <default>false</default>
+                    <label>Leafinbox</label>
+                </value>
+                <value>
+                    <fullName>Leegality</fullName>
+                    <default>false</default>
+                    <label>Leegality</label>
+                </value>
+                <value>
+                    <fullName>Legalesign</fullName>
+                    <default>false</default>
+                    <label>Legalesign</label>
+                </value>
+                <value>
+                    <fullName>Lightico in-call eSignature</fullName>
+                    <default>false</default>
+                    <label>Lightico in-call eSignature</label>
+                </value>
+                <value>
+                    <fullName>MailDoodler</fullName>
+                    <default>false</default>
+                    <label>MailDoodler</label>
+                </value>
+                <value>
+                    <fullName>MSB Docs</fullName>
+                    <default>false</default>
+                    <label>MSB Docs</label>
+                </value>
+                <value>
+                    <fullName>MyDocSafe</fullName>
+                    <default>false</default>
+                    <label>MyDocSafe</label>
+                </value>
+                <value>
+                    <fullName>Nitro</fullName>
+                    <default>false</default>
+                    <label>Nitro</label>
+                </value>
+                <value>
+                    <fullName>Novatus</fullName>
+                    <default>false</default>
+                    <label>Novatus</label>
+                </value>
+                <value>
+                    <fullName>Oneflow</fullName>
+                    <default>false</default>
+                    <label>Oneflow</label>
+                </value>
+                <value>
+                    <fullName>OneSpan Sign</fullName>
+                    <default>false</default>
+                    <label>OneSpan Sign</label>
+                </value>
+                <value>
+                    <fullName>OpenLimit CC Sign</fullName>
+                    <default>false</default>
+                    <label>OpenLimit CC Sign</label>
+                </value>
+                <value>
+                    <fullName>OPENTRUST SPI</fullName>
+                    <default>false</default>
+                    <label>OPENTRUST SPI</label>
+                </value>
+                <value>
+                    <fullName>P7S Signer</fullName>
+                    <default>false</default>
+                    <label>P7S Signer</label>
+                </value>
+                <value>
+                    <fullName>PactSafe</fullName>
+                    <default>false</default>
+                    <label>PactSafe</label>
+                </value>
+                <value>
+                    <fullName>PandaDoc</fullName>
+                    <default>false</default>
+                    <label>PandaDoc</label>
+                </value>
+                <value>
+                    <fullName>Papr</fullName>
+                    <default>false</default>
+                    <label>Papr</label>
+                </value>
+                <value>
+                    <fullName>PDCflow</fullName>
+                    <default>false</default>
+                    <label>PDCflow</label>
+                </value>
+                <value>
+                    <fullName>PDF Autosigner</fullName>
+                    <default>false</default>
+                    <label>PDF Autosigner</label>
+                </value>
+                <value>
+                    <fullName>PDF.co</fullName>
+                    <default>false</default>
+                    <label>PDF.co</label>
+                </value>
+                <value>
+                    <fullName>PDFco by ByteScout</fullName>
+                    <default>false</default>
+                    <label>PDFco by ByteScout</label>
+                </value>
+                <value>
+                    <fullName>PDFfiller</fullName>
+                    <default>false</default>
+                    <label>PDFfiller</label>
+                </value>
+                <value>
+                    <fullName>Penneo</fullName>
+                    <default>false</default>
+                    <label>Penneo</label>
+                </value>
+                <value>
+                    <fullName>PenPower eSignature Solution</fullName>
+                    <default>false</default>
+                    <label>PenPower eSignature Solution</label>
+                </value>
+                <value>
+                    <fullName>PleaseSign</fullName>
+                    <default>false</default>
+                    <label>PleaseSign</label>
+                </value>
+                <value>
+                    <fullName>Power PDF Std</fullName>
+                    <default>false</default>
+                    <label>Power PDF Std</label>
+                </value>
+                <value>
+                    <fullName>PRONTOSign by AlphaTrust</fullName>
+                    <default>false</default>
+                    <label>PRONTOSign by AlphaTrust</label>
+                </value>
+                <value>
+                    <fullName>Qwilr</fullName>
+                    <default>false</default>
+                    <label>Qwilr</label>
+                </value>
+                <value>
+                    <fullName>RDMS</fullName>
+                    <default>false</default>
+                    <label>RDMS</label>
+                </value>
+                <value>
+                    <fullName>RightSignature</fullName>
+                    <default>false</default>
+                    <label>RightSignature</label>
+                </value>
+                <value>
+                    <fullName>RMail</fullName>
+                    <default>false</default>
+                    <label>RMail</label>
+                </value>
+                <value>
+                    <fullName>Scrive</fullName>
+                    <default>false</default>
+                    <label>Scrive</label>
+                </value>
+                <value>
+                    <fullName>SeamlessDocs</fullName>
+                    <default>false</default>
+                    <label>SeamlessDocs</label>
+                </value>
+                <value>
+                    <fullName>Secured Signing</fullName>
+                    <default>false</default>
+                    <label>Secured Signing</label>
+                </value>
+                <value>
+                    <fullName>SELL&amp;SIGN</fullName>
+                    <default>false</default>
+                    <label>SELL&amp;SIGN</label>
+                </value>
+                <value>
+                    <fullName>SenditCertified</fullName>
+                    <default>false</default>
+                    <label>SenditCertified</label>
+                </value>
+                <value>
+                    <fullName>Sertifi</fullName>
+                    <default>false</default>
+                    <label>Sertifi</label>
+                </value>
+                <value>
+                    <fullName>Shuttle</fullName>
+                    <default>false</default>
+                    <label>Shuttle</label>
+                </value>
+                <value>
+                    <fullName>Signable</fullName>
+                    <default>false</default>
+                    <label>Signable</label>
+                </value>
+                <value>
+                    <fullName>SignaShare</fullName>
+                    <default>false</default>
+                    <label>SignaShare</label>
+                </value>
+                <value>
+                    <fullName>SignatureConfirm</fullName>
+                    <default>false</default>
+                    <label>SignatureConfirm</label>
+                </value>
+                <value>
+                    <fullName>Signatureit</fullName>
+                    <default>false</default>
+                    <label>Signatureit</label>
+                </value>
+                <value>
+                    <fullName>SignatureOne Suite</fullName>
+                    <default>false</default>
+                    <label>SignatureOne Suite</label>
+                </value>
+                <value>
+                    <fullName>SignBox</fullName>
+                    <default>false</default>
+                    <label>SignBox</label>
+                </value>
+                <value>
+                    <fullName>SignCenter</fullName>
+                    <default>false</default>
+                    <label>SignCenter</label>
+                </value>
+                <value>
+                    <fullName>SignEasy</fullName>
+                    <default>false</default>
+                    <label>SignEasy</label>
+                </value>
+                <value>
+                    <fullName>SigningHub</fullName>
+                    <default>false</default>
+                    <label>SigningHub</label>
+                </value>
+                <value>
+                    <fullName>SIGNiX</fullName>
+                    <default>false</default>
+                    <label>SIGNiX</label>
+                </value>
+                <value>
+                    <fullName>Signmee</fullName>
+                    <default>false</default>
+                    <label>Signmee</label>
+                </value>
+                <value>
+                    <fullName>SignNow</fullName>
+                    <default>false</default>
+                    <label>SignNow</label>
+                </value>
+                <value>
+                    <fullName>SignOff by Datawitness</fullName>
+                    <default>false</default>
+                    <label>SignOff by Datawitness</label>
+                </value>
+                <value>
+                    <fullName>SignOnTheGo</fullName>
+                    <default>false</default>
+                    <label>SignOnTheGo</label>
+                </value>
+                <value>
+                    <fullName>Signority</fullName>
+                    <default>false</default>
+                    <label>Signority</label>
+                </value>
+                <value>
+                    <fullName>SignPack3</fullName>
+                    <default>false</default>
+                    <label>SignPack3</label>
+                </value>
+                <value>
+                    <fullName>SignPlus Pro</fullName>
+                    <default>false</default>
+                    <label>SignPlus Pro</label>
+                </value>
+                <value>
+                    <fullName>SignRequest</fullName>
+                    <default>false</default>
+                    <label>SignRequest</label>
+                </value>
+                <value>
+                    <fullName>SkySignature</fullName>
+                    <default>false</default>
+                    <label>SkySignature</label>
+                </value>
+                <value>
+                    <fullName>SmartSAFE</fullName>
+                    <default>false</default>
+                    <label>SmartSAFE</label>
+                </value>
+                <value>
+                    <fullName>Smartwaiver</fullName>
+                    <default>false</default>
+                    <label>Smartwaiver</label>
+                </value>
+                <value>
+                    <fullName>Soda PDF Online</fullName>
+                    <default>false</default>
+                    <label>Soda PDF Online</label>
+                </value>
+                <value>
+                    <fullName>Stiply</fullName>
+                    <default>false</default>
+                    <label>Stiply</label>
+                </value>
+                <value>
+                    <fullName>SuiteBox</fullName>
+                    <default>false</default>
+                    <label>SuiteBox</label>
+                </value>
+                <value>
+                    <fullName>SutiSign</fullName>
+                    <default>false</default>
+                    <label>SutiSign</label>
+                </value>
+                <value>
+                    <fullName>Swift Cloud</fullName>
+                    <default>false</default>
+                    <label>Swift Cloud</label>
+                </value>
+                <value>
+                    <fullName>Topaz SigPlus</fullName>
+                    <default>false</default>
+                    <label>Topaz SigPlus</label>
+                </value>
+                <value>
+                    <fullName>Tractis</fullName>
+                    <default>false</default>
+                    <label>Tractis</label>
+                </value>
+                <value>
+                    <fullName>U-Sign-It</fullName>
+                    <default>false</default>
+                    <label>U-Sign-It</label>
+                </value>
+                <value>
+                    <fullName>Ultradox</fullName>
+                    <default>false</default>
+                    <label>Ultradox</label>
+                </value>
+                <value>
+                    <fullName>Universign</fullName>
+                    <default>false</default>
+                    <label>Universign</label>
+                </value>
+                <value>
+                    <fullName>Vignature for Business</fullName>
+                    <default>false</default>
+                    <label>Vignature for Business</label>
+                </value>
+                <value>
+                    <fullName>WaiverElectronic</fullName>
+                    <default>false</default>
+                    <label>WaiverElectronic</label>
+                </value>
+                <value>
+                    <fullName>Web Sign In</fullName>
+                    <default>false</default>
+                    <label>Web Sign In</label>
+                </value>
+                <value>
+                    <fullName>WP Digital E-Signature</fullName>
+                    <default>false</default>
+                    <label>WP Digital E-Signature</label>
+                </value>
+                <value>
+                    <fullName>Yozons</fullName>
+                    <default>false</default>
+                    <label>Yozons</label>
+                </value>
+                <value>
+                    <fullName>Zoho Sign</fullName>
+                    <default>false</default>
+                    <label>Zoho Sign</label>
+                </value>
+                <value>
+                    <fullName>ZorroSign eSignature</fullName>
+                    <default>false</default>
+                    <label>ZorroSign eSignature</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Federal_Tax_ID_EIN__c</fullName>
+        <externalId>false</externalId>
+        <label>Federal Tax ID/EIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LOX_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>LOX Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LOX_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LOX Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LOX_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LOX Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MARI_LOX_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>MARI LOX Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MARI_LOX_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MARI LOX Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MARI_LOX_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MARI LOX Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCS_at_Account_Level__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Assigned_PCS__r.FUll_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PCS at Account Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields><compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
@@ -1609,7 +2511,8 @@
         <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>Private</sharingModel><listViews>
+    </searchLayouts><sharingModel>Private</sharingModel>
+    <listViews>
         <fullName>AllOpportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1637,7 +2540,8 @@
             <value>Opportunity.Partner_Onboarding</value>
         </filters>
         <label>All Partner Onboarding Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Partner_Onboarding_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1652,7 +2556,8 @@
             <value>Opportunity.Partner_Onboarding</value>
         </filters>
         <label>All Partner Onboarding Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Portal_Training_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1678,7 +2583,8 @@
             <value>Opportunity.Portal_User_Onboarding</value>
         </filters>
         <label>All Portal Training Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Portal_User_Onboarding_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1693,7 +2599,8 @@
             <value>Opportunity.Portal_User_Onboarding</value>
         </filters>
         <label>All Portal User Onboarding Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>ClosingNextMonth</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>LoanOfficerName__c</columns>
@@ -1714,7 +2621,8 @@
             <value>NEXT_MONTH</value>
         </filters>
         <label>Closing Next Month</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>ClosingThisMonth</fullName>
         <filterScope>Everything</filterScope>
         <filters>
@@ -1728,7 +2636,8 @@
             <value>THIS_MONTH</value>
         </filters>
         <label>Closing This Month</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Default_Opportunity_Pipeline</fullName>
         <booleanFilter>(1 OR 2)</booleanFilter>
         <filterScope>Mine</filterScope>
@@ -1743,7 +2652,8 @@
             <value>LAST_N_DAYS:30</value>
         </filters>
         <label>Opportunity Pipeline</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyOpportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1756,7 +2666,8 @@
         <columns>QLMS_Account_Executive__c</columns>
         <filterScope>Mine</filterScope>
         <label>My Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>NewThisWeek</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>LoanOfficerName__c</columns>
@@ -1772,7 +2683,8 @@
             <value>THIS_WEEK</value>
         </filters>
         <label>New This Week</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Won</fullName>
         <filterScope>Everything</filterScope>
         <filters>
@@ -1786,7 +2698,8 @@
             <value>1</value>
         </filters>
         <label>Won</label>
-    </listViews><recordTypes>
+    </listViews>
+    <recordTypes>
         <fullName>Loan</fullName>
         <active>true</active>
         <businessProcess>NewProcess</businessProcess>
@@ -2063,284 +2976,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
-        <fullName>Partner_Onboarding</fullName>
-        <active>true</active>
-        <businessProcess>Partner Onboarding</businessProcess>
-        <label>Partner Onboarding</label>
-        <picklistValues>
-            <picklist>Credit_Risk_Package_Status__c</picklist>
-            <values>
-                <fullName>Broker Package Incomplete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Escalated</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full Review In Process</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Initial Review</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>E_sign_Addendum_Provider__c</picklist>
-            <values>
-                <fullName>Calyx</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Doc Magic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DocuSign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Ellie Mae</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>ForecastCategoryName</picklist>
-            <values>
-                <fullName>Best Case</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pipeline</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>LeadSource</picklist>
-            <values>
-                <fullName>Advertisement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customer Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Employee Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Google AdWords</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchased List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Trade Show</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Website</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Loss_Reason__c</picklist>
-            <values>
-                <fullName>Lost to Competitor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Budget %2F Lost Funding</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Decision %2F Non-Responsive</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Price</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Denial_Reasons__c</picklist>
-            <values>
-                <fullName>Affiliated Entities</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Broker Agreement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Certification and Authorization</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Character Checks</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Corporate Resolution</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Exclusionary Lists</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Financials</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Formation Documents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Loan Related Fees and Related Policy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MARI Background Check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NMLS ID</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reputation Check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Resumes</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>W-9</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Reapplication_Status__c</picklist>
-            <values>
-                <fullName>App Package incomplete per Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>App Package sent to inactive partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Application Package Accepted by Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Application Package Uploaded</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Denied by Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reapproved</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Renewal_Questionnaire_Status__c</picklist>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Need LOX</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outstanding</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pending</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Training_Status__c</picklist>
-            <values>
-                <fullName>Sent to Trainer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Training Complete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Training in Process</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Type</picklist>
-            <values>
-                <fullName>Existing Business</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Business</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Updated_Financial_Status__c</picklist>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Need LOX</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outstanding</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Portal_User_Onboarding</fullName>
         <active>true</active>
         <businessProcess>Portal User Onboarding</businessProcess>
@@ -2617,11 +3254,12 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
-        <fullName>Renewals</fullName>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Partner_Onboarding</fullName>
         <active>true</active>
-        <businessProcess>NewProcess</businessProcess>
-        <label>Renewals</label>
+        <businessProcess>Partner Onboarding</businessProcess>
+        <label>Partner Onboarding</label>
         <picklistValues>
             <picklist>Credit_Risk_Package_Status__c</picklist>
             <values>
@@ -2648,7 +3286,99 @@
         <picklistValues>
             <picklist>E_sign_Addendum_Provider__c</picklist>
             <values>
+                <fullName>4identify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ADSS Signing Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AS2Gateway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accordium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adobe Document Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adobe Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assently E-Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AssureSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Autenti%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canvas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carizma First</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CognaSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ComsignTrust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Countasign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creativity 365</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DealHub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DeliverySlip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DigiSigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digio eSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DiguSign</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -2656,11 +3386,439 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Docsmore</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>DocuSign</fullName>
                 <default>false</default>
             </values>
             <values>
+                <fullName>Dotloop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Lock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Sign Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Signature by DocVerify</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eversign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exelaonline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FaxNgo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fingerink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fluix Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FormFast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FormSwift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GetAccept</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HelloSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IdenTrust Trust Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inkdit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InsureSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KeepSolid Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lawfice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leafinbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leegality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legalesign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lightico in-call eSignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSB Docs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MailDoodler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MyDocSafe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nitro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Novatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPENTRUST SPI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OneSpan Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oneflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OpenLimit CC Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P7S Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDCflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Autosigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF%2Eco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDFco by ByteScout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDFfiller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRONTOSign by AlphaTrust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PactSafe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PandaDoc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Papr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PenPower eSignature Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Penneo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PleaseSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power PDF Std</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qwilr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RDMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RMail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RightSignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SELL%26SIGN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIGNiX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scrive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SeamlessDocs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secured Signing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SenditCertified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sertifi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shuttle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignBox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignCenter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignEasy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignNow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignOff by Datawitness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignOnTheGo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignPack3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignPlus Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignRequest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignaShare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignatureConfirm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignatureOne Suite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signatureit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SigningHub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signmee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SkySignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartSAFE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smartwaiver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soda PDF Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stiply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SuiteBox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SutiSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Swift Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Topaz SigPlus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tractis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U-Sign-It</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultradox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Universign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vignature for Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WP Digital E-Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WaiverElectronic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Sign In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yozons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zoho Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZorroSign eSignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>contractbook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>e-Sign Live by Silanis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eOriginal SmartSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSign Genie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSign%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSignature for SharePoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSigner by Orion Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSignly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iFill PDF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPEGS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iSign</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2894,7 +4052,806 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Renewals</fullName>
+        <active>true</active>
+        <businessProcess>NewProcess</businessProcess>
+        <label>Renewals</label>
+        <picklistValues>
+            <picklist>Credit_Risk_Package_Status__c</picklist>
+            <values>
+                <fullName>Broker Package Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Review In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>E_sign_Addendum_Provider__c</picklist>
+            <values>
+                <fullName>4identify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ADSS Signing Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AS2Gateway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accordium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adobe Document Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adobe Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assently E-Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AssureSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Autenti%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canvas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carizma First</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CognaSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ComsignTrust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Countasign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Creativity 365</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DealHub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DeliverySlip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DigiSigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digio eSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DiguSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doc Magic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Docsmore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dotloop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Lock</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Sign Dashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-Signature by DocVerify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eversign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exelaonline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FaxNgo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fingerink</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fluix Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FormFast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FormSwift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GetAccept</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HelloSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IdenTrust Trust Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inkdit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InsureSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KeepSolid Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lawfice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leafinbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leegality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legalesign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lightico in-call eSignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSB Docs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MailDoodler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MyDocSafe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nitro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Novatus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPENTRUST SPI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OneSpan Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oneflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OpenLimit CC Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P7S Signer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDCflow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF Autosigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDF%2Eco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDFco by ByteScout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PDFfiller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRONTOSign by AlphaTrust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PactSafe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PandaDoc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Papr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PenPower eSignature Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Penneo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PleaseSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power PDF Std</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qwilr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RDMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RMail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RightSignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SELL%26SIGN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIGNiX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scrive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SeamlessDocs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secured Signing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SenditCertified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sertifi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shuttle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignBox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignCenter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignEasy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignNow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignOff by Datawitness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignOnTheGo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignPack3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignPlus Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignRequest</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignaShare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignatureConfirm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SignatureOne Suite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signatureit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SigningHub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signmee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SkySignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SmartSAFE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Smartwaiver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soda PDF Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stiply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SuiteBox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SutiSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Swift Cloud</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Topaz SigPlus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tractis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U-Sign-It</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultradox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Universign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vignature for Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WP Digital E-Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WaiverElectronic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Sign In</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yozons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zoho Sign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZorroSign eSignature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>contractbook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>e-Sign Live by Silanis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eOriginal SmartSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSign Genie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSign%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSignature for SharePoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSigner by Orion Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eSignly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iFill PDF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPEGS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iSign</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Reason__c</picklist>
+            <values>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget %2F Lost Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Decision %2F Non-Responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Affiliated Entities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification and Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Character Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary Lists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formation Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Related Fees and Related Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Background Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NMLS ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W-9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reapplication_Status__c</picklist>
+            <values>
+                <fullName>App Package incomplete per Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package sent to inactive partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Accepted by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Uploaded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reapproved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Questionnaire_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Status__c</picklist>
+            <values>
+                <fullName>Sent to Trainer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training in Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Updated_Financial_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
         <fullName>AE_Opportunity_Stage_Change</fullName>
         <active>true</active>
         <description>AE's cannot change the Opportunity Stage after App Pending Review</description>
@@ -2910,4 +4867,5 @@ ISPICKVAL(StageName, 'Withdrawn')
 ))</errorConditionFormula>
         <errorDisplayField>StageName</errorDisplayField>
         <errorMessage>You do not have access to update this stage</errorMessage>
-    </validationRules></CustomObject>
+    </validationRules>
+</CustomObject>

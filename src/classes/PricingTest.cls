@@ -18,13 +18,16 @@ public class PricingTest {
             Test.startTest();
             List<PricingResponse> lst=  Pricing.getBrokerPricing();
             List<PricingResponse> lst1=  Pricing.Tier2_Data();
-            List<PricingResponse> lst2=  Pricing.Tier1_Data();   
-            List<FixedRateResponse> lst3=  Pricing.getFixedRateORM();
-            List<FixedRateResponse> lst4=  Pricing.FixedRateTier2_Data();
-            List<FixedRateResponse> lst5=  Pricing.FixedRateTier1_Data(); 
-            List<HeloRateResponse> lst6=  Pricing.getHeloRateORM();
-            List<HeloRateResponse> lst7=  Pricing.HeloRateTier2_Data();
-            List<HeloRateResponse> lst8=  Pricing.HeloRateTier1_Data();
+            List<PricingResponse> lst2=  Pricing.Tier1_Data();
+            List<PricingResponse> lst4=  Pricing.Tier3_Data();    
+            List<FixedRateResponse> lst5=  Pricing.getFixedRateORM();
+            List<FixedRateResponse> lst6=  Pricing.FixedRateTier2_Data();
+            List<FixedRateResponse> lst7=  Pricing.FixedRateTier1_Data(); 
+            List<FixedRateResponse> lst8=  Pricing.FixedRateTier3_Data(); 
+            List<HeloRateResponse> lst9=  Pricing.getHeloRateORM();
+            List<HeloRateResponse> lst10=  Pricing.HeloRateTier2_Data();
+            List<HeloRateResponse> lst11=  Pricing.HeloRateTier1_Data();
+            List<HeloRateResponse> lst12=  Pricing.HeloRateTier3_Data();
             Test.stopTest();
             
         }

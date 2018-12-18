@@ -38,7 +38,7 @@
             <value>THIS_MONTH</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Account.Team__c</column>
+            <column>User.Team__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Braveheart</value>

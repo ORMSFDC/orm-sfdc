@@ -1,57 +1,74 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <help><!-- Apex Class --></help>
         <label><!-- Apex Class --></label>
         <name>ApexClass__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Apex Method --></help>
         <label><!-- Apex Method --></label>
         <name>ApexMethod__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- ExceptionLine --></help>
         <label><!-- ExceptionLine --></label>
         <name>ExceptionLine__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- ExceptionType --></help>
         <label><!-- ExceptionType --></label>
         <name>ExceptionType__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Limitd --></help>
         <label><!-- Limits --></label>
         <name>Limits__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Log Type (INFO, ERROR, DEBUG, FATAL, EXCEPTION) --></help>
         <label><!-- LogType --></label>
         <name>LogType__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Message --></help>
         <label><!-- Message --></label>
         <name>Message__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Sequence --></help>
         <label><!-- Sequence --></label>
         <name>Sequence__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- StackTrace --></help>
         <label><!-- StackTrace --></label>
         <name>StackTrace__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- User --></help>
         <label><!-- User --></label>
         <name>User__c</name>
         <relationshipLabel><!-- Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LoanID --></label>
+        <name>LoanID__c</name>
     </fields><caseValues>
         <plural>false</plural>
         <value>Log</value>
     </caseValues><caseValues>
         <plural>true</plural>
         <value>Logs</value>
-    </caseValues><startsWith>Consonant</startsWith><layouts>
+    </caseValues><startsWith>Consonant</startsWith>
+    <layouts>
         <layout>Log Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts><webLinks>
+    </layouts>
+    <webLinks>
         <label><!-- Delete --></label>
         <name>Delete</name>
-    </webLinks></CustomObjectTranslation>
+    </webLinks>
+</CustomObjectTranslation>

@@ -69,19 +69,13 @@
                 <label id = "error" style = "color:red" class="fontCss"/>
             </div>
             
-            <div class="slds-form-element" style="margin-left: 48%;">
+            <div class="slds-form-element" style="margin-left: 38%;">
 			 <div style="border-style: solid;border-width: 5px;padding: 15px;border-color:5px solid green;color:#81AD4D;">
-              <!--   Have an existing package from another lender ?<br/>
-                 Upload it here and we'll do the rest!  -->
-                <div>
-                    <p class="tex">
-                      
-                     Submit Fully Signed Reverse Mortgage Application here and we'll do the rest!
+                 <div>
+                    <p class="tex"> Case Transfer/Other Lender Application Disclosures <br/> <!--SFDC-270 -->
+                        Transferring a loan from another lender to One Reverse? Please upload your full application and supporting documents here.
                     </p>
                   <br/>
-			<!--	Upload it here and we do the rest!<br/> -->
-			<!--<aura:if isTrue="{!v.attFile}">-->
-                 
                 </div>
                  <input id="upFile" type="file" class="file email_att" aura:id="myFile" onchange="{!c.upload_attachment}"/>                  
                 <ui:button disabled="{!if(v.fileName=='notExist',true,false)}"  label="Upload" class="uploadButton" press="{!c.upload_file}" />

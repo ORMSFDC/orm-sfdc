@@ -73,4 +73,10 @@
         <label>QL Lead</label>
         <converted>false</converted>
     </standardValue>
+    <standardValue>
+        <fullName>Company Closed</fullName>
+        <default>false</default>
+        <label>Company Closed</label>
+        <converted>false</converted>
+    </standardValue>
 </StandardValueSet>

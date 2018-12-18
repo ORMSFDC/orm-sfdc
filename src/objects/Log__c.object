@@ -169,6 +169,17 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>LoanID__c</fullName>
+        <externalId>false</externalId>
+        <label>LoanID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -226,15 +237,21 @@
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
+        <columns>LoanID__c</columns>
         <columns>ApexClass__c</columns>
         <columns>ApexMethod__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>Message__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>ExceptionLine__c</columns>
         <columns>ExceptionType__c</columns>
-        <columns>Message__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>11/26/2018 12:00 AM</value>
+        </filters>
         <label>All</label>
     </listViews>
     <webLinks>

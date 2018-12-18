@@ -238,6 +238,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -346,6 +350,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -380,6 +388,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -442,6 +454,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -452,6 +476,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -496,6 +532,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -705,6 +745,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -732,6 +773,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -741,6 +783,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -756,9 +799,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -770,6 +819,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -979,6 +1029,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -1087,6 +1141,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -1121,6 +1179,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -1183,6 +1245,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -1193,6 +1267,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -1237,6 +1323,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -1446,6 +1536,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -1473,6 +1564,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -1482,6 +1574,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -1497,9 +1590,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -1511,6 +1610,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -1724,6 +1824,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -1832,6 +1936,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -1866,6 +1974,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -1928,6 +2040,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -1938,6 +2062,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -1982,6 +2118,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -2192,6 +2332,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -2219,6 +2360,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -2228,6 +2370,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -2243,9 +2386,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -2257,6 +2406,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -2466,6 +2616,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -2574,6 +2728,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -2608,6 +2766,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -2670,6 +2832,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -2680,6 +2854,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -2724,6 +2910,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -2933,6 +3123,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -2960,6 +3151,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -2969,6 +3161,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -2984,9 +3177,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -2998,6 +3197,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -3211,6 +3411,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -3319,6 +3523,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -3353,6 +3561,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -3415,6 +3627,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -3425,6 +3649,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -3469,6 +3705,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -3679,6 +3919,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -3706,6 +3947,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -3715,6 +3957,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -3730,9 +3973,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -3744,6 +3993,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -3953,6 +4203,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -4061,6 +4315,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -4095,6 +4353,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -4157,6 +4419,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -4167,6 +4441,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -4211,6 +4497,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -4420,6 +4710,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -4447,6 +4738,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -4456,6 +4748,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -4471,9 +4764,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -4485,6 +4784,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -4694,6 +4994,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -4802,6 +5106,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -4836,6 +5144,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -4898,6 +5210,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -4908,6 +5232,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -4952,6 +5288,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -5161,6 +5501,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -5188,6 +5529,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -5197,6 +5539,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -5212,9 +5555,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -5226,6 +5575,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -5435,6 +5785,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -5543,6 +5897,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -5577,6 +5935,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -5639,6 +6001,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -5649,6 +6023,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -5693,6 +6079,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -5902,6 +6292,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -5929,6 +6320,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -5938,6 +6330,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -5953,9 +6346,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -5967,6 +6366,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -6180,6 +6580,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -6288,6 +6692,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -6322,6 +6730,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -6384,6 +6796,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -6394,6 +6818,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -6438,6 +6874,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -6648,6 +7088,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -6675,6 +7116,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -6684,6 +7126,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -6699,9 +7142,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -6713,6 +7162,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -6922,6 +7372,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -7030,6 +7484,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -7064,6 +7522,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -7126,6 +7588,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -7136,6 +7610,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -7180,6 +7666,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -7389,6 +7879,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -7416,6 +7907,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -7425,6 +7917,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -7440,9 +7933,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -7454,6 +7953,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -7663,6 +8163,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -7771,6 +8275,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -7805,6 +8313,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -7867,6 +8379,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -7877,6 +8401,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -7921,6 +8457,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -8130,6 +8670,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -8157,6 +8698,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -8166,6 +8708,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -8181,9 +8724,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -8195,6 +8744,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
@@ -8404,6 +8954,10 @@
             <label>Last Modified Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ2K</field>
+            <label>Account NMLS</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450YE</field>
             <label>Addendum Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -8512,6 +9066,10 @@
             <label>Discovery Completed</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ1q</field>
+            <label>Docs Required Days</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yd</field>
             <label>Email</label>
         </opportunityListFieldsLabelMappings>
@@ -8546,6 +9104,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HkfX</field>
             <label>Ext</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvJ3h</field>
+            <label>Federal Tax ID/EIN</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yj</field>
@@ -8608,6 +9170,18 @@
             <label>Loss Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6J</field>
+            <label>LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6O</field>
+            <label>LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6E</field>
+            <label>LOX Required</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yw</field>
             <label>Margin</label>
         </opportunityListFieldsLabelMappings>
@@ -8618,6 +9192,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yu</field>
             <label>MARI Background Check Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6T</field>
+            <label>MARI LOX Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6d</field>
+            <label>MARI LOX Received Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT6Y</field>
+            <label>MARI LOX Required</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Yz</field>
@@ -8662,6 +9248,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z6</field>
             <label>Partner Denial Reasons</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DvT77</field>
+            <label>PCS at Account Level</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z7</field>
@@ -8871,6 +9461,7 @@
             <field>OPPORTUNITY.LAST_ACTIVITY</field>
             <field>OPPORTUNITY.CREATED_DATE</field>
             <field>OPPORTUNITY.LAST_UPDATE</field>
+            <field>00Nf200000DvJ2K</field>
             <field>00N3900000450YE</field>
             <field>00N3900000450YD</field>
             <field>00N3900000450YF</field>
@@ -8898,6 +9489,7 @@
             <field>00N3900000450YY</field>
             <field>00N3900000450YZ</field>
             <field>00N39000004LVq6</field>
+            <field>00Nf200000DvJ1q</field>
             <field>00N3900000450Yd</field>
             <field>00N3900000450Ye</field>
             <field>00N3900000450Yc</field>
@@ -8907,6 +9499,7 @@
             <field>00N3900000450Yh</field>
             <field>00N3900000450Yg</field>
             <field>00N39000004HkfX</field>
+            <field>00Nf200000DvJ3h</field>
             <field>00N3900000450Yj</field>
             <field>00N3900000450Yi</field>
             <field>00N3900000450Yl</field>
@@ -8922,9 +9515,15 @@
             <field>00N3900000450Ys</field>
             <field>00N3900000457XQ</field>
             <field>00N39000004LVq8</field>
+            <field>00Nf200000DvT6J</field>
+            <field>00Nf200000DvT6O</field>
+            <field>00Nf200000DvT6E</field>
             <field>00N3900000450Yw</field>
             <field>00N3900000450Yv</field>
             <field>00N3900000450Yu</field>
+            <field>00Nf200000DvT6T</field>
+            <field>00Nf200000DvT6d</field>
+            <field>00Nf200000DvT6Y</field>
             <field>00N3900000450Yz</field>
             <field>00N3900000450Z0</field>
             <field>00N3900000450Yy</field>
@@ -8936,6 +9535,7 @@
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
+            <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>

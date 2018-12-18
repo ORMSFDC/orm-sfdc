@@ -24,8 +24,13 @@
                                                         {'label': 'Yes', 'value': 'Yes'},
                                                         {'label': 'No', 'value': 'No'}
                                                         ]"/>
+    <!--SFDC 282-->
+    <aura:attribute name="options2" type="List" default="[
+                                                        {'label': 'Yes', 'value': 'Y'},
+                                                        {'label': 'No', 'value': 'N'}
+                                                        ]"/>
     <aura:attribute name="value" type="String" default="No"/>
-    <aura:attribute name="itemsClicked" type="String" />
+    <aura:attribute name="itemsClicked" type="String" />       
     
     <fieldset class="slds-box slds-theme--default slds-container--large">
         <div class="slds-form slds-form_compound">
@@ -300,7 +305,6 @@
                 <div id="unpaidloanError" class="DivStyle"></div>
                 <br/>
             </div>
-            
             <!-- Start SFDC 282, Bala  -->
             <div class="slds-size_1-of-1 LabelDiv">
                 <div>
@@ -310,7 +314,7 @@
             <div class="slds-size_1-of-2">
                 <lightning:radioGroup aura:id="group_l1"
                                       name="radioButtonGroup_l1"
-                                      options="{! v.options }"
+                                      options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Ethnicity__c }"
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
@@ -325,7 +329,7 @@
             <div class="slds-size_1-of-2">
                 <lightning:radioGroup aura:id="group_l2"
                                       name="radioButtonGroup_l2"
-                                      options="{! v.options }"
+                                      options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Sex__c }"
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
@@ -340,14 +344,14 @@
             <div class="slds-size_1-of-2">   
                 <lightning:radioGroup aura:id="group_l3"
                                       name="radioButtonGroup_l3"
-                                      options="{! v.options }"
+                                      options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Race__c }"
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
             <label id="lbl_group_l3" class="lblRemarkStyle"></label>
             <br/>
-            <!-- end SFDC 282, Bala  -->
-            
+            <!--end SFDC 282 -->
+
             <div id="DivshowRemarks" class="slds-size_1-of-2 ">
                 
                 <div class="LabelDiv" >

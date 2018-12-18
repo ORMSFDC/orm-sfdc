@@ -1,3 +1,10 @@
+/**
+* @description  sal_decalarationcontroller - Used to fetch data for Start New Loan Declaration tab
+
+* @author GalaxE (original)
+* changelog:
+* 09/19/2018: Sahitya: Added Borrower fields to display in declaration tab for SaNL, SFDC - 282
+*/
 public class sal_decalarationcontroller {
     
     @AuraEnabled
@@ -31,7 +38,7 @@ public class sal_decalarationcontroller {
                         FHA_Property_Address__c, FHA_Acc_No__c, FHA_Creditor__c, FHA_Amount__c, FHA_Unpaid_Loan__c, 
                         Lawsuit__c, Outstanding_Judgments__c, Permanent_Resident__c, Primary_Residence__c, Race__c, 
                         DeclarationClient__c, DeclarationLoan__c, ReverseMortgage__c, ReverseMortgage_Cost__c,
-                        Enrolled_tribe__c,Declaration_Remarks__c,Ethnicity__c,
+                        Enrolled_tribe__c,Declaration_Remarks__c,Ethnicity__c, Borrower_Ethnicity__c,Borrower_Race__c, Borrower_Sex__c,
                         ReverseMortgage_finproduct__c, Sex_New__c, US_Citizen__c FROM Declaration__c where DeclarationClient__c = :ClientId limit 1];
 //Code Ended by Dev4 for ORMSFDC-1432
         }

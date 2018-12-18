@@ -7,6 +7,9 @@
         <field>LAST_STAGE_CHANGE_DATE</field>
     </columns>
     <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <columns>
         <field>FULL_NAME</field>
     </columns>
     <filter>
@@ -43,6 +46,7 @@
         <value>1</value>
     </params>
     <reportType>Opportunity</reportType>
+    <roleHierarchyFilter>System_Administrator</roleHierarchyFilter>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>

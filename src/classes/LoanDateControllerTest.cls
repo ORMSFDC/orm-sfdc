@@ -1,7 +1,5 @@
 @isTest
 public with sharing class LoanDateControllerTest {
-    
-    
     @isTest static void SaveLoanMethodTest(){
         
         Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
@@ -18,17 +16,9 @@ public with sharing class LoanDateControllerTest {
         insert user1;  
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
-            
             Account portalAccount = new Account(
                 Name='portalAccount',
-                Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
+                Cell__c='1236547410',                
                 Assigned_PCS__c=user1.Id,  
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
@@ -62,11 +52,8 @@ public with sharing class LoanDateControllerTest {
             Loan_New__c objLoan = new Loan_New__c(
                 IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
                 LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
-                ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);        Insert objLoan;
-            //string getId=LoanDateController.saveTheFile(objLoan);
-            //String id = objLoan.Id;
-            //System.assertEquals(getId, id);
-            
+                ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);        
+            Insert objLoan;            
         }
     }
     
@@ -85,18 +72,10 @@ public with sharing class LoanDateControllerTest {
                               TimeZoneSidKey='America/Los_Angeles');
         insert user1;  
         system.runAs(user1)
-        {
-           // Test.setMock(HttpCalloutMock.class, new FNMMockHttpResponse());
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
+        {          
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user1.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
@@ -133,7 +112,6 @@ public with sharing class LoanDateControllerTest {
             objAttachment.Body = FileData;
             objAttachment.ParentId = LoanInsert.Id;
             objAttachment.contentType = 'Application/PDF';
-            //(Id)apexPages.CurrentPage().getParameters().put('id',string.valueOf());
             insert objAttachment;
             string Base64Data = 'test Base64Data';
             string applicationDate = Date.today().year() + '-' + Date.today().month() + '-' + Date.today().day();
@@ -165,16 +143,9 @@ public with sharing class LoanDateControllerTest {
         insert user1;            
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user1.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
@@ -204,18 +175,15 @@ public with sharing class LoanDateControllerTest {
             insert LC;                                     
             
             LoanDateController.saveTheFile(LC.id,'file name', 'VGVzdA==', 'pdf');
-            LoanDateController.sendEmail('test','test');
+            LoanDateController.sendEmail('test','test');            
         }
     }
-    
-    
-    
+
     public static Loan_New__c createLoan()
     {
         ClientInfo__c clientInfo = new ClientInfo__c();
         clientInfo.Name = 'John';
         clientInfo.Last_Name__c = 'Smith';
-        //clientInfo.City__c = 'Black Water';
         clientInfo.Zip__c = '48075';
         clientInfo.DOB__c = Date.today();
         insert clientInfo;
@@ -223,6 +191,12 @@ public with sharing class LoanDateControllerTest {
         Loan_New__c LC1 = new Loan_New__c(Client_Name__c=clientInfo.Id);
         insert LC1;
         return LC1;
-        
     }
+
+    @isTest static void createTaskTest()
+    { 
+    try{
+        LoanDateController.createAETask('test','test');
+    }catch(Exception ex){}
+    } 
 }

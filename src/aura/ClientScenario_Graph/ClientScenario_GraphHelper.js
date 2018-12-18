@@ -137,7 +137,7 @@
                 financingFees = (Math.round(finalEOF * 100) / 100) + 2500;
                 console.log('other finfee', financingFees);
             }
-            component.set("v.Ageminus1", diffYr - 1);
+            component.set("v.Ageminus1", result.Age__c); //SFDC - 380
             component.set("v.EHV", result.Estimated_home_value__c);
             component.set("v.OECC", otherEcc); //Helo fix
 
@@ -342,6 +342,19 @@
         });
         $A.enqueueAction(action);
     },
+    
+    //SFDC - 360
+    helperMethod : function(component,loanid,senarioid) {        
+	var action = component.get("c.updateSenario");
+        action.setParams({
+    		senarioid:senarioid,
+		loanId:loanid
+        });        
+        action.setCallback(this,function(data){       
+        });
+        $A.enqueueAction(action);       
+    }, 
+    
     //Cash Flow Graph
     cshflow: function (component, event, helper, cashflowdata) {
         var jdata = cashflowdata;

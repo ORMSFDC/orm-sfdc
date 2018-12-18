@@ -1,28 +1,37 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ComposeGmail</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>LogCall</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>MailMerge</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>RequestUpdate</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SendEmail</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ViewAll</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>CTI_Id__c</fullName>
         <externalId>true</externalId>
         <label>CTI Id</label>
@@ -30,7 +39,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Call_Duration_In_Seconds__c</fullName>
         <externalId>false</externalId>
         <label>Call Duration In Seconds</label>
@@ -39,19 +49,22 @@
         <scale>0</scale>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Call_End_Time__c</fullName>
         <externalId>false</externalId>
         <label>Call End Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Call_Start_Time__c</fullName>
         <externalId>false</externalId>
         <label>Call Start Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Client_name__c</fullName>
         <externalId>false</externalId>
         <label>Client name</label>
@@ -59,7 +72,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Create_Follow_up_task__c</fullName>
         <externalId>false</externalId>
         <label>Create Follow-up task</label>
@@ -86,7 +100,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Created_DateTime__c</fullName>
         <externalId>false</externalId>
         <formula>CreatedDate</formula>
@@ -94,7 +109,8 @@
         <label>Created Date Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Disposition__c</fullName>
         <externalId>false</externalId>
         <label>Disposition</label>
@@ -102,7 +118,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Document_Link__c</fullName>
         <externalId>false</externalId>
         <label>Document Link</label>
@@ -110,7 +127,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Document__c</fullName>
         <externalId>false</externalId>
         <formula>IF(Document_Link__c!='', HYPERLINK('/servlet/servlet.FileDownload?file='+Document_Link__c, 'Document', "_blank") ,'')</formula>
@@ -119,7 +137,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Due_Time__c</fullName>
         <externalId>false</externalId>
         <label>Due Time</label>
@@ -291,27 +310,31 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Followup_Task__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <inlineHelpText>Please check this box if you are creating a task</inlineHelpText>
         <label>Follow-up Task</label>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity_Date__c</fullName>
         <externalId>false</externalId>
         <formula>ActivityDate</formula>
         <label>Last Activity Date</label>
         <required>false</required>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Login_Time__c</fullName>
         <externalId>false</externalId>
         <label>Last Login Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Officer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -321,13 +344,15 @@
         <relationshipName>LoanOfficer</relationshipName>
         <required>false</required>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Note__c</fullName>
         <externalId>false</externalId>
         <label>Note</label>
         <required>false</required>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>SubjectType__c</fullName>
         <externalId>false</externalId>
         <label>CTI Subject Type</label>
@@ -369,7 +394,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Subject_Type__c</fullName>
         <externalId>false</externalId>
         <label>Subject Type</label>
@@ -411,7 +437,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Task_Grouping__c</fullName>
         <externalId>false</externalId>
         <formula>IF(CONTAINS( Subject, 'Document has been uploaded'), 'Document Task', 
@@ -433,11 +460,240 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>userLoginId__c</fullName>
         <externalId>false</externalId>
         <label>userLoginId</label>
         <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Additional_Emails__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Please separate emails with Comma[ , ]</inlineHelpText>
+        <label>Send Email to External Attendees</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Duration_mins__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Duration (mins)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Host_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Host Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__IsExternal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>IsExternal</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__IsZoomMeeting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Zoom Meeting</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Join_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Join Url</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Join_before_host__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Let users join the meeting before the host arrives</inlineHelpText>
+        <label>Join before host</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Make_it_Zoom_Meeting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This option will schedule a zoom meeting and put the meeting link in the description</inlineHelpText>
+        <label>Schedule a Zoom Meeting</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Meeting_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Meeting Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Participant_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Participant Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Participants__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Participants</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Send_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Send email to Contact or Lead, Event Invitees and External Attendees while creating Zoom Meeting or Resend email when this field is subsequently checked after creating Zoom Meeting.</inlineHelpText>
+        <label>Send Email</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Start_Url_1__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start Url 1</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Start_Url_2__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start Url 2</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Start_Url_3__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start Url 3</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__UUID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>UUID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Use_personal_Zoom_meeting_Id__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use my Zoom personal meeting id</inlineHelpText>
+        <label>Use my Zoom PMI</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Zoom_Meeting_Creation_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zoom Meeting Creation Status</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Zoom_Meeting_End_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zoom Meeting End Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Zoom_Meeting_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zoom Meeting Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Zoom_Meeting_Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zoom Meeting Start Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Zoom_Meeting_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Zoom Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>zoom_app__Zoom_Meeting_Status_fr__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>if(  ISBLANK(TEXT(zoom_app__Zoom_Meeting_Status__c)),'Open',TEXT(zoom_app__Zoom_Meeting_Status__c))</formula>
+        <label>Zoom Meeting Status</label>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
@@ -447,7 +703,8 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
         <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>Private</sharingModel><listViews>
+    </searchLayouts><sharingModel>Private</sharingModel>
+    <listViews>
         <fullName>MyActivities</fullName>
         <columns>ACTIVITY_SUBTYPE</columns>
         <columns>TASK.STATUS</columns>
@@ -458,15 +715,18 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
         <columns>EVENT.LOCATION</columns>
         <filterScope>Mine</filterScope>
         <label>My Activities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyDelegatedActivities</fullName>
         <filterScope>Delegated</filterScope>
         <label>My Delegated Activities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyTeamsActivities</fullName>
         <filterScope>Team</filterScope>
         <label>My Team's Activities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>TodaysTasks</fullName>
         <filterScope>Mine</filterScope>
         <filters>
@@ -485,7 +745,8 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
             <value>TOMORROW</value>
         </filters>
         <label>Today's Tasks</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>UpcomingEvents</fullName>
         <filterScope>Mine</filterScope>
         <filters>
@@ -499,4 +760,5 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
             <value>YESTERDAY</value>
         </filters>
         <label>Upcoming Events</label>
-    </listViews></CustomObject>
+    </listViews>
+</CustomObject>

@@ -4,6 +4,9 @@
         <componentInstances>
             <componentName>runtime_sales_activities:todayTaskContainer</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>DisplayTask</componentName>
+        </componentInstances>
         <name>top</name>
         <type>Region</type>
     </flexiPageRegions>

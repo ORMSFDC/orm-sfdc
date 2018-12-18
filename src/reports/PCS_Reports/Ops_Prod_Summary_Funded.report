@@ -10,19 +10,16 @@
         <field>Loan_New__c.Client_Name__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Anticipated_Closing_Date__c</field>
+        <field>Loan_New__c.Closing_Date__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Closing_Date__c</field>
+        <field>Loan_New__c.Actual_Funding_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Subject_Property_State__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.PCS_at_Loan_Level__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.PCS_at_Partner_Level__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
@@ -48,7 +45,7 @@
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

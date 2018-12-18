@@ -43,15 +43,6 @@
         <label><!-- 90.01-100% --></label>
         <name>X90_01_100__c</name>
     </fields>
-    <caseValues>
-        <plural>false</plural>
-        <value>Tier 3</value>
-    </caseValues>
-    <caseValues>
-        <plural>true</plural>
-        <value>Tier 3</value>
-    </caseValues>
-    <startsWith>Consonant</startsWith>
     <layouts>
         <layout>Tier 3 Layout</layout>
         <sections>

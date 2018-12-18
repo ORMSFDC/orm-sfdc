@@ -6,6 +6,8 @@
  * changelog:
  * 08/07/2018: Don - Modified Funds to Close - SFDC-241
  * 08/22/2018: Sahitya - Updated results for Helo SFDC - 269
+ * 10/25/2018: Sahitya - added a message to print screen - SFDC-375
+ * 11/28/2018: Sahitya - change Age - SFDC - 380
  */
 public without sharing class PdfSavedScenarioController {
     
@@ -13,7 +15,7 @@ public without sharing class PdfSavedScenarioController {
     public user u {get;set;}
     public contact con{get;set;}
     public Scenario__c scenario {get;set;}
-    public Integer age{get;set;}
+    public Decimal age{get;set;}
     public Decimal finalEOF{get;set;}
     public Decimal cashAtClose{get;set;}
     public Decimal fundsNeedToClose{get;set;}
@@ -21,7 +23,8 @@ public without sharing class PdfSavedScenarioController {
     public Decimal financingFees{get;set;}
     public Decimal firstAmount{get;set;}
     public boolean isTraditional {get;set;}
-    public string RateTypeis {get;set;}    
+    public string RateTypeis {get;set;}  
+    public string messageIs {get;set;}  //SFDC - 375  
     public boolean isOld{get;set;}
     //SFDC -229
     public Decimal estclosingcost{get;set;} 
@@ -30,6 +33,7 @@ public without sharing class PdfSavedScenarioController {
     
     public PdfSavedScenarioController() {
     RateTypeis  = 'Margin';
+    messageIs = 'FHA Traditional HECM'; //SFDC - 375  
         isTraditional  = true;
         isOld = false;
         scenarioID =ApexPages.currentPage().getParameters().get('id');
@@ -64,6 +68,7 @@ public without sharing class PdfSavedScenarioController {
                                           Scenario_Type__c,
                                           RateType__c,
                                           EOF__c,
+                                          Age__c, //SFDC-380
                                           Other_Estimated_Closing_Costs__c //SFDC -269
                                           From Scenario__c Where Id =: scenarioID];
         
@@ -71,7 +76,13 @@ public without sharing class PdfSavedScenarioController {
             scenario = scenarioList[0];
             estClosingcost = scenario.Other_Estimated_Closing_Costs__c; //SFDC -269
             mmp = scenario.Monthly_Mortgage_Payment__c; //SFDC -269
-            
+            //SFDC - 375
+            if(scenario.scenario_type__c == 'FHA Traditional HECM'){
+                if(Scenario.ratetype__c == 'Adjust'){   messageIs = 'HECM Refinance ARM';  }else if(Scenario.ratetype__c == 'Fixed'){   messageIs = 'HECM Refinance Fixed';  }else if(Scenario.ratetype__c == 'Helo'){  messageIs = 'HELO Refinance'; }
+            }else if(scenario.scenario_type__c == 'HECM for Purchase'){
+                if(Scenario.ratetype__c == 'Adjust'){   messageIs = 'HECM Purchase ARM'; }else if(Scenario.ratetype__c == 'Fixed'){  messageIs = 'HECM Purchase Fixed'; }else if(Scenario.ratetype__c == 'Helo'){ messageIs = 'HELO Purchase';  }
+            }
+            //end SFDC - 375  
             if(scenario.Estimated_home_value__c<=200000) {  finalEOF = scenario.Estimated_home_value__c *0.02;
             }
             else { 
@@ -87,7 +98,7 @@ public without sharing class PdfSavedScenarioController {
             }
             
             if(scenario.Date_of_birth__c != Null)  
-            age                           = System.today().year() - scenario.Date_of_birth__c.year(); 
+            age = scenario.Age__c;//SFDC-380
             if(null != scenario.PieChartResponse__c){
                 isOld = true;
                 Map<String,Object> jsonMap    = (Map<String,Object>)JSON.deserializeUntyped(scenario.PieChartResponse__c);                

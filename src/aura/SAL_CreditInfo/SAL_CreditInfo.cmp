@@ -126,7 +126,9 @@
                 <br />
                 <div class="slds-size_1-of-2">
                     <ui:inputSelect aura:id="CreditReissueVendor" label="Credit Reissue Vendor" value="{!v.NewCredit.Credit_Reissue_Vendor__c}">
-                            <ui:inputSelectOption text="ADV" label="ADVANTAGE CREDIT" value="true"/>
+                            <!--BALA SFDC 288 -->
+                            <ui:inputSelectOption text="CD" label="CREDCO" value="true"/>
+                            <!-- <ui:inputSelectOption text="ADV" label="ADVANTAGE CREDIT" value="true"/>
                             <ui:inputSelectOption text="ADVPLUS" label="ADVANTAGE PLUS" value="true"/>
                             <ui:inputSelectOption text="ALLIANCE" label="ALLIANCE 2020" value="true"/>
                             <ui:inputSelectOption text="ARC" label="AMERICAN REPORTING COMPANY" value="true"/>
@@ -154,7 +156,7 @@
                             <ui:inputSelectOption text="SVC1" label="SERVICE 1ST INFOSYSTEM" value="true"/>
                             <ui:inputSelectOption text="SETONE" label="SETTLEMENTONE CREDIT CORP." value="true"/>
                             <ui:inputSelectOption text="UNITEDONE" label="UNITED ONE RESOURCES" value="true"/>
-                            <ui:inputSelectOption text="UCS" label="UNIVERSAL CREDIT SERVICES" value="true"/>
+                            <ui:inputSelectOption text="UCS" label="UNIVERSAL CREDIT SERVICES" value="true"/> -->
                     </ui:inputSelect>
                     
                     <div id="CreditReissueVendorError" style="color:red;"></div>

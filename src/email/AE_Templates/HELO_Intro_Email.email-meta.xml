@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>HELO Introduction Email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>HELO Intro Email</name>
+    <style>none</style>
+    <subject>Introducing HELO - Our JUMBO Reverse Mortgage Product</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+The traditional FHA Reverse Mortgage product has limitations that can exclude some of your clients. So we created our own proprietary mortgage solution. HELO allows many clients with higher home values, condominiums, solar panels and other FHA-restricted home features to qualify and take advantage of all the benefits a reverse mortgage can offer!
+
+The below outlines the features of our HELO.
+
+Max loan Amount HELO: $4 Million
+Max Loan Amount FHA Reverse: $509,738
+
+MIP Required HELO: No
+MIP Required FHA Reverse Mortgage: Yes
+
+Property Type Flexibility HELO: Yes
+Property Type Flexibility FHA Reverse Mortgage: No
+
+100% of Funds Available at Closing HELO: Yes
+100% of Funds Available at Closing FHA Reverse Mortgage: No
+
+Debt Consolidation Included in Loan Process HELO: Yes
+Debt Consolidation Included in Loan Process FHA Reverse Mortgage: No
+
+Best,
+
+{!Contact.OwnerFullName}
+{!Contact.OwnerEmail}
+{!Contact.OwnerTitle}
+{!Contact.OwnerPhone}
+
+Let&apos;s get started.
+
+Contact me at {!Contact.OwnerPhone} or just hit reply to this email.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

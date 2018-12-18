@@ -20,10 +20,10 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>Loan_New__c.Full_Package_Received_Date__c</column>
+            <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>LAST_MONTH</value>
+            <operator>notEqual</operator>
+            <value>Incomplete,Proposal,Waiting for Full Package,Full Application Received - Incomplete</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.Team__c</column>
@@ -32,10 +32,10 @@
             <value>wORMS</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.LoanStatus__c</column>
+            <column>Loan_New__c.In_Processing_Date__c</column>
             <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Incomplete,Proposal,Waiting for Full Package,Full Application Received - Incomplete</value>
+            <operator>equals</operator>
+            <value>LAST_MONTH</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

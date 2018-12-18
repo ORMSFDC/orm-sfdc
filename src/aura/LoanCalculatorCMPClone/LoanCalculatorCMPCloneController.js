@@ -328,10 +328,10 @@
     optionChanged:function(component, event, helper){
         var lnId= component.get("v.showLoanId");
         
-        //  alert(lnId);
+        // SFDC-567
         if(lnId!=null && lnId!=undefined && lnId!=''){  
             $A.createComponent(
-                "c:StartNewLoanCmp",
+                "c:StartNewLoanProductContainer",
                 
                 {
                     "ApplicationDate":component.get("v.ApplicationDate"),

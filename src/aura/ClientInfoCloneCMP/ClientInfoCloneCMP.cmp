@@ -25,7 +25,16 @@
     <aura:attribute name="Scenarioindex" type="Integer" /><!--prsn-->   
     <aura:attribute name="disabled" type="boolean"  default="false"/>
     <aura:attribute name="stateZip" type="boolean"  default="false"/>
+    <!--SFDC-363-->
+    <aura:attribute name="stateZip2" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip3" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip4" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip5" type="boolean"  default="false"/>
+    <!--SFDC-363-->
     <aura:attribute name="isDisplayHelo" type="boolean"  default="true"/> <!--Helo-->
+    <aura:attribute name="printcounter" default="0" type="integer"/> <!--SFDC-566-->
+    <aura:attribute name="capacitycounter" default="0" type="integer"/>
+    <aura:attribute name="render_popup" type="Boolean" default="false"/>  <!--SFDC-487-->
     <aura:attribute name="DOB" type="string" />
     <aura:attribute name="EHV" type="decimal"  />
     <aura:attribute name="CMB" type="decimal" />
@@ -110,6 +119,7 @@
     <!--Validation attributes--> 
     <aura:attribute name="Messages" type="String" default=""/>
     <aura:attribute name="EmailPhoneMessages" type="String" default=""/>
+    <aura:attribute name="EmailMessage" type="String" default=""/> <!--SFDC-378-->
     <aura:attribute name="showError" type="boolean" default="false"/>  
     <aura:attribute name="IsSpinner" type="boolean" default="false" />
     <aura:attribute name="rerender_section" type="boolean" default="true" />
@@ -166,13 +176,19 @@
         <!-- margin table starts -->
         <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
             <br/>
-            <h4>Pricing Options</h4>
-            <aura:if isTrue="{!!v.isDisplayHelo}">
-            	<span style="margin:auto; display:table; font-size: 15pt;">Please select your pricing from the HECM ARM or HECM Fixed options below.</span>
+            <h4>Pricing Options</h4>            
+	    <aura:if isTrue="{!!v.isDisplayHelo}"> <!-- removing text below but may be added in future-->
+            	<span style="margin:auto; display:table; font-size: 15pt;"></span>
             </aura:if>
+	    <!--SFDC-379-->
+	    <aura:if isTrue="{!and(v.isDisplayHelo ,!v.isTraditional)}">
+            	<span style="margin:auto; display:table; font-size: 15pt;"></span> <!--fixed helo purchase-->
+            </aura:if>
+            <aura:if isTrue="{!!v.isTraditional}">
+            <aura:set attribute="else"><!--end SFDC-379-->
             <aura:if isTrue="{!v.isDisplayHelo}">
-                <span style="margin:auto; display:table; font-size: 15pt;">Please select your pricing from the One Reverse HELO, HECM ARM or HECM Fixed Options below.</span>
-                <h4>One Reverse HELO</h4>
+                <span style="margin:auto; display:table; font-size: 15pt;"></span>
+                <h4>HELO FIXED Jumbo</h4>
                 
                 <div style="">
                     <table class="margin_table slds-table slds-table_bordered slds-table_cell-buffer" style="border: 1px solid #d4d4d4;">
@@ -299,6 +315,8 @@
                         </tbody>
                     </table>
                 </div>
+		 </aura:if><!--SFDC - 379-->
+                </aura:set><!--SFDC - 379-->
             </aura:if>
             <br/>
             <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
@@ -368,6 +386,8 @@
                         <tbody>
                             <aura:iteration items="{!v.FHA_Hecm_AdjustableMargin}" var="obj" indexVar="indx">
                                 <tr class="{!'each_row row_adjust_'+indx}">
+                                <aura:if isTrue="{!obj.No_Margin == undefined}">  <!--SFDC-377 (added to eliminate margin if it is not in metadata table) -->
+                                <aura:set attribute="else">    
                                     <th scope="row" data-label="Margin" data-type="Adjust"  class="slds-box" style="background-color: #2081bf; ">
                                         <div title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" data-type="adjust" data-MFD="{!obj.MFD}" style="cursor:pointer;text-align:center;"> 
                                             <button id="{!indx}" data-type="adjust" data-MFD="{!obj.MFD}" style="color:white; background-color:#13547c" class="slds-button slds-button--inverse" onclick="{!!c.get_loanFor_margin}" >Select</button>
@@ -423,6 +443,8 @@
                                             </span>
                                         </div>
                                     </td>
+                                    </aura:set>
+                                    </aura:if>
                                 </tr>
                             </aura:iteration>
                         </tbody>
@@ -431,9 +453,10 @@
                 
             </aura:if>
             <br/>
-            <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
-                <h4>HECM Fixed</h4>
-                
+            <aura:if isTrue="{!v.ScenarioType == 'FHA Traditional HECM'}"> <!--588-->
+            <aura:set attribute="else">
+	    <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
+                <h4>HECM Fixed</h4>                
                 <div style="">
                     <table class="margin_table slds-table slds-table_bordered slds-table_cell-buffer" style="border: 1px solid #d4d4d4;">
                         <thead class="margin-table-head" >
@@ -461,14 +484,14 @@
                                 <th scope="col" class="tabhead">
                                     <div class="slds-truncate customFont17" title="Cash At Close"  style="text-align:center;">
                                         {!v.typeOfFunds}
-                                        <!-- added if condition - SRINI -->
+                                        <!-- added if condition-SRINI -->
                                         <aura:if isTrue="{! v.typeOfFunds == 'Cash at close'}">
                                             <lightning:helptext content="Maximum Cash Available at Close" />
                                             <aura:set attribute="else">
                                                 <lightning:helptext content="This is the amount your client will need to bring to close" /><!--Maximum Cash Available at Close-->
                                             </aura:set>
                                         </aura:if>
-                                        <!-- if condition ends- SRINI -->
+                                        <!-- if condition ends-SRINI -->
                                     </div>
                                 </th>
                                 
@@ -554,7 +577,8 @@
                     </table>
                 </div>
             </aura:if>
-            
+            </aura:set>
+            </aura:if>
         </aura:if>
         
         <!-- end of margin table-->
@@ -568,12 +592,28 @@
             <div id="loc_hra">
                 <div id="LOCandCashFlow"  style="display:none">
                     <fieldset class="slds-form-element">   
-                        
-                        
                         <div class="slds-form-element__group"> 
-                            <div class="customFont28">                      
-                                Scenario Results
-                            </div>
+                            <div class="customFont28">     <!--SFDC-375-->                 
+                                Scenario Results   <br/>                                      
+                                <div class="customFont29"> 
+                                    <aura:if isTrue="{!v.isTraditional}"> 
+                                        <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
+                                            HELO Refinance    
+                                            <aura:set attribute="else">   
+                                                HECM Refinance <ui:outputText value="{!v.LRateType}"></ui:outputText>
+                                            </aura:set>
+                                        </aura:if>
+                                        <aura:set attribute="else">
+                                            <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
+                                                HELO Purchase
+                                                <aura:set attribute="else">   
+                                                    HECM Purchase <ui:outputText value="{!v.LRateType}"></ui:outputText>
+                                                </aura:set>
+                                            </aura:if>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>                                             
+                            </div><br/>
                             <div class="slds-form-element__row">
                                 
                                 <div class="slds-form-element slds-size_1-of-2" 
@@ -748,8 +788,8 @@
                                             </div>
                                         </th>
                                     </thead>
-                                    <tbody>       <tr>
-                                        
+                                    <tbody>
+                                        <!-- SFDC_480 <tr>                                        
                                         <td data-label="RAC">
                                             <div class="slds-truncate customFont16">
                                                 <b>
@@ -759,9 +799,8 @@
                                         <td data-label="RAC">
                                             <div class="slds-truncate  slds-text-align_right customFont16">
                                                 {!v.Index}%</div>
-                                        </td>
-                                        
-                                        </tr>
+                                        </td>                                        
+                                        </tr> -->
                                         
                                         <tr>                                    
                                             <td data-label="MIP">
@@ -1039,14 +1078,28 @@
                                     </aura:if>
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2">                            
-                                    <ui:inputText value="{!v.selectedRecord.PostalCode}" maxlength="5" blur="{!c.checkZip}" updateOn="keyup,keypress,keydown" label="Zip" aura:id="inputZip" class="slds-input" required="true"/>
-                                    <aura:if isTrue="{!v.zip_error}">            
-                                        
+                                    <ui:inputText value="{!v.selectedRecord.PostalCode}" maxlength="5" keyup="{!c.checkZip}" keypress= "{!c.checkZip}" keydown ="{!c.checkZip}"
+				    updateOn="keyup,keypress,keydown" label="Zip" aura:id="inputZip" class="slds-input" required="true"/>
+                                    <aura:if isTrue="{!v.zip_error}"> <!--SFDC-363 added Key actions for immediate erros on zipcode-->     
                                         <span style="color:red">This is a required field.</span>
                                     </aura:if>
                                     <aura:if isTrue='{!v.stateZip}'>
                                         <h6 style="color:red;">Loan cannot be originated in this state.</h6>
                                     </aura:if>
+                                    <!--SFDC-363-->
+                                    <aura:if isTrue='{!v.stateZip2}'>
+                                        <h6 style="color:red;">We do not offer the HELO for Refinance in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip3}'>
+                                        <h6 style="color:red;">We do not offer the HELO for Purchase in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip4}'>
+                                            <h6 style="color:red;">We do not offer the HECM for Purchase in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip5}'>
+                                            <h6 style="color:red;">We do not offer the HECM for Refinance in this state.</h6>
+                                    </aura:if>
+                                    <!--SFDC-363-->
                                 </div>
                             </div>
                             <div class="slds-form-element__row">   
@@ -1068,15 +1121,11 @@
                                     <ui:inputemail label="Email" aura:id="inputEmail"  value="{!v.selectedRecord.Email}"  class="slds-input" />
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2">                            
-                                    <ui:inputPhone label="Phone Number " required="false" aura:id="inputPhone" 
-                                                   value="{!v.selectedRecord.Phone}"   class="slds-input" maxlength="10" 
-                                                   blur="{!c.FormatPhone}"  keypress="{!c.RestrictZeroInAlternatePhoneFirstTime}" keyup="{!c.RestrictZeroInAlternatePhoneFirstTime}"
-                                                   keydown="{!c.RestrictZeroInAlternatePhoneFirstTime}"  updateOn="keypress, keyup, keydown" />
-                                    <!-- <ui:inputtext value="{!v.selectedRecord.Phone_Number__c}"  
-                                          maxlength="10" keypress="{!c.validatePhone}" 
-                                          keyup="{!c.validatePhone}" keydown="{!c.validatePhone}" 
-                                          updateOn="keypress, keyup, keydown" label="Phone" aura:id="inputPhone1" class="slds-input"  />
-                       --></div>
+                                    <ui:inputPhone label="Phone Number" required="false" aura:id="inputPhone" value="{!v.selectedRecord.Phone}"
+                                                   class="slds-input" maxlength="10" blur="{!c.FormatPhone}" keypress="{!c.RestrictZeroInAlternatePhoneFirstTime}"
+                                                   keyup="{!c.RestrictZeroInAlternatePhoneFirstTime}" keydown="{!c.RestrictZeroInAlternatePhoneFirstTime}"
+                                                   updateOn="keypress, keyup, keydown" /> <!--SFDC-378 -->
+                       		</div>
                             </div>
                             <aura:if isTrue="{!v.showAlert}">  
                                 <ui:message title="Confirmation" severity="confirm" closable="false">
@@ -1087,6 +1136,7 @@
                                 <ui:message title="Error" severity="error" closable="false">
                                     <b> Please review all errors and save.</b><br></br>
                                     <b> {!v.EmailPhoneMessages}</b>
+                                    <b> {!v.EmailMessage}</b> <!--SFDC-378 -->
                                 </ui:message>
                             </aura:if>
                             
@@ -1128,14 +1178,21 @@
                             <br/>
                             <div class="slds-form-element__row"  id="savebtn"> 
                                 
-                                <div class="slds-form-element slds-size_1-of-2" >                            
-                                    <!-- <lightning:button aura:id="outputButton" variant="brand" 
-                                              label="Save Scenario" onclick="{!c.Save1}" />-->
-                                    <lightning:button aura:id="outputButton" variant="brand" 
-                                                      label="Save Scenario" onclick="{!c.Save}"  class="senario_button"/>
+                                <div class="slds-form-element slds-size_1-of-2" >  
+
+                                    <!-- SFDC-487-->
+                                        <aura:if isTrue="{!v.Environment=='Community'}">                                                     
+                                        <lightning:button aura:id="outputButton" variant="brand" label="Save and Request Scenario Package" onclick="{!c.Save}"  class="senario_button"/>
+                                            &nbsp;
+                                            <aura:set attribute="else"> 
+                                                <lightning:button aura:id="outputButton" variant="brand" label="Save" onclick="{!c.Save}"  class="senario_button"/>
+                                        </aura:set>
+                                        </aura:if>
+                                    <!-- SFDC-487-->                                   
                                     &nbsp;                            
-                                    <!--          <ui:outputURL value="{!v.myURL}"   
-                                          label="Start a Loan" /> -->
+                                    <aura:if isTrue="{!v.showSpinner}">  
+                                    	<lightning:spinner variant="brand" size="large"/>
+                                    </aura:if> 
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2"  >
                                 </div>                        
@@ -1146,7 +1203,9 @@
                                                       label="New Scenario" onclick="{!c.reset}" class="senario_button" />
                                     &nbsp;
                                     <aura:if isTrue="{!v.Environment=='Community'}">                                       
-                                    	 
+                                    	 <!-- SFDC-487 -->   <lightning:button aura:id="sal" variant="brand" 
+                                         label="Start Application" onclick="{!c.Start_newloan2}" class="senario_button" />
+                                         &nbsp;  
                                         <span id="requestbtn">
                                             <lightning:button aura:id="outputButton1" variant="brand" 
                                                               label="Request Scenario Package" 
@@ -1161,9 +1220,9 @@
                                                           onclick="{!c.shw_capacityPopup}" class="senario_button" />
                                         &nbsp;
                                         
-                                        <lightning:button aura:id="outputButton3" variant="brand" 
+                                       <!-- SFDC-487 <lightning:button aura:id="outputButton3" variant="brand" 
                                                           label="Print" 
-                                                          onclick="{!c.printDocument}" class="senario_button" /> 
+                                                          onclick="{!c.printDocument}" class="senario_button" /> -->                                                          
                                         
                                     </aura:if>  
                                     <aura:if isTrue="{!v.Environment!='Community'}">                                       
@@ -1335,6 +1394,50 @@
                                     </div><br/>
                                     <div class="slds-grid">
                                         <div class="slds-col">
+                                             <!--SFDC-567-->
+                                            <h1 style="font-weight:bold;">{!$Label.c.PartnerAppDateLabel}</h1>                                              
+                                            <form class="slds-form--inline">
+                                                <div class="slds-form-element__control">
+                                                    <input type = "hidden" id = "secret"/>
+                                                    <ui:inputDate aura:id="expname" 
+                                                                  change="{!c.myAction}"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.datepick}"
+                                                                  required="true"
+                                                                  displayDatePicker="true"
+                                                                  format="MM/dd/yyyy" updateon="change"
+                                                                  />
+                                                    <label id = "error" style = "color:red"/>
+                                                </div>                                                
+                                                <div class="slds-form-element">
+                                                </div>                                                
+                                                <div >
+                                                    <span class="t"  style="color:red">
+                                                        {!v.text}
+                                                    </span>
+                                                </div> 
+                                            </form>                                            
+                                            <aura:if isTrue="{!v.isOpen}">
+                                                <br/>
+                                                <br/>                                                
+                                                <div class = "slds-form-element">
+                                                    <ui:outputText value="By entering the application date, I certify that this is the date that I collected the required pieces of information considered to be an application and that One Reverse will prepare and send a Good Faith Estimate (GFE) package directly to the client. I am aware this will occur whether I finish the registration process or not"/>
+                                                </div>
+                                                <br/>
+                                                <br/>                                                
+                                                <div class = "" >
+                                                    <div style="display:none">
+                                                        <textarea id="inputtxt" ></textarea>
+                                                    </div>                                                    
+                                                    <p>If you have a Fannie Mae 3.2 file, please upload it and click “Start Application”. If you do not have a 3.2 file, please just click “Start Application” to manually enter your loan information.
+                                                    </p>  <br></br>
+                                                    <input type="file" class="file" label="Upload your client's 1003 file (FNMA 3.2 format)" 
+                                                           aura:id="file" id="fileInput" name="fileInput" multiple="false"   onchange="{!c.BindData}"
+                                                           accept=".FNM" />
+                                                </div>                                                
+                                                <br/><br/>      
+                                            </aura:if>      
+                                                <!--SFDC-567-->
                                             <div style="text-align:left">
                                                 <button style="background-color:#6C9F2E !important;" class="slds-button slds-button--inverse" onclick="{!c.start_newloan}" >Start Application</button>
                                                 <button class="slds-button slds-button--inverse" onclick="{!c.shw_capacityPopupClose}" >Cancel</button>
@@ -1375,4 +1478,13 @@
     <aura:if isTrue="{!v.show_sharing_popup}">
         <c:ShareScenarioCmp selected_record="{!v.selected_record}" isShared="{!v.isShared}" show_sharing_popup="{!v.show_sharing_popup}"/>
     </aura:if>
+    <!-- SFDC-487-->
+    <c:Strat_newloanFromSavedsenarioPopup ApplicationDate="{!v.ApplicationDate}" 
+                                          displayTab="{!v.displayTab}" 
+                                          showLoanId="{!v.showLoanId}" 
+                                          showLoan="{!v.showLoan}" 
+                                          render_popup="{!v.render_popup}" 
+                                          senario_id="{!v.ScenarioID}" 
+                                          LRateType="{!v.LRateType}" 
+                                          LMortgageAppliedFor="{!v.LMortgageAppliedFor}"/> 
 </aura:component>

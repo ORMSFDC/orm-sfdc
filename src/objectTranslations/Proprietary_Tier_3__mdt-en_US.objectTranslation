@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <label><!-- Credit to Borrower --></label>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- LPC --></label>
         <name>Credit_to_Borrower__c</name>
     </fields>
     <fields>
-        <label><!-- Origination to Partner --></label>
+        <label><!-- HeloMargin --></label>
+        <name>HeloMargin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Orig to ORM --></label>
         <name>Origination_to_Partner__c</name>
     </fields>
     <fields>
-        <label><!-- Price --></label>
+        <label><!-- Broker Comp --></label>
         <name>Price__c</name>
     </fields>
     <fields>
-        <label><!-- Rate --></label>
-        <name>Rate__c</name>
+        <label><!-- Servicing Fee --></label>
+        <name>Servicing_Fee__c</name>
     </fields>
     <caseValues>
         <plural>false</plural>

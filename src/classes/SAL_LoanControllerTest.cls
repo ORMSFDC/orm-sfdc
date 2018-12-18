@@ -2,19 +2,12 @@
 public class SAL_LoanControllerTest {   
     @IsTest Static void SaveLoanTest(){  
          Set<String> customerUserTypes = new Set<String> {'CSPLiteUser', 'PowerPartner', 'PowerCustomerSuccess',   'CustomerSuccess'};
-       // Account portalAccount = [select Id from Account where Assigned_PCS__c != null limit 1];
-       // Contact contact = [select Id from Contact where AccountId =: portalAccount.Id limit 1];
         
-        //Profile pro = [SELECT Id FROM Profile WHERE Name='System Administrator'];
         User AdminUser =  [ select Id from User where Id = :UserInfo.getUserId()];
          
         system.runAs(AdminUser){
-            // system.debug('ProFile--- '+pro.Id);
-           // UserRole UR = [Select PortalType, PortalAccountId From UserRole where PortalType ='Partner' limit 1];
-            //Profile p = [select Id,name,UserType from Profile where UserType = 'PowerPartner' and Name = 'ORM Partners' limit 1];
             Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
             UserRole UR=[Select Id from UserRole where Name='Partner Care Specialist'];
-            //system.debug('ProUserRole--- '+ProUserRole.Id);
                system.debug('AdminUser--- '+AdminUser.Id);
         String orgId = UserInfo.getOrganizationId();
         String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
@@ -209,9 +202,7 @@ public class SAL_LoanControllerTest {
                               TimeZoneSidKey='America/Los_Angeles');
         insert user1;            
         system.runAs(user1)
-        {
-           
-            
+        {   
             QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
             QLMSAE1.Email__c='abc@glx.com';
             QLMSAE1.isActive__c=true;
@@ -242,22 +233,6 @@ public class SAL_LoanControllerTest {
                 AccountId = portalAccount.Id);
             insert contact;  
             
-             
-            //UserRole UR=[Select Id from UserRole where Name='Partner Care Specialist'];
-            //system.debug('ProUserRole--- '+ProUserRole.Id);
-               //system.debug('AdminUser--- '+AdminUser.Id);
-      /* Profile pro = [SELECT Id FROM Profile WHERE Name='Portal Loan Processors'];  
-        String orgId1 = UserInfo.getOrganizationId();
-        String dateString1 = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
-        Integer randomInt1 = Integer.valueOf(math.rint(math.random()*1000000));
-        String uniqueName1 = orgId1 + dateString1 + randomInt1;
-        User userIn = new User(Alias = uniqueName1.substring(18, 23),  email = uniqueName1 + '@test1' + orgId1 + '.org',
-                              Username = uniqueName1 + '@test1' + orgId1 + '.org', 
-                              EmailEncodingKey='UTF-8', LastName='Tester', LanguageLocaleKey='en_US', 
-                              LocaleSidKey='en_US', ProfileId = pro.Id,ContactId= contact.Id,
-                              TimeZoneSidKey='America/Los_Angeles');
-        insert userIn; */
-            
             List<Client__c> clientList;
             List<Client__c> clientListReturned;
             Loan_New__c loanInsert = new Loan_New__c(
@@ -287,15 +262,16 @@ public class SAL_LoanControllerTest {
         user usr = [SELECT Id FROM user WHERE  profileid=:p.id and isactive=true limit 1];
         system.runAs(usr)
         {
+        StateLisenceResponse objFc =new StateLisenceResponse();
+            objFc.IsLicenseValidated=true;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Type_of_Institution__c='State charter',
                 Cell__c='1236547410',
-                //QLMS_Account_Executive__c=QLMSAE1.ID,
-                //Assigned_PCS__c=user1.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New');
+                Partner_Lead_Status__c='New',
+                partner_type__c = 'Premier');
             insert portalAccount;
             Contact contact = new Contact(
                 LastName='LastName', 
@@ -338,6 +314,7 @@ public class SAL_LoanControllerTest {
             List<string> lst1=SAL_LoanController.getZipData('90001');
             List<string> lst2=SAL_LoanController.getRateFixProduct(); 
             List<string> lst3=SAL_LoanController.getHeloRate();           
+            List<string> lst4=SAL_LoanController.getARMRate();  //SFDC-377
             Test.stopTest();
         }
         }
@@ -363,13 +340,12 @@ public class SAL_LoanControllerTest {
                 
                 Account portalAccount = new Account(
                 Name='portalAccount',
-                Type_of_Institution__c='Federal charter',
+                Type_of_Institution__c='State Charter',
                 Cell__c='1236547410',
-                //QLMS_Account_Executive__c=QLMSAE1.ID,
-                //Assigned_PCS__c=user1.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New');
+                Partner_Lead_Status__c='New',
+                partner_type__c = 'Premier');
             insert portalAccount;
             Id ContactrecordTypeId = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -386,16 +362,6 @@ public class SAL_LoanControllerTest {
                 AccountId = portalAccount.Id);
             insert contact; 
                 // 
-        /*String orgId1 = UserInfo.getOrganizationId();
-        String dateString1 = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
-        Integer randomInt1 = Integer.valueOf(math.rint(math.random()*1000000));
-        String uniqueName1 = orgId1 + dateString1 + randomInt1;
-        User userIn = new User(Alias = uniqueName1.substring(18, 23),  email = uniqueName1 + '@test1' + orgId1 + '.org',
-                              Username = uniqueName1 + '@test1' + orgId1 + '.org', 
-                              EmailEncodingKey='UTF-8', LastName='Tester', LanguageLocaleKey='en_US', 
-                              LocaleSidKey='en_US',  ProfileId = p.Id,userroleid=UR.ID, ContactId= contact.Id,
-                              TimeZoneSidKey='America/Los_Angeles');
-        insert userIn;*/
                 
                 Loan_New__c loanInsert = new Loan_New__c(Subject_Property_State__c='California',
                                                          IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
@@ -425,18 +391,24 @@ public class SAL_LoanControllerTest {
                 Loan_New__c obj=SAL_LoanController.TabsValidatedData(loanInsert.id);
                 String ReturnVal1 = SAL_LoanController.getOrigination('5.060');
                 String ReturnVal2 = SAL_LoanController.getBorrower('5.060');
+                //SFDC-289
                 List<String> ReturnVal3 = SAL_LoanController.getRateFixedPriceTier1();
                 List<String> ReturnVal4 = SAL_LoanController.getRateFixedPriceTier2();
-                
+                List<String> ReturnVal13 = SAL_LoanController.getRateFixedPriceTier3();
                 String ReturnVal5 = SAL_LoanController.getORMOriginationT1(5.060);
                 String ReturnVal6 = SAL_LoanController.getORMOriginationT2(5.060);
+                String ReturnVal16 = SAL_LoanController.getORMOriginationT3(5.060);                
                 String ReturnVal7 = SAL_LoanController.getORMBorrowerT1(5.060);
                 String ReturnVal8 = SAL_LoanController.getORMBorrowerT2(5.060);
+                String ReturnVal15 = SAL_LoanController.getORMBorrowerT3(5.060);                
                 List<String> ReturnVal9 = SAL_LoanController.getHeloRateTier1();
                 List<String> ReturnVal10 = SAL_LoanController.getHeloRateTier2();
+                List<String> ReturnVal14 = SAL_LoanController.getHeloRateTier3();
                 String ReturnVal11 = SAL_LoanController.getHeloOrigination('5.060');
                 String ReturnVal12 = SAL_LoanController.getHeloMargin('3.060');
-                
+                List<String> ReturnVal02 = SAL_LoanController.getArmRateTier1(); //SFDC-377
+                List<String> ReturnVal03 = SAL_LoanController.getArmRateTier2();
+                List<String> ReturnVal04 = SAL_LoanController.getArmRateTier3();
                 Test.stopTest();
             }
       
@@ -445,6 +417,9 @@ public class SAL_LoanControllerTest {
         Test.startTest();
         SAL_LoanController.getLoanOfficerList();
         SAL_LoanController.getStates();
+        SAL_LoanController.getStatesPur();
+        SAL_LoanController.get_heloStatesPur();
+        SAL_LoanController.get_heloStatesRefi();
         Test.stopTest();
         
     }/**/

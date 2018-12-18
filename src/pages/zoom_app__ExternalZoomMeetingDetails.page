@@ -1,0 +1,46 @@
+<apex:page standardController="event" extensions="zoom_app.ExternalZoomMeetingDetailsCtrl" sidebar="false">
+<apex:form id="fm1">
+<apex:pageMessages ></apex:pageMessages>
+<apex:pageMessage severity="info" strength="1" id="msg3" summary="{!$Label.zoom_app__subject_required}"> </apex:pageMessage>
+<apex:pageMessage severity="info" strength="2" id="msg1" rendered="{!IsIncomplete}" summary="{!$Label.zoom_app__maxlimitmessage}"> </apex:pageMessage>
+<apex:pageMessage severity="warning" strength="2" id="msg2" rendered="{!NOT(configCheck)}" summary="{!errorMsg}"> </apex:pageMessage>
+<apex:pageBlock >
+
+<apex:pageBlockSection columns="2">
+<apex:inputField value="{!evnt.ActivityDate}" label="StartDate"/>
+<apex:inputField value="{!evnt1.ActivityDate}" label="EndDate"/>
+</apex:pageBlockSection>
+<center><apex:commandButton action="{!getDetails}" value="Get Details" reRender="fm1" status="status2"/>&nbsp;
+<apex:actionStatus id="status2" startText="processing">  <apex:facet name="start">                               
+                               <img src="/img/loading.gif" />&nbsp;&nbsp; <b> Please Wait....... </b>                        
+                           </apex:facet></apex:actionStatus></center>
+</apex:pageBlock>
+<apex:actionFunction name="getDetails" action="{!getDetails}" reRender="block1" status="status1" />
+<apex:pageBlock id="block1" >
+<apex:pageBlockButtons location="top">
+
+<apex:commandButton value="Create Events" action="{!generateEvents}" oncomplete="getDetails();"/>
+</apex:pageBlockButtons>
+
+<apex:actionFunction name="checkAll" action="{!checkAll}" reRender="table1" status="status1" >
+
+ </apex:actionFunction>
+<apex:actionStatus id="status1" startText="Please Wait......." >  </apex:actionStatus>
+<apex:outputPanel id="panel1">
+<apex:pageBlockTable value="{!meetings}" var="m" id="table1">
+
+<apex:column > <apex:facet name="header" ><apex:inputCheckbox value="{!headerCheck}" id="hdcheck" onChange="checkAll();" /></apex:facet><apex:inputCheckbox value="{!m.selected}" /> </apex:column>
+<apex:column headerValue="Relate to Contact / Lead"> <apex:inputField value="{!m.evt.WhoId}"/> </apex:column>
+<apex:column headerValue="Subject"> <apex:inputField value="{!m.evt.subject}"/> </apex:column>
+<apex:column value="{!m.participants}" headerValue="Participants"> </apex:column> 
+<apex:column value="{!m.metrics.duration}" headerValue="Duration" />
+<apex:column value="{!m.metrics.id}" headerValue="Meeting Id" />
+<apex:column value="{!m.localStartTime}" headerValue="Start Time" />
+<apex:column value="{!m.localEndTime}" headerValue="End Time" />
+
+<apex:column value="{!m.metrics.uuid}" headerValue="uuid"> </apex:column>
+</apex:pageBlockTable>
+</apex:outputPanel>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

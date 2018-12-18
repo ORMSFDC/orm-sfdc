@@ -445,35 +445,47 @@
     RestrictZeroInPhoneFirstTime:function(component, event, helper,compId) {
         var inz = component.get(compId);
         var digit = parseInt(inz[0]);
+	var alphabet = (""+inz).replace(/\D/g, ''); //SFDc-378
         if(digit == 0)
         {            
             component.set(compId, inz.substring(0, inz.length - 1));
-        }              
+        }   
+	else{ //SFDc-378
+            component.set(compId, alphabet);
+        }
     },
-    //Validate Phone
-    FormatPhonehelper: function(component, event, helper){        
-        var a = component.get('v.selectedRecord.Phone');//.find("inputPhone").get("v.value"); 
+    
+    //Validate Phone //SFDC-378
+    FormatPhonehelper: function(component, event, helper){     
+        var a = component.get('v.selectedRecord.Phone');
         var rxp = new RegExp("^(\\d)\\1{9}$");        
-        var  isRegValid = rxp.test(a);
+        var isRegValid = rxp.test(a);
+        var flagR = false;
         if(isRegValid)
         {
-            component.set("v.selectedRecord.Phone_Number__c",'');
+            flagR = true;
         }else{
             var s2 = (""+a).replace(/\D/g, '');
             var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);    
-            var result= (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];            
-            component.set("v.selectedRecord.Phone_Number__c",result);
+            var result= (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];  
+	    var EmailInputValue = component.get("v.selectedRecord.Email"); //SFDc-378
+            if (result == null && $A.util.isEmpty(EmailInputValue)){
+                flagR = true;
+            }else{
+            	component.set("v.selectedRecord.Phone",result); 
+            	flagR = false;
+            }
         }
+        return flagR;
     },
-    //Validation- for either enter email or Phone
+    
+    //Validation- for either enter email or Phone //SFDC-378
     EmailOrPhoneRequired: function(component, regex, msg, aura_id) {        
         var regExpEmailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         var flagR = false;
-        try{
-            var EmailInput = component.find("inputEmail");
-            var EmailInputValue = EmailInput.get("v.value");
-            var PhoneInput = component.find("inputPhone");
-            var PhoneInputValue = PhoneInput.get("v.value");
+        try{            
+            var EmailInputValue = component.get("v.selectedRecord.Email");
+            var PhoneInputValue = component.get("v.selectedRecord.Phone");
             if ($A.util.isEmpty(EmailInputValue)&&  $A.util.isEmpty(PhoneInputValue))
             {
                 flagR = true;             
@@ -483,27 +495,24 @@
         }catch(err){}
         return flagR
     },
-    //Email Format Validation
-    EmailValidation:function(component, regex, msg, aura_id) {
+    //Email Format Validation  //SFDC-378
+    EmailValidation:function(component, regex, msg, aura_id) { 
         var regExpEmailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        var flagR = false;
         try{
-            var EmailInput = component.find("inputEmail");
-            var EmailInputValue = EmailInput.get("v.value");
-            if(!$A.util.isEmpty(EmailInputValue)&& !EmailInputValue.match(regExpEmailformat))
-            {
-                EmailInput.set("v.errors", [{ message:"Please enter valid email id."}]); 
-                flagR=true;
-            }
-            else{
-                EmailInput.set("v.errors", null);             
+            var flagR = false;        
+            var EmailInput = component.get("v.selectedRecord.Email");
+            if(!EmailInput == "" && !EmailInput.match(regExpEmailformat)){; 
+                flagR = true;
+            }else{
+                component.set("v.errors",null);
             }
         }catch(err){}
         return flagR;
     },
+
     //Save Scenario
-    SaveScenario: function(component, event, helper) {
-        //   alert('saa');
+    SaveScenario: function(component, event, helper) {   
+        component.set('v.showSpinner',true);
         var FName, LName, Address, Zip, Phone = '',
             errorlbl, EmailVal = '';
         EmailVal = component.get('v.selectedRecord.Email');
@@ -651,6 +660,37 @@
             document.getElementById("savebtn").style.display = "None";
             component.set("v.selected_record",result);
             console.log('result ',result);
+            //component.set('v.showSpinner',false);  SFDC-487
+            component.set('v.printcounter',0);//SFDC-566
+	    component.set('v.capacitycounter',0);
+            //SFDC-487 start
+            var comm = component.get("v.Environment");
+            if(comm == "Community"){
+            var ScenarioID = component.get("v.ScenarioID")
+            var action2 = component.get("c.SendMailTMP");
+            
+            console.log('comm',comm);
+            action2.setParams({
+                "ScenarioID": ScenarioID
+            });        
+            action2.setCallback(this, function(data) {
+                component.set("v.Messages", "Scenario saved, request was sent successfully and will be emailed to you within 5 minutes. If you do not receive it, please check your junk and spam folders. If you cannot locate your scenario package, please contact your AE.");
+                component.set("v.showAlert", true);            
+                document.getElementById("requestbtn").style.display = "None";
+                component.set('v.showSpinner',false); //Helo fix
+            });
+            $A.enqueueAction(action2);
+            
+            //SFDC-396
+            var action3 = component.get("c.createAETask");
+	    action3.setParams({
+                "ScenarioID": ScenarioID
+            }); 
+            action3.setCallback(this,function(){          
+            });       
+            $A.enqueueAction(action3);
+        }
+            //SFDC-487 end
         });        
         $A.enqueueAction(action);       
     },
@@ -787,12 +827,12 @@
     optionChanged:function(component, event, helper){
         var lnId= component.get("v.showLoanId");
         $A.createComponent(
-            "c:StartNewLoanCmp",
+            "c:StartNewLoanProductContainer",
             
             {
                 "ApplicationDate":component.get("v.ApplicationDate"),
                 "LoanId":component.get("v.showLoanId"), 
-                "fromPopup":true
+                "fromPopup":false
             },
             function(newCmp){
                 if (component.isValid()) {
@@ -820,7 +860,8 @@
             'dob':dobIs,
             'ev':''+component.get('v.EHV'),
             'pm':''+pmIs,
-            'ADOValIs':''+ADOVal
+            'ADOValIs':''+ADOVal,
+            'Tieris':component.get('v.Tier_Value') //SFDC - 289 Added this for 3rd tier backend calculator 
         });
         
         action.setCallback(this,function(data){            
@@ -862,9 +903,11 @@
                 var pricing = 0;
                 
                 var pricingValuesfromMetadata;
+                
                 try{
                     console.log(Adjmetadatavalues,AdjustableParseddata[i].Margin);
                     pricingValuesfromMetadata =    Adjmetadatavalues[AdjustableParseddata[i].Margin];
+                    AdjustableParseddata[i].No_Margin = pricingValuesfromMetadata; //SFDC-377
                 }catch(err){
                     
                     console.log('errr ',err);
@@ -1040,7 +1083,7 @@
                     component.set("v.downPyt",ParseddataHelo[i].MFD);
                 }else{
                     ParseddataHelo[i].MFD    = 0;
-                    console.log('down payment parse ', component.get('v.downPyt'));
+                    console.log('down payment parse helo ', component.get('v.downPyt'));
                 }
             }
             try{

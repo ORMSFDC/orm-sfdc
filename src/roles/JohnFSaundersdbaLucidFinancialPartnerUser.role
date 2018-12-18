@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>John F Saunders dba Lucid Financial Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>John F Saunders dba Lucid Financial Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>JohnFSaundersdbaLucidFinancialPartnerManager</parentRole>
+</Role>

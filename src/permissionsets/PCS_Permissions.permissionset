@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>Give sharing permission on Loans, should be able to just view PCS HOTLIST dashboard</description><hasActivationRequired>false</hasActivationRequired><label>PCS Permissions</label><license>Salesforce</license><objectPermissions>
+﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>Give sharing permission on Loans, should be able to just view PCS HOTLIST dashboard</description><hasActivationRequired>false</hasActivationRequired><label>PCS Permissions</label><license>Salesforce</license>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -6,10 +7,21 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>Loan_New__c</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions><tabSettings>
+    </objectPermissions>
+    <tabSettings>
         <tab>PCS_Hotlist</tab>
         <visibility>Visible</visibility>
-    </tabSettings><tabSettings>
+    </tabSettings>
+    <tabSettings>
         <tab>PCS_Workflow</tab>
         <visibility>Visible</visibility>
-    </tabSettings></PermissionSet>
+    </tabSettings>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ExportReport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunReports</name>
+    </userPermissions>
+</PermissionSet>

@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <label><!-- Family Size --></label>
         <name>Family_Size__c</name>
         <picklistValues>
@@ -17,22 +18,32 @@
             <masterLabel>4 or more</masterLabel>
             <translation><!-- 4 or more --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Mid West Residual --></label>
         <name>MidWest__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- North East Residual Income --></label>
         <name>NorthEast__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- South Residual Income --></label>
         <name>South__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- West Residual Income --></label>
         <name>West__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Id --></help>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
     </fields><caseValues>
         <plural>false</plural>
         <value>Residual Income</value>
     </caseValues><caseValues>
         <plural>true</plural>
         <value>Residual Incomes</value>
-    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>
+    </caseValues><startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

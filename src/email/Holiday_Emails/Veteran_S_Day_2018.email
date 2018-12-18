@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <!-- Facebook sharing information tags -->
+	<meta property="og:title" content="%%subject%%" />
+
+    <title>%%subject%%</title>
+</head>
+
+<body bgcolor="#FAFAFA" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100% !important; width: 100% !important; background-color: #FAFAFA; margin: 0; padding: 0;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" id="bodyTable" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #FAFAFA; border-collapse: collapse !important; height: 100% !important; margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; width: 100% !important" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" id="bodyCell" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: 100% !important; width: 100% !important; border-top-width: 4px; border-top-color: #dddddd; border-top-style: solid; margin: 0; padding: 20px;" valign="top"><!-- BEGIN TEMPLATE // -->
+			<table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; width: 600px; border: 1px solid #dddddd;">
+				<tbody>
+					<tr>
+						<td align="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top"><!-- BEGIN BODY // -->
+						<table border="0" cellpadding="0" cellspacing="0" id="templateBody" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #FFFFFF; border-bottom-color: #CCCCCC; border-bottom-style: solid; border-bottom-width: 1px; border-collapse: collapse !important; border-top-color: #FFFFFF; border-top-style: solid; border-top-width: 1px; mso-table-lspace: 0pt; mso-table-rspace: 0pt" width="100%">
+							<tbody>
+								<tr>
+									<td align="left" class="preheaderContent" pardot-region="preheader_content00" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #808080; font-family: Helvetica; font-size: 10px; line-height: 12.5px; text-align: left; padding: 10px 20px; background-color: #2080bd;" valign="top">
+									<div style="text-align: center;"><img alt="" border="0" height="34" src="http://go.pardot.com/l/476012/2018-01-28/7svvp/476012/25824/ORMS_Logo.png" style="width: 231px; height: 34px; border-width: 0px; border-style: solid;" width="231"></div>
+									</td>
+								</tr>
+								<tr>
+									<td align="left" class="headerContent" pardot-region="header_image" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; background-color: #2080bd; mso-table-rspace: 0pt; color: #FFFFFF; font-family: Helvetica; font-size: 20px; font-weight: bold; line-height: 25px; text-align: left; vertical-align: middle; padding: 10px 20px;" valign="top">
+									<div style="text-align: center;">Happy Veteran's Day<br />
+November 12, 2018</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td align="left" class="bodyContent" pardot-region="body_content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #505050; font-family: Helvetica; font-size: 14px; line-height: 21px; text-align: left; padding: 5px;" valign="top">
+										<div align="center">
+											<img src="http://bookoforms.com/wp-content/uploads/2018/11/2018-Veterans-Day-Header.png" width="600" height="206" alt="Happy Veteran's Day">
+											<br><br>
+											<p style="font-size: 20px; color: #0580c2; border-bottom: solid 1px #0580c2; display: inline; padding-bottom: 3px;">Hi {!Contact.FirstName}</p></div>
+										<br>
+										One Reverse Mortgage Services will be open for business while observing Veteran's Day on Monday,  November 12th. Our office will be open during regular business hours. Please be aware that this day is a non-funding, non-closing, non-rescission bank holiday.
+ <br><br>
+As a member of the Rock Family of Companies, we would like to thank all those who have served in our armed forces. We appreciate the sacrifices that they have made and continue to make while defending our freedom. We’re proud to have more than 600 veteran team members working alongside us. These friends, family members, neighbors, and leaders within our community have made an outstanding impact on the path of this country. That’s why we’ve decided to stand by veterans – not only those who work among us, but also those in the community who could use our help. Side by side with Quicken Loans, we have committed ourselves to combating veteran homelessness. After all – they’ve fought for us. Now, it’s our turn to fight for them.
+<br><br> 
+Since beginning our partnership with Community Solutions in June of this year, we’ve helped nearly 6,000 homeless veterans find a permanent home. Thanks to these and other efforts, we’ve seen veteran homelessness decrease by 11% in Detroit and 19% in Phoenix. We’re proud to be part of a company that not only talks the talk but walks the walk.
+ <br><br>
+Thank you to all those who have risked their lives to defend ours. We honor your bravery, courage, and sacrifice.
+										<br><br>
+										Thank you for your business!
+										<br><br>
+Best,<br>
+{!Contact.OwnerFullName}<br>
+{!Contact.OwnerEmail}<br>
+{!Contact.OwnerTitle}<br>
+{!Contact.OwnerPhone}<br>
+										<br>
+										Follow us on <a href="https://www.facebook.com/onereverseservices/">Facebook</a> &amp; <a href="https://twitter.com/official_ORMS">Twitter</a>!
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // END BODY --></td>
+					</tr>
+					<tr>
+						<td align="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top"><!-- BEGIN FOOTER // --></td>
+						<!-- // END FOOTER --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // END TEMPLATE --></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+
+</body>
+</html>

@@ -10,13 +10,10 @@
         <field>Loan_New__c.Client_Name__c</field>
     </columns>
     <columns>
+        <field>Loan_New__c.Loan_Status_Change_Date__c</field>
+    </columns>
+    <columns>
         <field>Loan_New__c.Subject_Property_State__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Title_Company__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.PropertyAppraisalValue__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Rate_Type__c</field>
@@ -25,16 +22,22 @@
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.PCS_at_Partner_Level__c</field>
+        <field>Loan_New__c.Anticipated_Closing_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.PropertyAppraisalValue__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Title_Company__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.ORMS_AE__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Related_Partner__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -50,7 +53,7 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.PCS_at_Partner_Level__c</column>
+            <column>Loan_New__c.PCS_at_Loan_Level__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Eric Sele</value>

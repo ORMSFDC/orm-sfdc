@@ -1,3 +1,11 @@
+/**
+ * @description: used for posting chatter activity on related acc from Opportunity and vice versa   
+ * @author: Sahitya
+ * @date: 04/17/2017
+ *
+ * changelog:
+ * 12/04/2018: Sahitya - SFDC-613  
+ */
 trigger ChatterFeedAfterInsert on FeedItem (after insert) {
   Set<Id> parentIdSet = new Set<Id>();
     List<Opportunity> oppList = new List<Opportunity>();
@@ -22,7 +30,8 @@ trigger ChatterFeedAfterInsert on FeedItem (after insert) {
         
         oppList = [Select id, AccountId From Opportunity Where Id In :parentIdSet];
         system.debug('------------'+oppList);
-        accList = [select id, (select id, name from Opportunities) from account Where Id In :parentIdSet];
+        // SFDC-613
+        accList = [select id, (select id, name from Opportunities Where Recordtype.Name = 'Partner Onboarding') from account Where Id In :parentIdSet];
         system.debug('------------'+accList);
         
         for(Account a : accList){

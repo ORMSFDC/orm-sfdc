@@ -10,9 +10,6 @@
         <scale>0</scale>
     </aggregates>
     <columns>
-        <field>Loan_New__c.LoanStatus__r$CreatedDate</field>
-    </columns>
-    <columns>
         <field>Loan_New__c$LoanNumber__c</field>
     </columns>
     <columns>
@@ -35,6 +32,9 @@
     </columns>
     <columns>
         <field>Loan_New__c$Remove_Dups_Loans__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c$Loan_Status_Change_Date__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -82,7 +82,7 @@
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Loan_New__c.LoanStatus__r$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

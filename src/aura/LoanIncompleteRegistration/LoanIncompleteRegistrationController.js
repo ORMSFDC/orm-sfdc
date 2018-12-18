@@ -45,14 +45,13 @@
 
     },
 
-    LoanMenu: function (component, event, helper) {
-        debugger
+    LoanMenu: function (component, event, helper) {        
         var x = event.target.id;
         var RType = event.target.name;
-
         var evt = $A.get("e.c:NavigatetoLoanMenu");
         evt.setParams({ LoanId: x })
         evt.setParams({ ERateType: RType })
+        evt.setParams({ fromPopup: true}) //SFDC - 360
         evt.fire();
     },
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- External Zoom Meetings Schedule Id --></label>
+        <name>zoom_app__External_Zoom_Meetings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zoom Metrics Schedule Id --></label>
+        <name>zoom_app__Get_Zoom_Meeting_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Login Type --></label>
+        <name>zoom_app__Login_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Zoom API Key --></help>
+        <label><!-- Zoom API Key --></label>
+        <name>zoom_app__Zoom_API_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Zoom Secret Key --></help>
+        <label><!-- Zoom API Secret --></label>
+        <name>zoom_app__Zoom_API_Secret__c</name>
+    </fields>
+    <fields>
+        <help><!-- Zoom Url e.g. http://zoom.us/j/ --></help>
+        <label><!-- Zoom url --></label>
+        <name>zoom_app__Zoom_url__c</name>
+    </fields>
+</CustomObjectTranslation>

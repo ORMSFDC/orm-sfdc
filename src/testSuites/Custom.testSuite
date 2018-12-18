@@ -58,7 +58,6 @@
     <testClassName>LightningForgotPasswordControllerTest</testClassName>
     <testClassName>LightningLoginFormControllerTest</testClassName>
     <testClassName>LightningSelfRegisterControllerTest</testClassName>
-    <testClassName>loanAttachment_test</testClassName>
     <testClassName>LoanControllerTest</testClassName>
     <testClassName>LoanDateControllerTest</testClassName>
     <testClassName>LoanMenuControllerTest</testClassName>
@@ -81,8 +80,6 @@
     <testClassName>Opportunity_field_populatorTest</testClassName>
     <testClassName>PartnerHomeAfterLoginControllerTest</testClassName>
     <testClassName>PartnerResourcesControllerTest</testClassName>
-    <testClassName>partnerStatusScheduler_Test</testClassName>
-    <testClassName>partnerStatus_test</testClassName>
     <testClassName>pdfSavedScenarioControllerTest</testClassName>
     <testClassName>PipelineConditionPDFControllerTest</testClassName>
     <testClassName>PipeLineControllerTest</testClassName>

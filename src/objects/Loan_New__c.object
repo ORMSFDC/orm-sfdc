@@ -205,17 +205,6 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Appraisal_Expiration_Date__c</fullName>
-        <externalId>false</externalId>
-        <formula>Appraisal_Effective_Date__c  + 180</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Appraisal Expiration Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Appraisal_Ordered_Date__c</fullName>
         <externalId>false</externalId>
         <label>Appraisal Ordered Date*</label>
@@ -1061,18 +1050,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Hazard_Insurance__c</fullName>
-        <externalId>false</externalId>
-        <label>Annual Hazard Insurance</label>
-        <precision>17</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Household_Members__c</fullName>
@@ -3139,20 +3116,6 @@ IF(
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Team__c</fullName>
-        <description>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</description>
-        <externalId>false</externalId>
-        <formula>Related_Individual__r.Account.Account_Executive_Name__r.Team__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</inlineHelpText>
-        <label>Team</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Tell_the_story__c</fullName>
         <externalId>false</externalId>
         <label>Tell the story</label>
@@ -3443,16 +3406,6 @@ IF(
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>CreditIsComplete__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>CreditIsComplete</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Credit_Reissue_Vendor__c</fullName>
         <externalId>false</externalId>
         <label>Credit Reissue Vendor</label>
@@ -3713,13 +3666,309 @@ IF(
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>Loan_Layout</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Loan</label><nameField>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Appraisal_Effective_Date__c  + 120</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Appraisal Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Wholesale</fullName>
+                    <default>true</default>
+                    <label>Wholesale</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Closing_Month__c</fullName>
+        <description>This field is used to evaluate month from Actual Closing date</description>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH(Closing_Date__c),
+1, "January",
+2, "February",
+3, "March", 
+4, "April", 
+5, "May", 
+6, "June",
+7, "July",
+8, "August",
+9, "September",
+10, "October",
+11, "November",
+12, "December",
+"None") &amp;"  "&amp; TEXT(YEAR(Closing_Date__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Closing Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Transfer_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Transfer Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Goal</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hazard_Insurance__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Hazard Insurance</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Last_Chatter_Activity_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Chatter Activity By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Chatter_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Chatter Activity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Officer_Phone_Main__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Officer Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Officer_Phone__c</fullName>
+        <description>Do not delete! it is not a duplicate field. this is referenced for Click to call Loan Officer Phone field.</description>
+        <externalId>false</externalId>
+        <formula>LoanOfficer__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loan Officer Phone F</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Processor_Phone_Main__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Processor Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Processor_Phone__c</fullName>
+        <description>Do not delete! it is not a duplicate field. this is referenced for Click to call Loan Processor Phone field.</description>
+        <externalId>false</externalId>
+        <formula>Loan_Processor__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loan Processor Phone F</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Contact_Name_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Contact Name 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Contact Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Contact_Phone_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Contact Phone 2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Other_Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Contact Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Other_Contact_Type_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Contact Type 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Contact_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Contact Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SF_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SF ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <description>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</description>
+        <externalId>false</externalId>
+        <formula>Related_Partner__r.Owner.Team__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</inlineHelpText>
+        <label>Team</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UW__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>UW</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Loans2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>update__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>DELETE</description>
+        <externalId>false</externalId>
+        <label>update</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+  <allowInChatterGroups>true</allowInChatterGroups>
+  <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
+  <deploymentStatus>Deployed</deploymentStatus>
+  <enableActivities>true</enableActivities>
+  <enableBulkApi>true</enableBulkApi>
+  <enableChangeDataCapture>false</enableChangeDataCapture>
+  <enableFeeds>true</enableFeeds>
+  <enableHistory>true</enableHistory>
+  <enableReports>true</enableReports>
+  <enableSearch>true</enableSearch>
+  <enableSharing>true</enableSharing>
+  <enableStreamingApi>true</enableStreamingApi>
+  <externalSharingModel>Private</externalSharingModel>
+  <label>Loan</label>
+  <nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Loan ID</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
-    </nameField><pluralLabel>Loans</pluralLabel><searchLayouts>
+    </nameField>
+  <pluralLabel>Loans</pluralLabel>
+  <searchLayouts>
         <customTabListAdditionalFields>Client_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IsActiveFlag__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>LoanNumber__c</customTabListAdditionalFields>
@@ -3753,27 +4002,31 @@ IF(
         <searchResultsAdditionalFields>LoanStatus__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Individual__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Partner__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    </searchLayouts>
+  <sharingModel>ReadWrite</sharingModel>
+  <visibility>Public</visibility>
+
     <listViews>
         <fullName>All_Active_Loans</fullName>
-        <columns>NAME</columns>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
         <columns>Subject_Property_State__c</columns>
-        <columns>Title_Company__c</columns>
-        <columns>PropertyAppraisalValue__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>ORMS_AE__c</columns>
         <columns>LoanStatus__c</columns>
         <columns>Loan_Status_Change_Date__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Team__c</columns>
+        <columns>InitialUnpaidPrincipalBalance__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
         <columns>LoanOfficer__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>LoanStatus__c</field>
             <operation>equals</operation>
-            <value>Proposal,Waiting for Full Package,Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
         </filters>
         <filters>
             <field>IsActiveFlag__c</field>
@@ -3781,6 +4034,162 @@ IF(
             <value>1</value>
         </filters>
         <label>All Active Loans</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Closing</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>Scheduled_Closing_Date__c</columns>
+        <columns>Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <columns>Actual_Funding_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Underwriting Clear to Close,Awaiting Closing,Closed - Awaiting Funding</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans - Closing</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Eric</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>InitialUnpaidPrincipalBalance__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PCS_at_Loan_Level__c</field>
+            <operation>equals</operation>
+            <value>Eric Sele</value>
+        </filters>
+        <label>All Active Loans - Eric</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Kahlieh</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>InitialUnpaidPrincipalBalance__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Application Package Received,Full Application Received - Incomplete</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans - Kahlieh</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Keith</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>InitialUnpaidPrincipalBalance__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PCS_at_Loan_Level__c</field>
+            <operation>equals</operation>
+            <value>Keith Cassidy</value>
+        </filters>
+        <label>All Active Loans - Keith</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Underwriting</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>InitialUnpaidPrincipalBalance__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans - Underwriting</label>
     </listViews>
     <listViews>
         <fullName>All_Loans</fullName>
@@ -3798,18 +4207,8 @@ IF(
         <columns>LAST_UPDATE</columns>
         <columns>OWNER.FIRST_NAME</columns>
         <columns>OWNER.LAST_NAME</columns>
-        <columns>Full_Package_Received_Date__c</columns>
+        <columns>HeloMargin__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>LoanStatus__c</field>
-            <operation>notEqual</operation>
-            <value>Sandbox</value>
-        </filters>
         <label>All Loans</label>
     </listViews>
     <sharingReasons>
@@ -3881,14 +4280,6 @@ $Profile.Name != "System Administrator"
         <errorMessage>Loan Status cannot be changed until 8 days after the Counseling Date.</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Must_fill_ReDisclosure_change_reason</fullName>
-        <active>true</active>
-        <description>Must specify a reason while changing the ReDisclosure Date</description>
-        <errorConditionFormula>ISCHANGED(Recent_Re_disclosure_Date__c) &amp;&amp; (ispickval( ReDisclosure_Reason__c ,'') &amp;&amp;  isblank(Other_ReDisclosure_Reason__c))|| isblank(Recent_Re_disclosure_Date__c) &amp;&amp; (!ispickval( ReDisclosure_Reason__c ,'') ||  !isblank(Other_ReDisclosure_Reason__c))</errorConditionFormula>
-        <errorDisplayField>ReDisclosure_Reason__c</errorDisplayField>
-        <errorMessage>Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting 'Other' in the picklist.</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>ReDiscloure_Other_Reason_fill_textbox</fullName>
         <active>true</active>
         <description>If 'Other' is selected in the ReDisclosure picklist, then the 'Other ReDisclosure Reason' text box must be filled.</description>
@@ -3911,6 +4302,28 @@ $Profile.Name != "System Administrator"
 OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Account_Number__c, "^[1-9]([0-9]{1,45}$)"))))</errorConditionFormula>
         <errorDisplayField>Account_Number__c</errorDisplayField>
         <errorMessage>Account Number should be a valid number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_fill_ReDisclosure_change_reason</fullName>
+        <active>true</active>
+        <description>Must specify a reason while changing the ReDisclosure Date</description>
+        <errorConditionFormula>(
+    NOT(isblank(Re_disclosure_Date__c)) 
+    &amp;&amp;
+    (ispickval(ReDisclosure_Reason__c ,'') &amp;&amp; 
+    isblank(Other_ReDisclosure_Reason__c))
+)
+
+||
+
+(
+    isblank(Re_disclosure_Date__c) 
+    &amp;&amp; 
+    (NOT(ispickval(ReDisclosure_Reason__c ,'')) || 
+    NOT(isblank(Other_ReDisclosure_Reason__c)))
+)</errorConditionFormula>
+        <errorDisplayField>ReDisclosure_Reason__c</errorDisplayField>
+        <errorMessage>Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting 'Other' in the picklist.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

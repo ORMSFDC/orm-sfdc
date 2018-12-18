@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>isActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>isActive</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isPurchase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>isPurchase</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isRefinance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>isRefinance</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>HeloState</label>
+    <pluralLabel>HeloStates</pluralLabel>
+    <visibility>Public</visibility>
+    <listViews>
+        <fullName>All_New</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
+        <columns>isActive__c</columns>
+        <columns>isPurchase__c</columns>
+        <columns>isRefinance__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>MasterLabel</field>
+            <operation>notEqual</operation>
+            <value>DoNotChange</value>
+        </filters>
+        <label>All New</label>
+    </listViews>
+</CustomObject>

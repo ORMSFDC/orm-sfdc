@@ -1,196 +1,231 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Geocode Accuracy</value>
         </caseValues>
         <name>billing_accuracy_geocode_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Address</value>
         </caseValues>
         <name>billing_address_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>City</value>
         </caseValues>
         <name>billing_city_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Country</value>
         </caseValues>
         <name>billing_country_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Country Code</value>
         </caseValues>
         <name>billing_country_code_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Latitude</value>
         </caseValues>
         <name>billing_latitude_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Longitude</value>
         </caseValues>
         <name>billing_longitude_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>State/Province</value>
         </caseValues>
         <name>billing_state_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>State/Province Code</value>
         </caseValues>
         <name>billing_state_code_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Street</value>
         </caseValues>
         <name>billing_street_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Zip/Postal Code</value>
         </caseValues>
         <name>billing_zip_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Geocode Accuracy</value>
         </caseValues>
         <name>shipping_accuracy_geocode_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Address</value>
         </caseValues>
         <name>shipping_address_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing City</value>
         </caseValues>
         <name>shipping_city_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Country</value>
         </caseValues>
         <name>shipping_country_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Country Code</value>
         </caseValues>
         <name>shipping_country_code_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Latitude</value>
         </caseValues>
         <name>shipping_latitude_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Longitude</value>
         </caseValues>
         <name>shipping_longitude_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing State/Province</value>
         </caseValues>
         <name>shipping_state_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing State/Province Code</value>
         </caseValues>
         <name>shipping_state_code_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Street</value>
         </caseValues>
         <name>shipping_street_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <caseValues>
             <plural>false</plural>
             <value>Billing Zip/Postal Code</value>
         </caseValues>
         <name>shipping_zip_account</name>
         <startsWith>Consonant</startsWith>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- AE Transfer Date --></label>
         <name>AE_Transfer_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORM Account Executive Name --></label>
         <name>Account_Executive_Name__c</name>
         <relationshipLabel><!-- Accounts (ORM Account Executive Name) --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Addendum Received Date --></label>
         <name>Addendum_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Addendum Received? --></label>
         <name>Addendum_Received__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Addendum Required?  --></label>
         <name>Addendum_Required__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Affiliated Entities Received Date --></label>
         <name>Affiliated_Entities_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Affiliated Entities --></label>
         <name>Affiliated_Entities__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Number of days since the initial application review. --></help>
         <label><!-- Age (in days) --></label>
         <name>Age__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- App Outstanding Count --></label>
         <name>App_Outstanding_Count__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- App Processed --></label>
         <name>App_Processed__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- App Received --></label>
         <name>App_Received__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- App Sent --></label>
         <name>App_Sent__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Approval Status --></label>
         <name>Approval_Status__c</name>
         <picklistValues>
@@ -205,50 +240,18 @@
             <masterLabel>Previously Active</masterLabel>
             <translation><!-- Previously Active --></translation>
         </picklistValues>
-    </fields><fields>
-        <label><!-- Approval Sub-Status --></label>
-        <name>Approval_Sub_Status__c</name>
-        <picklistValues>
-            <masterLabel>Approved</masterLabel>
-            <translation><!-- Approved --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Denied by Credit Risk</masterLabel>
-            <translation><!-- Denied by Credit Risk --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Excluded Partner</masterLabel>
-            <translation><!-- Excluded Partner --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (DTRT)</masterLabel>
-            <translation><!-- Terminated (DTRT) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Leadership Request)</masterLabel>
-            <translation><!-- Terminated (Leadership Request) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Performance)</masterLabel>
-            <translation><!-- Terminated (Performance) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Production)</masterLabel>
-            <translation><!-- Terminated (Production) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Withdrawn by Partner</masterLabel>
-            <translation><!-- Withdrawn by Partner --></translation>
-        </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Assigned Credit Risk Analyst --></label>
         <name>Assigned_Credit_Risk_Analyst__c</name>
         <relationshipLabel><!-- Accounts (Assigned Credit Risk Analyst) --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Assigned PCS --></label>
         <name>Assigned_PCS__c</name>
         <relationshipLabel><!-- Accounts (Assigned PCS) --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Assistance Type --></label>
         <name>Assistance_Type__c</name>
         <picklistValues>
@@ -263,97 +266,128 @@
             <masterLabel>Site visit</masterLabel>
             <translation><!-- Site visit --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Billing Contact Email --></label>
         <name>Billing_Contact_Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Billing Contact Name --></label>
         <name>Billing_Contact_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Billing Contact Phone Number --></label>
         <name>Billing_Contact_Phone_Number__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Billing Contact Title --></label>
         <name>Billing_Contact_Title__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Broker Agreement Received Date --></label>
         <name>Broker_Agreement_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Broker Agreement --></label>
         <name>Broker_Agreement__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Cell --></label>
         <name>Cell__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Certification and Authorization Date --></label>
         <name>Certification_and_Authorization_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Certification and Authorization --></label>
         <name>Certification_and_Authorization__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Character Checks Received Date --></label>
         <name>Character_Checks_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Character Checks --></label>
         <name>Character_Checks__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- City --></label>
         <name>City__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Com percent --></label>
         <name>Com_percent__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Comp Flat Amount --></label>
         <name>Comp_Flat_Amount__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Comp Maximum --></label>
         <name>Comp_Maximum__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Comp Minimum --></label>
         <name>Comp_Minimum__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Company NMLS ID Expiration Date --></label>
         <name>Company_NMLS_ID_Expiration_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Company NMLS ID Issued Date --></label>
         <name>Company_NMLS_ID_Issued_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Company NMLS ID --></label>
         <name>Company_NMLS_ID__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Contacts Count --></label>
         <name>Contacts_Count__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Corporate Resolution Received Date --></label>
         <name>Corporate_Resolution_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Corporate Resolution --></label>
         <name>Corporate_Resolution__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- County --></label>
         <name>County__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CreditRisk Brokerpckg Days --></label>
         <name>CreditRisk_Brokerpckg_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CreditRisk Complete Days --></label>
         <name>CreditRisk_Complete_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CreditRisk Escalated Days --></label>
         <name>CreditRisk_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CreditRisk Days to Process --></label>
         <name>CreditRisk_Days_to_Process__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CreditRisk FullReview Days --></label>
         <name>CreditRisk_FullReview_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- CreditRisk InitialReview Days --></label>
         <name>CreditRisk_Inprocess_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Credit Risk Package Change Date --></label>
         <name>Credit_Risk_Package_Change_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Check Related for Status change History --></help>
         <label><!-- Credit Risk Package Status --></label>
         <name>Credit_Risk_Package_Status__c</name>
@@ -377,20 +411,25 @@
             <masterLabel>Initial Review</masterLabel>
             <translation><!-- Initial Review --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Credit Risk Process Days --></label>
         <name>Credit_Risk_Process_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- To check whether the assigned AE or CRA or PCS is the current user, for giving a list view --></help>
         <label><!-- Current user is Assigned User? --></label>
         <name>Current_user_is_Assigned_User__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Date Trained --></label>
         <name>Date_Trained__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Days to Process --></label>
         <name>Days_to_Process__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Denial Reason --></label>
         <name>Denial_Reason__c</name>
         <picklistValues>
@@ -449,77 +488,76 @@
             <masterLabel>Unstable financial history</masterLabel>
             <translation><!-- Unstable financial history --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Docs Needed Days --></label>
         <name>Docs_Needed_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Documents Required Date --></label>
         <name>Documents_Required_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Dups --></label>
         <name>Dups__c</name>
-    </fields><fields>
-        <label><!-- E-sign Addendum Provider --></label>
-        <name>E_sign_Addendum_Provider__c</name>
-        <picklistValues>
-            <masterLabel>Calyx</masterLabel>
-            <translation><!-- Calyx --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Doc Magic</masterLabel>
-            <translation><!-- Doc Magic --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>DocuSign</masterLabel>
-            <translation><!-- DocuSign --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Ellie Mae</masterLabel>
-            <translation><!-- Ellie Mae --></translation>
-        </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- E-sign Addendum --></label>
         <name>E_sign_Addendum__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Email --></label>
         <name>Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Exclusionary Lists Received Date --></label>
         <name>Exclusionary_Lists_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Exclusionary Lists --></label>
         <name>Exclusionary_Lists__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Ext --></label>
         <name>Ext__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- FDIC/NCUA Certificate Number --></label>
         <name>FDIC_NCUA_Certificate_Number__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Financials Amount --></label>
         <name>Financials_Amount__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Financials Received Date --></label>
         <name>Financials_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Financials --></label>
         <name>Financials__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Formation Documents Received Date --></label>
         <name>Formation_Documents_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Formation Documents --></label>
         <name>Formation_Documents__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Federal Tax ID/EIN --></label>
         <name>Holding_Company_Federal_Tax_ID_Number_EI__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Holding Company Federal Tax ID --></label>
         <name>Holding_Company_Federal_Tax_ID__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Holding Company Name (if applicable) --></label>
         <name>Holding_Company_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- How does partner obtain leads? --></label>
         <name>How_does_partner_obtain_leads__c</name>
         <picklistValues>
@@ -542,161 +580,210 @@
             <masterLabel>Referral Shop</masterLabel>
             <translation><!-- Referral Shop --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- The date the application package was initially reviewed --></help>
         <label><!-- Initial Review Date/Time --></label>
         <name>Initial_Review_Date_Time__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Interested in ORM Supplied Leads? --></label>
         <name>Interested_in_ORM_Supplied_Leads__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- MLO --></label>
         <name>LO__c</name>
         <relationshipLabel><!-- MLO --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Last Activity Date --></label>
         <name>Last_Activity_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Last Contact Registration date --></label>
         <name>Last_Contact_Registration_date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Last Individual Lead Activity --></label>
         <name>Last_Individual_Lead_Activity__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lead AppSent Days --></label>
         <name>Lead_AppSent_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lead Approved Days --></label>
         <name>Lead_Approved_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lead Days to Process --></label>
         <name>Lead_Days_to_Process__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lead InProcess Days --></label>
         <name>Lead_Inprocess_days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lead Process Days --></label>
         <name>Lead_Process_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lead Prospect Days --></label>
         <name>Lead_Prospect_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Lead status change date --></label>
         <name>Lead_status_change_date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Loan Related Fees &amp; Related Policy Date --></label>
         <name>Loan_Related_Fees_and_Related_PolicyDate__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Loan Related Fees and Related Policy --></label>
         <name>Loan_Related_Fees_and_Related_Policy__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Logo --></label>
         <name>Logo__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- MARI Background Check Received Date --></label>
         <name>MARI_Background_Check_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- MARI Background Check --></label>
         <name>MARI_Background_Check__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- MARI Information --></label>
         <name>MARI_Information__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- MLO --></label>
         <name>MLO__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Mailling Address --></label>
         <name>MaillingAddress__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Mailling State --></label>
         <name>MaillingState__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Mailling Street --></label>
         <name>MaillingStreet__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Mailling Zipcode --></label>
         <name>MaillingZipcode__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Main Phone --></label>
         <name>Main_Phone__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- NMLS ID Received Date --></label>
         <name>NMLS_ID_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- NMLS ID --></label>
         <name>NMLS_ID__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Next Recertification Date --></label>
         <name>Next_Recertification_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- The date of this Approved Partner&apos;s next renewal date. --></help>
         <label><!-- Next Renewal Date --></label>
         <name>Next_Renewal_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Number of Affiliated Partners to the Business Partner. Please see &apos;Related&apos; for more details. --></help>
         <label><!-- No. of Affiliated Partners --></label>
         <name>No_of_Affiliated_Partners__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- No. of Branches --></label>
         <name>No_of_Branches__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Non-QLMS Partner --></label>
         <name>Non_QLMS_Partner__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Number of HECMs Closed in Last Year --></label>
         <name>Number_of_HECMs_Closed_in_Last_Year__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS Loan Registrations in last 12months --></label>
         <name>Number_of_Registrations_in_last_12_month__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Number of loan officers --></label>
         <name>Number_of_loan_officers__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Number and loan amounts of closed loans. 
 Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. --></help>
         <label><!-- ORMS Closed Loans --></label>
         <name>ORMS_Closed_Loans__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Date of the last loan application request --></help>
         <label><!-- ORMS Date of last loan registration --></label>
         <name>ORMS_Date_of_last_loan_registration__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORMS Folder Loans --></label>
         <name>ORMS_Folder_Loans__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORMS Number of Scenarios Run --></label>
         <name>ORMS_Number_of_Scenarios_Run__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Number of registrations the partner has requested --></help>
         <label><!-- ORMS Registrations --></label>
         <name>ORMS_Registrations__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Number of scenarios that the partner has saved --></help>
         <label><!-- ORMS Saved Scenarios --></label>
         <name>ORMS_Saved_Scenarios__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Number of scenario packages the Partner has generated --></help>
         <label><!-- ORMS Scenario Packages --></label>
         <name>ORMS_Scenario_Packages__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORM Account Executive Email --></label>
         <name>ORM_Account_Executive_Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORM Email --></label>
         <name>ORM_Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORM Phone --></label>
         <name>ORM_Phone__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORM Title --></label>
         <name>ORM_Title__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Onboarding status change date --></label>
         <name>Onboarding_status_change_date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Opt In Lead Sharing --></label>
         <name>Opt_In_Lead_Sharing__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Organization Ownership (select one) --></label>
         <name>Organization_Ownership_select_one__c</name>
         <picklistValues>
@@ -707,23 +794,29 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Publicly Traded</masterLabel>
             <translation><!-- Publicly Traded --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Date when the Partner Lead is marked as Approved in the System --></help>
         <label><!-- Original Approved Date --></label>
         <name>Original_Approved_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Other Contact Cell --></label>
         <name>Other_Contact_Cell__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Other Contact Email --></label>
         <name>Other_Contact_Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Other Contact Name --></label>
         <name>Other_Contact_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Other Contact Phone --></label>
         <name>Other_Contact_Phone__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Other Contact Title --></label>
         <name>Other_Contact_Title__c</name>
         <picklistValues>
@@ -766,23 +859,29 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Third Party Closer</masterLabel>
             <translation><!-- Third Party Closer --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Other Reason --></label>
         <name>Other_Reason__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Other source to obtain leads --></label>
         <name>Other_source_to_obtain_leads__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Outstanding Days --></label>
         <name>Outstanding_Days__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Mention the amount that has already been paid to the QLMS AE for assistance in partner onboarding. Please add new amount paid to the existing value in this field. --></help>
         <label><!-- Paid Amount to QLMS AE --></label>
         <name>Paid_Amount_to_QLMS_AE__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- PardotTest --></label>
         <name>PardotTest__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Partner Denial Reasons --></label>
         <name>Partner_Denial_Reasons__c</name>
         <picklistValues>
@@ -845,7 +944,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>W-9</masterLabel>
             <translation><!-- W-9 --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Partner Lead Status --></label>
         <name>Partner_Lead_Status__c</name>
         <picklistValues>
@@ -884,7 +984,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Withdrawn</masterLabel>
             <translation><!-- Withdrawn --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Partner Loan Production Stage --></label>
         <name>Partner_Loan_Production_Stage__c</name>
         <picklistValues>
@@ -907,7 +1008,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Producing</masterLabel>
             <translation><!-- Producing --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Partner Onboarding Status --></label>
         <name>Partner_Onboarding_Status__c</name>
         <picklistValues>
@@ -950,7 +1052,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Withdrawn</masterLabel>
             <translation><!-- Withdrawn --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Partner Total Loan Stage --></label>
         <name>Partner_Total_Loan_Stage__c</name>
         <picklistValues>
@@ -969,67 +1072,86 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Never Engaged</masterLabel>
             <translation><!-- Never Engaged --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Check the checkbox of this Partner a Premier partner --></help>
         <label><!-- Premier Partner --></label>
         <name>Premier_Partner__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Previous ORM AE --></label>
         <name>Previous_ORM_AE__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Primary Contact Email --></label>
         <name>Primary_Contact_Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Office Phone --></label>
         <name>Primary_Contact_Phone_Number__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Primary Contact Title --></label>
         <name>Primary_Contact_Title__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Primary Regulator --></label>
         <name>Primary_Regulator__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Primary contact name --></label>
         <lookupFilter>
             <errorMessage><!-- The Primary contact is not a Business Individual related to this Partner. --></errorMessage>
         </lookupFilter>
         <name>Primary_contact_name__c</name>
         <relationshipLabel><!-- Business Partners --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS 12 Month Total Closings --></label>
         <name>QLMS_12_Month_Total_Closings__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS Account Executive --></label>
         <name>QLMS_Account_Executive__c</name>
         <relationshipLabel><!-- Related Business Partners --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS Email --></label>
         <name>QLMS_Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS First Name --></label>
         <name>QLMS_First_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS HECM Count 2017 --></label>
         <name>QLMS_HECM_Count_2017__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS LO Count --></label>
         <name>QLMS_LO_Count__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS Last Registration Date --></label>
         <name>QLMS_Last_Registration_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS Lead Registration Count --></label>
         <name>QLMS_Lead_Registration_Count__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- QLMS SFDC Bank ID --></label>
         <name>QLMS_SFDC_Bank_ID__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Quality Control Policy Received Date --></label>
         <name>Quality_Control_Policy_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Quality Control Policy --></label>
         <name>Quality_Control_Policy__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Reapplication Status --></label>
         <name>Reapplication_Status__c</name>
         <picklistValues>
@@ -1056,7 +1178,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Reapproved</masterLabel>
             <translation><!-- Reapproved --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Reason for Not being Interested --></label>
         <name>Reason_for_Not_being_Interested__c</name>
         <picklistValues>
@@ -1087,24 +1210,30 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Waiting for Purchase</masterLabel>
             <translation><!-- Waiting for Purchase --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Recertification Approval Date --></label>
         <name>Recertification_Approval_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Check Yes if Approved --></help>
         <label><!-- Recertification Approved --></label>
         <name>Recertification_Approved__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- This amount is the balance payment to the QLMS AE --></help>
         <label><!-- Remaining QLMS AE Payout --></label>
         <name>Remaining_QLMS_AE_Payout__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Renewal Questionnaire Received Date --></label>
         <name>Renewal_Questionnaire_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Renewal Questionnaire Received? --></label>
         <name>Renewal_Questionnaire_Received__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Has the Partner completed the Renewal Questionnaire? --></help>
         <label><!-- Renewal Questionnaire Status --></label>
         <name>Renewal_Questionnaire_Status__c</name>
@@ -1120,37 +1249,48 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Outstanding</masterLabel>
             <translation><!-- Outstanding --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Reputation Check Received Date --></label>
         <name>Reputation_Check_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Reputation Check --></label>
         <name>Reputation_Check__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- ORMS Scenario Packages Requested --></label>
         <name>Request__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Resumes Received Date --></label>
         <name>Resumes_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Resumes --></label>
         <name>Resumes__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Reverse Only Partner --></label>
         <name>Reverse_Only_Partner__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Secondary Contact Cell --></label>
         <name>Secondary_Contact_Cell__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Secondary Contact Email --></label>
         <name>Secondary_Contact_Email__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Secondary Contact Name --></label>
         <name>Secondary_Contact_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Secondary Contact Phone --></label>
         <name>Secondary_Contact_Phone__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Secondary Contact Title --></label>
         <name>Secondary_Contact_Title__c</name>
         <picklistValues>
@@ -1193,14 +1333,17 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Third Party Closer</masterLabel>
             <translation><!-- Third Party Closer --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Shipping Address --></label>
         <name>Shipping_Address__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- If you choose Other as your Partner Lead source, you must enter a source name here --></help>
         <label><!-- Other Source Name --></label>
         <name>Source_Name__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- State of Holding Company --></label>
         <name>State_of_Holding_Company__c</name>
         <picklistValues>
@@ -1403,7 +1546,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Wyoming</masterLabel>
             <translation><!-- Wyoming --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- States they would like to do Business in --></label>
         <name>States_they_would_like_to_do_Business_in__c</name>
         <picklistValues>
@@ -1594,7 +1738,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Wyoming</masterLabel>
             <translation><!-- Wyoming --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Status --></label>
         <name>Status__c</name>
         <picklistValues>
@@ -1605,22 +1750,27 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Inactive</masterLabel>
             <translation><!-- Inactive --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- When was the full application package accepted? --></help>
         <label><!-- Submission Date/Time --></label>
         <name>Submission_Date_Time__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Subsidiary --></label>
         <name>Subsidiary__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Team - ORM AE (Source ORM Account Executive Name) --></help>
         <label><!-- Team --></label>
         <name>Team__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Total Money earned by QLMS AE --></help>
         <label><!-- Total QLMS AE Payout --></label>
         <name>Total_QLMS_AE_Payout__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Type of Institution --></label>
         <name>Type_of_Institution__c</name>
         <picklistValues>
@@ -1635,7 +1785,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Subsidiary</masterLabel>
             <translation><!-- Subsidiary --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Type of Organization --></label>
         <name>Type_of_Organization__c</name>
         <picklistValues>
@@ -1650,13 +1801,16 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Credit Union</masterLabel>
             <translation><!-- Credit Union --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Updated Financial Received Date --></label>
         <name>Updated_Financial_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Updated Financial Received? --></label>
         <name>Updated_Financial_Received__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Has the Partner sent in updated Financials? --></help>
         <label><!-- Updated Financial Status --></label>
         <name>Updated_Financial_Status__c</name>
@@ -1672,16 +1826,688 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <masterLabel>Outstanding</masterLabel>
             <translation><!-- Outstanding --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Validated --></label>
         <name>Validated__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- W-9 Received Date --></label>
         <name>W_9_Received_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- W-9 --></label>
         <name>W_9__c</name>
-    </fields><layouts>
+    </fields>
+    <fields>
+        <label><!-- Account Called This Week --></label>
+        <name>Account_Called_This_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Sub-Status --></label>
+        <name>Approval_Sub_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Closed</masterLabel>
+            <translation><!-- Company Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied by Credit Risk</masterLabel>
+            <translation><!-- Denied by Credit Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excluded Partner</masterLabel>
+            <translation><!-- Excluded Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (DTRT)</masterLabel>
+            <translation><!-- Terminated (DTRT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Leadership Request)</masterLabel>
+            <translation><!-- Terminated (Leadership Request) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Performance)</masterLabel>
+            <translation><!-- Terminated (Performance) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Production)</masterLabel>
+            <translation><!-- Terminated (Production) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn by Partner</masterLabel>
+            <translation><!-- Withdrawn by Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Denial Date --></label>
+        <name>Denial_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- E-sign Addendum Provider --></label>
+        <name>E_sign_Addendum_Provider__c</name>
+        <picklistValues>
+            <masterLabel>4identify</masterLabel>
+            <translation><!-- 4identify --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADSS Signing Server</masterLabel>
+            <translation><!-- ADSS Signing Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS2Gateway</masterLabel>
+            <translation><!-- AS2Gateway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accordium</masterLabel>
+            <translation><!-- Accordium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Document Cloud</masterLabel>
+            <translation><!-- Adobe Document Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adobe Sign</masterLabel>
+            <translation><!-- Adobe Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assently E-Sign</masterLabel>
+            <translation><!-- Assently E-Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AssureSign</masterLabel>
+            <translation><!-- AssureSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autenti.com</masterLabel>
+            <translation><!-- Autenti.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Calyx</masterLabel>
+            <translation><!-- Calyx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canvas</masterLabel>
+            <translation><!-- Canvas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carizma First</masterLabel>
+            <translation><!-- Carizma First --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certify</masterLabel>
+            <translation><!-- Certify --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CognaSign</masterLabel>
+            <translation><!-- CognaSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ComsignTrust</masterLabel>
+            <translation><!-- ComsignTrust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractually</masterLabel>
+            <translation><!-- Contractually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Signer</masterLabel>
+            <translation><!-- Corporate Signer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Countasign</masterLabel>
+            <translation><!-- Countasign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Creativity 365</masterLabel>
+            <translation><!-- Creativity 365 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DealHub</masterLabel>
+            <translation><!-- DealHub --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeliverySlip</masterLabel>
+            <translation><!-- DeliverySlip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DigiSigner</masterLabel>
+            <translation><!-- DigiSigner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digio eSign</masterLabel>
+            <translation><!-- Digio eSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DiguSign</masterLabel>
+            <translation><!-- DiguSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Doc Magic</masterLabel>
+            <translation><!-- Doc Magic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Docsmore</masterLabel>
+            <translation><!-- Docsmore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DocuSign</masterLabel>
+            <translation><!-- DocuSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dotloop</masterLabel>
+            <translation><!-- Dotloop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Lock</masterLabel>
+            <translation><!-- E-Lock --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Sign</masterLabel>
+            <translation><!-- E-Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Sign Dashboard</masterLabel>
+            <translation><!-- E-Sign Dashboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Signature by DocVerify</masterLabel>
+            <translation><!-- E-Signature by DocVerify --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ellie Mae</masterLabel>
+            <translation><!-- Ellie Mae --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eversign</masterLabel>
+            <translation><!-- Eversign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exelaonline</masterLabel>
+            <translation><!-- Exelaonline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FaxNgo</masterLabel>
+            <translation><!-- FaxNgo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fingerink</masterLabel>
+            <translation><!-- Fingerink --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fluix Sign</masterLabel>
+            <translation><!-- Fluix Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FormFast</masterLabel>
+            <translation><!-- FormFast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FormSwift</masterLabel>
+            <translation><!-- FormSwift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GetAccept</masterLabel>
+            <translation><!-- GetAccept --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HelloSign</masterLabel>
+            <translation><!-- HelloSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IdenTrust Trust Sign</masterLabel>
+            <translation><!-- IdenTrust Trust Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inkdit</masterLabel>
+            <translation><!-- Inkdit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InsureSign</masterLabel>
+            <translation><!-- InsureSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KeepSolid Sign</masterLabel>
+            <translation><!-- KeepSolid Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lawfice</masterLabel>
+            <translation><!-- Lawfice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leafinbox</masterLabel>
+            <translation><!-- Leafinbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leegality</masterLabel>
+            <translation><!-- Leegality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legalesign</masterLabel>
+            <translation><!-- Legalesign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lightico in-call eSignature</masterLabel>
+            <translation><!-- Lightico in-call eSignature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSB Docs</masterLabel>
+            <translation><!-- MSB Docs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MailDoodler</masterLabel>
+            <translation><!-- MailDoodler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MyDocSafe</masterLabel>
+            <translation><!-- MyDocSafe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nitro</masterLabel>
+            <translation><!-- Nitro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novatus</masterLabel>
+            <translation><!-- Novatus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPENTRUST SPI</masterLabel>
+            <translation><!-- OPENTRUST SPI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OneSpan Sign</masterLabel>
+            <translation><!-- OneSpan Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oneflow</masterLabel>
+            <translation><!-- Oneflow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OpenLimit CC Sign</masterLabel>
+            <translation><!-- OpenLimit CC Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P7S Signer</masterLabel>
+            <translation><!-- P7S Signer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDCflow</masterLabel>
+            <translation><!-- PDCflow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDF Autosigner</masterLabel>
+            <translation><!-- PDF Autosigner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDF.co</masterLabel>
+            <translation><!-- PDF.co --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDFco by ByteScout</masterLabel>
+            <translation><!-- PDFco by ByteScout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PDFfiller</masterLabel>
+            <translation><!-- PDFfiller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRONTOSign by AlphaTrust</masterLabel>
+            <translation><!-- PRONTOSign by AlphaTrust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PactSafe</masterLabel>
+            <translation><!-- PactSafe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PandaDoc</masterLabel>
+            <translation><!-- PandaDoc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Papr</masterLabel>
+            <translation><!-- Papr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PenPower eSignature Solution</masterLabel>
+            <translation><!-- PenPower eSignature Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Penneo</masterLabel>
+            <translation><!-- Penneo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PleaseSign</masterLabel>
+            <translation><!-- PleaseSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power PDF Std</masterLabel>
+            <translation><!-- Power PDF Std --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qwilr</masterLabel>
+            <translation><!-- Qwilr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RDMS</masterLabel>
+            <translation><!-- RDMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RMail</masterLabel>
+            <translation><!-- RMail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RightSignature</masterLabel>
+            <translation><!-- RightSignature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SELL&amp;SIGN</masterLabel>
+            <translation><!-- SELL&amp;SIGN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIGNiX</masterLabel>
+            <translation><!-- SIGNiX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scrive</masterLabel>
+            <translation><!-- Scrive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SeamlessDocs</masterLabel>
+            <translation><!-- SeamlessDocs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secured Signing</masterLabel>
+            <translation><!-- Secured Signing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SenditCertified</masterLabel>
+            <translation><!-- SenditCertified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sertifi</masterLabel>
+            <translation><!-- Sertifi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shuttle</masterLabel>
+            <translation><!-- Shuttle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignBox</masterLabel>
+            <translation><!-- SignBox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignCenter</masterLabel>
+            <translation><!-- SignCenter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignEasy</masterLabel>
+            <translation><!-- SignEasy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignNow</masterLabel>
+            <translation><!-- SignNow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignOff by Datawitness</masterLabel>
+            <translation><!-- SignOff by Datawitness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignOnTheGo</masterLabel>
+            <translation><!-- SignOnTheGo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignPack3</masterLabel>
+            <translation><!-- SignPack3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignPlus Pro</masterLabel>
+            <translation><!-- SignPlus Pro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignRequest</masterLabel>
+            <translation><!-- SignRequest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignaShare</masterLabel>
+            <translation><!-- SignaShare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signable</masterLabel>
+            <translation><!-- Signable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignatureConfirm</masterLabel>
+            <translation><!-- SignatureConfirm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SignatureOne Suite</masterLabel>
+            <translation><!-- SignatureOne Suite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signatureit</masterLabel>
+            <translation><!-- Signatureit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SigningHub</masterLabel>
+            <translation><!-- SigningHub --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signmee</masterLabel>
+            <translation><!-- Signmee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signority</masterLabel>
+            <translation><!-- Signority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SkySignature</masterLabel>
+            <translation><!-- SkySignature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SmartSAFE</masterLabel>
+            <translation><!-- SmartSAFE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smartwaiver</masterLabel>
+            <translation><!-- Smartwaiver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soda PDF Online</masterLabel>
+            <translation><!-- Soda PDF Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stiply</masterLabel>
+            <translation><!-- Stiply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SuiteBox</masterLabel>
+            <translation><!-- SuiteBox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SutiSign</masterLabel>
+            <translation><!-- SutiSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swift Cloud</masterLabel>
+            <translation><!-- Swift Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Topaz SigPlus</masterLabel>
+            <translation><!-- Topaz SigPlus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tractis</masterLabel>
+            <translation><!-- Tractis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U-Sign-It</masterLabel>
+            <translation><!-- U-Sign-It --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultradox</masterLabel>
+            <translation><!-- Ultradox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universign</masterLabel>
+            <translation><!-- Universign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vignature for Business</masterLabel>
+            <translation><!-- Vignature for Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WP Digital E-Signature</masterLabel>
+            <translation><!-- WP Digital E-Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WaiverElectronic</masterLabel>
+            <translation><!-- WaiverElectronic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Sign In</masterLabel>
+            <translation><!-- Web Sign In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yozons</masterLabel>
+            <translation><!-- Yozons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zoho Sign</masterLabel>
+            <translation><!-- Zoho Sign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZorroSign eSignature</masterLabel>
+            <translation><!-- ZorroSign eSignature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>contractbook</masterLabel>
+            <translation><!-- contractbook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>e-Sign Live by Silanis</masterLabel>
+            <translation><!-- e-Sign Live by Silanis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eOriginal SmartSign</masterLabel>
+            <translation><!-- eOriginal SmartSign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eSign Genie</masterLabel>
+            <translation><!-- eSign Genie --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eSign+</masterLabel>
+            <translation><!-- eSign+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eSignature for SharePoint</masterLabel>
+            <translation><!-- eSignature for SharePoint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eSigner by Orion Systems</masterLabel>
+            <translation><!-- eSigner by Orion Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eSignly</masterLabel>
+            <translation><!-- eSignly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iFill PDF</masterLabel>
+            <translation><!-- iFill PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iPEGS</masterLabel>
+            <translation><!-- iPEGS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iSign</masterLabel>
+            <translation><!-- iSign --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Excluded Notes --></label>
+        <name>Excluded_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exclusionary Category --></label>
+        <name>Exclusionary_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Important Notes --></label>
+        <name>Important_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity --></label>
+        <name>Last_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Call --></label>
+        <name>Last_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Login --></label>
+        <name>Last_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Portal Login --></label>
+        <name>Last_Portal_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lic HELO State --></label>
+        <name>Lic_HELO_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loans Last Month --></label>
+        <name>Loans_Last_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Type --></label>
+        <name>Partner_Type__c</name>
+        <picklistValues>
+            <masterLabel>Non Premier</masterLabel>
+            <translation><!-- Non Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier</masterLabel>
+            <translation><!-- Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier Plus</masterLabel>
+            <translation><!-- Premier Plus --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Email --></label>
+        <name>Primary_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scouting Report --></label>
+        <name>Scouting_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terminated Date --></label>
+        <name>Terminated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated Broker Comp Rec&apos;d --></label>
+        <name>Updated_Broker_Comp_Rec_d__c</name>
+    </fields>
+    <fields>
+        <label><!-- What Exclusionary List --></label>
+        <name>What_Exclusionary_List__c</name>
+        <picklistValues>
+            <masterLabel>ORMS</masterLabel>
+            <translation><!-- ORMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QLMS</masterLabel>
+            <translation><!-- QLMS --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
         <layout>Account Layout</layout>
         <sections>
             <label><!-- Account Summary --></label>
@@ -1691,7 +2517,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <label><!-- Other Contact Information --></label>
             <section>Other Contact Information</section>
         </sections>
-    </layouts><layouts>
+    </layouts>
+    <layouts>
         <layout>Approved Partners Layout</layout>
         <sections>
             <label><!-- Billing Information --></label>
@@ -1725,59 +2552,8 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <label><!-- Renewals --></label>
             <section>Renewals</section>
         </sections>
-    </layouts><layouts>
-        <layout>Committed Partner Layout</layout>
-        <sections>
-            <label><!-- Billing Information --></label>
-            <section>Billing Information</section>
-        </sections>
-        <sections>
-            <label><!-- Other Contact Information --></label>
-            <section>Other Contact Information</section>
-        </sections>
-        <sections>
-            <label><!-- Other information --></label>
-            <section>Other information</section>
-        </sections>
-        <sections>
-            <label><!-- Partner Production --></label>
-            <section>Partner Production</section>
-        </sections>
-        <sections>
-            <label><!-- Related users --></label>
-            <section>Related users</section>
-        </sections>
-        <sections>
-            <label><!-- Renewal --></label>
-            <section>Renewal</section>
-        </sections>
-    </layouts><layouts>
-        <layout>Partner Layout</layout>
-        <sections>
-            <label><!-- Billing Information --></label>
-            <section>Billing Information</section>
-        </sections>
-        <sections>
-            <label><!-- Other Contact Information --></label>
-            <section>Other Contact Information</section>
-        </sections>
-        <sections>
-            <label><!-- Other information --></label>
-            <section>Other information</section>
-        </sections>
-        <sections>
-            <label><!-- Partner Production --></label>
-            <section>Partner Production</section>
-        </sections>
-        <sections>
-            <label><!-- Related users --></label>
-            <section>Related users</section>
-        </sections>
-        <sections>
-            <label><!-- Renewal --></label>
-            <section>Renewal</section>
-        </sections>
-    </layouts><layouts>
+    </layouts>
+    <layouts>
         <layout>Partner Leads Layout</layout>
         <sections>
             <label><!-- Billing Information --></label>
@@ -1803,11 +2579,78 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <label><!-- System Information --></label>
             <section>System Information</section>
         </sections>
-    </layouts><layouts>
+    </layouts>
+    <layouts>
+        <layout>Committed Partner Layout</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Moved Fields --></label>
+            <section>Moved Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Other Contact Information --></label>
+            <section>Other Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Other information --></label>
+            <section>Other information</section>
+        </sections>
+        <sections>
+            <label><!-- Partner Production --></label>
+            <section>Partner Production</section>
+        </sections>
+        <sections>
+            <label><!-- Related users --></label>
+            <section>Related users</section>
+        </sections>
+        <sections>
+            <label><!-- Renewal --></label>
+            <section>Renewal</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Layout</layout>
+        <sections>
+            <label><!-- Billing Information --></label>
+            <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Moved Fields --></label>
+            <section>Moved Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Other Contact Information --></label>
+            <section>Other Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Other information --></label>
+            <section>Other information</section>
+        </sections>
+        <sections>
+            <label><!-- Partner Production --></label>
+            <section>Partner Production</section>
+        </sections>
+        <sections>
+            <label><!-- Related users --></label>
+            <section>Related users</section>
+        </sections>
+        <sections>
+            <label><!-- Renewal --></label>
+            <section>Renewal</section>
+        </sections>
+    </layouts>
+    <layouts>
         <layout>Prospective Partner Layout</layout>
         <sections>
             <label><!-- Billing Information --></label>
             <section>Billing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Moved Fields --></label>
+            <section>Moved Fields</section>
         </sections>
         <sections>
             <label><!-- Other Contact Information --></label>
@@ -1821,94 +2664,129 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <label><!-- System Information --></label>
             <section>System Information</section>
         </sections>
-    </layouts><quickActions>
+    </layouts>
+    <quickActions>
         <label><!-- Child Account --></label>
         <name>Child_Account</name>
-    </quickActions><quickActions>
+    </quickActions>
+    <quickActions>
         <label><!-- Email --></label>
         <name>Email</name>
-    </quickActions><quickActions>
+    </quickActions>
+    <quickActions>
         <label><!-- Log a Call --></label>
         <name>Log_a_Call_2</name>
-    </quickActions><quickActions>
+    </quickActions>
+    <quickActions>
         <label><!-- New Task --></label>
         <name>New_Task</name>
-    </quickActions><quickActions>
+    </quickActions>
+    <quickActions>
         <label><!-- New Task --></label>
         <name>New_Task_2</name>
-    </quickActions><recordTypes>
+    </quickActions>
+    <recordTypes>
         <label><!-- Approved Partners --></label>
         <name>Approved_Partners</name>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Committed Partner --></label>
         <name>Committed_Partner</name>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Partner Leads --></label>
         <name>Partner_Leads</name>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Partners --></label>
         <name>Partners</name>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Potential Partners --></label>
         <name>Potential_Partners</name>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <validationRules>
         <errorMessage><!-- You do not have access to update this stage --></errorMessage>
         <name>AE_Account_Stage_Change</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please update Kelly Moreno as the Assigned CRA --></errorMessage>
         <name>Assigned_CRA</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Fill Holding Company Federal Tax ID Number/EI Field --></errorMessage>
         <name>HoldingCompanyFederalFiledvalidationrule</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Must fill other Reason if the Reason for not being interested is selected as &apos;Other&apos; --></errorMessage>
         <name>Must_fill_Other_Reason</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Must select the states Partners wants to do Business in if the Reason for not being interested is &apos;States Available	&apos; --></errorMessage>
         <name>Must_select_States_to_do_business_in</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please fill &quot;Other source to obtain leads&apos; textbox if Other is selected as choice in &apos;How does partner obtain leads?&apos; field --></errorMessage>
         <name>Other_ways_to_obtain_leads_for_partner</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please choose Partner Denial Reason(s) --></errorMessage>
         <name>Partner_Denial_Reasons</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Phone number must Contain 10 digits number,and should not start with 0. --></errorMessage>
         <name>Phone10DigitNumber</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Please update the Email address for this QLMS AE --></errorMessage>
         <name>QLMS_AE_Email</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Must pick a reason for Partner not being interested --></errorMessage>
         <name>Reason_for_Not_being_interested</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Source Name Filed is mandatory for Partner lead source as &apos;Other&apos; --></errorMessage>
         <name>Source_Name_validation_Rule</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Subsidiary field is mandatory --></errorMessage>
         <name>Subsidiary_is_Mandatory</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Field is mandatory for Partner Lead Source as TradeShow --></errorMessage>
         <name>Trade_Show_Validation_Rule</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- Cell must contain 10 digits number,and should not start with 0. --></errorMessage>
         <name>cellmustcontain10numbers</name>
-    </validationRules><webLinks>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select Partner Type --></errorMessage>
+        <name>Partner_Type_req_for_Approved</name>
+    </validationRules>
+    <webLinks>
         <label><!-- GoogleMaps --></label>
         <name>GoogleMaps</name>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <label><!-- GoogleNews --></label>
         <name>GoogleNews</name>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <label><!-- GoogleSearch --></label>
         <name>GoogleSearch</name>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <label><!-- Send_Pardot_Emails --></label>
         <name>pi__Send_Pardot_Emails</name>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <label><!-- Send_Single_Pardot_Email --></label>
         <name>pi__Send_Single_Pardot_Email</name>
-    </webLinks><webLinks>
+    </webLinks>
+    <webLinks>
         <label><!-- Send_To_Prospect_Insight --></label>
         <name>pi__Send_To_Prospect_Insight</name>
-    </webLinks></CustomObjectTranslation>
+    </webLinks>
+</CustomObjectTranslation>

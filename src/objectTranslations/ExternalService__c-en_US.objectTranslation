@@ -1,24 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <help><!-- ReplayID from ExternalServiceOutbound__e Request --></help>
         <label><!-- Replay ID --></label>
         <name>ReplayID__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- JSON representation of the Request to External Service --></help>
         <label><!-- Request Payload --></label>
         <name>RequestPayload__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- JSON representation of Response from External Service --></help>
         <label><!-- Response Payload --></label>
         <name>ResponsePayload__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Name of External Service --></help>
         <label><!-- Service Name --></label>
         <name>ServiceName__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Source Id --></help>
         <label><!-- Source ID --></label>
         <name>SourceID__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- Represents the status of the overall External Service transaction. --></help>
         <label><!-- Status --></label>
         <name>Status__c</name>
@@ -50,16 +56,23 @@
             <masterLabel>Response Received</masterLabel>
             <translation><!-- Response Received --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The ID of the User originating this request. --></help>
+        <label><!-- Requesting User ID --></label>
+        <name>RequestingUserID__c</name>
     </fields><caseValues>
         <plural>false</plural>
         <value>External Service</value>
     </caseValues><caseValues>
         <plural>true</plural>
         <value>External Services</value>
-    </caseValues><startsWith>Vowel</startsWith><layouts>
+    </caseValues><startsWith>Vowel</startsWith>
+    <layouts>
         <layout>External Service Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts></CustomObjectTranslation>
+    </layouts>
+</CustomObjectTranslation>

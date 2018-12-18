@@ -88,10 +88,30 @@
         </values>
     </businessProcesses>
     <businessProcesses>
+        <fullName>Scenario Lead</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Run Scenario</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saved Scenario</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Scenario Converted</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Partner Lead</fullName>
         <isActive>true</isActive>
         <values>
             <fullName>Attempted to Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Company Closed</fullName>
             <default>false</default>
         </values>
         <values>
@@ -120,22 +140,6 @@
         </values>
         <values>
             <fullName>Qualified</fullName>
-            <default>false</default>
-        </values>
-    </businessProcesses>
-    <businessProcesses>
-        <fullName>Scenario Lead</fullName>
-        <isActive>true</isActive>
-        <values>
-            <fullName>Run Scenario</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Saved Scenario</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Scenario Converted</fullName>
             <default>false</default>
         </values>
     </businessProcesses>
@@ -1720,30 +1724,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Leads_Contacted_Presented1</fullName>
-        <columns>LEAD.COMPANY</columns>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>LEAD.UNREAD</columns>
-        <columns>Last_Activity_Date__c</columns>
-        <columns>No_Activity_Days__c</columns>
-        <columns>Last_Activity_Type__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>LEAD.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Lead.Partner_Lead</value>
-        </filters>
-        <filters>
-            <field>LEAD.STATUS</field>
-            <operation>equals</operation>
-            <value>Attempted to Contact,Contacted,Presented</value>
-        </filters>
-        <label>Leads - Contacted/Presented</label>
-    </listViews>
-    <listViews>
         <fullName>Leads_w_o_Activities_last_7_days1</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -1763,22 +1743,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Attempted to Contact,Contacted,Presented</value>
         </filters>
         <label>Leads w/o Activities last 7 days</label>
-    </listViews>
-    <listViews>
-        <fullName>Leads_with_NO_Activities</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.COMPANY</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>LEAD.UNREAD</columns>
-        <columns>No_Activity_Days__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>LEAD.STATUS</field>
-            <operation>equals</operation>
-            <value>Open Lead,New</value>
-        </filters>
-        <label>Leads with NO Activities</label>
     </listViews>
     <listViews>
         <fullName>Leads_with_No_Activity</fullName>
@@ -1878,24 +1842,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <label>Not Interested / Not Qualified Leads</label>
     </listViews>
     <listViews>
-        <fullName>Open_Lead_Queue_Lead</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.COMPANY</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>LEAD.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>LEAD.UNREAD</columns>
-        <columns>Last_Activity_Date__c</columns>
-        <filterScope>Queue</filterScope>
-        <label>Open Lead Queue</label>
-        <queue>Open_Lead_Queue</queue>
-        <sharedTo>
-            <allInternalUsers></allInternalUsers>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>Scenario_Leads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.EMAIL</columns>
@@ -1973,15 +1919,11 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <columns>CORE.USERS.LAST_NAME</columns>
         <columns>QLMS_Account_Executive__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>LEAD.STATE</field>
-            <operation>equals</operation>
-            <value>CA</value>
-        </filters>
         <label>All Open Leads</label>
     </listViews>
     <listViews>
         <fullName>All_Leads</fullName>
+        <columns>LEAD.COMPANY</columns>
         <columns>FULL_NAME</columns>
         <columns>LEAD.EMAIL</columns>
         <columns>QLMS_Account_Executive__c</columns>
@@ -1989,7 +1931,72 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <columns>LEAD.STATE</columns>
         <columns>LEAD.STATUS</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.STATE</field>
+            <operation>equals</operation>
+            <value>NV</value>
+        </filters>
         <label>All Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>Leads_Contacted_Presented1</fullName>
+        <columns>LEAD.COMPANY</columns>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>Last_Activity_Date__c</columns>
+        <columns>No_Activity_Days__c</columns>
+        <columns>Last_Activity_Type__c</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>LEAD.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Lead.Partner_Lead</value>
+        </filters>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>equals</operation>
+            <value>Attempted to Contact,Contacted,Presented</value>
+        </filters>
+        <label>Leads - Contacted/Presented</label>
+    </listViews>
+    <listViews>
+        <fullName>Leads_with_NO_Activities</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>No_Activity_Days__c</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>equals</operation>
+            <value>Open Lead,New</value>
+        </filters>
+        <label>Leads with NO Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Lead_Queue_Lead</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>BillingState__c</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>Last_Activity_Date__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>Open Lead Queue</label>
+        <queue>Open_Lead_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <recordTypes>
         <fullName>Banker</fullName>
@@ -4171,5 +4178,16 @@ ISPICKVAL(Reason_for_Not_being_Interested__c,"")
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
         <url>http://www.google.com/search?q={!Lead_Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>zoom_app__Start_Zoom_Meeting</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Start Zoom Meeting</masterLabel>
+        <openType>sidebar</openType>
+        <page>zoom_app__ZoomMeetingStartLead</page>
+        <protected>false</protected>
     </webLinks>
 </CustomObject>

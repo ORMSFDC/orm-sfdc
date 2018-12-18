@@ -6,98 +6,63 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
-                <name>entityName</name>
-                <value>Account</value>
+                <name>cacheAge</name>
+                <value>1440</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>filterName</name>
-                <value>AE_Docs_Needed</value>
+                <name>reportName</name>
+                <value>Not_Contacted_Report_MTD_JtT</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>hideActionBar</name>
-                <value>false</value>
+                <name>showRefreshButton</name>
+                <value>true</value>
             </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>pageSize</name>
-                <value>5</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:filterListCard</componentName>
+            <componentName>flexipage:reportChart</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
-                <name>entityName</name>
-                <value>Account</value>
+                <name>cacheAge</name>
+                <value>1440</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>filterName</name>
-                <value>AE_Apps_Out</value>
+                <name>reportName</name>
+                <value>Contacted_Report_MTD</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>hideActionBar</name>
-                <value>false</value>
+                <name>showRefreshButton</name>
+                <value>true</value>
             </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>pageSize</name>
-                <value>5</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:filterListCard</componentName>
+            <componentName>flexipage:reportChart</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
-                <name>entityName</name>
-                <value>Lead</value>
+                <name>cacheAge</name>
+                <value>1440</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>filterName</name>
-                <value>Leads_Contacted_Presented1</value>
+                <name>reportName</name>
+                <value>Approved_Partners_No_Login_Credentials</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>hideActionBar</name>
-                <value>false</value>
+                <name>showRefreshButton</name>
+                <value>true</value>
             </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>pageSize</name>
-                <value>5</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:filterListCard</componentName>
+            <componentName>flexipage:reportChart</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
-                <name>entityName</name>
-                <value>Lead</value>
+                <name>cacheAge</name>
+                <value>1440</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>filterName</name>
-                <value>Leads_w_o_Activities_last_7_days1</value>
+                <name>reportName</name>
+                <value>Approved_Partners_w_Login_No_Logins_d0j</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
-                <name>hideActionBar</name>
-                <value>false</value>
+                <name>showRefreshButton</name>
+                <value>true</value>
             </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>pageSize</name>
-                <value>5</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:filterListCard</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>entityName</name>
-                <value>Lead</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>filterName</name>
-                <value>Leads_with_NO_Activities</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>hideActionBar</name>
-                <value>false</value>
-            </componentInstanceProperties>
-            <componentInstanceProperties>
-                <name>pageSize</name>
-                <value>5</value>
-            </componentInstanceProperties>
-            <componentName>flexipage:filterListCard</componentName>
+            <componentName>flexipage:reportChart</componentName>
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>

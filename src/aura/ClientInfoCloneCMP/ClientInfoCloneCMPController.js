@@ -25,8 +25,7 @@
         $A.enqueueAction(action); 
         
         //get states
-        var action1 = component.get("c.get_states");
-        
+        var action1 = component.get("c.get_states");       
         // set a callBack    
         action1.setCallback(this, function(response) {
             if (response.getState() === "SUCCESS") {
@@ -130,8 +129,8 @@
         //  alert();
         $A.get('e.force:refreshView').fire();
     },
-    //For Request Package
-    sendmailrequest: function (component, event, helper) {
+    //For Request Package  SFDC - 487 commented this
+    /*sendmailrequest: function (component, event, helper) {
         component.set('v.showSpinner',true); //Helo fix
         var ScenarioID = component.get("v.ScenarioID")
         var action2 = component.get("c.SendMailTMP");
@@ -153,9 +152,9 @@
         });       
         $A.enqueueAction(action);
         
-    },  
+    }, */  
     //Validate Form and SAve Scenario
-    Save: function(component, event, helper) {
+    Save: function(component, event, helper) {        
         var msg = "";
         var reg = '';
         var array_id = new Array();
@@ -190,28 +189,37 @@
         var chkZip=helper.ValidZip(component, event, helper,'inputZip');
         var IsemailPhoneWrong=helper.EmailOrPhoneRequired(component, event, helper);
         var IsValidEmail= helper.EmailValidation(component, event, helper);
+        var IsValidPhone= helper.FormatPhonehelper(component, event, helper); //SFDC-378
         //  debugger;
-        if (Isrequired ||chkZip|| IsemailPhoneWrong || IsValidEmail) {              
+        if (Isrequired ||chkZip|| IsemailPhoneWrong || IsValidEmail || IsValidPhone) {   //SFDC-378           
             component.set("v.showError", true); 
             if(IsemailPhoneWrong)
             {
                 component.set("v.EmailPhoneMessages","Please enter either Email or Phone Number.");
+                component.set("v.EmailMessage",""); //SFDC-378, email error
             }
             else{
                 component.set("v.EmailPhoneMessages","");
                 if(IsValidEmail)
                 {
                     component.set("v.EmailPhoneMessages",""); 
+                    component.set("v.EmailMessage","Please enter a valid email address"); //SFDC-378, email error
                 }
                 else{
                     component.set("v.EmailPhoneMessages","");
+                    component.set("v.EmailMessage",""); //SFDC-378, email error
                 }
             }
         }        
         else
         { 
             var sZip=component.get('v.stateZip');
-            if(sZip==false)
+            //SFDC-363
+            var sZip2=component.get('v.stateZip2'); //Helo Refi Error
+            var sZip3=component.get('v.stateZip3'); //Helo Purchase error
+            var sZip4=component.get('v.stateZip4'); //HECM Purchase error
+            var sZip5=component.get('v.stateZip5'); //HECM Refi error
+            if(sZip==false && sZip2==false && sZip3==false && sZip4 ==false && sZip5 ==false)
             {
                 helper.SaveScenario(component,event,helper);
             }
@@ -220,7 +228,7 @@
                 component.set("v.showError", true);   
             }
             
-        }      
+        }    
     },
     //Validate PhoneFormat
     FormatPhone: function(component, event, helper){
@@ -241,6 +249,12 @@
         component.set("v.selectedRecord.Street","");
         component.set("v.selectedRecord.PostalCode","");
         component.set("v.selectedRecord.Email","");
+	//SFDC-363
+	component.set("v.stateZip",false);
+        component.set("v.stateZip2",false);
+        component.set("v.stateZip3",false);
+        component.set("v.stateZip4",false);
+        component.set("v.stateZip5",false);
         // Code Added by Dev4 for ORMSFDC-1447
         component.set("v.selectedRecord.State","");
         component.set("v.showError",false);
@@ -322,7 +336,7 @@
            component.set("v.MIP", 0); //There is no MIP for Helo
            component.set("v.HeloMargin",HeloMargins[selId].Margin); //Helo Margin new
            var heloValues = component.get('v.metadatavaluesHelo');
-           console.log('Helo values',component.get('v.metadatavaluesHelo'));            
+           console.log('Helo values',heloValues);            
            var t =  HeloMargins[selId].InterestRate; 
            var rate = heloValues.Helo_rate[t];
            component.set("v.Margin",rate); //Helo Interst Rate
@@ -489,9 +503,20 @@
         
         // component.set("v.senario_id",null);
         component.set('v.HHM',null);
-        component.set("v.show_capacityform",true);
-        
+        component.set("v.show_capacityform",true);        
         component.set("v.show_capacity_Popup",true);
+	
+     	var counterval = component.get('v.capacitycounter')+1;
+        var action = component.get("c.getcapacityCount");
+        action.setParams({
+            scenarioID:component.get("v.senario_id"),
+            runcounterval: counterval
+        });
+        
+        action.setCallback(this,function(data){            
+            component.set("v.capacitycounter",counterval);            
+        });
+        $A.enqueueAction(action);
     },
     shw_capacityPopupClose : function(component, event, helper){
         //   alert('ClientInfo shw_capacityPopupClose ');
@@ -580,33 +605,29 @@
             $A.enqueueAction(action);
         }
     },
-    start_newloan:function(component){
-        //Dont save info, just send them to SAL splash screen
-        window.open('/s/startnewloan');
-        return;
+    
+    //For SaNL SFDC - 487 
+    Start_newloan2: function (component, event, helper) { 
+        component.set("v.render_popup", true);
+    },
 
-        //    alert('ClientInfo start_newloan ');
+    //SFDC-567
+    start_newloan:function(component){        
         component.set('v.showSpinnerLoan',true);
         var getdate = component.get("v.ApplicationDate");
         
         var fileInput = document.getElementById('fileInput').value;        
         console.log('fileInput ',fileInput);
-        //  var datecontrol= component.find('expname');
-        //    var date = datecontrol.get('v.value');
-        var applicationDate = getdate;//component.get("v.datepick");
+        var applicationDate = getdate;
         //Check whether File is selected or not
         if (!$A.util.isEmpty(fileInput))
         {
             var fileInput = component.find("file").getElement();
             var file = fileInput.files[0];
-            
-            //        var spinner = component.find("spinner");        
-            //      $A.util.toggleClass(spinner, "slds-hide");
             var data=component.get("v.filedata");
             
             var dd=document.getElementById('inputtxt').value;
             var action = component.get("c.getFNMData");
-            //  alert(component.get("v.senario_id"));
             action.setParams({
                 "filedata" : dd,
                 fileName: file.name,
@@ -615,20 +636,14 @@
                 applicationDate: applicationDate,
                 senario_id:component.get("v.senario_id"),
                 hhm:component.get('v.HHM'),
-                sft:component.get('v.SFT')
-                
-            });
-            
-            action.setCallback(this, function(a) {
-                
+                sft:component.get('v.SFT')                
+            });            
+            action.setCallback(this, function(a) {                
                 component.set('v.showSpinnerLoan',false);
-                //          alert('in call back');
                 var errors = action.getError();
                 //alert(errors);
-                if (errors && errors[0]) {
-                    
+                if (errors && errors[0]) {                    
                     console.error("getFNMData error", errors);
-                    
                     // display error in toast
                     var toastEvent = $A.get("e.force:showToast");
                     toastEvent.setParams({
@@ -637,8 +652,7 @@
                         "title": "Upload Failed!",
                         "message": errors[0].message
                     });
-                    toastEvent.fire();
-                    
+                    toastEvent.fire();                    
                     // hide loading spinner
                     var spinner = component.find("spinner");
                     $A.util.toggleClass(spinner, "slds-hide");
@@ -649,8 +663,7 @@
                     component.set("v.showLoanId",Id);
                     component.set("v.render_popup",false);
                     component.set("v.showLoan",true);
-                    component.set("v.displayTab",false);
-                    
+                    component.set("v.displayTab",false);                    
                 }
             });
             $A.enqueueAction(action);
@@ -658,10 +671,6 @@
         }
         else
         {   
-            //  alert('normal');
-            //    alert(component.get("v.senario_id"));
-            
-            //   alert(component.get('v.SFT'));
             var action = component.get("c.createLoan");
             action.setParams({
                 senarioid:component.get("v.senario_id"),
@@ -672,27 +681,19 @@
             action.setCallback(this,function(data){
                 
                 component.set('v.showSpinnerLoan',false);
-                // alert(data.getReturnValue()+'is created ');
                 component.set("v.showLoanId",data.getReturnValue().Id);
-                //        console.log('data.getReturnValue().Id ',data.getReturnValue().Id);
                 var toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Success!",
                     "message": data.getReturnValue().Name + " is Created."
                 });
                 toastEvent.fire();
-                //$('.tabs__nav').hide();
-                // 
-                //           alert('application date is '+component.get("v.ApplicationDate"));
                 component.set("v.render_popup",false);
                 component.set("v.showLoan",true);
                 component.set("v.displayTab",false);
-                //     alert('ad');
                 
             });
             $A.enqueueAction(action);
-            // location.open('/s/startnewloan');
-            // 
         }
     },    
     openchk : function(component, event, helper) {
@@ -853,12 +854,32 @@
                 debugger;
                 var result=data.getReturnValue(); 
                 console.log('states ',result);
-                var n=result.length; //result!=null ||
+                var n=result.length; 
                 if(n!=0)
                 {
                     var state=result[0];
                     var city=result[1];
-                    var action1 = component.get("c.get_states");
+                   
+                    //SFDC-275 start
+                    var rateType = component.get('v.LRateType'); 
+                    var mortType = component.get("v.LMortgageAppliedFor");
+                    //Helo Purchase states
+                    if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
+                        var action1 = component.get("c.get_heloStatesPur");                         
+                    }
+                    //Helo Refinance States
+                    else if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){ 
+                        var action1 = component.get("c.get_helostatesRefi");
+                    }
+                    //ARM and Fixed Purchase states
+                    else if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){ 
+                        var action1 = component.get("c.get_statesPur");
+                    }
+                    //ARM and Fixed Refinance states
+                    else if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){ 
+                        var action1 = component.get("c.get_states");
+                    }
+                    //SFDC-275 end
                     action1.setCallback(this,function(data){
                         var result1=data.getReturnValue();
                         var i;
@@ -873,13 +894,33 @@
                                 component.set("v.selectedRecord.City",city);
                                 
                                 component.set("v.stateZip",false);
+                                //SFDC-363
+                                component.set("v.stateZip2",false);
+                                component.set("v.stateZip3",false);
+                                component.set("v.stateZip4",false);
+                                component.set("v.stateZip5",false);
                                 break;
-                            }else{
-                                
+                            }else{                                
                                 component.set("v.selectedRecord.State","");
                                 component.set("v.selectedRecord.City","");
                                 component.set("v.stateZip",true);
-                                
+                                //SFDC-363
+                                if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){
+                                    component.set("v.stateZip2",true);
+                                    component.set("v.stateZip",false);
+                                }else if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
+                                    component.set("v.stateZip3",true);
+                                    component.set("v.stateZip",false);
+                                }
+                                else if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){
+                                    component.set("v.stateZip4",true);
+                                    component.set("v.stateZip",false);
+                                }
+                                else if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){
+                                    component.set("v.stateZip5",true);
+                                    component.set("v.stateZip",false);
+                                }
+                                //SFDC-363
                             }
                         }
                         
@@ -889,6 +930,11 @@
                 else
                 {
                     component.set("v.stateZip",true);
+                    //SFDC-363
+                    component.set("v.stateZip2",false);
+                    component.set("v.stateZip3",false);
+                    component.set("v.stateZip4",false);
+                    component.set("v.stateZip5",false);                    
                 }
                 
             });
@@ -897,6 +943,11 @@
         else
         {
             component.set("v.stateZip",false);
+            //SFDC-363
+            component.set("v.stateZip2",false);
+            component.set("v.stateZip3",false);
+            component.set("v.stateZip4",false);
+            component.set("v.stateZip5",false);
         }
     },
     share_popup:function(component, event, helper){
@@ -909,6 +960,19 @@
         var host = window.location.hostname;
         var frameSrc = 'https://' + host + '/apex/pdfSavedScenario?id=' + component.get('v.ScenarioID');
         window.open(frameSrc, '_blank'); 
+       
+        //SFDC-566
+        var counterval = component.get('v.printcounter')+1;
+        var action = component.get("c.getPrintCount");
+        action.setParams({
+            scenarioID:component.get("v.senario_id"),
+            countval: counterval
+        });        
+        action.setCallback(this,function(data){            
+            component.set("v.printcounter",counterval);            
+        });
+        $A.enqueueAction(action);
+        //SFDC-566 end
     },
     getserviceData :function(component,event,helper){
         //    alert('ClientInfo cmp getserviceData');

@@ -1,15 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <help><!-- External Service Class --></help>
         <label><!-- External Service Class --></label>
         <name>ExternalServiceClass__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <help><!-- The Named Credential connection parameters to use for this External Service. --></help>
         <label><!-- Named Credential --></label>
         <name>NamedCredential__c</name>
+    </fields>
+    <fields>
+        <help><!-- Authorization token to set in request header. --></help>
+        <label><!-- Authorization Header Token --></label>
+        <name>AuthorizationHeaderToken__c</name>
+    </fields>
+    <fields>
+        <help><!-- Authorization value to set in request header. --></help>
+        <label><!-- Authorization Header Value --></label>
+        <name>AuthorizationHeaderValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Service Description --></help>
+        <label><!-- External Service Description --></label>
+        <name>ExternalServiceDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Apex class invoked to dispatch this External Service requests. --></help>
+        <label><!-- External Service Dispatcher Class --></label>
+        <name>ExternalServiceDispatcherClass__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is Active --></help>
+        <label><!-- Is Active --></label>
+        <name>IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- password --></label>
+        <name>password__c</name>
+    </fields>
+    <fields>
+        <label><!-- username --></label>
+        <name>username__c</name>
     </fields><caseValues>
         <plural>false</plural>
         <value>ExternalServiceRegistry</value>
     </caseValues><caseValues>
         <plural>true</plural>
         <value>ExternalServiceRegistries</value>
-    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>
+    </caseValues><startsWith>Consonant</startsWith>
+    <layouts>
+        <layout>ExternalServiceRegistry Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

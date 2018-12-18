@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <help><!-- Enable --></help>
         <label><!-- Enable --></label>
         <name>Enable__c</name>
@@ -8,4 +9,12 @@
     </caseValues><caseValues>
         <plural>true</plural>
         <value>TriggerLoan</value>
-    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>
+    </caseValues><startsWith>Consonant</startsWith>
+    <layouts>
+        <layout>TriggerLoan Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

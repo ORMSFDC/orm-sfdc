@@ -1,61 +1,92 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>BccAddress</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CcAddress</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FromAddress</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FromName</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HasAttachment</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Headers</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HtmlBody</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Incoming</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsExternallyVisible</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsPrivateDraft</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MessageDate</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MessageSize</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ParentId</fullName>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>RelatedToId</fullName>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Subject</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>TextBody</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ToAddress</fullName>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ValidatedFromAddress</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstOpenedDate</fullName>
+    </fields>
+    <fields>
+        <fullName>LastOpenedDate</fullName>
     </fields><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><enableFeeds>false</enableFeeds><searchLayouts>
         <customTabListAdditionalFields>Status</customTabListAdditionalFields>
         <customTabListAdditionalFields>HasAttachment</customTabListAdditionalFields>
@@ -76,4 +107,5 @@
         <searchResultsAdditionalFields>ToAddress</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Subject</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>MessageDate</searchResultsAdditionalFields>
-    </searchLayouts></CustomObject>
+    </searchLayouts>
+</CustomObject>

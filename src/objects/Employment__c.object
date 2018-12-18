@@ -1085,7 +1085,7 @@
                 <sorted>false</sorted>
                 <value>
                     <fullName>Yes</fullName>
-                    <default>true</default>
+                    <default>false</default>
                     <label>Yes</label>
                 </value>
                 <value>

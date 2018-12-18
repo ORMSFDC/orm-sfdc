@@ -10,13 +10,13 @@
         <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
     </columns>
     <columns>
+        <field>Loan_New__c.Closing_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Actual_Funding_Date__c</field>
+    </columns>
+    <columns>
         <field>FK_NAME</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Loan_Status_Change_Date__c</field>
-    </columns>
-    <columns>
-        <field>CUST_LAST_UPDATE</field>
     </columns>
     <columns>
         <field>FK_ACC_OWNER_NAME</field>
@@ -27,6 +27,9 @@
     <columns>
         <field>FK_$Account.Company_NMLS_ID__c</field>
     </columns>
+    <columns>
+        <field>Loan_New__c.Mortgage_Applied_for__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>
@@ -35,16 +38,10 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.LoanStatus__c</column>
+            <column>Loan_New__c.Closing_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Funded,Closed - Awaiting Funding</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>Loan_New__c.Loan_Status_Change_Date__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>LAST_N_DAYS:21</value>
+            <value>THIS_MONTH</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -53,7 +50,7 @@
         <field>Loan_New__c.LoanStatus__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Closed/Funded Last 21 Days</name>
+    <name>Closed This Month</name>
     <params>
         <name>co</name>
         <value>1</value>
