@@ -179,6 +179,12 @@
             component.set("v.NewDeclaration.Other_Pacific_Islander_Desc__c","");
         }
         
+        if(l1 == "Y" || l2 == "Y" || l3 == "Y"){
+            component.set("v.NewDeclaration.Does_not_wish_to_provide__c",false);
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Race__c",false);
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Sex__c",false);
+        }
+        
         if(h=='No')
         {
             component.set("v.showPrimaryRsdnce",true); 

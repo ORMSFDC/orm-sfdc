@@ -434,7 +434,7 @@
                     </label>
                 </div>
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doNotWishEth" value="{!v.NewDeclaration.Does_not_wish_to_provide__c}"  />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doNotWishEth" value="{!v.NewDeclaration.Does_not_wish_to_provide__c}" disabled = "{!v.borrowerEthn == 'Y'}"  />
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Does not wish to provide</span>
@@ -597,7 +597,7 @@
                 </div>  
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
                     
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishRace" value="{!v.NewDeclaration.Does_not_wish_to_provide_Race__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishRace" value="{!v.NewDeclaration.Does_not_wish_to_provide_Race__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Does not wish to provide</span>
@@ -628,7 +628,7 @@
                 </div>
 
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishSex" value="{!v.NewDeclaration.Does_not_wish_to_provide_Sex__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishSex" value="{!v.NewDeclaration.Does_not_wish_to_provide_Sex__c}" disabled = "{!v.borrowerSex == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Does not wish to provide</span>
