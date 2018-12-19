@@ -384,7 +384,7 @@
                     </label>
                 </div>
                 <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="mexicanEth" value="{!v.NewDeclaration.mexican__c}" disabled = "{!v.borrowerEthn == 'Y'}"/>
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="mexicanEth" value="{!v.NewDeclaration.Mexican__c}" disabled = "{!v.borrowerEthn == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Mexican</span>
