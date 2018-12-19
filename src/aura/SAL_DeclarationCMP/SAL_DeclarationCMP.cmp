@@ -324,26 +324,11 @@
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
             <label id="lbl_group_l1" class="lblRemarkStyle"></label>
-            <br/>
+            <br/>           
 
             <div class="slds-size_1-of-1 LabelDiv">
                 <div>
-                    ii. Was the sex of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
-                </div>
-            </div>
-            <div class="slds-size_1-of-2">
-                <lightning:radioGroup aura:id="group_l2"
-                                      name="radioButtonGroup_l2"
-                                      options="{! v.options2 }"
-                                      value="{!v.NewDeclaration.Borrower_Sex__c }"
-                                      onchange="{! c.onAIfieldsChange }"/>
-            </div>
-            <label id="lbl_group_l2" class="lblRemarkStyle"></label>
-            <br/>
-
-            <div class="slds-size_1-of-1 LabelDiv">
-                <div>
-                    iii. Was the race of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
+                    ii. Was the race of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
                 </div>
             </div>
             <div class="slds-size_1-of-2">   
@@ -355,6 +340,22 @@
             </div>
             <label id="lbl_group_l3" class="lblRemarkStyle"></label>
             <br/>
+            
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    iii. Was the sex of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_l2"
+                                      name="radioButtonGroup_l2"
+                                      options="{! v.options2 }"
+                                      value="{!v.NewDeclaration.Borrower_Sex__c }"
+                                      onchange="{! c.onAIfieldsChange }"/>
+            </div>
+            <label id="lbl_group_l2" class="lblRemarkStyle"></label>
+            <br/>
+            
             </aura:set>
             </aura:if>
             <!--end SFDC 282 -->
