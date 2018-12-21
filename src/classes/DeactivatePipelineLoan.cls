@@ -57,18 +57,14 @@ global class DeactivatePipelineLoan implements Database.Batchable<sObject>{
         
             }
             else if(numberDaysDue==31){
-                Loan_New__c loan = new Loan_New__c( Id = l.Id, IsActiveFlag__c = false, LoanStatus__c = 'Withdrawn');
+                Loan_New__c loan = new Loan_New__c( Id = l.Id, IsActiveFlag__c = false, LoanStatus__c = 'File Closed for Incompleteness');
                 loanUpdates.add(loan);                    
-            } 
-            
-               
+            }  
         }
-
     
         // Update Loan records    
         try { if (loanUpdates.size()>0){ update loanUpdates; } } 
-        catch (Exception ex){ Logger.debugException(ex); }
-    
+        catch (Exception ex){ Logger.debugException(ex); }    
 
         // Insert Notes records
         try { if (noteInserts.size()>0){ insert noteInserts; } } 
@@ -76,7 +72,6 @@ global class DeactivatePipelineLoan implements Database.Batchable<sObject>{
         
         Logger.pop();
     } 
-
 
     global void finish(Database.BatchableContext BC){
         Logger.push('finish','DeactivatePipelineLoan');
