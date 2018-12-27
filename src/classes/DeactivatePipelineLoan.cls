@@ -57,7 +57,7 @@ global class DeactivatePipelineLoan implements Database.Batchable<sObject>{
         
             }
             else if(numberDaysDue==31){
-                Loan_New__c loan = new Loan_New__c( Id = l.Id, IsActiveFlag__c = false, LoanStatus__c = 'Withdrawn');
+                Loan_New__c loan = new Loan_New__c( Id = l.Id, IsActiveFlag__c = false, LoanStatus__c = 'File Closed for Incompleteness');
                 loanUpdates.add(loan);                    
             }  
         }

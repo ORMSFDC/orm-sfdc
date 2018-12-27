@@ -1537,103 +1537,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>LoanStatus__c</fullName>
-        <externalId>false</externalId>
-        <label>LoanStatus*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Incomplete</fullName>
-                    <default>true</default>
-                    <label>Incomplete</label>
-                </value>
-                <value>
-                    <fullName>Proposal</fullName>
-                    <default>false</default>
-                    <label>Application Requested</label>
-                </value>
-                <value>
-                    <fullName>Waiting for Full Package</fullName>
-                    <default>false</default>
-                    <label>Waiting for Full Package</label>
-                </value>
-                <value>
-                    <fullName>Application Package Received</fullName>
-                    <default>false</default>
-                    <label>Full Package Received</label>
-                </value>
-                <value>
-                    <fullName>Full Application Received - Incomplete</fullName>
-                    <default>false</default>
-                    <label>Full Application Received - Incomplete</label>
-                </value>
-                <value>
-                    <fullName>In Processing</fullName>
-                    <default>false</default>
-                    <label>In Processing</label>
-                </value>
-                <value>
-                    <fullName>Conditionally Approved</fullName>
-                    <default>false</default>
-                    <label>Conditionally Approved</label>
-                </value>
-                <value>
-                    <fullName>Underwriting Clear to Close</fullName>
-                    <default>false</default>
-                    <label>Underwriting Clear to Close</label>
-                </value>
-                <value>
-                    <fullName>Suspended</fullName>
-                    <default>false</default>
-                    <label>Suspended</label>
-                </value>
-                <value>
-                    <fullName>Awaiting Closing</fullName>
-                    <default>false</default>
-                    <label>Awaiting Closing</label>
-                </value>
-                <value>
-                    <fullName>Closed - Awaiting Funding</fullName>
-                    <default>false</default>
-                    <label>Closed - Awaiting Funding</label>
-                </value>
-                <value>
-                    <fullName>Funded</fullName>
-                    <default>false</default>
-                    <label>Funded</label>
-                </value>
-                <value>
-                    <fullName>Denied</fullName>
-                    <default>false</default>
-                    <label>Denied</label>
-                </value>
-                <value>
-                    <fullName>Withdrawn</fullName>
-                    <default>false</default>
-                    <label>Withdrawn</label>
-                </value>
-                <value>
-                    <fullName>Sandbox</fullName>
-                    <default>false</default>
-                    <label>Sandbox</label>
-                </value>
-                <value>
-                    <fullName>Cancelled/Denied</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Cancelled/Denied</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Loan_Number__c</fullName>
         <description>This is created to redirect to Loan Record when we click on Loan Number</description>
         <externalId>false</externalId>
@@ -3968,6 +3871,133 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Html</type>
         <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_Approved_Not_Accepted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Approved Not Accepted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>File_Closed_for_Incompleteness_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>File Closed for Incompleteness Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LoanStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>LoanStatus*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>true</default>
+                    <label>Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Proposal</fullName>
+                    <default>false</default>
+                    <label>Application Requested</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Full Package</fullName>
+                    <default>false</default>
+                    <label>Waiting for Full Package</label>
+                </value>
+                <value>
+                    <fullName>File Closed for Incompleteness</fullName>
+                    <default>false</default>
+                    <label>File Closed for Incompleteness</label>
+                </value>
+                <value>
+                    <fullName>Application Package Received</fullName>
+                    <default>false</default>
+                    <label>Full Package Received</label>
+                </value>
+                <value>
+                    <fullName>Full Application Received - Incomplete</fullName>
+                    <default>false</default>
+                    <label>Full Application Received - Incomplete</label>
+                </value>
+                <value>
+                    <fullName>In Processing</fullName>
+                    <default>false</default>
+                    <label>In Processing</label>
+                </value>
+                <value>
+                    <fullName>Conditionally Approved</fullName>
+                    <default>false</default>
+                    <label>Conditionally Approved</label>
+                </value>
+                <value>
+                    <fullName>Underwriting Clear to Close</fullName>
+                    <default>false</default>
+                    <label>Underwriting Clear to Close</label>
+                </value>
+                <value>
+                    <fullName>Application Approved but Not Accepted</fullName>
+                    <default>false</default>
+                    <label>Application Approved but Not Accepted</label>
+                </value>
+                <value>
+                    <fullName>Suspended</fullName>
+                    <default>false</default>
+                    <label>Suspended</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Closing</fullName>
+                    <default>false</default>
+                    <label>Awaiting Closing</label>
+                </value>
+                <value>
+                    <fullName>Closed - Awaiting Funding</fullName>
+                    <default>false</default>
+                    <label>Closed - Awaiting Funding</label>
+                </value>
+                <value>
+                    <fullName>Funded</fullName>
+                    <default>false</default>
+                    <label>Funded</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>Sandbox</fullName>
+                    <default>false</default>
+                    <label>Sandbox</label>
+                </value>
+                <value>
+                    <fullName>Cancelled/Denied</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cancelled/Denied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
