@@ -305,33 +305,25 @@
             </div>
         </div>
     </div>
-    
+    <!--SFDC_568-->
     <div id="thnksdiv" style="display:none">
         <div class="container">
             <div class="slds-form slds-form_Compound"  >
-                
                 <fieldset class="slds-form-element">
-                    
-                    <div class="slds-form-element__group">
-                        <div class="slds-form-element__row">
-                            <div class="slds-form-element slds-size_1-of-2">     
-                                <div style= "color:blue">
-                                    <h3><b>Start a New Loan -- Application Submission Success</b></h3>   
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slds-form-element__group">
-                            <div class="slds-form-element__row">
-                                <div class="slds-form-element slds-size_1-of-2">     
-                                    
-                                    <h5><b>Thank you! Your application request has been successfully submitted. We are reviewing the application and will be sending you the complete application package for signature.</b></h5>   
-                                    
-                                </div>
+               		<div class="slds-align_absolute-center" style="height: 5rem;">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <div style= "color:blue">
+                              <center><h3><b>Start a New Loan -- Application Submission Success</b></h3></center>
                             </div>
                         </div>
                     </div>
+                    <div class="slds-align_absolute-center" style="height: 5rem;">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <h5><b>Thank you! Your application request has been successfully submitted. We are reviewing the application and will be sending you the complete application package for signature.</b></h5>
+                        </div>
+                    </div>
                 </fieldset>
-                
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             </div>
         </div>
     </div>

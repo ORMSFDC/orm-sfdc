@@ -550,6 +550,7 @@
     <members>toast</members>
     <members>YoutubeVideoLists</members>
     <members>EngagementHistoryReportMetric</members>
+    <members>LoanBanner</members>
     <name>AuraDefinitionBundle</name>
   </types>
   <types>
@@ -4804,6 +4805,7 @@
     <members>zoom_app__ZoomMeetingStartLead</members>
     <members>zoom_app__ZoomRecordingLinks</members>
     <members>zoom_app__ZoomSendEmail</members>
+    <members>LoanTabComp</members>
     <name>ApexPage</name>
   </types>
   <types>
