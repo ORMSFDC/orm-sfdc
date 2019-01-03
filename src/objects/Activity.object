@@ -1,28 +1,37 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ComposeGmail</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>LogCall</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>MailMerge</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>RequestUpdate</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SendEmail</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>ViewAll</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>CTI_Id__c</fullName>
         <externalId>true</externalId>
         <label>CTI Id</label>
@@ -30,7 +39,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Call_Duration_In_Seconds__c</fullName>
         <externalId>false</externalId>
         <label>Call Duration In Seconds</label>
@@ -39,19 +49,22 @@
         <scale>0</scale>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Call_End_Time__c</fullName>
         <externalId>false</externalId>
         <label>Call End Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Call_Start_Time__c</fullName>
         <externalId>false</externalId>
         <label>Call Start Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Client_name__c</fullName>
         <externalId>false</externalId>
         <label>Client name</label>
@@ -59,7 +72,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Create_Follow_up_task__c</fullName>
         <externalId>false</externalId>
         <label>Create Follow-up task</label>
@@ -86,7 +100,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Created_DateTime__c</fullName>
         <externalId>false</externalId>
         <formula>CreatedDate</formula>
@@ -94,7 +109,8 @@
         <label>Created Date Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Disposition__c</fullName>
         <externalId>false</externalId>
         <label>Disposition</label>
@@ -102,7 +118,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Document_Link__c</fullName>
         <externalId>false</externalId>
         <label>Document Link</label>
@@ -110,7 +127,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Document__c</fullName>
         <externalId>false</externalId>
         <formula>IF(Document_Link__c!='', HYPERLINK('/servlet/servlet.FileDownload?file='+Document_Link__c, 'Document', "_blank") ,'')</formula>
@@ -119,7 +137,8 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Due_Time__c</fullName>
         <externalId>false</externalId>
         <label>Due Time</label>
@@ -291,27 +310,31 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Followup_Task__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <inlineHelpText>Please check this box if you are creating a task</inlineHelpText>
         <label>Follow-up Task</label>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Activity_Date__c</fullName>
         <externalId>false</externalId>
         <formula>ActivityDate</formula>
         <label>Last Activity Date</label>
         <required>false</required>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Last_Login_Time__c</fullName>
         <externalId>false</externalId>
         <label>Last Login Time</label>
         <required>false</required>
         <type>DateTime</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Officer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -321,13 +344,15 @@
         <relationshipName>LoanOfficer</relationshipName>
         <required>false</required>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Note__c</fullName>
         <externalId>false</externalId>
         <label>Note</label>
         <required>false</required>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>SubjectType__c</fullName>
         <externalId>false</externalId>
         <label>CTI Subject Type</label>
@@ -369,7 +394,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Subject_Type__c</fullName>
         <externalId>false</externalId>
         <label>Subject Type</label>
@@ -411,7 +437,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Task_Grouping__c</fullName>
         <externalId>false</externalId>
         <formula>IF(CONTAINS( Subject, 'Document has been uploaded'), 'Document Task', 
@@ -433,7 +460,8 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>userLoginId__c</fullName>
         <externalId>false</externalId>
         <label>userLoginId</label>
@@ -441,13 +469,77 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ASPC_Task_SubType__c</fullName>
+        <externalId>false</externalId>
+        <label>Task SubType</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>APCS Closing Agent Request</fullName>
+                    <default>false</default>
+                    <label>APCS Closing Agent Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Credit Request</fullName>
+                    <default>false</default>
+                    <label>APCS Credit Request</label>
+                </value>
+                <value>
+                    <fullName>APCS FHA Request</fullName>
+                    <default>false</default>
+                    <label>APCS FHA Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Government Reporting Request</fullName>
+                    <default>false</default>
+                    <label>APCS Government Reporting Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Insurance Request</fullName>
+                    <default>false</default>
+                    <label>APCS Insurance Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Multiple Requests</fullName>
+                    <default>false</default>
+                    <label>APCS Multiple Requests</label>
+                </value>
+                <value>
+                    <fullName>APCS Other Request</fullName>
+                    <default>false</default>
+                    <label>APCS Other Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Payoff/VOM Request</fullName>
+                    <default>false</default>
+                    <label>APCS Payoff/VOM Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Rush Request</fullName>
+                    <default>false</default>
+                    <label>APCS Rush Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Tax Certificate Request</fullName>
+                    <default>false</default>
+                    <label>APCS Tax Certificate Request</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields><enableFeeds>false</enableFeeds><searchLayouts>
         <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>Private</sharingModel><listViews>
+    </searchLayouts><sharingModel>Private</sharingModel>
+    <listViews>
         <fullName>MyActivities</fullName>
         <columns>ACTIVITY_SUBTYPE</columns>
         <columns>TASK.STATUS</columns>
@@ -458,15 +550,18 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
         <columns>EVENT.LOCATION</columns>
         <filterScope>Mine</filterScope>
         <label>My Activities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyDelegatedActivities</fullName>
         <filterScope>Delegated</filterScope>
         <label>My Delegated Activities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyTeamsActivities</fullName>
         <filterScope>Team</filterScope>
         <label>My Team's Activities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>TodaysTasks</fullName>
         <filterScope>Mine</filterScope>
         <filters>
@@ -485,7 +580,8 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
             <value>TOMORROW</value>
         </filters>
         <label>Today's Tasks</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>UpcomingEvents</fullName>
         <filterScope>Mine</filterScope>
         <filters>
@@ -499,4 +595,5 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
             <value>YESTERDAY</value>
         </filters>
         <label>Upcoming Events</label>
-    </listViews></CustomObject>
+    </listViews>
+</CustomObject>
