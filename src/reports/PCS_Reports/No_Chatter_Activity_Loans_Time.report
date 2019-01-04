@@ -10,7 +10,7 @@
         <field>Loan_New__c.Client_Name__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Loan_Status_Change_Date__c</field>
+        <field>Loan_New__c.In_Processing_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
@@ -19,10 +19,8 @@
         <field>Loan_New__c.Subject_Property_State__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Rate_Type__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Anticipated_Closing_Date__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Loan_New__c.PropertyAppraisalValue__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.PCS_at_Partner_Level__c</field>
@@ -34,13 +32,7 @@
         <field>Loan_New__c.Related_Partner__c</field>
     </columns>
     <columns>
-        <field>CUST_NAME</field>
-    </columns>
-    <columns>
         <field>Loan_New__c.Last_Chatter_Activity__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Last_Chatter_Activity_By__c</field>
     </columns>
     <description>Active Loans no Chatter activity in two weeks</description>
     <filter>
@@ -86,6 +78,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
+    <sortColumn>Loan_New__c.Last_Chatter_Activity__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

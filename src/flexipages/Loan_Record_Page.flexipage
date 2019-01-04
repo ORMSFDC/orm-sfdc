@@ -66,6 +66,15 @@
                 </criteria>
             </visibilityRule>
         </componentInstances>
+        <componentInstances>
+            <componentName>LoanBanner</componentName>
+            <visibilityRule>
+                <criteria>
+                    <leftValue>{!Record.Banner__c}</leftValue>
+                    <operator>NE</operator>
+                </criteria>
+            </visibilityRule>
+        </componentInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>

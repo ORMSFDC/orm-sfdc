@@ -158,24 +158,6 @@
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Cash_at_close__c</fullName>
-        <externalId>false</externalId>
-        <label>Cash at close</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>TextArea</type>
-    </fields>
-    <fields>
-        <fullName>Cash_to_close__c</fullName>
-        <externalId>false</externalId>
-        <label>Cash to close</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>TextArea</type>
-    </fields>
-    <fields>
         <fullName>Current_Mortgage_Balance__c</fullName>
         <externalId>false</externalId>
         <label>Current Mortgage Balance</label>
@@ -734,6 +716,30 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Cash_at_close__c</fullName>
+        <externalId>false</externalId>
+        <label>Cash at close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cash_to_close__c</fullName>
+        <externalId>false</externalId>
+        <label>Cash to close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -815,7 +821,13 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
         <columns>LAST_UPDATE</columns>
         <columns>Print_count__c</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Cash_to_close__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORMS_AE__c</field>
+            <operation>equals</operation>
+            <value>Nathaniel Crusoe</value>
+        </filters>
         <label>All Scenarios</label>
     </listViews>
     <sharingReasons>

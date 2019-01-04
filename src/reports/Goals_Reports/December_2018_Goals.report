@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <aggregates>
-        <calculatedFormula>22</calculatedFormula>
+        <calculatedFormula>27</calculatedFormula>
         <datatype>number</datatype>
         <developerName>FORMULA1</developerName>
         <isActive>true</isActive>
@@ -32,13 +32,13 @@
             <column>Loan_New__c.Closing_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>12/1/2018</value>
+            <value>1/1/2019</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.Closing_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>lessOrEqual</operator>
-            <value>12/31/2018</value>
+            <value>1/31/2019</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -47,7 +47,7 @@
         <field>Loan_New__c.Closing_Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>December 2018 Goals</name>
+    <name>January 2019 Goals</name>
     <params>
         <name>co</name>
         <value>1</value>

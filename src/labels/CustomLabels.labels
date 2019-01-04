@@ -694,13 +694,6 @@ Please call your account executive with any questions or if you need assistance!
         <value>Home Page</value>
     </labels>
     <labels>
-        <fullName>partnerCopyright</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>PartnerCopyRight</shortDescription>
-        <value>2000-2018 One Reverse Mortgage, LLC. All rights reserved.Lending services provided by One Reverse Mortgage, LLC used under license.</value>
-    </labels>
-    <labels>
         <fullName>partnerTermsOfUse</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -905,13 +898,6 @@ Please call your account executive with any questions or if you need assistance!
         <value>Please choose a valid custom metadata type.</value>
     </labels>
     <labels>
-        <fullName>BrokerPricingDateText</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BrokerPricingDateText</shortDescription>
-        <value>12/18 - 12/24 (margins and pricing are subject to change at any time). Once a margin is selected, you cannot raise the margin at a later time.</value>
-    </labels>
-    <labels>
         <fullName>Scenario_link</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -931,5 +917,19 @@ Please call your account executive with any questions or if you need assistance!
         <protected>false</protected>
         <shortDescription>account_link2</shortDescription>
         <value>/view</value>
+    </labels>
+    <labels>
+        <fullName>BrokerPricingDateText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BrokerPricingDateText</shortDescription>
+        <value>1/1/2019 - 1/7/2019 (margins and pricing are subject to change at any time). Once a margin is selected, you cannot raise the margin at a later time.</value>
+    </labels>
+    <labels>
+        <fullName>partnerCopyright</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerCopyRight</shortDescription>
+        <value>2000-2019 One Reverse Mortgage, LLC. All rights reserved.Lending services provided by One Reverse Mortgage, LLC used under license.</value>
     </labels>
 </CustomLabels>

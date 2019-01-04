@@ -617,70 +617,6 @@
         <relationshipLabel><!-- Loans (Loan Officer*) --></relationshipLabel>
     </fields>
     <fields>
-        <label><!-- LoanStatus* --></label>
-        <name>LoanStatus__c</name>
-        <picklistValues>
-            <masterLabel>Application Requested</masterLabel>
-            <translation><!-- Application Requested --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Awaiting Closing</masterLabel>
-            <translation><!-- Awaiting Closing --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Closed - Awaiting Funding</masterLabel>
-            <translation><!-- Closed - Awaiting Funding --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Conditionally Approved</masterLabel>
-            <translation><!-- Conditionally Approved --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Denied</masterLabel>
-            <translation><!-- Denied --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Full Application Received - Incomplete</masterLabel>
-            <translation><!-- Full Application Received - Incomplete --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Full Package Received</masterLabel>
-            <translation><!-- Full Package Received --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Funded</masterLabel>
-            <translation><!-- Funded --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>In Processing</masterLabel>
-            <translation><!-- In Processing --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Incomplete</masterLabel>
-            <translation><!-- Incomplete --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Sandbox</masterLabel>
-            <translation><!-- Sandbox --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Suspended</masterLabel>
-            <translation><!-- Suspended --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Underwriting Clear to Close</masterLabel>
-            <translation><!-- Underwriting Clear to Close --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Waiting for Full Package</masterLabel>
-            <translation><!-- Waiting for Full Package --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Withdrawn</masterLabel>
-            <translation><!-- Withdrawn --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Loan Number --></label>
         <name>Loan_Number__c</name>
     </fields>
@@ -1638,6 +1574,94 @@
     <fields>
         <label><!-- update --></label>
         <name>update__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Approved Not Accepted Date --></label>
+        <name>Application_Approved_Not_Accepted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Banner --></label>
+        <name>Banner__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Closed for Incompleteness Date --></label>
+        <name>File_Closed_for_Incompleteness_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Notes --></label>
+        <name>Internal_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- LoanStatus* --></label>
+        <name>LoanStatus__c</name>
+        <picklistValues>
+            <masterLabel>Application Approved but Not Accepted</masterLabel>
+            <translation><!-- Application Approved but Not Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Requested</masterLabel>
+            <translation><!-- Application Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Closing</masterLabel>
+            <translation><!-- Awaiting Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Awaiting Funding</masterLabel>
+            <translation><!-- Closed - Awaiting Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditionally Approved</masterLabel>
+            <translation><!-- Conditionally Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>File Closed for Incompleteness</masterLabel>
+            <translation><!-- File Closed for Incompleteness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Application Received - Incomplete</masterLabel>
+            <translation><!-- Full Application Received - Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Package Received</masterLabel>
+            <translation><!-- Full Package Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funded</masterLabel>
+            <translation><!-- Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Processing</masterLabel>
+            <translation><!-- In Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sandbox</masterLabel>
+            <translation><!-- Sandbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting Clear to Close</masterLabel>
+            <translation><!-- Underwriting Clear to Close --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Full Package</masterLabel>
+            <translation><!-- Waiting for Full Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
     </fields><caseValues>
         <plural>false</plural>
         <value>Loan</value>
@@ -1666,6 +1690,10 @@
         <sections>
             <label><!-- Important Dates --></label>
             <section>Important Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Loan Notes --></label>
+            <section>Internal Loan Notes</section>
         </sections>
         <sections>
             <label><!-- Latest Loan Status Dates --></label>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Custom settings to store all general purpose settings for the application. These settings should be accessed via lib.sf.settings.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -39,11 +39,11 @@
                 </chartSummary>
                 <componentType>Gauge</componentType>
                 <displayUnits>Integer</displayUnits>
-                <gaugeMax>22.0</gaugeMax>
+                <gaugeMax>27.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
-                <header>December 2018 Goals</header>
-                <indicatorBreakpoint1>12.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>18.0</indicatorBreakpoint2>
+                <header>January 2019 Goals</header>
+                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>22.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>

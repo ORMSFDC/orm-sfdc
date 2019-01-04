@@ -129,7 +129,7 @@ public without sharing class lookUpController {
             decimal CF12MA, decimal CF60MA, decimal CFRMA, decimal CFRM, decimal secMN, string PieChartResponse,
             string BarChartResponse, decimal P_Limit, decimal lineOfCredit,
             String ScenarioType, String Scenario_Response,
-            String cash1, string cash5, String cash10, String CaC, String MarginType, String CtoC, decimal Eofis, Scenario__c sce)
+            String cash1, string cash5, String cash10, Decimal CaC, String MarginType, Decimal CtoC, decimal Eofis, Scenario__c sce)
     {
         Logger.push('SaveScenario', 'lookUpController');
         Lead myLead = (Lead) objClient;

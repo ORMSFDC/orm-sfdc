@@ -1,0 +1,168 @@
+<apex:page controller="rh2.PS_Manage_Trigger_Controller" sidebar="false"  applyBodyTag="false" docType="html-5.0" showHeader="true">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+	<head> 
+    	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>   
+     	<apex:includeScript value="//code.jquery.com/jquery-1.11.3.min.js"/>
+      <apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/hs_breadcrumbs.js')}" />
+     </head>
+     
+     <script>
+        selectBreadcrumb_HS();
+
+     //Verify namespace is ready
+        var rh = rh || {};
+        var overwriteFlag;
+
+
+                
+        rh.j$ = jQuery.noConflict();
+        rh.j$(document).ready(function() {
+            if({!MetadataConnectionWarning})
+            {
+            	createRemoteSite();
+            }
+        });
+
+        function createRemoteSite(){
+          // Disable button 
+          // Calls the Metdata API from JavaScript to create the Remote Site Setting to permit Apex callouts
+          var binding = new XMLHttpRequest();
+          var request = 
+            '<?xml version="1.0" encoding="utf-8"?>' + 
+            '<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'+
+              '<env:Header>' + 
+                '<urn:SessionHeader xmlns:urn="http://soap.sforce.com/2006/04/metadata">' + 
+                  '<urn:sessionId>{!$Api.Session_ID}</urn:sessionId>' + 
+                '</urn:SessionHeader>' + 
+              '</env:Header>' + 
+              '<env:Body>' +
+                '<upsertMetadata xmlns="http://soap.sforce.com/2006/04/metadata">' + 
+                  '<metadata xsi:type="RemoteSiteSetting">' + 
+                    '<fullName>{!rssNameString}</fullName>' +  + 
+                    '<disableProtocolSecurity>false</disableProtocolSecurity>' + 
+                    '<isActive>true</isActive>' + 
+                    '<url>https://{!Host}</url>' +
+                  '</metadata>' +
+                '</upsertMetadata>' +
+              '</env:Body>' + 
+            '</env:Envelope>';
+          binding.open('POST', 'https://{!JSENCODE(Host)}/services/Soap/m/28.0');
+          binding.setRequestHeader('SOAPAction','""');
+          binding.setRequestHeader('Content-Type', 'text/xml');
+          binding.onreadystatechange = 
+            function() { 
+              if(this.readyState==4) {
+                var parser = new DOMParser();
+                var doc  = parser.parseFromString(this.response, 'application/xml');
+                var errors = doc.getElementsByTagName('errors');
+                var messageText = '';
+                
+                for(var errorIdx = 0; errorIdx < errors.length; errorIdx++)
+                  messageText+= errors.item(errorIdx).getElementsByTagName('message').item(0).innerHTML + '\n';
+                
+              } 
+            }
+            binding.send(request);
+      }
+     </script>
+     
+     <style>
+        .checkmark2 {
+            background-image: url({!URLFOR($Resource.PT_Resources_v1, 'images/checkmark.png')});
+            margin-left: 6px;
+            width: 12px;
+            height: 12px;
+        }
+     </style>
+     
+     <body>
+     <apex:slds />
+	 <div class="slds-scope" role="main"> 
+	  	
+
+    	<div class="slds-card ">
+  			<header class="slds-card__header ">
+   		  		<nav role="navigation">
+        			<ol class="slds-breadcrumb slds-list_horizontal">
+                    <li class="slds-list__item slds-text-heading_label home-crumb"><a href="{!URLFOR($Page.PS_landingPage)}">Home</a></li>
+                		<li class="slds-list__item slds-text-heading_label setting-crumb"><a href="{!URLFOR($Page.PS_AllSettings)}">All Rollup Settings</a></li>
+             		</ol>
+        		</nav>
+  			</header>
+		</div>
+	   	<apex:form >
+     	<div class="slds-card slds-m-vertical_medium">
+     		<header class="slds-card__header slds-grid">
+     			<div class="slds-media__body">
+                	<h3 class="slds-text-heading_small slds-truncate">Select Source Object to Enable/Disable Real-time Updating</h3>
+              	</div>
+     		</header>
+     		<body>
+     		<section class="slds-card__body ">
+          <div class="slds-box slds-box_x-small slds-theme_alt-inverse" style="width:85%; margin-left:auto; margin-right:auto;">Please Note:  If you do not see your object listed below, you may need to create a Rollup that uses the desired object as the source.</div><br/>
+     			<div class="slds-scrollable_y" style="width:95%;  margin-left:auto; margin-right:auto;" >
+            		<table class="slds-table slds-table_bordered slds-max-medium-table_stacked slds-col slds-shrink">
+              			<thead>
+              				<tr style="width:100%;">
+	                			<th class="slds-text-heading_label slds-cell-shrink" scope="col">Action</th>
+	                			<th class="slds-text-heading_label slds-is-sortable slds-cell-shrink hidecol" scope="col">Trigger Deployed?</th>
+	                  			<th class="slds-text-heading_label slds-is-sortable hidecol" scope="col">Label</th>
+                          			<th class="slds-text-heading_label slds-is-sortable" scope="col">API Name</th> 
+                          			<th class="slds-text-heading_label slds-is-sortable slds-cell-shrink" scope="col">Disable Realtime?</th> 
+	                  			<th class="slds-text-heading_label slds-is-sortable slds-cell-shrink" scope="col">Force Asynchronous?</th> 
+	                  		</tr>
+	                  	</thead>
+	                  	<tbody>
+                      <apex:actionFunction reRender="realtime_check" action="{!setObjectRealtimeStatus}" name="realtimeSet">
+                                <apex:param name="itemObject" value="" assignTo="{!describeObject}" />
+                                <apex:param name="itemRealtime" value="" assignTo="{!describeDisableRealtime}" />
+                                <apex:param name="itemAsync" value="" assignTo="{!describeEnableAsync}" />
+                      </apex:actionFunction>
+                      <apex:actionFunction reRender="async_check" action="{!setObjectAsynchronousStatus}" name="asyncSet">
+                              <apex:param name="itemObject" value="" assignTo="{!describeObject}" />
+                              <apex:param name="itemRealtime" value="" assignTo="{!describeDisableRealtime}" />
+                              <apex:param name="itemAsync" value="" assignTo="{!describeEnableAsync}" />
+                      </apex:actionFunction>
+                			<apex:repeat value="{! masterObjects }" var="item">
+                				<tr>
+                					<td data-label="Action">
+                            <apex:outputPanel rendered="{!AND(item.rh2__Selected__c, !item.rh2__Real_Time__c)}">
+                  						<apex:commandLink value="Select" action="{!doSelectMasterObject}" rerender="error, table" onClick="if(!confirm('If this realtime trigger is deployed, existing fields will automatically be overwritten.')) return false;">
+                                 	<apex:param name="masterAPI" value="{!item.rh2__Object__c}" assignTo="{!deployObjectName}"/>
+                       				</apex:commandLink>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!OR(!item.rh2__Selected__c, item.rh2__Real_Time__c)}">
+                              <apex:commandLink value="Select" action="{!doSelectMasterObject}" rerender="error, table">
+                                  <apex:param name="masterAPI" value="{!item.rh2__Object__c}" assignTo="{!deployObjectName}"/>
+                              </apex:commandLink>
+                            </apex:outputPanel>
+                     			</td>
+                     			<td>
+                     				<apex:image value="{!URLFOR($Resource.rh2__PT_Resources_v1, 'images/s.gif')}" styleClass="checkmark2" rendered="{!item.rh2__Real_Time__c}" id="checkmark2"/>	
+                     			</td>
+                     			<td>
+                     				{!item.Label__c}
+                     			</td>
+                     			<td>
+                     				{!item.rh2__Object__c}
+                     			</td>
+                          <td>
+                            <apex:inputCheckbox id="realtime_check" value="{!item.rh2__Disable_Realtime__c}" onchange="(function(e) { realtimeSet('{!item.rh2__Object__c}', e.target.checked, {!item.rh2__Disable_Realtime__c}); })(event)" />
+                          </td>
+                          <td>
+                            <apex:inputCheckbox id="async_check" value="{!item.rh2__Asynchronous__c}" onchange="(function(e) { asyncSet('{!item.rh2__Object__c}',{!item.rh2__Disable_Realtime__c}, e.target.checked); })(event)" />
+                          </td>
+                     		</tr>
+                			</apex:repeat>
+                		</tbody>
+	            	</table>
+	       		</div>
+	   		</section>
+     		</body>
+     	</div>
+     </apex:form>
+     </div>     
+     </body>
+</html>
+</apex:page>

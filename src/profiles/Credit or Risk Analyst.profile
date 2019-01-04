@@ -1594,9 +1594,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
-    
-    
     <applicationVisibilities>
         <application>standard__AllTabSet</application>
         <default>false</default>
@@ -1617,7 +1614,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__LightningInstrumentation</application>
         <default>false</default>
@@ -1663,11 +1659,20 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__LightningService</application>
         <default>false</default>
         <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>rh2__PS_Rollup_Helper</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>rh2__Rollup_Helper_Lightning</application>
+        <default>false</default>
+        <visible>false</visible>
     </applicationVisibilities>
     <customPermissions>
         <enabled>true</enabled>
@@ -1685,11 +1690,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountSource</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Account_Executive_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8742,29 +8742,6 @@
         <field>Contact.Scenarios_Saved_YTD__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>Daily_Product_Rate__c.Rate__c</field>
@@ -8885,29 +8862,6 @@
         <field>Event.zoom_app__Zoom_Meeting_Status_fr__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.Channel__c</field>
@@ -9108,12 +9062,6 @@
         <field>User.Total_Run_Scenarios__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>User.zoom_app__Login_Type__c</field>
@@ -9129,32 +9077,6 @@
         <field>User.zoom_app__isPMI_Enabled__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>zoom_app__Zoom__c.zoom_app__External_Zoom_Meetings__c</field>
@@ -9168,6 +9090,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>zoom_app__Zoom__c.zoom_app__Login_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Account_Executive_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Banner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Internal_Notes__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
@@ -9804,14 +9741,6 @@
         <object>SocialPersona</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -10232,22 +10161,6 @@
         <tab>f2b__Mass_Contact_Transfer</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>zoom_app__Zoom_Config</tab>
         <visibility>DefaultOn</visibility>
@@ -10255,6 +10168,42 @@
     <tabVisibilities>
         <tab>zoom_app__Zoom_Meetings</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_All_Rollups</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_Enable_Real_Time</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_Getting_Started</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_Import_Export</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_Rollup_Helper</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__PS_Rollup_Queue</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__Rollup_Helper_Exceptions</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__Rollup_Helper_Help</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>rh2__Rollup_Helper_Home</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>
@@ -10375,5 +10324,9 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>AllowViewKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ExportReport</name>
     </userPermissions>
 </Profile>

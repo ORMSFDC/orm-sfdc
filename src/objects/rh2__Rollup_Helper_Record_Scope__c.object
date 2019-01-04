@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This setting will override the default record scope for the specified Source object.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Rollup Helper Record Scope Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -107,11 +107,11 @@ public without sharing class PdfSavedScenarioController {
             }else{
               //SFDC - 269
               if(scenario.Scenario_Type__c=='FHA Traditional HECM'){
-                    cashAtClose               = Decimal.valueOf(scenario.Cash_at_close__c);
+                    cashAtClose               =scenario.Cash_at_close__c;
                 }else{
                     cashAtClose               = scenario.Principal_Limit__c;
               }//SFDC - 269
-              fundsNeedToClose                = Decimal.valueOf(scenario.Cash_to_close__c); //SFDC-241
+              fundsNeedToClose                = scenario.Cash_to_close__c; //SFDC-241
                //hecm
                 if(scenario.Scenario_Type__c=='FHA Traditional HECM'){  isTraditional  = true;
                 }else{
@@ -128,7 +128,7 @@ public without sharing class PdfSavedScenarioController {
             if(null != scenario.PieChartResponse__c) {
                 firstAmount                   = ((scenario.Principal_Limit__c-scenario.Current_Mortgage_Balance__c-scenario.MIP__c-financingFees).setScale(2, RoundingMode.HALF_UP));
             }else{
-                firstAmount                   =decimal.valueOf(scenario.Cash_at_close__c);
+                firstAmount                   =scenario.Cash_at_close__c;
             }
             
             //start SFDC -269

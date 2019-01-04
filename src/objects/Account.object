@@ -3857,65 +3857,6 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Approval_Sub_Status__c</fullName>
-        <externalId>false</externalId>
-        <label>Approval Sub-Status</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Approved</fullName>
-                    <default>false</default>
-                    <label>Approved</label>
-                </value>
-                <value>
-                    <fullName>Denied by Credit Risk</fullName>
-                    <default>false</default>
-                    <label>Denied by Credit Risk</label>
-                </value>
-                <value>
-                    <fullName>Terminated (Production)</fullName>
-                    <default>false</default>
-                    <label>Terminated (Production)</label>
-                </value>
-                <value>
-                    <fullName>Terminated (Leadership Request)</fullName>
-                    <default>false</default>
-                    <label>Terminated (Leadership Request)</label>
-                </value>
-                <value>
-                    <fullName>Terminated (DTRT)</fullName>
-                    <default>false</default>
-                    <label>Terminated (DTRT)</label>
-                </value>
-                <value>
-                    <fullName>Terminated (Performance)</fullName>
-                    <default>false</default>
-                    <label>Terminated (Performance)</label>
-                </value>
-                <value>
-                    <fullName>Withdrawn by Partner</fullName>
-                    <default>false</default>
-                    <label>Withdrawn by Partner</label>
-                </value>
-                <value>
-                    <fullName>Excluded Partner</fullName>
-                    <default>false</default>
-                    <label>Excluded Partner</label>
-                </value>
-                <value>
-                    <fullName>Company Closed</fullName>
-                    <default>false</default>
-                    <label>Company Closed</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Denial_Date__c</fullName>
         <externalId>false</externalId>
         <label>Denial Date</label>
@@ -4779,6 +4720,70 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Approval_Sub_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Sub-Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Company Closed</fullName>
+                    <default>false</default>
+                    <label>Company Closed</label>
+                </value>
+                <value>
+                    <fullName>Denied by Credit Risk</fullName>
+                    <default>false</default>
+                    <label>Denied by Credit Risk</label>
+                </value>
+                <value>
+                    <fullName>Excluded Partner</fullName>
+                    <default>false</default>
+                    <label>Excluded Partner</label>
+                </value>
+                <value>
+                    <fullName>Terminated (DTRT)</fullName>
+                    <default>false</default>
+                    <label>Terminated (DTRT)</label>
+                </value>
+                <value>
+                    <fullName>Terminated (Leadership Request)</fullName>
+                    <default>false</default>
+                    <label>Terminated (Leadership Request)</label>
+                </value>
+                <value>
+                    <fullName>Terminated (Non-renewal)</fullName>
+                    <default>false</default>
+                    <label>Terminated (Non-renewal)</label>
+                </value>
+                <value>
+                    <fullName>Terminated (Performance)</fullName>
+                    <default>false</default>
+                    <label>Terminated (Performance)</label>
+                </value>
+                <value>
+                    <fullName>Terminated (Production)</fullName>
+                    <default>false</default>
+                    <label>Terminated (Production)</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn by Partner</fullName>
+                    <default>false</default>
+                    <label>Withdrawn by Partner</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields><compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
@@ -4957,6 +4962,10 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
     </listViews>
     <listViews>
         <fullName>MyAccounts</fullName>
+        <columns>QLMS_Account_Executive__c</columns>
+        <columns>ACCOUNT.ADDRESS1_STREET</columns>
+        <columns>ACCOUNT.ADDRESS1_CITY</columns>
+        <columns>ACCOUNT.ADDRESS1_ZIP</columns>
         <columns>ACCOUNT.NAME</columns>
         <columns>Partner_Onboarding_Status__c</columns>
         <columns>ACCOUNT.RECORDTYPE</columns>
@@ -6252,6 +6261,1272 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>Partner_Leads</fullName>
+        <active>true</active>
+        <label>Partner Leads</label>
+        <picklistValues>
+            <picklist>AccountSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never_Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previously_Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Sub_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28DTRT%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Performance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Production%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Assistance_Type__c</picklist>
+            <values>
+                <fullName>Conference Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site visit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Risk_Package_Status__c</picklist>
+            <values>
+                <fullName>Broker Package Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Review in Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Denial_Reason__c</picklist>
+            <values>
+                <fullName>Company had license revoked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company has negative background check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company has no active license</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company has outstanding financial obligations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company lacks operational experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insufficient LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nonresponsive %E2%80%93 Application Aged out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal owner had license revoked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal owner has criminal hit%28s%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal owner has negative background check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal owner has no active license</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal owner has outstanding financial obligations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal owner lacks mortgage origination experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unstable financial history</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>E_sign_Addendum_Provider__c</picklist>
+            <values>
+                <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doc Magic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_does_partner_obtain_leads__c</picklist>
+            <values>
+                <fullName>Company Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Buy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral Shop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Industry</picklist>
+            <values>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biotechnology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chemicals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food %26 Beverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not For Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recreation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization_Ownership_select_one__c</picklist>
+            <values>
+                <fullName>Privately Held</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publicly Traded</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Other_Contact_Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Close Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Party Closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ownership</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Affiliated Entities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification and Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Character Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formation Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Related Fees and Related Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Background Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NMLS ID %E2%80%93 confirm all states they want to do biz in</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Control Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W-9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Lead_Status__c</picklist>
+            <values>
+                <fullName>App Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>No Longer In Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Loan_Production_Stage__c</picklist>
+            <values>
+                <fullName>Aged Partner%2FNever Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Partner%2FNeverEngaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Dormant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Onboarding_Status__c</picklist>
+            <values>
+                <fullName>App Complete%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Complete%2FDenied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Outstanding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Pending Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Ready</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documents Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Seasoning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewing Docs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Total_Loan_Stage__c</picklist>
+            <values>
+                <fullName>Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engaged</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Engaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Type__c</picklist>
+            <values>
+                <fullName>Non Premier</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier Plus</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating</picklist>
+            <values>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reapplication_Status__c</picklist>
+            <values>
+                <fullName>App Package Accepted by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package Incomplete per Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package Sent to inactive Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Uploaded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reapproved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Not_being_Interested__c</picklist>
+            <values>
+                <fullName>Happy with Other Reverse Lenders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not signing up with New Lenders</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reverse Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>States Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting for Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Questionnaire_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Secondary_Contact_Title__c</picklist>
+            <values>
+                <fullName>Assistant Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Branch Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Close Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Principal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regional Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Secondary Market</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Party Closer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State_of_Holding_Company__c</picklist>
+            <values>
+                <fullName>Alabama</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alaska</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arizona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arkansas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>California</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colorado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connecticut</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delaware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Florida</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hawaii</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idaho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illinois</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iowa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kansas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kentucky</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louisiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maryland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Massachusetts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minnesota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mississippi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missouri</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nebraska</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nevada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Hampshire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Jersey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Mexico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Carolina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Dakota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ohio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oklahoma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oregon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pennsylvania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rhode Island</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Carolina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Dakota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tennessee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Texas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vermont</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wisconsin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wyoming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>States_they_would_like_to_do_Business_in__c</picklist>
+            <values>
+                <fullName>Alabama</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alaska</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arizona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arkansas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>California</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colorado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connecticut</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delaware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Florida</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hawaii</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idaho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illinois Indiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iowa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kansas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kentucky</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louisiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maryland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Massachusetts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minnesota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mississippi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missouri</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montana Nebraska</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nevada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Hampshire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Jersey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Mexico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Carolina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Dakota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ohio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oklahoma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oregon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pennsylvania Rhode Island</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Carolina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Dakota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tennessee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Texas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vermont</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wisconsin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wyoming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Institution__c</picklist>
+            <values>
+                <fullName>Federal charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Charter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Organization__c</picklist>
+            <values>
+                <fullName>Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Union</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Updated_Financial_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>What_Exclusionary_List__c</picklist>
+            <values>
+                <fullName>ORMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>Committed_Partner</fullName>
         <active>true</active>
         <label>Committed Partner</label>
@@ -6333,6 +7608,10 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
             </values>
             <values>
                 <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Non-renewal%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -8038,1272 +9317,6 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>Partner_Leads</fullName>
-        <active>true</active>
-        <label>Partner Leads</label>
-        <picklistValues>
-            <picklist>AccountSource</picklist>
-            <values>
-                <fullName>Advertisement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customer Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Employee Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Google AdWords</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchased List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Trade Show</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Website</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Approval_Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Never_Active</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Previously_Active</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Approval_Sub_Status__c</picklist>
-            <values>
-                <fullName>Approved</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Denied by Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Terminated %28DTRT%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Terminated %28Leadership Request%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Terminated %28Performance%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Terminated %28Production%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Withdrawn by Partner</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Assistance_Type__c</picklist>
-            <values>
-                <fullName>Conference Call</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Email</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Site visit</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Credit_Risk_Package_Status__c</picklist>
-            <values>
-                <fullName>Broker Package Incomplete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Escalated Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full Review in Process</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Initial Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Review Complete</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Denial_Reason__c</picklist>
-            <values>
-                <fullName>Company had license revoked</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company has negative background check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company has no active license</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company has outstanding financial obligations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Company lacks operational experience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Insufficient LOX</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Nonresponsive %E2%80%93 Application Aged out</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal owner had license revoked</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal owner has criminal hit%28s%29</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal owner has negative background check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal owner has no active license</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal owner has outstanding financial obligations</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal owner lacks mortgage origination experience</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Unstable financial history</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>E_sign_Addendum_Provider__c</picklist>
-            <values>
-                <fullName>Calyx</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Doc Magic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DocuSign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Ellie Mae</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>How_does_partner_obtain_leads__c</picklist>
-            <values>
-                <fullName>Company Website</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Direct Mail</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Lead Buy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Referral Shop</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Industry</picklist>
-            <values>
-                <fullName>Agriculture</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Apparel</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Banking</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Biotechnology</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Chemicals</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Communications</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Construction</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Consulting</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Education</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Electronics</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Energy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engineering</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Entertainment</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Environmental</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Finance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Food %26 Beverage</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Government</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Healthcare</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Hospitality</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Insurance</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Machinery</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Manufacturing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Media</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not For Profit</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Recreation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Retail</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Shipping</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Technology</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Telecommunications</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Transportation</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Utilities</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Organization_Ownership_select_one__c</picklist>
-            <values>
-                <fullName>Privately Held</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Publicly Traded</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Other_Contact_Title__c</picklist>
-            <values>
-                <fullName>Assistant Loan Officer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Branch Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Loan Officer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Post Close Contact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processing Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Regional Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Secondary Market</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Third Party Closer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Ownership</picklist>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Private</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Public</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Subsidiary</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Denial_Reasons__c</picklist>
-            <values>
-                <fullName>Affiliated Entities</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Broker Agreement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Certification and Authorization</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Character Checks</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Corporate Resolution</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Exclusionary List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Financials</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Formation Documents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Loan Related Fees and Related Policy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MARI Background Check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NMLS ID %E2%80%93 confirm all states they want to do biz in</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Quality Control Policy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reputation Check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Resumes</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>W-9</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Lead_Status__c</picklist>
-            <values>
-                <fullName>App Sent</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Approved</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Denied</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>No Longer In Business</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not Interested</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Prospect</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Withdrawn</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Loan_Production_Stage__c</picklist>
-            <values>
-                <fullName>Aged Partner%2FNever Engaged</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Dormant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Partner%2FNeverEngaged</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pre-Dormant</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Producing</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Onboarding_Status__c</picklist>
-            <values>
-                <fullName>App Complete%2FApproved</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>App Complete%2FDenied</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>App Outstanding</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>App Pending Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>App Ready</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Documents Required</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Escalated Review</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pending Seasoning</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reviewing Docs</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Total_Loan_Stage__c</picklist>
-            <values>
-                <fullName>Committed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Engaged</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Motivated</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Never Engaged</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Type__c</picklist>
-            <values>
-                <fullName>Non Premier</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Premier</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Premier Plus</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Rating</picklist>
-            <values>
-                <fullName>Cold</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Hot</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Warm</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Reapplication_Status__c</picklist>
-            <values>
-                <fullName>App Package Accepted by Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>App Package Incomplete per Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>App Package Sent to inactive Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Application Package Uploaded</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Denied by Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reapproved</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Reason_for_Not_being_Interested__c</picklist>
-            <values>
-                <fullName>Happy with Other Reverse Lenders</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Not signing up with New Lenders</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pricing</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reverse Product</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>States Available</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Waiting for Purchase</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Renewal_Questionnaire_Status__c</picklist>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Need LOX</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outstanding</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Secondary_Contact_Title__c</picklist>
-            <values>
-                <fullName>Assistant Loan Officer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Branch Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Loan Officer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Post Close Contact</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Principal</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processing Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Processor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Regional Manager</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Secondary Market</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Third Party Closer</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>State_of_Holding_Company__c</picklist>
-            <values>
-                <fullName>Alabama</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Alaska</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Arizona</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Arkansas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>California</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Colorado</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Connecticut</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Delaware</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Florida</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Georgia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Hawaii</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Idaho</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Illinois</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Indiana</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Iowa</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Kansas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Kentucky</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Louisiana</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Maine</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Maryland</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Massachusetts</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Michigan</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Minnesota</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Mississippi</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Missouri</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Montana</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Nebraska</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Nevada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Hampshire</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Jersey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Mexico</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New York</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>North Carolina</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>North Dakota</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Ohio</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Oklahoma</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Oregon</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pennsylvania</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Rhode Island</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>South Carolina</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>South Dakota</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Tennessee</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Texas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Utah</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Vermont</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virginia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Washington</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>West Virginia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Wisconsin</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Wyoming</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>States_they_would_like_to_do_Business_in__c</picklist>
-            <values>
-                <fullName>Alabama</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Alaska</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Arizona</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Arkansas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>California</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Colorado</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Connecticut</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Delaware</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Florida</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Georgia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Hawaii</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Idaho</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Illinois Indiana</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Iowa</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Kansas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Kentucky</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Louisiana</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Maine</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Maryland</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Massachusetts</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Michigan</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Minnesota</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Mississippi</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Missouri</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Montana Nebraska</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Nevada</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Hampshire</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Jersey</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Mexico</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New York</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>North Carolina</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>North Dakota</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Ohio</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Oklahoma</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Oregon</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pennsylvania Rhode Island</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>South Carolina</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>South Dakota</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Tennessee</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Texas</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Utah</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Vermont</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Virginia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Washington</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>West Virginia</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Wisconsin</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Wyoming</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Active</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Inactive</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Type</picklist>
-            <values>
-                <fullName>Analyst</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Competitor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Integrator</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Investor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Press</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Prospect</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reseller</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Type_of_Institution__c</picklist>
-            <values>
-                <fullName>Federal charter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>State Charter</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Subsidiary</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Type_of_Organization__c</picklist>
-            <values>
-                <fullName>Bank</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Credit Union</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Updated_Financial_Status__c</picklist>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Need LOX</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outstanding</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>What_Exclusionary_List__c</picklist>
-            <values>
-                <fullName>ORMS</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>QLMS</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
-    <recordTypes>
         <fullName>Partners</fullName>
         <active>true</active>
         <label>Partners</label>
@@ -9389,6 +9402,10 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
             </values>
             <values>
                 <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Non-renewal%29</fullName>
                 <default>false</default>
             </values>
             <values>
@@ -11187,6 +11204,10 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
             </values>
             <values>
                 <fullName>Terminated %28Leadership Request%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated %28Non-renewal%29</fullName>
                 <default>false</default>
             </values>
             <values>

@@ -1844,46 +1844,6 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
         <name>Account_Called_This_Week__c</name>
     </fields>
     <fields>
-        <label><!-- Approval Sub-Status --></label>
-        <name>Approval_Sub_Status__c</name>
-        <picklistValues>
-            <masterLabel>Approved</masterLabel>
-            <translation><!-- Approved --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Company Closed</masterLabel>
-            <translation><!-- Company Closed --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Denied by Credit Risk</masterLabel>
-            <translation><!-- Denied by Credit Risk --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Excluded Partner</masterLabel>
-            <translation><!-- Excluded Partner --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (DTRT)</masterLabel>
-            <translation><!-- Terminated (DTRT) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Leadership Request)</masterLabel>
-            <translation><!-- Terminated (Leadership Request) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Performance)</masterLabel>
-            <translation><!-- Terminated (Performance) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Production)</masterLabel>
-            <translation><!-- Terminated (Production) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Withdrawn by Partner</masterLabel>
-            <translation><!-- Withdrawn by Partner --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- Denial Date --></label>
         <name>Denial_Date__c</name>
     </fields>
@@ -2505,6 +2465,50 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
         <picklistValues>
             <masterLabel>QLMS</masterLabel>
             <translation><!-- QLMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Sub-Status --></label>
+        <name>Approval_Sub_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Closed</masterLabel>
+            <translation><!-- Company Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied by Credit Risk</masterLabel>
+            <translation><!-- Denied by Credit Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excluded Partner</masterLabel>
+            <translation><!-- Excluded Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (DTRT)</masterLabel>
+            <translation><!-- Terminated (DTRT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Leadership Request)</masterLabel>
+            <translation><!-- Terminated (Leadership Request) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Non-renewal)</masterLabel>
+            <translation><!-- Terminated (Non-renewal) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Performance)</masterLabel>
+            <translation><!-- Terminated (Performance) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Production)</masterLabel>
+            <translation><!-- Terminated (Production) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn by Partner</masterLabel>
+            <translation><!-- Withdrawn by Partner --></translation>
         </picklistValues>
     </fields>
     <layouts>

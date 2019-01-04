@@ -59,7 +59,7 @@
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Loan_New__c.Application_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

@@ -1,0 +1,602 @@
+<apex:page controller="rh2.PS_DefineFilter_Controller" standardStylesheets="false" sidebar="false" applyBodyTag="false" docType="html-5.0" tabStyle="PS_Rollup_Helper__tab" showHeader="true">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        
+        <apex:stylesheet value="{!$Resource.rh2__PT_TimePicker_CSS}"/>
+        <apex:stylesheet value="{! URLFOR($Resource.HS_Jquery, 'jquery-ui.min.css')}" />
+        <apex:stylesheet value="{! URLFOR($Resource.PT_Resources_v1, '/css/customMessage.css') }" />
+        <apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/hs_breadcrumbs.js')}" />
+        <apex:includeScript value="{! URLFOR($Resource.HS_Jquery, 'jquery-1.12.1.min.js')}" />
+        <apex:includeScript value="{! URLFOR($Resource.HS_Jquery, 'jquery-ui.min.js')}" />
+        <apex:includeScript value="{!$Resource.rh2__PT_TimePicker_JS}"/>
+        <apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/UI_Utilities.js') }"/>
+    </head>
+    
+    <style>
+        [id$=heading] { padding-top:20px; padding-bottom:5px;}
+        .h_scroll {overflow-x:auto;}
+        .caption {font-size:smallest; padding-left:10px; padding-bottom:5px; padding-top:5px;}
+        .breadcrumb {font-size:small;}
+ 
+        .customMessage {
+            margin: 5px 0!important;    
+            width:100%;        
+        }
+                
+        @media screen and (max-width: 1024px)
+        {
+            width:
+        }        
+        
+        #progressbar { height: 10px; margin-left:50px; margin-top: 10px; }
+    </style>
+    
+    <script>
+    	selectBreadcrumb_HS();
+        $(document).ready(function(){
+            overridePageMessages();    
+        });
+            
+ 
+        function inputLimiter(e) {
+            var AllowableCharacters = ' ANDORandor0123456789()';
+            return limitInputCharacters(AllowableCharacters, e);
+        }
+    </script>
+    <apex:form >
+    <apex:slds />
+    <div class="slds-scope" role="main">
+    
+    <apex:outputPanel id="ClonePopup">
+    <apex:outputPanel rendered="{!showClonepopup}" >
+        <div aria-hidden="false" role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Clone from Existing Filter</h2>
+                </div>
+                <div class="slds-modal__content">   
+                <center>                            
+                    <apex:Selectlist value="{!selectedFilter}" styleclass="slds-button slds-button_neutral slds-picklist__label" style="width: 80%;" multiselect="false" size="1">
+                        <apex:selectOptions value="{!FilterNames}"/>
+                    </apex:Selectlist>              
+                </center>
+                </div>              
+                <div class="slds-modal__footer">
+                    <apex:commandButton styleClass="slds-button slds-button_neutral" action="{!closeClonePopup}" rerender="ClonePopup" value="Cancel"/>                                                       
+                    <apex:commandButton styleClass="slds-button slds-button_brand" action="{!cloneFilter}" rerender="ClonePopup, FilterForm, limitinput, boolLogic, existingSortList, existingFilters, filtercon, preview" value="Clone"/>
+                </div>
+            </div>
+        </div>
+        <div class="slds-modal-backdrop slds-modal-backdrop_open"></div>
+    </apex:outputPanel> 
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="filterForm">
+        <div class="slds-card">
+            <header class="slds-card__header slds-text-heading_small">
+                Rollup Filter Editor
+            </header>
+            <header class="slds-card__header slds-grid">
+                <nav role="navigation" class="slds-col slds-size_3-of-4">
+                    <apex:outputPanel rendered="{!NOT(ISBLANK(settingName))}">
+                        <ol class="slds-breadcrumb slds-list_horizontal slds-p-vertical_small">
+                            <li class="slds-list__item slds-text-heading_label home-crumb"><a href="{!URLFOR($Page.PS_landingPage)}">Home</a></li>
+                            <li class="slds-list__item slds-text-heading_label setting-crumb"><a href="{!URLFOR($Page.PS_AllSettings)}">All Rollup Settings</a></li> 
+                            <li class="slds-list__item slds-text-heading_label"><a href="{!URLFOR($Page.PS_SelectMaster)}">Select Target Object</a></li>
+                            <li class="slds-list__item slds-text-heading_label"><a href="{!URLFOR($Page.PS_SelectTargetField)}{!IF(CONTAINS(URLFOR($Page.PS_SelectTargetField),'?'),'&','?')}mast={!targetObjectAPI}">{!targetObjectLabel} Field For Results</a></li>
+                            <li class="slds-list__item slds-text-heading_label"><a href="{!URLFOR($Page.PS_RollupType)}{!IF(CONTAINS(URLFOR($Page.PS_RollupType),'?'),'&','?')}s={!settingName}">{!targetFieldLabel} Summary Calculation</a></li>
+                            <li class="slds-list__item slds-text-heading_label"><a>Edit Filter</a></li>
+                        </ol>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!ISBLANK(settingName)}">
+                        <ol class="slds-breadcrumb slds-list_horizontal slds-p-vertical_small">
+                            <li class="slds-list__item slds-text-heading_label"><a href="{!URLFOR($Page.PS_AllSettings)}">All Rollup Settings</a></li>
+                            <li class="slds-list__item slds-text-heading_label"><a>Edit Filter</a></li>
+                        </ol>
+                    </apex:outputPanel>                                 
+                </nav>
+                <div class="slds-col slds-size_1-of-4"></div>
+                <div class="slds-col slds-size_1-of-4 slds-grid_align-center slds-p-left_xx-large">
+                    <apex:commandButton styleClass="slds-button slds-button_neutral" rendered="{!ISBLANK(filterName)}" action="{!openClonePopup}" rerender="ClonePopup" value="Clone from Existing"/>                                                                                                    
+                </div>
+            </header>
+            <footer><apex:outputPanel id="errorblock2"><apex:pagemessages /></apex:outputPanel>  </footer>
+        </div>
+        
+            <apex:outputPanel layout="block" rendered="{!NOT(ISBLANK(sourceObjectAPI))}">            
+            
+            <div class="slds-card">
+            
+                <header class="slds-card__header slds-theme_alt-inverse">
+                    <h4 class="slds-text-heading_small slds-truncate">Step 1. Enter Filter Name</h4>
+                </header>
+                
+                <section class="slds-card__body slds-shrink slds-m-right_medium slds-m-left_medium">
+                    <apex:outputPanel >             
+                        <table class="slds-table_striped slds-shrink">
+                            <tr>
+                                <td>
+                                    <apex:outputLabel style="padding-top:5px;" value="Filter Name:  " for="fName"/>
+                                    <apex:inputText value="{!results.filterName}" id="fName"/>
+                                </td>
+                                <td>
+                                    <apex:outputText style="padding-top:5px;" value="Limit this rollup to "/>
+                                    <apex:inputText style="margin-left:0px; margin-right:0px; width:60px;" value="{!limitInt}" id="limitinput">
+                                        <apex:actionSupport event="onchange" reRender="preview"/>
+                                    </apex:inputText>
+                                    <apex:outputText style="padding-top:5px;" value=" child records per parent."/>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:outputPanel>
+                </section>
+                
+                <footer class="slds-card__footer"></footer> 
+            </div>
+                 
+            <div class="slds-card">
+                <header class="slds-card__header slds-theme_alt-inverse">
+                    <h4 class="slds-text-heading_small slds-truncate">Step 2. Specify Sort Order</h4>
+                </header>       
+                
+                <section class="slds-card__body slds-m-left_medium slds-m-right_medium">
+                    <apex:outputPanel layout="block" styleClass="slds-grid">            
+                            <apex:outputPanel layout="block" styleClass="slds-col slds-shrink">
+                                <apex:outputText value="{!sourceObjectLabel} Fields"/>
+                                <br/>
+                                <apex:selectList size="5" value="{!selectedSortField}" id="availSortFields">
+                                    <apex:selectOptions value="{! sortFields }"/>  
+                                </apex:selectList>
+                                
+                                <apex:commandButton action="{!addSortField}" value="Add >>" reRender="preview, existingSortList, availSortFields" 
+                                 styleClass="slds-button slds-button_neutral slds-m-around_large"/>
+                                
+                            </apex:outputPanel> 
+                            
+                            <apex:outputPanel layout="block" styleClass="slds-col slds-shrink slds-m-left_medium">
+                                <apex:outputText value="Defined Sort Order" styleClass="slds-m-left_medium"/>
+                                
+                                <apex:outputPanel id="existingSortList">
+                                <apex:outputPanel layout="block" rendered="{!sortsAreSelected}" styleClass="slds-box slds-box_xsmall slds-theme_default">
+                                    <table id="table" class="slds-table slds-table_bordered">
+                                        <thead>
+                                            <tr>
+                                                <th class="slds-text-heading_small slds-cell-shrink" scope="col">
+                                                    Action
+                                                </th>
+                                                <th class="slds-text-heading_small slds-cell-shrink" scope="col">
+                                                    Order
+                                                </th>
+                                                <th class="slds-text-heading_small">
+                                                    Field
+                                                </th>
+                                                <th class="slds-text-heading_small slds-cell-shrink" scope="col">
+                                                    Sort
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <apex:repeat value="{! selectedSorts }" var="item">
+                                                <tr>
+                                                    <td>
+                                                        <apex:commandLink action="{!removeSortField}" value="Remove" reRender="preview, existingSortList, availSortFields">
+                                                            <apex:param value="{!item.Id}" name="sortId"/>
+                                                        </apex:commandLink>
+                                                    </td>
+                                                    <td>
+                                                        <apex:inputText size="1" value="{!item.sortOption.itemNumber}">
+                                                            <apex:actionSupport event="onchange" reRender="preview, existingSortList"/>                                 
+                                                        </apex:inputText>
+                                                    </td>
+                                                    <td>
+                                                        {! item.fieldLabel }
+                                                    </td>
+                                                    <td>
+                                                        <apex:selectList size="1" value="{!item.sortOption.logic}">
+                                                            <apex:actionSupport event="onchange" reRender="preview"/>
+                                                            <apex:selectOptions value="{! sortOptions }"/>  
+                                                        </apex:selectList>                        
+                                                    </td>
+                                                </tr>
+                                            </apex:repeat>
+                                        </tbody>
+                                    </table>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel layout="block" rendered="{!NOT(sortsAreSelected)}" styleClass="slds-m-left_medium">
+                                    <b>This filter does not sort {!targetObjectLabel} records.</b><br/>  
+                                    Select a field and then click the "Add >>" button if 
+                                    you want to sort the source records when calculating target field values 
+                                    with this filter.   
+                                </apex:outputPanel>
+                                      
+                                </apex:outputPanel> 
+                            </apex:outputPanel>                 
+                    </apex:outputPanel>
+                </section>
+                
+                <footer class="slds-card__footer"></footer> 
+                
+            </div>
+            <div class="slds-card">
+                <header class="slds-card__header slds-theme_alt-inverse">
+                    <h4 class="slds-text-heading_small slds-truncate">Step 3. Specify Filter Criteria</h4>
+                </header> 
+                
+                <section class="slds-card__body slds-m-left_medium slds-m-right_medium">
+                    <apex:outputPanel layout="block">
+                                <apex:outputText value="Labels followed by a '>' indicate there are more fields available.  Multiple filter criteria may be added to one filter."/>
+                                <apex:actionStatus id="statusMessage" startText="(refreshing)" stopText=" " />                  
+                    </apex:outputPanel>
+                    
+                    
+                    
+                    <apex:outputPanel layout="block" styleClass="slds-grid_align-left slds-nowrap">           
+                            
+                            <apex:outputPanel id="col1" layout="block" styleClass="slds-col slds-shrink" style="float:left;">
+                            
+                                <apex:outputText value="{!sourceObjectLabel} Fields"/>
+                                <br/>
+                                <apex:outputPanel id="page" rendered="{!multiPages}">
+                                <apex:commandbutton value="<<" action="{!PrevPage}" rerender="field1, page" rendered="{!showPrevPage}"/>                        
+                                <apex:outputtext value="Page {!pageNum} of {!numPages}"/>                        
+                                <apex:commandbutton value=">>" action="{!NextPage}" rerender="field1, page" rendered="{!fieldListTooLarge}"/>
+                                </apex:outputpanel>
+                                
+                                <apex:outputPanel layout="block" id="field1">
+                                    <apex:selectList size="8" id="filterFields1" value="{!filterField1API}" style="padding-left:15px;">
+                                        <apex:actionSupport event="onchange" action="{!refreshFilter2}" rerender="col1, col5, col2, col3, col4, addButton" status="statusMessage"/>
+                                        <apex:selectOptions value="{!filterFields1PC.PaginatedList}"/> 
+                                    </apex:selectList>
+                                    <br />
+                                    <c:Paginate pageController="{! filterFields1PC }" renderedComponent="field1" />
+                                </apex:outputPanel>
+                            </apex:outputPanel> 
+                            
+                            <apex:outputPanel id="col2" layout="block" styleClass="slds-col_padded slds-shrink" style="float:left;"> 
+                                
+                                <apex:outputPanel id="field2" rendered="{! AND(NOT(ISBLANK(filterField1API)), filterFields1FK)}">
+                                    <apex:selectList size="8" id="filterFields2" value="{! filterField2API }" style="padding-left:15px;">
+                                        <br/>
+                                        <apex:actionSupport event="onchange" action="{! selectFilterField }" rerender="col1, col5, col2, col3, col4, addButton" status="statusMessage"/>
+                                        <apex:selectOptions value="{! filterFields2PC.PaginatedList }"/> 
+                                    </apex:selectList>
+                                    <br />
+                                    <c:Paginate pageController="{! filterFields2PC }" renderedComponent="field2" />
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel id="operator2" layout="block" rendered="{! AND(NOT(ISBLANK(filterField_c)), AND(NOT(ISBLANK(filterField1API)), NOT(filterFields1FK)))}">
+                                    <apex:outputPanel layout="block" >
+                                            <apex:outputPanel layout="block"> 
+                                                <apex:outputText value="Operator"/>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="block"> 
+                                                <apex:selectList size="1" value="{! filterLogic }">
+                                                    <apex:actionSupport event="onchange" rerender="operator2, col5, col3, col4, addButton" status="statusMessage"/>
+                                                    <apex:selectOptions value="{! filterLogicOptions }"/> 
+                                                </apex:selectList>
+                                            </apex:outputPanel>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                
+                            </apex:outputPanel> 
+                               
+                            <apex:outputPanel id="col3" layout="block"  styleClass="slds-col_padded slds-shrink" style="float:left;">
+
+                                <apex:outputPanel layout="block" rendered="{! AND(NOT(ISBLANK(filterField_c)), AND(NOT(ISBLANK(filterField1API)), filterFields1FK)) }">
+                                    <apex:outputPanel layout="block"> 
+                                        <apex:outputText value="Operator"/>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block"> 
+                                        <apex:selectList size="1" value="{! filterLogic }">
+                                            <apex:actionSupport event="onchange" rerender="col5, criteria3, col4, addButton" status="statusMessage"/>
+                                            <apex:selectOptions value="{! filterLogicOptions }"/> 
+                                        </apex:selectList>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel id="criteria3" layout="block" rendered="{!AND(NOT(ISBLANK(filterField_c)), AND(NOT(ISBLANK(filterField1API)), NOT(filterFields1FK)), NOT(ISBLANK(filterLogic)))}">
+                                    <apex:outputPanel layout="block" id="filterCriteriaHead3"> 
+                                        <apex:outputText value="Criteria"/>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel layout="block" id="filterDataEntry3" rendered="{!NOT(hasCriteriaPicklist)}"> 
+                                        <apex:inputText value="{! filterCondition }"/>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="block" id="filterPicklist3" rendered="{!hasCriteriaPicklist}"> 
+                                          
+                                        <apex:selectList size="1" value="{! filterCondition }" rendered="{!NOT(allowMultiselect)}">
+                                            <apex:actionSupport event="onchange" rerender="col5, filterCriteriaHead3, filterCriteriaVar3, col4, addButton, setDateVar3" status="statusMessage"/>
+                                            <apex:selectOptions value="{! filterCriteriaOptions }"/> 
+                                        </apex:selectList>
+                                        <apex:selectList size="4" value="{! filterConditions }" rendered="{!allowMultiselect}" multiSelect="true">
+                                            <apex:actionSupport event="onchange" action="{!buildCriterionStringFromMultiselect}"  rerender="col5, filterCriteriaHead3, filterCriteriaVar3, col4, addButton, setDateVar3" status="statusMessage"/>
+                                            <apex:selectOptions value="{! filterCriteriaOptions }"/> 
+                                        </apex:selectList>
+                                        
+                                        <apex:outputPanel id="filterCriteriaVar3" >
+                                            <apex:outputPanel rendered="{!hasFilterCriteriaVariable}">
+                                                <br/>
+                                                <apex:outputText value="Number"/>
+                                                <br/>                       
+                                                <apex:inputText value="{! filterConditionVar }"/>
+                                            </apex:outputPanel>
+                                        </apex:outputPanel> 
+                                        
+                                        <apex:outputPanel id="setDateVar3" >  
+                                            <apex:outputPanel rendered="{!hasDateSelect}" id="panelForSelectDate3">
+                                                <br/> 
+                                                <apex:outputText value="Date" rendered="{!hasDateSelect}"/>
+                                                <br/>
+                                                <script>
+
+                                                    //Verify namespace is ready
+                                                    var rh = rh || {};
+                                                    rh.j$ = jQuery.noConflict();    
+                                                    
+                                                    rh.j$(document).read(function() {
+                                                       rh.j$( '[id$=datetimepicker3]' ).datetimepicker();
+                                                       rh.j$( '[id$=datepicker3]' ).datepicker();
+                                                    });
+
+                                                </script>
+                                                <apex:inputText id="datepicker3" value="{!datePicker}" rendered="{!hasSelectDateVariable}"/>
+                                                <apex:inputText id="datetimepicker3" value="{!dateTimePicker}" rendered="{!hasSelectDateTimeVariable}"/>
+                                                <br />
+                                                <apex:outputText value="(ex: 01/11/2011 01:00)" rendered="{!hasSelectDateTimeVariable}" />
+                                                <apex:outputText value="(ex: 01/11/2011)" rendered="{!hasSelectDateVariable}"/>
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                </apex:outputPanel>
+                            </apex:outputPanel> 
+                                    
+                            <apex:outputPanel id="col4" layout="block" styleClass="slds-col_padded slds-shrink" style="float:left;"> 
+                                <apex:outputPanel id="criteria4">
+                                    <apex:outputPanel rendered="{! NOT(ISBLANK(filterLogic)) }">
+                                    
+                                    <apex:outputPanel layout="block" id="filterCriteriaHead4"> 
+                                        <apex:outputText value="Criteria"/>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel layout="block" style="position: relative; width: 50%" id="filterDataEntry4" rendered="{!NOT(hasCriteriaPicklist)}"> 
+                                        <apex:inputText value="{! filterCondition }" size="60"/><br />
+                                        <apex:outputPanel styleClass="slds-box slds-theme_alt-inverse" style="display: inline-block; position: relative; width: 442px !important; top: 15pt;">
+                                        <apex:outputText value="(Note that 'contains', 'does not contain', and 'starts with' do not support multiple values. If you enter a comma separated list, it will be treated as one value.)" rendered="{!AND(NOT(hasCriteriaPicklist), CONTAINS(filterLogic, 'LIKE'))}"/>
+                                        <apex:outputText styleClass="" value="Commas can be used to separate multiple values, transforming the equals and not equals operators into in and not in, allowing us to test against a list of possible values." rendered="{!renderInListHelpText}"/>
+                                        </apex:outputPanel>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel layout="block" id="filterPicklist4" rendered="{!hasCriteriaPicklist}"> 
+                                        
+                                        
+                                        <apex:selectList size="1" value="{! filterCondition }" rendered="{!NOT(allowMultiselect)}">
+                                            <apex:actionSupport event="onchange" rerender="col5, filterCriteriaHead4, filterCriteriaVar4, addButton, col4, setDateVar4" status="statusMessage"/>
+                                            <apex:selectOptions value="{! filterCriteriaOptions }"/> 
+                                        </apex:selectList>
+                                        <apex:selectList size="4" value="{! filterConditions }" rendered="{!allowMultiselect}" multiSelect="true">
+                                            <apex:actionSupport event="onchange" action="{!buildCriterionStringFromMultiselect}"  rerender="col5, filterCriteriaHead4, filterCriteriaVar4, col4, addButton, setDateVar4" status="statusMessage"/>
+                                            <apex:selectOptions value="{! filterCriteriaOptions }"/> 
+                                        </apex:selectList>
+                                        
+                                        
+                                        <apex:outputPanel id="filterCriteriaVar4" >
+                                        <apex:outputPanel rendered="{!hasFilterCriteriaVariable}">
+                                            <br/>
+                                            <apex:outputText value="Number"/>
+                                            <br/>                               
+                                            <apex:inputText value="{! filterConditionVar }"/>
+                                        </apex:outputPanel>
+                                    </apex:outputPanel> 
+                                        
+                                    <apex:outputPanel id="setDateVar4" >  
+                                        <apex:outputPanel rendered="{!hasDateSelect}" id="panelForSelectDate4"> 
+                                            <br/>
+                                            <apex:outputText value="Date" rendered="{!hasDateSelect}"/>
+                                            <br/>
+                                            <script>
+                                            
+                                            //Verify namespace is ready
+                                            var rh = rh || {};
+                                            rh.j$ = jQuery.noConflict();    
+                                            
+                                            rh.j$(function() {
+                                               rh.j$( '[id$=datetimepicker4]' ).datetimepicker();
+                                               rh.j$( '[id$=datepicker4]' ).datepicker();
+                                            });
+                                            
+                                            </script>
+                                            <apex:inputText id="datepicker4" value="{!datePicker}" rendered="{!hasSelectDateVariable}"/>
+                                            <apex:inputText id="datetimepicker4" value="{!dateTimePicker}" rendered="{!hasSelectDateTimeVariable}"/>
+                                            <br/>
+                                            <apex:outputText value="(ex: 01/11/2011)" rendered="{!hasSelectDateVariable}"/>
+                                            <apex:outputText value="(ex: 01/11/2011 01:00)" rendered="{!hasSelectDateTimeVariable}"/>
+                                             
+                                        </apex:outputPanel>
+                                    </apex:outputPanel>
+                                    </apex:outputPanel> 
+                                </apex:outputPanel> 
+                                </apex:outputPanel>
+                                </apex:outputPanel> 
+                                <apex:outputPanel id="col5" layout="block" styleClass="slds-col_padded slds-shrink" style="float:left;">
+                                    <apex:outputPanel id="addButton">
+                                        <apex:outputPanel rendered="{! OR(AND(NOT(ISBLANK(filterLogic)),NOT(hasCriteriaPicklist)), AND(NOT(ISBLANK(filterLogic)),AND(hasCriteriaPicklist, NOT(ISBLANK(filterCondition)))))  }">
+                                            <br/>
+                                            <apex:commandButton action="{!addFilter}" value="Submit" rerender="col5, preview, field1, existingFilters, boolLogic, saveButton, saveButton2, errorblock, col4" styleClass="slds-button slds-button_neutral"/>
+                                        </apex:outputPanel>
+                                    </apex:outputPanel>
+                                    
+                                </apex:outputPanel> 
+                            
+                
+            </apex:outputPanel> 
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            
+      
+            <apex:outputPanel id="existingFilters">
+                
+                <apex:outputPanel layout="block">
+                    <apex:outputText value="Existing {!sourceObjectLabel} Filters (all conditions must be met to rollup the value)" styleClass="slds-truncate"/>
+                    <apex:outputText value=" "/>
+                </apex:outputPanel> 
+                
+                <apex:outputPanel layout="block" rendered="{!filtersExist}" styleClass="slds-box slds-box_xsmall slds-theme_default">
+                   <table id="filtercon" class="slds-table slds-table_bordered">
+                        <thead>
+                            <tr>
+                                <th class="slds-text-heading_small">
+                                    Action
+                                </th>
+                                <th class="slds-text-heading_small">
+                                    Filter ID
+                                </th>
+                                <th class="slds-text-heading_small">
+                                    Filtered Field
+                                </th>
+                                <th class="slds-text-heading_small">
+                                    Operator
+                                </th>
+                                <th class="slds-text-heading_small">
+                                    Criteria
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{! selectedFilters }" var="item">
+                                <tr>
+                                    <td>
+                                            <apex:commandLink value="Remove" reRender="preview, existingFilters, boolLogic, saveButton, saveButton2" action="{! removeFilter }">   
+                                              <apex:param name="filterId" value="{! item.Id }"/>
+                                        </apex:commandLink>|
+                                             
+                                        <apex:commandLink value="Edit" rerender="field1, col1, col2, col3, col4, col5, filtercon" action="{! editFilter }">
+                                            <apex:param name="filterField" value="{! item.filter.field }"/>                             
+                                            <apex:param name="filterLogic" value="{! item.filter.logic }"/>
+                                            <apex:param name="filterCondition" value="{! item.filter.condition }"/>
+                                            <apex:param name="filterId" value="{! item.Id }"/>
+                                        </apex:commandLink>
+                                    </td>
+                                    <td>
+                                        {! item.Id + 1 }
+                                    </td>
+                                    <td>
+                                        {! item.filter.field }
+                                    </td>
+                                    <td>
+                                        {! item.filter.logic }                    
+                                    </td>
+                                    <td>
+                                        {! item.filter.condition }
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                   </table>
+                   
+                    <apex:outputPanel id="boolString">
+                        <apex:commandButton action="{!changeFilterLogic}" value="Change Filter Logic" rerender="preview, boolString, saveButton, saveButton2" styleClass="slds-button slds-button_neutral slds-m-around_large"/>
+                        <apex:inputText value="{!booleanLogic}" id="boolLogic" onkeypress="return inputLimiter(event)" style="width: 500px;" /><br />
+                        <apex:outputPanel id="boolStringError" rendered="{!showInvalidBoolString}">
+                            <div style="display:inline-block;" class="slds-box slds-box_x-small slds-theme_error">
+                                <apex:outputText value="{!invalidMessage}" />
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:outputPanel>
+         </section>
+           
+         <footer class="slds-card__footer">
+            <div class="slds-box slds-theme_default slds-text-align_left">
+            <apex:outputPanel id="preview">
+                <apex:outputText value="Filter Preview"/>
+                <br/>
+                <apex:outputText value="{!filterString}"/>
+                <br/>
+            </apex:outputPanel>
+            </div>
+         </footer>
+           
+       </div>
+
+                
+            
+            
+            <div class="slds-card">
+            
+            <header class="slds-card__header slds-theme_alt-inverse">
+                    <h4 class="slds-text-heading_small slds-truncate">Step 4. Save</h4>
+            </header> 
+            
+            <section class="slds-card__body">
+                <div class="slds-button-group" role="group">
+                    <apex:commandButton action="{! save }" value="Save" disabled="{!showInvalidBoolString}" id="saveButton2" styleClass="slds-button slds-button_brand slds-m-around_large"/>            
+                    <apex:commandButton styleClass="slds-button slds-button_neutral slds-m-around_large" rendered="{!ISBLANK(filterName)}" action="{!openClonePopup}" rerender="ClonePopup" value="Clone from Existing"/>                                                                                                   
+                    <apex:commandButton rendered="{!NOT(ISBLANK(filterName))}" action="{!deleteFilter}" value="Delete" styleClass="slds-button slds-button_neutral slds-m-around_large"/>        
+                    <apex:commandButton rendered="{!ISBLANK(settingName)}" action="{!URLFOR($Page.PS_AllSettings)}" value="Cancel" styleClass="slds-button slds-button_neutral slds-m-around_large"/>                 
+                    <apex:commandButton rendered="{!NOT(ISBLANK(settingName))}" action="{!URLFOR($Page.PS_RollupType)}{!IF(CONTAINS(URLFOR($Page.PS_RollupType),'?'),'&','?')}s={!settingName}" value="Cancel" styleClass="slds-button slds-button_neutral slds-m-around_large"/>                   
+                               
+                </div>
+                <div style="padding-left:20px;">
+                     <a href="#" onclick="showModal(true, 'modalPopup')"> Where is this filter used?</a>     
+                </div>
+
+            </section>
+            
+            <footer class="slds-card__footer"></footer>
+        
+        </div>
+        <apex:commandButton action="{!URLFOR($Page.PS_ReferAFriend)}" value="Invite a friend" styleClass="slds-button slds-button_brand slds-m-around_large"/>
+    </apex:outputPanel>    
+    </apex:outputPanel>
+  
+
+     <div id='modalPopup' style="display:none">
+        <div aria-hidden="false" role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" style="width:640px !important;">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Where Is This Filter Used?</h2>
+                    <button type="button" onclick='showModal(false, "modalPopup");' class="slds-button slds-button_icon-inverse slds-modal__close">
+                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
+                            <use xlink:href="{! URLFOR($Resource.SFStyleSheets, 'SFStyleSheets/assets/icons/action-sprite/svg/symbols.svg#close')}"></use>
+                        </svg>
+                    </button>
+                        
+                </div>
+                <div class="slds-modal__content">
+                    <apex:outputPanel rendered="{!RollupsUsingThisFilter.size>0}"> 
+                        <table class="slds-table slds-table_striped" style="overflow:hidden;">
+                            <thead> 
+                                <th style="width:50%;" class="slds-text-heading_label"><strong>Rollup Name</strong></th>
+                                <th style="width:50%;" class="slds-text-heading_label"><strong>Rollup Label</strong></th>
+                            </thead>
+                            <tbody>
+                                <apex:repeat value="{!RollupsUsingThisFilter}" var="item">
+                                    <tr>
+                                        <td style="width:50%; word-wrap:break-word !important;" class="slds-cell-wrap"><apex:outputLink value="{!URLFOR($Page.rh2__PS_RollupType, null, [s=item.Name])}" target="__blank">{!item.Name}</apex:outputLink></td>
+                                        <td style="width:50%; word-wrap:break-word !important;" class="slds-cell-wrap">{!item.RollupLabel__c}</td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                        </table>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!RollupsUsingThisFilter.size==0}">
+                        This filter is currently not being utilized by any rollup. 
+                    </apex:outputPanel>
+                    
+                </div>
+                <div class="slds-modal__footer">
+                    <div class="slds-x-small-buttons_horizontal">
+                        <button type="button" onclick='showModal(false, "modalPopup");' class="slds-button slds-button_neutral slds-button_small slds-m-bottom_x-small">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    </div>   
+    </apex:form>
+    </html>
+</apex:page>

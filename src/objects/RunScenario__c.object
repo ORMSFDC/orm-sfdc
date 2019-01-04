@@ -138,6 +138,11 @@
         <columns>LAST_UPDATE</columns>
         <columns>Business_Partner_Name__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORM_Account_Executive__c</field>
+            <operation>contains</operation>
+            <value>james</value>
+        </filters>
         <label>All</label>
     </listViews>
 </CustomObject>

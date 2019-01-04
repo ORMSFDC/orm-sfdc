@@ -20,7 +20,7 @@
     </values>
     <values>
         <field>Rate__c</field>
-        <value xsi:type="xsd:double">6.625</value>
+        <value xsi:type="xsd:double">6.375</value>
     </values>
     <values>
         <field>Servicing_Fee__c</field>

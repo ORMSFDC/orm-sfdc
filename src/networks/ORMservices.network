@@ -44,8 +44,8 @@
             <label>Start a New Loan</label>
             <position>3</position>
             <publiclyAvailable>false</publiclyAvailable>
-            <target>https://ormmortgageservices.na53.force.com/s/startnewloan</target>
-            <type>ExternalLink</type>
+            <target>/startnewloan</target>
+            <type>InternalLink</type>
         </navigationMenuItem>
         <navigationMenuItem>
             <label>Pipeline</label>

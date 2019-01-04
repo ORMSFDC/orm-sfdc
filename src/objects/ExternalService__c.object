@@ -182,23 +182,6 @@
         <label>All External Services</label>
     </listViews>
     <listViews>
-        <fullName>Amrock</fullName>
-        <columns>NAME</columns>
-        <columns>OBJECT_ID</columns>
-        <columns>RequestPayload__c</columns>
-        <columns>ResponsePayload__c</columns>
-        <columns>ServiceName__c</columns>
-        <columns>SourceID__c</columns>
-        <columns>Status__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>ServiceName__c</field>
-            <operation>contains</operation>
-            <value>Amrock</value>
-        </filters>
-        <label>Amrock</label>
-    </listViews>
-    <listViews>
         <fullName>Baydocs</fullName>
         <columns>NAME</columns>
         <columns>OBJECT_ID</columns>
@@ -214,5 +197,27 @@
             <value>Baydocs</value>
         </filters>
         <label>Baydocs</label>
+    </listViews>
+    <listViews>
+        <fullName>Amrock</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>RequestPayload__c</columns>
+        <columns>ResponsePayload__c</columns>
+        <columns>ServiceName__c</columns>
+        <columns>SourceID__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ServiceName__c</field>
+            <operation>contains</operation>
+            <value>Amrock</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>12/18/2018 12:00 AM</value>
+        </filters>
+        <label>Amrock</label>
     </listViews>
 </CustomObject>
