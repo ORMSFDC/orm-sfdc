@@ -63,10 +63,10 @@
         <value>1</value>
     </params>
     <reportType>AccountList</reportType>
-    <scope>organization</scope>
+    <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <sortColumn>Account.App_Processed__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>

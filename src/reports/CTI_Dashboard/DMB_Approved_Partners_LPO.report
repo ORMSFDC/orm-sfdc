@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>ACCOUNT.NAME</field>
+        <field>USERS.NAME</field>
     </columns>
     <columns>
-        <field>Account.Partner_Lead_Status__c</field>
+        <field>ADDRESS1_STATE</field>
     </columns>
     <columns>
-        <field>Account.App_Sent__c</field>
+        <field>Account.Contacts_Count__c</field>
     </columns>
     <columns>
-        <field>Account.App_Received__c</field>
-    </columns>
-    <columns>
-        <field>Account.App_Processed__c</field>
-    </columns>
-    <columns>
-        <field>RECORDTYPE</field>
+        <field>DUE_DATE</field>
     </columns>
     <filter>
-        <criteriaItems>
-            <column>Account.App_Processed__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>THIS_WEEK</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>ACCOUNT.NAME</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Test Partner</value>
-        </criteriaItems>
         <criteriaItems>
             <column>RECORDTYPE</column>
             <isUnlocked>true</isUnlocked>
@@ -41,10 +23,10 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>USERS.NAME</field>
+        <field>ACCOUNT.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Apps Approved WTD</name>
+    <name>DMB Approved Partners</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -54,8 +36,6 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>false</showSubTotals>
-    <sortColumn>ACCOUNT.NAME</sortColumn>
-    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

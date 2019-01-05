@@ -97,38 +97,6 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Account_Executive_Name__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>ORM Account Executive Name</label>
-        <lookupFilter>
-            <active>true</active>
-            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
-            <filterItems>
-                <field>User.Profile.Name</field>
-                <operation>equals</operation>
-                <value>Account Executive/PCS</value>
-            </filterItems>
-            <filterItems>
-                <field>User.UserRole.Name</field>
-                <operation>equals</operation>
-                <value>Account Executive</value>
-            </filterItems>
-            <filterItems>
-                <field>User.UserRole.Name</field>
-                <operation>equals</operation>
-                <value>Account Executive Lead</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
-        <referenceTo>User</referenceTo>
-        <relationshipName>Business_Partners</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Addendum_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Addendum Received Date</label>
@@ -4784,6 +4752,38 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account_Executive_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ORM Account Executive Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Account Executive/PCS</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>DMB - Jesse, DMB - Josh</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>wORMS, Braveheart</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Business_Partners</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields><compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>

@@ -3580,6 +3580,10 @@
     <members>TheMaloneGroupIncPartnerExecutive</members>
     <members>TheMaloneGroupIncPartnerManager</members>
     <members>TheMaloneGroupIncPartnerUser</members>
+    <members>Braveheart</members>
+    <members>DMB_Jesse</members>
+    <members>DMB_Josh</members>
+    <members>wORMS</members>
     <name>Role</name>
   </types>
   <types>
@@ -4744,6 +4748,16 @@
     <members>Danny_Shared_Reports/Scenarios_Ran_Data11</members>
     <members>unfiled$public/InititialUPB_Dec2018_AE</members>
     <members>unfiled$public/Renewals</members>
+    <members>CTI_Dashboard</members>
+    <members>CTI_Dashboard/CTI_Call_Times_This_Month_QdQ</members>
+    <members>CTI_Dashboard/CTI_Call_Times_This_Week_WvZ</members>
+    <members>CTI_Dashboard/CTI_Call_Times_Today_ksE</members>
+    <members>CTI_Dashboard/CTI_UnAP_Call_Times_Day_DMB_BH_OHc</members>
+    <members>CTI_Dashboard/CTI_UnAppr_Partners_Calls_This_Month_Ngj</members>
+    <members>CTI_Dashboard/CTI_UnAppr_Partners_Calls_This_Week_paO</members>
+    <members>CTI_Dashboard/DMB_Approved_Contacts_QMM</members>
+    <members>CTI_Dashboard/DMB_Approved_Partners_LPO</members>
+    <members>CTI_Dashboard/DMB_UnApproved_Partners_rxV</members>
     <name>Report</name>
   </types>
   <types>
