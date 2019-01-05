@@ -4,57 +4,54 @@
         <field>ACCOUNT.NAME</field>
     </columns>
     <columns>
-        <field>Account.Partner_Lead_Status__c</field>
+        <field>OWNER_FULL_NAME</field>
     </columns>
     <columns>
-        <field>Account.App_Sent__c</field>
+        <field>CONTACT_OWNER</field>
     </columns>
     <columns>
-        <field>Account.App_Received__c</field>
+        <field>FIRST_NAME</field>
     </columns>
     <columns>
-        <field>Account.App_Processed__c</field>
+        <field>LAST_NAME</field>
     </columns>
     <columns>
-        <field>RECORDTYPE</field>
+        <field>Contact.Title__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Last_Activity_Date__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>Account.App_Processed__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>THIS_WEEK</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>ACCOUNT.NAME</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Test Partner</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>RECORDTYPE</column>
+            <column>ACCOUNT_RECORDTYPE</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Account.Committed_Partner,Account.Partners,Account.Approved_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Title__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Principal,Loan Officer,Branch Manager,Regional Manager</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>USERS.NAME</field>
+        <field>Contact.Contact_NMLS__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Apps Approved WTD</name>
+    <name>DMB Approved Contacts</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>AccountList</reportType>
+    <reportType>ContactList</reportType>
     <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>false</showSubTotals>
-    <sortColumn>ACCOUNT.NAME</sortColumn>
+    <sortColumn>Contact.Title__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CREATED_DATE</dateColumn>

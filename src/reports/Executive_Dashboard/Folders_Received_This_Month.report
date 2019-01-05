@@ -45,7 +45,7 @@
         <value>1</value>
     </params>
     <reportType>CustomEntity$Loan_New__c@Loan_New__c.Related_Partner__c</reportType>
-    <scope>organization</scope>
+    <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>

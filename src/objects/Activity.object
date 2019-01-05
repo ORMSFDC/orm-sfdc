@@ -697,6 +697,69 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ASPC_Task_SubType__c</fullName>
+        <externalId>false</externalId>
+        <label>Task SubType</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>APCS Closing Agent Request</fullName>
+                    <default>false</default>
+                    <label>APCS Closing Agent Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Credit Request</fullName>
+                    <default>false</default>
+                    <label>APCS Credit Request</label>
+                </value>
+                <value>
+                    <fullName>APCS FHA Request</fullName>
+                    <default>false</default>
+                    <label>APCS FHA Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Government Reporting Request</fullName>
+                    <default>false</default>
+                    <label>APCS Government Reporting Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Insurance Request</fullName>
+                    <default>false</default>
+                    <label>APCS Insurance Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Multiple Requests</fullName>
+                    <default>false</default>
+                    <label>APCS Multiple Requests</label>
+                </value>
+                <value>
+                    <fullName>APCS Other Request</fullName>
+                    <default>false</default>
+                    <label>APCS Other Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Payoff/VOM Request</fullName>
+                    <default>false</default>
+                    <label>APCS Payoff/VOM Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Rush Request</fullName>
+                    <default>false</default>
+                    <label>APCS Rush Request</label>
+                </value>
+                <value>
+                    <fullName>APCS Tax Certificate Request</fullName>
+                    <default>false</default>
+                    <label>APCS Tax Certificate Request</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields><enableFeeds>false</enableFeeds><searchLayouts>
         <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
