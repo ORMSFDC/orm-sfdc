@@ -148,7 +148,7 @@
     
     callCheckboxMethod6: function(component, event, helper) {
         var capturedCheckbox = component.find("femaleSex").get("v.value");
-        var sexOption = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Sex__c");
+        var sexOption = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
         
         if(capturedCheckbox == true && sexOption == "Y"){
             component.set("v.notSexCheck",'Y'); 
@@ -160,7 +160,7 @@
     
     callCheckboxMethod7: function(component, event, helper) {
         var capturedCheckbox = component.find("maleSex").get("v.value");
-        var sexOption = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Sex__c");
+        var sexOption = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
         
         if(capturedCheckbox == true && sexOption == "Y"){
             component.set("v.notSexCheck2",'Y'); 
