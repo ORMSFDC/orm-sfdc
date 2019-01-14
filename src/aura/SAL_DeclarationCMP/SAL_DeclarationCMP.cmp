@@ -382,7 +382,7 @@
             
             <div class="slds-form-element__row">
                 <div style=""  class="slds-form-element slds-size_1-of-1" id="CheckHispanicDIV">
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="ethnicitymain" change="{!c.callCheckboxMethod4 }" value="{!v.NewDeclaration.Hispanic_or_Latino__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="ethnicitymain" change="{!c.callCheckboxMethod4 }" value="{!v.NewDeclaration.Hispanic_or_Latino__c}" disabled = "{!v.notHispCheck2 == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label uiLabel">
                         <span>Hispanic or Latino</span>
@@ -432,7 +432,7 @@
                 </div>                
                 
                 <div style=""  class="slds-form-element slds-size_1-of-1" >
-                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="notHispLatino" change="{!c.callCheckboxMethod5 }" value="{!v.NewDeclaration.Not_Hispanic_or_Latino__c}" />
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="notHispLatino" change="{!c.callCheckboxMethod5 }" value="{!v.NewDeclaration.Not_Hispanic_or_Latino__c}" disabled = "{!v.notHispCheck == 'Y'}"/>
                     &nbsp;            
                     <label class="uiLabel-right slds-form-element__label " >
                         <span>Not Hispanic or Latino </span>
