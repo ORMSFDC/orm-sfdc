@@ -283,8 +283,7 @@
        
         //SFDC-579
         component.set("v.borrowerEthn",l1);
-        component.set("v.borrowerSex",l2);
-        component.set("v.borrowerRace",l3);
+       
         if(l1 == "Y"){           
             component.set("v.NewDeclaration.Puerto_Rican__c",false);
             component.set("v.NewDeclaration.Cuban__c",false);
@@ -293,44 +292,13 @@
             component.set("v.NewDeclaration.Not_Hispanic_or_Latino__c",false); 
             component.set("v.NewDeclaration.Hispanic_or_Latino__c",false);
             component.set("v.NewDeclaration.Other_Hispanic_or_Latino_desc__c","");
+            component.set("v.NewDeclaration.Does_not_wish_to_provide__c",false);
         }
 
         if(l1 == "N"){
             component.set("v.notHispCheck",'N'); 
             component.set("v.notHispCheck2",'N'); 
-        }
-
-        if(l2=="Y"){
-            component.set("v.NewDeclaration.Male__c",false);
-            component.set("v.NewDeclaration.Female__c",false);
-        }
-         
-        if(l2=="N"){
-            component.set("v.notSexCheck",'N'); 
-            component.set("v.notSexCheck2",'N'); 
-        }
-
-        if(l3 == "Y"){
-            component.set("v.NewDeclaration.Asian_Indian__c",false);
-            component.set("v.NewDeclaration.Chinese__c",false);
-            component.set("v.NewDeclaration.Filipino__c",false);
-            component.set("v.NewDeclaration.Japanese__c",false);
-            component.set("v.NewDeclaration.Korean__c",false);
-            component.set("v.NewDeclaration.Vietnamese__c",false);
-            component.set("v.NewDeclaration.Other_Asian__c",false);
-            component.set("v.NewDeclaration.Other_Asian_Desc__c","");
-            component.set("v.NewDeclaration.Native_Hawaiian__c",false);
-            component.set("v.NewDeclaration.Guamanian_or_Chamorro__c",false);
-            component.set("v.NewDeclaration.Samoan__c",false);
-            component.set("v.NewDeclaration.Other_Pacific_Islander__c",false);
-            component.set("v.NewDeclaration.Other_Pacific_Islander_Desc__c","");
-        }
-        
-        if(l1 == "Y" || l2 == "Y" || l3 == "Y"){
-            component.set("v.NewDeclaration.Does_not_wish_to_provide__c",false);
-            component.set("v.NewDeclaration.Does_not_wish_to_provide_Race__c",false);
-            component.set("v.NewDeclaration.Does_not_wish_to_provide_Sex__c",false);
-        }
+        }       
         
         if(h=='No')
         {
@@ -356,6 +324,44 @@
             document.getElementById('DivshowRemarks').style.display = 'none';
         }        
     },	
+    
+    //SFDC-579
+    onAIfieldsChange2: function(component, event, helper) {        
+        var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+        component.set("v.borrowerSex",l2);
+
+        if(l2=="Y"){
+            component.set("v.NewDeclaration.Male__c",false);
+            component.set("v.NewDeclaration.Female__c",false);
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Sex__c",false);
+        }        
+        if(l2=="N"){
+            component.set("v.notSexCheck",'N'); 
+            component.set("v.notSexCheck2",'N'); 
+        }
+    },
+
+	//SFDC-579
+    onAIfieldsChange3: function(component, event, helper) {        
+        var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
+        component.set("v.borrowerRace",l3);
+        if(l3 == "Y"){
+            component.set("v.NewDeclaration.Asian_Indian__c",false);
+            component.set("v.NewDeclaration.Chinese__c",false);
+            component.set("v.NewDeclaration.Filipino__c",false);
+            component.set("v.NewDeclaration.Japanese__c",false);
+            component.set("v.NewDeclaration.Korean__c",false);
+            component.set("v.NewDeclaration.Vietnamese__c",false);
+            component.set("v.NewDeclaration.Other_Asian__c",false);
+            component.set("v.NewDeclaration.Other_Asian_Desc__c","");
+            component.set("v.NewDeclaration.Native_Hawaiian__c",false);
+            component.set("v.NewDeclaration.Guamanian_or_Chamorro__c",false);     
+            component.set("v.NewDeclaration.Samoan__c",false);
+            component.set("v.NewDeclaration.Other_Pacific_Islander__c",false);
+            component.set("v.NewDeclaration.Other_Pacific_Islander_Desc__c","");
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Race__c",false);
+        }
+    },
     
     // delinquent PickList Change
     delinquent: function(component, event, helper) {         
