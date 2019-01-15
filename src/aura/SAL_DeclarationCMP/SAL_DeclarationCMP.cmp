@@ -340,7 +340,7 @@
                                       name="radioButtonGroup_l3"
                                       options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Race__c }"
-                                      onchange="{! c.onAIfieldsChange }"/>
+                                      onchange="{! c.onAIfieldsChange3 }"/>
             </div>
             <label id="lbl_group_l3" class="lblRemarkStyle"></label>
             <br/>
@@ -355,7 +355,7 @@
                                       name="radioButtonGroup_l2"
                                       options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Sex__c }"
-                                      onchange="{! c.onAIfieldsChange }"/>
+                                      onchange="{! c.onAIfieldsChange2 }"/>
             </div>
             <label id="lbl_group_l2" class="lblRemarkStyle"></label>
             <br/>
