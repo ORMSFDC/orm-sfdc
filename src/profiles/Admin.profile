@@ -1,5 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
-    <classAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>false</custom>
+    <loginIpRanges>
+        <description>temp for qa sandbox clone</description>
+        <endAddress>255.255.255.255</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>AE_Dashboard</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+    </profileActionOverrides>
+    <userLicense>Salesforce</userLicense>
+    <classAccesses>
         <apexClass>AmrockTitleFeesDomainService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -8629,7 +8643,6 @@
         <field>Loan_New__c.Flood_Received_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.FollowUp_Call__c</field>
@@ -12300,7 +12313,6 @@
         <field>ExternalService__c.SourceID__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.Product_Type__c</field>
@@ -12716,33 +12728,16 @@
         <field>Loan_New__c.Channel__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.FHA_Case_Transfer_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Is_Loan_Created_Manually__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>Log__c.LoanID__c</field>
@@ -13003,9 +12998,6 @@
     <readable>false</readable>
     <field>ExternalService__c.Status__c</field>
 </fieldPermissions>
-    
-    
-    
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
