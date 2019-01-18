@@ -5146,6 +5146,18 @@
     <layoutAssignments>
         <layout>YoutubeLinks__c-YoutubeLink Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_Product_Keyword__mdt-Lookup Product Keyword Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_PropertyState_Keyword__mdt-Lookup PropertyState Keyword Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_PropertyState_State__mdt-Lookup PropertyState State Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_Purpose_of_Refinance_Keyword__mdt-Lookup Purpose of Refinance Keyword Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -6061,6 +6073,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-WorkOrder</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userPermissions>

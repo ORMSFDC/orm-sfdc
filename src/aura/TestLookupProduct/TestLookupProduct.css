@@ -1,0 +1,10 @@
+.THIS {
+}
+
+.THIS .TextColor_red {
+    color: red !important;
+}
+
+.THIS.white {
+    background-color: white;
+}

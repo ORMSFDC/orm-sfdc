@@ -1,0 +1,42 @@
+<aura:component controller="OnBaseLookups" implements="flexipage:availableForAllPageTypes">
+    
+    <aura:attribute name="productType" type="String" />
+    <aura:attribute name="mortgageAppliedFor" type="String" />
+    <aura:attribute name="rateType" type="String" />
+    <aura:attribute name="keyword" type="String" />
+    
+    <div class="white">
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small" size="12">
+                <div aria-labelledby="formlookup">
+                    <fieldset class="slds-box slds-theme--default slds-container--small">
+                        <legend id="formlookup" class="slds-text-heading--small slds-p-vertical--medium">
+                            Product Lookup
+                        </legend>
+                        
+                        <form class="slds-form--stacked">
+                            <lightning:input aura:id="testform"
+                                             label="Loan Type"
+                                             value="{!v.productType}" />
+                            <lightning:input aura:id="testform"
+                                             label="Mortgage Applied For"
+                                             value="{!v.mortgageAppliedFor}" />
+                            <lightning:input aura:id="Rate Type"
+                                             label="Rate Type"
+                                             value="{!v.rateType}" />
+                            <lightning:button label="Get Keyword"
+                                              onclick="{!c.clickGetKeyword}" />
+                        </form>
+                        <br/><br/>
+                        <div class="slds-text-heading_medium">
+                            Keyword: <ui:outputText value="{!v.keyword}" 
+                                                    class="TextColor_red" />   
+                        </div>
+                        
+                    </fieldset>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    
+</aura:component>
