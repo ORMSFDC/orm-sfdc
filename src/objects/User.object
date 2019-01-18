@@ -361,4 +361,11 @@ Account.OwnerId = $User.Id
         </filters>
         <label>Integration Users</label>
     </listViews>
+    <validationRules>
+        <fullName>Stop_Changing_Mobile_Field</fullName>
+        <active>true</active>
+        <description>Mobile field is changing to a new format after a period of time - messes up the format of signatures where everything else is set up as a (888) 888-8888 format versus a +1 888888888 format</description>
+        <errorConditionFormula>NOT(CONTAINS(MobilePhone,"-"))</errorConditionFormula>
+        <errorMessage>Please add Mobile/phone format as (888) 888-8888</errorMessage>
+    </validationRules>
 </CustomObject>

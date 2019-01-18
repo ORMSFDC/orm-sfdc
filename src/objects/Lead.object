@@ -154,31 +154,6 @@
         <label>Leads Custom Compact Layout</label>
     </compactLayouts>
     <fields>
-        <fullName>Account_Executive_Name__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>ORM Account Executive Name</label>
-        <lookupFilter>
-            <active>true</active>
-            <filterItems>
-                <field>User.Profile.Name</field>
-                <operation>equals</operation>
-                <value>Account Executive/PCS</value>
-            </filterItems>
-            <filterItems>
-                <field>User.UserRole.Name</field>
-                <operation>contains</operation>
-                <value>Account</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
-        <referenceTo>User</referenceTo>
-        <relationshipName>Leads</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Activity_Timeline__c</fullName>
         <externalId>false</externalId>
         <formula>if((today()-Last_Activity_Date__c)&lt;2,"24 Hours",
@@ -1657,6 +1632,37 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Executive_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>ORM Account Executive Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Account Executive/PCS</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>DMB - Jesse, DMB - Josh</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>wORMS, Braveheart</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
     </fields><compactLayoutAssignment>Leads_Custom_Compact_Layout</compactLayoutAssignment><enableFeeds>true</enableFeeds><enableHistory>false</enableHistory><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.COMPANY</customTabListAdditionalFields>
