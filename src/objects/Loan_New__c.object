@@ -3893,6 +3893,27 @@ IF(
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>QLMS_AE__c</fullName>
+        <externalId>false</externalId>
+        <formula>Related_Partner__r.QLMS_Account_Executive__r.Name</formula>
+        <label>QLMS AE</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_final_HUD_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>In final HUD Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>LoanStatus__c</fullName>
         <externalId>false</externalId>
         <label>LoanStatus*</label>
@@ -3951,6 +3972,11 @@ IF(
                     <label>Underwriting Clear to Close</label>
                 </value>
                 <value>
+                    <fullName>In final HUD Review</fullName>
+                    <default>false</default>
+                    <label>In final HUD Review</label>
+                </value>
+                <value>
                     <fullName>Application Approved but Not Accepted</fullName>
                     <default>false</default>
                     <label>Application Approved but Not Accepted</label>
@@ -3996,19 +4022,14 @@ IF(
                     <isActive>false</isActive>
                     <label>Cancelled/Denied</label>
                 </value>
+                <value>
+                    <fullName>Docs Out to Settlement Agent</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Docs Out to Settlement Agent</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>QLMS_AE__c</fullName>
-        <externalId>false</externalId>
-        <formula>Related_Partner__r.QLMS_Account_Executive__r.Name</formula>
-        <label>QLMS AE</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>

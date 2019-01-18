@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Loan withdrawn after hitting in processing</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Alert: Loan Withdrawn w/ Criteria</name>
+    <style>none</style>
+    <subject>Withdrawn Letter Request Loan #{!Loan_New__c.LoanNumber__c}, Loan ID: {!Loan_New__c.Name}, Client: {!Loan_New__c.Client_Name__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

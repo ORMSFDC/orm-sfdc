@@ -4,13 +4,14 @@
     <encodingKey>ISO-8859-1</encodingKey>
     <name>QLMS AE Not Interested notification</name>
     <style>none</style>
-    <subject>Your Lead: {!Lead.Name}  is Not Interested</subject>
+    <subject>Your Lead: {!Lead.Company}  is Not Interested</subject>
     <textOnly>Hello {!Lead.QLMS_First_Name__c},
 
-Your partner, {!Lead.Name}, is not currently interested in becoming an ORMS partner.
+Your partner is not currently interested in becoming an ORMS partner.
+Company Name: {!Lead.Company}
+Contact Name: {!Lead.Name}
 
 Sincerely,
-
 {!User.Name}
 {!User.Title}
 {!User.Phone}
