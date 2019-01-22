@@ -4043,6 +4043,16 @@ IF(
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Docs_Out_to_Settlement_Agent_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Docs Out to Settlement Agent Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
