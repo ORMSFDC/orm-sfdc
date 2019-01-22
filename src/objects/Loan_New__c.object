@@ -750,16 +750,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>FHA_Case_Number_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>FHA Case Number Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>FHA_Case_Number_Expiration__c</fullName>
         <externalId>false</externalId>
         <formula>FHA_Case_Number_Date__c + 180</formula>
@@ -3600,16 +3590,6 @@ IF(
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Credit_Exp__c</fullName>
-        <externalId>false</externalId>
-        <label>Credit Exp</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Credit_Reissue_Vendor__c</fullName>
         <externalId>false</externalId>
         <label>Credit Reissue Vendor</label>
@@ -3926,16 +3906,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         </valueSet>
     </fields>
     <fields>
-        <fullName>Flood__c</fullName>
-        <externalId>false</externalId>
-        <label>Flood</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Follow_Up_Call_Date__c</fullName>
         <externalId>false</externalId>
         <label>Follow Up Call Date</label>
@@ -3971,16 +3941,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Government_Reports__c</fullName>
-        <externalId>false</externalId>
-        <label>Government Reports</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Guardianship_Conservatorship_Required__c</fullName>
@@ -4061,16 +4021,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <fullName>Insurance_Binder_Effective_Date__c</fullName>
         <externalId>false</externalId>
         <label>Insurance Binder Effective Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Insurance_Binder_Exp__c</fullName>
-        <externalId>false</externalId>
-        <label>Insurance Binder Exp</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -4459,96 +4409,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         </valueSet>
     </fields>
     <fields>
-        <fullName>Payoff_1_Exp__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff 1 Exp</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_1__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff 1</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_2_Exp__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff 2 Exp</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_2__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff 2</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_3_Exp__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff 3 Exp</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_3__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff 3</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_Received_1__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff Received 1</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_Received_2__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff Received 2</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Payoff_Received_3__c</fullName>
-        <externalId>false</externalId>
-        <label>Payoff Received 3</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Percent_of_Residual_Income_Fulfilled__c</fullName>
         <externalId>false</externalId>
         <label>Percent of Residual Income Fulfilled</label>
@@ -4861,16 +4721,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Tax_Transcripts_Rec__c</fullName>
-        <externalId>false</externalId>
-        <label>Tax Transcripts Rec</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Tax_Transcripts__c</fullName>
@@ -5417,6 +5267,202 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Number Ordered Date*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Flood__c</fullName>
+        <externalId>false</externalId>
+        <label>Flood Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Gover__c</fullName>
+        <externalId>false</externalId>
+        <label>Government Reports Date - Final</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Government_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Government Reports Date - Initial</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Insurance_Binder_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Insurance Binder Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Investor__c</fullName>
+        <externalId>false</externalId>
+        <label>Investor</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>American Advisors Group</fullName>
+                    <default>false</default>
+                    <label>American Advisors Group</label>
+                </value>
+                <value>
+                    <fullName>Longbridge Financial, LLC</fullName>
+                    <default>false</default>
+                    <label>Longbridge Financial, LLC</label>
+                </value>
+                <value>
+                    <fullName>Traditional Mortgage Acceptance Corporation</fullName>
+                    <default>false</default>
+                    <label>Traditional Mortgage Acceptance Corporation</label>
+                </value>
+                <value>
+                    <fullName>Waterfall Asset Management, LLC</fullName>
+                    <default>false</default>
+                    <label>Waterfall Asset Management, LLC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Payoff_1_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 1 Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 1 Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_2_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 2 Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 2 Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_3_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 3 Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 3 Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_Received_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 1 Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_Received_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 2 Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_Received_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 3 Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Transcripts_Rec__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Transcripts Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
