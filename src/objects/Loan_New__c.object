@@ -4031,6 +4031,18 @@ IF(
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>AE_On_Close__c</fullName>
+        <externalId>false</externalId>
+        <label>AE On Close</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
