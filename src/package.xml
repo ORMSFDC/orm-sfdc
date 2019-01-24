@@ -480,6 +480,7 @@
     <members>toast</members>
     <members>YoutubeVideoLists</members>
     <members>LoanBanner</members>
+    <members>DisplayPriSortTasks</members>
     <name>AuraDefinitionBundle</name>
   </types>
   <types>

@@ -1,3 +1,11 @@
+/**
+ * @description: Display tasks with user required fields
+ * @author: Sahitya
+ * @date:  6/14/2018
+ *
+ * changelog:
+ * 01/24/2019: Sahitya - added new method to fetch tasks based on Priority and Status
+ */
 public class DisplayPCSTaskController {
     //To fetch results for Created Date Time, Activity Date
     @AuraEnabled
@@ -22,7 +30,7 @@ public class DisplayPCSTaskController {
             }
         }
         // set record limit to query
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
 
         System.debug('@Developer -->sSoql:' + sSoql);
         List < Task > returnTaskList = new List < Task > ();
@@ -122,7 +130,7 @@ public class DisplayPCSTaskController {
                 sSoql += ' asc';
             }
         }
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
         
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
@@ -212,7 +220,7 @@ public class DisplayPCSTaskController {
                 sSoql += ' asc';
             }
         }
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
         
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
@@ -306,7 +314,7 @@ public class DisplayPCSTaskController {
                 sSoql += ' asc';
             }
         }
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
         
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
@@ -396,7 +404,7 @@ public class DisplayPCSTaskController {
                 sSoql += ' asc';
             }
         }
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
         
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
@@ -486,7 +494,7 @@ public class DisplayPCSTaskController {
                 sSoql += ' asc';
             }
         }
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
         
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
@@ -576,7 +584,7 @@ public class DisplayPCSTaskController {
                 sSoql += ' asc';
             }
         }
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
         
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
@@ -667,7 +675,7 @@ public class DisplayPCSTaskController {
                 sSoql += ' asc';
             }
         }
-        sSoql += ' LIMIT 10';
+        sSoql += ' LIMIT 30';
         
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
@@ -735,4 +743,111 @@ public class DisplayPCSTaskController {
         return fetchAgedTasks('ActivityDate', true);
     }
 
+    /************************Sort by priority Tasks**************************/
+    
+    @AuraEnabled
+    public static list < WrapperpriTaskLoanClass > prioritySortTasks(String sortField, boolean isAsc) {
+        List<WrapperpriTaskLoanClass> wrapperTaskLoanClassList = new List<WrapperpriTaskLoanClass>();
+        Id userId = UserInfo.getUserId();
+        User loggedInUser = [Select Id, Email, ProfileId From User Where Id = :userId];
+        String statusCompleted = 'Completed';
+        
+ 
+        String sSoql = 'SELECT Id, Subject, ActivityDate,Created_DateTime__c, Priority, Status , WhoId, WhatId, Who.Name, What.Name, Task_Grouping__c ';
+        sSoql += 'From Task Where what.type = \'Loan_New__c\' AND OwnerId = :userId And Status != \'' +String.escapeSingleQuotes(statusCompleted)+'\' ';
+        system.debug('sortField-->' + sortField);
+
+        if (sortField != '') {
+            sSoql += ' order by ' + sortField;
+            if (isAsc) {
+                sSoql += ' desc';
+            } else {
+                sSoql += ' asc';
+            }
+        }
+        sSoql += ' LIMIT 30';
+        
+        List < Task > returnTaskList = new List < Task > ();
+        returnTaskList = Database.query(sSoql);
+        Set<Id> loanIdSet = new Set<Id>();
+        
+        Schema.DescribeFieldResult fieldResult = Loan_New__c.loanstatus__c.getDescribe();
+        List<Schema.PicklistEntry> values = fieldResult.getPicklistValues();
+        Map<String, String> valueLabelMap = new Map<String,String>();
+        for( Schema.PicklistEntry v : values) {
+            valueLabelMap.put(v.getValue(), v.getLabel());
+        }  
+        
+        for (Task c: returnTaskList) {
+            loanIdSet.add(c.WhatId);
+        }
+        Map<ID, Loan_New__c> loanMap = new Map<ID, Loan_New__c>([
+            SELECT Id, LoanNumber__c, Client_Name__c, loanstatus__c 
+            FROM Loan_New__c 
+        ]);
+        for (Task c: returnTaskList) {
+            if(loanMap.containsKey(c.WhatId)){
+                WrapperpriTaskLoanClass wrapperObj = new  WrapperpriTaskLoanClass ();
+                wrapperObj.task = c;
+                wrapperObj.loan = loanMap.get(c.WhatId);                
+                wrapperObj.loanStatus = valueLabelMap.get(loanMap.get(c.WhatId).loanstatus__c);
+                wrapperTaskLoanClassList.add(wrapperObj);  
+            }
+        }        
+        return wrapperTaskLoanClassList;       
+   }   
+   public class WrapperpriTaskLoanClass{
+        @AuraEnabled public Task task{get;set;}
+        @AuraEnabled public Loan_New__c loan{get;set;}
+        @AuraEnabled public String loanStatus{get;set;}
+    }
+   
+    @AuraEnabled
+    public static List<String> getpriTaskStatus(){
+        List<String> DoctaskStatusList = new List<String>();
+        Schema.DescribeFieldResult fieldResult = Task.Status.getDescribe();
+        List<Schema.PicklistEntry> ple = fieldResult.getPicklistValues();
+        for( Schema.PicklistEntry f : ple) {
+            if(!f.getValue().isNumeric()) {
+                DoctaskStatusList.add(f.getValue());
+            }
+        }
+        return DoctaskStatusList;
+    }    
+        
+    @AuraEnabled
+    public static List<WrapperpriTaskLoanClass> savepriTaskStatus(String taskId, String status){
+        Task taskRec = new Task();
+        taskRec.Id = taskId;
+        taskRec.Status = status;
+        update taskRec;
+        return prioritySortTasks('Created_DateTime__c', true);        
+    }
+    
+    @AuraEnabled
+    public static List<WrapperpriTaskLoanClass> savepriTaskStatus2(String taskId, String status){        
+        Task taskRec = new Task();
+        taskRec.Id = taskId;
+        taskRec.Status = status;
+        update taskRec;
+        return prioritySortTasks('ActivityDate', true);
+    }
+
+    @AuraEnabled
+    public static List<WrapperpriTaskLoanClass> savepriTaskStatus3(String taskId, String status){        
+        Task taskRec = new Task();
+        taskRec.Id = taskId;
+        taskRec.Status = status;
+        update taskRec;
+        return prioritySortTasks('Priority', true);
+    }
+
+    @AuraEnabled
+    public static List<WrapperpriTaskLoanClass> savepriTaskStatus4(String taskId, String status){        
+        Task taskRec = new Task();
+        taskRec.Id = taskId;
+        taskRec.Status = status;
+        update taskRec;
+        return prioritySortTasks('Status', true);
+    }
 }
