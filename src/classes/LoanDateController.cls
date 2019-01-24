@@ -5,10 +5,11 @@
  *
  * changelog:
  * 10/26/2018: Sahitya SFDC-370- Create a task and send an email to AE when Partner Uploads a Case Transfer/Other Lender Application Disclosure
+ * 1/24/2019: Sahitya, changed the filedata datatype from Blob to String in getFNMData method
  */
 public class LoanDateController {    
     @AuraEnabled
-    public static string getFNMData(Blob filedata, String fileName, String base64Data, String contentType, String applicationDate,String rateType,String loanMortgageAppliedFor) {
+    public static string getFNMData(String filedata, String fileName, String base64Data, String contentType, String applicationDate,String rateType,String loanMortgageAppliedFor) {
         id loanid;
         try{
         //Call fannie mae parser and map response details to loan object
