@@ -197,17 +197,19 @@
             component.set('v.fileString', '');
             component.set('v.fileName', 'notExist');
             component.set("v.upload_file", "choose file");
+            
+             //SFDC-370
+            var action2 = component.get("c.createAETask");
+            action2.setParams({
+                "filename": component.get("v.fileName"),
+                "fileData": component.get("v.fileString")          
+            });
+            action2.setCallback(this,function(){          
+            });       
+            $A.enqueueAction(action2);
         });
         $A.enqueueAction(action);
 
-         //SFDC-370
-        var action2 = component.get("c.createAETask");
-        action2.setParams({
-            "filename": component.get("v.fileName"),
-            "fileData": component.get("v.fileString")          
-        });
-        action2.setCallback(this,function(){          
-        });       
-        $A.enqueueAction(action2);
+        
     },
 })
