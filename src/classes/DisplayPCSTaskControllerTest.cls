@@ -18,6 +18,7 @@ public class DisplayPCSTaskControllerTest{
         DisplayPCSTaskController.fetchNotesTasks('ActivityDate', true);
         DisplayPCSTaskController.fetchConditionTasks('ActivityDate', true);
         DisplayPCSTaskController.fetchAgedTasks('ActivityDate', true);
+         DisplayPCSTaskController.prioritySortTasks('ActivityDate', true);
         
         DisplayPCSTaskController.getTaskStatus();
         DisplayPCSTaskController.getInitialTaskStatus();
@@ -26,7 +27,8 @@ public class DisplayPCSTaskControllerTest{
         DisplayPCSTaskController.getDocTaskStatus();
         DisplayPCSTaskController.getNotesTaskStatus();
         DisplayPCSTaskController.getConditionTaskStatus();
-        DisplayPCSTaskController.getAgedTaskStatus();        
+        DisplayPCSTaskController.getAgedTaskStatus(); 
+        DisplayPCSTaskController.getpriTaskStatus();        
         
         DisplayPCSTaskController.saveTaskStatus(t.Id, 'Open');
         DisplayPCSTaskController.saveInitialTaskStatus(t.Id, 'Open');
@@ -36,6 +38,7 @@ public class DisplayPCSTaskControllerTest{
         DisplayPCSTaskController.saveNotesTaskStatus(t.Id, 'Open');
         DisplayPCSTaskController.saveConditionTaskStatus(t.Id, 'Open');
         DisplayPCSTaskController.saveAgedTaskStatus(t.Id, 'Open');
+        DisplayPCSTaskController.savepriTaskStatus(t.Id, 'Open');
         
         DisplayPCSTaskController.saveTaskStatus2(t.Id, 'Open');
         DisplayPCSTaskController.saveInitialTaskStatus2(t.Id, 'Open');
@@ -45,6 +48,9 @@ public class DisplayPCSTaskControllerTest{
         DisplayPCSTaskController.saveNotesTaskStatus2(t.Id, 'Open');
         DisplayPCSTaskController.saveConditionTaskStatus2(t.Id, 'Open');
         DisplayPCSTaskController.saveAgedTaskStatus2(t.Id, 'Open');        
+        DisplayPCSTaskController.savepriTaskStatus2(t.Id, 'Open');
+        DisplayPCSTaskController.savepriTaskStatus3(t.Id, 'Open');
+        DisplayPCSTaskController.savepriTaskStatus4(t.Id, 'Open');
         
     }
     

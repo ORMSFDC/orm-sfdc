@@ -8,8 +8,9 @@
 .THIS .slds-form-element__label
 {
     font-weight:normal  !important;
-    font-size:16px !important;
-    color:#222222 !important; 
+    font-size:14px !important;
+    color:Black !important; 
+    line-height: 1.5 !important ;
 }
 .THIS .errorComponent
 {
@@ -23,6 +24,12 @@
 {
     display: none !important;
 }
+
+.THIS .myCheckbox{
+    display: inline-block;
+    float: left;
+  }
+
 .THIS .LabelDiv
 {
     color: #222222 !important;
@@ -54,6 +61,13 @@
     border: 1px solid black !important;
     overflow: hidden;
 }
+
+.THIS .textAreaStyle2 {
+    outline: 0;
+    border: 0px solid black !important;    
+}
+
+
 .THIS .lblRemarkStyle {
     font-size:16px;
     color:rgb(194, 57, 52) !important;

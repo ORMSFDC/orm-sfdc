@@ -31,7 +31,14 @@
                                                         ]"/>
     <aura:attribute name="value" type="String" default="No"/>
     <aura:attribute name="itemsClicked" type="String" />       
-    
+    <aura:attribute name="appTakenBy" type="String" default = "Face to Face" /><!--SFDC 578-->
+    <aura:attribute name="borrowerEthn" type="String" default="null"/> <!--SFDC-579-->
+    <aura:attribute name="borrowerSex" type="String" default="null"/>
+    <aura:attribute name="borrowerRace" type="String" default="null"/>
+    <aura:attribute name="notHispCheck" type="String" default="null"/>
+    <aura:attribute name="notHispCheck2" type="String" default="null"/>
+    <aura:attribute name="notSexCheck" type="String" default="null"/>
+    <aura:attribute name="notSexCheck2" type="String" default="null"/> <!--SFDC-579 end-->
     <fieldset class="slds-box slds-theme--default slds-container--large">
         <div class="slds-form slds-form_compound">
             <h4>Client(s)</h4>            
@@ -306,6 +313,8 @@
                 <br/>
             </div>
             <!-- Start SFDC 282, Bala  -->
+            <aura:if isTrue="{!v.appTakenBy != 'Face to Face'}">  <!--SFDC 578 -->
+            <aura:set attribute="else">
             <div class="slds-size_1-of-1 LabelDiv">
                 <div>
                     i. Was the ethnicity of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
@@ -319,26 +328,11 @@
                                       onchange="{! c.onAIfieldsChange }"/>
             </div>
             <label id="lbl_group_l1" class="lblRemarkStyle"></label>
-            <br/>
+            <br/>           
 
             <div class="slds-size_1-of-1 LabelDiv">
                 <div>
-                    ii. Was the sex of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
-                </div>
-            </div>
-            <div class="slds-size_1-of-2">
-                <lightning:radioGroup aura:id="group_l2"
-                                      name="radioButtonGroup_l2"
-                                      options="{! v.options2 }"
-                                      value="{!v.NewDeclaration.Borrower_Sex__c }"
-                                      onchange="{! c.onAIfieldsChange }"/>
-            </div>
-            <label id="lbl_group_l2" class="lblRemarkStyle"></label>
-            <br/>
-
-            <div class="slds-size_1-of-1 LabelDiv">
-                <div>
-                    iii. Was the race of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
+                    ii. Was the race of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
                 </div>
             </div>
             <div class="slds-size_1-of-2">   
@@ -346,10 +340,28 @@
                                       name="radioButtonGroup_l3"
                                       options="{! v.options2 }"
                                       value="{!v.NewDeclaration.Borrower_Race__c }"
-                                      onchange="{! c.onAIfieldsChange }"/>
+                                      onchange="{! c.onAIfieldsChange3 }"/>
             </div>
             <label id="lbl_group_l3" class="lblRemarkStyle"></label>
             <br/>
+            
+            <div class="slds-size_1-of-1 LabelDiv">
+                <div>
+                    iii. Was the sex of the Borrower collected on the basis of visual observation or surname? <span title="required">*</span>
+                </div>
+            </div>
+            <div class="slds-size_1-of-2">
+                <lightning:radioGroup aura:id="group_l2"
+                                      name="radioButtonGroup_l2"
+                                      options="{! v.options2 }"
+                                      value="{!v.NewDeclaration.Borrower_Sex__c }"
+                                      onchange="{! c.onAIfieldsChange2 }"/>
+            </div>
+            <label id="lbl_group_l2" class="lblRemarkStyle"></label>
+            <br/>
+            
+            </aura:set>
+            </aura:if>
             <!--end SFDC 282 -->
 
             <div id="DivshowRemarks" class="slds-size_1-of-2 ">
@@ -363,97 +375,274 @@
                 <div aura:id="RemarksError" id="RemarksError" class="DivStyle Hide"></div>
             </div>
             <br/>
-            <!--Code Added/Changed by Dev4 for ORMSFDC-1432-->
-            <div class="slds-size_1-of-1 LabelDiv">
-                <div>
-                    l. Ethnicity<span title="required">*</span>
-                    
+            <!--SFDC - 579-->
+            <div class="slds-size_1-of-1 LabelDiv">                
+            Ethnicity*         
+            </div>        
+            
+            <div class="slds-form-element__row">
+                <div style=""  class="slds-form-element slds-size_1-of-1" id="CheckHispanicDIV">
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="ethnicitymain" change="{!c.callCheckboxMethod4 }" value="{!v.NewDeclaration.Hispanic_or_Latino__c}" disabled = "{!v.notHispCheck2 == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Hispanic or Latino</span>
+                    </label>
                 </div>
-            </div>
-            <div id="showEthnicity" class="slds-size_1-of-2">
-                <ui:inputSelect aura:id="group_mainEthnicity" value="{!v.NewDeclaration.Ethnicity__c}">
-                    <ui:inputSelectOption value="true" text="" label="Select Ethnicity" />
-                    <ui:inputSelectOption text="Hispanic or Latino" label="Hispanic or Latino" />
-                    <ui:inputSelectOption text="Not Hispanic or Latino" label="Not Hispanic or Latino" />
-                     <!--Code Added(One Field added to Dropdown) by Dev4 for ORMSFDC-1475-->
-                    <ui:inputSelectOption text="Do Not Disclose" label="Do Not Disclose" />
-                    
-                </ui:inputSelect>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1">
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="mexicanEth" change="{!c.callCheckboxEth }" value="{!v.NewDeclaration.Mexican__c}" disabled = "{!v.borrowerEthn == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Mexican</span>
+                    </label>
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1">
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="puertoEth" change="{!c.callCheckboxEth }" value="{!v.NewDeclaration.Puerto_Rican__c}" disabled = "{!v.borrowerEthn == 'Y'}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Puerto Rican</span>
+                    </label>
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="cubanEth" change="{!c.callCheckboxEth }" value="{!v.NewDeclaration.Cuban__c}" disabled = "{!v.borrowerEthn == 'Y'}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Cuban</span>
+                    </label>
+                </div>
                 
-                <div aura:id ="show_ethnicityError" id ="show_ethnicityError" class="DivStyle Hide"></div>
-                <br/>
-            </div>
-            <div class="slds-size_1-of-1 LabelDiv">
-                <div>
-                    Sub Ethnicity<span title="required">*</span>
+                <div style="margin-left:4%;"  class="slds-form-element slds-col slds-size_1-of-1" >
+                     <lightning:layout multipleRows="true" horizontalAlign="left" verticalAlign="end">
+                        <lightning:layoutItem flexibility="auto" size="3">
+                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="otherHispEth" change="{!c.callCheckboxMethod }" value="{!v.NewDeclaration.Other_Hispanic_or_Latino__c}" disabled = "{!v.borrowerEthn == 'Y'}" />                                        
+                            <label class="uiLabel-right slds-form-element__label uiLabel ">
+                                <span>&nbsp; Other Hispanic or Latino </span>
+                            </label>
+                        </lightning:layoutItem>
+                        <aura:if isTrue="{!v.NewDeclaration.Other_Hispanic_or_Latino__c}">
+                            <lightning:layoutItem flexibility="auto" size="4" padding="horizontal-small">                            
+                            <div id = "otherHispDesc" style="display:block" >
+                                <div class="slds-border_bottom" >
+                                    <ui:inputText label=""  aura:id="lbl_otherHispLatino" value="{!v.NewDeclaration.Other_Hispanic_or_Latino_desc__c}" class="textAreaStyle2" maxlength="50" required="true"/>        
+                                </div>                                
+                            </div>                            
+                            </lightning:layoutItem>
+                        </aura:if>
+                    </lightning:layout>        
+                    <div id="otherHispLatinoError" class="DivStyle"></div>
+                </div>                
+                
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="notHispLatino" change="{!c.callCheckboxMethod5 }" value="{!v.NewDeclaration.Not_Hispanic_or_Latino__c}" disabled = "{!v.notHispCheck == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label " >
+                        <span>Not Hispanic or Latino </span>
+                    </label>
+                </div>
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doNotWishEth" change="{!c.callCheckboxEth }" value="{!v.NewDeclaration.Does_not_wish_to_provide__c}" disabled = "{!v.borrowerEthn == 'Y'}"  />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Does not wish to provide</span>
+                    </label>
                 </div>
             </div>
-            <div id="DivshowEthnicity" class="slds-size_1-of-2">
-                <ui:inputSelect aura:id="groupSubEthnicity" value="{!v.NewDeclaration.Ethnicity_New__c}" multiple="true">
-                    <ui:inputSelectOption text="Mexican" label="Mexican" />
-                    <ui:inputSelectOption text="Puerto Rican" label="Puerto Rican" />
-                    <ui:inputSelectOption text="Cuban" label="Cuban" />
-                    <ui:inputSelectOption text="Other" label="Other" />
-                    <!--<ui:inputSelectOption text="Not Hispanic or Latino" label="Not Hispanic or Latino" />-->
-                    <ui:inputSelectOption text="Do Not Disclose" label="Do Not Disclose" />
-                </ui:inputSelect>
-                <div aura:id ="subEthnicityError" id ="subEthnicityError" class="DivStyle Hide"></div>
-                <br/>
-            </div>
-            <!--Code Ended by Dev4 for ORMSFDC-1432-->
-            <div class="slds-size_1-of-1 LabelDiv">
-                <div>
-                    m. Race<span title="required">*</span>
-                </div>
-            </div>
-            <div class="slds-size_1-of-2">
-                <ui:inputSelect label="" aura:id="group_m" value="{!v.NewDeclaration.Race__c}" multiple="true" change="{!c.changeRace}">
-                    <ui:inputSelectOption text="American Indian or Alaska Native" label="American Indian or Alaska Native" />
-                    <ui:inputSelectOption text="Asian Indian" label="Asian Indian" />
-                    <ui:inputSelectOption text="Black or African American" label="Black or African American" />
-                    <ui:inputSelectOption text="Chinese" label="Chinese" />
-                    <ui:inputSelectOption text="Filipino" label="Filipino" />
-                    <ui:inputSelectOption text="Guamanian or Chamorro" label="Guamanian or Chamorro" />
-                    <ui:inputSelectOption text="Japanese" label="Japanese" />
-                    <ui:inputSelectOption text="Korean" label="Korean" />
-                    <ui:inputSelectOption text="Native Hawaiian" label="Native Hawaiian" />
-                    <ui:inputSelectOption text="Samoan" label="Samoan" />
-                    <ui:inputSelectOption text="Vietnamese" label="Vietnamese" />
-                    <ui:inputSelectOption text="White" label="White" />
-                    <ui:inputSelectOption text="Other Asian" label="Other Asian" />
-                    <ui:inputSelectOption text="Other Pacific Islander" label="Other Pacific Islander" />
-                    <ui:inputSelectOption text="Do Not Disclose" label="Do Not Disclose" />
-                </ui:inputSelect>
-            </div>
-            <div id="group_mError" class="DivStyle"></div>
-            <br />
-            <div id="DivshowRaceNative" class="slds-size_1-of-2">
-                <div class="LabelDiv">
-                    <div>
-                        What is your principle or enrollment tribe?<span title="required">*</span>
-                    </div>
-                </div>
-                <div>
-                    <ui:inputText aura:id="EnrolledTribeText" required="true" label="" value="{!v.NewDeclaration.Enrolled_tribe__c}" />
-                    <div aura:id="EnrolledTribeError" id="EnrolledTribeError" class="DivStyle Hide"></div>
-                </div>
-                <br/>
-            </div>            
-            <div class="slds-size_1-of-1 LabelDiv">
-                <div>
-                    n. Sex <span title="required">*</span>
-                </div>
-            </div>
-            <div class="slds-size_1-of-2">
-                <ui:inputSelect multiple="true" aura:id="group_n" value="{!v.NewDeclaration.Sex_New__c}">
-                    <ui:inputSelectOption text="Male" label="Male" />
-                    <ui:inputSelectOption text="Female" label="Female" />
-                    <ui:inputSelectOption text="Client did not provide this information" label="Client did not provide this information" />
-                </ui:inputSelect>
-                <br/>
-            </div>
-            <div id="group_nError" class="DivStyle"></div>
+                <label id="ethnicityGroup" class="lblRemarkStyle"></label>                
             <br/>
+
+            <div class="slds-size_1-of-1 LabelDiv">                
+                Race*           
+            </div>        
+                
+            <div class="slds-form-element__row">
+                <div style=""  class="slds-form-element slds-size_1-of-1" id="CheckRaceDIV">
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="americanIndRace" value="{!v.NewDeclaration.American_Indian_or_Alaska_Native__c}"  />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>American Indian or Alaska Native </span>
+                    </label>
+                </div>
+                <div style=""  class="slds-form-element slds-size_1-of-1">
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="asianRace" value="{!v.NewDeclaration.Asian__c}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Asian</span>
+                    </label>
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1">
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="asianIndRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Asian_Indian__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Asian Indian</span>
+                    </label>
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="chineseRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Chinese__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Chinese</span>
+                    </label>
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
+                    
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="filipinoRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Filipino__c}" disabled = "{!v.borrowerRace == 'Y'}"  />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Filipino</span>
+                    </label>                                 
+                </div>            
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="japRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Japanese__c}" disabled = "{!v.borrowerRace == 'Y'}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Japanese</span>
+                    </label>
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="koreanRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Korean__c}" disabled = "{!v.borrowerRace == 'Y'}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Korean</span>
+                    </label>
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
+                
+                <ui:inputCheckbox class="myCheckbox" label="" aura:id="vietnamRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Vietnamese__c}" disabled = "{!v.borrowerRace == 'Y'}" />
+                &nbsp;            
+                <label class="uiLabel-right slds-form-element__label uiLabel">
+                    <span>Vietnamese</span>
+                </label>                                 
+                </div>       
+                    
+                <div style="margin-left:4%;"  class="slds-form-element slds-col slds-size_3-of-10" >
+                    <lightning:layout multipleRows="true" horizontalAlign="left" verticalAlign="end">
+                        <lightning:layoutItem flexibility="auto" size="2">
+                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="othAsianRace" value="{!v.NewDeclaration.Other_Asian__c}" change="{!c.callCheckboxMethod2 }" disabled = "{!v.borrowerRace == 'Y'}"/>                                        
+                            <label class="uiLabel-right slds-form-element__label uiLabel ">
+                                <span>&nbsp; Other Asian </span>
+                            </label>
+                        </lightning:layoutItem>
+                        <aura:if isTrue="{!v.NewDeclaration.Other_Asian__c}">
+                            <lightning:layoutItem flexibility="auto" size="3" padding="horizontal-small">
+                                <div id = "otherAsianDesc" style="display:block" >
+                                    <div class="slds-border_bottom">
+                                        <ui:inputText label=""  aura:id="lbl_otherAsianDesc" value="{!v.NewDeclaration.Other_Asian_Desc__c}"  class="textAreaStyle2" maxlength="80" required="true" />        
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                        </aura:if>
+                    </lightning:layout>        
+                    <div id="otherAsianError" class="DivStyle"></div>
+                </div>       
+                <br/>
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="blackAfrRace" value="{!v.NewDeclaration.Black_or_African_American__c}"  />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Black or African American</span>
+                    </label>                                 
+                </div>
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="nativeHawaPacRace" value="{!v.NewDeclaration.Native_Hawaiian_or_Other_Pacific_Islan__c}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Native Hawaiian or Other Pacific Islander</span>
+                    </label>                                 
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >
+                    
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="nativeHawRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Native_Hawaiian__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Native Hawaiian</span>
+                    </label>                                 
+                </div>   
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >                    
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="guamanianRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Guamanian_or_Chamorro__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Guamanian or Chamorro</span>
+                    </label>                                 
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-size_1-of-1" >                    
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="samoanRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Samoan__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Samoan</span>
+                    </label>                                 
+                </div>
+                <div style="margin-left:4%;"  class="slds-form-element slds-col slds-size_1-of-1" >
+                    <lightning:layout multipleRows="true" horizontalAlign="left" verticalAlign="end">
+                        <lightning:layoutItem flexibility="auto" size="3">
+                            <ui:inputCheckbox class="myCheckbox" label="" aura:id="otherPacificRace" value="{!v.NewDeclaration.Other_Pacific_Islander__c}" change="{!c.callCheckboxMethod3 }" disabled = "{!v.borrowerRace == 'Y'}"/>                                        
+                            <label class="uiLabel-right slds-form-element__label uiLabel ">
+                                <span>&nbsp; Other Pacific Islander: </span>
+                            </label>
+                        </lightning:layoutItem>
+                        <aura:if isTrue="{!v.NewDeclaration.Other_Pacific_Islander__c}">
+                            <lightning:layoutItem flexibility="auto" size="4" padding="horizontal-small">
+                                <div id = "otherPacificDesc" style="display:block" >
+                                    <div class="slds-border_bottom">
+                                        <ui:inputText label=""  aura:id="lbl_otherPacIslanderDes" value="{!v.NewDeclaration.Other_Pacific_Islander_Desc__c}" class="textAreaStyle2" maxlength="50" required="true"/>        
+                                    </div>
+                                </div>
+                            </lightning:layoutItem>
+                        </aura:if>
+                    </lightning:layout>        
+                    <div id="otherPacificError" class="DivStyle"></div>
+                </div>
+               
+                <div style=""  class="slds-form-element slds-size_1-of-1" >                        
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="whiteRace" value="{!v.NewDeclaration.White__c}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>White</span>
+                    </label>                                 
+                </div>  
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishRace" change="{!c.callCheckboxRace }" value="{!v.NewDeclaration.Does_not_wish_to_provide_Race__c}" disabled = "{!v.borrowerRace == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Does not wish to provide</span>
+                    </label>                                 
+                </div>  
+            </div>
+                <label id="RaceGroup" class="lblRemarkStyle"></label>                
+            <br/>
+
+            <div class="slds-size_1-of-1 LabelDiv">                
+                Sex*           
+            </div>                            
+            <div class="slds-form-element__row">
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="femaleSex" value="{!v.NewDeclaration.Female__c}" change="{!c.callCheckboxMethod6}" disabled = "{!v.notSexCheck2 == 'Y'}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Female</span>
+                    </label>
+                </div>
+                
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="maleSex" value="{!v.NewDeclaration.Male__c}" change="{!c.callCheckboxMethod7}" disabled = "{!v.notSexCheck == 'Y'}" />
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Male</span>
+                    </label>
+                </div>
+
+                <div style=""  class="slds-form-element slds-size_1-of-1" >
+                    <ui:inputCheckbox class="myCheckbox" label="" aura:id="doesNotWishSex" change="{!c.callCheckboxSex }" value="{!v.NewDeclaration.Does_not_wish_to_provide_Sex__c}" disabled = "{!v.borrowerSex == 'Y'}"/>
+                    &nbsp;            
+                    <label class="uiLabel-right slds-form-element__label uiLabel">
+                        <span>Does not wish to provide</span>
+                    </label>
+                </div>
+            </div>
+                <label id="sexGroup" class="lblRemarkStyle"></label>
+            <br/>
+            <!--SFDC - 579 end-->
             
             <div id="Savebtn" style="color:White;">
                 <lightning:button label="Save" onclick="{!c.SaveDeclarations}" variant="brand" class="slds-m-top--medium" />
