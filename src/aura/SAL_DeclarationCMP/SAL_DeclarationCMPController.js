@@ -33,8 +33,7 @@
             action1.setParams({
                 "loanID": _Loanid
             });
-            action1.setCallback(this, function(data) { 
-                
+            action1.setCallback(this, function(data) {                 
                 var ReturnData = data.getReturnValue();                
                 component.set("v.clientRecords", data.getReturnValue());
                 var allStatus =  component.get("v.clientRecords");                
@@ -48,10 +47,187 @@
             });
             $A.enqueueAction(action1);
             document.getElementById('targetID').innerHTML ='l8';
-        });
-        
+        });        
+            //SFDC-578
+            var action2 = component.get("c.getApptaken");            
+            action2.setParams({
+                "loanID": _Loanid
+            });
+            action2.setCallback(this, function(data) {
+                var ReturnData = data.getReturnValue();                
+                console.log('return data',ReturnData);
+                component.set("v.appTakenBy", ReturnData);
+            });
+            $A.enqueueAction(action2);
+            //SFDC-578
         $A.enqueueAction(action);
     },
+
+    //SFDC-579 - these below methods will disable and clear the checkboxes based on ethnicity, race and sex
+    callCheckboxMethod: function(component, event, helper) {        
+        var capturedCheckbox = component.find("otherHispEth").get("v.value"); 
+        var ethnOption = component.get("v.NewDeclaration.Borrower_Ethnicity__c");
+
+        if(capturedCheckbox == true &&  ethnOption == "Y"){
+            component.set("v.borrowerEthn",'Y');
+            component.set("v.NewDeclaration.Other_Hispanic_or_Latino__c",false); 
+        }
+
+        if (capturedCheckbox == false) {
+            document.getElementById("otherHispLatinoError").innerText = '';
+        }
+        else {
+            document.getElementById("otherHispDesc").style.display = 'block';
+            component.find("lbl_otherHispLatino").set("v.value", '');                  
+        }       
+    },    
+
+    callCheckboxMethod2: function(component, event, helper) {
+        var capturedCheckbox2 = component.find("othAsianRace").get("v.value");
+        var raceOption = component.get("v.NewDeclaration.Borrower_Race__c");
+
+        if(capturedCheckbox2 == true &&  raceOption == "Y"){
+            component.set("v.borrowerRace",'Y');
+            component.set("v.NewDeclaration.Other_Asian__c",false); 
+        }
+
+        if (capturedCheckbox2 == false) {
+            document.getElementById("otherAsianError").innerText = '';
+        }
+        else {
+            document.getElementById("otherAsianDesc").style.display = 'block';
+            component.find("lbl_otherAsianDesc").set("v.value", '');                  
+        }
+    },    
+
+    callCheckboxMethod3: function(component, event, helper) {
+        var capturedCheckbox3 = component.find("otherPacificRace").get("v.value");
+        var raceOption = component.get("v.NewDeclaration.Borrower_Race__c");
+        
+        if(capturedCheckbox3 == true &&  raceOption == "Y"){
+            component.set("v.borrowerRace",'Y');
+            component.set("v.NewDeclaration.Other_Pacific_Islander__c",false); 
+        }
+        
+        if (capturedCheckbox3 == false) {
+            document.getElementById("otherPacificError").innerText = '';
+        }
+        else {
+            document.getElementById("otherPacificDesc").style.display = 'block';
+            component.find("lbl_otherPacIslanderDes").set("v.value", '');                  
+        }
+    }, 
+
+    callCheckboxMethod4: function(component, event, helper) {     
+        var capturedCheckbox = component.find("ethnicitymain").get("v.value");
+        var ethnOption = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
+        console.log('ethnOption',ethnOption);
+
+        if(capturedCheckbox == true && ethnOption == "Y"){
+           component.set("v.notHispCheck",'Y'); 
+           component.set("v.NewDeclaration.Not_Hispanic_or_Latino__c",false);
+        }else{
+            component.set("v.notHispCheck",'N');              
+        }
+    
+    },
+     
+    callCheckboxMethod5: function(component, event, helper) {
+        var capturedCheckbox = component.find("notHispLatino").get("v.value");
+        var ethnOption = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
+        console.log('ethnOption',ethnOption);
+
+        if(capturedCheckbox == true && ethnOption == "Y"){
+            component.set("v.notHispCheck2",'Y'); 
+           component.set("v.NewDeclaration.Hispanic_or_Latino__c",false);
+        }else{
+            component.set("v.notHispCheck2",'N'); 
+        }
+    
+    },
+    
+    callCheckboxMethod6: function(component, event, helper) {
+        var capturedCheckbox = component.find("femaleSex").get("v.value");
+        var sexOption = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+        
+        if(capturedCheckbox == true && sexOption == "Y"){
+            component.set("v.notSexCheck",'Y'); 
+            component.set("v.NewDeclaration.Male__c",false);
+        }else{
+            component.set("v.notSexCheck",'N'); 
+        }
+    },
+    
+    callCheckboxMethod7: function(component, event, helper) {
+        var capturedCheckbox = component.find("maleSex").get("v.value");
+        var sexOption = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+        
+        if(capturedCheckbox == true && sexOption == "Y"){
+            component.set("v.notSexCheck2",'Y'); 
+            component.set("v.NewDeclaration.Female__c",false);
+        }else{
+            component.set("v.notSexCheck2",'N'); 
+        }
+    },
+
+     //Below three methods are to disable the checkboxes on Declaration page load if ethn, race and sex are answered yes
+    callCheckboxEth: function(component, event, helper) {
+        var ethnOption = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
+        var mexicanEth = component.find("mexicanEth").get("v.value");
+        var puertoEth = component.find("puertoEth").get("v.value");
+        var cubanEth = component.find("cubanEth").get("v.value");
+        var doNotWishEth = component.find("doNotWishEth").get("v.value");
+
+        if((mexicanEth == true || puertoEth == true || cubanEth == true ||  doNotWishEth == true) &&  ethnOption == "Y"){
+            component.set("v.borrowerEthn",'Y');
+            component.set("v.NewDeclaration.Puerto_Rican__c",false);
+            component.set("v.NewDeclaration.Cuban__c",false);     
+            component.set("v.NewDeclaration.Mexican__c",false);  
+            component.set("v.NewDeclaration.Does_not_wish_to_provide__c",false);
+        }
+    },
+
+    callCheckboxRace: function(component, event, helper) {
+        var raceOption = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");        
+        var asianIndRace = component.find("asianIndRace").get("v.value");
+        var chineseRace = component.find("chineseRace").get("v.value");
+        var filipinoRace = component.find("filipinoRace").get("v.value");
+        var japRace = component.find("japRace").get("v.value");
+        var koreanRace = component.find("koreanRace").get("v.value");
+        var vietnamRace = component.find("vietnamRace").get("v.value");
+        var nativeHawRace = component.find("nativeHawRace").get("v.value");
+        var guamanianRace = component.find("guamanianRace").get("v.value");
+        var samoanRace = component.find("samoanRace").get("v.value");
+        var doesNotWishRace = component.find("doesNotWishRace").get("v.value");
+
+
+        if((asianIndRace == true || chineseRace == true || filipinoRace == true || japRace == true || koreanRace == true || vietnamRace == true || nativeHawRace == true ||
+            guamanianRace == true || samoanRace == true || doesNotWishRace == true) &&  raceOption == "Y"){
+            component.set("v.borrowerRace",'Y');
+            component.set("v.NewDeclaration.Asian_Indian__c",false);
+            component.set("v.NewDeclaration.Chinese__c",false);
+            component.set("v.NewDeclaration.Filipino__c",false);
+            component.set("v.NewDeclaration.Japanese__c",false);
+            component.set("v.NewDeclaration.Korean__c",false);
+            component.set("v.NewDeclaration.Vietnamese__c",false);
+            component.set("v.NewDeclaration.Native_Hawaiian__c",false);
+            component.set("v.NewDeclaration.Guamanian_or_Chamorro__c",false);     
+            component.set("v.NewDeclaration.Samoan__c",false);
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Race__c",false);
+        }
+    },
+
+    callCheckboxSex: function(component, event, helper) {
+        var sexOption = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+        var doesNotWishSex =    component.find("doesNotWishSex").get("v.value");  
+
+        if(doesNotWishSex == true && sexOption == "Y"){
+            component.set("v.borrowerSex",'Y');
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Sex__c",false);
+        }
+    },
+    //SFDC-579 end
+
     //Client PickList Change
     onClientSelectChange: function(component, event, helper) {
         component.set('v.NewDeclaration.Enrolled_tribe__c', '');
@@ -104,6 +280,26 @@
         var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
         var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
         var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
+       
+        //SFDC-579
+        component.set("v.borrowerEthn",l1);
+       
+        if(l1 == "Y"){           
+            component.set("v.NewDeclaration.Puerto_Rican__c",false);
+            component.set("v.NewDeclaration.Cuban__c",false);
+            component.set("v.NewDeclaration.Other_Hispanic_or_Latino__c",false);        
+            component.set("v.NewDeclaration.Mexican__c",false);    
+            component.set("v.NewDeclaration.Not_Hispanic_or_Latino__c",false); 
+            component.set("v.NewDeclaration.Hispanic_or_Latino__c",false);
+            component.set("v.NewDeclaration.Other_Hispanic_or_Latino_desc__c","");
+            component.set("v.NewDeclaration.Does_not_wish_to_provide__c",false);
+        }
+
+        if(l1 == "N"){
+            component.set("v.notHispCheck",'N'); 
+            component.set("v.notHispCheck2",'N'); 
+        }       
+        
         if(h=='No')
         {
             component.set("v.showPrimaryRsdnce",true); 
@@ -129,9 +325,46 @@
         }        
     },	
     
+    //SFDC-579
+    onAIfieldsChange2: function(component, event, helper) {        
+        var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+        component.set("v.borrowerSex",l2);
+
+        if(l2=="Y"){
+            component.set("v.NewDeclaration.Male__c",false);
+            component.set("v.NewDeclaration.Female__c",false);
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Sex__c",false);
+        }        
+        if(l2=="N"){
+            component.set("v.notSexCheck",'N'); 
+            component.set("v.notSexCheck2",'N'); 
+        }
+    },
+
+	//SFDC-579
+    onAIfieldsChange3: function(component, event, helper) {        
+        var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
+        component.set("v.borrowerRace",l3);
+        if(l3 == "Y"){
+            component.set("v.NewDeclaration.Asian_Indian__c",false);
+            component.set("v.NewDeclaration.Chinese__c",false);
+            component.set("v.NewDeclaration.Filipino__c",false);
+            component.set("v.NewDeclaration.Japanese__c",false);
+            component.set("v.NewDeclaration.Korean__c",false);
+            component.set("v.NewDeclaration.Vietnamese__c",false);
+            component.set("v.NewDeclaration.Other_Asian__c",false);
+            component.set("v.NewDeclaration.Other_Asian_Desc__c","");
+            component.set("v.NewDeclaration.Native_Hawaiian__c",false);
+            component.set("v.NewDeclaration.Guamanian_or_Chamorro__c",false);     
+            component.set("v.NewDeclaration.Samoan__c",false);
+            component.set("v.NewDeclaration.Other_Pacific_Islander__c",false);
+            component.set("v.NewDeclaration.Other_Pacific_Islander_Desc__c","");
+            component.set("v.NewDeclaration.Does_not_wish_to_provide_Race__c",false);
+        }
+    },
+    
     // delinquent PickList Change
-    delinquent: function(component, event, helper) { 
-        debugger
+    delinquent: function(component, event, helper) {         
         var Value = event.getParam("value")[0];        
         var lblId="lbl_"+event.getSource().getLocalId();
         helper.showRemarksLabel(lblId,Value);
@@ -324,8 +557,8 @@
     },
     
     // Save declaration
-    SaveDeclarations: function(component, event, helper) {
-        debugger;
+    SaveDeclarations: function(component, event, helper) {        
+        var appTaken = component.get("v.appTakenBy"); //SFDC-578
         component.set("v.showWarning",false);
         component.set("v.showSuccess",false);
         component.set("v.showError",false);
@@ -345,9 +578,11 @@
         document.getElementById("lbl_group_k").innerText = ''; 
         document.getElementById("lbl_reason_d").innerText = ''; 
         //Sfdc-282
-        document.getElementById("lbl_group_l1").innerText = '';
-        document.getElementById("lbl_group_l2").innerText = '';
-        document.getElementById("lbl_group_l3").innerText = '';
+        if(appTaken == 'Face to Face'){ //SFDC-587
+            document.getElementById("lbl_group_l1").innerText = '';
+            document.getElementById("lbl_group_l2").innerText = '';
+            document.getElementById("lbl_group_l3").innerText = '';
+        }
         var msg = '';
         var selectedClient = component.get("v.ClientID");
         
@@ -371,9 +606,11 @@
             var k = helper.getRadioGroupValue(component, event, helper,"group_k","v.NewDeclaration.FHA_Insured_Loan__c");
             var l = helper.getRadioGroupValue(component, event, helper,"reason_d","v.NewDeclaration.CashtoClose_Borrowed_Money__c");
             //SFDC-282
-            var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
-            var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
-            var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
+            if(appTaken == 'Face to Face'){ //SFDC-587
+                var l1 = helper.getRadioGroupValue(component, event, helper,"group_l1","v.NewDeclaration.Borrower_Ethnicity__c");
+                var l2 = helper.getRadioGroupValue(component, event, helper,"group_l2","v.NewDeclaration.Borrower_Sex__c");
+                var l3 = helper.getRadioGroupValue(component, event, helper,"group_l3","v.NewDeclaration.Borrower_Race__c");
+            }    
             if(h=='No')            {
                 component.set("v.showPrimaryRsdnce",true);
                 document.getElementById("lbl_group_h").innerText = '';
@@ -386,64 +623,7 @@
             if(a == 'Yes' || b == 'Yes' || c == 'Yes' || e == 'Yes' || g == 'Yes' || i == 'Yes' || l == 'Yes' )
             {
                 document.getElementById('DivshowRemarks').style.display == 'block';
-            } 
-            
-            //Ethenicity
-            var SelectedRace = component.find('group_m').get('v.value');
-                      
-            //var SelectedValue = component.find('group_m').get('v.value');            
-            var American=SelectedRace.indexOf("American Indian or Alaska Native");
-            //var Asian=SelectedValue.indexOf("Asian");            
-            if(American!=-1)
-            {
-                document.getElementById('DivshowRaceNative').style.display = 'block';
             }
-            else
-            {
-                document.getElementById('DivshowRaceNative').style.display = 'None';
-                component.set('v.NewDeclaration.Enrolled_tribe__c', '');
-            }            
-            /*if(Asian!=-1)
-            {
-                document.getElementById('DivshowAsian').style.display = 'block';
-            }
-            else
-            {
-                document.getElementById('DivshowAsian').style.display = 'None';
-                component.set('v.NewDeclaration.Asian_race__c', '');
-            }   */         
-            //if(SelectedEthenicity == 'Hispanic or Latino')
-            //{
-            // <Code Added by Dev4 for ORMSFDC-1432
-            var ethenicity_main = component.find('group_mainEthnicity').get('v.value');
-            if ($A.util.isEmpty(ethenicity_main)) {
-                validDeclr = false;
-                document.getElementById("show_ethnicityError").innerHTML = 'This is a required field';
-                var ethenicity_cmp = component.find("group_mainEthnicity");
-                $A.util.addClass(ethenicity_cmp, 'errorComponent');
-            } else {
-                document.getElementById("show_ethnicityError").innerHTML = '';
-                var ethenicitycc = component.find("group_mainEthnicity");
-                $A.util.removeClass(ethenicitycc, 'errorComponent');
-                
-            }
-            //Code Ended by Dev4 for ORMSFDC-1432
-            // Code Changed by Dev4 for ORMSFDC-1432
-            var ethenicitycc = component.find('groupSubEthnicity').get('v.value');
-            if(ethenicity_main != 'Not Hispanic or Latino'){  //Condition added by Bala - Sub Ehtnicity is not a req field for Not Hispanic or Latino
-                if ($A.util.isEmpty(ethenicitycc)) {
-                    validDeclr = false;
-                    document.getElementById("subEthnicityError").innerHTML = 'This is a required field';
-                    var ethenicitycc = component.find("groupSubEthnicity");
-                    $A.util.addClass(ethenicitycc, 'errorComponent');
-                } else {
-                    document.getElementById("subEthnicityError").innerHTML = '';
-                    var ethenicitycc = component.find("groupSubEthnicity");
-                    $A.util.removeClass(ethenicitycc, 'errorComponent');
-                }                
-            }
-            //Code Ended by Dev4 for ORMSFDC-1432
-            //}
             
             // additional remarks
             if(a == 'Yes' || b == 'Yes' || c == 'Yes' || l == 'Yes' || e == 'Yes' || g == 'Yes' || i == 'Yes')
@@ -470,35 +650,51 @@
                 }
             }
             
+            //SFDC-579
+            //Ethnicity
+            if (component.find('otherHispEth').get('v.value') == true) {
+                var otherHispDesc = component.find('lbl_otherHispLatino').get('v.value');
+                var otherHispDesc1 = component.find("lbl_otherHispLatino");
+
+                if($A.util.isEmpty(otherHispDesc)){
+                    validDeclr = false;
+                    document.getElementById("otherHispLatinoError").innerHTML = 'Please enter description';
+                    $A.util.addClass(otherHispDesc1, 'errorComponent');
+                }else {
+                    document.getElementById("otherHispLatinoError").innerHTML = '';
+                    $A.util.removeClass(otherHispDesc1, 'errorComponent');
+                }
+            }
             //Race
-            if(American !=-1)
-            {
-                var EnrolledTribecc = component.find('EnrolledTribeText').get('v.value');
-                if ($A.util.isEmpty(EnrolledTribecc)) {
+            if (component.find('othAsianRace').get('v.value') == true) {
+                var otherAsianDesc = component.find('lbl_otherAsianDesc').get('v.value');                
+                var otherAsianDesc1 = component.find("lbl_otherAsianDesc");
+
+                if($A.util.isEmpty(otherAsianDesc)){
                     validDeclr = false;
-                    document.getElementById("EnrolledTribeError").innerHTML = 'This is a required field';
-                    var EnrolledTribecc = component.find("EnrolledTribeText");
-                    $A.util.addClass(EnrolledTribecc, 'errorComponent');
-                } else {
-                    document.getElementById("EnrolledTribeError").innerHTML = '';
-                    var EnrolledTribecc = component.find("EnrolledTribeText");
-                    $A.util.removeClass(EnrolledTribecc, 'errorComponent');
+                    document.getElementById("otherAsianError").innerHTML = 'Please enter description';
+                    $A.util.addClass(otherAsianDesc1, 'errorComponent');
+                }else {
+                    document.getElementById("otherAsianError").innerHTML = '';
+                    $A.util.removeClass(otherAsianDesc1, 'errorComponent');
                 }
-            }            
-            /*if(Asian !=-1)
-            {
-                var groupAsiancc = component.find('groupAsian').get('v.value');
-                if ($A.util.isEmpty(groupAsiancc)) {
+            }
+            //SEX
+            if (component.find('otherPacificRace').get('v.value') == true) {
+                var otherPacificDesc = component.find('lbl_otherPacIslanderDes').get('v.value');                
+                var otherPacificDesc1 = component.find("lbl_otherPacIslanderDes");
+
+                if($A.util.isEmpty(otherPacificDesc)){
                     validDeclr = false;
-                    document.getElementById("groupAsianError").innerHTML = 'This is a required field';
-                    var groupAsiancc = component.find("groupAsian");
-                    $A.util.addClass(groupAsiancc, 'errorComponent');
-                } else {
-                    document.getElementById("groupAsianError").innerHTML = '';
-                    var groupAsiancc = component.find("groupAsian");
-                    $A.util.removeClass(groupAsiancc, 'errorComponent');
+                    document.getElementById("otherPacificError").innerHTML = 'Please enter description';
+                    $A.util.addClass(otherPacificDesc1, 'errorComponent');
+                }else {
+                    document.getElementById("otherPacificError").innerHTML = '';
+                    $A.util.removeClass(otherPacificDesc1, 'errorComponent');
                 }
-            } */           
+            }
+            //SFDC-579 end
+
             //delinquent
             if (component.find('group_c').get('v.value') == "Yes") {
                 var dateFieldcc = component.find('dateFieldcc').get('v.value');
@@ -719,8 +915,7 @@
                     document.getElementById('formdetails').style.display = 'none';
                 });
                 $A.enqueueAction(action);
-            }
-            
+            }            
         }
     },
     
@@ -767,59 +962,8 @@
         helper.prev(cmp);
     },
     
-    // Ethnicity PickList Change
-    /*changeEthnicity: function(component, event, helper) {
-        
-        var SelectedValue = component.find('group_l').get('v.value');      
-        if(SelectedValue=='Hispanic or Latino')
-        {
-            document.getElementById('DivshowEthnicity').style.display = 'block';
-            var ethenicitycc = component.find('groupEthnicity').get('v.value');
-            document.getElementById("ethnicityError").innerHTML = '';
-            var ethenicitycc = component.find("groupEthnicity");
-            $A.util.removeClass(ethenicitycc, 'errorComponent');
-        }
-        else
-        {
-            document.getElementById('DivshowEthnicity').style.display = 'None';         
-        }
-    }, */
-    
-    
-    
     // Race PickList Change
     changeRace: function(component, event, helper) {
-        
-        var SelectedValue = component.find('group_m').get('v.value');
-        
-        var American=SelectedValue.indexOf("American Indian or Alaska Native");
-        //var Asian=SelectedValue.indexOf("Asian");
-        
-        if(American!=-1)
-        {
-            document.getElementById('DivshowRaceNative').style.display = 'block';
-            var EnrolledTribecc = component.find('EnrolledTribeText').get('v.value');
-            document.getElementById("EnrolledTribeError").innerHTML = '';
-            var EnrolledTribecc = component.find("EnrolledTribeText");
-            $A.util.removeClass(EnrolledTribecc, 'errorComponent');
-        }
-        else
-        {
-            document.getElementById('DivshowRaceNative').style.display = 'none'; 
-        }
-        
-        /*if(Asian!=-1)
-        {
-            document.getElementById('DivshowAsian').style.display = 'block';
-            var groupAsiancc = component.find('groupAsian').get('v.value');
-            document.getElementById("groupAsianError").innerHTML = '';
-            var groupAsiancc = component.find("groupAsiancc");
-            $A.util.removeClass(groupAsiancc, 'errorComponent');
-        }
-        else
-        {
-            document.getElementById('DivshowAsian').style.display = 'none';
-        }*/
     },
     
 })

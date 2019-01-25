@@ -309,6 +309,7 @@ public with sharing class sal_decalarationcontrollerTest {
         sal_decalarationcontroller.clientNameWhoMadeDeclaration(Loan.Id);
         sal_decalarationcontroller.CheckDeclaration(Loan.Id);
         sal_decalarationcontroller.AllClientsName(LoanId);
+        sal_decalarationcontroller.getApptaken(LoanId); 
         Test.stopTest();
         
         }
