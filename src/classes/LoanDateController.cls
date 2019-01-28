@@ -9,7 +9,7 @@
  */
 public class LoanDateController {    
     @AuraEnabled
-    public static string getFNMData(String filedata, String fileName, String base64Data, String contentType, String applicationDate,String rateType,String loanMortgageAppliedFor) {
+    public static string getFNMData(Blob filedata, String fileName, String base64Data, String contentType, String applicationDate,String rateType,String loanMortgageAppliedFor) {
         id loanid;
         try{
         //Call fannie mae parser and map response details to loan object
