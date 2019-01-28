@@ -365,10 +365,10 @@
            //end of OORM calc
            
            //Other Estimated closing costs calc
-           var ecc = ((0.5 * EhvVal)/100);  
+           var ecc = ((0.25 * EhvVal)/100);  
            console.log('ecc',ecc);
            var ecc1 = 0;
-           if(ecc >= 2500 && ecc <= 15000){ //.5% of Home value or purchase price with a floor of $2,500 and a cap of $15,000
+           if(ecc >= 2500 && ecc <= 10000){ //.5% of Home value or purchase price with a floor of $2,500 and a cap of $15,000
                component.set("v.ECC",ecc);  
                var ecc1 = ecc;
            }
@@ -377,8 +377,8 @@
                var ecc1 = 2500;
            }
            else{
-               component.set("v.ECC",15000);    
-               var ecc1 = 15000;
+               component.set("v.ECC",10000);    
+               var ecc1 = 10000;
            }
            //end of ECC calc
            
