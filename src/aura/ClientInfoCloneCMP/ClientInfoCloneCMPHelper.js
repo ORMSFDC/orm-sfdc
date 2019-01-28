@@ -1046,17 +1046,17 @@
                 var cmb = component.get("v.CMB"); //current mortgage balance                 
                 var EhvVal = component.get('v.EHV');//estimated home value
                 var origToOrm = ((pricing1 * upb)/100); //Origination to One Reverse Mortgage, LLC
-                var ecc = ((0.5 * EhvVal)/100);  //estimated closing cost calculation
+                var ecc = ((0.25 * EhvVal)/100);  //estimated closing cost calculation
                 console.log('ecc',ecc);
                 var ecc1=0;
-                if(ecc >= 2500 && ecc <= 15000){ 
+                if(ecc >= 2500 && ecc <= 10000){ 
                     var ecc1 = ecc;  
                 }
                 else if(ecc < 2500){
                     var ecc1 = 2500;
                 }
                 else{
-                    var ecc1 = 15000;    
+                    var ecc1 = 10000;    
                 } 
                 
                 //Cash at Close calculation -> Helo table Cash At Close/Funds to Close
