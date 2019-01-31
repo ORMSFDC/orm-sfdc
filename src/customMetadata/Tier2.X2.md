@@ -44,6 +44,6 @@
     </values>
     <values>
         <field>X90_to_100__c</field>
-        <value xsi:type="xsd:double">109.32</value>
+        <value xsi:type="xsd:double">109.82</value>
     </values>
 </CustomMetadata>

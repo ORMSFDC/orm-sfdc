@@ -8,11 +8,11 @@
     </values>
     <values>
         <field>HeloMargin__c</field>
-        <value xsi:type="xsd:double">4.125</value>
+        <value xsi:type="xsd:double">3.125</value>
     </values>
     <values>
         <field>Origination_to_Partner__c</field>
-        <value xsi:type="xsd:double">0.0</value>
+        <value xsi:type="xsd:double">0.5</value>
     </values>
     <values>
         <field>Price__c</field>
@@ -20,7 +20,7 @@
     </values>
     <values>
         <field>Rate__c</field>
-        <value xsi:type="xsd:double">7.25</value>
+        <value xsi:type="xsd:double">5.875</value>
     </values>
     <values>
         <field>Servicing_Fee__c</field>
