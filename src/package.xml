@@ -3688,6 +3688,17 @@
     <members>Tier3.X7</members>
     <members>Tier3.X8</members>
     <members>Tier3.X9</members>
+    <members>Tier1.X12</members>
+    <members>Tier1.X13</members>
+    <members>Tier2.X12</members>
+    <members>Tier2.X13</members>
+    <members>Tier2.X14</members>
+    <members>Tier2.X15</members>
+    <members>Tier3.X12</members>
+    <members>Tier3.X13</members>
+    <members>Tier3.X14</members>
+    <members>Tier3.X15</members>
+    <members>Tier3.X16</members>
     <name>CustomMetadata</name>
   </types>
   <types>
