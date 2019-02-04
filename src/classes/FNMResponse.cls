@@ -1,7 +1,12 @@
-// Object representation of the parsed Fannie Mae response.
+/**
+ * @description: Object representation of the parsed Fannie Mae response.
+ * @author: Ravi
+ * NOTE: DO NOT DELETE ANY COMMENTED FIELDS AS THEY MAY BE USED FOR FUTURE MAPPINGS
+ * changelog:
+ * 02/04/2019: Sahitya Modified code to map 3.2 with HMDA race, ethnicity, sex fields
+ */
+
 public class FNMResponse {
-    
-    
     public Boolean wasSuccessful {get; set;}
     public TenOhThree tenOhThree {get; set;}
     //public List<Warnings> warnings {get; set;}
@@ -58,7 +63,8 @@ public class FNMResponse {
         //public BuydownData buydownData {get; set;}
         //public CasefileIdentification casefileIdentification {get; set;}
         //public LenderData lenderData {get; set;}
-        public FHAAndVALoanData fhaAndVALoanData {get; set;}
+        public FHAAndVALoanData fhaAndVALoanData {get; set;}        
+        public List<AdditionalDataSegments> additionalDataSegments; /*02/04 HMDA*/
         //public FHALoanOnlyData fhaLoanOnlyData {get; set;}
         //public VALoanOnlyData vaLoanOnlyData {get; set;}
         //public List<VALoanOnlyExtraData> vaLoanOnlyExtraData {get; set;}
@@ -421,10 +427,11 @@ public class FNMResponse {
     //    public String ssn {get; set;}
     //    public Datetime signatureDate {get; set;}
     //}
-    //public class AdditionalDataSegments {
-    //    public Integer additionalDataSegmentType {get; set;}
-    //    public String additionalDataSegmentValue {get; set;}
-    //}
+    /*02/04 HMDA*/
+    public class AdditionalDataSegments {
+        public Integer additionalDataSegmentType {get; set;}
+        public String additionalDataSegmentValue {get; set;}
+    }
     
     //public class Score{
     //    public string fannieMaeScoreID {get; set;}
