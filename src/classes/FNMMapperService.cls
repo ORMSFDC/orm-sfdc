@@ -6,6 +6,7 @@
  * changelog:
  * 07/24/2018: Srini - removed NullPointerException for 
  * 08/08/2018: Sahitya - Authorised stated were hardcoded, fetching the states from Metadata table
+ * 02/04/2019: Sahitya - Modified code to map 3.2 with HMDA race, ethnicity, sex fields
  */
 
 public class FNMMapperService {
@@ -204,7 +205,7 @@ public class FNMMapperService {
         if (tt.fhaAndVALoanData != null ) {
             loan.Subject_Property_County__c=tt.fhaAndVALoanData.propertyOfCounty;
          }else {
-            loan.Subject_Property_County__c='400';
+            loan.Subject_Property_County__c='';
         }
         //End Srini    
         loan.IsActiveFlag__c = true;
@@ -558,6 +559,94 @@ update income;
                 }
             }
             
+            /*02/04 HMDA mapping*/
+            if (tt.additionalDataSegments.size() > 0) {
+                FNMResponse.additionalDataSegments a4 = tt.additionalDataSegments[4];
+                if (a4.additionalDataSegmentValue.contains('Male')){
+                    declaration.Male__c = true;
+                } else if(a4.additionalDataSegmentValue.contains('Female')) {
+                    declaration.Female__c = true;
+                } else {
+                    declaration.Does_not_wish_to_provide_Sex__c = true;
+                }
+
+                FNMResponse.additionalDataSegments a5 = tt.additionalDataSegments[5];
+                if (a5.additionalDataSegmentValue.contains('N')){
+                    declaration.Borrower_Sex__c = 'N';
+                } else if(a5.additionalDataSegmentValue.contains('Y')) {
+                    declaration.Borrower_Sex__c = 'Y';
+                }
+
+                FNMResponse.additionalDataSegments a6 = tt.additionalDataSegments[6];
+                if (a6.additionalDataSegmentValue.contains('NotHispanicOrLatino')){
+                    declaration.Not_Hispanic_or_Latino__c = true;
+                } else if (a6.additionalDataSegmentValue.contains('Mexican')){
+                    declaration.Mexican__c = true;
+                } else if (a6.additionalDataSegmentValue.contains('Puerto Rican')){
+                    declaration.Puerto_Rican__c = true;
+                } else if (a6.additionalDataSegmentValue.contains('Cuban')){
+                    declaration.Cuban__c = true;
+                } else if (a6.additionalDataSegmentValue.contains('OtherHispanicorLatino')){
+                    declaration.Other_Hispanic_or_Latino__c = true;
+                } else if (a6.additionalDataSegmentValue.contains('NotHispanicorLatino')){
+                    declaration.Not_Hispanic_or_Latino__c = true;
+                } else {
+                    declaration.Does_not_wish_to_provide__c = true;
+                }
+
+                FNMResponse.additionalDataSegments a7 = tt.additionalDataSegments[7];
+                if (a7.additionalDataSegmentValue.contains('N')){
+                    declaration.Borrower_Ethnicity__c = 'N';
+                } else if(a7.additionalDataSegmentValue.contains('Y')) {
+                    declaration.Borrower_Ethnicity__c = 'Y';
+                }
+
+                FNMResponse.additionalDataSegments a8 = tt.additionalDataSegments[8];
+                if (a8.additionalDataSegmentValue.contains('N')){
+                    declaration.Borrower_Race__c = 'N';
+                } else if(a8.additionalDataSegmentValue.contains('Y')) {
+                    declaration.Borrower_Race__c = 'Y';
+                }
+
+                FNMResponse.additionalDataSegments a9 = tt.additionalDataSegments[9];
+                declaration.Race__c	 = a9.additionalDataSegmentValue;
+                if (a9.additionalDataSegmentValue.contains('AmericanIndianorAlaskaNative')){
+                    declaration.American_Indian_or_Alaska_Native__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('Asian')){
+                    declaration.Asian__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('AsianIndian')){
+                    declaration.Asian_Indian__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('Chinese')){
+                    declaration.Chinese__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('Filipino')){
+                    declaration.Filipino__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('Japanese')){
+                    declaration.Japanese__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('Korean')){
+                    declaration.Korean__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('Vietnamese')){
+                    declaration.Vietnamese__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('OtherAsian')){
+                    declaration.Other_Asian__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('BlackorAfricanAmerican')){
+                    declaration.Black_or_African_American__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('NativeHawaiianorOtherPacificIslander')){
+                    declaration.Native_Hawaiian_or_Other_Pacific_Islan__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('NativeHawaiian')){
+                    declaration.Native_Hawaiian__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('GuamanianorChamorro')){
+                    declaration.Guamanian_or_Chamorro__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('Samoan')){
+                    declaration.Samoan__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('OtherPacificIslander')){
+                    declaration.Other_Pacific_Islander__c = true;
+                } else if (a9.additionalDataSegmentValue.contains('White')){
+                    declaration.White__c = true;
+                } else {
+                    declaration.Does_not_wish_to_provide_Race__c = true;
+                }
+            }
+            /*End HMDA 3.2*/
             system.debug('About to insert new declaration object: ' + declaration);
             
             update declaration;
