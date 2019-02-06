@@ -118,31 +118,55 @@ public class OnBaseLookups {
         return keyword;
     }
 
-    public static String getClosingProviderKeyword(Boolean amRockAgent)
+    public static String getClosingProviderKeyword(String amRockAgent)
     {
         Logger.push('getClosingProviderKeyword','OnBaseLookups');
         
         // Returned keyword will be null if no matches found in lookup
         String keyword;
         
+        // Look up the Closing Provider keyword
+        switch on amRockAgent {
+            when 'Yes' {
+                keyword = 'AMROCK';
+            }
+            when 'No' {
+                keyword = '';
+            }
+            when else {
+                // Value not set, so null
+            }
+        }
+        
+        System.debug('getClosingProviderKeyword keyword> ' + keyword);
+        Logger.pop();
+        return keyword;
+    }
+    
+    public static String getLoanStatusKeyword(String loanStatus)
+    {
+        Logger.push('getLoanStatusKeyword','OnBaseLookups');
+        
+        // Returned keyword will be null if no matches found in lookup
+        String keyword;
+        
         /*
-        // Look up the Purpose of Refinance keyword        
-        List<Lookup_Purpose_of_Refinance_Keyword__mdt> detailKeyword = [select Keyword__c from Lookup_Purpose_of_Refinance_Keyword__mdt where
-                                                                 Product_Type__c = :productType AND
-                                                                 Mortgage_Applied_for__c = :mortgageAppliedFor AND
-                                                                 Rate_Type__c = :rateType];
-
-        if (detailKeyword != null && detailKeyword.size() > 0)
-        {
-            // Found the keyword
-            keyword = detailKeyword[0].Keyword__c;
-            // Handle the empty case to differentiate since null means lookup not found
-            // Returning blank is valid keyword
-            if (keyword == null) keyword = '';            
+        // Look up the Closing Provider keyword
+        switch on amRockAgent {
+            when 'Yes' {
+                keyword = 'AMROCK';
+            }
+            when 'No' {
+                keyword = '';
+            }
+            when else {
+                // Value not set, so null
+            }
         }
 		*/
+        keyword = loanStatus + '(T)';
         
-        System.debug('PurposeOfRefinance keyword> ' + keyword);
+        System.debug('getLoanStatusKeyword keyword> ' + keyword);
         Logger.pop();
         return keyword;
     }

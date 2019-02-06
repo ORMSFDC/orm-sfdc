@@ -190,6 +190,39 @@ private class OnBaseLookupsTest {
     }
     
     @isTest
+    static void getClosingProviderKeywordTest_Null()
+    {      
+        String amRockAgent = 'Does not match';
+        String expected = null;
+        
+        String keyword = OnBaseLookups.getClosingProviderKeyword(amRockAgent);
+        
+        System.assertEquals(expected, keyword);  
+    }
+    
+    @isTest
+    static void getClosingProviderKeywordTest_AMROCK()
+    {      
+        String amRockAgent = 'Yes';
+        String expected = 'AMROCK';
+        
+        String keyword = OnBaseLookups.getClosingProviderKeyword(amRockAgent);
+        
+        System.assertEquals(expected, keyword);  
+    }
+    
+    @isTest
+    static void getClosingProviderKeywordTest_None()
+    {      
+        String amRockAgent = 'No';
+        String expected = '';
+        
+        String keyword = OnBaseLookups.getClosingProviderKeyword(amRockAgent);
+        
+        System.assertEquals(expected, keyword);  
+    }
+    
+    @isTest
     static void getPurposeOfRefinanceKeywordTest_None()
     {        
         String productType = 'HECM';

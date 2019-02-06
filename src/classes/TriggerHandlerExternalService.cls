@@ -84,11 +84,20 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 		// publish event for each external service in scope
 		for ( ExternalService__c extSrvc : newExternalServiceMap.values() ) {
 			// create platform event
+			
+            String serviceName = extSrvc.ServiceName__c;
+            // Handle OnBase service naming
+            if (serviceName.startsWith('OnBase')) {
+                serviceName = 'OnBase';
+            }
+            
 			ExternalServiceOutbound__e newESOevent = new ExternalServiceOutbound__e(
 				ExternalServiceID__c = extSrvc.Id,
 				Payload__c = ExternalServiceDispatcher.fixPayloadReference( extSrvc.RequestPayload__c, extSrvc.Id ),
-				ServiceName__c = extSrvc.ServiceName__c
+				ServiceName__c = serviceName
 			);
+            
+            System.debug( '>>> TriggerHandlerExternalService.publishEvents.newESOevent: ' + newESOevent );
 			System.debug( '>>> TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
 			Logger.debug( 'TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
 			publishExternalServiceEventList.add( newESOevent );
