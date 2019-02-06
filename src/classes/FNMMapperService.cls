@@ -45,10 +45,11 @@ public class FNMMapperService {
                 } 
                 
                 Update loan;
-                
+                try{
                 List<Income_New__c> incomes = saveIncomes(loan, clients, fnmResponse.tenOhThree);
                 List<Declaration__c> declarations = saveDeclarations(loan, clients, fnmResponse.tenOhThree);
                 List<Liability__c> liabilities = saveLiabilities(loan, clients, fnmResponse.tenOhThree);
+                }catch(Exception execc){system.debug(execc);}
                 GenericController.UpdateLiabilityFlag(loan.Id);
                 List<Asset> assets = saveAssets(loan, clients, fnmResponse.tenOhThree);
                   GenericController.UpdateAssetFlag(loan.Id);
