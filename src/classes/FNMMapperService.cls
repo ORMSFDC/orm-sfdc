@@ -6,6 +6,7 @@
  * changelog:
  * 07/24/2018: Srini - removed NullPointerException for 
  * 08/08/2018: Sahitya - Authorised stated were hardcoded, fetching the states from Metadata table
+ * 02/04/2019: Sahitya - Modified code to map 3.2 with HMDA race, ethnicity, sex fields
  */
 
 public class FNMMapperService {
@@ -44,10 +45,11 @@ public class FNMMapperService {
                 } 
                 
                 Update loan;
-                
+                try{
                 List<Income_New__c> incomes = saveIncomes(loan, clients, fnmResponse.tenOhThree);
                 List<Declaration__c> declarations = saveDeclarations(loan, clients, fnmResponse.tenOhThree);
                 List<Liability__c> liabilities = saveLiabilities(loan, clients, fnmResponse.tenOhThree);
+                }catch(Exception execc){system.debug(execc);}
                 GenericController.UpdateLiabilityFlag(loan.Id);
                 List<Asset> assets = saveAssets(loan, clients, fnmResponse.tenOhThree);
                   GenericController.UpdateAssetFlag(loan.Id);
@@ -558,6 +560,135 @@ update income;
                 }
             }
             
+            /*02/04 HMDA mapping*/
+            if (tt.additionalDataSegments.size() > 0) {
+               FNMResponse.additionalDataSegments a2 = tt.additionalDataSegments[2];
+                FNMResponse.additionalDataSegments a3 = tt.additionalDataSegments[3];
+                FNMResponse.additionalDataSegments a4 = tt.additionalDataSegments[4];
+                if (a4.additionalDataSegmentValue.contains('Male') || a3.additionalDataSegmentValue.contains('Male') || a2.additionalDataSegmentValue.contains('Male')){
+                    declaration.Male__c = true;
+                } else if(a4.additionalDataSegmentValue.contains('Female') || a3.additionalDataSegmentValue.contains('Female') || a2.additionalDataSegmentValue.contains('Female')){
+                    declaration.Female__c = true;
+                } else {
+                    declaration.Does_not_wish_to_provide_Sex__c = true;
+                }
+
+                FNMResponse.additionalDataSegments a5 = tt.additionalDataSegments[5];
+                if (a5.additionalDataSegmentValue.contains('N')){
+                    declaration.Borrower_Sex__c = 'N';
+                } else if(a5.additionalDataSegmentValue.contains('Y')) {
+                    declaration.Borrower_Sex__c = 'Y';
+                }
+
+                FNMResponse.additionalDataSegments a6 = tt.additionalDataSegments[6];
+                if (a2.additionalDataSegmentValue.contains('NotHispanicOrLatino') || a3.additionalDataSegmentValue.contains('NotHispanicOrLatino') || a4.additionalDataSegmentValue.contains('NotHispanicOrLatino') 
+                  || a5.additionalDataSegmentValue.contains('NotHispanicOrLatino') || a6.additionalDataSegmentValue.contains('NotHispanicOrLatino')){
+                    declaration.Not_Hispanic_or_Latino__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Mexican') || a3.additionalDataSegmentValue.contains('Mexican') || a4.additionalDataSegmentValue.contains('Mexican') 
+                  || a5.additionalDataSegmentValue.contains('Mexican') || a6.additionalDataSegmentValue.contains('Mexican') ){
+                    declaration.Mexican__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('PuertoRican') || a3.additionalDataSegmentValue.contains('PuertoRican') || a4.additionalDataSegmentValue.contains('PuertoRican') 
+                  || a5.additionalDataSegmentValue.contains('PuertoRican') || a6.additionalDataSegmentValue.contains('PuertoRican')){
+                    declaration.Puerto_Rican__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Cuban') || a3.additionalDataSegmentValue.contains('Cuban') || a4.additionalDataSegmentValue.contains('Cuban') 
+                  || a5.additionalDataSegmentValue.contains('Cuban') || a6.additionalDataSegmentValue.contains('Cuban')){
+                    declaration.Cuban__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('OtherHispanicOrLatino') || a3.additionalDataSegmentValue.contains('OtherHispanicOrLatino') || a4.additionalDataSegmentValue.contains('OtherHispanicOrLatino') 
+                  || a5.additionalDataSegmentValue.contains('OtherHispanicOrLatino') || a6.additionalDataSegmentValue.contains('OtherHispanicOrLatino')){
+                    declaration.Other_Hispanic_or_Latino__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('HispanicOrLatino') || a3.additionalDataSegmentValue.contains('HispanicOrLatino') || a4.additionalDataSegmentValue.contains('v') 
+                  || a5.additionalDataSegmentValue.contains('HispanicOrLatino') || a6.additionalDataSegmentValue.contains('HispanicOrLatino')){
+                    declaration.Hispanic_or_Latino__c = true;
+                } else {
+                    declaration.Does_not_wish_to_provide__c = true;
+                }
+
+                FNMResponse.additionalDataSegments a7 = tt.additionalDataSegments[7];
+                if (a7.additionalDataSegmentValue.contains('N')){
+                    declaration.Borrower_Ethnicity__c = 'N';
+                } else if(a7.additionalDataSegmentValue.contains('Y')) {
+                    declaration.Borrower_Ethnicity__c = 'Y';
+                }
+
+                FNMResponse.additionalDataSegments a8 = tt.additionalDataSegments[8];
+                if (a8.additionalDataSegmentValue.contains('N')){
+                    declaration.Borrower_Race__c = 'N';
+                } else if(a8.additionalDataSegmentValue.contains('Y')) {
+                    declaration.Borrower_Race__c = 'Y';
+                }
+
+                FNMResponse.additionalDataSegments a9 = tt.additionalDataSegments[9];
+                declaration.Race__c	 = a9.additionalDataSegmentValue;
+                if (a2.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative') || a3.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative') || a4.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative') 
+                  || a5.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative') || a6.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative') ||  a7.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative')
+                  ||a8.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative') || a9.additionalDataSegmentValue.contains('AmericanIndianOrAlaskaNative')){
+                    declaration.American_Indian_or_Alaska_Native__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Asian') || a3.additionalDataSegmentValue.contains('Asian') || a4.additionalDataSegmentValue.contains('Asian') 
+                  || a5.additionalDataSegmentValue.contains('Asian') || a6.additionalDataSegmentValue.contains('Asian') ||  a7.additionalDataSegmentValue.contains('Asian')
+                  ||a8.additionalDataSegmentValue.contains('Asian') || a9.additionalDataSegmentValue.contains('Asian')){
+                    declaration.Asian__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('AsianIndian') || a3.additionalDataSegmentValue.contains('AsianIndian') || a4.additionalDataSegmentValue.contains('AsianIndian') 
+                  || a5.additionalDataSegmentValue.contains('AsianIndian') || a6.additionalDataSegmentValue.contains('AsianIndian') ||  a7.additionalDataSegmentValue.contains('AsianIndian')
+                  ||a8.additionalDataSegmentValue.contains('AsianIndian') || a9.additionalDataSegmentValue.contains('AsianIndian')){
+                    declaration.Asian_Indian__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Chinese') || a3.additionalDataSegmentValue.contains('Chinese') || a4.additionalDataSegmentValue.contains('Chinese') 
+                  || a5.additionalDataSegmentValue.contains('Chinese') || a6.additionalDataSegmentValue.contains('Chinese') ||  a7.additionalDataSegmentValue.contains('Chinese')
+                  ||a8.additionalDataSegmentValue.contains('Chinese') || a9.additionalDataSegmentValue.contains('Chinese')){
+                    declaration.Chinese__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Filipino') || a3.additionalDataSegmentValue.contains('Filipino') || a4.additionalDataSegmentValue.contains('Filipino') 
+                  || a5.additionalDataSegmentValue.contains('Filipino') || a6.additionalDataSegmentValue.contains('Filipino') ||  a7.additionalDataSegmentValue.contains('Filipino')
+                  ||a8.additionalDataSegmentValue.contains('Filipino') || a9.additionalDataSegmentValue.contains('Filipino')){
+                    declaration.Filipino__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Japanese') || a3.additionalDataSegmentValue.contains('Japanese') || a4.additionalDataSegmentValue.contains('Japanese') 
+                  || a5.additionalDataSegmentValue.contains('Japanese') || a6.additionalDataSegmentValue.contains('Japanese') ||  a7.additionalDataSegmentValue.contains('Japanese')
+                  ||a8.additionalDataSegmentValue.contains('Japanese') || a9.additionalDataSegmentValue.contains('Japanese')){
+                    declaration.Japanese__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Korean') || a3.additionalDataSegmentValue.contains('Korean') || a4.additionalDataSegmentValue.contains('Korean') 
+                  || a5.additionalDataSegmentValue.contains('Korean') || a6.additionalDataSegmentValue.contains('Korean') ||  a7.additionalDataSegmentValue.contains('Korean')
+                  ||a8.additionalDataSegmentValue.contains('Korean') || a9.additionalDataSegmentValue.contains('Korean')){
+                    declaration.Korean__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Vietnamese') || a3.additionalDataSegmentValue.contains('Vietnamese') || a4.additionalDataSegmentValue.contains('Vietnamese') 
+                  || a5.additionalDataSegmentValue.contains('Vietnamese') || a6.additionalDataSegmentValue.contains('Vietnamese') ||  a7.additionalDataSegmentValue.contains('Vietnamese')
+                  ||a8.additionalDataSegmentValue.contains('Vietnamese') || a9.additionalDataSegmentValue.contains('Vietnamese')){
+                    declaration.Vietnamese__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('OtherAsian') || a3.additionalDataSegmentValue.contains('OtherAsian') || a4.additionalDataSegmentValue.contains('OtherAsian') 
+                  || a5.additionalDataSegmentValue.contains('OtherAsian') || a6.additionalDataSegmentValue.contains('OtherAsian') ||  a7.additionalDataSegmentValue.contains('OtherAsian')
+                  ||a8.additionalDataSegmentValue.contains('OtherAsian') || a9.additionalDataSegmentValue.contains('OtherAsian')){
+                    declaration.Other_Asian__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('BlackOrAfricanAmerican') || a3.additionalDataSegmentValue.contains('BlackOrAfricanAmerican') || a4.additionalDataSegmentValue.contains('BlackOrAfricanAmerican') 
+                  || a5.additionalDataSegmentValue.contains('BlackOrAfricanAmerican') || a6.additionalDataSegmentValue.contains('BlackOrAfricanAmerican') ||  a7.additionalDataSegmentValue.contains('BlackOrAfricanAmerican')
+                  ||a8.additionalDataSegmentValue.contains('BlackOrAfricanAmerican') || a9.additionalDataSegmentValue.contains('BlackOrAfricanAmerican')){
+                    declaration.Black_or_African_American__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander') || a3.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander') || 
+                           a4.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander') || a5.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander') 
+                           || a6.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander') ||  a7.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander')
+                           ||a8.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander') || a9.additionalDataSegmentValue.contains('NativeHawaiianOrOtherPacificIslander')){
+                    declaration.Native_Hawaiian_or_Other_Pacific_Islan__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('NativeHawaiian') || a3.additionalDataSegmentValue.contains('NativeHawaiian') || a4.additionalDataSegmentValue.contains('NativeHawaiian') 
+                  || a5.additionalDataSegmentValue.contains('NativeHawaiian') || a6.additionalDataSegmentValue.contains('NativeHawaiian') ||  a7.additionalDataSegmentValue.contains('NativeHawaiian')
+                  ||a8.additionalDataSegmentValue.contains('NativeHawaiian') || a9.additionalDataSegmentValue.contains('NativeHawaiian')){
+                    declaration.Native_Hawaiian__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('GuamanianOrChamorro') || a3.additionalDataSegmentValue.contains('GuamanianOrChamorro') || a4.additionalDataSegmentValue.contains('GuamanianOrChamorro') 
+                  || a5.additionalDataSegmentValue.contains('GuamanianOrChamorro') || a6.additionalDataSegmentValue.contains('GuamanianOrChamorro') ||  a7.additionalDataSegmentValue.contains('GuamanianOrChamorro')
+                  ||a8.additionalDataSegmentValue.contains('GuamanianOrChamorro') || a9.additionalDataSegmentValue.contains('GuamanianOrChamorro')){
+                    declaration.Guamanian_or_Chamorro__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('Samoan') || a3.additionalDataSegmentValue.contains('Samoan') || a4.additionalDataSegmentValue.contains('Samoan') 
+                  || a5.additionalDataSegmentValue.contains('Samoan') || a6.additionalDataSegmentValue.contains('Samoan') ||  a7.additionalDataSegmentValue.contains('Samoan')
+                  ||a8.additionalDataSegmentValue.contains('Samoan') || a9.additionalDataSegmentValue.contains('Samoan')){
+                    declaration.Samoan__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('OtherPacificIslander') || a3.additionalDataSegmentValue.contains('OtherPacificIslander') || a4.additionalDataSegmentValue.contains('OtherPacificIslander') 
+                  || a5.additionalDataSegmentValue.contains('OtherPacificIslander') || a6.additionalDataSegmentValue.contains('OtherPacificIslander') ||  a7.additionalDataSegmentValue.contains('OtherPacificIslander')
+                  ||a8.additionalDataSegmentValue.contains('OtherPacificIslander') || a9.additionalDataSegmentValue.contains('OtherPacificIslander')){
+                    declaration.Other_Pacific_Islander__c = true;
+                } else if (a2.additionalDataSegmentValue.contains('White') || a3.additionalDataSegmentValue.contains('White') || a4.additionalDataSegmentValue.contains('White') 
+                  || a5.additionalDataSegmentValue.contains('White') || a6.additionalDataSegmentValue.contains('White') ||  a7.additionalDataSegmentValue.contains('White')
+                  ||a8.additionalDataSegmentValue.contains('White') || a9.additionalDataSegmentValue.contains('White')){
+                    declaration.White__c = true;
+                } else {
+                    declaration.Does_not_wish_to_provide_Race__c = true;
+                }
+            }
+            /*End HMDA 3.2*/
             system.debug('About to insert new declaration object: ' + declaration);
             
             update declaration;
