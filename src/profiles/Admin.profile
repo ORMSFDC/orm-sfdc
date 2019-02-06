@@ -13002,11 +13002,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ExternalService__c.Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.Actual_Closing_Date__c</field>
         <readable>true</readable>
@@ -13589,6 +13584,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.update__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ExternalService__c.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

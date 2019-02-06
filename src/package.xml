@@ -5683,6 +5683,19 @@
     <members>Lookup_Purpose_of_Refinance_Keyword.HECM_HECM_to_HECM_Refinance_FIXED</members>
     <members>Lookup_Purpose_of_Refinance_Keyword.HELO_HECM_for_Purchase_FIXED</members>
     <members>Lookup_Purpose_of_Refinance_Keyword.HELO_HECM_to_HECM_Refinance_FIXED</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_1544_LoanNumber</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_1544_UsingAmRock</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_LoanNumber</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_Mortgage_Applied_for</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_Product</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_Product_Type</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_Purpose_of_Loan</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_Purpose_of_Refinance</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_Rate_Type</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_Subject_Property_State</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Final_UsingAmRock</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Initial_LoanNumber</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Initial_Subject_Property_State</members>
     <name>CustomMetadata</name>
   </types>
   <types>
