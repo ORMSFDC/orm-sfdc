@@ -1,9 +1,7 @@
 /** * File Name   : PipeLineController.cls
-*     Description : 
+*     Description : This is to display loans in Pipeline based on statuses, and generate history
 *     Created     : 7/28/2017
-*     Modified    : Prsn
-*    Modified     :Nausad(12/28/2017)
-*   * @author     : 
+*     Modified    : 1/31: Sahitya, added new Loanstatuses for all the pipelines
 * */
 public class PipeLineController {
     @AuraEnabled
