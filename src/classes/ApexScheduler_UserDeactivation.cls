@@ -4,7 +4,7 @@ global class ApexScheduler_UserDeactivation Implements Schedulable
     {
      DeactivateUserController DC=new DeactivateUserController();
         dc.DeactivateUser();       
-    }
+    }     
     
    
 }
