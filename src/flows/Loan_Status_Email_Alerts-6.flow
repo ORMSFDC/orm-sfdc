@@ -289,7 +289,7 @@
                 <leftValueReference>myVariable_current.LoanStatus__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>In Processing</stringValue>
+                    <stringValue>In Underwriting Review</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -431,7 +431,7 @@
                         <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.In_Processing_Date0__c</leftValueReference>
+                <leftValueReference>myVariable_current.In_Underwriting_Review_Date__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -650,7 +650,7 @@
             <connector>
                 <targetReference>myRule_7_A1</targetReference>
             </connector>
-            <label>Loan is created with In Processing</label>
+            <label>Loan is created with In Underwriter Review</label>
         </rules>
     </decisions>
     <decisions>
@@ -691,7 +691,7 @@
             <value>
                 <stringValue>AND(
     ISNEW(),
-    ISPICKVAL([Loan_New__c].LoanStatus__c, &quot;In Processing&quot;),
+    ISPICKVAL([Loan_New__c].LoanStatus__c, &quot;In Underwriting Review&quot;),
     [Loan_New__c].Related_Partner__c.Name  != &quot;Test Partner&quot;
    )</stringValue>
             </value>
@@ -700,7 +700,7 @@
         <dataType>Boolean</dataType>
         <expression>AND(
     ISNEW(),
-    ISPICKVAL({!myVariable_current.LoanStatus__c}, &quot;In Processing&quot;),
+    ISPICKVAL({!myVariable_current.LoanStatus__c}, &quot;In Underwriting Review&quot;),
     {!myVariable_current.Related_Partner__r.Name}  != &quot;Test Partner&quot;
    )</expression>
     </formulas>
@@ -723,7 +723,7 @@
     {!myVariable_current.Related_Partner__r.Name}  != &quot;Test Partner&quot;
    )</expression>
     </formulas>
-    <interviewLabel>Loan_Status_Email_Alerts-5_InterviewLabel</interviewLabel>
+    <interviewLabel>Loan_Status_Email_Alerts-6_InterviewLabel</interviewLabel>
     <label>Loan_Status_Email_Alerts</label>
     <processMetadataValues>
         <name>ObjectType</name>
