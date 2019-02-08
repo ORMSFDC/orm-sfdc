@@ -1,3 +1,10 @@
+/**
+ * @description AttachmentStatus
+ * @date 06/21/17      
+ * @author Ravi
+ * @changelog: Sahitya: 02/06/19 - Do not send upload emails to PCS but create tasks for them
+ */
+
 trigger AttachmentStatus on Attachment(after insert) {
     Attachment att = trigger.New[0];
      System.debug('att--->'+att);    
@@ -72,29 +79,31 @@ trigger AttachmentStatus on Attachment(after insert) {
 
         try {
             if (t.Ownerid != null && t.Ownerid != userinfo.getuserid() || test.isRunningTest()) {
-                Task tt = new Task();
-                if(!Test.isRunningTest()){
-                        tt = [select CreatedDate from task where id=:t.id ];
-                }
-                Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-                // mail.setTemplateId([select id from Emailtemplate where name='Document Uploaded New'].id); //Id of the Email Template
-                String HtmlBody = '';
-                try {
-                TimeZone tz = UserInfo.getTimeZone();
-                DateTime localTime = tt.CreatedDate.AddSeconds(tz.getOffset(tt.CreatedDate)/1000);
-                    HtmlBody = '<li>' + ln.Name + '</li><br/><li>' + ln.Client_Name__c + '</li><br/><li>' + userinfo.getFirstName() + '</li><br/><li>' + localTime  + '</li><br/><li>' + att.Name + '</li><br/><li>' + System.URL.getSalesforceBaseURL().toExternalForm() + '/' + att.id + '</li>';
-                } catch (Exception ex) {}
-                mail.setTargetObjectId(t.ownerId); // Id of Contact or Lead or User
-                system.debug('owner id -->' + t.ownerId);
-                mail.setHtmlBody(HtmlBody);
-                mail.saveAsActivity = false;
-                system.debug('owner id -->' + ln.id);
-                mail.setSubject(t.Subject);
-                System.debug(mail);
-                if (!Test.isRunningTest()) {
-                    Messaging.sendEmail(new Messaging.SingleEmailMessage[] {
-                        mail
-                    });
+                if(ln.PCS_at_Loan_Level__c != t.ownerId && ln.Related_Partner__r.Assigned_PCS__c != t.ownerId){ /*added on 02/06*/
+                    Task tt = new Task();
+                    if(!Test.isRunningTest()){
+                            tt = [select CreatedDate from task where id=:t.id ];
+                    }
+                    Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+                    // mail.setTemplateId([select id from Emailtemplate where name='Document Uploaded New'].id); //Id of the Email Template
+                    String HtmlBody = '';
+                    try {
+                    TimeZone tz = UserInfo.getTimeZone();
+                    DateTime localTime = tt.CreatedDate.AddSeconds(tz.getOffset(tt.CreatedDate)/1000);
+                        HtmlBody = '<li>' + ln.Name + '</li><br/><li>' + ln.Client_Name__c + '</li><br/><li>' + userinfo.getFirstName() + '</li><br/><li>' + localTime  + '</li><br/><li>' + att.Name + '</li><br/><li>' + System.URL.getSalesforceBaseURL().toExternalForm() + '/' + att.id + '</li>';
+                    } catch (Exception ex) {}
+                    mail.setTargetObjectId(t.ownerId); // Id of Contact or Lead or User
+                    system.debug('owner id -->' + t.ownerId);
+                    mail.setHtmlBody(HtmlBody);
+                    mail.saveAsActivity = false;
+                    system.debug('owner id -->' + ln.id);
+                    mail.setSubject(t.Subject);
+                    System.debug(mail);
+                    if (!Test.isRunningTest()) {
+                        Messaging.sendEmail(new Messaging.SingleEmailMessage[] {
+                            mail
+                        });
+                    }
                 }
             }
         } catch (Exception ex) {

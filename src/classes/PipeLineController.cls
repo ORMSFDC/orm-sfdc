@@ -1,9 +1,7 @@
 /** * File Name   : PipeLineController.cls
-*     Description : 
+*     Description : This is to display loans in Pipeline based on statuses, and generate history
 *     Created     : 7/28/2017
-*     Modified    : Prsn
-*    Modified     :Nausad(12/28/2017)
-*   * @author     : 
+*     Modified    : 1/31: Sahitya, added new Loanstatuses for all the pipelines
 * */
 public class PipeLineController {
     @AuraEnabled
@@ -73,13 +71,9 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>();  
         try
         {
-            
-            //   obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Application Package Received','In Processing') ORDER BY LoanStatus__c ];   
-         //   objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Application Package Received','In Processing')];
-         //   objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Application Package Received','In Processing','Full Application Received - Incomplete') ORDER BY LoanStatus__c ];   
-            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Application Package Received','In Processing','Full Application Received - Incomplete')];
-           objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Application Package Received','In Processing','Full Application Received - Incomplete','Loan Submission Received- Awaiting Review') ORDER BY LoanStatus__c ];   
+            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Application Package Received','In Processing','Full Application Received - Incomplete','Loan Submission Received- Awaiting Review')];
+            objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
             Schema.DescribeFieldResult fieldResult = Loan_New__c.LoanStatus__c.getDescribe(); //Bala
             List<Schema.PicklistEntry> values = fieldResult.getPicklistValues();
@@ -130,12 +124,9 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>(); 
         try
         {
-             //  obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Conditionally Approved','Underwriting clear to close') ORDER BY LoanStatus__c ];   
-         //   objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Conditionally Approved','Underwriting clear to close')];
-         //   objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Conditionally Approved','Underwriting clear to close') ORDER BY LoanStatus__c ];   
-            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Conditionally Approved','Underwriting clear to close')];
-         objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Conditionally Approved','Underwriting clear to close','In Underwriting Review') ORDER BY LoanStatus__c ];   
+            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Conditionally Approved','Underwriting clear to close','In Underwriting Review')];
+            objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
             Schema.DescribeFieldResult fieldResult = Loan_New__c.LoanStatus__c.getDescribe(); //Bala
             List<Schema.PicklistEntry> values = fieldResult.getPicklistValues();
@@ -246,8 +237,8 @@ public class PipeLineController {
              //   obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding') ORDER BY LoanStatus__c ];   
          //   objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding')];
          //   objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding') ORDER BY LoanStatus__c ];   
-            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding')];
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding','In final HUD Review','Docs Out to Settlement Agent') ORDER BY LoanStatus__c ];   
+            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding','In final HUD Review','Docs Out to Settlement Agent')];
             objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
             Schema.DescribeFieldResult fieldResult = Loan_New__c.LoanStatus__c.getDescribe();
@@ -358,8 +349,8 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>(); 
         try
         {
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and LoanStatus__c in('Denied', 'Withdrawn' ) ORDER BY LoanStatus__c ];   
-            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Denied','Withdrawn')];
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and LoanStatus__c in('Denied', 'Withdrawn','Loan Rescinded','Application Approved but Not Accepted','File Closed for Incompleteness' ) ORDER BY LoanStatus__c ];   
+            objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Denied','Withdrawn','Loan Rescinded','Application Approved but Not Accepted','File Closed for Incompleteness')];
             objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
             Schema.DescribeFieldResult fieldResult = Loan_New__c.LoanStatus__c.getDescribe();
