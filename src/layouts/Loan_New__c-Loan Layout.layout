@@ -4,10 +4,23 @@
     <excludeButtons>ChangeRecordType</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
-        <customLabel>false</customLabel>
-        <detailHeading>false</detailHeading>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Information</label>
+        <label>Internal Loan Notes</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Internal_Notes__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Loan Details</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -30,12 +43,20 @@
                 <field>LoanStatus__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Loan_Status_Change_Date__c</field>
+                <behavior>Required</behavior>
+                <field>Denied_Reason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Withdrawn_Reason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>How_was_the_Withdrawn_status_captured__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Product_Type__c</field>
+                <field>Loan_Status_Change_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -55,11 +76,31 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>HeloMargin__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Product_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>TitleFeeIsComplete__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SentToBayDocs__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Last_Chatter_Activity__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Last_Chatter_Activity_By__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SF_ID__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -89,30 +130,78 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Servicing_Fee__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Waiting_for_Full_App_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Final_Goals_Call__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>FollowUp_Call__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Initial_Call__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Post_Suspense_Call__c</field>
+                <field>Is_Application_Filled_Flag__c</field>
             </layoutItems>
         </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>false</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Information</label>
+        <layoutColumns/>
+        <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Preferred Contact</label>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LoanOfficer__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Loan_Officer_Phone_Main__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Contact_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Contact_Phone__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Contact_Type__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Loan_Processor__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Loan_Processor_Phone_Main__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Preferred_Contact_Type__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Contact_Name_2__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Contact_Phone_2__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_Contact_Type_2__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -191,6 +280,10 @@
                 <behavior>Readonly</behavior>
                 <field>ORMS_AE__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>UW__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -205,28 +298,9 @@
                 <behavior>Edit</behavior>
                 <field>Originating_Loan_Officer__c</field>
             </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Preferred Contact</label>
-        <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LoanOfficer__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Loan_Processor__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Preferred_Contact_Type__c</field>
+                <behavior>Readonly</behavior>
+                <field>QLMS_AE__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -280,6 +354,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Other_Closing_Costs_URL__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Credit_to_Borrower__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Loan_Payment_Plan_Term__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -441,6 +523,10 @@
                 <behavior>Edit</behavior>
                 <field>Lien_Creditor__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Client_Name__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
@@ -461,6 +547,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>FHA_Case_Number_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>FHA_Case_Transfer_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -591,61 +681,85 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Incomplete_Date__c</field>
+                <field>App_Incomplete_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Application_Requested_Date__c</field>
+                <field>App_Requested_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Waiting_for_Full_Package_Date__c</field>
+                <field>Waiting_for_Full_Package_Date0__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Full_Package_Received_Date__c</field>
+                <field>Submitted_to_Lender_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Full_Application_Received_Incomplete_Dat__c</field>
+                <field>Loan_Received_Awaiting_Review__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>In_Processing_Date__c</field>
+                <field>Loan_Submitted_Incomplete__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Conditionally_Approved_Date__c</field>
+                <field>In_Processing_Date0__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>In_Underwriting_Review_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Conditionally_Approved_Date0__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Clear_to_Close_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>In_final_HUD_Review_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Docs_Out_to_Settlement_Agent_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Closed_Awaiting_Funding_Date0__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Loan_Funded_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Awaiting_Closing_Date__c</field>
+                <field>Loan_Rescinded_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Closed_Awaiting_Funding_Date__c</field>
+                <field>Application_Approved_Not_Accepted_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Funded_Date__c</field>
+                <field>File_Closed_for_Incompleteness_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Suspended_Date__c</field>
+                <field>Suspended_Date0__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Denied_Date__c</field>
+                <field>Withdrawn_Date0__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Underwriting_clear_to_close_date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Withdrawn_Date__c</field>
+                <field>Denied_Date0__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -846,6 +960,10 @@
                 <behavior>Edit</behavior>
                 <field>Contact_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>AE_On_Close__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -855,6 +973,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Contact_Phone_Number_LoanDetails__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Banner__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -957,16 +1079,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>Clone</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>17</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Share</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>18</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Loan_New__c.Request_Title_Fees</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
@@ -1050,6 +1162,16 @@
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>16</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Clone</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>17</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Share</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>18</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>

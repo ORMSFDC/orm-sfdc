@@ -164,16 +164,6 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Application_Requested_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Application Req Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Application_Signed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Signed Date</label>
@@ -255,16 +245,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Awaiting_Closing_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Awaiting Closing Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>BayDocsOrderNumber__c</fullName>
@@ -404,16 +384,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Closed_Awaiting_Funding_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Closed – Awaiting Funding Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Actual Closing Date*</label>
@@ -449,16 +419,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Conditionally_Approved_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Conditionally Approved Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Condominium_FHA_Approved__c</fullName>
@@ -918,16 +878,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Denied_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Denied Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Discounted_Value__c</fullName>
         <externalId>false</externalId>
         <label>Discounted Value</label>
@@ -1144,26 +1094,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Full_Application_Received_Incomplete_Dat__c</fullName>
-        <externalId>false</externalId>
-        <label>Full Application Received Incomplete Dat</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Full_Package_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Full Package Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Fully_Signed_Application_Package__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1172,16 +1102,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Funded_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Funded Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>FundtoClose__c</fullName>
@@ -1365,16 +1285,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>In_Processing_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>In Processing Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Income_and_Asset_Documentation__c</fullName>
@@ -2016,16 +1926,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Loan_Status_Change_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Loan Status Change Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>MandatoryObligations__c</fullName>
@@ -3453,16 +3353,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Suspended_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Suspended Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Team__c</fullName>
         <externalId>false</externalId>
         <formula>IF (ORMS_AE__c  = "Kathy Martinez" , "Braveheart",
@@ -3675,16 +3565,6 @@ IF(
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Underwriting_clear_to_close_date__c</fullName>
-        <externalId>false</externalId>
-        <label>Underwriting clear to close date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Using_Title_Source_as_the_Closing_Agent__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Using AmRock as the Closing Agent/Escrow Officer and Title Company?</inlineHelpText>
@@ -3715,26 +3595,6 @@ IF(
         <fullName>Waiting_for_Full_App_Date__c</fullName>
         <externalId>false</externalId>
         <label>Waiting for Full App Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Waiting_for_Full_Package_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Waiting for Full Package Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Withdrawn_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Withdrawn Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -3968,113 +3828,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>LoanStatus__c</fullName>
-        <externalId>false</externalId>
-        <label>LoanStatus*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Incomplete</fullName>
-                    <default>true</default>
-                    <label>Incomplete</label>
-                </value>
-                <value>
-                    <fullName>Proposal</fullName>
-                    <default>false</default>
-                    <label>Application Requested</label>
-                </value>
-                <value>
-                    <fullName>Waiting for Full Package</fullName>
-                    <default>false</default>
-                    <label>Waiting for Full Package</label>
-                </value>
-                <value>
-                    <fullName>File Closed for Incompleteness</fullName>
-                    <default>false</default>
-                    <label>File Closed for Incompleteness</label>
-                </value>
-                <value>
-                    <fullName>Application Package Received</fullName>
-                    <default>false</default>
-                    <label>Full Package Received</label>
-                </value>
-                <value>
-                    <fullName>Full Application Received - Incomplete</fullName>
-                    <default>false</default>
-                    <label>Full Application Received - Incomplete</label>
-                </value>
-                <value>
-                    <fullName>In Processing</fullName>
-                    <default>false</default>
-                    <label>In Processing</label>
-                </value>
-                <value>
-                    <fullName>Conditionally Approved</fullName>
-                    <default>false</default>
-                    <label>Conditionally Approved</label>
-                </value>
-                <value>
-                    <fullName>Underwriting Clear to Close</fullName>
-                    <default>false</default>
-                    <label>Underwriting Clear to Close</label>
-                </value>
-                <value>
-                    <fullName>Application Approved but Not Accepted</fullName>
-                    <default>false</default>
-                    <label>Application Approved but Not Accepted</label>
-                </value>
-                <value>
-                    <fullName>Suspended</fullName>
-                    <default>false</default>
-                    <label>Suspended</label>
-                </value>
-                <value>
-                    <fullName>Awaiting Closing</fullName>
-                    <default>false</default>
-                    <label>Awaiting Closing</label>
-                </value>
-                <value>
-                    <fullName>Closed - Awaiting Funding</fullName>
-                    <default>false</default>
-                    <label>Closed - Awaiting Funding</label>
-                </value>
-                <value>
-                    <fullName>Funded</fullName>
-                    <default>false</default>
-                    <label>Funded</label>
-                </value>
-                <value>
-                    <fullName>Denied</fullName>
-                    <default>false</default>
-                    <label>Denied</label>
-                </value>
-                <value>
-                    <fullName>Withdrawn</fullName>
-                    <default>false</default>
-                    <label>Withdrawn</label>
-                </value>
-                <value>
-                    <fullName>Sandbox</fullName>
-                    <default>false</default>
-                    <label>Sandbox</label>
-                </value>
-                <value>
-                    <fullName>Cancelled/Denied</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Cancelled/Denied</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Application_Approved_Not_Accepted_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Approved Not Accepted Date</label>
@@ -4103,6 +3856,632 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AE_On_Close__c</fullName>
+        <externalId>false</externalId>
+        <label>AE On Close</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AE_on_Folder__c</fullName>
+        <externalId>false</externalId>
+        <label>AE on Folder</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>App_Incomplete_Date__c</fullName>
+        <description>Partner has started app but has not submitted request for app</description>
+        <externalId>false</externalId>
+        <label>App Incomplete Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>App_Requested_Date__c</fullName>
+        <description>Partner has requested application</description>
+        <externalId>false</externalId>
+        <label>App Requested Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Application_Requested_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Req Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Awaiting_Closing_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Awaiting Closing Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Clear_to_Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Clear to Close Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Awaiting_Funding_Date0__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed - Awaiting Funding Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Awaiting_Funding_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed – Awaiting Funding Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Conditionally_Approved_Date0__c</fullName>
+        <externalId>false</externalId>
+        <label>Conditionally Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Conditionally_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Conditionally Approved Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Denied_Date0__c</fullName>
+        <externalId>false</externalId>
+        <label>Denied Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Denied_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Denied Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Denied_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Denied Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>LoanStatus__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Reason 1</fullName>
+                    <default>false</default>
+                    <label>Reason 1</label>
+                </value>
+                <value>
+                    <fullName>Reason 2</fullName>
+                    <default>false</default>
+                    <label>Reason 2</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Denied</controllingFieldValue>
+                <valueName>Reason 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Denied</controllingFieldValue>
+                <valueName>Reason 2</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Docs_Out_to_Settlement_Agent_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Docs Out to Settlement Agent Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Full_Application_Received_Incomplete_Dat__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Application Received Incompl (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Full_Package_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Package Received Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Funded_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Funded Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>How_was_the_Withdrawn_status_captured__c</fullName>
+        <externalId>false</externalId>
+        <label>How was the Withdrawn status captured?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>LoanStatus__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ORMS Partner</fullName>
+                    <default>false</default>
+                    <label>ORMS Partner</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>ORMS Partner</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>In_Processing_Date0__c</fullName>
+        <externalId>false</externalId>
+        <label>In Processing Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>In_Processing_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>In Processing Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>In_Underwriting_Review_Date__c</fullName>
+        <description>All Vendor Items ordered and UW begins review</description>
+        <externalId>false</externalId>
+        <label>In Underwriting Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LoanStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>LoanStatus*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>true</default>
+                    <label>Application Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Proposal</fullName>
+                    <default>false</default>
+                    <label>Application Requested</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Full Package</fullName>
+                    <default>false</default>
+                    <label>Waiting for Full Package</label>
+                </value>
+                <value>
+                    <fullName>Application Package Received</fullName>
+                    <default>false</default>
+                    <label>Submitted to Lender</label>
+                </value>
+                <value>
+                    <fullName>Loan Submission Received- Awaiting Review</fullName>
+                    <default>false</default>
+                    <label>Loan Submission Received- Awaiting Review</label>
+                </value>
+                <value>
+                    <fullName>Full Application Received - Incomplete</fullName>
+                    <default>false</default>
+                    <label>Loan Submitted - Incomplete</label>
+                </value>
+                <value>
+                    <fullName>In Processing</fullName>
+                    <default>false</default>
+                    <label>In Processing</label>
+                </value>
+                <value>
+                    <fullName>In Underwriting Review</fullName>
+                    <default>false</default>
+                    <label>In Underwriting Review</label>
+                </value>
+                <value>
+                    <fullName>Conditionally Approved</fullName>
+                    <default>false</default>
+                    <label>Conditionally Approved</label>
+                </value>
+                <value>
+                    <fullName>Underwriting Clear to Close</fullName>
+                    <default>false</default>
+                    <label>Clear to Close</label>
+                </value>
+                <value>
+                    <fullName>In final HUD Review</fullName>
+                    <default>false</default>
+                    <label>In Final HUD Review</label>
+                </value>
+                <value>
+                    <fullName>Docs Out to Settlement Agent</fullName>
+                    <default>false</default>
+                    <label>Docs Out to Settlement Agent</label>
+                </value>
+                <value>
+                    <fullName>Closed - Awaiting Funding</fullName>
+                    <default>false</default>
+                    <label>Closed - Awaiting Funding</label>
+                </value>
+                <value>
+                    <fullName>Funded</fullName>
+                    <default>false</default>
+                    <label>Loan Funded</label>
+                </value>
+                <value>
+                    <fullName>Loan Rescinded</fullName>
+                    <default>false</default>
+                    <label>Loan Rescinded</label>
+                </value>
+                <value>
+                    <fullName>Application Approved but Not Accepted</fullName>
+                    <default>false</default>
+                    <label>Application Approved but Not Accepted</label>
+                </value>
+                <value>
+                    <fullName>File Closed for Incompleteness</fullName>
+                    <default>false</default>
+                    <label>File Closed for Incompleteness</label>
+                </value>
+                <value>
+                    <fullName>Suspended</fullName>
+                    <default>false</default>
+                    <label>Suspended</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+                <value>
+                    <fullName>Sandbox</fullName>
+                    <default>false</default>
+                    <label>Sandbox</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Closing</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Awaiting Closing</label>
+                </value>
+                <value>
+                    <fullName>Cancelled/Denied</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cancelled/Denied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Loan_Funded_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Funded Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Received_Awaiting_Review__c</fullName>
+        <description>APCS reviews to move to In Processing</description>
+        <externalId>false</externalId>
+        <label>Loan Received - Awaiting Review</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Rescinded_Date__c</fullName>
+        <description>Loan was Rescinded</description>
+        <externalId>false</externalId>
+        <label>Loan Rescinded Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Status_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Status Change Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Loan_Submitted_Incomplete__c</fullName>
+        <description>AE or Processor identifies that at least one of minimum required docs are missing</description>
+        <externalId>false</externalId>
+        <label>Loan Submitted - Incomplete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Change Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_to_Lender_Date__c</fullName>
+        <description>Partner submitted signed app and supporting documents</description>
+        <externalId>false</externalId>
+        <label>Submitted to Lender Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Suspended_Date0__c</fullName>
+        <externalId>false</externalId>
+        <label>Suspended Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Suspended_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Suspended Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Underwriting_clear_to_close_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Underwriting clear to close date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Waiting_for_Full_Package_Date0__c</fullName>
+        <externalId>false</externalId>
+        <label>Waiting for Full Package Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Waiting_for_Full_Package_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Waiting for Full Package Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Date0__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawn Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawn Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawn Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>LoanStatus__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Another Lender - Better program/process</fullName>
+                    <default>false</default>
+                    <label>Another Lender - Better program/process</label>
+                </value>
+                <value>
+                    <fullName>Another Lender - Better rate and/or fees</fullName>
+                    <default>false</default>
+                    <label>Another Lender - Better rate and/or fees</label>
+                </value>
+                <value>
+                    <fullName>Another Lender - Realtor/builder referral</fullName>
+                    <default>false</default>
+                    <label>Another Lender - Realtor/builder referral</label>
+                </value>
+                <value>
+                    <fullName>Client not Interested</fullName>
+                    <default>false</default>
+                    <label>Client not Interested</label>
+                </value>
+                <value>
+                    <fullName>Chose Another Lender</fullName>
+                    <default>false</default>
+                    <label>Chose Another Lender</label>
+                </value>
+                <value>
+                    <fullName>Loan no longer needed</fullName>
+                    <default>false</default>
+                    <label>Loan no longer needed</label>
+                </value>
+                <value>
+                    <fullName>No longer makes sense for Client</fullName>
+                    <default>false</default>
+                    <label>No longer makes sense for Client</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Another Lender - Better program/process</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Another Lender - Better rate and/or fees</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Another Lender - Realtor/builder referral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Client not Interested</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Chose Another Lender</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Loan no longer needed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>No longer makes sense for Client</valueName>
+            </valueSettings>
+        </valueSet>
     </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>Loan_Layout</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Loan</label><nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Loan ID</label>
