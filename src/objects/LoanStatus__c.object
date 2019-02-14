@@ -1,34 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>LoanId__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -40,7 +51,8 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORMS_AE__c</fullName>
         <externalId>false</externalId>
         <formula>LoanId__r.ORMS_AE__c</formula>
@@ -51,7 +63,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PreviousStatus__c</fullName>
         <externalId>false</externalId>
         <label>Previous Status</label>
@@ -61,7 +74,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Remove_Dups__c</fullName>
         <externalId>false</externalId>
         <formula>1</formula>
@@ -74,7 +88,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Team__c</fullName>
         <description>Team (Source via Loan Team)</description>
         <externalId>false</externalId>
@@ -87,7 +102,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <description>Status - Used By Executive Reporting</description>
         <externalId>false</externalId>
@@ -98,7 +114,6 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
-            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
@@ -107,19 +122,9 @@
                     <label>Incomplete</label>
                 </value>
                 <value>
-                    <fullName>Application Requested</fullName>
-                    <default>false</default>
-                    <label>Application Requested</label>
-                </value>
-                <value>
                     <fullName>Waiting for Full Package</fullName>
                     <default>false</default>
                     <label>Waiting for Full Package</label>
-                </value>
-                <value>
-                    <fullName>Full Package Received</fullName>
-                    <default>false</default>
-                    <label>Full Package Received</label>
                 </value>
                 <value>
                     <fullName>Full Application Received - Incomplete</fullName>
@@ -177,10 +182,14 @@
                     <label>Sandbox</label>
                 </value>
                 <value>
-                    <fullName>Placeholder</fullName>
+                    <fullName>Proposal</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Placeholder</label>
+                    <label>Application Requested</label>
+                </value>
+                <value>
+                    <fullName>Application Package Received</fullName>
+                    <default>false</default>
+                    <label>Full Package Received</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -188,4 +197,5 @@
         <label>Current Status</label>
         <trackHistory>true</trackHistory>
         <type>Text</type>
-    </nameField><pluralLabel>LoanStatus</pluralLabel><searchLayouts /><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility></CustomObject>
+    </nameField><pluralLabel>LoanStatus</pluralLabel><searchLayouts /><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+</CustomObject>
