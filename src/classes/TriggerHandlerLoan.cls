@@ -103,4 +103,18 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
         RecursiveTriggerHandler.isFirstTime = false;
         Logger.pop();
     }
+    
+    public override void beforeUpdate() {
+        Logger.push('beforeUpdate', 'TriggerHandlerLoan');
+
+        // Validate required OnBase values for final send
+        if (testControlMap.get('onbaseValidateFinal') != NULL) {
+            if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseValidateFinal').Enable__c) {
+                OnBaseLookups.validateFinalSend((List<Loan_New__c>)Trigger.new);
+            }
+        }
+        
+        RecursiveTriggerHandler.isFirstTime = false;
+        Logger.pop();
+    }
 }

@@ -170,4 +170,202 @@ public class OnBaseLookups {
         Logger.pop();
         return keyword;
     }
+    
+    public static string validateFinalSend(List<Loan_New__c> loans)
+    {
+        Logger.push('validateFinalSend','OnBaseLookups');
+        
+        // For testing
+        String displayString = '';
+        
+        for (Loan_New__c loan: loans)
+        {
+            if(loan.LoanStatus__c == 'Docs out to Settlement Agent')
+            {
+                Boolean hasError = false;
+                String requiredFields = '';
+                
+				if(String.isEmpty(loan.LoanNumber__c)) {
+                    hasError = true;
+                    requiredFields += 'LoanNumber,';
+                }
+                
+                if(String.isEmpty(loan.Client_Name__c)) {
+                    hasError = true;
+                    requiredFields += 'Borrower Name,';
+                }
+                
+                if(String.isEmpty(loan.Purpose_of_Loan__c)) {
+                    hasError = true;
+                    requiredFields += 'Purpose of Loan,';
+                }
+                
+                if(loan.Actual_Disbursement_Date__c == null) {
+                    hasError = true;
+                    requiredFields += 'Actual Disbursement Date,';
+                }
+                
+                if(String.isEmpty(loan.Subject_Property_Address__c)) {
+                    hasError = true;
+                    requiredFields += 'Subject Property Address,';
+                }
+                
+                if(String.isEmpty(loan.Subject_Property_City__c)) {
+                    hasError = true;
+                    requiredFields += 'Subject Property City,';
+                }
+                
+                if(String.isEmpty(loan.Subject_Property_State__c)) {
+                    hasError = true;
+                    requiredFields += 'Subject Property State,';
+                }
+                
+                if(loan.Actual_Closing_Date__c == null) {
+                    hasError = true;
+                    requiredFields += 'Actual Closing Date,';
+                }                
+                
+                if(String.isEmpty(loan.Subject_Property_Zip_Code__c)) {
+                    hasError = true;
+                    requiredFields += 'Subject Property Zip Code,';
+                }
+
+				if(String.isEmpty(loan.Title_Company__c)) {
+                    hasError = true;
+                    requiredFields += 'Title Company,';
+                }                
+                
+                if(String.isEmpty(loan.Closing_Agent__c)) {
+                    hasError = true;
+                    requiredFields += 'Closing Agent,';
+                }
+                
+                if(String.isEmpty(loan.Subject_Property_Type__c)) {
+                    hasError = true;
+                    requiredFields += 'Subject Property Type,';
+                }
+				
+                //TODO: Lien Type does not have a Salesforce mapping
+
+    			if(String.isEmpty(loan.FHACaseNumber__c )) {
+                    hasError = true;
+                    requiredFields += 'FHA Case Number,';
+                }
+                
+    			if(loan.Disbursement_Amount__c == null) {
+                    hasError = true;
+                    requiredFields += 'Disbursement Amount,';
+                }
+                
+                if(String.isEmpty(loan.Subject_Property_County__c)) {
+                    hasError = true;
+                    requiredFields += 'Subject Property County,';
+                }
+                
+				if(String.isEmpty(loan.Is_there_a_POA_Name_Representing_and__c)) {
+                    hasError = true;
+                    requiredFields += 'Is there a POA?,';
+                }
+                
+                if(String.isEmpty(loan.Trust_Required__c)) {
+                    hasError = true;
+                    requiredFields += 'Trust Required,';
+                }
+                
+                if(loan.FHA_Case_Number__c == null) {
+                    hasError = true;
+                    requiredFields += 'FHA Case Number (date),';
+                }                    
+
+                if(loan.Maximum_Claim_Amount__c == null) {
+                    hasError = true;
+                    requiredFields += 'Maximum Claim Amount,';
+                }
+                
+    			if(loan.PrincipalLimit__c == null) {
+                    hasError = true;
+                    requiredFields += 'PrincipalLimit,';
+                }
+                
+				if(String.isEmpty(loan.Client_Chosen_Title__c)) {
+                    hasError = true;
+                    requiredFields += 'Client Chosen Title,';
+                }
+
+    			if(String.isEmpty(loan.Flood_Zone__c)) {
+                    hasError = true;
+                    requiredFields += 'Flood Zone,';
+                }
+                
+    			if(loan.PropertyAppraisalValue__c == null) {
+                    hasError = true;
+                    requiredFields += 'PropertyAppraisalValue,';
+                }
+
+    			if(String.isEmpty(loan.Guardianship_Conservatorship_Required__c)) {
+                    hasError = true;
+                    requiredFields += 'Guardianship/Conservatorship Required,';
+                }
+                
+				if(String.isEmpty(loan.Assisted_Signing__c)) {
+                    hasError = true;
+                    requiredFields += 'Assisted Signing,';
+                }
+
+                if(String.isEmpty(loan.Remainderman_on_Loan__c)) {
+                    hasError = true;
+                    requiredFields += 'Remainderman on Loan,';
+                }
+                
+    			if(loan.Initial_Disbursement_Limit__c == null) {
+                    hasError = true;
+                    requiredFields += 'Initial Disbursement Limit,';
+                }
+
+                if(loan.MandatoryObligations__c == null) {
+                    hasError = true;
+                    requiredFields += 'Mandatory Obligations,';
+                }
+
+                if(String.isEmpty(loan.ExpectedInterestRate__c)) {
+                    hasError = true;
+                    requiredFields += 'Expected Interest Rate,';
+                }
+
+    			if(String.isEmpty(loan.InitialInterestRate__c)) {
+                    hasError = true;
+                    requiredFields += 'Initial Interest Rate,';
+                }
+                
+    			if(String.isEmpty(loan.Non_Borrower_Title_Holder__c)) {
+                    hasError = true;
+                    requiredFields += 'Non Borrower Title Holder,';
+                }
+                
+    			if(String.isEmpty(loan.Non_Borrowing_Title_Holder_Spouse__c)) {
+                    hasError = true;
+                    requiredFields += 'Non Borrowing Title Holder Spouse,';
+                }
+                
+    			if(String.isEmpty(loan.POA_NonBorrowing_Title_Holder__c)) {
+                    hasError = true;
+                    requiredFields += 'POA NonBorrowing Title Holder,';
+                }
+                
+				if(String.isEmpty(loan.ORMS__c)) {
+                    hasError = true;
+                    requiredFields += 'ORMS Documents,';
+                }
+                
+                
+                if(hasError) {
+                    displayString = 'The following value(s) must be entered before Docs out to Settlement Agent can be selected: ' + requiredFields.removeEnd(',');
+                    loan.addError(displayString);
+                }
+            }
+        }
+        
+        Logger.pop();
+        return displayString;
+    }
 }
