@@ -1,38 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>AddInfluence</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>Opportunity_Record_Page7</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
-    </actionOverrides><businessProcesses>
+    </actionOverrides>
+    <businessProcesses>
         <fullName>NewProcess</fullName>
         <isActive>true</isActive>
         <values>
@@ -55,7 +66,8 @@
             <fullName>Proposal</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Partner Onboarding</fullName>
         <isActive>true</isActive>
         <values>
@@ -98,7 +110,8 @@
             <fullName>Withdrawn</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Portal User Onboarding</fullName>
         <isActive>true</isActive>
         <values>
@@ -121,46 +134,44 @@
             <fullName>Withdrawn</fullName>
             <default>false</default>
         </values>
-    </businessProcesses><businessProcesses>
+    </businessProcesses>
+    <businessProcesses>
         <fullName>Renewals</fullName>
         <isActive>true</isActive>
         <values>
-            <fullName>Closed Lost</fullName>
+            <fullName>Renewal App Outstanding</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Closed Won</fullName>
+            <fullName>Renewal App Reviewing Docs</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Complete%2FApproved</fullName>
+            <fullName>Renewal Approved</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Complete%2FDenied</fullName>
+            <fullName>Renewal Denied</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Needs Analysis</fullName>
+            <fullName>Renewal Docs Required</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Negotiation</fullName>
+            <fullName>Renewal Escalated Review</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Proposal</fullName>
+            <fullName>Renewal Pending Seasoning</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Qualification</fullName>
+            <fullName>Renewal Withdrawn</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>Ready</fullName>
-            <default>false</default>
-        </values>
-    </businessProcesses><compactLayouts>
+    </businessProcesses>
+    <compactLayouts>
         <fullName>New_Awesome_Companct_Layout</fullName>
         <fields>Name</fields>
         <fields>AccountId</fields>
@@ -168,13 +179,15 @@
         <fields>Amount</fields>
         <fields>OwnerId</fields>
         <label>New Awesome Compact Layout</label>
-    </compactLayouts><fields>
+    </compactLayouts>
+    <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Addendum Received Date</label>
@@ -183,7 +196,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -192,7 +206,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Addendum_Required__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -201,7 +216,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Affiliated_Entities_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Affiliated Entities Received Date</label>
@@ -210,7 +226,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Affiliated_Entities__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -219,12 +236,14 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Amount</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>App_Sent__c</fullName>
         <externalId>false</externalId>
         <label>App Sent</label>
@@ -233,7 +252,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Application_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Date</label>
@@ -242,7 +262,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_Credit_Risk_Analyst__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -254,7 +275,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_PCS__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -266,7 +288,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Assigned_Trainer__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -287,7 +310,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Broker_Agreement_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Broker Agreement Received Date</label>
@@ -296,7 +320,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Broker_Agreement__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -305,7 +330,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Budget_Confirmed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -314,13 +340,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CampaignId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Cash__c</fullName>
         <externalId>false</externalId>
         <label>Cash</label>
@@ -331,7 +359,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Certification_and_Authorization_Date__c</fullName>
         <externalId>false</externalId>
         <label>Certification and Authorization Date</label>
@@ -340,7 +369,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Certification_and_Authorization__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -349,7 +379,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Character_Checks_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Character Checks Received Date</label>
@@ -358,7 +389,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Character_Checks__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -367,7 +399,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
         <label>City</label>
@@ -378,7 +411,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ClientID__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -391,12 +425,14 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>CloseDate</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Contact__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -409,13 +445,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ContractId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Corporate_Resolution_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Corporate Resolution Received Date</label>
@@ -424,7 +462,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Corporate_Resolution__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -433,7 +472,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Credit_Risk_Package_Status__c</fullName>
         <externalId>false</externalId>
         <label>Credit Risk Package Status</label>
@@ -473,7 +513,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Credit_risk_package_status_changed_date__c</fullName>
         <externalId>false</externalId>
         <label>Credit risk package status changed date</label>
@@ -482,7 +523,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Current_RV_User__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -491,12 +533,14 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Discovery_Completed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -505,7 +549,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum_Provider__c</fullName>
         <externalId>false</externalId>
         <label>E-sign Addendum Provider</label>
@@ -540,7 +585,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>E-sign Addendum Received Date</label>
@@ -549,7 +595,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -558,7 +605,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email__c</fullName>
         <externalId>false</externalId>
         <label>Email</label>
@@ -568,7 +616,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Equity__c</fullName>
         <externalId>false</externalId>
         <label>Equity</label>
@@ -579,7 +628,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Estimated_Home_Value__c</fullName>
         <externalId>false</externalId>
         <label>Estimated Home Value</label>
@@ -590,7 +640,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Exclusionary_Lists_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Exclusionary Lists Received Date</label>
@@ -599,7 +650,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Exclusionary_Lists__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -608,10 +660,12 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ExpectedRevenue</fullName>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Ext__c</fullName>
         <externalId>false</externalId>
         <label>Ext</label>
@@ -622,7 +676,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHAC_Sponsored_Originator__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -631,7 +686,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FHA_Connection_Link__c</fullName>
         <externalId>false</externalId>
         <formula>HYPERLINK("https://entp.hud.gov/clas/index.cfm/" , 'Please click here to be taken to FHA Connection.')</formula>
@@ -642,7 +698,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Financials_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Financials Received Date</label>
@@ -651,7 +708,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Financials__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -660,7 +718,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>FirstName__c</fullName>
         <externalId>false</externalId>
         <label>First Name</label>
@@ -671,7 +730,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Formation_Documents_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Formation Documents Received Date</label>
@@ -680,7 +740,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Formation_Documents__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -689,15 +750,18 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IqScore</fullName>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsPrivate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LO_Comp_2018__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -706,7 +770,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LastName__c</fullName>
         <externalId>false</externalId>
         <label>Last Name</label>
@@ -717,13 +782,15 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LeadSource</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LoanOfficerName__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -736,7 +803,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Officer_Name__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -749,7 +817,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Related_Fees_Related_Policy_Date__c</fullName>
         <externalId>false</externalId>
         <label>Loan Related Fees &amp; Related Policy Date</label>
@@ -758,7 +827,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Related_Fees_and_Related_Policy__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -767,7 +837,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -780,7 +851,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loss_Reason__c</fullName>
         <externalId>false</externalId>
         <label>Loss Reason</label>
@@ -819,7 +891,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MARI_Background_Check_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>MARI Background Check Received Date</label>
@@ -828,7 +901,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>MARI_Background_Check__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -837,7 +911,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Margin__c</fullName>
         <externalId>false</externalId>
         <label>Margin</label>
@@ -848,7 +923,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID_Verified_Date__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID Verified Date</label>
@@ -857,7 +933,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NMLS_ID__c</fullName>
         <externalId>false</externalId>
         <label>NMLS ID</label>
@@ -868,12 +945,14 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Name</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>New_CRA_Status__c</fullName>
         <externalId>false</externalId>
         <label>New CRA Status</label>
@@ -884,12 +963,14 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>NextStep</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Next_Recertification_Date__c</fullName>
         <externalId>false</externalId>
         <label>Next Recertification Date</label>
@@ -898,7 +979,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ORM_Account_Executive_Name__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -910,7 +992,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Old_CRA_Status__c</fullName>
         <externalId>false</externalId>
         <label>Old CRA Status</label>
@@ -921,7 +1004,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Opt_In_Lead_Sharing__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -930,26 +1014,20 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
-        <fullName>Original_Approved_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Original Approved Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>PartnerAccountId</fullName>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Addendum_Signed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Partner Addendum Signed Date</label>
@@ -958,7 +1036,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Addendum_Signed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -967,7 +1046,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Partner_Denial_Reasons__c</fullName>
         <externalId>false</externalId>
         <label>Partner Denial Reasons</label>
@@ -1053,7 +1133,8 @@
             </valueSetDefinition>
         </valueSet>
         <visibleLines>4</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Phone__c</fullName>
         <externalId>false</externalId>
         <label>Phone</label>
@@ -1062,16 +1143,19 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Pricebook2Id</fullName>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Probability</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Proper_Addendum_sent_to_RV_Date__c</fullName>
         <externalId>false</externalId>
         <label>Proper Addendum sent to RV Date</label>
@@ -1080,7 +1164,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Proper_Addendum_sent_to_RV__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1089,7 +1174,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>QLMS_Account_Executive__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1102,7 +1188,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>ROI_Analysis_Completed__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1111,7 +1198,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>RV_Agreement_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1120,7 +1208,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reapplication_Status__c</fullName>
         <externalId>false</externalId>
         <label>Reapplication Status</label>
@@ -1165,7 +1254,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Recertification_Approval_Date__c</fullName>
         <externalId>false</externalId>
         <label>Recertification Approval Date</label>
@@ -1174,7 +1264,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Recertification_Approved__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1183,7 +1274,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Branch__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1196,7 +1288,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Individual__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -1208,16 +1301,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
-        <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Questionnaire Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1226,7 +1311,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Renewal_Questionnaire_Status__c</fullName>
         <externalId>false</externalId>
         <label>Renewal Questionnaire Status</label>
@@ -1256,7 +1342,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reputation_Check_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Reputation Check Received Date</label>
@@ -1265,7 +1352,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Reputation_Check__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1274,7 +1362,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Resumes_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>Resumes Received Date</label>
@@ -1283,7 +1372,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Resumes__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1292,13 +1382,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>StageName</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <externalId>false</externalId>
         <label>State</label>
@@ -1309,7 +1401,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Completed_Approved__c</fullName>
         <externalId>false</externalId>
         <label>Status App Completed/Approved</label>
@@ -1318,7 +1411,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Completed_Denied__c</fullName>
         <externalId>false</externalId>
         <label>Status App Completed/Denied</label>
@@ -1327,7 +1421,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Outstanding__c</fullName>
         <externalId>false</externalId>
         <label>Status App Outstanding</label>
@@ -1336,7 +1431,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Pending_Review__c</fullName>
         <externalId>false</externalId>
         <label>Status App Pending Review</label>
@@ -1345,7 +1441,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_App_Ready__c</fullName>
         <externalId>false</externalId>
         <label>Status App Ready</label>
@@ -1354,7 +1451,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Documents_Required__c</fullName>
         <externalId>false</externalId>
         <label>Status Documents Required</label>
@@ -1363,7 +1461,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Escalated_Review__c</fullName>
         <externalId>false</externalId>
         <label>Status Escalated Review</label>
@@ -1372,7 +1471,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Reviewing_Docs__c</fullName>
         <externalId>false</externalId>
         <label>Status Reviewing Docs</label>
@@ -1381,7 +1481,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status_Withdrawn__c</fullName>
         <externalId>false</externalId>
         <label>Status Withdrawn</label>
@@ -1390,7 +1491,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
@@ -1415,7 +1517,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>StreetAddress__c</fullName>
         <externalId>false</externalId>
         <label>Street Address</label>
@@ -1424,13 +1527,15 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>SyncedQuoteId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Title__c</fullName>
         <externalId>false</externalId>
         <label>Title</label>
@@ -1441,12 +1546,14 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>TotalOpportunityQuantity</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_Complete_Date__c</fullName>
         <externalId>false</externalId>
         <label>Training Complete Date</label>
@@ -1455,7 +1562,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_In_Process_Date__c</fullName>
         <externalId>false</externalId>
         <label>Training In Process Date</label>
@@ -1464,7 +1572,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_Sent_to_Trainer_Date__c</fullName>
         <externalId>false</externalId>
         <label>Training Sent to Trainer Date</label>
@@ -1473,7 +1582,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Training_Status__c</fullName>
         <externalId>false</externalId>
         <label>Training Status</label>
@@ -1503,22 +1613,15 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields><fields>
-        <fullName>Updated_Financial_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Updated Financial Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Received__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1527,7 +1630,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Updated_Financial_Status__c</fullName>
         <externalId>false</externalId>
         <label>Updated Financial Status</label>
@@ -1557,7 +1661,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>W_9_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>W-9 Received Date</label>
@@ -1566,7 +1671,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>W_9__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1575,7 +1681,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Zip__c</fullName>
         <externalId>false</externalId>
         <label>Zip</label>
@@ -1586,7 +1693,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>validated__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -1595,6 +1703,346 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Date_for_Renewal__c</fullName>
+        <externalId>false</externalId>
+        <formula>Renewal_App_Outstanding_Date__c + 35</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Date for Renewal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Original_Approved_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Original Approved Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Primary_contact_name__r.FirstName &amp; " " &amp;  Account.Primary_contact_name__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Primary_Contact_Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QLMS_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is or has this partner ever been a QLMS Approved Partner?</description>
+        <externalId>false</externalId>
+        <label>QLMS Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QLMS_Provided_Docs__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS Provided Docs</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Denied_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Denied Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Outstanding_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Outstanding Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Pending_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Pending Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Denied_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Denied Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>StageName</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Background_Check</fullName>
+                    <default>false</default>
+                    <label>Background Check</label>
+                </value>
+                <value>
+                    <fullName>Incomplete_Application</fullName>
+                    <default>false</default>
+                    <label>Incomplete Application</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Renewal Denied</controllingFieldValue>
+                <valueName>Background_Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Denied</controllingFieldValue>
+                <valueName>Incomplete_Application</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Denied</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewal_Docs_Required_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Docs Required Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Escalated_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Escalated Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Pending_Seasoning_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Pending Seasoning Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Questionnaire_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Reviewing_Docs_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Reviewing Docs Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Withdrawn Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Withdrawn_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Withdrawn Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>StageName</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Background_Check</fullName>
+                    <default>false</default>
+                    <label>Background Check</label>
+                </value>
+                <value>
+                    <fullName>DTRT</fullName>
+                    <default>false</default>
+                    <label>DTRT</label>
+                </value>
+                <value>
+                    <fullName>Non_Renewal</fullName>
+                    <default>false</default>
+                    <label>Non-Renewal</label>
+                </value>
+                <value>
+                    <fullName>Partner_Request</fullName>
+                    <default>false</default>
+                    <label>Partner Request</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Background_Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>DTRT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Non_Renewal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Partner_Request</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stage_Date_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage Change Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Updated_Financial_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financial Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Updated_Financials_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financials Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields><compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
@@ -1609,7 +2057,8 @@
         <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>Private</sharingModel><listViews>
+    </searchLayouts><sharingModel>Private</sharingModel>
+    <listViews>
         <fullName>AllOpportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1637,7 +2086,8 @@
             <value>Opportunity.Partner_Onboarding</value>
         </filters>
         <label>All Partner Onboarding Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Partner_Onboarding_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1652,7 +2102,8 @@
             <value>Opportunity.Partner_Onboarding</value>
         </filters>
         <label>All Partner Onboarding Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Portal_Training_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1678,7 +2129,8 @@
             <value>Opportunity.Portal_User_Onboarding</value>
         </filters>
         <label>All Portal Training Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>All_Portal_User_Onboarding_Opportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1693,7 +2145,8 @@
             <value>Opportunity.Portal_User_Onboarding</value>
         </filters>
         <label>All Portal User Onboarding Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>ClosingNextMonth</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>LoanOfficerName__c</columns>
@@ -1714,7 +2167,8 @@
             <value>NEXT_MONTH</value>
         </filters>
         <label>Closing Next Month</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>ClosingThisMonth</fullName>
         <filterScope>Everything</filterScope>
         <filters>
@@ -1728,7 +2182,8 @@
             <value>THIS_MONTH</value>
         </filters>
         <label>Closing This Month</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Default_Opportunity_Pipeline</fullName>
         <booleanFilter>(1 OR 2)</booleanFilter>
         <filterScope>Mine</filterScope>
@@ -1743,7 +2198,8 @@
             <value>LAST_N_DAYS:30</value>
         </filters>
         <label>Opportunity Pipeline</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>MyOpportunities</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -1756,7 +2212,8 @@
         <columns>QLMS_Account_Executive__c</columns>
         <filterScope>Mine</filterScope>
         <label>My Opportunities</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>NewThisWeek</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>LoanOfficerName__c</columns>
@@ -1772,7 +2229,8 @@
             <value>THIS_WEEK</value>
         </filters>
         <label>New This Week</label>
-    </listViews><listViews>
+    </listViews>
+    <listViews>
         <fullName>Won</fullName>
         <filterScope>Everything</filterScope>
         <filters>
@@ -1786,7 +2244,8 @@
             <value>1</value>
         </filters>
         <label>Won</label>
-    </listViews><recordTypes>
+    </listViews>
+    <recordTypes>
         <fullName>Loan</fullName>
         <active>true</active>
         <businessProcess>NewProcess</businessProcess>
@@ -2063,7 +2522,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Partner_Onboarding</fullName>
         <active>true</active>
         <businessProcess>Partner Onboarding</businessProcess>
@@ -2340,7 +2800,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Portal_User_Onboarding</fullName>
         <active>true</active>
         <businessProcess>Portal User Onboarding</businessProcess>
@@ -2617,10 +3078,11 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <fullName>Renewals</fullName>
         <active>true</active>
-        <businessProcess>NewProcess</businessProcess>
+        <businessProcess>Renewals</businessProcess>
         <label>Renewals</label>
         <picklistValues>
             <picklist>Credit_Risk_Package_Status__c</picklist>
@@ -2647,34 +3109,166 @@
         </picklistValues>
         <picklistValues>
             <picklist>E_sign_Addendum_Provider__c</picklist>
+            
+            
+            
+            
+            
+            
+            
+            
+            <values>
+                <fullName>Autenti%2Ecom</fullName>
+                <default>false</default>
+            </values>
             <values>
                 <fullName>Calyx</fullName>
                 <default>false</default>
             </values>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <values>
                 <fullName>Doc Magic</fullName>
                 <default>false</default>
             </values>
+            
             <values>
                 <fullName>DocuSign</fullName>
                 <default>false</default>
             </values>
+            
+            
+            
+            
+            
             <values>
                 <fullName>Ellie Mae</fullName>
                 <default>false</default>
             </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>ForecastCategoryName</picklist>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <values>
-                <fullName>Best Case</fullName>
+                <fullName>PDF%2Eco</fullName>
                 <default>false</default>
             </values>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <values>
-                <fullName>Pipeline</fullName>
+                <fullName>SELL%26SIGN</fullName>
                 <default>false</default>
             </values>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <values>
+                <fullName>eSign%2B</fullName>
+                <default>false</default>
+            </values>
+            
+            
+            
+            
+            
+            
         </picklistValues>
+        
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
@@ -2801,6 +3395,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>QLMS_Provided_Docs__c</picklist>
+            <values>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Reapplication_Status__c</picklist>
             <values>
                 <fullName>App Package incomplete per Credit Risk</fullName>
@@ -2828,6 +3433,21 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Renewal_Denied_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete_Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Questionnaire_Status__c</picklist>
             <values>
                 <fullName>Completed</fullName>
@@ -2839,6 +3459,29 @@
             </values>
             <values>
                 <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Withdrawn_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DTRT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non_Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner_Request</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -2894,7 +3537,8 @@
                 <default>false</default>
             </values>
         </picklistValues>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <validationRules>
         <fullName>AE_Opportunity_Stage_Change</fullName>
         <active>true</active>
         <description>AE's cannot change the Opportunity Stage after App Pending Review</description>
@@ -2910,4 +3554,5 @@ ISPICKVAL(StageName, 'Withdrawn')
 ))</errorConditionFormula>
         <errorDisplayField>StageName</errorDisplayField>
         <errorMessage>You do not have access to update this stage</errorMessage>
-    </validationRules></CustomObject>
+    </validationRules>
+</CustomObject>
