@@ -1473,27 +1473,6 @@ Escalated Review: Decision pending escalated review</description>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>Next_Recertification_Date__c</fullName>
-        <externalId>false</externalId>
-        <formula>Original_Approved_Date__c + 365</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Next Recertification Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Next_Renewal_Date__c</fullName>
-        <description>The date of this Approved Partner's next renewal date.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>The date of this Approved Partner's next renewal date.</inlineHelpText>
-        <label>Next Renewal Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>No_of_Affiliated_Partners__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Number of Affiliated Partners to the Business Partner. Please see 'Related' for more details.</inlineHelpText>
@@ -4602,6 +4581,26 @@ IF( ORMS_Closed_Loans__c &gt;= 5, 1500,300)))))))</formula>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Next_Recertification_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( Next_Renewal_Date__c ),Original_Approved_Date__c +365,Next_Renewal_Date__c + 365)</formula>
+        <label>Next Recertification Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Renewal_Date__c</fullName>
+        <description>The date of this Approved Partner's next renewal date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date of this Approved Partner's next renewal date.</inlineHelpText>
+        <label>Last Renewal Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
     </fields><compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>

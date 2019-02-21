@@ -3297,6 +3297,10 @@
     <members>unfiled$public/Test</members>
     <members>unfiled$public/We_do_the_heavy_lifting_1532556693307</members>
     <members>unfiled$public/Alert_Loan_Withdrawn_w_Criteria</members>
+    <members>Renewals</members>
+    <members>Renewals/Renewal_is_Approved</members>
+    <members>Renewals/Renewal_is_due</members>
+    <members>Renewals/Renewal_is_Withdrawn</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -3464,6 +3468,33 @@
     <members>Task_to_PCS_regarding_Loan_Status_and_Application_Date-4</members>
     <members>Loan_Dates_Update-12</members>
     <members>Loan_Dates_Update-14</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-18</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-19</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-20</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-21</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-22</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS-1</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS-2</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS-3</members>
+    <members>Email_Alert_For_Renewal-10</members>
+    <members>Email_Alert_For_Renewal-11</members>
+    <members>Email_Alert_For_Renewal-7</members>
+    <members>Email_Alert_For_Renewal-8</members>
+    <members>Email_Alert_For_Renewal-9</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-12</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-13</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-14</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-15</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-16</members>
+    <members>Opportunity_Approval_Denial_Record_updates-3</members>
+    <members>Renewal_Approved_Process-3</members>
+    <members>Renewal_Approved_Process-4</members>
+    <members>Renewal_Approved_Process-5</members>
+    <members>Renewal_Approved_Process-6</members>
+    <members>Renewal_Approved_Process-7</members>
+    <members>Renewal_Update_date_time_for_checkboxes-1</members>
+    <members>Renewal_Update_date_time_for_checkboxes-2</members>
+    <members>Renewal_Update_date_time_for_checkboxes-3</members>
     <name>Flow</name>
   </types>
   <types>

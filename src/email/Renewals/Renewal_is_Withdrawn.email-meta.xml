@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Renewal is Withdrawn</name>
+    <style>none</style>
+    <subject>Your ORMS Renewal has been Withdrawn</subject>
+    <textOnly>{!Opportunity.Primary_Contact__c},
+
+Your Renewal has been withdrawn, we are sorry to see you go. If you have any questions or would like to restart the renewal process, please reach out to your account executive {!Opportunity.OwnerFullName} at {!Opportunity.OwnerPhone}.
+
+ORMS Renewals Team
+ormsrenewals@onereverse.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
