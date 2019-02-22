@@ -3175,6 +3175,13 @@
     <members>unfiled$public/SampleReportTopAccounts</members>
     <members>unfiled$public/SampleReportUsersLoggedIn</members>
     <members>unfiled$public/Scenarios_Ran</members>
+    <members>CRA_Reports/CRA_Renewals_pGz</members>
+    <members>CRA_Reports/CRA_Renewals_pGz11</members>
+    <members>CRA_Reports/New_Renewals_1oK</members>
+    <members>CRA_Reports/QLMS_Approved_Partners_For_Renewal_Pi4</members>
+    <members>CRA_Reports/Renewals_Denied_Withdrawn_mky</members>
+    <members>CRA_Reports/Renewals_Docs_Needed_e0O1</members>
+    <members>CRA_Reports/Renewals_Escalated_Review_8RC</members>
     <name>Report</name>
   </types>
   <types>
@@ -3194,6 +3201,7 @@
     <members>Sales_and_Marketing_Dashboards</members>
     <members>Service_Dashboards</members>
     <members>SysPrivate</members>
+    <members>ORM_Dashboards/mNMkKUKRvPCkcBnpDtnLYznaLLYrgB</members>
     <name>Dashboard</name>
   </types>
   <types>
