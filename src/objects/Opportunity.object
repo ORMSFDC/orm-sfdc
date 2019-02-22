@@ -551,42 +551,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>E_sign_Addendum_Provider__c</fullName>
-        <externalId>false</externalId>
-        <label>E-sign Addendum Provider</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Doc Magic</fullName>
-                    <default>false</default>
-                    <label>Doc Magic</label>
-                </value>
-                <value>
-                    <fullName>DocuSign</fullName>
-                    <default>false</default>
-                    <label>DocuSign</label>
-                </value>
-                <value>
-                    <fullName>Calyx</fullName>
-                    <default>false</default>
-                    <label>Calyx</label>
-                </value>
-                <value>
-                    <fullName>Ellie Mae</fullName>
-                    <default>false</default>
-                    <label>Ellie Mae</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>E_sign_Addendum_Received_Date__c</fullName>
         <externalId>false</externalId>
         <label>E-sign Addendum Received Date</label>
@@ -2043,6 +2007,692 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>E_sign_Addendum_Provider__c</fullName>
+        <externalId>false</externalId>
+        <label>E-sign Addendum Provider</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calyx</fullName>
+                    <default>false</default>
+                    <label>Calyx</label>
+                </value>
+                <value>
+                    <fullName>Doc Magic</fullName>
+                    <default>false</default>
+                    <label>Doc Magic</label>
+                </value>
+                <value>
+                    <fullName>DocuSign</fullName>
+                    <default>false</default>
+                    <label>DocuSign</label>
+                </value>
+                <value>
+                    <fullName>Ellie Mae</fullName>
+                    <default>false</default>
+                    <label>Ellie Mae</label>
+                </value>
+                <value>
+                    <fullName>4identify</fullName>
+                    <default>false</default>
+                    <label>4identify</label>
+                </value>
+                <value>
+                    <fullName>Accordium</fullName>
+                    <default>false</default>
+                    <label>Accordium</label>
+                </value>
+                <value>
+                    <fullName>Adobe Document Cloud</fullName>
+                    <default>false</default>
+                    <label>Adobe Document Cloud</label>
+                </value>
+                <value>
+                    <fullName>Adobe Sign</fullName>
+                    <default>false</default>
+                    <label>Adobe Sign</label>
+                </value>
+                <value>
+                    <fullName>ADSS Signing Server</fullName>
+                    <default>false</default>
+                    <label>ADSS Signing Server</label>
+                </value>
+                <value>
+                    <fullName>AS2Gateway</fullName>
+                    <default>false</default>
+                    <label>AS2Gateway</label>
+                </value>
+                <value>
+                    <fullName>Assently E-Sign</fullName>
+                    <default>false</default>
+                    <label>Assently E-Sign</label>
+                </value>
+                <value>
+                    <fullName>AssureSign</fullName>
+                    <default>false</default>
+                    <label>AssureSign</label>
+                </value>
+                <value>
+                    <fullName>Autenti.com</fullName>
+                    <default>false</default>
+                    <label>Autenti.com</label>
+                </value>
+                <value>
+                    <fullName>Canvas</fullName>
+                    <default>false</default>
+                    <label>Canvas</label>
+                </value>
+                <value>
+                    <fullName>Carizma First</fullName>
+                    <default>false</default>
+                    <label>Carizma First</label>
+                </value>
+                <value>
+                    <fullName>Certify</fullName>
+                    <default>false</default>
+                    <label>Certify</label>
+                </value>
+                <value>
+                    <fullName>CognaSign</fullName>
+                    <default>false</default>
+                    <label>CognaSign</label>
+                </value>
+                <value>
+                    <fullName>ComsignTrust</fullName>
+                    <default>false</default>
+                    <label>ComsignTrust</label>
+                </value>
+                <value>
+                    <fullName>contractbook</fullName>
+                    <default>false</default>
+                    <label>contractbook</label>
+                </value>
+                <value>
+                    <fullName>Contractually</fullName>
+                    <default>false</default>
+                    <label>Contractually</label>
+                </value>
+                <value>
+                    <fullName>Corporate Signer</fullName>
+                    <default>false</default>
+                    <label>Corporate Signer</label>
+                </value>
+                <value>
+                    <fullName>Countasign</fullName>
+                    <default>false</default>
+                    <label>Countasign</label>
+                </value>
+                <value>
+                    <fullName>Creativity 365</fullName>
+                    <default>false</default>
+                    <label>Creativity 365</label>
+                </value>
+                <value>
+                    <fullName>DealHub</fullName>
+                    <default>false</default>
+                    <label>DealHub</label>
+                </value>
+                <value>
+                    <fullName>DeliverySlip</fullName>
+                    <default>false</default>
+                    <label>DeliverySlip</label>
+                </value>
+                <value>
+                    <fullName>Digio eSign</fullName>
+                    <default>false</default>
+                    <label>Digio eSign</label>
+                </value>
+                <value>
+                    <fullName>DigiSigner</fullName>
+                    <default>false</default>
+                    <label>DigiSigner</label>
+                </value>
+                <value>
+                    <fullName>DiguSign</fullName>
+                    <default>false</default>
+                    <label>DiguSign</label>
+                </value>
+                <value>
+                    <fullName>Docsmore</fullName>
+                    <default>false</default>
+                    <label>Docsmore</label>
+                </value>
+                <value>
+                    <fullName>Dotloop</fullName>
+                    <default>false</default>
+                    <label>Dotloop</label>
+                </value>
+                <value>
+                    <fullName>E-Lock</fullName>
+                    <default>false</default>
+                    <label>E-Lock</label>
+                </value>
+                <value>
+                    <fullName>E-Sign</fullName>
+                    <default>false</default>
+                    <label>E-Sign</label>
+                </value>
+                <value>
+                    <fullName>E-Sign Dashboard</fullName>
+                    <default>false</default>
+                    <label>E-Sign Dashboard</label>
+                </value>
+                <value>
+                    <fullName>e-Sign Live by Silanis</fullName>
+                    <default>false</default>
+                    <label>e-Sign Live by Silanis</label>
+                </value>
+                <value>
+                    <fullName>E-Signature by DocVerify</fullName>
+                    <default>false</default>
+                    <label>E-Signature by DocVerify</label>
+                </value>
+                <value>
+                    <fullName>eOriginal SmartSign</fullName>
+                    <default>false</default>
+                    <label>eOriginal SmartSign</label>
+                </value>
+                <value>
+                    <fullName>eSign Genie</fullName>
+                    <default>false</default>
+                    <label>eSign Genie</label>
+                </value>
+                <value>
+                    <fullName>eSign+</fullName>
+                    <default>false</default>
+                    <label>eSign+</label>
+                </value>
+                <value>
+                    <fullName>eSignature for SharePoint</fullName>
+                    <default>false</default>
+                    <label>eSignature for SharePoint</label>
+                </value>
+                <value>
+                    <fullName>eSigner by Orion Systems</fullName>
+                    <default>false</default>
+                    <label>eSigner by Orion Systems</label>
+                </value>
+                <value>
+                    <fullName>eSignly</fullName>
+                    <default>false</default>
+                    <label>eSignly</label>
+                </value>
+                <value>
+                    <fullName>Eversign</fullName>
+                    <default>false</default>
+                    <label>Eversign</label>
+                </value>
+                <value>
+                    <fullName>Exelaonline</fullName>
+                    <default>false</default>
+                    <label>Exelaonline</label>
+                </value>
+                <value>
+                    <fullName>FaxNgo</fullName>
+                    <default>false</default>
+                    <label>FaxNgo</label>
+                </value>
+                <value>
+                    <fullName>Fingerink</fullName>
+                    <default>false</default>
+                    <label>Fingerink</label>
+                </value>
+                <value>
+                    <fullName>Fluix Sign</fullName>
+                    <default>false</default>
+                    <label>Fluix Sign</label>
+                </value>
+                <value>
+                    <fullName>FormFast</fullName>
+                    <default>false</default>
+                    <label>FormFast</label>
+                </value>
+                <value>
+                    <fullName>FormSwift</fullName>
+                    <default>false</default>
+                    <label>FormSwift</label>
+                </value>
+                <value>
+                    <fullName>GetAccept</fullName>
+                    <default>false</default>
+                    <label>GetAccept</label>
+                </value>
+                <value>
+                    <fullName>HelloSign</fullName>
+                    <default>false</default>
+                    <label>HelloSign</label>
+                </value>
+                <value>
+                    <fullName>IdenTrust Trust Sign</fullName>
+                    <default>false</default>
+                    <label>IdenTrust Trust Sign</label>
+                </value>
+                <value>
+                    <fullName>iFill PDF</fullName>
+                    <default>false</default>
+                    <label>iFill PDF</label>
+                </value>
+                <value>
+                    <fullName>Inkdit</fullName>
+                    <default>false</default>
+                    <label>Inkdit</label>
+                </value>
+                <value>
+                    <fullName>InsureSign</fullName>
+                    <default>false</default>
+                    <label>InsureSign</label>
+                </value>
+                <value>
+                    <fullName>iPEGS</fullName>
+                    <default>false</default>
+                    <label>iPEGS</label>
+                </value>
+                <value>
+                    <fullName>iSign</fullName>
+                    <default>false</default>
+                    <label>iSign</label>
+                </value>
+                <value>
+                    <fullName>KeepSolid Sign</fullName>
+                    <default>false</default>
+                    <label>KeepSolid Sign</label>
+                </value>
+                <value>
+                    <fullName>Lawfice</fullName>
+                    <default>false</default>
+                    <label>Lawfice</label>
+                </value>
+                <value>
+                    <fullName>Leafinbox</fullName>
+                    <default>false</default>
+                    <label>Leafinbox</label>
+                </value>
+                <value>
+                    <fullName>Leegality</fullName>
+                    <default>false</default>
+                    <label>Leegality</label>
+                </value>
+                <value>
+                    <fullName>Legalesign</fullName>
+                    <default>false</default>
+                    <label>Legalesign</label>
+                </value>
+                <value>
+                    <fullName>Lightico in-call eSignature</fullName>
+                    <default>false</default>
+                    <label>Lightico in-call eSignature</label>
+                </value>
+                <value>
+                    <fullName>MailDoodler</fullName>
+                    <default>false</default>
+                    <label>MailDoodler</label>
+                </value>
+                <value>
+                    <fullName>MSB Docs</fullName>
+                    <default>false</default>
+                    <label>MSB Docs</label>
+                </value>
+                <value>
+                    <fullName>MyDocSafe</fullName>
+                    <default>false</default>
+                    <label>MyDocSafe</label>
+                </value>
+                <value>
+                    <fullName>Nitro</fullName>
+                    <default>false</default>
+                    <label>Nitro</label>
+                </value>
+                <value>
+                    <fullName>Novatus</fullName>
+                    <default>false</default>
+                    <label>Novatus</label>
+                </value>
+                <value>
+                    <fullName>Oneflow</fullName>
+                    <default>false</default>
+                    <label>Oneflow</label>
+                </value>
+                <value>
+                    <fullName>OneSpan Sign</fullName>
+                    <default>false</default>
+                    <label>OneSpan Sign</label>
+                </value>
+                <value>
+                    <fullName>OpenLimit CC Sign</fullName>
+                    <default>false</default>
+                    <label>OpenLimit CC Sign</label>
+                </value>
+                <value>
+                    <fullName>OPENTRUST SPI</fullName>
+                    <default>false</default>
+                    <label>OPENTRUST SPI</label>
+                </value>
+                <value>
+                    <fullName>P7S Signer</fullName>
+                    <default>false</default>
+                    <label>P7S Signer</label>
+                </value>
+                <value>
+                    <fullName>PactSafe</fullName>
+                    <default>false</default>
+                    <label>PactSafe</label>
+                </value>
+                <value>
+                    <fullName>PandaDoc</fullName>
+                    <default>false</default>
+                    <label>PandaDoc</label>
+                </value>
+                <value>
+                    <fullName>Papr</fullName>
+                    <default>false</default>
+                    <label>Papr</label>
+                </value>
+                <value>
+                    <fullName>PDCflow</fullName>
+                    <default>false</default>
+                    <label>PDCflow</label>
+                </value>
+                <value>
+                    <fullName>PDF Autosigner</fullName>
+                    <default>false</default>
+                    <label>PDF Autosigner</label>
+                </value>
+                <value>
+                    <fullName>PDF.co</fullName>
+                    <default>false</default>
+                    <label>PDF.co</label>
+                </value>
+                <value>
+                    <fullName>PDFco by ByteScout</fullName>
+                    <default>false</default>
+                    <label>PDFco by ByteScout</label>
+                </value>
+                <value>
+                    <fullName>PDFfiller</fullName>
+                    <default>false</default>
+                    <label>PDFfiller</label>
+                </value>
+                <value>
+                    <fullName>Penneo</fullName>
+                    <default>false</default>
+                    <label>Penneo</label>
+                </value>
+                <value>
+                    <fullName>PenPower eSignature Solution</fullName>
+                    <default>false</default>
+                    <label>PenPower eSignature Solution</label>
+                </value>
+                <value>
+                    <fullName>PleaseSign</fullName>
+                    <default>false</default>
+                    <label>PleaseSign</label>
+                </value>
+                <value>
+                    <fullName>Power PDF Std</fullName>
+                    <default>false</default>
+                    <label>Power PDF Std</label>
+                </value>
+                <value>
+                    <fullName>PRONTOSign by AlphaTrust</fullName>
+                    <default>false</default>
+                    <label>PRONTOSign by AlphaTrust</label>
+                </value>
+                <value>
+                    <fullName>Qwilr</fullName>
+                    <default>false</default>
+                    <label>Qwilr</label>
+                </value>
+                <value>
+                    <fullName>RDMS</fullName>
+                    <default>false</default>
+                    <label>RDMS</label>
+                </value>
+                <value>
+                    <fullName>RightSignature</fullName>
+                    <default>false</default>
+                    <label>RightSignature</label>
+                </value>
+                <value>
+                    <fullName>RMail</fullName>
+                    <default>false</default>
+                    <label>RMail</label>
+                </value>
+                <value>
+                    <fullName>Scrive</fullName>
+                    <default>false</default>
+                    <label>Scrive</label>
+                </value>
+                <value>
+                    <fullName>SeamlessDocs</fullName>
+                    <default>false</default>
+                    <label>SeamlessDocs</label>
+                </value>
+                <value>
+                    <fullName>Secured Signing</fullName>
+                    <default>false</default>
+                    <label>Secured Signing</label>
+                </value>
+                <value>
+                    <fullName>SELL&amp;SIGN</fullName>
+                    <default>false</default>
+                    <label>SELL&amp;SIGN</label>
+                </value>
+                <value>
+                    <fullName>SenditCertified</fullName>
+                    <default>false</default>
+                    <label>SenditCertified</label>
+                </value>
+                <value>
+                    <fullName>Sertifi</fullName>
+                    <default>false</default>
+                    <label>Sertifi</label>
+                </value>
+                <value>
+                    <fullName>Shuttle</fullName>
+                    <default>false</default>
+                    <label>Shuttle</label>
+                </value>
+                <value>
+                    <fullName>Signable</fullName>
+                    <default>false</default>
+                    <label>Signable</label>
+                </value>
+                <value>
+                    <fullName>SignaShare</fullName>
+                    <default>false</default>
+                    <label>SignaShare</label>
+                </value>
+                <value>
+                    <fullName>SignatureConfirm</fullName>
+                    <default>false</default>
+                    <label>SignatureConfirm</label>
+                </value>
+                <value>
+                    <fullName>Signatureit</fullName>
+                    <default>false</default>
+                    <label>Signatureit</label>
+                </value>
+                <value>
+                    <fullName>SignatureOne Suite</fullName>
+                    <default>false</default>
+                    <label>SignatureOne Suite</label>
+                </value>
+                <value>
+                    <fullName>SignBox</fullName>
+                    <default>false</default>
+                    <label>SignBox</label>
+                </value>
+                <value>
+                    <fullName>SignCenter</fullName>
+                    <default>false</default>
+                    <label>SignCenter</label>
+                </value>
+                <value>
+                    <fullName>SignEasy</fullName>
+                    <default>false</default>
+                    <label>SignEasy</label>
+                </value>
+                <value>
+                    <fullName>SigningHub</fullName>
+                    <default>false</default>
+                    <label>SigningHub</label>
+                </value>
+                <value>
+                    <fullName>SIGNiX</fullName>
+                    <default>false</default>
+                    <label>SIGNiX</label>
+                </value>
+                <value>
+                    <fullName>Signmee</fullName>
+                    <default>false</default>
+                    <label>Signmee</label>
+                </value>
+                <value>
+                    <fullName>SignNow</fullName>
+                    <default>false</default>
+                    <label>SignNow</label>
+                </value>
+                <value>
+                    <fullName>SignOff by Datawitness</fullName>
+                    <default>false</default>
+                    <label>SignOff by Datawitness</label>
+                </value>
+                <value>
+                    <fullName>SignOnTheGo</fullName>
+                    <default>false</default>
+                    <label>SignOnTheGo</label>
+                </value>
+                <value>
+                    <fullName>Signority</fullName>
+                    <default>false</default>
+                    <label>Signority</label>
+                </value>
+                <value>
+                    <fullName>SignPack3</fullName>
+                    <default>false</default>
+                    <label>SignPack3</label>
+                </value>
+                <value>
+                    <fullName>SignPlus Pro</fullName>
+                    <default>false</default>
+                    <label>SignPlus Pro</label>
+                </value>
+                <value>
+                    <fullName>SignRequest</fullName>
+                    <default>false</default>
+                    <label>SignRequest</label>
+                </value>
+                <value>
+                    <fullName>SkySignature</fullName>
+                    <default>false</default>
+                    <label>SkySignature</label>
+                </value>
+                <value>
+                    <fullName>SmartSAFE</fullName>
+                    <default>false</default>
+                    <label>SmartSAFE</label>
+                </value>
+                <value>
+                    <fullName>Smartwaiver</fullName>
+                    <default>false</default>
+                    <label>Smartwaiver</label>
+                </value>
+                <value>
+                    <fullName>Soda PDF Online</fullName>
+                    <default>false</default>
+                    <label>Soda PDF Online</label>
+                </value>
+                <value>
+                    <fullName>Stiply</fullName>
+                    <default>false</default>
+                    <label>Stiply</label>
+                </value>
+                <value>
+                    <fullName>SuiteBox</fullName>
+                    <default>false</default>
+                    <label>SuiteBox</label>
+                </value>
+                <value>
+                    <fullName>SutiSign</fullName>
+                    <default>false</default>
+                    <label>SutiSign</label>
+                </value>
+                <value>
+                    <fullName>Swift Cloud</fullName>
+                    <default>false</default>
+                    <label>Swift Cloud</label>
+                </value>
+                <value>
+                    <fullName>Topaz SigPlus</fullName>
+                    <default>false</default>
+                    <label>Topaz SigPlus</label>
+                </value>
+                <value>
+                    <fullName>Tractis</fullName>
+                    <default>false</default>
+                    <label>Tractis</label>
+                </value>
+                <value>
+                    <fullName>U-Sign-It</fullName>
+                    <default>false</default>
+                    <label>U-Sign-It</label>
+                </value>
+                <value>
+                    <fullName>Ultradox</fullName>
+                    <default>false</default>
+                    <label>Ultradox</label>
+                </value>
+                <value>
+                    <fullName>Universign</fullName>
+                    <default>false</default>
+                    <label>Universign</label>
+                </value>
+                <value>
+                    <fullName>Vignature for Business</fullName>
+                    <default>false</default>
+                    <label>Vignature for Business</label>
+                </value>
+                <value>
+                    <fullName>WaiverElectronic</fullName>
+                    <default>false</default>
+                    <label>WaiverElectronic</label>
+                </value>
+                <value>
+                    <fullName>Web Sign In</fullName>
+                    <default>false</default>
+                    <label>Web Sign In</label>
+                </value>
+                <value>
+                    <fullName>WP Digital E-Signature</fullName>
+                    <default>false</default>
+                    <label>WP Digital E-Signature</label>
+                </value>
+                <value>
+                    <fullName>Yozons</fullName>
+                    <default>false</default>
+                    <label>Yozons</label>
+                </value>
+                <value>
+                    <fullName>Zoho Sign</fullName>
+                    <default>false</default>
+                    <label>Zoho Sign</label>
+                </value>
+                <value>
+                    <fullName>ZorroSign eSignature</fullName>
+                    <default>false</default>
+                    <label>ZorroSign eSignature</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields><compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
