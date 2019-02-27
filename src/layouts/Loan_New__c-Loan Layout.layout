@@ -44,15 +44,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Denied_Reason__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
                 <field>Withdrawn_Reason__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>How_was_the_Withdrawn_status_captured__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Who_Requested_the_Withdraw__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
