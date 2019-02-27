@@ -4482,6 +4482,16 @@ IF(
                 <valueName>No longer makes sense for Client</valueName>
             </valueSettings>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Who_Requested_the_Withdraw__c</fullName>
+        <externalId>false</externalId>
+        <label>Who Requested the Withdraw?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>Loan_Layout</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Loan</label><nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Loan ID</label>
@@ -4693,6 +4703,13 @@ $Profile.Name != "System Administrator"
 OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Account_Number__c, "^[1-9]([0-9]{1,45}$)"))))</errorConditionFormula>
         <errorDisplayField>Account_Number__c</errorDisplayField>
         <errorMessage>Account Number should be a valid number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_fill_Who_on_Withdrawn</fullName>
+        <active>true</active>
+        <description>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw' text box must be filled.</description>
+        <errorConditionFormula>ISPICKVAL(LoanStatus__c , 'Withdrawn') &amp;&amp; ISBLANK(Who_Requested_the_Withdraw__c)</errorConditionFormula>
+        <errorMessage>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw?' text box must be filled.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

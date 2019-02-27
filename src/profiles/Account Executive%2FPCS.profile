@@ -10233,6 +10233,11 @@
         <field>Opportunity.Stage_Date_Change_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Who_Requested_the_Withdraw__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
