@@ -4759,6 +4759,13 @@
     <members>CTI_Dashboard/DMB_Approved_Contacts_QMM</members>
     <members>CTI_Dashboard/DMB_Approved_Partners_LPO</members>
     <members>CTI_Dashboard/DMB_UnApproved_Partners_rxV</members>
+    <members>CRA_Reports/CRA_Renewals_pGz</members>
+    <members>CRA_Reports/CRA_Renewals_pGz11</members>
+    <members>CRA_Reports/New_Renewals_1oK</members>
+    <members>CRA_Reports/QLMS_Approved_Partners_For_Renewal_Pi4</members>
+    <members>CRA_Reports/Renewals_Denied_Withdrawn_mky</members>
+    <members>CRA_Reports/Renewals_Docs_Needed_e0O1</members>
+    <members>CRA_Reports/Renewals_Escalated_Review_8RC</members>
     <name>Report</name>
   </types>
   <types>
@@ -4901,6 +4908,10 @@
     <members>zoom_app__Zoom_Folder</members>
     <members>zoom_app__Zoom_Folder/zoom_app__Zoom_Meeting_Invitation</members>
     <members>unfiled$public/Alert_Loan_Withdrawn_w_Criteria</members>
+    <members>Renewals</members>
+    <members>Renewals/Renewal_is_Approved</members>
+    <members>Renewals/Renewal_is_due</members>
+    <members>Renewals/Renewal_is_Withdrawn</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -5090,6 +5101,23 @@
     <members>Loan_Status_Email_Alerts-4</members>
     <members>AE_On_Close-1</members>
     <members>Update_ORM_Account_Executive_Name-1</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-18</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-19</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-20</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-21</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date-22</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS-1</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS-2</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS-3</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-12</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-13</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-14</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-15</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting-16</members>
+    <members>Opportunity_Approval_Denial_Record_updates-3</members>
+    <members>Renewal_Update_date_time_for_checkboxes-1</members>
+    <members>Renewal_Update_date_time_for_checkboxes-2</members>
+    <members>Renewal_Update_date_time_for_checkboxes-3</members>
     <name>Flow</name>
   </types>
   <types>

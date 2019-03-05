@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Renewal is Withdrawn</name>
+    <style>none</style>
+    <subject>Your ORMS Renewal has been Withdrawn</subject>
+    <textOnly>Hello {!Opportunity.Primary_Contact__c},
+
+Your renewal application has been withdrawn.
+
+Please reach out to {!Opportunity.OwnerFirstName}, your Account Executive, if you wish to restart the renewal process, he is here to help you. His direct contact information is below:
+
+{!Opportunity.OwnerFullName} {!Opportunity.OwnerTitle}
+{!Opportunity.OwnerPhone}
+{!Opportunity.OwnerEmail}
+
+At any time you can reach our dedicated team through email at: ORMSSupport@onereverse.com
+Or by phone at: #888-980-2989.
+
+We are excited to provide the best mortgage experience to you and your clients! If you wish to restart your renewal, please get back to us.
+
+Respectfully,
+ORMS Renewals Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -139,39 +139,35 @@
         <fullName>Renewals</fullName>
         <isActive>true</isActive>
         <values>
-            <fullName>Closed Lost</fullName>
+            <fullName>Renewal App Outstanding</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Closed Won</fullName>
+            <fullName>Renewal App Reviewing Docs</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Complete%2FApproved</fullName>
+            <fullName>Renewal Approved</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Complete%2FDenied</fullName>
+            <fullName>Renewal Denied</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Needs Analysis</fullName>
+            <fullName>Renewal Docs Required</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Negotiation</fullName>
+            <fullName>Renewal Escalated Review</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Proposal</fullName>
+            <fullName>Renewal Pending Seasoning</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Qualification</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ready</fullName>
+            <fullName>Renewal Withdrawn</fullName>
             <default>false</default>
         </values>
     </businessProcesses>
@@ -984,16 +980,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Original_Approved_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Original Approved Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -1279,16 +1265,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Questionnaire Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Renewal_Questionnaire_Received__c</fullName>
@@ -1608,16 +1584,6 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>Updated_Financial_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Updated Financial Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Updated_Financial_Received__c</fullName>
@@ -2497,6 +2463,340 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Date_for_Renewal__c</fullName>
+        <externalId>false</externalId>
+        <formula>Renewal_App_Outstanding_Date__c + 35</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Date for Renewal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Original_Approved_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Original Approved Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Primary_contact_name__r.FirstName &amp; " " &amp;  Account.Primary_contact_name__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Primary_Contact_Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QLMS_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is or has this partner ever been a QLMS Approved Partner?</description>
+        <externalId>false</externalId>
+        <label>QLMS Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QLMS_Provided_Docs__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS Provided Docs</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Denied_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Denied Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Outstanding_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Outstanding Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Pending_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Pending Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Denied_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Denied Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>StageName</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Background_Check</fullName>
+                    <default>false</default>
+                    <label>Background Check</label>
+                </value>
+                <value>
+                    <fullName>Incomplete_Application</fullName>
+                    <default>false</default>
+                    <label>Incomplete Application</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Renewal Denied</controllingFieldValue>
+                <valueName>Background_Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Denied</controllingFieldValue>
+                <valueName>Incomplete_Application</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewal_Docs_Required_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Docs Required Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Escalated_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Escalated Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Pending_Seasoning_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Pending Seasoning Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Questionnaire_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Reviewing_Docs_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Reviewing Docs Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Withdrawn Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Withdrawn_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Withdrawn Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>StageName</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Background_Check</fullName>
+                    <default>false</default>
+                    <label>Background Check</label>
+                </value>
+                <value>
+                    <fullName>DTRT</fullName>
+                    <default>false</default>
+                    <label>DTRT</label>
+                </value>
+                <value>
+                    <fullName>Non_Renewal</fullName>
+                    <default>false</default>
+                    <label>Non-Renewal</label>
+                </value>
+                <value>
+                    <fullName>Partner_Request</fullName>
+                    <default>false</default>
+                    <label>Partner Request</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Background_Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>DTRT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Non_Renewal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Partner_Request</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stage_Date_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage Change Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Updated_Financial_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financial Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Updated_Financials_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financials Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields><compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
@@ -4056,7 +4356,7 @@
     <recordTypes>
         <fullName>Renewals</fullName>
         <active>true</active>
-        <businessProcess>NewProcess</businessProcess>
+        <businessProcess>Renewals</businessProcess>
         <label>Renewals</label>
         <picklistValues>
             <picklist>Credit_Risk_Package_Status__c</picklist>
@@ -4620,17 +4920,7 @@
                 <default>false</default>
             </values>
         </picklistValues>
-        <picklistValues>
-            <picklist>ForecastCategoryName</picklist>
-            <values>
-                <fullName>Best Case</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pipeline</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
+        
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
@@ -4757,6 +5047,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>QLMS_Provided_Docs__c</picklist>
+            <values>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Reapplication_Status__c</picklist>
             <values>
                 <fullName>App Package incomplete per Credit Risk</fullName>
@@ -4784,6 +5085,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Renewal_Denied_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete_Application</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Questionnaire_Status__c</picklist>
             <values>
                 <fullName>Completed</fullName>
@@ -4795,6 +5107,25 @@
             </values>
             <values>
                 <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Withdrawn_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DTRT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non_Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner_Request</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Renewal is Approved</name>
+    <style>none</style>
+    <subject>Congratulations! Your Renewal has been approved!</subject>
+    <textOnly>You have been Approved!
+
+Hello {!Opportunity.Primary_Contact__c},
+
+On behalf of One Reverse Mortgage Services, your renewal application has reached Approved status.
+
+{!Opportunity.OwnerFirstName}, your Account Executive, is here to help you with scenarios, sales techniques, reverse mortgage information and your loan applications. His direct contact information is below:
+
+{!Opportunity.OwnerFullName} {!Opportunity.OwnerTitle}
+{!Opportunity.OwnerPhone}
+{!Opportunity.OwnerEmail}
+
+At any time you can reach our dedicated team through email at: ORMSSupport@onereverse.com
+Or by phone at: #888-980-2989.
+
+We are excited to provide the best mortgage experience to you and your clients! Again, welcome and thank you for continuing the partnership with One Reverse Mortgage Services!
+
+Respectfully,
+ORMS Renewals Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -9347,6 +9347,11 @@
     <readable>false</readable>
     <field>Account.Number_of_loan_officers__c</field>
 </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Original_Approved_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
