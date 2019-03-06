@@ -1,12 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>Assign View All and Modify all permission to AE Lead and PCS Lead on Loan Object</description><hasActivationRequired>false</hasActivationRequired><label>AE Lead and PCS Lead Object Permission</label><fieldPermissions>
+﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>Assign View All and Modify all permission to AE Lead and PCS Lead on Loan Object</description><hasActivationRequired>false</hasActivationRequired><label>AE Lead and PCS Lead Object Permission</label>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.E_sign_Addendum_Provider__c</field>
         <readable>true</readable>
-    </fieldPermissions><fieldPermissions>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.E_sign_Addendum__c</field>
         <readable>true</readable>
-    </fieldPermissions><objectPermissions>
+    </fieldPermissions>
+    <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -14,7 +17,8 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>Account</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions><objectPermissions>
+    </objectPermissions>
+    <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
@@ -22,19 +26,34 @@
         <modifyAllRecords>true</modifyAllRecords>
         <object>Loan_New__c</object>
         <viewAllRecords>true</viewAllRecords>
-    </objectPermissions><recordTypeVisibilities>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Partner_CRA_Status_History__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <recordTypeVisibilities>
         <recordType>Account.Approved_Partners</recordType>
         <visible>true</visible>
-    </recordTypeVisibilities><recordTypeVisibilities>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <recordType>Account.Committed_Partner</recordType>
         <visible>true</visible>
-    </recordTypeVisibilities><recordTypeVisibilities>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <recordType>Account.Partner_Leads</recordType>
         <visible>true</visible>
-    </recordTypeVisibilities><recordTypeVisibilities>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <recordType>Account.Partners</recordType>
         <visible>true</visible>
-    </recordTypeVisibilities><recordTypeVisibilities>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <recordType>Account.Potential_Partners</recordType>
         <visible>true</visible>
-    </recordTypeVisibilities></PermissionSet>
+    </recordTypeVisibilities>
+</PermissionSet>

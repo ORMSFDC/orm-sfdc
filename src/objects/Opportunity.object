@@ -2797,6 +2797,30 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Other_Denial__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Denial</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Withdrawn__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Withdrawn</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields><compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
@@ -3046,17 +3070,7 @@
                 <default>false</default>
             </values>
         </picklistValues>
-        <picklistValues>
-            <picklist>ForecastCategoryName</picklist>
-            <values>
-                <fullName>Best Case</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pipeline</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
+        
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
@@ -3183,280 +3197,13 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Reapplication_Status__c</picklist>
+            <picklist>QLMS_Provided_Docs__c</picklist>
             <values>
-                <fullName>App Package incomplete per Credit Risk</fullName>
+                <fullName>NO</fullName>
                 <default>false</default>
             </values>
             <values>
-                <fullName>App Package sent to inactive partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Application Package Accepted by Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Application Package Uploaded</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Denied by Credit Risk</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reapproved</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Renewal_Questionnaire_Status__c</picklist>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Need LOX</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outstanding</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>New</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pending</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Training_Status__c</picklist>
-            <values>
-                <fullName>Sent to Trainer</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Training Complete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Training in Process</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Type</picklist>
-            <values>
-                <fullName>Existing Business</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>New Business</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Updated_Financial_Status__c</picklist>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Need LOX</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Outstanding</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
-    <recordTypes>
-        <fullName>Portal_User_Onboarding</fullName>
-        <active>true</active>
-        <businessProcess>Portal User Onboarding</businessProcess>
-        <label>Portal User Onboarding</label>
-        <picklistValues>
-            <picklist>Credit_Risk_Package_Status__c</picklist>
-            <values>
-                <fullName>Broker Package Incomplete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Complete</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Escalated</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Full Review In Process</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Initial Review</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>E_sign_Addendum_Provider__c</picklist>
-            <values>
-                <fullName>Calyx</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Doc Magic</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>DocuSign</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Ellie Mae</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>ForecastCategoryName</picklist>
-            <values>
-                <fullName>Best Case</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pipeline</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>LeadSource</picklist>
-            <values>
-                <fullName>Advertisement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Customer Event</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Employee Referral</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Google AdWords</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Partner</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Purchased List</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Trade Show</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Webinar</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Website</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Loss_Reason__c</picklist>
-            <values>
-                <fullName>Lost to Competitor</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Budget %2F Lost Funding</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No Decision %2F Non-Responsive</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Price</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Partner_Denial_Reasons__c</picklist>
-            <values>
-                <fullName>Affiliated Entities</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Broker Agreement</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Certification and Authorization</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Character Checks</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Corporate Resolution</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Exclusionary Lists</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Financials</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Formation Documents</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Loan Related Fees and Related Policy</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>MARI Background Check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>NMLS ID</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Reputation Check</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Resumes</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>W-9</fullName>
+                <fullName>YES</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -3488,6 +3235,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Renewal_Denied_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete_Application</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Questionnaire_Status__c</picklist>
             <values>
                 <fullName>Completed</fullName>
@@ -3499,6 +3257,25 @@
             </values>
             <values>
                 <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Withdrawn_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DTRT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non_Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner_Request</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -4122,17 +3899,7 @@
                 <default>false</default>
             </values>
         </picklistValues>
-        <picklistValues>
-            <picklist>ForecastCategoryName</picklist>
-            <values>
-                <fullName>Best Case</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Pipeline</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
+        
         <picklistValues>
             <picklist>LeadSource</picklist>
             <values>
@@ -4259,6 +4026,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>QLMS_Provided_Docs__c</picklist>
+            <values>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Reapplication_Status__c</picklist>
             <values>
                 <fullName>App Package incomplete per Credit Risk</fullName>
@@ -4286,6 +4064,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>Renewal_Denied_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete_Application</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Renewal_Questionnaire_Status__c</picklist>
             <values>
                 <fullName>Completed</fullName>
@@ -4297,6 +4086,334 @@
             </values>
             <values>
                 <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Withdrawn_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DTRT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non_Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner_Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Training_Status__c</picklist>
+            <values>
+                <fullName>Sent to Trainer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training in Process</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Updated_Financial_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Portal_User_Onboarding</fullName>
+        <active>true</active>
+        <businessProcess>Portal User Onboarding</businessProcess>
+        <label>Portal User Onboarding</label>
+        <picklistValues>
+            <picklist>Credit_Risk_Package_Status__c</picklist>
+            <values>
+                <fullName>Broker Package Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Review In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>E_sign_Addendum_Provider__c</picklist>
+            <values>
+                <fullName>Calyx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Doc Magic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ellie Mae</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google AdWords</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Loss_Reason__c</picklist>
+            <values>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Budget %2F Lost Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Decision %2F Non-Responsive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Denial_Reasons__c</picklist>
+            <values>
+                <fullName>Affiliated Entities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certification and Authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Character Checks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Resolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exclusionary Lists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formation Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Related Fees and Related Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MARI Background Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NMLS ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reputation Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resumes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W-9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>QLMS_Provided_Docs__c</picklist>
+            <values>
+                <fullName>NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>YES</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reapplication_Status__c</picklist>
+            <values>
+                <fullName>App Package incomplete per Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>App Package sent to inactive partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Accepted by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Package Uploaded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied by Credit Risk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reapproved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Denied_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete_Application</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Questionnaire_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need LOX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Withdrawn_Reason__c</picklist>
+            <values>
+                <fullName>Background_Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DTRT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non_Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner_Request</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -5198,5 +5315,21 @@ ISPICKVAL(StageName, 'Withdrawn')
 ))</errorConditionFormula>
         <errorDisplayField>StageName</errorDisplayField>
         <errorMessage>You do not have access to update this stage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Other_Denied</fullName>
+        <active>false</active>
+        <description>Require description in other for Withdrawn</description>
+        <errorConditionFormula>If( AND (ISPICKVAL(  Renewal_Denied_Reason__c  ,'Other'), ISBLANK(  Other_Denial__c )),true,false)</errorConditionFormula>
+        <errorDisplayField>Other_Withdrawn__c</errorDisplayField>
+        <errorMessage>Must populate Other Withdrawn</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Other_Withdrawn</fullName>
+        <active>false</active>
+        <description>Require description in other for Withdrawn</description>
+        <errorConditionFormula>If( AND (ISPICKVAL(  Renewal_Withdrawn_Reason__c ,'Other'), ISBLANK( Other_Withdrawn__c)),true,false)</errorConditionFormula>
+        <errorDisplayField>Other_Withdrawn__c</errorDisplayField>
+        <errorMessage>Must populate Other Withdrawn</errorMessage>
     </validationRules>
 </CustomObject>
