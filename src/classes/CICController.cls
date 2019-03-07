@@ -58,17 +58,17 @@ public class CICController {
                   PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: strLoanId];
             
             // Added new conditions - Bala
-            if (ln.PCS_at_Loan_Level__c != null && (ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Awaiting Closing' || ln.Loanstatus__c == 'Closed - Awaiting Funding')) {
+            if (ln.PCS_at_Loan_Level__c != null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
                 OwnerId = ln.PCS_at_Loan_Level__c;
-            } else if(ln.PCS_at_Loan_Level__c == null && (ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Awaiting Closing' || ln.Loanstatus__c == 'Closed - Awaiting Funding')) {
+            } else if(ln.PCS_at_Loan_Level__c == null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
                 OwnerId = ln.Related_Partner__r.Assigned_PCS__c;
-            } else if (ln.Related_Partner__r.Account_Executive_Name__c != null && (ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended')){
+            } else if (ln.Related_Partner__r.Account_Executive_Name__c != null && (ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended' || ln.Loanstatus__c == 'Conditionally Approved')) {
                 OwnerId = ln.Related_Partner__r.Account_Executive_Name__c;
             }            
             system.debug('OwnerId'+OwnerId);
             
             EmailTo=[SELECT user_email_Id__c from User where Id=:OwnerId ].user_email_Id__c;
-             //EmailTo='dkumar3@galaxe.com';
+            //EmailTo='dkumar3@galaxe.com';
              system.debug('EmailTo'+EmailTo);
             EmailTemplate template = [SELECT Id, Name, Subject, HtmlValue, Body, Markup FROM EmailTemplate where Name='CIC Email Template' ];
             List<Messaging.SingleEmailMessage> mails = 
@@ -108,11 +108,11 @@ public class CICController {
             Task t = new Task();
             
             // Added new conditions - Bala
-            if (ln.PCS_at_Loan_Level__c != null && (ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Awaiting Closing' || ln.Loanstatus__c == 'Closed - Awaiting Funding')) {
+            if (ln.PCS_at_Loan_Level__c != null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
                 t.OwnerId = ln.PCS_at_Loan_Level__c;
-            } else if(ln.PCS_at_Loan_Level__c == null && (ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Awaiting Closing' || ln.Loanstatus__c == 'Closed - Awaiting Funding')){
+            } else if(ln.PCS_at_Loan_Level__c == null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
                 t.OwnerId = ln.Related_Partner__r.Assigned_PCS__c;
-            }else if (ln.Related_Partner__r.Account_Executive_Name__c != null && (ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended')){
+            }else if (ln.Related_Partner__r.Account_Executive_Name__c != null && (ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended' || ln.Loanstatus__c == 'Conditionally Approved')){
                 t.OwnerId = ln.Related_Partner__r.Account_Executive_Name__c;
             }  
             
