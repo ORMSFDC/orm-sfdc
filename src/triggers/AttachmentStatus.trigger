@@ -54,15 +54,13 @@ trigger AttachmentStatus on Attachment(after insert) {
                 P.Name == 'Portal Loan Processors' || P.Name == 'Prospective Partner User' || P.Name == 'Prospective Partner Users')) {
             t.OwnerId = ln.Related_Partner__r.Account_Executive_Name__c;
         }
-        /* TODO: Missing new requirement for this?  Loan statuses to create task for PCS for docs other than FNM file
         else{
-            if((ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Awaiting Closing' || ln.Loanstatus__c == 'Closed - Awaiting Funding')
+            if((ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'In Final HUD Review' || ln.Loanstatus__c == 'Docs out to Settlement Agent')
             && (P.Name == 'ORM Partner' || P.Name == 'ORM Partners' || P.Name == 'Partner Community Login User' || P.Name == 'Partner Community User' || P.Name == 'Portal Loan Processor' || 
                 P.Name == 'Portal Loan Processors' || P.Name == 'Prospective Partner User' || P.Name == 'Prospective Partner Users')){
                 t.OwnerId = ln.Related_Partner__r.Assigned_PCS__c;
             }
-        }
-        */		
+        }		
                   
         t.Subject = 'A Document has been uploaded for ' + ln.Client_Name__c+ ' by ' + userinfo.getfirstname() + ' ' + userinfo.getlastname();
         t.Status = 'Open';
