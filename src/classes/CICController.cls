@@ -3,7 +3,6 @@ public class CICController {
     public static void SaveCICData(string CICFeeList,ChangeInCircumstances__c CICDataValue,String LoanId) {
         try
         {
-            string TaskId='';
             //system.debug(CICFeeList);
             //system.debug(CICDataValue);
             List<CICFeeResponse>RequestList = (List<CICFeeResponse>)JSON.deserialize(CICFeeList, List<CICFeeResponse>.class);            
@@ -26,77 +25,81 @@ public class CICController {
             }
             insert FeeList;
             
-            //Call for Create Task
-            
-            TaskId = CreateTask(CICFeeList,CICDataValue,LoanId);
-            system.debug('TaskId'+TaskId);
-            //End
-            //call for Sending Email
-            
-            SendEmail(LoanId,TaskId);
-            //End
-            
+            CreateTasksAndSendEmails(CICFeeList, CICDataValue, LoanId);            
         }
         
         catch(exception e){
             system.debug('SaveCICData--Exception---'+e);
         }
     }
+    
     @AuraEnabled
-    public static void SendEmail(String strLoanId,string TaskId) {
-        try
-        {
-            
-            string Link= '<a href='+Label.CIC_Email_Url+TaskId+'>Link to Task</a>';
-            
-            string OwnerId;
-            string EmailTo;
-            Datetime dt=system.now();
-            string datefordisplay=dt.format('MM/dd/yyyy HH:mm a');
-            Loan_New__c ln = new Loan_New__c();
-            ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
-                  PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: strLoanId];
-            
-            // Added new conditions - Bala
-            if (ln.PCS_at_Loan_Level__c != null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
-                OwnerId = ln.PCS_at_Loan_Level__c;
-            } else if(ln.PCS_at_Loan_Level__c == null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
-                OwnerId = ln.Related_Partner__r.Assigned_PCS__c;
-            } else if (ln.Related_Partner__r.Account_Executive_Name__c != null && (ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended' || ln.Loanstatus__c == 'Conditionally Approved')) {
-                OwnerId = ln.Related_Partner__r.Account_Executive_Name__c;
-            }            
-            system.debug('OwnerId'+OwnerId);
-            
-            EmailTo=[SELECT user_email_Id__c from User where Id=:OwnerId ].user_email_Id__c;
-            //EmailTo='dkumar3@galaxe.com';
-             system.debug('EmailTo'+EmailTo);
-            EmailTemplate template = [SELECT Id, Name, Subject, HtmlValue, Body, Markup FROM EmailTemplate where Name='CIC Email Template' ];
-            List<Messaging.SingleEmailMessage> mails = 
-                new List<Messaging.SingleEmailMessage>();
-            // Step 1: Create a new Email
-            Messaging.SingleEmailMessage mail = 
-                new Messaging.SingleEmailMessage();
-            List<String> sendTo = new List<String>();
-            
-            sendTo.add( EmailTo);
-           mail.setToAddresses(sendTo);
-            mail.setReplyTo(UserInfo.getUserEmail());
-              //mail.setTargetObjectId(OwnerId);
-            mail.setSubject('A new task has been created for you for a CIC on '+ ln.Client_Name__c+ '\'s '+' loan');
-            String body =  template.HtmlValue ;    
-            body =   body.replace('#BusinessIndividualName',userinfo.getName()).replace('#ClientName',ln.Client_Name__c).replace('#LoanId',ln.Name).replace('#Date',datefordisplay).replace('#Link',Link);        
-            mail.setHtmlBody(body);
-            mails.add(mail);
-            Messaging.sendEmail(mails);
-            
-        }
-        catch(exception e){
-            system.debug('SendEmail--Exception---'+e);
-        }
+    public static void CreateTasksAndSendEmails(string CICFeeList, ChangeInCircumstances__c CICDataValue, String LoanId) {  
+        Loan_New__c ln = new Loan_New__c();
+        ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
+              PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: LoanId];
         
+        String taskOwner;
+        
+        switch on ln.Loanstatus__c {
+            when 'Loan Submission Received- Awaiting Review',
+                 'In Processing',
+                 'In Underwriting Review',
+                 'Underwriting Clear to Close'
+            {
+                // To PCS
+                if (ln.PCS_at_Loan_Level__c != null) {
+                    taskOwner = ln.PCS_at_Loan_Level__c;
+                }
+                else if(ln.PCS_at_Loan_Level__c == null) {
+                    taskOwner = ln.Related_Partner__r.Assigned_PCS__c;
+                }
+                
+                String pcsTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
+				SendEmail(LoanId, pcsTaskId, taskOwner);
+            }	
+            when 'Conditionally Approved' {
+                // To PCS and to AE
+                
+                // PCS
+                if (ln.PCS_at_Loan_Level__c != null) {
+                    taskOwner = ln.PCS_at_Loan_Level__c;
+                }
+                else if(ln.PCS_at_Loan_Level__c == null) {
+                    taskOwner = ln.Related_Partner__r.Assigned_PCS__c;
+                }
+                
+                String pcsTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
+				SendEmail(LoanId, pcsTaskId, taskOwner);
+                
+                // To AE
+                if (ln.Related_Partner__r.Account_Executive_Name__c != null) {
+                    taskOwner = ln.Related_Partner__r.Account_Executive_Name__c;
+                }
+                
+                String aeTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
+				SendEmail(LoanId, aeTaskId, taskOwner);
+            }
+            when 'Incomplete',
+                 'Proposal',
+                 'Waiting for Full Package',
+                 'Application Package Received',
+                 'Full Application Received - Incomplete',
+                 'Suspended'
+            {
+                // AE
+                if (ln.Related_Partner__r.Account_Executive_Name__c != null) {
+                    taskOwner = ln.Related_Partner__r.Account_Executive_Name__c;
+                }
+                
+                String aeTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
+				SendEmail(LoanId, aeTaskId, taskOwner);
+            }
+        }
     }
+    
     @AuraEnabled
-    public static string CreateTask(string CICFeeListData,ChangeInCircumstances__c objCICDataValue,String strLoanId) {
+    public static string CreateTask(string CICFeeListData, ChangeInCircumstances__c objCICDataValue, String strLoanId, String taskOwner) {
         string TaskId;
         try {
             
@@ -105,17 +108,8 @@ public class CICController {
             ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
                   PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: strLoanId];            
             
-            Task t = new Task();
-            
-            // Added new conditions - Bala
-            if (ln.PCS_at_Loan_Level__c != null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
-                t.OwnerId = ln.PCS_at_Loan_Level__c;
-            } else if(ln.PCS_at_Loan_Level__c == null && (ln.Loanstatus__c == 'Loan Submission Received- Awaiting Review' || ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close')) {
-                t.OwnerId = ln.Related_Partner__r.Assigned_PCS__c;
-            }else if (ln.Related_Partner__r.Account_Executive_Name__c != null && (ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended' || ln.Loanstatus__c == 'Conditionally Approved')){
-                t.OwnerId = ln.Related_Partner__r.Account_Executive_Name__c;
-            }  
-            
+            Task t = new Task();            
+            t.OwnerId = taskOwner;            
             t.Subject = 'Change in Circumstance submitted on ' + ln.Client_Name__c + '\'s loan by ' + userinfo.getname();
             t.WhatId = strLoanId;
             t.Client_name__c = ln.Client_Name__c;       
@@ -222,5 +216,45 @@ public class CICController {
             system.debug('CreateTask--Exception---'+e);
         }
         return TaskId;        
+    }
+    
+    @AuraEnabled
+    public static void SendEmail(String strLoanId, string TaskId, String OwnerId) {
+        try
+        {
+            string Link= '<a href='+Label.CIC_Email_Url+TaskId+'>Link to Task</a>';
+            string EmailTo;
+            Datetime dt=system.now();
+            string datefordisplay=dt.format('MM/dd/yyyy HH:mm a');
+            Loan_New__c ln = new Loan_New__c();
+            ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
+                  PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: strLoanId];
+            
+            EmailTo=[SELECT user_email_Id__c from User where Id=:OwnerId ].user_email_Id__c;
+            //EmailTo='dkumar3@galaxe.com';
+             system.debug('EmailTo'+EmailTo);
+            EmailTemplate template = [SELECT Id, Name, Subject, HtmlValue, Body, Markup FROM EmailTemplate where Name='CIC Email Template' ];
+            List<Messaging.SingleEmailMessage> mails = 
+                new List<Messaging.SingleEmailMessage>();
+            // Step 1: Create a new Email
+            Messaging.SingleEmailMessage mail = 
+                new Messaging.SingleEmailMessage();
+            List<String> sendTo = new List<String>();
+            
+            sendTo.add( EmailTo);
+           mail.setToAddresses(sendTo);
+            mail.setReplyTo(UserInfo.getUserEmail());
+              //mail.setTargetObjectId(OwnerId);
+            mail.setSubject('A new task has been created for you for a CIC on '+ ln.Client_Name__c+ '\'s '+' loan');
+            String body =  template.HtmlValue ;    
+            body =   body.replace('#BusinessIndividualName',userinfo.getName()).replace('#ClientName',ln.Client_Name__c).replace('#LoanId',ln.Name).replace('#Date',datefordisplay).replace('#Link',Link);        
+            mail.setHtmlBody(body);
+            mails.add(mail);
+            Messaging.sendEmail(mails);
+            
+        }
+        catch(exception e){
+            system.debug('SendEmail--Exception---'+e);
+        }        
     }    
 }
