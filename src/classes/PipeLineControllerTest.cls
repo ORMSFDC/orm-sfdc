@@ -399,11 +399,11 @@ public with sharing class PipeLineControllerTest {
             insert contact;
             //Create Loan
             Loan_New__c LoanInsert1 = new Loan_New__c(
-                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Awaiting Closing',LoanNumber__c = '12345'
+                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Closed - Awaiting Funding',LoanNumber__c = '12345'
                 ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             Loan_New__c LoanInsert2 = new Loan_New__c(
-                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Awaiting Closing',LoanNumber__c = ''
+                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Closed - Awaiting Funding',LoanNumber__c = ''
                 ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             list<Loan_New__c> LoanList = new list<Loan_New__c>();
@@ -578,7 +578,7 @@ public with sharing class PipeLineControllerTest {
                 ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             Loan_New__c LoanInsert2 = new Loan_New__c(
-                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Withdrawn',LoanNumber__c = ''
+                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Withdrawn',Who_Requested_the_Withdraw__c='Test Client',LoanNumber__c = ''
                 ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             list<Loan_New__c> LoanList = new list<Loan_New__c>();
@@ -1278,7 +1278,7 @@ public with sharing class PipeLineControllerTest {
             Loan_New__c LoanInsert = new Loan_New__c(Application_Date__c = date.today(),Appraisal_Ordered_Date__c = date.today(),Appraisal_sent_to_Client_Date__c = date.parse('11/01/2017'),                                                 
                                                      Closing_Date__c = date.parse('12/29/2017'),Counseling_Date__c = date.parse('12/29/2017'),FHA_Case_Number_Date__c = date.parse('11/11/2017'),
                                                      HOI_Effective_Date__c = date.parse('11/15/2017'),Next_Tax_Due_Date__c = date.parse('11/19/2017'),
-                                                     Recent_Re_disclosure_Date__c = date.parse('12/24/2017'),ReDisclosure_Reason__c = 'Add Borrower',
+                                                     Recent_Re_disclosure_Date__c = date.parse('12/24/2017'),Re_disclosure_Date__c = date.parse('12/24/2017'),ReDisclosure_Reason__c = 'Add Borrower',
                                                      Other_ReDisclosure_Reason__c = 'Other Redisclosure Reason',Appraisal_Received_Date__c=Date.parse('10/11/2017'),
                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',
                                                      LoanNumber__c = '12345', Preferred_Contact_Type__c = 'Loan Officer',

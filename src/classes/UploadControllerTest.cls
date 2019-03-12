@@ -14,9 +14,15 @@ public with sharing class UploadControllerTest {
                               EmailEncodingKey='UTF-8', LastName='Tester', LanguageLocaleKey='en_US', 
                               LocaleSidKey='en_US', ProfileId = p.Id,userroleid=UR.ID, 
                               TimeZoneSidKey='America/Los_Angeles');
+                           
+                              
+     
+     
         insert user1;            
         system.runAs(user1)
         {
+        
+       
             QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
             QLMSAE1.Email__c='abc@glx.com';
             QLMSAE1.isActive__c=true;
@@ -48,10 +54,10 @@ public with sharing class UploadControllerTest {
         
         system.debug('GetAttLoanPartner--usersId---'+ userinfo.getUserId());
         Loan_New__c Loan1 = new Loan_New__c(
-                                            IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',LoanNumber__c = '12345',
+                                            IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='In Processing',LoanNumber__c = '12345',
                                             Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
         Loan_New__c Loan2 = new Loan_New__c(
-                                            IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',LoanNumber__c = '12345',
+                                            IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='In Processing',LoanNumber__c = '12345',
                                             Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
         List<Loan_New__c> LoanInsert = new List<Loan_New__c>();
         LoanInsert.add(Loan1);
@@ -217,7 +223,7 @@ public with sharing class UploadControllerTest {
                 Partner_Lead_Status__c='New');
             insert portalAccount;
           Loan_New__c LoanInsert =  new Loan_New__c(Related_Partner__c = portalAccount.Id,
-                                                 IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',LoanNumber__c = '12345',PCS_at_Loan_Level__c = user1.id);
+                                                 IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',LoanNumber__c = '12345');
        Insert LoanInsert;
      
 

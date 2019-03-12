@@ -37,7 +37,7 @@ public with sharing class CICControllerTest {
                 Cell__c='1236547410',
                 QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user1.Id,
-                Account_Executive_Name__c = user2.Id,
+                //Account_Executive_Name__c = user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
                 Partner_Lead_Status__c='New');
