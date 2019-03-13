@@ -9936,11 +9936,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.Original_Approved_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Opportunity.Partner_Addendum_Signed_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -12427,6 +12422,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.Updated_Financials_Complete__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Opportunity.Original_Approved_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

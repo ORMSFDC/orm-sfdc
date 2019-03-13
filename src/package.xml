@@ -5694,6 +5694,7 @@
     <members>Default_Opportunity</members>
     <members>Partner_Path</members>
     <members>potenial_partner_path</members>
+    <members>Renewal</members>
     <name>PathAssistant</name>
   </types>
   <types>
