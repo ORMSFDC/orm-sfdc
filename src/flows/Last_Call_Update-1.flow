@@ -32,70 +32,60 @@
             <name>myRule_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_1</leftValueReference>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.TaskSubtype</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Call</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>Loan Status Change Date</label>
+            <label>Call Event Occurs</label>
         </rules>
     </decisions>
-    <description>Update the Date when Loan Status is created or Modified</description>
+    <description>Last Call Update</description>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>NOW()</stringValue>
+                <stringValue>TODAY()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_2782397464</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
+        <name>formula_2_myRule_1_A1_2470175319</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
     </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_3_myRule_1_A1_0089581951</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>OR(
-ISNEW(),
-   AND(
-              ISCHANGED([Loan_New__c].LoanStatus__c),
-              ISPICKVAL([Loan_New__c].LoanStatus__c,&apos;Application Incomplete&apos;)
-    )
-)</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_1</name>
-        <dataType>Boolean</dataType>
-        <expression>OR(
-ISNEW(),
-   AND(
-              ISCHANGED({!myVariable_current.LoanStatus__c}),
-              ISPICKVAL({!myVariable_current.LoanStatus__c},&apos;Application Incomplete&apos;)
-    )
-)</expression>
-    </formulas>
-    <interviewLabel>Loan_Status_Change_Date_Field_Update-6_InterviewLabel</interviewLabel>
-    <label>0_new_Loan Status Change Date Field Update</label>
+    <interviewLabel>Last_Call_Update-1_InterviewLabel</interviewLabel>
+    <label>Last Call Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Loan_New__c</stringValue>
+            <stringValue>Task</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -133,11 +123,11 @@ ISNEW(),
         <processMetadataValues>
             <name>reference</name>
             <value>
-                <stringValue>[Loan_New__c]</stringValue>
+                <stringValue>[Task].Name ID (Contact)</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Update Date</label>
+        <label>Update Last Call Field</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <filters>
@@ -150,14 +140,14 @@ ISNEW(),
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>myVariable_current.Id</elementReference>
+                <elementReference>myVariable_current.WhoId</elementReference>
             </value>
         </filters>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
-                    <stringValue>DateTime</stringValue>
+                    <stringValue>Date</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -169,7 +159,7 @@ ISNEW(),
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>App Incomplete Date</stringValue>
+                    <stringValue>Last Call</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -184,48 +174,12 @@ ISNEW(),
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>App_Incomplete_Date__c</field>
+            <field>Last_Call__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_2782397464</elementReference>
+                <elementReference>formula_2_myRule_1_A1_2470175319</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>DateTime</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Loan Status Change Date</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Loan_Status_Change_Date__c</field>
-            <value>
-                <elementReference>formula_3_myRule_1_A1_0089581951</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Loan_New__c</object>
+        <object>Contact</object>
     </recordUpdates>
     <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <variables>
@@ -234,7 +188,7 @@ ISNEW(),
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Loan_New__c</objectType>
+        <objectType>Task</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -242,7 +196,7 @@ ISNEW(),
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Loan_New__c</objectType>
+        <objectType>Task</objectType>
     </variables>
     <variables>
         <name>myVariable_waitStartTimeVariable</name>

@@ -13,9 +13,41 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>myDecision</targetReference>
+            <targetReference>isChangedDecision2_myRule_1_OwnerId</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <name>isChangedDecision2_myRule_1_OwnerId</name>
+        <label>isChangedDecision2_myRule_1_OwnerId</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_2_myRule_1_OwnerId</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.OwnerId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision</targetReference>
+            </connector>
+            <label>isChangedRule_2_myRule_1_OwnerId</label>
+        </rules>
+    </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -32,70 +64,86 @@
             <name>myRule_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_1</leftValueReference>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>User</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_2_myRule_1_OwnerId</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Owner.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Executive/PCS</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>Loan Status Change Date</label>
+            <label>Owner name changes</label>
         </rules>
     </decisions>
-    <description>Update the Date when Loan Status is created or Modified</description>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_2_myRule_1_A1_2782397464</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_3_myRule_1_A1_0089581951</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>OR(
-ISNEW(),
-   AND(
-              ISCHANGED([Loan_New__c].LoanStatus__c),
-              ISPICKVAL([Loan_New__c].LoanStatus__c,&apos;Application Incomplete&apos;)
-    )
-)</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_myRule_1</name>
-        <dataType>Boolean</dataType>
-        <expression>OR(
-ISNEW(),
-   AND(
-              ISCHANGED({!myVariable_current.LoanStatus__c}),
-              ISPICKVAL({!myVariable_current.LoanStatus__c},&apos;Application Incomplete&apos;)
-    )
-)</expression>
-    </formulas>
-    <interviewLabel>Loan_Status_Change_Date_Field_Update-6_InterviewLabel</interviewLabel>
-    <label>0_new_Loan Status Change Date Field Update</label>
+    <description>Update ORMS Account Executive Field based on owner</description>
+    <interviewLabel>Update_ORMS_Account_Executive-4_InterviewLabel</interviewLabel>
+    <label>Update ORMS Account Executive</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Loan_New__c</stringValue>
+            <stringValue>Account</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -133,11 +181,11 @@ ISNEW(),
         <processMetadataValues>
             <name>reference</name>
             <value>
-                <stringValue>[Loan_New__c]</stringValue>
+                <stringValue>[Account]</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Update Date</label>
+        <label>Update ORMS Account Executive</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <filters>
@@ -157,7 +205,7 @@ ISNEW(),
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
-                    <stringValue>DateTime</stringValue>
+                    <stringValue>ID</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -169,63 +217,27 @@ ISNEW(),
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>App Incomplete Date</stringValue>
+                    <stringValue>ORM Account Executive Name</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue></stringValue>
+                    <stringValue>User</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
-                    <stringValue>Formula</stringValue>
+                    <stringValue>Reference</stringValue>
                 </value>
             </processMetadataValues>
-            <field>App_Incomplete_Date__c</field>
+            <field>Account_Executive_Name__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_2782397464</elementReference>
+                <elementReference>myVariable_current.OwnerId</elementReference>
             </value>
         </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>DateTime</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Loan Status Change Date</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Loan_Status_Change_Date__c</field>
-            <value>
-                <elementReference>formula_3_myRule_1_A1_0089581951</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Loan_New__c</object>
+        <object>Account</object>
     </recordUpdates>
     <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <variables>
@@ -234,7 +246,7 @@ ISNEW(),
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Loan_New__c</objectType>
+        <objectType>Account</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -242,7 +254,7 @@ ISNEW(),
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Loan_New__c</objectType>
+        <objectType>Account</objectType>
     </variables>
     <variables>
         <name>myVariable_waitStartTimeVariable</name>
