@@ -822,12 +822,9 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
         <columns>Print_count__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>Cash_to_close__c</columns>
+        <columns>BayDocsOrderNumber__c</columns>
+        <columns>Age__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>ORMS_AE__c</field>
-            <operation>equals</operation>
-            <value>Nathaniel Crusoe</value>
-        </filters>
         <label>All Scenarios</label>
     </listViews>
     <sharingReasons>

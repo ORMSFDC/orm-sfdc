@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Go Direct Lenders, Inc. Partner Executive</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>Account_Executive</parentRole>
+    <parentRole>wORMS</parentRole>
 </Role>

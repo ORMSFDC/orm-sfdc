@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>VC Corp dba Victoria Capital Mortgage Company Partner Executive</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>Account_Executive</parentRole>
+    <parentRole>wORMS</parentRole>
 </Role>

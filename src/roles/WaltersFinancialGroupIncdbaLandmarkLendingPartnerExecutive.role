@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Walters Financial Group, Inc. dba Landmark Lending Partner Executive</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>Account_Executive</parentRole>
+    <parentRole>wORMS</parentRole>
 </Role>

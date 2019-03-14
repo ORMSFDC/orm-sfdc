@@ -6,6 +6,9 @@
     <columns>
         <field>CUST_ID</field>
     </columns>
+    <columns>
+        <field>QLMS_AE__c.Common_ID__c</field>
+    </columns>
     <format>Tabular</format>
     <name>QLMS AE IDs</name>
     <params>

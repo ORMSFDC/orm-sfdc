@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>JH Moore Incorporated Partner Executive</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>Account_Executive</parentRole>
+    <parentRole>wORMS</parentRole>
 </Role>

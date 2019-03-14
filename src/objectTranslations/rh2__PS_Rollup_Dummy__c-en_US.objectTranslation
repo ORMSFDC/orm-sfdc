@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account --></label>
+        <name>rh2__Account__c</name>
+        <relationshipLabel><!-- Rollup Dummies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Dummy --></label>
+        <name>rh2__Parent_Dummy__c</name>
+        <relationshipLabel><!-- Rollup Dummies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Test Numeric --></label>
+        <name>rh2__Test_Numeric__c</name>
+    </fields>
+</CustomObjectTranslation>

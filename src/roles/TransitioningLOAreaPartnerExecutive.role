@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Transitioning LO Area Partner Executive</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>Account_Executive</parentRole>
+    <parentRole>wORMS</parentRole>
 </Role>

@@ -12,15 +12,12 @@
     <columns>
         <field>CUST_CREATED_NAME</field>
     </columns>
-    <columns>
-        <field>RunScenario__c.Team__c</field>
-    </columns>
     <filter>
         <criteriaItems>
             <column>CUST_CREATED_NAME</column>
             <isUnlocked>true</isUnlocked>
             <operator>notContain</operator>
-            <value>Test,Kathy Martinez</value>
+            <value>Test</value>
         </criteriaItems>
         <criteriaItems>
             <column>RunScenario__c.Team__c</column>
@@ -42,7 +39,7 @@
     </params>
     <reportType>CustomEntityCustomEntity$RunScenario__c$Run_Scenario_Status_History__c</reportType>
     <scope>organization</scope>
-    <showDetails>false</showDetails>
+    <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <sortColumn>CHILD_CREATED_DATE</sortColumn>

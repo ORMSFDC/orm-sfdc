@@ -10,26 +10,29 @@
         <field>Loan_New__c.Client_Name__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Subject_Property_State__c</field>
+        <field>Loan_New__c.Loan_Status_Change_Date__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Title_Company__c</field>
+        <field>Loan_New__c.Last_Chatter_Activity__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Rate_Type__c</field>
+        <field>Loan_New__c.In_Processing_Date0__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Anticipated_Closing_Date__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
+        <field>Loan_New__c.Subject_Property_State__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Loan_New__c.PropertyAppraisalValue__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Anticipated_Closing_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Title_Company__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.ORMS_AE__c</field>
@@ -48,7 +51,7 @@
             <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Incomplete,Proposal,Funded,Sandbox,Denied,Withdrawn</value>
+            <value>Incomplete,Proposal,Waiting for Full Package,Funded,Loan Rescinded,Application Approved but Not Accepted,File Closed for Incompleteness,Withdrawn,Denied,Sandbox</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.Related_Partner__c</column>

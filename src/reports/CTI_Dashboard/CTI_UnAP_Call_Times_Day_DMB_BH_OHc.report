@@ -38,11 +38,24 @@
         <field>CREATED_BY</field>
     </columns>
     <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
         <criteriaItems>
-            <column>ACCOUNT.NAME</column>
+            <column>ACCTRECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.Potential_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity.CTI_Id__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Test Partner</value>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Call</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -71,6 +84,6 @@
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CREATED_DATE</dateColumn>
-        <interval>INTERVAL_THISWEEK</interval>
+        <interval>INTERVAL_TODAY</interval>
     </timeFrameFilter>
 </Report>

@@ -44,16 +44,22 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
+            <column>Contact.Title__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Processor</value>
+        </criteriaItems>
+        <criteriaItems>
             <column>Account.Partner_Type__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Premier</value>
         </criteriaItems>
         <criteriaItems>
-            <column>ACCOUNT_RECORDTYPE</column>
+            <column>Account.Approval_Sub_Status__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Account.Committed_Partner,Account.Partners,Account.Approved_Partners</value>
+            <value>Approved</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -71,7 +77,7 @@
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

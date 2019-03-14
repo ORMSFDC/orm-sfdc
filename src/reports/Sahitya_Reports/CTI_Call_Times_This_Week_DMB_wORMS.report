@@ -69,12 +69,6 @@
             <value>wORMS</value>
         </criteriaItems>
         <criteriaItems>
-            <column>CREATED_BY</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Scott Clarke,Brad Stieber,Matt Smith,Nathaniel Crusoe,Josh Evink</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Activity.Call_Duration_In_Seconds__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>

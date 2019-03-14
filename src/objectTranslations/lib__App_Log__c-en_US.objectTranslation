@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Action within the module that produced this log. --></help>
+        <label><!-- Action --></label>
+        <name>lib__Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- The app log, during whose processing this log entry was created --></help>
+        <label><!-- App Task --></label>
+        <name>lib__App_Task_Id__c</name>
+        <relationshipLabel><!-- App Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Details stores any log or additional details associated with the tx log. There are 5 details fields, Details1 till Details5. --></help>
+        <label><!-- Details1 --></label>
+        <name>lib__Details1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details2 --></label>
+        <name>lib__Details2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details3 --></label>
+        <name>lib__Details3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details4 --></label>
+        <name>lib__Details4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details5 --></label>
+        <name>lib__Details5__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>lib__External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>lib__Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- The module which generated this tx log --></help>
+        <label><!-- Module --></label>
+        <name>lib__Module__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Id --></label>
+        <name>lib__Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record --></label>
+        <name>lib__Record__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this tx log was generated as part of processing a record of a particular object, this field would indicate that object. --></help>
+        <label><!-- Sobject --></label>
+        <name>lib__Sobject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>lib__Type__c</name>
+        <picklistValues>
+            <masterLabel>Debug</masterLabel>
+            <translation><!-- Debug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Value fields can be used to store any additional information relevant to transaction, which this log is associated with. --></help>
+        <label><!-- Value1 --></label>
+        <name>lib__Value1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value2 --></label>
+        <name>lib__Value2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value3 --></label>
+        <name>lib__Value3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value4 --></label>
+        <name>lib__Value4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value5 --></label>
+        <name>lib__Value5__c</name>
+    </fields>
+    <layouts>
+        <layout>AppLogLayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- System --></label>
+            <section>System</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

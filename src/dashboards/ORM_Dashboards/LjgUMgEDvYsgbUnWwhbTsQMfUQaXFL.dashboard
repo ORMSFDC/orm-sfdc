@@ -35,19 +35,19 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
                     <axisBinding>y</axisBinding>
-                    <column>FORMULA2</column>
+                    <column>RowCount</column>
                 </chartSummary>
                 <componentType>Gauge</componentType>
-                <displayUnits>Integer</displayUnits>
-                <gaugeMax>27.0</gaugeMax>
+                <displayUnits>Auto</displayUnits>
+                <gaugeMax>22.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
-                <header>January 2019 Goals</header>
-                <indicatorBreakpoint1>15.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>22.0</indicatorBreakpoint2>
+                <header>March 2019 Goals</header>
+                <indicatorBreakpoint1>7.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>15.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Goals_Reports/December_2018_Goals</report>
+                <report>Goals_Reports/March_2019_Goals_ZPc</report>
                 <showPercentage>true</showPercentage>
                 <showRange>false</showRange>
                 <showTotal>true</showTotal>
@@ -90,7 +90,7 @@
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
+                <expandOthers>true</expandOthers>
                 <groupingColumn>Loan_New__c.LoanStatus__c</groupingColumn>
                 <header>Loans - Eric Sele</header>
                 <legendPosition>Right</legendPosition>
@@ -119,7 +119,7 @@
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
+                <expandOthers>true</expandOthers>
                 <groupingColumn>Loan_New__c.LoanStatus__c</groupingColumn>
                 <header>Loans - Keith Cassidy</header>
                 <legendPosition>Right</legendPosition>
@@ -144,7 +144,7 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>Donut</componentType>
-                <displayUnits>Auto</displayUnits>
+                <displayUnits>Integer</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
@@ -152,8 +152,7 @@
                 <groupingColumn>Loan_New__c.Mortgage_Applied_for__c</groupingColumn>
                 <header>Active Loan Pipeline By Product</header>
                 <legendPosition>Right</legendPosition>
-                <maxValuesDisplayed>6</maxValuesDisplayed>
-                <report>Danny_Shared_Reports/Active_Loan_Pipeline_By_Product</report>
+                <report>PCS_Reports/Active_Loan_Pipeline_By_Product_PCS_rP8</report>
                 <showPercentage>false</showPercentage>
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>

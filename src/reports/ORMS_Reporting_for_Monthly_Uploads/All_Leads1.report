@@ -24,6 +24,9 @@
     <columns>
         <field>Lead.Company_NMLS_ID__c</field>
     </columns>
+    <columns>
+        <field>Lead.QLMS_Account_Executive__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>RECORDTYPE</column>

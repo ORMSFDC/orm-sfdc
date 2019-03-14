@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Textual Email with signature 1/22 launch</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Text w Signature : 1/22</name>
+    <style>none</style>
+    <subject>Huge Opportunity</subject>
+    <textOnly>Hi {!Contact.Preferred_First_Name__c},
+
+With an all-time high of $6.8 TRILLION of equity in seniors’ homes, it’s no secret that home equity is the true nest egg for Boomers. But, plenty are still paying their old mortgage. Compared to 1980, Americans 60+ are 3x more likely to have mortgage debt these days.
+
+The home equity is there, but lots of these folks don’t want to refinance. They want to get rid of the old mortgage completely.
+
+That’s where a reverse mortgage comes in.
+
+The reverse market is GROWING as 10,000 Boomers turn 62 EVERY DAY. What’s the best day and time for us to chat about strategy this week?
+
+{!Contact.OwnerFullName}
+{!Contact.OwnerTitle}
+
+Direct: {!Contact.OwnerPhone}
+Mobile: {!Contact.OwnerMobile__c}
+Toll Free: (800) 655-8533 ext. {!Contact.OwnerExtension__c}
+Fax: {!Contact.OwnerFax__c}
+Email: {!Contact.OwnerEmail}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

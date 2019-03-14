@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>HELO in WSJ</name>
+    <style>none</style>
+    <subject>HELO in WSJ</subject>
+    <textOnly>Hi {!Contact.Preferred_First_Name__c},
+
+Our newest product, the Home Equity Loan Optimizer (HELO), was recently featured in this article from the Wall Street Journal:
+
+Senior Homeowners Give Reverse Jumbo Mortgages New Life.
+
+If your clients have heard rumors about the product, sharing articles from top news organizations like this can help clear up misconceptions so clients can move forward with confidence.
+
+Of course, I am always a resource for answering client questions, overcoming objections and setting the facts straight!  What questions do you have for me?
+
+{!Contact.OwnerFullName}
+{!Contact.OwnerTitle}
+
+Direct: {!Contact.OwnerPhone}
+Mobile: {!Contact.OwnerMobile__c}
+Toll Free: (800) 655-8533 ext. {!Contact.OwnerExtension__c}
+Email: {!Contact.OwnerEmail}
+Fax: {!Contact.OwnerFax__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

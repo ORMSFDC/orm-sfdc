@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- DML Exception Message --></label>
+        <name>rh2__DML_Exception_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- DML Failed Record Ids --></label>
+        <name>rh2__DML_Failed_Record_Ids__c</name>
+    </fields>
+    <fields>
+        <label><!-- DML Number of Failed Records --></label>
+        <name>rh2__DML_Failed_Records_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- DML Problem Field Names --></label>
+        <name>rh2__DML_Problem_Field_Names__c</name>
+    </fields>
+    <fields>
+        <label><!-- DML Status Code --></label>
+        <name>rh2__DML_Status_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exception Stack Trace --></label>
+        <name>rh2__Exception_Stack_Trace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formatted Date --></label>
+        <name>rh2__Formatted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Number --></label>
+        <name>rh2__Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Occurrences --></label>
+        <name>rh2__Number_of_Occurrences__c</name>
+    </fields>
+    <fields>
+        <help><!-- The object that experienced the Rollup Helper exception. --></help>
+        <label><!-- Object --></label>
+        <name>rh2__Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potentially Affected Target Fields --></label>
+        <name>rh2__Potential_Affected_Target_Fields__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ID of the record that experienced an exception. --></help>
+        <label><!-- Record Id --></label>
+        <name>rh2__Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Link --></label>
+        <name>rh2__Record_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup Link --></label>
+        <name>rh2__Rollup_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup Name --></label>
+        <name>rh2__Rollup_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Rollup Helper Exception Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Forces rollups to run asynchronously on the specified object. --></help>
+        <label><!-- Enable Asynchronous Processing --></label>
+        <name>rh2__Asynchronous__c</name>
+    </fields>
+    <fields>
+        <help><!-- Disables realtime processing on the specified object type when checked. --></help>
+        <label><!-- Disable Realtime Processing --></label>
+        <name>rh2__Disable_realtime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Object Name --></label>
+        <name>rh2__Object_Full_Name__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- The action this task is associated with. --></help>
+        <label><!-- Action --></label>
+        <name>lib__Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the number of times, this task is processed. Usually attempts will be 1. But in case of an error, task can be retried to be processed and in those cases, value could be more than 1. --></help>
+        <label><!-- Attempts --></label>
+        <name>lib__Attempts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the time until which this task should not be processed. This can be used to delay processing between attempts. --></help>
+        <label><!-- Delay Until --></label>
+        <name>lib__Delay_Until__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates any external id associated with this task --></help>
+        <label><!-- External Id --></label>
+        <name>lib__External_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any Input that is required to process this task. The format and content of this field is left to each client. --></help>
+        <label><!-- Input --></label>
+        <name>lib__Input__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any applicable processing message --></help>
+        <label><!-- Message --></label>
+        <name>lib__Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- The module to which this task is associated with. --></help>
+        <label><!-- Module --></label>
+        <name>lib__Module__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any output produced during processing of this task. Note that if you want to capture logs, it is better to capture in App Log instead of App Task --></help>
+        <label><!-- Output --></label>
+        <name>lib__Output__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this task is part of a hierarchy, or is it a duplicate of another task, then this points to that task. --></help>
+        <label><!-- Parent Task --></label>
+        <name>lib__Parent_Task_Id__c</name>
+        <relationshipLabel><!-- Child Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates the type of source record change resulted in this task. --></help>
+        <label><!-- Record Change Type --></label>
+        <name>lib__Record_Change_Type__c</name>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert</masterLabel>
+            <translation><!-- Insert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update</masterLabel>
+            <translation><!-- Update --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If this task is associated with a particular object, then indicates the record of that object. --></help>
+        <label><!-- Record Id --></label>
+        <name>lib__Record_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hyperlink to the record which this task is associated with. --></help>
+        <label><!-- Record --></label>
+        <name>lib__Record__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sobject name to which this task is associated with. --></help>
+        <label><!-- Sobject --></label>
+        <name>lib__Sobject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Capture any processing statistics associated with this task. For ex., number of records inserted, updated etc., --></help>
+        <label><!-- Stats --></label>
+        <name>lib__Stats__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the status of this processing of this task --></help>
+        <label><!-- Status --></label>
+        <name>lib__Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Any status applicable for module/action of this task --></help>
+        <label><!-- Sub Status --></label>
+        <name>lib__Sub_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Value1-5 fields are used to capture any individual values associated with this task. --></help>
+        <label><!-- Value1 --></label>
+        <name>lib__Value1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value2 --></label>
+        <name>lib__Value2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value3 --></label>
+        <name>lib__Value3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value4 --></label>
+        <name>lib__Value4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value5 --></label>
+        <name>lib__Value5__c</name>
+    </fields>
+    <layouts>
+        <layout>AppTaskLayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Input Output --></label>
+            <section>Input Output</section>
+        </sections>
+        <sections>
+            <label><!-- System --></label>
+            <section>System</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

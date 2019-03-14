@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>CUST_NAME</field>
+        <field>Loan_New__c.Loan_Number__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Loan_Number__c</field>
+        <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Client_Name__c</field>
@@ -22,10 +22,16 @@
         <field>Loan_New__c.PCS_at_Loan_Level__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
+        <field>Loan_New__c.LoanStatus__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.LoanStatus__c</field>
+        <field>Loan_New__c.Related_Partner__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanNumber__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
     </columns>
     <filter>
         <criteriaItems>

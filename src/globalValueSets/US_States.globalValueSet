@@ -261,6 +261,11 @@
         <label>CA</label>
     </customValue>
     <customValue>
+        <fullName>Washington DC</fullName>
+        <default>false</default>
+        <label>Washington DC</label>
+    </customValue>
+    <customValue>
         <fullName>Illinois Indiana</fullName>
         <default>false</default>
         <isActive>false</isActive>

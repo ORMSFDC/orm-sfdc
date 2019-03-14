@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- If Advanced Currency Management is enabled in your organization select this check box. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Advanced_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Advanced Currency Management is enabled in your organization select this check box. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Advanced_Currency_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, Rollup Helper will attempt to update converted leads (the update may or may not succeed depending this org&apos;s configurations). This option is off by default.
+The converted leads are identified by the &quot;isConverted&quot; system field. --></help>
+        <label><!-- Attempt to Update Converted Leads --></label>
+        <name>rh2__Attempt_to_Update_Converted_Leads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Agent Id --></label>
+        <name>rh2__Batch_Agent_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Load Batch Size --></label>
+        <name>rh2__Data_Load_Batch_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Advanced Currency Management is disabled in your organization select this check box. --></help>
+        <label><!-- Disable Advanced Currency --></label>
+        <name>rh2__Disable_Advanced_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- This will help to prevent record locks caused by multiple rollups attempting to update the same object at the same time. --></help>
+        <label><!-- Enable Single Parent Processing --></label>
+        <name>rh2__Enable_Single_Parent_Processing__c</name>
+    </fields>
+    <fields>
+        <help><!-- To enable Rollup Helper updates to be excluded from a Validation Rule add &apos;&amp;&amp; $Setup.rh2__PS_Settings__c.rh2__Run_Validation_Rule__c&apos; at the end of the contents of the Error Condition Formula section of a validation rule. --></help>
+        <label><!-- Enable Validation Rule Helper --></label>
+        <name>rh2__Enable_Validation_Rule_Helper__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exception Lifespan --></label>
+        <name>rh2__Exception_Lifespan__c</name>
+    </fields>
+    <fields>
+        <help><!-- Leave this unchecked if you only want rollups / records to be processed where a change was actually made to the source field.  Removes non-essential processing such as filtering out fields that don&apos;t need to be updated (Can help w/ Timeout issues). --></help>
+        <label><!-- Limit Pre Processing --></label>
+        <name>rh2__Limit_Pre_Processing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this if you are receiving time-out issues during a data load.  Removes non-essential processing such as filtering out fields that don&apos;t need to be updated. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Limit_Processing_During_Data_Load__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of batches to initiate concurrently. --></help>
+        <label><!-- Max Concurrent Batch Processes --></label>
+        <name>rh2__MaxBatch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Future method calls to initiate concurrently. --></help>
+        <label><!-- Max Concurrent Future Processes --></label>
+        <name>rh2__MaxFuture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maximum Jobs Added to the Queue --></label>
+        <name>rh2__MaxQueueable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of batches to initiate concurrently. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Max_Batch__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Future method calls to initiate concurrently. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Max_Future__c</name>
+    </fields>
+    <fields>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Parent_Sync_Job_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Premium_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum number of records to process asynchronously with Rollup Helper.  This impacts the number of batch / future methods will be called in order to process your entire set of records to complete an asynchronous transaction.  Best to be a multiple of 5. --></help>
+        <label><!-- Record Scope --></label>
+        <name>rh2__RecordScope__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum number of records to process asynchronously with Rollup Helper.  This impacts the number of batch / future methods will be called in order to process your entire set of records to complete an asynchronous transaction.  Best to be a multiple of 5. --></help>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Record_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup Inactive Upon Creation --></label>
+        <name>rh2__Rollup_Inactive_Upon_Creation__c</name>
+    </fields>
+    <fields>
+        <help><!-- This setting modifies the number of rollups processed per asynchronous job request. --></help>
+        <label><!-- Rollups Per Asynchronous Request --></label>
+        <name>rh2__Rollups_Per_Async__c</name>
+    </fields>
+    <fields>
+        <help><!-- If unchecked, the realtime disable script may be used to temporarily turn off rollups.  For more details, please contact support@passagetech.com. --></help>
+        <label><!-- Allow Disable Realtime By Script --></label>
+        <name>rh2__Run_Realtime_Rollup__c</name>
+    </fields>
+    <fields>
+        <help><!-- LEAVE THIS OPTION CHECKED --></help>
+        <label><!-- Run Validation Rule --></label>
+        <name>rh2__Run_Validation_Rule__c</name>
+    </fields>
+    <fields>
+        <label><!-- Static Asynchronous Processing Enabled? --></label>
+        <name>rh2__Static_Asynchronous_Processing_Enabled__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines how much of the limit to use. If 100 is entered then Rollup Helper will use all of the governor limit potentially and anything more than that will execute asynchronously in another execution context. By setting it lower it allows custom code. --></help>
+        <label><!-- Usage % of Limits --></label>
+        <name>rh2__Usage_of_Limits__c</name>
+    </fields>
+    <fields>
+        <help><!-- When unchecked (by default), rollups will use the static rate for non-opp target objs; otherwise, use the dated currency rate, decided by each child record&apos;s date field (this date field can be selected under per rollup&apos;s advanced settings). --></help>
+        <label><!-- Use Dated Conversion Rates For Non Opps --></label>
+        <name>rh2__UseDatedConversionRatesForNonOpps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Validate Rollup Query --></label>
+        <name>rh2__ValidateRollup__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rollup Helper will send an email once an hour to this email address with any exceptions that have occured within that hour --></help>
+        <label><!-- Email To Send Exceptions --></label>
+        <name>rh2__emailToSendExceptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- This checkbox will cause Rollup Helper to only process queued asynchronous requests for the user that initiated the asynchronous request. --></help>
+        <label><!-- Process Queue Items Based On Modified By --></label>
+        <name>rh2__runAsModifyingUserOnly__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is checked, Enable Validation Helper will be active during asynchronous processing --></help>
+        <label><!-- Allow Validation Helper During Async --></label>
+        <name>rh2__validationHelperDuringAsync__c</name>
+    </fields>
+</CustomObjectTranslation>

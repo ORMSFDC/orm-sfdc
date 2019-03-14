@@ -195,21 +195,22 @@
             toastEvent.fire();
             component.set("v.attFile", true);
             component.set('v.fileString', '');
-            component.set('v.fileName', 'notExist');
+            //component.set('v.fileName', 'notExist'); 
             component.set("v.upload_file", "choose file");
             
-             //SFDC-370
+            //SFDC-370 1/23/2019
             var action2 = component.get("c.createAETask");
             action2.setParams({
                 "filename": component.get("v.fileName"),
                 "fileData": component.get("v.fileString")          
             });
-            action2.setCallback(this,function(){          
+            action2.setCallback(this,function(){      
             });       
             $A.enqueueAction(action2);
+            
         });
         $A.enqueueAction(action);
 
-        
+         
     },
 })

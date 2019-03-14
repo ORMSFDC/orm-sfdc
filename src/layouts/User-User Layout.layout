@@ -14,6 +14,14 @@
                 <behavior>Edit</behavior>
                 <field>Team__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>et4ae5__ExactTargetForAppExchangeAdmin__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>et4ae5__ExactTargetForAppExchangeUser__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>

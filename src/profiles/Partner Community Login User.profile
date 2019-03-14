@@ -4243,6 +4243,10 @@
         <tab>rh2__Rollup_Helper_Home</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
+    <tabVisibilities>
+        <tab>PCS_Underwriter</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>

@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
     <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>gsmith@onereverse.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
         <accessLevel>View</accessLevel>
         <sharedTo>heatherdosch1@quickenloans.com</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
     <folderShares>
-        <accessLevel>Manage</accessLevel>
-        <sharedTo>mgill@quickdocsapp.com</sharedTo>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>jessehanson@onereverse.com</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
-    <name>Executive Dashboards (Staging)</name>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>joshevink@onereverse.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>Executive Dashboards</name>
 </DashboardFolder>

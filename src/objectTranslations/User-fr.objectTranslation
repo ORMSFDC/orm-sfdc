@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Booking URL --></label>
+        <name>Booking_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Profile --></label>
+        <name>Check_Profile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>FUll_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner is Me --></label>
+        <name>Owner_is_Me__c</name>
+    </fields>
+    <fields>
+        <help><!-- Team - Used for Reporting --></help>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Run Scenarios --></label>
+        <name>Total_Run_Scenarios__c</name>
+    </fields>
+    <fields>
+        <label><!-- user email Id --></label>
+        <name>user_email_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify Your Zoom Login Type --></help>
+        <label><!-- Login Type --></label>
+        <name>zoom_app__Login_Type__c</name>
+        <picklistValues>
+            <masterLabel>API</masterLabel>
+            <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation><!-- Facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google</masterLabel>
+            <translation><!-- Google --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSO</masterLabel>
+            <translation><!-- SSO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Email</masterLabel>
+            <translation><!-- Work Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provides an interface to send email to attendees while Launching Zoom Meeting from Start Zoom Meeting button. --></help>
+        <label><!-- Send Email to Attendees at Launch --></label>
+        <name>zoom_app__Send_Email_to_Attendee__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enable it if you want to use your Zoom PMI for creating instant meetings. --></help>
+        <label><!-- PMI Enabled --></label>
+        <name>zoom_app__isPMI_Enabled__c</name>
+    </fields>
+    <layouts>
+        <layout>Community Member Layout</layout>
+        <layoutType>CommunityMemberLayout</layoutType>
+        <sections>
+            <label><!-- Basic Information --></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Chatter Settings --></label>
+            <section>Chatter Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Language And Locale Settings --></label>
+            <section>Language And Locale Settings</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Profile Layout</layout>
+        <layoutType>UserAlt</layoutType>
+        <sections>
+            <label><!-- About --></label>
+            <section>About</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- Contact --></label>
+            <section>Contact</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- Please add Mobile/phone format as (888) 888-8888 --></errorMessage>
+        <name>Stop_Changing_Mobile_Field</name>
+    </validationRules>
+</CustomObjectTranslation>

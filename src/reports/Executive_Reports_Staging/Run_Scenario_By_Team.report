@@ -44,6 +44,14 @@
     </columns>
     <description>Filtered By
 Run Scenario Date Equals This Month</description>
+    <filter>
+        <criteriaItems>
+            <column>RunScenario__c.ORM_Account_Executive__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>test ae</value>
+        </criteriaItems>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>

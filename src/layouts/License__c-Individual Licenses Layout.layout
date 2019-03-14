@@ -27,6 +27,10 @@
                 <behavior>Edit</behavior>
                 <field>License_Expiration__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>ORMS_AE__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

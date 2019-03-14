@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>43.0</apiVersion>
+    <description>This component provides a generic modal that displays component-specified information, and fires a ModalResponseEvent on user interaction (close, cancel or confirm).</description>
+</AuraDefinitionBundle>

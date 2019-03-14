@@ -250,7 +250,12 @@
         <filters>
             <field>CREATED_DATE</field>
             <operation>greaterThan</operation>
-            <value>11/26/2018 12:00 AM</value>
+            <value>1/31/2019 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>lessThan</operation>
+            <value>2/13/2019 12:00 AM</value>
         </filters>
         <label>All</label>
     </listViews>

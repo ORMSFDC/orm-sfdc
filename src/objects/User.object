@@ -117,16 +117,6 @@ Account.OwnerId = $User.Id
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>FUll_Name__c</fullName>
-        <externalId>false</externalId>
-        <formula>FirstName &amp; " " &amp; LastName</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>FUll Name</label>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Total_Run_Scenarios__c</fullName>
         <externalId>false</externalId>
         <label>Total Run Scenarios</label>
@@ -196,6 +186,16 @@ Account.OwnerId = $User.Id
         <label>PMI Enabled</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FUll_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>FirstName &amp; " " &amp; LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Full Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields><compactLayoutAssignment>User_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><externalSharingModel>Read</externalSharingModel><searchLayouts>
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupDialogsAdditionalFields>

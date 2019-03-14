@@ -1130,11 +1130,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Original_Approved_Date__c</field>
-            <table>Contact.OpportunityContactRoles</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Partner_Addendum_Signed_Date__c</field>
             <table>Contact.OpportunityContactRoles</table>
         </columns>

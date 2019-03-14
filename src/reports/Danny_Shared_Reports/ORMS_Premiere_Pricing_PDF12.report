@@ -29,12 +29,6 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>ACCOUNT_RECORDTYPE</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Account.Approved_Partners,Account.Partners,Account.Committed_Partner</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>ACCOUNT.NAME</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
@@ -57,6 +51,18 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Non Premier</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Approval_Sub_Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Title__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Processor</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

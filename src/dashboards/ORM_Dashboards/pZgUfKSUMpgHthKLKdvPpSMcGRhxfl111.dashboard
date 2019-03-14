@@ -19,13 +19,13 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Metric</componentType>
                 <displayUnits>Integer</displayUnits>
-                <header>Executive Approved Partners</header>
+                <header>Approved Partners</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/Executive_Approved_Partners</report>
+                <report>CTI_Dashboard/DMB_Approved_Partners_LPO</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
@@ -41,13 +41,13 @@
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <displayUnits>Integer</displayUnits>
-                <header>Executive Unapproved Partners</header>
+                <header>Unapproved Partners (Apps Out)</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/Executive_Unapproved_Partners</report>
+                <report>CTI_Dashboard/DMB_UnApproved_Partners_rxV</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
@@ -64,13 +64,14 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Metric</componentType>
                 <displayUnits>Integer</displayUnits>
-                <header>Approved Contacts Executive</header>
+                <footer>Contacts based on Titles</footer>
+                <header>Approved Contacts</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/Approved_Contacts_Executive</report>
+                <report>CTI_Dashboard/DMB_Approved_Contacts_QMM</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
@@ -90,13 +91,13 @@
                 <displayUnits>Integer</displayUnits>
                 <gaugeMax>100.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
-                <header>CTI Calls Today Executive</header>
+                <header>CTI Call Times - Today</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/CTI_Calls_Today_Executive</report>
+                <report>CTI_Dashboard/CTI_Call_Times_Today_ksE</report>
                 <showPercentage>false</showPercentage>
                 <showRange>false</showRange>
                 <showTotal>true</showTotal>
@@ -119,13 +120,13 @@
                 <displayUnits>Integer</displayUnits>
                 <gaugeMax>100.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
-                <header>CTI Calls This Week Executive</header>
+                <header>CTI Call Times - This Week</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/CTI_Calls_This_Week_Executive</report>
+                <report>CTI_Dashboard/CTI_Call_Times_This_Week_WvZ</report>
                 <showPercentage>false</showPercentage>
                 <showRange>false</showRange>
                 <showTotal>true</showTotal>
@@ -148,13 +149,13 @@
                 <displayUnits>Integer</displayUnits>
                 <gaugeMax>100.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
-                <header>CTI Calls This Month Executive</header>
+                <header>CTI Call Times - This Month</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/CTI_Calls_This_Month_Executive</report>
+                <report>CTI_Dashboard/CTI_Call_Times_This_Month_QdQ</report>
                 <showPercentage>false</showPercentage>
                 <showRange>false</showRange>
                 <showTotal>true</showTotal>
@@ -173,13 +174,13 @@
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <displayUnits>Integer</displayUnits>
-                <header>CTI UP Calls Executive</header>
+                <header>CTI UnAppr Partners Calls Today</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/CTI_UP_Calls_Executive</report>
+                <report>CTI_Dashboard/CTI_UnAP_Call_Times_Day_DMB_BH_OHc</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>6</rowIndex>
@@ -195,13 +196,13 @@
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <displayUnits>Integer</displayUnits>
-                <header>CTI UP Calls Executive This Week</header>
+                <header>CTI UnAppr Partners Calls This Week</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/CTI_UP_Calls_Executive_This_Week</report>
+                <report>CTI_Dashboard/CTI_UnAppr_Partners_Calls_This_Week_paO</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>6</rowIndex>
@@ -217,13 +218,13 @@
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <displayUnits>Integer</displayUnits>
-                <header>CTI UP Calls This Month Executive</header>
+                <header>CTI UnAppr Partners Calls This Month</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Sahitya_Reports/CTI_UP_Calls_This_Month_Executive</report>
+                <report>CTI_Dashboard/CTI_UnAppr_Partners_Calls_This_Month_Ngj</report>
                 <showRange>false</showRange>
             </dashboardComponent>
             <rowIndex>6</rowIndex>
@@ -232,7 +233,7 @@
         <numberOfColumns>9</numberOfColumns>
         <rowHeight>80</rowHeight>
     </dashboardGridLayout>
-    <dashboardType>SpecifiedUser</dashboardType>
+    <dashboardType>MyTeamUser</dashboardType>
     <isGridLayout>true</isGridLayout>
     <runningUser>danny@onereverse.com</runningUser>
     <textColor>#000000</textColor>

@@ -24,6 +24,9 @@
     <columns>
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
+    <columns>
+        <field>Loan_New__c.Last_AE_Call_to_Contact__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>
@@ -35,7 +38,7 @@
             <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Funded,Sandbox,Denied,Withdrawn</value>
+            <value>Funded,Loan Rescinded,Application Approved but Not Accepted,File Closed for Incompleteness,Withdrawn,Denied,Sandbox</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.IsActiveFlag__c</column>
@@ -61,7 +64,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Loan_New__c.Application_Date__c</dateColumn>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

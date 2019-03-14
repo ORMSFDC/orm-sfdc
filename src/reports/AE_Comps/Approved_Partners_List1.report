@@ -28,6 +28,12 @@
             <operator>equals</operator>
             <value>LAST_MONTH</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>Account.App_Processed__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -43,8 +49,8 @@
     <reportType>AccountList</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
-    <showGrandTotal>false</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
     <sortColumn>Account.QLMS_Account_Executive__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>

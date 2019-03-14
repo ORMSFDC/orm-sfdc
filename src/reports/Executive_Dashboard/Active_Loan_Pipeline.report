@@ -41,7 +41,7 @@
             <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Funded,Sandbox,Denied,Withdrawn</value>
+            <value>Funded,Loan Rescinded,Application Approved but Not Accepted,File Closed for Incompleteness,Withdrawn,Denied,Sandbox</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.IsActiveFlag__c</column>
@@ -65,9 +65,9 @@
     <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Loan_New__c.Application_Date__c</dateColumn>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

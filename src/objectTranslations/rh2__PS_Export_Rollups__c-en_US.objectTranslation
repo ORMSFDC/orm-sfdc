@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Rollup Or Filter Data --></label>
+        <name>rh2__RollupOrFilterData__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filter Job Rollup Key --></label>
+        <name>rh2__filterJobRollupKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- type --></label>
+        <name>rh2__type__c</name>
+    </fields>
+</CustomObjectTranslation>

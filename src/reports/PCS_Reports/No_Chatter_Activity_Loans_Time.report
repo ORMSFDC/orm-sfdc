@@ -41,7 +41,7 @@
             <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>In Processing,Conditionally Approved,Underwriting Clear to Close</value>
+            <value>Conditionally Approved,Underwriting Clear to Close</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.Related_Partner__c</column>

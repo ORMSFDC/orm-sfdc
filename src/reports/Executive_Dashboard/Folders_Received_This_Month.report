@@ -10,19 +10,25 @@
         <field>FK_ACC_OWNER_NAME</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
-    </columns>
-    <columns>
         <field>Loan_New__c.LoanStatus__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Client_Name__c</field>
     </columns>
     <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.ORMS_AE__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.In_Processing_Date0__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -32,7 +38,7 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.In_Processing_Date__c</column>
+            <column>Loan_New__c.In_Processing_Date0__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>THIS_MONTH</value>
@@ -49,7 +55,7 @@
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
-    <sortColumn>Loan_New__c.Mortgage_Applied_for__c</sortColumn>
+    <sortColumn>FK_ACC_OWNER_NAME</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>

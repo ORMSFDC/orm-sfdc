@@ -50,10 +50,16 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>ACCOUNT_RECORDTYPE</column>
+            <column>Account.Approval_Sub_Status__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Account.Committed_Partner,Account.Partners,Account.Approved_Partners</value>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Title__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Processor</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

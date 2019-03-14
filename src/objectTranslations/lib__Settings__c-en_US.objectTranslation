@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Any description that gives more information about the settings and its usage. --></help>
+        <label><!-- Description --></label>
+        <name>lib__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, this setting should not be copied over from one environment to another. --></help>
+        <label><!-- Env Specific --></label>
+        <name>lib__Env_Specific__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the maximum length of value this key supports. Defaults to 255 and max 25,000. You can specify higher value than 255 and if so value will be split into part of 255 bytes and will be stored as additional keys. --></help>
+        <label><!-- Length --></label>
+        <name>lib__Length__c</name>
+    </fields>
+    <fields>
+        <help><!-- Data type of this Setting. Valid values are string, integer, decimal, date, datetime, json, boolean, list, map, set --></help>
+        <label><!-- Type --></label>
+        <name>lib__Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The setting value can be stored in one or more value{n}__c fields depending on big that value is. The values are Value1__c, Value2__c etc., --></help>
+        <label><!-- Value --></label>
+        <name>lib__Value__c</name>
+    </fields>
+</CustomObjectTranslation>

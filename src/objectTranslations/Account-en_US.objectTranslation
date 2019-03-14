@@ -696,11 +696,6 @@
         <name>Next_Recertification_Date__c</name>
     </fields>
     <fields>
-        <help><!-- The date of this Approved Partner&apos;s next renewal date. --></help>
-        <label><!-- Next Renewal Date --></label>
-        <name>Next_Renewal_Date__c</name>
-    </fields>
-    <fields>
         <help><!-- Number of Affiliated Partners to the Business Partner. Please see &apos;Related&apos; for more details. --></help>
         <label><!-- No. of Affiliated Partners --></label>
         <name>No_of_Affiliated_Partners__c</name>
@@ -1848,6 +1843,142 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
         <name>Denial_Date__c</name>
     </fields>
     <fields>
+        <label><!-- Excluded Notes --></label>
+        <name>Excluded_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exclusionary Category --></label>
+        <name>Exclusionary_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Important Notes --></label>
+        <name>Important_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity --></label>
+        <name>Last_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Call --></label>
+        <name>Last_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Login --></label>
+        <name>Last_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Portal Login --></label>
+        <name>Last_Portal_Login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lic HELO State --></label>
+        <name>Lic_HELO_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loans Last Month --></label>
+        <name>Loans_Last_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Type --></label>
+        <name>Partner_Type__c</name>
+        <picklistValues>
+            <masterLabel>Non Premier</masterLabel>
+            <translation><!-- Non Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier</masterLabel>
+            <translation><!-- Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier Plus</masterLabel>
+            <translation><!-- Premier Plus --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Email --></label>
+        <name>Primary_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scouting Report --></label>
+        <name>Scouting_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terminated Date --></label>
+        <name>Terminated_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Updated Broker Comp Rec&apos;d --></label>
+        <name>Updated_Broker_Comp_Rec_d__c</name>
+    </fields>
+    <fields>
+        <label><!-- What Exclusionary List --></label>
+        <name>What_Exclusionary_List__c</name>
+        <picklistValues>
+            <masterLabel>ORMS</masterLabel>
+            <translation><!-- ORMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QLMS</masterLabel>
+            <translation><!-- QLMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Sub-Status --></label>
+        <name>Approval_Sub_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Closed</masterLabel>
+            <translation><!-- Company Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied by Credit Risk</masterLabel>
+            <translation><!-- Denied by Credit Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excluded Partner</masterLabel>
+            <translation><!-- Excluded Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (DTRT)</masterLabel>
+            <translation><!-- Terminated (DTRT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Leadership Request)</masterLabel>
+            <translation><!-- Terminated (Leadership Request) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Non-renewal)</masterLabel>
+            <translation><!-- Terminated (Non-renewal) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Performance)</masterLabel>
+            <translation><!-- Terminated (Performance) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Production)</masterLabel>
+            <translation><!-- Terminated (Production) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn by Partner</masterLabel>
+            <translation><!-- Withdrawn by Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AE Partner Type --></label>
+        <name>AE_Partner_Type__c</name>
+        <picklistValues>
+            <masterLabel>Non Preferred</masterLabel>
+            <translation><!-- Non Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preferred</masterLabel>
+            <translation><!-- Preferred --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- E-sign Addendum Provider --></label>
         <name>E_sign_Addendum_Provider__c</name>
         <picklistValues>
@@ -2335,6 +2466,10 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
             <translation><!-- Yozons --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Ziplogix</masterLabel>
+            <translation><!-- Ziplogix --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Zoho Sign</masterLabel>
             <translation><!-- Zoho Sign --></translation>
         </picklistValues>
@@ -2388,128 +2523,18 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Excluded Notes --></label>
-        <name>Excluded_Notes__c</name>
+        <help><!-- The date of this Approved Partner&apos;s next renewal date. --></help>
+        <label><!-- Last Renewal Date --></label>
+        <name>Next_Renewal_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Exclusionary Category --></label>
-        <name>Exclusionary_Category__c</name>
+        <help><!-- Loans Closed by Partner --></help>
+        <label><!-- Partner Closed Loans --></label>
+        <name>Partner_Closed_Loans__c</name>
     </fields>
     <fields>
-        <label><!-- Important Notes --></label>
-        <name>Important_Notes__c</name>
-    </fields>
-    <fields>
-        <label><!-- Last Activity --></label>
-        <name>Last_Activity__c</name>
-    </fields>
-    <fields>
-        <label><!-- Last Call --></label>
-        <name>Last_Call__c</name>
-    </fields>
-    <fields>
-        <label><!-- Last Login --></label>
-        <name>Last_Login__c</name>
-    </fields>
-    <fields>
-        <label><!-- Last Portal Login --></label>
-        <name>Last_Portal_Login__c</name>
-    </fields>
-    <fields>
-        <label><!-- Lic HELO State --></label>
-        <name>Lic_HELO_State__c</name>
-    </fields>
-    <fields>
-        <label><!-- Loans Last Month --></label>
-        <name>Loans_Last_Month__c</name>
-    </fields>
-    <fields>
-        <label><!-- Partner Type --></label>
-        <name>Partner_Type__c</name>
-        <picklistValues>
-            <masterLabel>Non Premier</masterLabel>
-            <translation><!-- Non Premier --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Premier</masterLabel>
-            <translation><!-- Premier --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Premier Plus</masterLabel>
-            <translation><!-- Premier Plus --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Primary Email --></label>
-        <name>Primary_Email__c</name>
-    </fields>
-    <fields>
-        <label><!-- Scouting Report --></label>
-        <name>Scouting_Report__c</name>
-    </fields>
-    <fields>
-        <label><!-- Terminated Date --></label>
-        <name>Terminated_Date__c</name>
-    </fields>
-    <fields>
-        <label><!-- Updated Broker Comp Rec&apos;d --></label>
-        <name>Updated_Broker_Comp_Rec_d__c</name>
-    </fields>
-    <fields>
-        <label><!-- What Exclusionary List --></label>
-        <name>What_Exclusionary_List__c</name>
-        <picklistValues>
-            <masterLabel>ORMS</masterLabel>
-            <translation><!-- ORMS --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>QLMS</masterLabel>
-            <translation><!-- QLMS --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Approval Sub-Status --></label>
-        <name>Approval_Sub_Status__c</name>
-        <picklistValues>
-            <masterLabel>Approved</masterLabel>
-            <translation><!-- Approved --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Company Closed</masterLabel>
-            <translation><!-- Company Closed --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Denied by Credit Risk</masterLabel>
-            <translation><!-- Denied by Credit Risk --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Excluded Partner</masterLabel>
-            <translation><!-- Excluded Partner --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (DTRT)</masterLabel>
-            <translation><!-- Terminated (DTRT) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Leadership Request)</masterLabel>
-            <translation><!-- Terminated (Leadership Request) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Non-renewal)</masterLabel>
-            <translation><!-- Terminated (Non-renewal) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Performance)</masterLabel>
-            <translation><!-- Terminated (Performance) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Terminated (Production)</masterLabel>
-            <translation><!-- Terminated (Production) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Withdrawn by Partner</masterLabel>
-            <translation><!-- Withdrawn by Partner --></translation>
-        </picklistValues>
+        <label><!-- SoCal --></label>
+        <name>SoCal__c</name>
     </fields>
     <layouts>
         <layout>Account Layout</layout>

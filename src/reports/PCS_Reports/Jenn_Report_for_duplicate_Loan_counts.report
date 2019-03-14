@@ -16,16 +16,19 @@
         <field>Loan_New__c$Client_Name__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c$Subject_Property_State__c</field>
+        <field>Loan_New__c$Loan_Status_Change_Date__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c$Title_Company__c</field>
+        <field>Loan_New__c$In_Processing_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c$Mortgage_Applied_for__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c$PCS_at_Partner_Level__c</field>
+        <field>Loan_New__c$PCS_at_Loan_Level__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c$Subject_Property_State__c</field>
     </columns>
     <columns>
         <field>Loan_New__c$Related_Partner__c</field>
@@ -34,7 +37,7 @@
         <field>Loan_New__c$Remove_Dups_Loans__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c$Loan_Status_Change_Date__c</field>
+        <field>Loan_New__c$ORMS_AE__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -81,7 +84,7 @@
     <reportType>Loan_Status_History_with_Loans_2__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
-    <showGrandTotal>true</showGrandTotal>
+    <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Loan_New__c.LoanStatus__r$CreatedDate</dateColumn>

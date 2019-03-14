@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- ORM Account Executive Name --></label>
+        <name>Account_Executive_Name__c</name>
+        <relationshipLabel><!-- Leads (ORM Account Executive Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activity Timeline --></label>
+        <name>Activity_Timeline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned PCS --></label>
+        <name>Assigned_PCS__c</name>
+        <relationshipLabel><!-- Leads (Assigned PCS) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attempted to Contact Days --></label>
+        <name>Attempted_to_Contact_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Growth Rate --></label>
+        <name>Average_Growth_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Banker Common Id --></label>
+        <name>Banker_Common_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Address --></label>
+        <name>BillingAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>BillingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip/Postal Code --></label>
+        <name>BillingPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>BillingState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>BillingStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash Flow 12 Months Amount --></label>
+        <name>Cash_Flow_12_Months_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash Flow 2 Month Number --></label>
+        <name>Cash_Flow_2_Month_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash Flow 60 Months Amount --></label>
+        <name>Cash_Flow_60_Months_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash Flow Remaining Month --></label>
+        <name>Cash_Flow_Remaining_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cash Flow Remaining Months Amount --></label>
+        <name>Cash_Flow_Remaining_Months_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cell --></label>
+        <name>Cell__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Name --></label>
+        <name>ClientId__c</name>
+        <relationshipLabel><!-- Client Name --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed Date --></label>
+        <name>Closed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company NMLS ID --></label>
+        <name>Company_NMLS_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Mortgage Balance --></label>
+        <name>Current_Mortgage_Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Mortgage Interest Rate --></label>
+        <name>Current_Mortgage_Interest_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of birth --></label>
+        <name>DOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Home Value --></label>
+        <name>Estimated_Home_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ext --></label>
+        <name>Ext__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Partner Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Federal Tax ID/EIN --></label>
+        <name>Federal_Tax_ID_EIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Home Value 10 Years --></label>
+        <name>Home_Value_10_Years__c</name>
+    </fields>
+    <fields>
+        <label><!-- Index --></label>
+        <name>Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Growth Rate --></label>
+        <name>Initial_Growth_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- checked means, Lead is created from Portal --></help>
+        <label><!-- Is Lead Created From Portal? --></label>
+        <name>IsLeadCreatedFromPortal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is primary contact a portal user? --></label>
+        <name>Is_primary_contact_a_portal_user__c</name>
+    </fields>
+    <fields>
+        <label><!-- Killed Date --></label>
+        <name>Killed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Killed Lead --></label>
+        <name>Killed_Lead__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Activity Date/Time --></label>
+        <name>Last_Activity_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity Date --></label>
+        <name>Last_Activity_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity Type --></label>
+        <name>Last_Activity_Type__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Activity --></label>
+        <name>Last_Activity__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Attempted Con Days --></label>
+        <name>Lead_Attempted_Con_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Owner Email --></label>
+        <name>Lead_Owner_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Owner Name --></label>
+        <name>Lead_Owner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Owner Phone --></label>
+        <name>Lead_Owner_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Owner Title --></label>
+        <name>Lead_Owner_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead status change date --></label>
+        <name>Lead_status_change_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan --></label>
+        <name>Loan__c</name>
+        <relationshipLabel><!-- Loan --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MIP --></label>
+        <name>MIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Margin --></label>
+        <name>Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Middle Name --></label>
+        <name>Middle_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Mortgage Payment --></label>
+        <name>Monthly_Mortgage_Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Activity Days --></label>
+        <name>No_Activity_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non QLMS Partner --></label>
+        <name>Non_QLMS_Partner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Loan Officers --></label>
+        <name>Number_of_Loan_Officers__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORM Account Executive --></label>
+        <name>ORM_Account_Executive__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORM App Date --></label>
+        <name>ORM_App_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORM Loan Number --></label>
+        <name>ORM_Loan_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Phone --></label>
+        <name>Office_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Orm Banker --></label>
+        <name>Orm_Banker__c</name>
+    </fields>
+    <fields>
+        <label><!-- Orm Folder Date --></label>
+        <name>Orm_Folder_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Contact Cell --></label>
+        <name>Other_Contact_Cell__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Contact Email --></label>
+        <name>Other_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Contact Name --></label>
+        <name>Other_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Contact Phone --></label>
+        <name>Other_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Contact Title --></label>
+        <name>Other_Contact_Title__c</name>
+        <picklistValues>
+            <masterLabel>Assistant Loan Officer</masterLabel>
+            <translation><!-- Assistant Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Branch Manager</masterLabel>
+            <translation><!-- Branch Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Officer</masterLabel>
+            <translation><!-- Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Close Contact</masterLabel>
+            <translation><!-- Post Close Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Principal</masterLabel>
+            <translation><!-- Principal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing Manager</masterLabel>
+            <translation><!-- Processing Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processor</masterLabel>
+            <translation><!-- Processor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Manager</masterLabel>
+            <translation><!-- Regional Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Market</masterLabel>
+            <translation><!-- Secondary Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Closer</masterLabel>
+            <translation><!-- Third Party Closer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Other Reason --></label>
+        <name>Other_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Source --></label>
+        <name>Other_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- PardotTestSahitya --></label>
+        <name>PardotTestSahitya__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot_list_id --></label>
+        <name>Pardot_list_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Name --></label>
+        <name>PartnerId__c</name>
+        <relationshipLabel><!-- Leads (Partner Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Individual --></label>
+        <name>Partner_Id__c</name>
+        <relationshipLabel><!-- Leads (Related Individual) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Previous QL Status --></label>
+        <name>Previous_QL_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Email --></label>
+        <name>Primary_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Phone Number --></label>
+        <name>Primary_Contact_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Title --></label>
+        <name>Primary_Contact_Title__c</name>
+        <picklistValues>
+            <masterLabel>Assistant Loan Officer</masterLabel>
+            <translation><!-- Assistant Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Branch Manager</masterLabel>
+            <translation><!-- Branch Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Officer</masterLabel>
+            <translation><!-- Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Close Contact</masterLabel>
+            <translation><!-- Post Close Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Principal</masterLabel>
+            <translation><!-- Principal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing Manager</masterLabel>
+            <translation><!-- Processing Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processor</masterLabel>
+            <translation><!-- Processor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Manager</masterLabel>
+            <translation><!-- Regional Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Market</masterLabel>
+            <translation><!-- Secondary Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Closer</masterLabel>
+            <translation><!-- Third Party Closer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary contact name --></label>
+        <name>Primary_contact_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Principal Limit --></label>
+        <name>Principal_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS LO Count --></label>
+        <name>QLMSLOCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS Lead Registration Count --></label>
+        <name>QLMSLeadRegistrationCount__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS SFDC Bank ID --></label>
+        <name>QLMSSFDCBankID__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS AE Email --></label>
+        <name>QLMS_AE_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS Account Executive --></label>
+        <name>QLMS_Account_Executive__c</name>
+        <relationshipLabel><!-- QLMS Account Executive --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- QLMS First Name --></label>
+        <name>QLMS_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS Last Registration Date --></label>
+        <name>QLMS_Last_Registration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ql Banker --></label>
+        <name>Ql_Banker__c</name>
+        <relationshipLabel><!-- Leads --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ql Loan Number --></label>
+        <name>Ql_Loan_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not Interested/Qualified Reason --></label>
+        <name>Reason_for_Not_being_Interested__c</name>
+        <picklistValues>
+            <masterLabel>Happy with Other Reverse Lenders</masterLabel>
+            <translation><!-- Happy with Other Reverse Lenders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Signing Up with New Lenders</masterLabel>
+            <translation><!-- Not Signing Up with New Lenders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation><!-- Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reverse Product</masterLabel>
+            <translation><!-- Reverse Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>States Available</masterLabel>
+            <translation><!-- States Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Purchase</masterLabel>
+            <translation><!-- Waiting for Purchase --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Scenario Package Count --></label>
+        <name>Request_Scenario_Package_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScenarioId --></label>
+        <name>ScenarioId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Contact Cell --></label>
+        <name>Secondary_Contact_Cell__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Contact Email --></label>
+        <name>Secondary_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Contact Name --></label>
+        <name>Secondary_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Contact Phone --></label>
+        <name>Secondary_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Contact Title --></label>
+        <name>Secondary_Contact_Title__c</name>
+        <picklistValues>
+            <masterLabel>Assistant Loan Officer</masterLabel>
+            <translation><!-- Assistant Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Branch Manager</masterLabel>
+            <translation><!-- Branch Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Officer</masterLabel>
+            <translation><!-- Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Close Contact</masterLabel>
+            <translation><!-- Post Close Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Principal</masterLabel>
+            <translation><!-- Principal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing Manager</masterLabel>
+            <translation><!-- Processing Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processor</masterLabel>
+            <translation><!-- Processor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Manager</masterLabel>
+            <translation><!-- Regional Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Market</masterLabel>
+            <translation><!-- Secondary Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Closer</masterLabel>
+            <translation><!-- Third Party Closer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- States they would like to do Business in --></label>
+        <name>States_they_would_like_to_do_Business_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send Letter</masterLabel>
+            <translation><!-- Send Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send Quote</masterLabel>
+            <translation><!-- Send Quote --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Suffix --></label>
+        <name>Suffix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>TaskPriority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transfer Date --></label>
+        <name>Transfer_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Organization --></label>
+        <name>Type_of_Organization__c</name>
+        <picklistValues>
+            <masterLabel>Bank</masterLabel>
+            <translation><!-- Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker</masterLabel>
+            <translation><!-- Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Union</masterLabel>
+            <translation><!-- Credit Union --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgage Banking Entity</masterLabel>
+            <translation><!-- Mortgage Banking Entity --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Scenario --></label>
+        <name>TypeofScenario__c</name>
+        <picklistValues>
+            <masterLabel>Run Scenario</masterLabel>
+            <translation><!-- Run Scenario --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saved Scenario</masterLabel>
+            <translation><!-- Saved Scenario --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is Active --></label>
+        <name>is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- is Converted --></label>
+        <name>is_Converted__c</name>
+    </fields>
+    <layouts>
+        <layout>Banker</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Loan Lead</layout>
+        <sections>
+            <label><!-- Scenario Information --></label>
+            <section>Scenario Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Lead</layout>
+        <sections>
+            <label><!-- Other Contact Information --></label>
+            <section>Other Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Partner Lead History --></label>
+            <section>Partner Lead History</section>
+        </sections>
+        <sections>
+            <label><!-- Primary Contact Information --></label>
+            <section>Primary Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Email --></label>
+        <name>Email</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_a_Call_2</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task_2</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Banker --></label>
+        <name>Banker</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Partner Lead --></label>
+        <name>Partner_Lead</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Scenario Lead --></label>
+        <name>Scenario_Lead</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- You do not have access to change the Lead Owner --></errorMessage>
+        <name>AE_Cannot_Change_Lead_Ownership</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only qualified leads can be converted! --></errorMessage>
+        <name>Cannot_Convert_Lead</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- please specify the reason in brief --></errorMessage>
+        <name>MandatoryForOther</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select a State --></errorMessage>
+        <name>MandatoryForState_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select one value --></errorMessage>
+        <name>MandatoryPartnerLeadStatus_Rule</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Start_Zoom_Meeting --></label>
+        <name>zoom_app__Start_Zoom_Meeting</name>
+    </webLinks>
+</CustomObjectTranslation>

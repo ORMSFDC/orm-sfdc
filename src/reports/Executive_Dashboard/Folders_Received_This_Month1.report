@@ -22,7 +22,7 @@
         <field>Loan_New__c.ORMS_AE__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Waiting_for_Full_Package_Date__c</field>
+        <field>Loan_New__c.Waiting_for_Full_Package_Date0__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -32,16 +32,16 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.Waiting_for_Full_Package_Date__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>THIS_MONTH</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value>Sandbox</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.Waiting_for_Full_Package_Date0__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>THIS_MONTH</value>
         </criteriaItems>
     </filter>
     <format>Tabular</format>

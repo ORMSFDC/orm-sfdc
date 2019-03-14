@@ -1,28 +1,731 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>1-3-2019</title>
-    
-  </head>
-    <body>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+        <meta name="format-detection" content="telephone=no">
+        <meta name=x-apple-disable-message-reformatting>
 		
-<span style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #505050; font-family: Helvetica; font-size: 14px; line-height: 21px; text-align: left;" valign="top">Hi {!Contact.Preferred_First_Name__c},
-										<br><br>
-Over the past 30 days, the 10-Year Libor Swap rate has steadily decreased.
-										<br><br>
-Lower Swap rates = higher proceeds for borrowers!!!! 
-										<br><br>
-Not only that, but as of today our HELO rates dropped 0.25%.
-										<br><br>
-Check our the attached pricing and let your clients know rates are in their favor.
-										<br><br>
-Best,<br><br>
-{!Contact.OwnerFullName}<br>
-{!Contact.OwnerEmail}<br>
-{!Contact.OwnerTitle}<br>
-{!Contact.OwnerPhone}<br>
-</span>
-	</body>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        
+        <title> ORMS PRICING </title>
+        
+        <style type="text/css">
+
+            /* /\\//\\//\\//\\/ RESET STYLES /\\//\\//\\//\\/ */
+            body{
+                margin:0;
+                padding:0;
+            }
+
+            img{
+                border:0 none;
+                outline:none;
+                text-decoration:none;
+            }
+
+            a img{
+                border:0 none;
+            }
+
+            table, td{
+                border-collapse:collapse;
+            }
+
+            /* /\\//\\//\\//\\/ CLIENT SPECIFIC STYLES /\\//\\//\\//\\/ */
+            .ExternalClass{
+                width:100%;
+            }
+
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div{
+                line-height: 100%;
+            }
+
+            #outlook a{
+                padding:0;
+            }
+
+            table{
+                mso-table-lspace:0pt;
+                mso-table-rspace:0pt;
+            }
+
+            .imageFix{
+                display: block;
+            }
+
+            img{
+                -ms-interpolation-mode:bicubic;
+            }
+
+            body{
+                -webkit-text-size-adjust:100%;
+                -ms-text-size-adjust:100%;
+            }
+
+            /* /\\//\\//\\//\\/ GENERAL RESPONSIVE /\\//\\//\\//\\/ */
+
+            /*
+             * This call is for the main template wrapper used in all emails
+             * to become fluidly sized and other elements that need to break
+             * as soon as the width of the screen drops below 700px, but still
+             * wider than 640px.
+             */
+            @media only screen and (max-width: 700px){
+
+                *[class=resize700]{
+                    width: 100% !important;
+                    min-width: 100% !important;
+                }
+
+                *[class=stack],
+                *[class=stack_col],
+                *[class=side_by_side]{
+                    width: 47% !important;
+                    min-width: 47% !important;
+                }
+
+                *[class=fluid_width]{ width: auto !important; }
+
+            }
+
+            /*
+             * This call is for the MyQL template color bar to become fluidly sized
+             */
+            @media only screen and (max-width: 640px){
+
+                *[class=resize640]{
+                    width: 100% !important;
+                    min-width: 100% !important;
+                }
+
+            }
+
+            /*
+             * This call is a general style for fluidly sizing elements in all emails
+             * to the width of the screen or parent element as well as other sytles that
+             * should come in effect at this break point.
+             */
+            @media only screen and (max-width: 600px){
+
+                *[class=resize],
+                *[class=resize_img],
+                *[class=preheader],
+		        *[class=hide_img]{
+                    width: 100% !important;
+                    min-width: 100% !important;
+                }
+
+                *[class=resize_img], *[class=hide_img]{ height: auto !important; }
+
+                *[class=width46]{ width: 46% !important; }
+                *[class=width8]{ width: 8% !important; }
+
+                *[class=width46] img{ width: 100% !important; height: auto !important; }
+
+                *[class=v_padd3]{ width: 3% !important; }
+                *[class=v_padd5]{ width: 5% !important; }
+                *[class=v_padd8]{ width: 8% !important; }
+                *[class=h_padd3_left-right]{ padding: 0 3% !important; }
+                *[class=v_padd10], *[class=v_padd10-3]{ width: 10% !important; }
+
+                *[class=call_icon_2col]{ width: 10% !important; }
+                *[class=chat_icon_2col]{ width: 21% !important; }
+                *[class=call_icon_wrapper_2col]{
+                        width: 20% !important;
+                        min-width: 20% !important;
+                }
+                *[class=chat_icon_wrapper_2col]{
+                        width: 43% !important;
+                        min-width: 43% !important;
+                 }
+
+                *[class=width70]{ width: 70% !important; min-width: 70% !important; }
+                *[class=width50]{ width: 50% !important; min-width: 50% !important; }
+				*[class=width45]{ width: 45% !important; min-width: 45% !important; }
+                *[class=width30]{ width: 30% !important; min-width: 30% !important; }
+                *[class=width26]{ width: 26% !important; min-width: 26% !important; }
+                *[class=width27]{ width: 27% !important; min-width: 27% !important; }
+                *[class=width20]{ width: 20% !important; min-width: 20% !important; }
+                *[class=width15]{ width: 15% !important; min-width: 15% !important; }
+                *[class=width3]{ width: 3% !important; min-width: 3% !important; }
+
+		        *[class=width_half]{ width: 50% !important; }
+            }
+
+            @media only screen and (max-width: 599px){
+
+                *[class=sig_style1] a, *[class=sig_style1] a:visited, *[class=sig_style1] a:hover, *[class=sig_style1] a:active,
+                *[class=sig_style1] a strong, *[class=sig_style1] a:visited strong, *[class=sig_style1] a:hover strong, *[class=sig_style1] a:visited strong{
+                    color: #2081BF !important;
+                }
+                *[class=sig_style1] a, *[class=sig_style1] a:visited, *[class=sig_style1] a:hover, *[class=sig_style1] a:active{
+                    text-decoration: underline !important;
+                }
+
+                *[class=resize]{
+                    width: 100% !important;
+                    min-width: 100% !important;
+                }
+
+                *[class=collapse],
+                *[class=collapse] img{
+                    visibility: hidden !important;
+                    width: 0 !important;
+                    height: 0 !important;
+                    line-height: 0 !important;
+                    font-size: 0 !important;
+                }
+
+                *[class=collapse]{ display: block !important; }
+                *[class=collapse] img{ display: none !important; }
+
+                *[class=show_jdp_mobile] img{
+                    width: 200px !important;
+                    height: auto !important;
+                    visibility: visible !important;
+                }
+
+                    *[class=show_jdp_mobile]{
+                        padding: 10px 0 !important;
+                        height: auto !important;
+                        line-height: normal !important;
+                    }
+
+                *[class=fluid_width]{ width: auto !important; }
+
+            }
+
+            /*
+             * This breakpoint is to make sure the JDP logo in the footer of all
+             * emails doesn't stretch the email wider than the screen when it drops
+             * more narrow than 414px.
+             */
+            @media only screen and (max-width: 414px){
+
+                *[class=resize414]{
+                    width: 94% !important;
+                    min-width: 94% !important;
+                }
+
+                *[class=hide_img], *[class=hide_img_ftr]{ display: none !important; }
+
+                *[class=show_img]{
+                    visibility: visible !important;
+                    width: 100% !important;
+                    min-width: 100% !important;
+                    height: auto !important;
+                }
+
+            }
+
+            /*
+             * This breakpoint is to make sure the Remax header logo
+             * email won't stretch the email wider than the screen when it drops
+             * more narrow than 457px.
+             */
+            @media only screen and (max-width: 457px){
+
+                *[class=resize457]{
+                    width: 94% !important;
+                    min-width: 94% !important;
+                }
+
+            }
+
+            /*
+             * This breakpoint is to make sure the header logo in the Rocket Mortgage
+             * email don't stretch the email wider than the screen when it drops
+             * more narrow than 388px.
+             */
+            @media only screen and (max-width: 388px){
+
+                *[class=resize388]{
+                    width: 94% !important;
+                    min-width: 94% !important;
+                }
+
+            }
+
+            /*
+             * This breakpoint is to make sure the header logo in the MyQL
+             * email don't stretch the email wider than the screen when it drops
+             * more narrow than 356px.
+             */
+            @media only screen and (max-width: 356px){
+
+                *[class=resize356]{
+                    width: 94% !important;
+                    min-width: 94% !important;
+                }
+
+            }
+
+            /*
+             * This breakpoint is to make sure the Schwab logo resizes with
+             * the email for screen width's less than 340px.
+             */
+            @media only screen and (max-width: 340px){
+
+                *[class=resize340]{
+                    width: 94% !important;
+                    min-width: 94% !important;
+                }
+
+            }
+
+            /*
+             * This breakpoint is to make sure the footer app mod in MyQL
+             * emails fluidly changes size for screens smaller than 327px wide.
+             */
+            @media only screen and (max-width: 327px){
+
+                *[class=resize327]{
+                    width: 94% !important;
+                    min-width: 94% !important;
+                }
+
+                *[class=ftr_myQL_logo]{ width: 23% !important; }
+                *[class=ftr_myQL_button]{ width: 77% !important; }
+
+            }
+
+            /* /\\//\\//\\//\\/ MOBILE RESPONSIVE /\\//\\//\\//\\/ */
+            @media only screen and (max-width: 568px){
+
+                *[class=stack],
+                *[class=stack_col],
+                *[class=button],
+                *[class=cyoa_icons],
+                *[class=cyoa_mobile]{
+                    width: 100% !important;
+                    min-width: 100% !important;
+                    float: none !important;
+                }
+
+                *[class=stack]:last-child{ margin-top: 20px !important; }
+
+                *[class=hide], *[class=hide] td{ display: none !important; }
+                *[class=cyoa_mobile]{ display: table !important; }
+
+                *[class=collapse], *[class=collapse] td,
+                *[class=preheader], *[class=preheader] td{ display: block !important; }
+
+                *[class=hide], *[class=hide] td,
+                *[class=collapse], *[class=collapse] td,
+                *[class=preheader], *[class=preheader] td{
+                    width: 0 !important;
+                    height: 0 !important;
+                    line-height: 0 !important;
+                    font-size: 0 !important;
+                    visibility: hidden !important;
+                }
+
+                *[class=v_padd0]{ width: 0 !important; }
+                *[class=v_padd8_mob]{ width: 8% !important; }
+                *[class=v_padd10-3]{ width: 3% !important; }
+                *[class=padd_left20]{ padding-left: 20px !important; }
+
+                *[class=h_padd7]{
+                    height: 7px !important;
+                    line-height: 7px !important;
+                    font-size: 7px !important;
+                }
+
+                *[class=h_padd10]{
+                    height: 10px !important;
+                    line-height: 10px !important;
+                    font-size: 10px !important;
+                }
+
+                *[class=h_padd15],
+                *[class=col3BTBorder_SBS]{
+                    height: 15px !important;
+                    line-height: 15px !important;
+                    font-size: 15px !important;
+                }
+
+                *[class=h_padd20]{
+                    height: 20px !important;
+                    line-height: 20px !important;
+                    font-size: 20px !important;
+                }
+
+                *[class=h_padd25]{
+                    height: 25px !important;
+                    line-height: 25px !important;
+                    font-size: 25px !important;
+                }
+
+                *[class=font25]{ font-size: 25px !important; }
+                *[class=font20]{ font-size: 20px !important; }
+                *[class=font18]{ font-size: 18px !important; }
+				*[class=font16]{ font-size: 16px !important; }
+				*[class=font14]{ font-size: 14px !important; }
+                *[class=font12]{ font-size: 12px !important; }
+
+                *[class=show_button_top],
+                *[class=show_button_bottom],
+                *[class=show_button_top] td,
+                *[class=show_button_bottom] td,
+                *[class=cyoa_mobile]{
+                    visibility: visible !important;
+                }
+
+                *[class=show_button_top],
+                *[class=show_button_bottom]{
+                    width: 100% !important;
+                    height: auto !important;
+                    display: table !important;
+                }
+
+                *[class=show_button_top] td,
+                *[class=show_button_bottom] td{
+                    height: auto !important;
+                    line-height: normal !important;
+                    font-size: 18px !important;
+                    display: table-cell !important;
+                    background-color: #6C9F2E !important;
+                }
+
+                *[class=show_button_top]{
+                    margin-top: 30px !important;
+                    margin-bottom: 20px !important;
+                }
+
+                *[class=show_button_bottom]{
+                    margin-top: 20px !important;
+                    margin-bottom: 30px !important;
+                }
+
+                *[class=show_button_top] td,
+                *[class=show_button_bottom] td,
+                *[class=single_button],
+                *[class=stack_button]{
+                    padding: 13px 0 !important;
+                }
+
+                *[class=single_button]{ border-radius: 5px !important; }
+
+                *[class=single_button],
+                *[class=stack_button]{
+                    font-size: 18px !important;
+                }
+
+				*[class=show]{ display: inline !important; }
+
+				*[class=show_blackfriday]{
+					overflow: visible !important;
+					float: none !important;
+					display: block !important;
+					line-height:100% !important;
+				}
+
+                *[class=cyoa_icon_3col]{ width: 82% !important; min-width: 82% !important; }
+
+                *[class=col3IMG_SBS]{ width: 30% !important; }
+                *[class=col3Gutter_SBS]{ width: 8% !important; }
+                *[class=col3Show_SBS]{
+                    width: 54% !important;
+                    font-size: 25px !important;
+                    font-weight: bold !important;
+                    color: #222222 !important;
+                }
+                *[class=col3BTBorder_SBS]{ border-bottom: 1px solid #c3d3e3 !important; }
+                *[class=ghost_button]{
+                    width: 98% !important;
+                    min-width: 98% !important;
+                    float: none !important;
+                }
+
+                *[class=cyoa_column]{ width: 33% !important; }
+                *[class=cyoa_mobile]{ opacity: 1 !important; }
+
+                *[class=cyoa_mobile_copy]{
+                    width: 100% !important;
+                    font-size: 13px !important;
+                    line-height: normal !important;
+                    height: auto !important;
+                }
+
+                *[class=cyoa_mobile_copy],
+                *[class=cyoa_mobile_copy] a{
+                    color: #222222 !important;
+                    text-decoration: none !important;
+                }
+
+                *[class=cyoa_mobile_copy] span a{
+                    font-size: 16px !important;
+                    color: #2081BF !important;
+                }
+            }
+
+            /* /\\//\\//\\//\\/ OLDER PHONES /\\//\\//\\//\\/ */
+            @media only screen and (max-width: 360px){
+
+                *[class=cyoa_mobile_copy]{
+                    font-size: 12px !important;
+                }
+
+            }
+
+        </style>
+        
+    </head>
+
+    <body style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%; background-color: #e6e6e6;">
+		
+		<!--[if mso]>
+		<style type="text/css">
+		body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
+		</style>
+		<![endif]-->
+    
+        <table class="resize" width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 600px;min-width: 600px;max-width: 600px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; background-color: #ffffff;">
+            
+            <tr>
+				<td valign="top" style="height: 20px;line-height: 20px;font-size: 20px;border-collapse: collapse;">&nbsp;</td>
+			</tr>
+			<tr>
+        		<td valign="top" style="border-collapse: collapse;">
+					
+					<table class="resize" width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 600px;min-width: 600px;max-width: 600px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+						<tr>
+							<td colspan="3" valign="top" style="height: 5px;line-height: 5px;font-size: 5px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top" style="width: 20px;border-collapse: collapse;">&nbsp;</td>
+							<td class="resize" align="center" valign="top" style="width: 560px;font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #222222;border-collapse: collapse;margin: 0 auto; text-align: center;">
+								
+								<table class="resize" width="400" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 400px;min-width: 400px;max-width: 400px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+									<tr>
+										<td valign="top" align="center" style="border-collapse: collapse;">
+
+											<a href="https://www.onereversemortgageservices.com/s/pricing"><img src="http://bookoforms.com/wp-content/uploads/2019/01/pricing-logo.png" width="354" height="50" alt="ORMS Logo" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>
+											
+										</td>
+									</tr>
+								</table>	
+								
+							</td>
+							<td valign="top" style="width: 20px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 5px;line-height: 5px;font-size: 5px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top" style="width: 20px;border-collapse: collapse;">&nbsp;</td>
+							<td class="resize" valign="middle" align="center" style="border-collapse: collapse;"><img src="http://bookoforms.com/wp-content/uploads/2019/01/bar-1.png" width="554" height="2" alt="bar header" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></td>
+							<td valign="top" style="width: 20px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top" style="width: 20px;border-collapse: collapse;">&nbsp;</td>
+							<td class="resize" align="center" valign="top" style="width: 560px;font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #222222;border-collapse: collapse;margin: 0 auto; text-align: center;">
+								<table class="resize" width="500" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 500px;min-width: 500px;max-width: 500px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+									<tr>
+										<td valign="top" align="center" style="width: 74px;border-collapse: collapse;">
+
+											<img src="http://bookoforms.com/wp-content/uploads/2019/01/pricing-clip.png" width="74" height="74" alt="ORMS Pricing Clip" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;">
+											
+										</td>
+										<td valign="top" align="center" style="width: 326px;border-collapse: collapse;">
+
+											<table class="resize" width="426" border="0" cellpadding="0" cellspacing="0" align="left" style="width: 426px;min-width: 426px;max-width: 426px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+												<tr>
+													<td class="resize" align="center" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 33px;color: #000000;border-collapse: collapse;margin: 0 auto; text-align: left;">
+								<strong style="color: #000000; font-weight: 600; font-size: 33px;">Current Pricing Attached</strong>
+													</td>												
+												</tr>
+												<tr>
+													<td class="resize" align="center" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #222222;border-collapse: collapse;margin: 0 auto; text-align: left;">
+								<strong style="color: #000000; font-weight: 100; font-size: 24px;">Stay up to date and download it today!</strong>
+													</td>												
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>	
+							</td>
+							<td valign="top" style="width: 20px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 15px;line-height: 5px;font-size: 5px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #0084c7;">&nbsp;</td>
+							<td class="resize" align="left" valign="top" style="width: 560px;font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #222222;border-collapse: collapse;margin: 0 auto; text-align: left; background-color: #0084c7; padding: 5px 5px 5px 5px;">
+								<strong style="color: #ffffff; font-weight: 200; font-size: 24px;">Current Turn Times</strong>
+							</td>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #0084c7;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 35px;line-height: 35px;font-size: 35px;border-collapse: collapse;">&nbsp;</td>
+						</tr>						
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;">
+								<table class="resize" width="550" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 550px;min-width: 550px;max-width: 550px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+									<tr>
+										<td valign="top" style="width: 20px;border-collapse: collapse;border-top: 1px solid #b3b3b3; border-left: 1px solid #b3b3b3;">&nbsp;</td>
+										<td valign="top" align="left" style="width: 270px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;border-top: 1px solid #b3b3b3;">
+											<strong>New Registration</strong>
+										</td>
+										<td class="resize" align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #000000;border-collapse: collapse;margin: 0 auto; text-align: left;border-top: 1px solid #b3b3b3;">
+											30 minutes
+										</td>
+										<td valign="top" style="width: 20px;border-collapse: collapse;border-top: 1px solid #b3b3b3;border-right: 1px solid #b3b3b3;">&nbsp;</td>
+									</tr>
+									<tr>
+										<td valign="top" style="border-collapse: collapse; background-color: #f2f2f2;border-left: 1px solid #b3b3b3;border-top: 1px solid #b3b3b3;">&nbsp;</td>
+										<td valign="top" align="left" style="border-collapse: collapse; background-color: #f2f2f2;font-family: Arial, Helvetica, sans-serif;font-size: 15px;border-top: 1px solid #b3b3b3;">
+											<strong>Submit for Conditional Approval</strong>
+										</td>
+										<td class="resize" align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #000000;border-collapse: collapse;margin: 0 auto; text-align: left; background-color: #f2f2f2;border-top: 1px solid #b3b3b3;">
+											24 hours
+										</td>
+										<td valign="top" style="border-collapse: collapse; background-color: #f2f2f2;border-right: 1px solid #b3b3b3;border-top: 1px solid #b3b3b3;">&nbsp;</td>
+									</tr>
+									<tr>
+										<td valign="top" style="border-collapse: collapse;border-top: 1px solid #b3b3b3; border-left: 1px solid #b3b3b3;">&nbsp;</td>
+										<td valign="top" align="left" style="border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;border-top: 1px solid #b3b3b3;">
+											<strong>Conditions Review</strong>
+										</td>
+										<td class="resize" align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #000000;border-collapse: collapse;margin: 0 auto; text-align: left;border-top: 1px solid #b3b3b3;">
+											24 hours
+										</td>
+										<td valign="top" style="border-collapse: collapse;border-top: 1px solid #b3b3b3;border-right: 1px solid #b3b3b3;">&nbsp;</td>
+									</tr>
+									<tr>
+										<td valign="top" style="border-collapse: collapse; background-color: #f2f2f2;border-left: 1px solid #b3b3b3;border-top: 1px solid #b3b3b3;">&nbsp;</td>
+										<td valign="top" align="left" style="border-collapse: collapse; background-color: #f2f2f2;font-family: Arial, Helvetica, sans-serif;font-size: 15px;border-top: 1px solid #b3b3b3;">
+											<strong>Clear to Close</strong>
+										</td>
+										<td class="resize" align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #000000;border-collapse: collapse;margin: 0 auto; text-align: left; background-color: #f2f2f2;border-top: 1px solid #b3b3b3;">
+											24 hours
+										</td>
+										<td valign="top" style="border-collapse: collapse; background-color: #f2f2f2;border-right: 1px solid #b3b3b3;border-top: 1px solid #b3b3b3;">&nbsp;</td>
+									</tr>
+									<tr>
+										<td valign="top" style="border-collapse: collapse;border-top: 1px solid #b3b3b3; border-left: 1px solid #b3b3b3; border-bottom: 1px solid #b3b3b3;">&nbsp;</td>
+										<td valign="top" align="left" style="border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;border-top: 1px solid #b3b3b3; border-bottom: 1px solid #b3b3b3;">
+											<strong>Docs to Closing Agent</strong>
+										</td>
+										<td class="resize" align="left" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #000000;border-collapse: collapse;margin: 0 auto; text-align: left;border-top: 1px solid #b3b3b3; border-bottom: 1px solid #b3b3b3;">
+											24 hours from Final HUD Approval
+										</td>
+										<td valign="top" style="border-collapse: collapse;border-top: 1px solid #b3b3b3;border-right: 1px solid #b3b3b3; border-bottom: 1px solid #b3b3b3;">&nbsp;</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #f57200;">&nbsp;</td>
+							<td class="resize" align="left" valign="top" style="width: 560px;font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #222222;border-collapse: collapse;margin: 0 auto; text-align: left; background-color: #f57200; padding: 5px 5px 5px 5px;">
+								<strong style="color: #ffffff; font-weight: 200; font-size: 24px;">Resources</strong>
+							</td>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #f57200;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;">
+								<table class="resize" width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 600px;min-width: 600px;max-width: 600px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+									<tr>
+										<td valign="top" valign="top" align="center" style="width: 200px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+											<a href="http://wwww.bookoforms.com/"><img src="http://bookoforms.com/wp-content/uploads/2019/01/marketing-hub.png" width="99" height="99" alt="Marketing Hub" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>
+										</td>
+										<td valign="top" valign="top" align="center" style="width: 200px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+											<a href="https://attendee.gotowebinar.com/register/3099649019651749122"><img src="http://bookoforms.com/wp-content/uploads/2019/01/reverse-101.png" width="99" height="99" alt="Reverse Mortgage 101" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>
+										</td>
+										<td valign="top" valign="top" align="center" style="width: 200px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+											<a href="https://attendee.gotowebinar.com/register/45693900407792641"><img src="http://bookoforms.com/wp-content/uploads/2019/01/portal-tour.png" width="99" height="99" alt="Portal Tour" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>
+										</td>
+									</tr>
+									<tr>
+										<td valign="top" valign="top" align="center" style="width: 200px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+											<a href="http://wwww.bookoforms.com/" style="color: #0084c7;">Marketing Hub</a>
+										</td>
+										<td valign="top" valign="top" align="center" style="width: 200px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+											<a href="https://attendee.gotowebinar.com/register/3099649019651749122" style="color: #0084c7;">Reverse Mortgage 101</a>
+										</td>
+										<td valign="top" valign="top" align="center" style="width: 200px;border-collapse: collapse;font-family: Arial, Helvetica, sans-serif;font-size: 15px;">
+											<a href="https://attendee.gotowebinar.com/register/45693900407792641" style="color: #0084c7;">Portal Tour</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;background-color: #e6e6e6;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #e6e6e6;">&nbsp;</td>
+							<td class="resize" align="center" valign="top" style="width: 560px;font-family: Arial, Helvetica, sans-serif;font-size: 15px;color: #222222;border-collapse: collapse;margin: 0 auto; text-align: center; background-color: #e6e6e6;">
+								
+								<table class="resize" width="500" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 500px;min-width: 500px;max-width: 400px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+									<tr>
+										<td valign="top" align="center" style="border-collapse: collapse;">
+											<a href="https://www.linkedin.com/showcase/orm-services/"><img src="http://bookoforms.com/wp-content/uploads/2019/01/pricing-linkedin.png" width="52" height="52" alt="LinkedIn" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>
+										</td>
+										<td valign="top" align="center" style="border-collapse: collapse;">
+											<a href="https://twitter.com/official_ORMS"><img src="http://bookoforms.com/wp-content/uploads/2019/01/pricing-twitter.png" width="52" height="52" alt="Twitter" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>
+										</td>
+										<td valign="top" align="center" style="border-collapse: collapse;">
+											<a href="https://www.facebook.com/onereverseservices/"><img src="http://bookoforms.com/wp-content/uploads/2019/01/pricing-facebook.png" width="52" height="52" alt="Facebook" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>
+										</td>
+									</tr>
+								</table>	
+							</td>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #e6e6e6;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;background-color: #e6e6e6;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #e6e6e6;">&nbsp;</td>
+							<td class="resize" valign="middle" align="center" style="border-collapse: collapse; background-color: #e6e6e6;"><img src="http://bookoforms.com/wp-content/uploads/2019/01/bar-1.png" width="554" height="2" alt="bar header" class="resize_img" style="display: block;border: 0 none;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></td>
+							<td valign="top" style="width: 20px;border-collapse: collapse; background-color: #e6e6e6;">&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" align="center" style="border-collapse: collapse; background-color: #e6e6e6;">
+
+								<!-- START MOD -->
+								<table class="resize" width="3500" border="0" cellpadding="0" cellspacing="0" align="center" style="width: 350px;min-width: 350px;max-width: 350px;margin: 0 auto;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+									<tr>
+										<td class="v_padd3" valign="top" style="width: 15px;border-collapse: collapse;">&nbsp;</td>
+										<td valign="top" align="center" style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;color: #aaaaaa;border-collapse: collapse;">
+
+											To no longer receive emails from One Reverse Mortgage Services please reply back to this email with UNSUBSCRIBE in the body of the email.
+
+										</td>
+										<td class="v_padd3" valign="top" style="width: 15px;border-collapse: collapse;">&nbsp;</td>
+									</tr>
+								</table>
+								<!-- END MOD -->
+
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" valign="top" style="height: 30px;line-height: 30px;font-size: 30px;border-collapse: collapse;background-color: #e6e6e6;">&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+        </table>
+    
+    </body>
 </html>

@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
         <label><!-- Account License Type --></label>
         <name>Account_License_Type__c</name>
         <picklistValues>
@@ -233,7 +234,8 @@
             <masterLabel>Supplemental Mortgage Servicer License</masterLabel>
             <translation><!-- Supplemental Mortgage Servicer License --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Contact License Type --></label>
         <name>Contact_License_Type__c</name>
         <picklistValues>
@@ -328,79 +330,110 @@
             <masterLabel>SOS - Principal Manager License</masterLabel>
             <translation><!-- SOS - Principal Manager License --></translation>
         </picklistValues>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- License Expiration --></label>
         <name>License_Expiration__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- License Issued Date --></label>
         <name>License_Issued_Date__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- License Number --></label>
         <name>License_Number__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- License Type --></label>
         <name>License_Type__c</name>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Related Business Partner --></label>
         <name>Related_Account__c</name>
         <relationshipLabel><!-- State Licenses --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Related Branch --></label>
         <name>Related_Branch__c</name>
         <relationshipLabel><!-- State Licenses --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- Related Business Individual --></label>
         <name>Related_Contact__c</name>
         <relationshipLabel><!-- State Licenses --></relationshipLabel>
-    </fields><fields>
+    </fields>
+    <fields>
         <label><!-- State --></label>
         <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Email --></label>
+        <name>Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Phone --></label>
+        <name>Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORMS AE --></label>
+        <name>ORMS_AE__c</name>
     </fields><caseValues>
         <plural>false</plural>
         <value>State License</value>
     </caseValues><caseValues>
         <plural>true</plural>
         <value>State Licenses</value>
-    </caseValues><startsWith>Consonant</startsWith><layouts>
+    </caseValues><startsWith>Consonant</startsWith>
+    <layouts>
         <layout>Branch Licenses Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts><layouts>
+    </layouts>
+    <layouts>
         <layout>Individual Licenses Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts><layouts>
+    </layouts>
+    <layouts>
         <layout>Licensee Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts><layouts>
+    </layouts>
+    <layouts>
         <layout>Partner Licenses Layout</layout>
         <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
         </sections>
-    </layouts><recordTypes>
+    </layouts>
+    <recordTypes>
         <label><!-- Branch Licenses --></label>
         <name>Branch_Licenses</name>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Individual Licenses --></label>
         <name>Individual_Licenses</name>
-    </recordTypes><recordTypes>
+    </recordTypes>
+    <recordTypes>
         <label><!-- Partner Licenses --></label>
         <name>Partner_Licenses</name>
-    </recordTypes><validationRules>
+    </recordTypes>
+    <validationRules>
         <errorMessage><!-- License Type is required for this State --></errorMessage>
         <name>Account_License_Type_Required</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- License Type is required for this State --></errorMessage>
         <name>Contact_License_Type_Required</name>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <errorMessage><!-- License Number cannot be blank for this State. --></errorMessage>
         <name>License_Number_Required</name>
-    </validationRules></CustomObjectTranslation>
+    </validationRules>
+</CustomObjectTranslation>

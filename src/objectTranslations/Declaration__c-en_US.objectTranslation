@@ -456,6 +456,126 @@
             <masterLabel>Yes</masterLabel>
             <translation><!-- Yes --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- American Indian or Alaska Native --></label>
+        <name>American_Indian_or_Alaska_Native__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asian Indian --></label>
+        <name>Asian_Indian__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asian --></label>
+        <name>Asian__c</name>
+    </fields>
+    <fields>
+        <label><!-- Black or African American --></label>
+        <name>Black_or_African_American__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chinese --></label>
+        <name>Chinese__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cuban --></label>
+        <name>Cuban__c</name>
+    </fields>
+    <fields>
+        <label><!-- Does not wish to provide Race --></label>
+        <name>Does_not_wish_to_provide_Race__c</name>
+    </fields>
+    <fields>
+        <label><!-- Does not wish to provide Sex --></label>
+        <name>Does_not_wish_to_provide_Sex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Does not wish to provide --></label>
+        <name>Does_not_wish_to_provide__c</name>
+    </fields>
+    <fields>
+        <label><!-- Female --></label>
+        <name>Female__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filipino --></label>
+        <name>Filipino__c</name>
+    </fields>
+    <fields>
+        <label><!-- Guamanian or Chamorro --></label>
+        <name>Guamanian_or_Chamorro__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hispanic or Latino --></label>
+        <name>Hispanic_or_Latino__c</name>
+    </fields>
+    <fields>
+        <label><!-- Japanese --></label>
+        <name>Japanese__c</name>
+    </fields>
+    <fields>
+        <label><!-- Korean --></label>
+        <name>Korean__c</name>
+    </fields>
+    <fields>
+        <label><!-- Male --></label>
+        <name>Male__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mexican --></label>
+        <name>Mexican__c</name>
+    </fields>
+    <fields>
+        <label><!-- Native Hawaiian --></label>
+        <name>Native_Hawaiian__c</name>
+    </fields>
+    <fields>
+        <label><!-- Native Hawaiian or Other Pacific Islan --></label>
+        <name>Native_Hawaiian_or_Other_Pacific_Islan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not Hispanic or Latino --></label>
+        <name>Not_Hispanic_or_Latino__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Asian Desc --></label>
+        <name>Other_Asian_Desc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Asian --></label>
+        <name>Other_Asian__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Hispanic or Latino --></label>
+        <name>Other_Hispanic_or_Latino__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Hispanic or Latino desc --></label>
+        <name>Other_Hispanic_or_Latino_desc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Pacific Islander Desc --></label>
+        <name>Other_Pacific_Islander_Desc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Pacific Islander --></label>
+        <name>Other_Pacific_Islander__c</name>
+    </fields>
+    <fields>
+        <label><!-- Puerto Rican --></label>
+        <name>Puerto_Rican__c</name>
+    </fields>
+    <fields>
+        <label><!-- Samoan --></label>
+        <name>Samoan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vietnamese --></label>
+        <name>Vietnamese__c</name>
+    </fields>
+    <fields>
+        <label><!-- White --></label>
+        <name>White__c</name>
     </fields><caseValues>
         <plural>false</plural>
         <value>Declaration</value>

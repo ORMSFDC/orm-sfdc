@@ -266,6 +266,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -514,12 +518,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -542,6 +554,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -552,6 +576,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -574,6 +606,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -584,6 +652,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -608,6 +688,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -686,6 +770,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -752,6 +840,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -814,30 +903,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -857,6 +966,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -1057,6 +1167,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -1305,12 +1419,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -1333,6 +1455,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -1343,6 +1477,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -1365,6 +1507,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -1375,6 +1553,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -1399,6 +1589,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -1477,6 +1671,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -1543,6 +1741,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -1605,30 +1804,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -1648,6 +1867,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -1852,6 +2072,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -2100,12 +2324,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -2128,6 +2360,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -2138,6 +2382,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -2160,6 +2412,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -2170,6 +2458,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -2194,6 +2494,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -2272,6 +2576,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -2339,6 +2647,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -2401,30 +2710,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -2444,6 +2773,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -2644,6 +2974,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -2892,12 +3226,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -2920,6 +3262,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -2930,6 +3284,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -2952,6 +3314,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -2962,6 +3360,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -2986,6 +3396,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -3064,6 +3478,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -3130,6 +3548,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -3192,30 +3611,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -3235,6 +3674,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -3439,6 +3879,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -3687,12 +4131,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -3715,6 +4167,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -3725,6 +4189,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -3747,6 +4219,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -3757,6 +4265,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -3781,6 +4301,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -3859,6 +4383,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -3926,6 +4454,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -3988,30 +4517,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -4031,6 +4580,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -4231,6 +4781,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -4479,12 +5033,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -4507,6 +5069,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -4517,6 +5091,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -4539,6 +5121,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -4549,6 +5167,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -4573,6 +5203,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -4651,6 +5285,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -4717,6 +5355,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -4779,30 +5418,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -4822,6 +5481,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -5022,6 +5682,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -5270,12 +5934,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -5298,6 +5970,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -5308,6 +5992,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -5330,6 +6022,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -5340,6 +6068,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -5364,6 +6104,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -5442,6 +6186,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -5508,6 +6256,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -5570,30 +6319,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -5613,6 +6382,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -5813,6 +6583,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -6061,12 +6835,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -6089,6 +6871,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -6099,6 +6893,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -6121,6 +6923,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -6131,6 +6969,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -6155,6 +7005,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -6233,6 +7087,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -6299,6 +7157,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -6361,30 +7220,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -6404,6 +7283,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -6608,6 +7488,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -6856,12 +7740,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -6884,6 +7776,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -6894,6 +7798,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -6916,6 +7828,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -6926,6 +7874,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -6950,6 +7910,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -7028,6 +7992,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -7095,6 +8063,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -7157,30 +8126,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -7200,6 +8189,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -7400,6 +8390,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -7648,12 +8642,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -7676,6 +8678,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -7686,6 +8700,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -7708,6 +8730,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -7718,6 +8776,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -7742,6 +8812,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -7820,6 +8894,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -7886,6 +8964,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -7948,30 +9027,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -7991,6 +9090,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -8191,6 +9291,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -8439,12 +9543,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -8467,6 +9579,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -8477,6 +9601,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -8499,6 +9631,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -8509,6 +9677,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -8533,6 +9713,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -8611,6 +9795,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -8677,6 +9865,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -8739,30 +9928,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -8782,6 +9991,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>
@@ -8982,6 +10192,10 @@
             <label>Application Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgI</field>
+            <label>Approval Date for Renewal</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N39000004Hnrn</field>
             <label>App Sent</label>
         </opportunityListFieldsLabelMappings>
@@ -9230,12 +10444,20 @@
             <label>Opt In Lead Sharing</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <label>Original Approved Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z1</field>
             <label>ORM Account Executive Name</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhQ</field>
+            <label>Other Denial</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKhR</field>
+            <label>Other Withdrawn</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z5</field>
@@ -9258,6 +10480,18 @@
             <label>Phone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgK</field>
+            <label>Primary Contact</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgJ</field>
+            <label>Primary Contact Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgL</field>
+            <label>Primary Email</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450Z9</field>
             <label>Proper Addendum sent to RV</label>
         </opportunityListFieldsLabelMappings>
@@ -9268,6 +10502,14 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZA</field>
             <label>QLMS Account Executive</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgM</field>
+            <label>QLMS Approved</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgN</field>
+            <label>QLMS Provided Docs</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZC</field>
@@ -9290,6 +10532,42 @@
             <label>Related Individual</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgO</field>
+            <label>Renewal App Denied Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgP</field>
+            <label>Renewal App Outstanding Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgQ</field>
+            <label>Renewal App Pending Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgR</field>
+            <label>Renewal Approval Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgS</field>
+            <label>Renewal Denied Reason</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgT</field>
+            <label>Renewal Docs Required Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgU</field>
+            <label>Renewal Escalated Review Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgV</field>
+            <label>Renewal Pending Seasoning Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgW</field>
+            <label>Renewal Questionnaire Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZI</field>
             <label>Renewal Questionnaire Received?</label>
         </opportunityListFieldsLabelMappings>
@@ -9300,6 +10578,18 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZJ</field>
             <label>Renewal Questionnaire Status</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgY</field>
+            <label>Renewal Reviewing Docs Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgZ</field>
+            <label>Renewal Withdrawn Date</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKga</field>
+            <label>Renewal Withdrawn Reason</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZL</field>
@@ -9324,6 +10614,10 @@
         <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZB</field>
             <label>RV Agreement Received</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgb</field>
+            <label>Stage Change Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
             <field>00N39000004HnDR</field>
@@ -9402,6 +10696,10 @@
             <label>Updated Financial Received Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00Nf200000DlKgd</field>
+            <label>Updated Financials Complete</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00N3900000450ZX</field>
             <label>Updated Financial Status</label>
         </opportunityListFieldsLabelMappings>
@@ -9468,6 +10766,7 @@
             <field>00N3900000450YH</field>
             <field>00N3900000450YG</field>
             <field>00N3900000450YI</field>
+            <field>00Nf200000DlKgI</field>
             <field>00N39000004Hnrn</field>
             <field>00N3900000450YJ</field>
             <field>00N3900000450YK</field>
@@ -9530,30 +10829,50 @@
             <field>00N3900000450Yx</field>
             <field>00N3900000450Z2</field>
             <field>00N39000004594N</field>
-            <field>00N3900000450Z3</field>
+            <field>00Nf200000DlKgD</field>
             <field>00N3900000450Z1</field>
+            <field>00Nf200000DlKhQ</field>
+            <field>00Nf200000DlKhR</field>
             <field>00N3900000450Z5</field>
             <field>00N3900000450Z4</field>
             <field>00N3900000450Z6</field>
             <field>00Nf200000DvT77</field>
             <field>00N3900000450Z7</field>
+            <field>00Nf200000DlKgK</field>
+            <field>00Nf200000DlKgJ</field>
+            <field>00Nf200000DlKgL</field>
             <field>00N3900000450Z9</field>
             <field>00N3900000450Z8</field>
             <field>00N3900000450ZA</field>
+            <field>00Nf200000DlKgM</field>
+            <field>00Nf200000DlKgN</field>
             <field>00N3900000450ZC</field>
             <field>00N3900000450ZD</field>
             <field>00N3900000450ZE</field>
             <field>00N3900000450ZF</field>
             <field>00N3900000450ZG</field>
+            <field>00Nf200000DlKgO</field>
+            <field>00Nf200000DlKgP</field>
+            <field>00Nf200000DlKgQ</field>
+            <field>00Nf200000DlKgR</field>
+            <field>00Nf200000DlKgS</field>
+            <field>00Nf200000DlKgT</field>
+            <field>00Nf200000DlKgU</field>
+            <field>00Nf200000DlKgV</field>
+            <field>00Nf200000DlKgW</field>
             <field>00N3900000450ZI</field>
             <field>00N3900000450ZH</field>
             <field>00N3900000450ZJ</field>
+            <field>00Nf200000DlKgY</field>
+            <field>00Nf200000DlKgZ</field>
+            <field>00Nf200000DlKga</field>
             <field>00N3900000450ZL</field>
             <field>00N3900000450ZK</field>
             <field>00N3900000450ZN</field>
             <field>00N3900000450ZM</field>
             <field>00N39000004LVq7</field>
             <field>00N3900000450ZB</field>
+            <field>00Nf200000DlKgb</field>
             <field>00N39000004HnDR</field>
             <field>00N39000003hh81</field>
             <field>00N39000004HnuI</field>
@@ -9573,6 +10892,7 @@
             <field>00N3900000450ZU</field>
             <field>00N3900000450ZW</field>
             <field>00N3900000450ZV</field>
+            <field>00Nf200000DlKgd</field>
             <field>00N3900000450ZX</field>
             <field>00N39000004Ho1O</field>
             <field>00N3900000450ZZ</field>

@@ -123,4 +123,22 @@
     <label>Tier 3</label>
     <pluralLabel>Tier 3</pluralLabel>
     <visibility>Public</visibility>
+    <listViews>
+        <fullName>All_Data</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Margin__c</columns>
+        <columns>X0_to_10__c</columns>
+        <columns>X10_to_20__c</columns>
+        <columns>X20_to_30__c</columns>
+        <columns>X30_to_40__c</columns>
+        <columns>X40_to_50__c</columns>
+        <columns>X50_to_60__c</columns>
+        <columns>X60_to_70__c</columns>
+        <columns>X70_to_80__c</columns>
+        <columns>X80_to_90__c</columns>
+        <columns>X90_to_100__c</columns>
+        <columns>DeveloperName</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Data</label>
+    </listViews>
 </CustomObject>

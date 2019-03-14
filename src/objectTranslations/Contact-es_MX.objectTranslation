@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account Approval Sub-Status --></label>
+        <name>Account_Approval_Sub_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Application Requested Last 90 Days --></help>
+        <label><!-- App Req Last 90 Days --></label>
+        <name>App_Req_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applications Req Last Month --></label>
+        <name>Applications_Req_Last_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applications Req MTD --></label>
+        <name>Applications_Req_MTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applications Req YTD --></label>
+        <name>Applications_Req_YTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dormant</masterLabel>
+            <translation><!-- Dormant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engaged</masterLabel>
+            <translation><!-- Engaged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motivated</masterLabel>
+            <translation><!-- Motivated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Napping</masterLabel>
+            <translation><!-- Napping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Never Active</masterLabel>
+            <translation><!-- Never Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previously Active</masterLabel>
+            <translation><!-- Previously Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prime</masterLabel>
+            <translation><!-- Prime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sleeping</masterLabel>
+            <translation><!-- Sleeping --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Sub-Status --></label>
+        <name>Approval_Sub_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied by Credit Risk</masterLabel>
+            <translation><!-- Denied by Credit Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (DTRT)</masterLabel>
+            <translation><!-- Terminated (DTRT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Leadership Request)</masterLabel>
+            <translation><!-- Terminated (Leadership Request) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Performance)</masterLabel>
+            <translation><!-- Terminated (Performance) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated (Production)</masterLabel>
+            <translation><!-- Terminated (Production) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn by Partner</masterLabel>
+            <translation><!-- Withdrawn by Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approved Date --></label>
+        <name>Approved_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Credit Risk Analyst --></label>
+        <name>Assigned_Credit_Risk_Analyst__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned PCS --></label>
+        <name>Assigned_PCS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Called This Month --></label>
+        <name>Called_This_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cell --></label>
+        <name>Cell__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check to create a Prospective Portal User login --></help>
+        <label><!-- Check to create a Prospective User Login --></label>
+        <name>Check_to_create_a_Prospective_User_Login__c</name>
+    </fields>
+    <fields>
+        <help><!-- Closings from Folders in Last 90 Days --></help>
+        <label><!-- Closed From Folders 90 Days --></label>
+        <name>Closed_From_Folders_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closings Last Month --></label>
+        <name>Closings_Last_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closings MTD --></label>
+        <name>Closings_MTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closings YTD --></label>
+        <name>Closings_YTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Image --></label>
+        <name>Contact_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- NMLS ID --></label>
+        <name>Contact_NMLS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Notes --></label>
+        <name>Contact_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corporate Resolution --></label>
+        <name>Corporate_Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Board Approval --></label>
+        <name>Date_of_Board_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days since Approval --></label>
+        <name>Days_since_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailOptOut --></label>
+        <name>EmailOptOut__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ext. --></label>
+        <name>Ext__c</name>
+    </fields>
+    <fields>
+        <help><!-- Not based off of App Requested --></help>
+        <label><!-- FRC Last 90 Days --></label>
+        <name>FRC_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- InActive from FRC Last 90 Days --></label>
+        <name>Fallout_from_FRC_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Folder To Close last 90 days --></label>
+        <name>Folder_To_Close_last_90_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Folder to Closed --></label>
+        <name>Folder_to_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Folders Last Month --></label>
+        <name>Folders_Last_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Folders MTD --></label>
+        <name>Folders_MTD__c</name>
+    </fields>
+    <fields>
+        <help><!-- Folders Received Last 90 Days --></help>
+        <label><!-- Folders Rec Last 90 Days --></label>
+        <name>Folders_Rec_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Folders YTD --></label>
+        <name>Folders_YTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Matt --></label>
+        <name>From_Matt__c</name>
+    </fields>
+    <fields>
+        <help><!-- HELO App Req Loans Last 90 --></help>
+        <label><!-- HELO App Last 90 Days --></label>
+        <name>HELO_App_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- HELO Closed Last 90 Days --></label>
+        <name>HELO_Closed_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- HELO Folder Last 90 Days --></label>
+        <name>HELO_Folder_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- How did you hear about us? --></label>
+        <name>How_did_you_hear_about_us__c</name>
+        <picklistValues>
+            <masterLabel>A Flyer about QLMS</masterLabel>
+            <translation><!-- A Flyer about QLMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A pricing tool (Loan Sifter)</masterLabel>
+            <translation><!-- A pricing tool (Loan Sifter) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An article or a blog</masterLabel>
+            <translation><!-- An article or a blog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An email from QLMS</masterLabel>
+            <translation><!-- An email from QLMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation><!-- Facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linkedin</masterLabel>
+            <translation><!-- Linkedin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Someone in the industry</masterLabel>
+            <translation><!-- Someone in the industry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Through Comergence</masterLabel>
+            <translation><!-- Through Comergence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Magazine</masterLabel>
+            <translation><!-- Trade Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twitter</masterLabel>
+            <translation><!-- Twitter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Search</masterLabel>
+            <translation><!-- Web Search --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- In Process from FRC Last 90 Days --></label>
+        <name>In_Process_from_FRC_Last_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Individual Lead source --></label>
+        <name>Individual_Lead_source__c</name>
+        <picklistValues>
+            <masterLabel>Internet search</masterLabel>
+            <translation><!-- Internet search --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Networking</masterLabel>
+            <translation><!-- Networking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased list</masterLabel>
+            <translation><!-- Purchased list --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QLMS Website</masterLabel>
+            <translation><!-- QLMS Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral</masterLabel>
+            <translation><!-- Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TradeShow</masterLabel>
+            <translation><!-- TradeShow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webinar</masterLabel>
+            <translation><!-- Webinar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Individual lead Status --></label>
+        <name>Individual_lead_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is this user an Owner? --></label>
+        <name>Is_this_user_an_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI App Requested --></label>
+        <name>KPI_App_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Awaiting Closing --></label>
+        <name>KPI_Awaiting_Closing__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Closed --></label>
+        <name>KPI_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Conditionally App --></label>
+        <name>KPI_Conditionally_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Full Package - Inc --></label>
+        <name>KPI_Full_Package_Inc__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Full Package Rec --></label>
+        <name>KPI_Full_Package_Rec__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI In Processing --></label>
+        <name>KPI_In_Processing__c</name>
+    </fields>
+    <fields>
+        <help><!-- In UW Review --></help>
+        <label><!-- KPI In UW Review --></label>
+        <name>KPI_In_UW_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Incomplete --></label>
+        <name>KPI_Incomplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Suspended --></label>
+        <name>KPI_Suspended__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI UW Clear to Close --></label>
+        <name>KPI_UW_Clear_to_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- KPI Waiting for Package --></label>
+        <name>KPI_Waiting_for_Package__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity Date --></label>
+        <name>Last_Activity_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Call placed to Contact --></help>
+        <label><!-- Last Call --></label>
+        <name>Last_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Login Time --></label>
+        <name>Last_Login_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Significant Contact Date --></label>
+        <name>Last_Significant_Contact_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Officer --></label>
+        <name>Loan_Officer__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Mailing City --></label>
+        <name>MailingCity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing Zip/Postal Code --></label>
+        <name>MailingPostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing State/Province --></label>
+        <name>MailingState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing Street --></label>
+        <name>MailingStreet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mailing Address --></label>
+        <name>Mailing_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- NMLS ID Expiration Date --></label>
+        <name>NMLS_ID_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- NMLS ID Issued Date --></label>
+        <name>NMLS_ID_Issued_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nickname --></label>
+        <name>Nickname__c</name>
+    </fields>
+    <fields>
+        <help><!-- App Req Oct - Dec 2018 --></help>
+        <label><!-- OD18 App Req --></label>
+        <name>OD18_App_Req__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec FRC to Close --></help>
+        <label><!-- OD18 Closed --></label>
+        <name>OD18_Closed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec FRC --></help>
+        <label><!-- OD18 FRC --></label>
+        <name>OD18_FRC__c</name>
+    </fields>
+    <fields>
+        <help><!-- FRC from App Req Oct - Dec 2018 --></help>
+        <label><!-- OD18 FRC from App Req --></label>
+        <name>OD18_FRC_from_App_Req__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec HECM App Req --></help>
+        <label><!-- OD18 HECM App --></label>
+        <name>OD18_HECM_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec HECM FRC from App Req --></help>
+        <label><!-- OD18 HECM FRC from App --></label>
+        <name>OD18_HECM_FRC_from_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec HELO App Req --></help>
+        <label><!-- OD18 HELO App --></label>
+        <name>OD18_HELO_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec HELO FRC from App Req --></help>
+        <label><!-- OD18 HELO FRC from App --></label>
+        <name>OD18_HELO_FRC_from_App__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec Inactive --></help>
+        <label><!-- OD18 InActive --></label>
+        <name>OD18_InActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Oct - Dec Folders In Process --></help>
+        <label><!-- OD18 In Process --></label>
+        <name>OD18_In_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORM Account Executive Email --></label>
+        <name>ORM_Account_Executive_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORM Account Executive Name --></label>
+        <name>ORM_Account_Executive_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORM Account Executive Title --></label>
+        <name>ORM_Account_Executive_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- ORM Anniversary --></label>
+        <name>ORM_Anniversary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Phone --></label>
+        <name>Office_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerExtension --></label>
+        <name>OwnerExtension__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerFax --></label>
+        <name>OwnerFax__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerMobile --></label>
+        <name>OwnerMobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ownership Percentage --></label>
+        <name>Ownership_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPU Loan Production Status --></label>
+        <name>PPU_Loan_Production_Status__c</name>
+        <picklistValues>
+            <masterLabel>Aged Partner/Never Engaged</masterLabel>
+            <translation><!-- Aged Partner/Never Engaged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dormant</masterLabel>
+            <translation><!-- Dormant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Portal User/Never Engaged</masterLabel>
+            <translation><!-- New Portal User/Never Engaged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Dormant</masterLabel>
+            <translation><!-- Pre-Dormant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Producing</masterLabel>
+            <translation><!-- Producing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PPU Total Loan Stage --></label>
+        <name>PPU_Total_Loan_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Committed</masterLabel>
+            <translation><!-- Committed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dormant</masterLabel>
+            <translation><!-- Dormant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engaged</masterLabel>
+            <translation><!-- Engaged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motivated</masterLabel>
+            <translation><!-- Motivated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Never Engaged</masterLabel>
+            <translation><!-- Never Engaged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Dormant</masterLabel>
+            <translation><!-- Pre-Dormant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Producing</masterLabel>
+            <translation><!-- Producing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Denial Reasons --></label>
+        <name>Partner_Denial_Reasons__c</name>
+        <picklistValues>
+            <masterLabel>Company Formation</masterLabel>
+            <translation><!-- Company Formation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exclusionary List</masterLabel>
+            <translation><!-- Exclusionary List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial</masterLabel>
+            <translation><!-- Financial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Licensing</masterLabel>
+            <translation><!-- Licensing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MARI Report</masterLabel>
+            <translation><!-- MARI Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reputation Report</masterLabel>
+            <translation><!-- Reputation Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resume</masterLabel>
+            <translation><!-- Resume --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Event 2/5 --></label>
+        <name>Partner_Event_2_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Portal User Status --></label>
+        <name>Potential_Portal_User_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete/Approved</masterLabel>
+            <translation><!-- Complete/Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete/Denied</masterLabel>
+            <translation><!-- Complete/Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready</masterLabel>
+            <translation><!-- Ready --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training In Process</masterLabel>
+            <translation><!-- Training In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Preferred Account Contact --></label>
+        <name>Preferred_Account_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred First Name --></label>
+        <name>Preferred_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Closing Volume Purchase --></label>
+        <name>QLMS_12_Month_Closing_Volume_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Closing Volume Refi --></label>
+        <name>QLMS_12_Month_Closing_Volume_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Closing Volume --></label>
+        <name>QLMS_12_Month_Closing_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Closings Purchase --></label>
+        <name>QLMS_12_Month_Closings_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Closings Refi --></label>
+        <name>QLMS_12_Month_Closings_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Closings --></label>
+        <name>QLMS_12_Month_Closings__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Folder Volume Purchase --></label>
+        <name>QLMS_12_Month_Folder_Volume_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Folder Volume Refi --></label>
+        <name>QLMS_12_Month_Folder_Volume_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Folder Volume --></label>
+        <name>QLMS_12_Month_Folder_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Folders Purchase --></label>
+        <name>QLMS_12_Month_Folders_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Folders Refi --></label>
+        <name>QLMS_12_Month_Folders_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 12 Month Folders --></label>
+        <name>QLMS_12_Month_Folders__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Closing Volume Purchase --></label>
+        <name>QLMS_6_Month_Closing_Volume_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Closing Volume Refi --></label>
+        <name>QLMS_6_Month_Closing_Volume_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Closing Volume --></label>
+        <name>QLMS_6_Month_Closing_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Closings Purchase --></label>
+        <name>QLMS_6_Month_Closings_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Closings Refi --></label>
+        <name>QLMS_6_Month_Closings_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Closings --></label>
+        <name>QLMS_6_Month_Closings__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Folder Volume Purchase --></label>
+        <name>QLMS_6_Month_Folder_Volume_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Folder Volume Refi --></label>
+        <name>QLMS_6_Month_Folder_Volume_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Folder Volume --></label>
+        <name>QLMS_6_Month_Folder_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Folders Purchase --></label>
+        <name>QLMS_6_Month_Folders_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Folders Refi --></label>
+        <name>QLMS_6_Month_Folders_Refi__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS 6 Month Folders --></label>
+        <name>QLMS_6_Month_Folders__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS Account Executive --></label>
+        <name>QLMS_Account_Executive__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS Contact ID --></label>
+        <name>QLMS_Contact_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS First Name --></label>
+        <name>QLMS_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecType of Acc --></label>
+        <name>RecType_of_Acc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Branch --></label>
+        <name>Related_Branch__c</name>
+        <relationshipLabel><!-- Business Individuals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SSN --></label>
+        <name>SSN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scenarios Ran YTD --></label>
+        <name>Scenarios_Ran_YTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scenarios Saved Last Month --></label>
+        <name>Scenarios_Saved_Last_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scenarios Saved MTD --></label>
+        <name>Scenarios_Saved_MTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scenarios Saved YTD --></label>
+        <name>Scenarios_Saved_YTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Email --></label>
+        <name>Secondary_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Name --></label>
+        <name>Source_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Zone --></label>
+        <name>Time_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+        <picklistValues>
+            <masterLabel>Assistant Loan Officer</masterLabel>
+            <translation><!-- Assistant Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billing Contact</masterLabel>
+            <translation><!-- Billing Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Branch Manager</masterLabel>
+            <translation><!-- Branch Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Officer</masterLabel>
+            <translation><!-- Loan Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner</masterLabel>
+            <translation><!-- Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post close contact</masterLabel>
+            <translation><!-- Post close contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Principal</masterLabel>
+            <translation><!-- Principal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing manager</masterLabel>
+            <translation><!-- Processing manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processor</masterLabel>
+            <translation><!-- Processor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QL Banker</masterLabel>
+            <translation><!-- QL Banker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional Manager</masterLabel>
+            <translation><!-- Regional Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Market</masterLabel>
+            <translation><!-- Secondary Market --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third party closer</masterLabel>
+            <translation><!-- Third party closer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>Username__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Test --></label>
+        <name>rh2__Currency_Test__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe --></label>
+        <name>rh2__Describe__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Formula Test --></label>
+        <name>rh2__Formula_Test__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integer Test --></label>
+        <name>rh2__Integer_Test__c</name>
+    </fields>
+    <fields>
+        <label><!-- userLoginId --></label>
+        <name>userLoginId__c</name>
+    </fields>
+    <fieldSets>
+        <label><!-- Mass Transfer Contacts: Results List Columns --></label>
+        <name>MassTransferContacts_Results_List_Column</name>
+    </fieldSets>
+    <layouts>
+        <layout>Approved Individuals Layout</layout>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Banker</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Client Portal User</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Committed Partner Portal User</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Ownership/Corporate Resolution --></label>
+            <section>Ownership/Corporate Resolution</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Purchase Production --></label>
+            <section>QLMS Purchase Production</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Refinance Production --></label>
+            <section>QLMS Refinance Production</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Total Production --></label>
+            <section>QLMS Total Production</section>
+        </sections>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>General</layout>
+        <sections>
+            <label><!-- Ownership/Corporate Resolution --></label>
+            <section>Ownership/Corporate Resolution</section>
+        </sections>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Individual Leads Layout</layout>
+        <sections>
+            <label><!-- Related users --></label>
+            <section>Related users</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Portal User</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Moved Fields --></label>
+            <section>Moved Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Ownership/Corporate Resolution --></label>
+            <section>Ownership/Corporate Resolution</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Purchase Production --></label>
+            <section>QLMS Purchase Production</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Refinance Production --></label>
+            <section>QLMS Refinance Production</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Total Production --></label>
+            <section>QLMS Total Production</section>
+        </sections>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Potential Partner Portal User</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Ownership/Corporate Resolution --></label>
+            <section>Ownership/Corporate Resolution</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Purchase Production --></label>
+            <section>QLMS Purchase Production</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Refinance Production --></label>
+            <section>QLMS Refinance Production</section>
+        </sections>
+        <sections>
+            <label><!-- QLMS Total Production --></label>
+            <section>QLMS Total Production</section>
+        </sections>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Email --></label>
+        <name>Email</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_a_Call_2</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task_2</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Approved Individuals --></label>
+        <name>Approved_Individuals</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Banker --></label>
+        <name>Banker</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Client Portal User --></label>
+        <name>Client_Portal_User</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Committed Partner Portal User --></label>
+        <name>Committed_Partner_Portal_User</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- General --></label>
+        <name>General</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Individual Leads --></label>
+        <name>Individual_Leads</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Partner Portal User --></label>
+        <name>Partner_Portal_User</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Potential Partner Portal User --></label>
+        <name>Potential_Partner_Portal_User</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Account Executive Team can choose only &apos;New&apos; --></errorMessage>
+        <name>Contact_AE_Field_Validation_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not authorized for desired Action! --></errorMessage>
+        <name>Contact_AE_Validation_Rule_for_New</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Email format doesn&apos;t exist --></errorMessage>
+        <name>EmailMustBeAnEmailFormat</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Phone number must be 10 digit number. --></errorMessage>
+        <name>Office_Phone_must_have_10_digit_no</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Phone number must Contain 10 digits number,and should not start with 0. --></errorMessage>
+        <name>Phone10DigitNumber</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This is a required field. --></errorMessage>
+        <name>Username_Required_if_checkbox_checked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You Cannot change Username. --></errorMessage>
+        <name>Username_cannot_change_while_Update</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cell must Contain 10 digits number,and should not start with 0. --></errorMessage>
+        <name>cellMustContain10Digits</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Source Name must contain value. --></errorMessage>
+        <name>checkSourceName_LeadSource</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Trade Show must contain value. --></errorMessage>
+        <name>checkTradeShow_LeadSource</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the value, once it checked. --></errorMessage>
+        <name>checkbox_cannot_change_while_update</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please choose the Partner Denial Reason --></errorMessage>
+        <name>partner_denial_reasons</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Start_Zoom_Meeting --></label>
+        <name>zoom_app__Start_Zoom_Meeting</name>
+    </webLinks>
+</CustomObjectTranslation>

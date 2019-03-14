@@ -112,7 +112,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Loan_New__c.Waiting_for_Full_Package_Date__c</reportColumn>
+                        <reportColumn>Loan_New__c.Waiting_for_Full_Package_Date0__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
@@ -127,7 +127,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Loan_New__c.Waiting_for_Full_Package_Date__c</sortColumn>
+                        <sortColumn>FK_ACC_OWNER_NAME</sortColumn>
                         <sortOrder>2</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -152,7 +152,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Loan_New__c.In_Processing_Date__c</reportColumn>
+                        <reportColumn>Loan_New__c.In_Underwriting_Review_Date__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
@@ -167,7 +167,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Loan_New__c.In_Processing_Date__c</sortColumn>
+                        <sortColumn>FK_ACC_OWNER_NAME</sortColumn>
                         <sortOrder>2</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>

@@ -25,6 +25,19 @@
         <senderType>CurrentUser</senderType>
         <template>reOS_Email_Templates/reOS_Email_Alert_Loan</template>
     </alerts>
+    <alerts>
+        <fullName>Alert_Withdrawn_Loan_after_In_processing_before_Final_HUD_Review</fullName>
+        <ccEmails>ORMSVendor@onereverse.com</ccEmails>
+        <description>Alert: Withdrawn Loan after In processing, before Final HUD Review</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>danny@onereverse.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>ormssupport@onereverse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Alert_Loan_Withdrawn_w_Criteria</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Extend_Application_Time</fullName>
         <field>Extend_Application_Time__c</field>
@@ -56,18 +69,16 @@
         <fullName>Update_Goal_Field</fullName>
         <field>Goal__c</field>
         <formula>IF(CONTAINS(Closing_Month__c,'None'),0,
-IF(CONTAINS(Closing_Month__c,'January  2018'),0,
-IF(CONTAINS(Closing_Month__c,'February  2018'),0,
-IF(CONTAINS(Closing_Month__c,'March  2018'),0,
-IF(CONTAINS(Closing_Month__c,'April  2018'),0,
-IF(CONTAINS(Closing_Month__c,'May  2018'),0,
 IF(CONTAINS(Closing_Month__c,'June  2018'),7,
 IF(CONTAINS(Closing_Month__c,'July  2018'),10,
 IF(CONTAINS(Closing_Month__c,'August  2018'),10,
 IF(CONTAINS(Closing_Month__c,'September  2018'),11,
 IF(CONTAINS(Closing_Month__c,'October  2018'),15,
 IF(CONTAINS(Closing_Month__c,'November  2018'),24,
-IF(CONTAINS(Closing_Month__c,'December  2018'),22, IF(CONTAINS(Closing_Month__c,'January  2019'),27,0 ))))))))))))))</formula>
+IF(CONTAINS(Closing_Month__c,'December  2018'),22,
+IF(CONTAINS(Closing_Month__c,'January  2019'),27,
+IF(CONTAINS(Closing_Month__c,'February  2019'),23,
+IF(CONTAINS(Closing_Month__c,'March  2019'),22, 0 )))))))))))</formula>
         <name>Update Goal Field</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>

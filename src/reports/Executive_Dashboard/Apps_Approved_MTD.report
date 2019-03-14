@@ -42,13 +42,7 @@
             <column>RECORDTYPE</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>,Account.Committed_Partner,Account.Partners,Account.Potential_Partners,Account.Approved_Partners,Account.Partner_Leads</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>USERS.NAME</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>contains</operator>
-            <value>Brian Burgan,james raymond,josh posner,kathy martinez</value>
+            <value>Account.Committed_Partner,Account.Partners,Account.Potential_Partners,Account.Approved_Partners,Account.Partner_Leads</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

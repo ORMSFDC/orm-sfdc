@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>Renewal_Approved</fullName>
-        <ccEmails>dannymcguffin@quickenloans.com</ccEmails>
+        <ccEmails>ormsrenewals@onereverse.com</ccEmails>
         <description>Renewal Approved</description>
         <protected>false</protected>
         <recipients>
@@ -24,7 +24,8 @@
             <type>email</type>
         </recipients>
         <recipients>
-            <type>owner</type>
+            <recipient>danny@onereverse.com</recipient>
+            <type>user</type>
         </recipients>
         <senderAddress>ormsrenewals@onereverse.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
@@ -32,12 +33,15 @@
     </alerts>
     <alerts>
         <fullName>Renewal_Withdrawn</fullName>
-        <ccEmails>dannymcguffin@quickenloans.com</ccEmails>
+        <ccEmails>ormsrenewals@onereverse.com</ccEmails>
         <description>Renewal Withdrawn</description>
         <protected>false</protected>
         <recipients>
             <field>Primary_Contact_Email__c</field>
             <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
         </recipients>
         <senderAddress>ormsrenewals@onereverse.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>

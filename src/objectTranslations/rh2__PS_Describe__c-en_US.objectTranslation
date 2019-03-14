@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account --></label>
+        <name>rh2__Account__c</name>
+        <relationshipLabel><!-- Describes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Asynchronous --></label>
+        <name>rh2__Asynchronous__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact2 --></label>
+        <name>rh2__Contact2__c</name>
+        <relationshipLabel><!-- Describes (Contact2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact3 --></label>
+        <name>rh2__Contact3__c</name>
+        <relationshipLabel><!-- Describes (Contact3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>rh2__Contact__c</name>
+        <relationshipLabel><!-- Describes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Last Record Id --></label>
+        <name>rh2__Data_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Realtime --></label>
+        <name>rh2__Disable_Realtime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Currency with Foreign Key --></label>
+        <name>rh2__Foreign_Key_Test_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hierarchy Test 2 --></label>
+        <name>rh2__Hierarchy_Test_2__c</name>
+        <relationshipLabel><!-- Describes (Heirachy Test 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Test Hierarchy --></label>
+        <name>rh2__Hierarchy_Test__c</name>
+        <relationshipLabel><!-- Describes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Label --></label>
+        <name>rh2__Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>rh2__Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>rh2__Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Real Time --></label>
+        <name>rh2__Real_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 10 --></label>
+        <name>rh2__Rollup_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 11 --></label>
+        <name>rh2__Rollup_11__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 12 --></label>
+        <name>rh2__Rollup_12__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 13 --></label>
+        <name>rh2__Rollup_13__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 14 --></label>
+        <name>rh2__Rollup_14__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 15 --></label>
+        <name>rh2__Rollup_15__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 16 --></label>
+        <name>rh2__Rollup_16__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 17 --></label>
+        <name>rh2__Rollup_17__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 18 --></label>
+        <name>rh2__Rollup_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 19 --></label>
+        <name>rh2__Rollup_19__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asynchronous Reason --></label>
+        <name>rh2__Rollup_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 20 --></label>
+        <name>rh2__Rollup_20__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 21 --></label>
+        <name>rh2__Rollup_21__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 22 --></label>
+        <name>rh2__Rollup_22__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 23 --></label>
+        <name>rh2__Rollup_23__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 24 --></label>
+        <name>rh2__Rollup_24__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 25 --></label>
+        <name>rh2__Rollup_25__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 26 --></label>
+        <name>rh2__Rollup_26__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 27 --></label>
+        <name>rh2__Rollup_27__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 28 --></label>
+        <name>rh2__Rollup_28__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 29 --></label>
+        <name>rh2__Rollup_29__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 02 --></label>
+        <name>rh2__Rollup_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 30 --></label>
+        <name>rh2__Rollup_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 31 --></label>
+        <name>rh2__Rollup_31__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 32 --></label>
+        <name>rh2__Rollup_32__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 33 --></label>
+        <name>rh2__Rollup_33__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 34 --></label>
+        <name>rh2__Rollup_34__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 35 --></label>
+        <name>rh2__Rollup_35__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 36 --></label>
+        <name>rh2__Rollup_36__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 37 --></label>
+        <name>rh2__Rollup_37__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 38 --></label>
+        <name>rh2__Rollup_38__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 39 --></label>
+        <name>rh2__Rollup_39__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 03 --></label>
+        <name>rh2__Rollup_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 40 --></label>
+        <name>rh2__Rollup_40__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 41 --></label>
+        <name>rh2__Rollup_41__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 42 --></label>
+        <name>rh2__Rollup_42__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 43 --></label>
+        <name>rh2__Rollup_43__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 44 --></label>
+        <name>rh2__Rollup_44__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 45 --></label>
+        <name>rh2__Rollup_45__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 46 --></label>
+        <name>rh2__Rollup_46__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 47 --></label>
+        <name>rh2__Rollup_47__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 48 --></label>
+        <name>rh2__Rollup_48__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 49 --></label>
+        <name>rh2__Rollup_49__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 04 --></label>
+        <name>rh2__Rollup_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 50 --></label>
+        <name>rh2__Rollup_50__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 51 --></label>
+        <name>rh2__Rollup_51__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 52 --></label>
+        <name>rh2__Rollup_52__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 53 --></label>
+        <name>rh2__Rollup_53__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 54 --></label>
+        <name>rh2__Rollup_54__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 55 --></label>
+        <name>rh2__Rollup_55__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 56 --></label>
+        <name>rh2__Rollup_56__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 57 --></label>
+        <name>rh2__Rollup_57__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 58 --></label>
+        <name>rh2__Rollup_58__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 59 --></label>
+        <name>rh2__Rollup_59__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 05 --></label>
+        <name>rh2__Rollup_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 60 --></label>
+        <name>rh2__Rollup_60__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 61 --></label>
+        <name>rh2__Rollup_61__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 62 --></label>
+        <name>rh2__Rollup_62__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 63 --></label>
+        <name>rh2__Rollup_63__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 64 --></label>
+        <name>rh2__Rollup_64__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 65 --></label>
+        <name>rh2__Rollup_65__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 66 --></label>
+        <name>rh2__Rollup_66__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 06 --></label>
+        <name>rh2__Rollup_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 07 --></label>
+        <name>rh2__Rollup_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 08 --></label>
+        <name>rh2__Rollup_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup 09 --></label>
+        <name>rh2__Rollup_9__c</name>
+    </fields>
+    <fields>
+        <label><!-- zDeprecated --></label>
+        <name>rh2__Selected__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum Integer Double --></label>
+        <name>rh2__Sum_Integer_Double__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Checkbox --></label>
+        <name>rh2__Test_Checkbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Currency --></label>
+        <name>rh2__Test_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Date Time --></label>
+        <name>rh2__Test_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Date --></label>
+        <name>rh2__Test_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Double --></label>
+        <name>rh2__Test_Double__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test End Date --></label>
+        <name>rh2__Test_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Formula FK Formula --></label>
+        <name>rh2__Test_Formula_FK_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Formula --></label>
+        <name>rh2__Test_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Integer2 --></label>
+        <name>rh2__Test_Integer2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Integer --></label>
+        <name>rh2__Test_Integer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test_Long_Text --></label>
+        <name>rh2__Test_Long_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Multi-Picklist --></label>
+        <name>rh2__Test_Multi_Picklist__c</name>
+        <picklistValues>
+            <masterLabel>Test 1</masterLabel>
+            <translation><!-- Test 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test 2</masterLabel>
+            <translation><!-- Test 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Percent --></label>
+        <name>rh2__Test_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Picklist --></label>
+        <name>rh2__Test_Picklist__c</name>
+        <picklistValues>
+            <masterLabel>Test 1</masterLabel>
+            <translation><!-- Test 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test 2</masterLabel>
+            <translation><!-- Test 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Rich Text --></label>
+        <name>rh2__Test_Rich_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Small Number --></label>
+        <name>rh2__Test_Small_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>rh2__User__c</name>
+        <relationshipLabel><!-- Describes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Validation Test Int --></label>
+        <name>rh2__Validation_Test_Int__c</name>
+    </fields>
+    <layouts>
+        <layout>Describe Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- You have been stopped from changing Test Integer by a validation rule. --></errorMessage>
+        <name>rh2__Block_Test_Int_Changes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Test error for PS_Error_Handler --></errorMessage>
+        <name>rh2__Test_Rollup_Exception_Error_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Test error for PS_Error_Handler Second --></errorMessage>
+        <name>rh2__Test_Rollup_Exception_Error_2</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- View_All_Rollup_Settings --></label>
+        <name>rh2__View_All_Rollup_Settings</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -13,22 +13,31 @@
         <field>Loan_New__c.Loan_Status_Change_Date__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.Last_Chatter_Activity__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Mortgage_Applied_for__c</field>
+        <field>Loan_New__c.In_Processing_Date0__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Subject_Property_State__c</field>
+        <field>Loan_New__c.PCS_at_Loan_Level__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Rate_Type__c</field>
+        <field>Loan_New__c.PropertyAppraisalValue__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Appraisal_Scheduled_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Appraisal_Delivery__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Appraisal_sent_to_Client_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Anticipated_Closing_Date__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.PCS_at_Partner_Level__c</field>
+        <field>Loan_New__c.Subject_Property_State__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Title_Company__c</field>
@@ -39,30 +48,12 @@
     <columns>
         <field>Loan_New__c.Related_Partner__c</field>
     </columns>
-    <columns>
-        <field>Loan_New__c.Appraisal_Delivery__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Appraisal_sent_to_Client_Date__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.PropertyAppraisalValue__c</field>
-    </columns>
-    <columns>
-        <field>CUST_NAME</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Last_Chatter_Activity__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Appraisal_Scheduled_Date__c</field>
-    </columns>
     <filter>
         <criteriaItems>
             <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Proposal,Waiting for Full Package,Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+            <value>Application Package Received,Loan Submission Received- Awaiting Review,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Docs Out to Settlement Agent,Closed - Awaiting Funding,Suspended</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.Related_Partner__c</column>
@@ -87,6 +78,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
+    <sortColumn>Loan_New__c.Loan_Status_Change_Date__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

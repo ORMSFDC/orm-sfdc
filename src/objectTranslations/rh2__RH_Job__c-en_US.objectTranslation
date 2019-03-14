@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Active --></label>
+        <name>rh2__Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Class --></label>
+        <name>rh2__ApexClassName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Size --></label>
+        <name>rh2__BatchSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- Increment --></label>
+        <name>rh2__Increment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Run --></label>
+        <name>rh2__NextFireTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Condition Name --></label>
+        <name>rh2__Parent_Condition_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Run --></label>
+        <name>rh2__PreviousFireTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup Name --></label>
+        <name>rh2__Rollup_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- RunForAllRecords --></label>
+        <name>rh2__RunForAllRecords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule Name --></label>
+        <name>rh2__Schedule_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit --></label>
+        <name>rh2__Unit__c</name>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Months</masterLabel>
+            <translation><!-- Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weeks</masterLabel>
+            <translation><!-- Weeks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Years</masterLabel>
+            <translation><!-- Years --></translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Must enter a value that is greater than or equal to 1. --></errorMessage>
+        <name>rh2__Positive_Increment</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -89,6 +89,10 @@
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
+        <settingName>PardotAppV1Enabled</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
         <settingName>VerifyOn2faRegistration</settingName>
         <settingValue>true</settingValue>
     </preferences>
@@ -113,6 +117,10 @@
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
+        <settingName>PortalUserShareOnCase</settingName>
+        <settingValue>true</settingValue>
+    </preferences>
+    <preferences>
         <settingName>ReportDataCaptureEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -133,7 +141,11 @@
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
-        <settingName>PardotAppV1Enabled</settingName>
+        <settingName>CallDispositionEnabled</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>VoiceConferencingEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
@@ -173,7 +185,15 @@
         <settingValue>true</settingValue>
     </preferences>
     <preferences>
+        <settingName>ConsentManagementEnabled</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
         <settingName>ApexApprovalLockUnlock</settingName>
+        <settingValue>false</settingValue>
+    </preferences>
+    <preferences>
+        <settingName>PRMAccRelPref</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>

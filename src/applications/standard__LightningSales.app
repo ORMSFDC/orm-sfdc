@@ -239,6 +239,15 @@
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <recordType>Opportunity.Partner_Onboarding</recordType>
         <type>Flexipage</type>
+        <profile>QLMS Account Executive</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page6</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Partner_Onboarding</recordType>
+        <type>Flexipage</type>
         <profile>Chatter External User</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -412,15 +421,6 @@
         <type>Flexipage</type>
         <profile>Prospective Partner Users</profile>
     </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Opportunity_Record_Page6</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
-        <recordType>Opportunity.Partner_Onboarding</recordType>
-        <type>Flexipage</type>
-        <profile>QLMS Account Executive</profile>
-    </profileActionOverrides>
     <tabs>My_Home1</tabs>
     <tabs>CRA_Dashboard</tabs>
     <tabs>PCS_Hotlist</tabs>
@@ -432,6 +432,7 @@
     <tabs>Scenario__c</tabs>
     <tabs>Loan_New__c</tabs>
     <tabs>Client__c</tabs>
+    <tabs>PCS_Underwriter</tabs>
     <tabs>Error_Log__c</tabs>
     <tabs>RunScenario__c</tabs>
     <tabs>PCS_Workflow</tabs>

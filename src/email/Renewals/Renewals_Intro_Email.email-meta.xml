@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To be used for Renewals Alert Intro Email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Renewals Intro Email</name>
+    <style>none</style>
+    <subject>It&apos;s time to renew!</subject>
+    <textOnly>Time to Renew!
+WE DON&apos;T WANT TO LOSE YOU!
+
+Hello {!Contact.FirstName},
+
+This is a friendly reminder that your renewal is due with One Reverse Mortgage Services, Please make sure to renew as soon as possible to avoid any disruption in your ability to:
+
+- Access to the ORMS Portal to register new loans.
+- Receive exceptional support and knowledge from the ORMS team.
+
+Please Submit
+
+1. Most recent unaudited Balance Sheet and Profit and Loss Summary (Not applicable to Banks and Credit Unions)
+2. Renewal Questionnaire (Attached)
+
+The documents should be sent to ORMSRenewals@onereverse.com or reply to this email. We appreciate your partnership and look forward to future success with you.
+
+Let&apos;s Get Started!
+
+4445 Eastgate Mall, Ste 320, San Diego, CA 92121</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

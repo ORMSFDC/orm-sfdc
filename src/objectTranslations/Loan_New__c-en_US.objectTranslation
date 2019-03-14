@@ -137,10 +137,6 @@
         <name>Client_s_credit_score__c</name>
     </fields>
     <fields>
-        <label><!-- Closed – Awaiting Funding Date --></label>
-        <name>Closed_Awaiting_Funding_Date__c</name>
-    </fields>
-    <fields>
         <label><!-- Actual Closing Date* --></label>
         <name>Closing_Date__c</name>
     </fields>
@@ -152,10 +148,6 @@
         <label><!-- Condition --></label>
         <name>Condition__c</name>
         <relationshipLabel><!-- Loans --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Conditionally Approved Date --></label>
-        <name>Conditionally_Approved_Date__c</name>
     </fields>
     <fields>
         <label><!-- Condominium FHA Approved --></label>
@@ -273,10 +265,6 @@
         <help><!-- To check whether the PCS assigned is the current user, for giving a list view --></help>
         <label><!-- Current User is Assigned PCS? --></label>
         <name>Current_User_is_Assigend_PCS__c</name>
-    </fields>
-    <fields>
-        <label><!-- Denied Date --></label>
-        <name>Denied_Date__c</name>
     </fields>
     <fields>
         <label><!-- Discounted Value --></label>
@@ -458,10 +446,6 @@
     <fields>
         <label><!-- If yes, Name of POA --></label>
         <name>If_yes_Name_of_POA__c</name>
-    </fields>
-    <fields>
-        <label><!-- In Processing Date --></label>
-        <name>In_Processing_Date__c</name>
     </fields>
     <fields>
         <label><!-- Income and Asset Documentation --></label>
@@ -1266,10 +1250,6 @@
         <name>Subject_Property_Zip_Code__c</name>
     </fields>
     <fields>
-        <label><!-- Suspended Date --></label>
-        <name>Suspended_Date__c</name>
-    </fields>
-    <fields>
         <help><!-- Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name) --></help>
         <label><!-- Team --></label>
         <name>Team__c</name>
@@ -1362,10 +1342,6 @@
     <fields>
         <label><!-- Waiting for Full App Date --></label>
         <name>Waiting_for_Full_App_Date__c</name>
-    </fields>
-    <fields>
-        <label><!-- Waiting for Full Package Date --></label>
-        <name>Waiting_for_Full_Package_Date__c</name>
     </fields>
     <fields>
         <label><!-- Withdrawn Date --></label>
@@ -1592,6 +1568,130 @@
         <name>Internal_Notes__c</name>
     </fields>
     <fields>
+        <label><!-- AE On Close --></label>
+        <name>AE_On_Close__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Type --></label>
+        <name>Account_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Incomplete Date --></label>
+        <name>App_Incomplete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Requested Date --></label>
+        <name>App_Requested_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- App To Folder Days --></label>
+        <name>App_To_Folder_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Disclosure Signed Date --></label>
+        <name>Application_Disclosure_Signed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clear to Close Date --></label>
+        <name>Clear_to_Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed - Awaiting Funding Date --></label>
+        <name>Closed_Awaiting_Funding_Date0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed – Awaiting Funding Date (old) --></label>
+        <name>Closed_Awaiting_Funding_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conditionally Approved Date --></label>
+        <name>Conditionally_Approved_Date0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conditionally Approved Date (old) --></label>
+        <name>Conditionally_Approved_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cooling Off Expiration Date --></label>
+        <name>Cooling_Off_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Expiration Date --></label>
+        <name>Credit_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Denied Date --></label>
+        <name>Denied_Date0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Denied Date (old) --></label>
+        <name>Denied_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Docs Out to Settlement Agent Date --></label>
+        <name>Docs_Out_to_Settlement_Agent_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Folder to Close Days --></label>
+        <name>Folder_to_Close_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula: Closed --></label>
+        <name>Formula_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula: HECM --></label>
+        <name>Formula_HECM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula: HELO --></label>
+        <name>Formula_HELO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula: FRC --></label>
+        <name>Formula_In_Processing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula: Inactive --></label>
+        <name>Formula_Inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula: In Processing --></label>
+        <name>Formula_IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula: Waiting For Full Package --></label>
+        <name>Formula_Waiting_For_Full_Package__c</name>
+    </fields>
+    <fields>
+        <label><!-- How was the Withdrawn status captured? --></label>
+        <name>How_was_the_Withdrawn_status_captured__c</name>
+        <picklistValues>
+            <masterLabel>ORMS Partner</masterLabel>
+            <translation><!-- ORMS Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- In Processing Date --></label>
+        <name>In_Processing_Date0__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Processing Date (old) --></label>
+        <name>In_Processing_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Underwriting Review Date --></label>
+        <name>In_Underwriting_Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Final HUD Review Date --></label>
+        <name>In_final_HUD_Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last AE Call to Contact --></label>
+        <name>Last_AE_Call_to_Contact__c</name>
+    </fields>
+    <fields>
         <label><!-- LoanStatus* --></label>
         <name>LoanStatus__c</name>
         <picklistValues>
@@ -1599,12 +1699,16 @@
             <translation><!-- Application Approved but Not Accepted --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Application Incomplete</masterLabel>
+            <translation><!-- Application Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Application Requested</masterLabel>
             <translation><!-- Application Requested --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Awaiting Closing</masterLabel>
-            <translation><!-- Awaiting Closing --></translation>
+            <masterLabel>Clear to Close</masterLabel>
+            <translation><!-- Clear to Close --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Closed - Awaiting Funding</masterLabel>
@@ -1619,40 +1723,52 @@
             <translation><!-- Denied --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Docs Out to Settlement Agent</masterLabel>
+            <translation><!-- Docs Out to Settlement Agent --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>File Closed for Incompleteness</masterLabel>
             <translation><!-- File Closed for Incompleteness --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Full Application Received - Incomplete</masterLabel>
-            <translation><!-- Full Application Received - Incomplete --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Full Package Received</masterLabel>
-            <translation><!-- Full Package Received --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Funded</masterLabel>
-            <translation><!-- Funded --></translation>
+            <masterLabel>In Final HUD Review</masterLabel>
+            <translation><!-- In Final HUD Review --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>In Processing</masterLabel>
             <translation><!-- In Processing --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Incomplete</masterLabel>
-            <translation><!-- Incomplete --></translation>
+            <masterLabel>In Underwriting Review</masterLabel>
+            <translation><!-- In Underwriting Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Funded</masterLabel>
+            <translation><!-- Loan Funded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Rescinded</masterLabel>
+            <translation><!-- Loan Rescinded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Submission Received- Awaiting Review</masterLabel>
+            <translation><!-- Loan Submission Received- Awaiting Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Submitted - Incomplete</masterLabel>
+            <translation><!-- Loan Submitted - Incomplete --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Sandbox</masterLabel>
             <translation><!-- Sandbox --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Suspended</masterLabel>
-            <translation><!-- Suspended --></translation>
+            <masterLabel>Submitted to Lender</masterLabel>
+            <translation><!-- Submitted to Lender --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Underwriting Clear to Close</masterLabel>
-            <translation><!-- Underwriting Clear to Close --></translation>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Waiting for Full Package</masterLabel>
@@ -1661,6 +1777,86 @@
         <picklistValues>
             <masterLabel>Withdrawn</masterLabel>
             <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Loan Funded Date --></label>
+        <name>Loan_Funded_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Received - Awaiting Review --></label>
+        <name>Loan_Received_Awaiting_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Rescinded Date --></label>
+        <name>Loan_Rescinded_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Submitted - Incomplete --></label>
+        <name>Loan_Submitted_Incomplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLMS AE --></label>
+        <name>QLMS_AE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted to Lender Date --></label>
+        <name>Submitted_to_Lender_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suspended Date --></label>
+        <name>Suspended_Date0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suspended Date (old) --></label>
+        <name>Suspended_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting for Full Package Date --></label>
+        <name>Waiting_for_Full_Package_Date0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting for Full Package Date (old) --></label>
+        <name>Waiting_for_Full_Package_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Who Requested the Withdraw? --></label>
+        <name>Who_Requested_the_Withdraw__c</name>
+    </fields>
+    <fields>
+        <label><!-- Withdrawn Date --></label>
+        <name>Withdrawn_Date0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Withdrawn Reason --></label>
+        <name>Withdrawn_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Another Lender - Better program/process</masterLabel>
+            <translation><!-- Another Lender - Better program/process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Another Lender - Better rate and/or fees</masterLabel>
+            <translation><!-- Another Lender - Better rate and/or fees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Another Lender - Realtor/builder referral</masterLabel>
+            <translation><!-- Another Lender - Realtor/builder referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chose Another Lender</masterLabel>
+            <translation><!-- Chose Another Lender --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client not Interested</masterLabel>
+            <translation><!-- Client not Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan no longer needed</masterLabel>
+            <translation><!-- Loan no longer needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No longer makes sense for Client</masterLabel>
+            <translation><!-- No longer makes sense for Client --></translation>
         </picklistValues>
     </fields><caseValues>
         <plural>false</plural>
@@ -1799,6 +1995,26 @@
     <validationRules>
         <errorMessage><!-- Account Number should be a valid number --></errorMessage>
         <name>validateAccountNumber</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If &apos;Withdrawn&apos; is selected in the LoanStatus picklist, then the &apos;Who Requested the Withdraw?&apos; text box must be filled. --></errorMessage>
+        <name>Must_fill_Who_on_Withdrawn</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Texas Loan: The Closing Date cannot be within 12 days of the Application Disclosure Signed Date --></errorMessage>
+        <name>Texas_Loan_Validation_on_Closing_Dates</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Utah Loan: Counseling Date must be prior to the Application Date --></errorMessage>
+        <name>Utah_Counseling_Date_Prior_to_App_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Utah Loan: Counseling Date must be prior to the Application Date --></errorMessage>
+        <name>Utah_HELO_App_Signed_after_Counseling</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Scheduled Closing Date cannot be prior to Cooling off Expiration Date --></errorMessage>
+        <name>Utah_HELO_Cooling_Off_Period</name>
     </validationRules>
     <webLinks>
         <label><!-- Export_Excel --></label>

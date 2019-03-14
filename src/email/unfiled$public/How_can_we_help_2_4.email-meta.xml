@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>How can we help 2/4</name>
+    <style>none</style>
+    <subject>Extra Client Income</subject>
+    <textOnly>Hi {!Contact.Preferred_First_Name__c},
+
+You’ve probably seen the news – older folks are no longer comfortable living on Social Security alone:
+
+Since 2000, the cost of living has outpaced Social Security benefits by 34%.
+Many seniors rely on Social Security for 90% of their income.
+Social Security’s trust fund is projected to run out by 2034 – that’s a 21% reduction in benefits.
+
+More than ever, seniors need to supplement their income.
+
+That’s where a HECM can come in handy. When can we chat this week about how to present this to senior borrowers?
+
+{!Contact.OwnerFullName}
+{!Contact.OwnerTitle}
+
+Direct: {!Contact.OwnerPhone}
+Mobile: {!Contact.OwnerMobile__c}
+Toll Free: (800) 655-8533 ext. {!Contact.OwnerExtension__c}
+Email: {!Contact.OwnerEmail}
+Fax: {!Contact.OwnerFax__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

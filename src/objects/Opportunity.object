@@ -987,11 +987,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>PartnerAccountId</fullName>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Partner_Addendum_Signed_Date__c</fullName>
         <externalId>false</externalId>
         <label>Partner Addendum Signed Date</label>
@@ -1695,6 +1690,448 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Federal_Tax_ID_EIN__c</fullName>
+        <externalId>false</externalId>
+        <label>Federal Tax ID/EIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LOX_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>LOX Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LOX_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LOX Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LOX_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LOX Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MARI_LOX_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>MARI LOX Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MARI_LOX_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MARI LOX Received</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MARI_LOX_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MARI LOX Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PCS_at_Account_Level__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Assigned_PCS__r.FUll_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PCS at Account Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Date_for_Renewal__c</fullName>
+        <externalId>false</externalId>
+        <formula>Renewal_App_Outstanding_Date__c + 35</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Date for Renewal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Original_Approved_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Original Approved Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Primary_contact_name__r.FirstName &amp; " " &amp;  Account.Primary_contact_name__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Primary_Contact_Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QLMS_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is or has this partner ever been a QLMS Approved Partner?</description>
+        <externalId>false</externalId>
+        <label>QLMS Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QLMS_Provided_Docs__c</fullName>
+        <externalId>false</externalId>
+        <label>QLMS Provided Docs</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Denied_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Denied Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Outstanding_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Outstanding Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_App_Pending_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal App Pending Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Denied_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Denied Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>StageName</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Background_Check</fullName>
+                    <default>false</default>
+                    <label>Background Check</label>
+                </value>
+                <value>
+                    <fullName>Incomplete_Application</fullName>
+                    <default>false</default>
+                    <label>Incomplete Application</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Renewal Denied</controllingFieldValue>
+                <valueName>Background_Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Denied</controllingFieldValue>
+                <valueName>Incomplete_Application</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Renewal_Docs_Required_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Docs Required Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Escalated_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Escalated Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Pending_Seasoning_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Pending Seasoning Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Questionnaire_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Questionnaire Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Reviewing_Docs_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Reviewing Docs Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Withdrawn Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Withdrawn_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Withdrawn Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>StageName</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Background_Check</fullName>
+                    <default>false</default>
+                    <label>Background Check</label>
+                </value>
+                <value>
+                    <fullName>DTRT</fullName>
+                    <default>false</default>
+                    <label>DTRT</label>
+                </value>
+                <value>
+                    <fullName>Non_Renewal</fullName>
+                    <default>false</default>
+                    <label>Non-Renewal</label>
+                </value>
+                <value>
+                    <fullName>Partner_Request</fullName>
+                    <default>false</default>
+                    <label>Partner Request</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Background_Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>DTRT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Non_Renewal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
+                <valueName>Partner_Request</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stage_Date_Change_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage Change Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Updated_Financial_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financial Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Updated_Financials_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Updated Financials Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Other_Denial__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Denial</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Withdrawn__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Withdrawn</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>E_sign_Addendum_Provider__c</fullName>
         <externalId>false</externalId>
         <label>E-sign Addendum Provider</label>
@@ -2377,450 +2814,21 @@
                     <default>false</default>
                     <label>ZorroSign eSignature</label>
                 </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Federal_Tax_ID_EIN__c</fullName>
-        <externalId>false</externalId>
-        <label>Federal Tax ID/EIN</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>LOX_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>LOX Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>LOX_Received__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>LOX Received</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>LOX_Required__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>LOX Required</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>MARI_LOX_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>MARI LOX Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>MARI_LOX_Received__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>MARI LOX Received</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>MARI_LOX_Required__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>MARI LOX Required</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>PCS_at_Account_Level__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.Assigned_PCS__r.FUll_Name__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>PCS at Account Level</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Approval_Date_for_Renewal__c</fullName>
-        <externalId>false</externalId>
-        <formula>Renewal_App_Outstanding_Date__c + 35</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Approval Date for Renewal</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Original_Approved_Date__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.Original_Approved_Date__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Original Approved Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Primary_Contact_Email__c</fullName>
-        <externalId>false</externalId>
-        <label>Primary Contact Email</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Primary_Contact__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.Primary_contact_name__r.FirstName &amp; " " &amp;  Account.Primary_contact_name__r.LastName</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Primary Contact</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Primary_Email__c</fullName>
-        <externalId>false</externalId>
-        <formula>Account.Primary_Contact_Email__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Primary Email</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>QLMS_Approved__c</fullName>
-        <defaultValue>false</defaultValue>
-        <description>Is or has this partner ever been a QLMS Approved Partner?</description>
-        <externalId>false</externalId>
-        <label>QLMS Approved</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>QLMS_Provided_Docs__c</fullName>
-        <externalId>false</externalId>
-        <label>QLMS Provided Docs</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
                 <value>
-                    <fullName>YES</fullName>
-                    <default>false</default>
-                    <label>YES</label>
-                </value>
-                <value>
-                    <fullName>NO</fullName>
-                    <default>false</default>
-                    <label>NO</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Renewal_App_Denied_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal App Denied Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_App_Outstanding_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal App Outstanding Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_App_Pending_Review_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal App Pending Review Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Approval_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Approval Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Denied_Reason__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Denied Reason</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <controllingField>StageName</controllingField>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Background_Check</fullName>
-                    <default>false</default>
-                    <label>Background Check</label>
-                </value>
-                <value>
-                    <fullName>Incomplete_Application</fullName>
-                    <default>false</default>
-                    <label>Incomplete Application</label>
-                </value>
-                <value>
-                    <fullName>Other</fullName>
+                    <fullName>ZipLogix</fullName>
                     <default>false</default>
                     <isActive>false</isActive>
-                    <label>Other</label>
+                    <label>ZipLogix</label>
                 </value>
             </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>Renewal Denied</controllingFieldValue>
-                <valueName>Background_Check</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Renewal Denied</controllingFieldValue>
-                <valueName>Incomplete_Application</valueName>
-            </valueSettings>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Renewal_Docs_Required_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Docs Required Date</label>
-        <required>false</required>
+        <fullName>PartnerAccountId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Escalated_Review_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Escalated Review Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Pending_Seasoning_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Pending Seasoning Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Questionnaire_Complete__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Questionnaire Complete</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Questionnaire_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Questionnaire Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Reviewing_Docs_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Reviewing Docs Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Withdrawn_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Withdrawn Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Renewal_Withdrawn_Reason__c</fullName>
-        <externalId>false</externalId>
-        <label>Renewal Withdrawn Reason</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <controllingField>StageName</controllingField>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Background_Check</fullName>
-                    <default>false</default>
-                    <label>Background Check</label>
-                </value>
-                <value>
-                    <fullName>DTRT</fullName>
-                    <default>false</default>
-                    <label>DTRT</label>
-                </value>
-                <value>
-                    <fullName>Non_Renewal</fullName>
-                    <default>false</default>
-                    <label>Non-Renewal</label>
-                </value>
-                <value>
-                    <fullName>Partner_Request</fullName>
-                    <default>false</default>
-                    <label>Partner Request</label>
-                </value>
-                <value>
-                    <fullName>Other</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Other</label>
-                </value>
-            </valueSetDefinition>
-            <valueSettings>
-                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
-                <valueName>Background_Check</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
-                <valueName>DTRT</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
-                <valueName>Non_Renewal</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Renewal Withdrawn</controllingFieldValue>
-                <valueName>Partner_Request</valueName>
-            </valueSettings>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Stage_Date_Change_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Stage Change Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Updated_Financial_Received_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Updated Financial Received Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Updated_Financials_Complete__c</fullName>
-        <externalId>false</externalId>
-        <label>Updated Financials Complete</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Other_Denial__c</fullName>
-        <externalId>false</externalId>
-        <label>Other Denial</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Other_Withdrawn__c</fullName>
-        <externalId>false</externalId>
-        <label>Other Withdrawn</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields><compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>

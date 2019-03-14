@@ -196,6 +196,11 @@
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>s!Contact.KPI_In_Processing__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>aggregate</type>
+                    </flexTableColumn>
                     <flexTableSortInfo>
                         <sortColumn>Contact.ORM_Account_Executive_Name__c</sortColumn>
                         <sortOrder>1</sortOrder>
@@ -221,7 +226,7 @@
                         <type>grouping</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_In_Processing__c</reportColumn>
+                        <reportColumn>s!Contact.KPI_In_UW_Review__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>

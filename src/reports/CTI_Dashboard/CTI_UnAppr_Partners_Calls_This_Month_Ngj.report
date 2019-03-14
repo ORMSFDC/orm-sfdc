@@ -38,6 +38,7 @@
         <field>CREATED_BY</field>
     </columns>
     <filter>
+        <booleanFilter>2 AND (1 OR 3)</booleanFilter>
         <criteriaItems>
             <column>Activity.CTI_Id__c</column>
             <isUnlocked>true</isUnlocked>
@@ -45,16 +46,16 @@
             <value></value>
         </criteriaItems>
         <criteriaItems>
-            <column>ACCOUNT.NAME</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value>Test Partner</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>ACCTRECORDTYPE</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>Account.Potential_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SUBJECT</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Call</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
