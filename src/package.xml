@@ -5118,6 +5118,16 @@
     <members>Renewal_Update_date_time_for_checkboxes-1</members>
     <members>Renewal_Update_date_time_for_checkboxes-2</members>
     <members>Renewal_Update_date_time_for_checkboxes-3</members>
+    <members>AE_On_Close-2</members>
+    <members>Automatic_Task_and_Email_to_AE_and_PCS-2</members>
+    <members>Email_Alert_For_Renewal-1</members>
+    <members>Loan_Dates_Update-1</members>
+    <members>Loan_Dates_Update-2</members>
+    <members>Loan_Status_Email_Alerts-5</members>
+    <members>Renewal_Approved_Process-1</members>
+    <members>Task_for_PCS_Before_Credit_Expiration_Date-1</members>
+    <members>Task_to_PCS_regarding_Loan_Status_and_Application_Date-4</members>
+    <members>Task_to_PCS_when_LoanStatus_is_Updated-2</members>
     <name>Flow</name>
   </types>
   <types>

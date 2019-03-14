@@ -49,26 +49,49 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>TODAY()</stringValue>
+                <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_3303802476</name>
-        <dataType>Date</dataType>
-        <expression>TODAY()</expression>
+        <name>formula_2_myRule_1_A1_2782397464</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
-                <stringValue>OR( ISNEW(), ISCHANGED([Loan_New__c].LoanStatus__c) )</stringValue>
+                <stringValue>NOW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_0089581951</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+ISNEW(),
+   AND(
+              ISCHANGED([Loan_New__c].LoanStatus__c),
+              ISPICKVAL([Loan_New__c].LoanStatus__c,&apos;Application Incomplete&apos;)
+    )
+)</stringValue>
             </value>
         </processMetadataValues>
         <name>formula_myRule_1</name>
         <dataType>Boolean</dataType>
-        <expression>OR( ISNEW(), ISCHANGED({!myVariable_current.LoanStatus__c}) )</expression>
+        <expression>OR(
+ISNEW(),
+   AND(
+              ISCHANGED({!myVariable_current.LoanStatus__c}),
+              ISPICKVAL({!myVariable_current.LoanStatus__c},&apos;Application Incomplete&apos;)
+    )
+)</expression>
     </formulas>
-    <interviewLabel>Loan_Status_Change_Date_Field_Update-1_InterviewLabel</interviewLabel>
-    <label>Loan Status Change Date Field Update</label>
+    <interviewLabel>Loan_Status_Change_Date_Field_Update-6_InterviewLabel</interviewLabel>
+    <label>0_new_Loan Status Change Date Field Update</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
@@ -134,7 +157,43 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
-                    <stringValue>Date</stringValue>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>App Incomplete Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>App_Incomplete_Date__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_2782397464</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -163,7 +222,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_3303802476</elementReference>
+                <elementReference>formula_3_myRule_1_A1_0089581951</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>

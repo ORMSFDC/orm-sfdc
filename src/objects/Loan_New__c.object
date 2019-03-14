@@ -3914,124 +3914,6 @@ IF(
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>LoanStatus__c</fullName>
-        <externalId>false</externalId>
-        <label>LoanStatus*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Incomplete</fullName>
-                    <default>true</default>
-                    <label>Incomplete</label>
-                </value>
-                <value>
-                    <fullName>Proposal</fullName>
-                    <default>false</default>
-                    <label>Application Requested</label>
-                </value>
-                <value>
-                    <fullName>Waiting for Full Package</fullName>
-                    <default>false</default>
-                    <label>Waiting for Full Package</label>
-                </value>
-                <value>
-                    <fullName>File Closed for Incompleteness</fullName>
-                    <default>false</default>
-                    <label>File Closed for Incompleteness</label>
-                </value>
-                <value>
-                    <fullName>Application Package Received</fullName>
-                    <default>false</default>
-                    <label>Full Package Received</label>
-                </value>
-                <value>
-                    <fullName>Full Application Received - Incomplete</fullName>
-                    <default>false</default>
-                    <label>Full Application Received - Incomplete</label>
-                </value>
-                <value>
-                    <fullName>In Processing</fullName>
-                    <default>false</default>
-                    <label>In Processing</label>
-                </value>
-                <value>
-                    <fullName>Conditionally Approved</fullName>
-                    <default>false</default>
-                    <label>Conditionally Approved</label>
-                </value>
-                <value>
-                    <fullName>Underwriting Clear to Close</fullName>
-                    <default>false</default>
-                    <label>Underwriting Clear to Close</label>
-                </value>
-                <value>
-                    <fullName>In final HUD Review</fullName>
-                    <default>false</default>
-                    <label>In final HUD Review</label>
-                </value>
-                <value>
-                    <fullName>Application Approved but Not Accepted</fullName>
-                    <default>false</default>
-                    <label>Application Approved but Not Accepted</label>
-                </value>
-                <value>
-                    <fullName>Suspended</fullName>
-                    <default>false</default>
-                    <label>Suspended</label>
-                </value>
-                <value>
-                    <fullName>Awaiting Closing</fullName>
-                    <default>false</default>
-                    <label>Awaiting Closing</label>
-                </value>
-                <value>
-                    <fullName>Closed - Awaiting Funding</fullName>
-                    <default>false</default>
-                    <label>Closed - Awaiting Funding</label>
-                </value>
-                <value>
-                    <fullName>Funded</fullName>
-                    <default>false</default>
-                    <label>Funded</label>
-                </value>
-                <value>
-                    <fullName>Denied</fullName>
-                    <default>false</default>
-                    <label>Denied</label>
-                </value>
-                <value>
-                    <fullName>Withdrawn</fullName>
-                    <default>false</default>
-                    <label>Withdrawn</label>
-                </value>
-                <value>
-                    <fullName>Sandbox</fullName>
-                    <default>false</default>
-                    <label>Sandbox</label>
-                </value>
-                <value>
-                    <fullName>Cancelled/Denied</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Cancelled/Denied</label>
-                </value>
-                <value>
-                    <fullName>Docs Out to Settlement Agent</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Docs Out to Settlement Agent</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>AE_On_Close__c</fullName>
         <externalId>false</externalId>
         <label>AE On Close</label>
@@ -4052,6 +3934,288 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Application_Disclosure_Signed_Date__c</fullName>
+        <description>Application Disclosure Signed Date</description>
+        <externalId>false</externalId>
+        <label>Application Disclosure Signed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cooling_Off_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL ( Subject_Property_State__c , "Utah" ), Cooling_Off_Notice_Signed_Date__c + 7 , NULL )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cooling Off Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Credit_Report_Date__c + 91</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Credit Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Who_Requested_the_Withdraw__c</fullName>
+        <externalId>false</externalId>
+        <label>Who Requested the Withdraw?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>How_was_the_Withdrawn_status_captured__c</fullName>
+        <externalId>false</externalId>
+        <label>How was the Withdrawn status captured?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>LoanStatus__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ORMS Partner</fullName>
+                    <default>false</default>
+                    <label>ORMS Partner</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>ORMS Partner</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Withdrawn Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>LoanStatus__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Another Lender - Better program/process</fullName>
+                    <default>false</default>
+                    <label>Another Lender - Better program/process</label>
+                </value>
+                <value>
+                    <fullName>Another Lender - Better rate and/or fees</fullName>
+                    <default>false</default>
+                    <label>Another Lender - Better rate and/or fees</label>
+                </value>
+                <value>
+                    <fullName>Another Lender - Realtor/builder referral</fullName>
+                    <default>false</default>
+                    <label>Another Lender - Realtor/builder referral</label>
+                </value>
+                <value>
+                    <fullName>Client not Interested</fullName>
+                    <default>false</default>
+                    <label>Client not Interested</label>
+                </value>
+                <value>
+                    <fullName>Chose Another Lender</fullName>
+                    <default>false</default>
+                    <label>Chose Another Lender</label>
+                </value>
+                <value>
+                    <fullName>Loan no longer needed</fullName>
+                    <default>false</default>
+                    <label>Loan no longer needed</label>
+                </value>
+                <value>
+                    <fullName>No longer makes sense for Client</fullName>
+                    <default>false</default>
+                    <label>No longer makes sense for Client</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Another Lender - Better program/process</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Another Lender - Better rate and/or fees</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Another Lender - Realtor/builder referral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Client not Interested</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Chose Another Lender</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>Loan no longer needed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Withdrawn</controllingFieldValue>
+                <valueName>No longer makes sense for Client</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LoanStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>LoanStatus*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>true</default>
+                    <label>Application Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Proposal</fullName>
+                    <default>false</default>
+                    <label>Application Requested</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Full Package</fullName>
+                    <default>false</default>
+                    <label>Waiting for Full Package</label>
+                </value>
+                <value>
+                    <fullName>Application Package Received</fullName>
+                    <default>false</default>
+                    <label>Submitted to Lender</label>
+                </value>
+                <value>
+                    <fullName>Loan Submission Received- Awaiting Review</fullName>
+                    <default>false</default>
+                    <label>Loan Submission Received- Awaiting Review</label>
+                </value>
+                <value>
+                    <fullName>Full Application Received - Incomplete</fullName>
+                    <default>false</default>
+                    <label>Loan Submitted - Incomplete</label>
+                </value>
+                <value>
+                    <fullName>In Processing</fullName>
+                    <default>false</default>
+                    <label>In Processing</label>
+                </value>
+                <value>
+                    <fullName>In Underwriting Review</fullName>
+                    <default>false</default>
+                    <label>In Underwriting Review</label>
+                </value>
+                <value>
+                    <fullName>Conditionally Approved</fullName>
+                    <default>false</default>
+                    <label>Conditionally Approved</label>
+                </value>
+                <value>
+                    <fullName>Underwriting Clear to Close</fullName>
+                    <default>false</default>
+                    <label>Clear to Close</label>
+                </value>
+                <value>
+                    <fullName>In final HUD Review</fullName>
+                    <default>false</default>
+                    <label>In Final HUD Review</label>
+                </value>
+                <value>
+                    <fullName>Docs Out to Settlement Agent</fullName>
+                    <default>false</default>
+                    <label>Docs Out to Settlement Agent</label>
+                </value>
+                <value>
+                    <fullName>Closed - Awaiting Funding</fullName>
+                    <default>false</default>
+                    <label>Closed - Awaiting Funding</label>
+                </value>
+                <value>
+                    <fullName>Funded</fullName>
+                    <default>false</default>
+                    <label>Loan Funded</label>
+                </value>
+                <value>
+                    <fullName>Loan Rescinded</fullName>
+                    <default>false</default>
+                    <label>Loan Rescinded</label>
+                </value>
+                <value>
+                    <fullName>Application Approved but Not Accepted</fullName>
+                    <default>false</default>
+                    <label>Application Approved but Not Accepted</label>
+                </value>
+                <value>
+                    <fullName>File Closed for Incompleteness</fullName>
+                    <default>false</default>
+                    <label>File Closed for Incompleteness</label>
+                </value>
+                <value>
+                    <fullName>Suspended</fullName>
+                    <default>false</default>
+                    <label>Suspended</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+                <value>
+                    <fullName>Sandbox</fullName>
+                    <default>false</default>
+                    <label>Sandbox</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Closing</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Awaiting Closing</label>
+                </value>
+                <value>
+                    <fullName>Cancelled/Denied</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cancelled/Denied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
@@ -4342,14 +4506,6 @@ IF(
         <label>Origination Loan Officer</label>
     </sharingReasons>
     <validationRules>
-        <fullName>Closing_and_ReDisclosure_dates</fullName>
-        <active>true</active>
-        <description>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</description>
-        <errorConditionFormula>(Recent_Re_disclosure_Date__c + 3) &gt;  Closing_Date__c</errorConditionFormula>
-        <errorDisplayField>Closing_Date__c</errorDisplayField>
-        <errorMessage>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Loan_Cannot_Update_If_LS_Incomplete</fullName>
         <active>true</active>
         <description>Loan Cannot Updated If Loan Status is Incomplete</description>
@@ -4394,14 +4550,6 @@ $Profile.Name != "System Administrator"
         <errorMessage>If 'Other' is selected in the ReDisclosure picklist, then the 'Other ReDisclosure Reason' text box must be filled.</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>closing_and_appraisal_sent_to_clientDate</fullName>
-        <active>true</active>
-        <description>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</description>
-        <errorConditionFormula>Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
-        <errorDisplayField>Closing_Date__c</errorDisplayField>
-        <errorMessage>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>validateAccountNumber</fullName>
         <active>true</active>
         <errorConditionFormula>AND(Account_Number__c!='',
@@ -4430,6 +4578,64 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
 )</errorConditionFormula>
         <errorDisplayField>ReDisclosure_Reason__c</errorDisplayField>
         <errorMessage>Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting 'Other' in the picklist.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Closing_and_ReDisclosure_dates</fullName>
+        <active>true</active>
+        <description>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</description>
+        <errorConditionFormula>OR( ( Re_disclosure_Date__c  + 3) &gt; Closing_Date__c,  ( Re_disclosure_Date__c + 3) &gt; Anticipated_Closing_Date__c )</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Texas_Loan_Validation_on_Closing_Dates</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( ISPICKVAL (Subject_Property_State__c, "Texas"),
+	( OR 
+		( Closing_Date__c &lt; (  Application_Disclosure_Signed_Date__c   + 12 ) ,
+							   Anticipated_Closing_Date__c &lt; (Application_Disclosure_Signed_Date__c + 12)
+							)
+	)
+)</errorConditionFormula>
+        <errorMessage>Texas Loan: The Closing Date cannot be within 12 days of the Application Disclosure Signed Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_Counseling_Date_Prior_to_App_Date</fullName>
+        <active>true</active>
+        <description>The Counseling Date must be prior to the Application Date. Utah Loan</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ),  Counseling_Date__c +1 &gt; Application_Signed_Date__c )</errorConditionFormula>
+        <errorDisplayField>Counseling_Date__c</errorDisplayField>
+        <errorMessage>Utah Loan: Counseling Date must be prior to the Application Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_HELO_App_Signed_after_Counseling</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ),  Application_Signed_Date__c &lt;  Counseling_Date__c + 1 )</errorConditionFormula>
+        <errorDisplayField>Application_Signed_Date__c</errorDisplayField>
+        <errorMessage>Utah Loan: Counseling Date must be prior to the Application Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_HELO_Cooling_Off_Period</fullName>
+        <active>true</active>
+        <description>Cooling off Period for Utah HELO Loans</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>closing_and_appraisal_sent_to_clientDate</fullName>
+        <active>true</active>
+        <description>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</description>
+        <errorConditionFormula>OR( Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c,  Anticipated_Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c)</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_fill_Who_on_Withdrawn</fullName>
+        <active>true</active>
+        <description>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw' text box must be filled.</description>
+        <errorConditionFormula>ISPICKVAL(LoanStatus__c , 'Withdrawn') &amp;&amp; ISBLANK(Who_Requested_the_Withdraw__c)</errorConditionFormula>
+        <errorMessage>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw?' text box must be filled.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

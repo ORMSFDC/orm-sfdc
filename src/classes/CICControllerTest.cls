@@ -4,7 +4,7 @@ public with sharing class CICControllerTest {
     @IsTest Static void SaveCIDataTest(){
         Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
         UserRole UR=[Select Id from UserRole where Name='Partner Care Specialist'];        
-        UserRole UR1=[Select Id from UserRole where Name ='Account Executive'];
+        UserRole UR1=[Select Id from UserRole where Name ='DMB - Jesse'];
         String orgId = UserInfo.getOrganizationId();
         String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
         Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
@@ -39,7 +39,7 @@ public with sharing class CICControllerTest {
                 Assigned_PCS__c=user1.Id,
                 Account_Executive_Name__c = user2.Id,
                 Main_Phone__c='5414147852',
-                Company_NMLS_ID__c = '1234',
+                Company_NMLS_ID__c = '1234667',
                 Partner_Lead_Status__c='New');
             insert portalAccount;
             Contact contact = new Contact(
@@ -48,17 +48,17 @@ public with sharing class CICControllerTest {
                 Cell__c='1234569874', 
                 Office_Phone__c='1234569874', 
                 Individual_Lead_source__c='Other', 
-                Contact_NMLS__c = '12345',
+                Contact_NMLS__c = '12345789',
                 Source_Name__c='Michael',
                 AccountId = portalAccount.Id);
             insert contact;
             //Create Loan
             Loan_New__c LoanInsert1 = new Loan_New__c(PCS_at_Loan_Level__c = user1.Id, Loan_Payment_Plan_Term__c = 'test',
-                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',LoanNumber__c = '12345'
+                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Waiting for Full Package',LoanNumber__c = '12345'
                                                      ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                                                    ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             Loan_New__c LoanInsert2 = new Loan_New__c(Loan_Payment_Plan_Term__c = 'test',
-                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',LoanNumber__c = ''
+                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Waiting for Full Package',LoanNumber__c = ''
                                                      ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                                                    ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             list<Loan_New__c> LoanList = new list<Loan_New__c>();

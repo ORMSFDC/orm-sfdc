@@ -44,18 +44,23 @@ trigger AttachmentStatus on Attachment(after insert) {
         Task t = new Task();
         //Code modified by Bala - Task and Email should be sent to AE and PCS based on Loan Statuses 4/24
         
-        if ((ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended')
+        // For FNM file, no task ever goes to PCS and always goes to AE regardless of loan status
+        if (att.Name.endsWithIgnoreCase('.fnm'))
+        {
+            t.OwnerId = ln.Related_Partner__r.Account_Executive_Name__c;
+        }
+        else if ((ln.Loanstatus__c == 'Incomplete' || ln.Loanstatus__c == 'Proposal' || ln.Loanstatus__c == 'Waiting for Full Package' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Full Application Received - Incomplete' || ln.Loanstatus__c == 'Suspended')
             && (P.Name == 'ORM Partner' || P.Name == 'ORM Partners' || P.Name == 'Partner Community Login User' || P.Name == 'Partner Community User' || P.Name == 'Portal Loan Processor' || 
                 P.Name == 'Portal Loan Processors' || P.Name == 'Prospective Partner User' || P.Name == 'Prospective Partner Users')) {
             t.OwnerId = ln.Related_Partner__r.Account_Executive_Name__c;
         }
         else{
-            if((ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'Application Package Received' || ln.Loanstatus__c == 'Awaiting Closing' || ln.Loanstatus__c == 'Closed - Awaiting Funding')
+            if((ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'In Final HUD Review' || ln.Loanstatus__c == 'Docs out to Settlement Agent')
             && (P.Name == 'ORM Partner' || P.Name == 'ORM Partners' || P.Name == 'Partner Community Login User' || P.Name == 'Partner Community User' || P.Name == 'Portal Loan Processor' || 
                 P.Name == 'Portal Loan Processors' || P.Name == 'Prospective Partner User' || P.Name == 'Prospective Partner Users')){
                 t.OwnerId = ln.Related_Partner__r.Assigned_PCS__c;
             }
-        }
+        }		
                   
         t.Subject = 'A Document has been uploaded for ' + ln.Client_Name__c+ ' by ' + userinfo.getfirstname() + ' ' + userinfo.getlastname();
         t.Status = 'Open';

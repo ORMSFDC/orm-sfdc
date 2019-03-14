@@ -299,10 +299,11 @@ public class DisplayPCSTaskController {
         String taskGroup2 = 'Appraisal Expiration Task';
         String taskGroup3 = 'FHA Case Number Expiration Task';
         String taskGroup4 = 'Payoff Expiration Task';
+        String taskGroup5 = 'Credit Date Expiration Task';
  
         String sSoql = 'SELECT Id, Subject, ActivityDate,Created_DateTime__c, Status , WhoId, WhatId, Who.Name, What.Name, Task_Grouping__c ';
         sSoql += 'From Task Where what.type = \'Loan_New__c\' AND OwnerId = :userId And Status != \'' +String.escapeSingleQuotes(statusCompleted)+'\'   ';
-        sSoql += ' AND  ((Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup1)+'\') OR (Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup2)+'\') OR (Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup3)+'\') OR (Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup4)+'\'))  ';
+        sSoql += ' AND  ((Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup1)+'\') OR (Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup2)+'\') OR (Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup3)+'\') OR (Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup4)+'\') OR (Task_Grouping__c = \'' +String.escapeSingleQuotes(taskGroup5)+'\')) ';
         
         system.debug('sortField-->' + sortField);
 

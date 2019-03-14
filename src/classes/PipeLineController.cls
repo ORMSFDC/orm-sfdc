@@ -881,7 +881,7 @@ public class PipeLineController {
     }
     
      @AuraEnabled //Bala - A task will be created for PCS/AE based on LoanStatus, when an Appraisal is requested -- 4/20
-    public static string createTask(String LoanID){
+    public static void createTask(String LoanID){
         
         List<Loan_New__c> ls = new List<Loan_New__c>();
         
@@ -897,28 +897,33 @@ public class PipeLineController {
         
         Account a = new Account();
         a = [SELECT name, Account_Executive_Name__c, Assigned_PCS__r.id  FROM Account WHERE id =:u.contact.AccountId ];        
-        system.debug('$$$$' +a.Account_Executive_Name__c);
-        Task t = new Task();
+        system.debug('$$$$' +a.Account_Executive_Name__c);        
         
-         if(ls.size() > 0 && a != null && (ls[0].LoanStatus__c == 'Application Package Received' || ls[0].LoanStatus__c == 'In Processing' || ls[0].LoanStatus__c == 'Conditionally Approved'
-                                           || ls[0].LoanStatus__c == 'Underwriting Clear to Close' || ls[0].LoanStatus__c == 'Awaiting Closing' || ls[0].LoanStatus__c == 'Closed - Awaiting Funding' ))
+         // Only create a task for PCS if these loan statuses
+         if(ls.size() > 0 && a != null && (ls[0].LoanStatus__c == 'Loan Submission Received- Awaiting Review' || ls[0].LoanStatus__c == 'In Processing' || ls[0].LoanStatus__c == 'In Underwriting Review' || ls[0].LoanStatus__c == 'Conditionally Approved' ))
          {   
+              Task t = new Task();
               t.OwnerId = a.Assigned_PCS__r.id;
               t.Subject = 'An Appraisal has been requested by this Partner';
+              t.Status = 'Open';
+              t.Priority = 'Normal';                
+              t.WhatId = Loanid;
+              t.ActivityDate = Date.Today();                
+              t.WhoId = u.ContactId;    
+              insert t; 
          }
-         else{
-         system.debug('@@@');
-              t.OwnerId = a.Account_Executive_Name__c;
-              t.Subject = 'An Appraisal has been requested by the Partner';
-         }     
-                t.Status = 'Open';
-                t.Priority = 'Normal';                
-                t.WhatId = Loanid;
-                t.ActivityDate = Date.Today();                
-                t.WhoId = u.ContactId;    
-                insert t;
-           return t.id;                      
-        }   
+
+         // Always create a task for AE regardless of loan status
+		 Task tAE = new Task();
+         tAE.OwnerId = a.Account_Executive_Name__c;
+         tAE.Subject = 'An Appraisal has been requested by the Partner';              
+         tAE.Status = 'Open';
+         tAE.Priority = 'Normal';                
+         tAE.WhatId = Loanid;
+         tAE.ActivityDate = Date.Today();                
+         tAE.WhoId = u.ContactId;    
+         insert tAE;                    
+    }   
    
     
      @AuraEnabled //Bala - A task will be created for PCS/AE based on LoanStatus, when Full Application is submitted  4/20
@@ -939,19 +944,11 @@ public class PipeLineController {
         Account a = new Account();
         a = [SELECT name, Account_Executive_Name__c, Assigned_PCS__r.id  FROM Account WHERE id =:u.contact.AccountId ];
         
+        // Always create a task for AE regardless of loan status
+        // Do not create one for PCS
         Task t = new Task();
-         if(ls.size() > 0 && a != null && (ls[0].LoanStatus__c == 'Application Package Received' || ls[0].LoanStatus__c == 'In Processing' || ls[0].LoanStatus__c == 'Conditionally Approved'
-                                           || ls[0].LoanStatus__c == 'Underwriting Clear to Close' || ls[0].LoanStatus__c == 'Awaiting Closing' || ls[0].LoanStatus__c == 'Closed - Awaiting Funding' ))
-         {              
-              t.OwnerId = a.Assigned_PCS__r.id;
-              t.Subject = 'Full Package Application has been Submitted';
-         }
-         
-         else{
-         system.debug('$$$');
-              t.OwnerId = a.Account_Executive_Name__c;
-              t.Subject = 'Full Package Application has been Submitted';
-         }     
+        t.OwnerId = a.Account_Executive_Name__c;
+        t.Subject = 'Full Package Application has been Submitted';    
         t.Status = 'Open';
         t.Priority = 'Normal';                
         t.WhatId = Loanid;

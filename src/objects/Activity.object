@@ -439,29 +439,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Task_Grouping__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(CONTAINS( Subject, 'Document has been uploaded'), 'Document Task', 
-IF(CONTAINS( Subject, 'Counseling Expiration Date is approaching on loan ID'), 'Counseling Date Expiration Task', 
-IF(CONTAINS( Subject, 'Appraisal Expiration Date is approaching on loan'), 'Appraisal Expiration Task', 
-IF(CONTAINS( Subject, 'Loan Status'), 'Loan Status Task', 
-IF(CONTAINS( Subject, 'FHA Case Number Expiration Date is approaching on loan'), 'FHA Case Number Expiration Task', 
-IF(CONTAINS( Subject, 'Notes logged on the'), 'Notes Task', 
-IF(CONTAINS( Subject, 'Underwriting Clear to Close'), 'UW clear to close Task',
-IF(CONTAINS( Subject, 'Change in Circumstance'), 'CIC Task', 
-IF(CONTAINS( Subject, 'Loan has been Conditionally Approved'), 'Conditionally Approved',
-IF(CONTAINS( Subject, 'Payoff Expiration'), 'Payoff Expiration Task', 
-IF(CONTAINS( Subject, 'A new Condition has been added to'), 'Condition Task',
-IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), 'Aged Task',
-
-''))))))))))))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Task Grouping</label>
-        <required>false</required>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>userLoginId__c</fullName>
         <externalId>false</externalId>
         <label>userLoginId</label>
@@ -760,6 +737,30 @@ IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), '
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Task_Grouping__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( Subject, 'Document has been uploaded'), 'Document Task', 
+IF(CONTAINS( Subject, 'Counseling Expiration Date is approaching on loan ID'), 'Counseling Date Expiration Task', 
+IF(CONTAINS( Subject, 'Appraisal Expiration Date is approaching on loan'), 'Appraisal Expiration Task', 
+IF(CONTAINS( Subject, 'Loan Status'), 'Loan Status Task', 
+IF(CONTAINS( Subject, 'FHA Case Number Expiration Date is approaching on loan'), 'FHA Case Number Expiration Task', 
+IF(CONTAINS( Subject, 'Notes logged on the'), 'Notes Task', 
+IF(CONTAINS( Subject, 'Underwriting Clear to Close'), 'UW clear to close Task',
+IF(CONTAINS( Subject, 'Change in Circumstance'), 'CIC Task', 
+IF(CONTAINS( Subject, 'Loan has been Conditionally Approved'), 'Conditionally Approved',
+IF(CONTAINS( Subject, 'Payoff Expiration'), 'Payoff Expiration Task', 
+IF(CONTAINS( Subject, 'A new Condition has been added to'), 'Condition Task',
+IF(CONTAINS( Subject, 'Loan is in Conditionally Approved status for 31 Days'), 'Aged Task',
+IF(CONTAINS( Subject, 'Credit Expiration Date for Loan ID'), 'Credit Date Expiration Task',
+
+'')))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Task Grouping</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields><enableFeeds>false</enableFeeds><searchLayouts>
         <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
