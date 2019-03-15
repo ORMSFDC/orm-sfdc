@@ -42,9 +42,8 @@
             var state = a.getState();
         });                   
         $A.enqueueAction(action1); */
-        
-        $A.enqueueAction(action);
-        
+	    
+	//update Loan status to Submitted to Lender - Don  
         var actionUpdateLoanStatus = component.get("c.updateFullPackageLoanStatus");        
         actionUpdateLoanStatus.setParams({           
             'loanId':component.get("v.LoanNumberId")  
@@ -52,6 +51,8 @@
         actionUpdateLoanStatus.setCallback(this, function() {                  
         }); 
         $A.enqueueAction(actionUpdateLoanStatus); 
+	
+	$A.enqueueAction(action);
 
         component.set("v.showPackage", false);
         component.set("v.showHeader", false);
