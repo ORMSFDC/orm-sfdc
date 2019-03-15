@@ -4710,6 +4710,49 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorConditionFormula>OR( Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c,  Anticipated_Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c)</errorConditionFormula>
         <errorMessage>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>Loan_Number_validation</fullName>
+        <active>false</active>
+        <description>Validate that there is a loan number based on loanstatus* criteria</description>
+        <errorConditionFormula>AND ( OR ( ISPICKVAL ( LoanStatus__c , "Waiting For Full Package" ), ISPICKVAL ( LoanStatus__c , "Submitted to Lender" ) ), ISBLANK (  LoanNumber__c ) )</errorConditionFormula>
+        <errorDisplayField>LoanNumber__c</errorDisplayField>
+        <errorMessage>Loan number is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Texas_Loan_Validation_on_Closing_Dates</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( ISPICKVAL (Subject_Property_State__c, "Texas"),
+	( OR 
+		( Closing_Date__c &lt; (  Application_Disclosure_Signed_Date__c   + 12 ) ,
+							   Anticipated_Closing_Date__c &lt; (Application_Disclosure_Signed_Date__c + 12)
+							)
+	)
+)</errorConditionFormula>
+        <errorMessage>Texas Loan: The Closing Date cannot be within 12 days of the Application Disclosure Signed Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_Counseling_Date_Prior_to_App_Date</fullName>
+        <active>true</active>
+        <description>The Counseling Date must be prior to the Application Date. Utah Loan</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ),  Counseling_Date__c +1 &gt; Application_Signed_Date__c )</errorConditionFormula>
+        <errorDisplayField>Counseling_Date__c</errorDisplayField>
+        <errorMessage>Utah Loan: Counseling Date must be prior to the Application Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_HELO_App_Signed_after_Counseling</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ),  Application_Signed_Date__c &lt;  Counseling_Date__c + 1 )</errorConditionFormula>
+        <errorDisplayField>Application_Signed_Date__c</errorDisplayField>
+        <errorMessage>Utah Loan: Counseling Date must be prior to the Application Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_HELO_Cooling_Off_Period</fullName>
+        <active>true</active>
+        <description>Cooling off Period for Utah HELO Loans</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>
         <availability>online</availability>
