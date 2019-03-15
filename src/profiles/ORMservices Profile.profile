@@ -76,22 +76,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities><applicationVisibilities>
-        <application>f2b__Mass_Contact_Transfer</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities><applicationVisibilities>
-        <application>pi__ProspectInsight</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities><applicationVisibilities>
-        <application>pi__Sales_Reach</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities><applicationVisibilities>
-        <application>rh2__PS_Rollup_Helper</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities><applicationVisibilities>
         <application>standard__AllTabSet</application>
         <default>false</default>
         <visible>false</visible>
@@ -2179,54 +2163,6 @@
         <tab>YoutubeLinks__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities><tabVisibilities>
-        <tab>f2b__Mass_Contact_Transfer</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__EngageSalesTools</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Lead_Deck</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Pardot_LeadDeck</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__ProspectInsight</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Sales_Cloud_Engage_License_Assignment</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Sales_Edge</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>pi__Sales_Edge_Reports</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_All_Rollups</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Enable_Real_Time</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Getting_Started</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Import_Export</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__PS_Rollup_Helper</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__Rollup_Helper_Exceptions</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__Rollup_Helper_Help</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>rh2__Rollup_Helper_Home</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
         <tab>standard-Account</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities><tabVisibilities>
@@ -2309,12 +2245,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities><tabVisibilities>
         <tab>standard-WorkOrder</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>zoom_app__Zoom_Config</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities><tabVisibilities>
-        <tab>zoom_app__Zoom_Meetings</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities><userPermissions>
         <enabled>true</enabled>
