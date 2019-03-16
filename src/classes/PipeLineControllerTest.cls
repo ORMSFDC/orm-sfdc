@@ -829,7 +829,7 @@ public with sharing class PipeLineControllerTest {
                 AccountId = portalAccount.Id);
             insert contact;       
             Loan_New__c LoanInsert = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true, LoanStatus__c ='In Processing',
-                                                     LoanNumber__c = '123459878',Appraisal_Received_Date__c= Date.parse('10/10/2017'),
+                                                     LoanNumber__c = '12345',Appraisal_Received_Date__c= Date.parse('10/10/2017'),
                                                      Household_Members__c='2', Real_Estate_Taxes__c = 1200.00,
                                                      Hazard_Insurance__c = 350.00,HOA_PUD_Condo_Fees__c = 400.00,
                                                      Square_Footage__c = '2000', Subject_Property_State__c = 'California',Related_Individual__c = contact.Id,
@@ -837,7 +837,7 @@ public with sharing class PipeLineControllerTest {
             insert LoanInsert; 
             string LoanId = LoanInsert.Id;
             Loan_New__c LoanInsertOtherContact = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true, LoanStatus__c ='In Processing',
-                                                                 LoanNumber__c = '98712345',Appraisal_Received_Date__c= Date.parse('10/10/2017'),
+                                                                 LoanNumber__c = '12345',Appraisal_Received_Date__c= Date.parse('10/10/2017'),
                                                                  Household_Members__c='2', Real_Estate_Taxes__c = 1200.00,
                                                                  Hazard_Insurance__c = 350.00,HOA_PUD_Condo_Fees__c = 400.00,
                                                                  Square_Footage__c = '2000', Subject_Property_State__c = 'California',Related_Individual__c = contact.Id,
@@ -1378,5 +1378,43 @@ public with sharing class PipeLineControllerTest {
            //PipeLineController.SaveTask(LoanInsert,LoanInsert.id,'test',null,userinfo.getUserid());
            Test.stopTest();
         }
+    }
+    
+    @isTest
+    static void updateFullPackageLoanStatusTest_ChangeStatus() {
+        List<Loan_New__c> testLoans = new List<Loan_New__c>();
+        Loan_New__c loanAI = new Loan_New__c(LoanStatus__c = 'Incomplete');
+        testLoans.add(loanAI);
+        Loan_New__c loanAR = new Loan_New__c(LoanStatus__c = 'Proposal');
+        testLoans.add(loanAR);
+        Loan_New__c loanWFFP = new Loan_New__c(LoanStatus__c = 'Waiting for Full Package');
+        testLoans.add(loanWFFP); 
+        insert testLoans;
+        
+        PipeLineController.updateFullPackageLoanStatus(loanAI.Id);
+        loanAI = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loanAI.Id];
+        PipeLineController.updateFullPackageLoanStatus(loanAR.Id);
+        loanAR = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loanAR.Id];
+        PipeLineController.updateFullPackageLoanStatus(loanWFFP.Id);
+        loanWFFP = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loanWFFP.Id];
+        
+        String expected = 'Application Package Received'; // Submitted to Lender
+        System.assertEquals(expected, loanAI.LoanStatus__c);
+        System.assertEquals(expected, loanAR.LoanStatus__c);
+        System.assertEquals(expected, loanWFFP.LoanStatus__c);
+    }
+    
+    @isTest
+    static void updateFullPackageLoanStatusTest_NoStatusChange() {
+        String expected = 'Loan Submission Received- Awaiting Review';
+        List<Loan_New__c> testLoans = new List<Loan_New__c>();
+        Loan_New__c loan = new Loan_New__c(LoanStatus__c = expected);
+        testLoans.add(loan);
+        insert testLoans;
+        
+        PipeLineController.updateFullPackageLoanStatus(loan.Id);
+        loan = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loan.Id];
+ 
+        System.assertEquals(expected, loan.LoanStatus__c);
     }
 }
