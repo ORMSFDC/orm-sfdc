@@ -48,15 +48,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update_Loan_Date</fullName>
-        <field>Loan_Status_Change_Date__c</field>
-        <formula>Today()</formula>
-        <name>Update Loan Date</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>uncheck_IsActive_checkbox</fullName>
         <field>IsActiveFlag__c</field>
         <literalValue>0</literalValue>
@@ -97,26 +88,6 @@ IF(CONTAINS(Closing_Month__c,'March  2019'),22, 0 )))))))))))</formula>
             <value>Sandbox</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>Waiting for Full Package Extend Application</fullName>
-        <active>false</active>
-        <criteriaItems>
-            <field>Loan_New__c.LoanStatus__c</field>
-            <operation>equals</operation>
-            <value>Waiting for Full Package</value>
-        </criteriaItems>
-        <description>if Loan stays in this status for 30 days, set extend application time to true</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-        <workflowTimeTriggers>
-            <actions>
-                <name>Extend_Application_Time</name>
-                <type>FieldUpdate</type>
-            </actions>
-            <offsetFromField>Loan_New__c.Loan_Status_Change_Date__c</offsetFromField>
-            <timeLength>30</timeLength>
-            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
-        </workflowTimeTriggers>
     </rules>
     <rules>
         <fullName>check for actual closing month</fullName>

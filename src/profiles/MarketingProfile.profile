@@ -1,216 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
-    <classAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
-        <apexClass>relateiq__OrganizationInfo</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>relateiq__OrganizationInfoTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>relateiq__SalesforceIqPslChecker</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>relateiq__SalesforceIqPslCheckerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__CreateZooomMeetingsQueue</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingAutoBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingAutoBatchTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingDetailsCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingDetailsCtrlTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingSchedule</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingScheduleTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__MeetingMetricsBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__MeetingMetricsBatchTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__PostInstallClass</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__PostInstallClass2_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomAPIUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomAPIUtils_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomCalloutTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomDetailCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomDetailCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomHttpMock</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingCreationCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingCreationCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingCreationTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingLaunchCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingLaunchCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCaseCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCaseCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartContactCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartContactCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartLeadCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartLeadCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomRecordingLinksCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomRecordingLinksCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomSendEmailCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomSendEmailCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomUtils_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__scheduleMeetingMetricsBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
+<apexPage>UserActiveStatus</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>UserActiveStatus</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomDetail</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__zoomheader</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingCreation</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomMeetingCreation</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingLaunch</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomMeetingLaunch</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStart</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStart</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStartCase</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStartCase</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStartContact</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStartContact</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStartLead</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStartLead</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomRecordingLinks</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomRecordingLinks</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <pageAccesses>
-        <apexPage>zoom_app__ZoomSendEmail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__zoomheader</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>zoom_app__ZoomSendEmail</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -4606,21 +4483,9 @@
         <field>User.zoom_app__isPMI_Enabled__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__External_Zoom_Meetings__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__Get_Zoom_Meeting_Information__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__Login_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    
+    
+    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>

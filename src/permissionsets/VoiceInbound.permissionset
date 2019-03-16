@@ -1,6 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata"><description>Enable Dialer Inbound calling functionality</description><hasActivationRequired>false</hasActivationRequired><label>Dialer_Inbound</label><license>VoiceInboundPsl</license>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>VoiceInbound</name>
-    </userPermissions>
 </PermissionSet>

@@ -3,32 +3,4 @@
         <application>standard__EinsteinDataDiscovery</application>
         <visible>true</visible>
     </applicationVisibilities>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CreateUpdateSDDDataset</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>CreateUpdateSDDStory</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>GetSmartDataDiscovery</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSmartDataDiscovery</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageSmartDataDiscoveryModel</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ShareSmartDataDiscoveryStory</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>UseSmartDataDiscovery</name>
-    </userPermissions>
 </PermissionSet>

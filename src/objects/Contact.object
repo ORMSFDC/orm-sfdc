@@ -1847,14 +1847,6 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>email_opted_out__c</fullName>
-        <externalId>false</externalId>
-        <formula>HasOptedOutOfEmail</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>email opted out</label>
-        <type>Checkbox</type>
-    </fields>
-    <fields>
         <fullName>Account_Approval_Sub_Status__c</fullName>
         <externalId>false</externalId>
         <formula>TEXT( Account.Approval_Sub_Status__c )</formula>
@@ -3409,7 +3401,14 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>false</enableHistory><externalSharingModel>ControlledByParent</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><searchLayouts>
+    </fields>
+  <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+  <enableEnhancedLookup>true</enableEnhancedLookup>
+  <enableFeeds>true</enableFeeds>
+  <enableHistory>false</enableHistory>
+  <externalSharingModel>ControlledByParent</externalSharingModel>
+  <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+  <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
@@ -3427,7 +3426,9 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <searchResultsAdditionalFields>CONTACT.PHONE1</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CONTACT.EMAIL</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ControlledByParent</sharingModel>
+    </searchLayouts>
+  <sharingModel>ControlledByParent</sharingModel>
+
     <fieldSets>
         <fullName>f2b__MassTransferContacts_Results_List_Column</fullName>
         <availableFields>

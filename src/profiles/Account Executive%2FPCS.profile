@@ -40,10 +40,6 @@
     
     
     
-    <classAccesses>
-        <apexClass>pi__Api</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
     
     
     
@@ -75,405 +71,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <classAccesses>
-        <apexClass>relateiq__OrganizationInfo</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>relateiq__OrganizationInfoTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>relateiq__SalesforceIqPslChecker</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>relateiq__SalesforceIqPslCheckerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__CreateZooomMeetingsQueue</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingAutoBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingAutoBatchTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingDetailsCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingDetailsCtrlTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingSchedule</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ExternalZoomMeetingScheduleTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__MeetingMetricsBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__MeetingMetricsBatchTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__PostInstallClass</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__PostInstallClass2_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomAPIUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomAPIUtils_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomCalloutTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomDetailCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomDetailCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomHttpMock</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingCreationCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingCreationCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingCreationTriggerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingLaunchCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingLaunchCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCaseCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCaseCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartContactCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartContactCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartLeadCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomMeetingStartLeadCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomRecordingLinksCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomRecordingLinksCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomSendEmailCtrl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomSendEmailCtrl_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__ZoomUtils_Test</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>zoom_app__scheduleMeetingMetricsBatch</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
     <classAccesses>
         <apexClass>CTIRequestData</apexClass>
         <enabled>true</enabled>
@@ -495,325 +92,325 @@
         <enabled>true</enabled>
     </classAccesses>
     <pageAccesses>
-        <apexPage>CTIServicePage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>CTIServicePage1</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>LoanCount_by_Status</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>Loan_Export_excel</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>Loan_Xml_download</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>PartnerLoginPage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>UploadFilePage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>UserActiveStatus</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>demoAdapterPage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__AddContactToList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__AddLeadToList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__AddPersonAccountToList</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__ApplicationConfiguration</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__EngageSalesTools</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__Error</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__LeadDeck</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__LeadDeckNotifier</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__LeadDeckTab</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MarketingActionSummaryContact</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MarketingActionSummaryLead</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MarketingActionSummaryPersonAccount</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MicroCampaignContact</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MicroCampaignCustom</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MicroCampaignLead</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MicroCampaignPersonAccount</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MicroCampaignSingleContact</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MicroCampaignSingleLead</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__MicroCampaignSinglePersonAccount</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__OutlookAuth</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__OutlookCompose</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__Pardot</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotAccountListMembership</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotAccountListMembershipMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotAccountSendToPardot</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotAccountSocialData</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotAccountSocialDataMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotCompatibleWithClickjack</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotContactListMembership</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotContactListMembershipMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotContactSocialData</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotContactSocialDataMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotEmailSendRedirect</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotLeadDeck</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotLeadListMembership</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotLeadListMembershipMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotLeadSocialData</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotLeadSocialDataMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__PardotSSOError</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__Pardot_Contact_Activities_Page</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__Pardot_Lead_Activities_Page</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__ProspectInsightAccountActivities</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__ProspectInsightAccountActivitiesMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__ProspectInsightContactActivities</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__ProspectInsightContactActivitiesMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__ProspectInsightLeadActivities</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__ProspectInsightLeadActivitiesMobile</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__SCE_LicenseAssignmentPage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__SControlRedirect</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__SalesEdgeReporting</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__SalespackLicenseError</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__SendPardotEmailContact</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__SendPardotEmailLead</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__SendToPardot</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__filters</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__init</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__marketing_actions</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__visit</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>pi__visitor</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomDetail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingCreation</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingLaunch</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStart</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStartCase</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStartContact</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomMeetingStartLead</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomRecordingLinks</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__ZoomSendEmail</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>zoom_app__zoomheader</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
-        <apexPage>LoanTabComp</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
+<apexPage>CTIServicePage</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>CTIServicePage1</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>demoAdapterPage</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>Loan_Export_excel</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>Loan_Xml_download</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>LoanCount_by_Status</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>LoanTabComp</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>PartnerLoginPage</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__AddContactToList</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__AddLeadToList</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__AddPersonAccountToList</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__ApplicationConfiguration</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__EngageSalesTools</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__Error</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__filters</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__init</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__LeadDeck</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__LeadDeckNotifier</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__LeadDeckTab</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__marketing_actions</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MarketingActionSummaryContact</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MarketingActionSummaryLead</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MarketingActionSummaryPersonAccount</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MicroCampaignContact</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MicroCampaignCustom</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MicroCampaignLead</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MicroCampaignPersonAccount</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MicroCampaignSingleContact</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MicroCampaignSingleLead</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__MicroCampaignSinglePersonAccount</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__OutlookAuth</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__OutlookCompose</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__Pardot</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__Pardot_Contact_Activities_Page</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__Pardot_Lead_Activities_Page</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotAccountListMembership</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotAccountListMembershipMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotAccountSendToPardot</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotAccountSocialData</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotAccountSocialDataMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotCompatibleWithClickjack</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotContactListMembership</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotContactListMembershipMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotContactSocialData</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotContactSocialDataMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotEmailSendRedirect</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotLeadDeck</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotLeadListMembership</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotLeadListMembershipMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotLeadSocialData</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotLeadSocialDataMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__PardotSSOError</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__ProspectInsightAccountActivities</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__ProspectInsightAccountActivitiesMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__ProspectInsightContactActivities</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__ProspectInsightContactActivitiesMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__ProspectInsightLeadActivities</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__ProspectInsightLeadActivitiesMobile</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__SalesEdgeReporting</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__SalespackLicenseError</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__SCE_LicenseAssignmentPage</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__SControlRedirect</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__SendPardotEmailContact</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__SendPardotEmailLead</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__SendToPardot</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__visit</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>pi__visitor</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>UploadFilePage</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>UserActiveStatus</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomDetail</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__zoomheader</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomMeetingCreation</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomMeetingLaunch</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStart</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStartCase</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStartContact</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomMeetingStartLead</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomRecordingLinks</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
+    <pageAccesses>
+<apexPage>zoom_app__ZoomSendEmail</apexPage>
+<enabled>false</enabled>
+</pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -9522,21 +9119,9 @@
         <field>User.zoom_app__isPMI_Enabled__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__External_Zoom_Meetings__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__Get_Zoom_Meeting_Information__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>zoom_app__Zoom__c.zoom_app__Login_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    
+    
+    
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Account_Executive_Name__c</field>
@@ -11291,15 +10876,7 @@
         <object>YoutubeLinks__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>zoom_app__Zoom__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
+    
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
