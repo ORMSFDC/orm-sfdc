@@ -41,9 +41,19 @@
         action1.setCallback(this, function(a) {
             var state = a.getState();
         });                   
-        $A.enqueueAction(action1); */ 
-        $A.enqueueAction(action); 
-        
+        $A.enqueueAction(action1); */
+	    
+	//update Loan status to Submitted to Lender - Don  
+        var actionUpdateLoanStatus = component.get("c.updateFullPackageLoanStatus");        
+        actionUpdateLoanStatus.setParams({           
+            'loanId':component.get("v.LoanNumberId")  
+        });                                            
+        actionUpdateLoanStatus.setCallback(this, function() {                  
+        }); 
+        $A.enqueueAction(actionUpdateLoanStatus); 
+	
+	$A.enqueueAction(action);
+
         component.set("v.showPackage", false);
         component.set("v.showHeader", false);
         component.set("v.showFooter", false);

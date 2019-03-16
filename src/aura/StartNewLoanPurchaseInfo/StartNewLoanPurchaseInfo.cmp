@@ -83,7 +83,7 @@
 
                             <ui:inputSelect aura:id="RateType" required="true" label="Rate Type" value="{!v.NewLoan.Rate_Type__c}" disabled="{!(v.NewLoan.Product_Type__c == 'HELO') ? true  : false}" change="{!c.onRateTypeChange}">
                                 <ui:inputSelectOption text="ARM" label="ARM" />
-          <!--SFDC - 592-->     <ui:inputSelectOption text="Fixed" label="Fixed" disabled =  "{!or(v.NewLoan.Mortgage_Applied_for__c == 'FHA Traditional HECM', v.NewLoan.Mortgage_Applied_for__c == 'HECM to HECM Refinance')}" />
+               			<ui:inputSelectOption text="Fixed" label="Fixed" /> <!--SFDC - 592 disabled =  "{!or(v.NewLoan.Mortgage_Applied_for__c == 'FHA Traditional HECM', v.NewLoan.Mortgage_Applied_for__c == 'HECM to HECM Refinance')}" -->
                             </ui:inputSelect>
                         </div>
                         
