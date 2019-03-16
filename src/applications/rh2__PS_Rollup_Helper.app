@@ -5,7 +5,6 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Rollup Helper</label>
-    <logo>rh2__Public_Images/rh2__Rollup_Helper_Logo.gif</logo>
     <tabs>rh2__PS_Rollup_Helper</tabs>
     <tabs>rh2__PS_All_Rollups</tabs>
     <tabs>rh2__PS_Import_Export</tabs>

@@ -19,6 +19,9 @@
         <field>Contact.Last_Login_Time__c</field>
     </columns>
     <columns>
+        <field>Contact.Last_Call__c</field>
+    </columns>
+    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Contact.Scenarios_Saved_Last_Month__c</field>
     </columns>

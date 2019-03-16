@@ -5629,6 +5629,7 @@
     <members>rhx__RHX_Account_Action</members>
     <members>rhx__RHX_AccountPartner</members>
     <members>rhx__RHX_Case_Action</members>
+    <members>et4ae5__ContactActions</members>
     <name>ApexPage</name>
   </types>
   <types>

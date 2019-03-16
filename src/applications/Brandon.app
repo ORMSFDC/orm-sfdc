@@ -4,6 +4,5 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Brandon</label>
-    <logo>SharedDocuments/Brandon.jpg</logo>
     <tabs>RunScenario__c</tabs>
 </CustomApplication>
