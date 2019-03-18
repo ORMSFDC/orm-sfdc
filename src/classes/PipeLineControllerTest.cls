@@ -1383,11 +1383,11 @@ public with sharing class PipeLineControllerTest {
     @isTest
     static void updateFullPackageLoanStatusTest_ChangeStatus() {
         List<Loan_New__c> testLoans = new List<Loan_New__c>();
-        Loan_New__c loanAI = new Loan_New__c(LoanStatus__c = 'Incomplete');
+        Loan_New__c loanAI = new Loan_New__c(LoanStatus__c = 'Incomplete',LoanNumber__c = '1234533');
         testLoans.add(loanAI);
-        Loan_New__c loanAR = new Loan_New__c(LoanStatus__c = 'Proposal');
+        Loan_New__c loanAR = new Loan_New__c(LoanStatus__c = 'Proposal',LoanNumber__c = '1234445');
         testLoans.add(loanAR);
-        Loan_New__c loanWFFP = new Loan_New__c(LoanStatus__c = 'Waiting for Full Package');
+        Loan_New__c loanWFFP = new Loan_New__c(LoanStatus__c = 'Waiting for Full Package',LoanNumber__c = '1255345');
         testLoans.add(loanWFFP); 
         insert testLoans;
         

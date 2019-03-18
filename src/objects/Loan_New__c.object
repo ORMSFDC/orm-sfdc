@@ -4958,9 +4958,9 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
     </validationRules>
     <validationRules>
         <fullName>Loan_Number_validation</fullName>
-        <active>false</active>
+        <active>true</active>
         <description>Validate that there is a loan number based on loanstatus* criteria</description>
-        <errorConditionFormula>AND ( OR ( ISPICKVAL ( LoanStatus__c , "Waiting For Full Package" ), ISPICKVAL ( LoanStatus__c , "Submitted to Lender" ) ), ISBLANK (  LoanNumber__c ) )</errorConditionFormula>
+        <errorConditionFormula>AND ( OR ( ISPICKVAL ( LoanStatus__c , "Waiting For Full Package" ), ISPICKVAL ( LoanStatus__c , "Application Package Received" ) ), ISBLANK (  LoanNumber__c ) )</errorConditionFormula>
         <errorDisplayField>LoanNumber__c</errorDisplayField>
         <errorMessage>Loan number is required</errorMessage>
     </validationRules>
