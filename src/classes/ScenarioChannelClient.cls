@@ -55,7 +55,7 @@ global class ScenarioChannelClient {
         request.setMethod('POST');
         request.setBody(body);
         request.setTimeout(120000);
-
+        system.debug('body---->'+body);
         Http http = new Http();
         HttpResponse response;
         if (!test.isRunningTest()) {
