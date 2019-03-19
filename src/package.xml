@@ -4264,6 +4264,11 @@
     <members>Task.UpdateStatus_8</members>
     <members>Task.UpdateStatus_9</members>
     <members>Loan_New__c.Request_App_Package</members>
+    <members>Loan_New__c.Closing</members>
+    <members>Loan_New__c.Extra</members>
+    <members>Loan_New__c.Purchase</members>
+    <members>Loan_New__c.Underwriting</members>
+    <members>Loan_New__c.Vendor</members>
     <name>QuickAction</name>
   </types>
   <types>
