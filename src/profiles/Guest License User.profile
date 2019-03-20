@@ -2451,6 +2451,18 @@
     <layoutAssignments>
         <layout>lib__App_Task__c-lib__AppTaskLayout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_Product_Keyword__mdt-Lookup Product Keyword Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_PropertyState_Keyword__mdt-Lookup PropertyState Keyword Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_PropertyState_State__mdt-Lookup PropertyState State Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_Purpose_of_Refinance_Keyword__mdt-Lookup Purpose of Refinance Keyword Layout</layout>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -2915,6 +2927,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>
