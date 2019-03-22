@@ -7,11 +7,6 @@
         <quickActionLayoutColumns>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Property_State_Details__c</field>
-                <uiBehavior>Readonly</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
                 <field>Assisted_Signing__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>

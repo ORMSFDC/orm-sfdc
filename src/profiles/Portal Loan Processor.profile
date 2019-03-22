@@ -1570,11 +1570,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Loan_New__c.Broker_Origination__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Credit_to_Borrower__c</field>
         <readable>true</readable>
@@ -3259,6 +3254,11 @@
         <field>Loan_New__c.Is_Loan_Created_Manually__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+    <editable>false</editable>
+    <readable>false</readable>
+    <field>Loan_New__c.Broker_Origination__c</field>
+</fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
