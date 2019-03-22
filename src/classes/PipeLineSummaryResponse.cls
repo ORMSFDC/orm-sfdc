@@ -21,8 +21,8 @@ public class PipeLineSummaryResponse {
     @AuraEnabled public decimal PrincipalLimit{get;set;}
     @AuraEnabled public decimal MandatoryObligation{get;set;}
     @AuraEnabled public string Margin{get;set;}
-    @AuraEnabled public string InitialInterestRate{get;set;}
-    @AuraEnabled public string ExpectedInterestRate{get;set;}
+    @AuraEnabled public decimal InitialInterestRate{get;set;}
+    @AuraEnabled public decimal ExpectedInterestRate{get;set;}
     @AuraEnabled public decimal RepairEstimate{get;set;}
     @AuraEnabled public string FHACaseNumber{get;set;}
     @AuraEnabled public decimal RepairSetAside{get;set;}

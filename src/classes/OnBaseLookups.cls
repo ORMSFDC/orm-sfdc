@@ -326,18 +326,17 @@ public class OnBaseLookups {
                     hasError = true;
                     requiredFields += 'Mandatory Obligations,';
                 }
-// TODO: Field Data Type Change
-/*
-                if(String.isEmpty(loan.ExpectedInterestRate__c)) {
+
+                if(loan.ExpectedInterestRate__c == null) {
                     hasError = true;
                     requiredFields += 'Expected Interest Rate,';
                 }
 
-    			if(String.isEmpty(loan.InitialInterestRate__c)) {
+    			if(loan.InitialInterestRate__c == null) {
                     hasError = true;
                     requiredFields += 'Initial Interest Rate,';
                 }
-*/                
+                
     			if(String.isEmpty(loan.Non_Borrower_Title_Holder__c)) {
                     hasError = true;
                     requiredFields += 'Non Borrower Title Holder,';

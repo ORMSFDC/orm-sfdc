@@ -568,9 +568,7 @@ public class PipeLineController {
                     FinancialAssessmentResult__c ,TotalLesa__c ,BrokerCompensation__c,
                     
                     ProceedsAvailableFirstYear__c,LineOfCreditAfterFirstYear__c,InitialUnpaidPrincipalBalance__c,
-                    PrincipalLimit__c,Margin__c,MandatoryObligations__c,
-                    // TODO: Field Data Type Change
-                    //InitialInterestRate__c,ExpectedInterestRate__c,
+                    PrincipalLimit__c,Margin__c,MandatoryObligations__c,InitialInterestRate__c,ExpectedInterestRate__c,
                     RepairEstimate__c,FHACaseNumber__c,RepairSetAside__c,Broker_Origination__c,
                     
                     Lien_Balance__c,Lien_Creditor__c,Life_Expectancy__c,Residual_Income_Fulfilled__c,Residential_Income_Required__c,
@@ -608,9 +606,8 @@ public class PipeLineController {
             objSummary.PrincipalLimit=objl.PrincipalLimit__c;
             objSummary.MandatoryObligation=objl.MandatoryObligations__c;
             objSummary.Margin=objl.Margin__c;
-            // TODO: Field Data Type Change
-            //objSummary.InitialInterestRate=objl.InitialInterestRate__c;
-            //objSummary.ExpectedInterestRate=objl.ExpectedInterestRate__c;
+            objSummary.InitialInterestRate=objl.InitialInterestRate__c;
+            objSummary.ExpectedInterestRate=objl.ExpectedInterestRate__c;
             objSummary.RepairEstimate=objl.RepairEstimate__c;
             objSummary.FHACaseNumber=objl.FHACaseNumber__c;
             objSummary.RepairSetAside=objl.RepairSetAside__c;
