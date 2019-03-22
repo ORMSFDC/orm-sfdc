@@ -352,7 +352,9 @@ private class OnBaseLookupsTest {
                 Is_there_a_POA_Name_Representing_and__c,Trust_Required__c,FHA_Case_Number__c,Maximum_Claim_Amount__c,
                 PrincipalLimit__c,Client_Chosen_Title__c,Flood_Zone__c,PropertyAppraisalValue__c,
                 Guardianship_Conservatorship_Required__c,Assisted_Signing__c,Remainderman_on_Loan__c,
-                Initial_Disbursement_Limit__c,MandatoryObligations__c,ExpectedInterestRate__c,InitialInterestRate__c,
+                Initial_Disbursement_Limit__c,MandatoryObligations__c,
+             // TODO: Field Data Type Change
+             //ExpectedInterestRate__c,InitialInterestRate__c,
                 Non_Borrower_Title_Holder__c,Non_Borrowing_Title_Holder_Spouse__c,POA_NonBorrowing_Title_Holder__c,ORMS__c
             FROM Loan_New__c];
         loans[0].LoanStatus__c = 'Incomplete';
@@ -373,7 +375,9 @@ private class OnBaseLookupsTest {
                 Is_there_a_POA_Name_Representing_and__c,Trust_Required__c,FHA_Case_Number__c,Maximum_Claim_Amount__c,
                 PrincipalLimit__c,Client_Chosen_Title__c,Flood_Zone__c,PropertyAppraisalValue__c,
                 Guardianship_Conservatorship_Required__c,Assisted_Signing__c,Remainderman_on_Loan__c,
-                Initial_Disbursement_Limit__c,MandatoryObligations__c,ExpectedInterestRate__c,InitialInterestRate__c,
+                Initial_Disbursement_Limit__c,MandatoryObligations__c,
+             // TODO: Field Data Type Change
+             //ExpectedInterestRate__c,InitialInterestRate__c,
                 Non_Borrower_Title_Holder__c,Non_Borrowing_Title_Holder_Spouse__c,POA_NonBorrowing_Title_Holder__c,ORMS__c
             FROM Loan_New__c];
         loans[0].LoanStatus__c = 'Docs out to Settlement Agent';
