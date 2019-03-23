@@ -4936,6 +4936,16 @@
     <readable>false</readable>
     <field>Loan_New__c.Total_LESA_Amount__c</field>
 </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Cash_to_Close__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Declaration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>

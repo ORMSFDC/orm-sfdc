@@ -46,8 +46,8 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>FHA_Case_Number_Expired__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <field>FHA_Case_Number_Expiration__c</field>
+                <uiBehavior>Readonly</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
