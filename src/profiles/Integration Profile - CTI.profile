@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>CTI Profile (IP Whitelisted)</description><loginIpRanges>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>CTI Profile (IP Whitelisted)</description><loginIpRanges>
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges><userLicense>Salesforce</userLicense>
@@ -10946,11 +10946,7 @@
     <readable>false</readable>
     <field>Loan_New__c.Withdrawn_Date__c</field>
 </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Loan_New__c.Cash_to_Close__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Declaration__c</field>

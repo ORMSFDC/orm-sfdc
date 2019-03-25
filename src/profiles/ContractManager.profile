@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
     <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
 <apexPage>UserActiveStatus</apexPage>
 <enabled>false</enabled>
@@ -5067,11 +5067,7 @@
     <readable>false</readable>
     <field>Loan_New__c.Total_LESA_Amount__c</field>
 </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Loan_New__c.Cash_to_Close__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Declaration__c</field>
