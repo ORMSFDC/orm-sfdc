@@ -193,6 +193,11 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
+                <field>Cooling_Off_Expiration_Date__c</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
                 <field>ReDisclosure_Reason__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
