@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>MG 07/11 Review &amp; Consolidate with AE</description><userLicense>Salesforce</userLicense>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>MG 07/11 Review &amp; Consolidate with AE</description><userLicense>Salesforce</userLicense>
     <classAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
         <apexClass>AttachmentResponse</apexClass>
         <enabled>true</enabled>
@@ -9107,11 +9107,7 @@
     <readable>false</readable>
     <field>Loan_New__c.Total_LESA_Amount__c</field>
 </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Loan_New__c.Cash_to_Close__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Declaration__c</field>
