@@ -95,6 +95,14 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Re_disclosure_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ReDisclosure_Reason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Mortgage_Applied_for__c</field>
             </layoutItems>
             <layoutItems>
@@ -296,6 +304,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Cooling_Off_Notice_Signed_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Cooling_Off_Expiration_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
