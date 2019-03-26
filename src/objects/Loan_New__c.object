@@ -6247,18 +6247,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>decl_Cash_to_close__c</fullName>
-        <externalId>false</externalId>
-        <label>Cash to Close</label>
-        <length>15</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Mortgage_Applied_for__c</fullName>
         <externalId>false</externalId>
         <label>Mortgage Applied for</label>
@@ -6304,6 +6292,20 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>decl_Cash_to_close__c</fullName>
+        <description>Selecting "Yes" means the client is bringing cash to closing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes" means the client is bringing cash to closing.</inlineHelpText>
+        <label>Cash to Close</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
