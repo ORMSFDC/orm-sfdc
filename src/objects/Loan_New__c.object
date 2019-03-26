@@ -4550,55 +4550,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Mortgage_Applied_for__c</fullName>
-        <externalId>false</externalId>
-        <label>Mortgage Applied for</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>FHA Traditional HECM</fullName>
-                    <default>false</default>
-                    <label>FHA Traditional HECM</label>
-                </value>
-                <value>
-                    <fullName>HECM to HECM Refinance</fullName>
-                    <default>false</default>
-                    <label>HECM to HECM Refinance</label>
-                </value>
-                <value>
-                    <fullName>HECM for Purchase</fullName>
-                    <default>false</default>
-                    <label>HECM for Purchase</label>
-                </value>
-                <value>
-                    <fullName>FHA Refinance HECM</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>FHA Refinance HECM</label>
-                </value>
-                <value>
-                    <fullName>HELO Refinance</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>HELO Refinance</label>
-                </value>
-                <value>
-                    <fullName>HELO for Purchase</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>HELO for Purchase</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Net_Benefits_Test_Complete__c</fullName>
         <externalId>false</externalId>
         <label>Net Benefits Test Complete</label>
@@ -6306,6 +6257,53 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mortgage_Applied_for__c</fullName>
+        <externalId>false</externalId>
+        <label>Mortgage Applied for</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FHA Traditional HECM</fullName>
+                    <default>false</default>
+                    <label>FHA Traditional HECM</label>
+                </value>
+                <value>
+                    <fullName>HECM to HECM Refinance</fullName>
+                    <default>false</default>
+                    <label>HECM to HECM Refinance</label>
+                </value>
+                <value>
+                    <fullName>HECM for Purchase</fullName>
+                    <default>false</default>
+                    <label>HECM for Purchase</label>
+                </value>
+                <value>
+                    <fullName>HELO Refinance</fullName>
+                    <default>false</default>
+                    <label>HELO Refinance</label>
+                </value>
+                <value>
+                    <fullName>HELO for Purchase</fullName>
+                    <default>false</default>
+                    <label>HELO for Purchase</label>
+                </value>
+                <value>
+                    <fullName>FHA Refinance HECM</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>FHA Refinance HECM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
