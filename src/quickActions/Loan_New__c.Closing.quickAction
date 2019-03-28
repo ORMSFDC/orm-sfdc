@@ -117,11 +117,6 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Funds_Needed_To_Close__c</field>
-                <uiBehavior>Edit</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
                 <field>ProceedsAvailableFirstYear__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
