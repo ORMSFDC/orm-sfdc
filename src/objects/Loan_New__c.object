@@ -5083,20 +5083,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Phone</type>
     </fields>
     <fields>
-        <fullName>Title_Company__c</fullName>
-        <description>Name of Title Company</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Name of Title Company</inlineHelpText>
-        <label>Title Company</label>
-        <length>200</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Title_Effective_Date__c</fullName>
         <externalId>false</externalId>
         <label>Title Effective Date</label>
@@ -6300,6 +6286,20 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <inlineHelpText>Selecting "Yes" means the client is bringing cash to closing.</inlineHelpText>
         <label>Cash to Close</label>
         <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Company__c</fullName>
+        <description>Name of Title Company</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Title Company</inlineHelpText>
+        <label>Title Company</label>
+        <length>55</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
