@@ -152,11 +152,11 @@
                 <field>ORMS__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Product__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Purpose_of_Refinance__c</field>
             </layoutItems>
             <layoutItems>

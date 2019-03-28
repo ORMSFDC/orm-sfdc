@@ -67,11 +67,6 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Closing_Provider__c</field>
-                <uiBehavior>Readonly</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
                 <field>Margin__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
