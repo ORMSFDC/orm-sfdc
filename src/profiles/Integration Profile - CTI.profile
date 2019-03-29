@@ -10831,11 +10831,7 @@
         <field>Loan_New__c.Loan_Purpose__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Loan_New__c.Loan_Status_Number__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Property_State_Details__c</field>
