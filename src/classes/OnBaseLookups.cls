@@ -220,7 +220,7 @@ public class OnBaseLookups {
                     requiredFields += 'Subject Property State,';
                 }
                 
-                if(loan.Actual_Closing_Date__c == null) {
+                if(loan.Closing_Date__c == null) {
                     hasError = true;
                     requiredFields += 'Actual Closing Date,';
                 }                
@@ -272,9 +272,9 @@ public class OnBaseLookups {
                     requiredFields += 'Trust Required,';
                 }
                 
-                if(loan.FHA_Case_Number__c == null) {
+                if(loan.FHA_Case_Number_Date__c == null) {
                     hasError = true;
-                    requiredFields += 'FHA Case Number (date),';
+                    requiredFields += 'FHA Case Number Ordered Date,';
                 }                    
 
                 if(loan.Maximum_Claim_Amount__c == null) {

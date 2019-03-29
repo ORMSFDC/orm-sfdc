@@ -347,9 +347,9 @@ private class OnBaseLookupsTest {
             [SELECT
                 Id,LoanStatus__c,LoanNumber__c,Client_Name__c,Purpose_of_Loan__c,Actual_Disbursement_Date__c,
                 Subject_Property_Address__c,Subject_Property_City__c,Subject_Property_State__c,
-                Actual_Closing_Date__c,Subject_Property_Zip_Code__c,Title_Company__c,Closing_Agent__c,
+                Closing_Date__c,Subject_Property_Zip_Code__c,Title_Company__c,Closing_Agent__c,
                 Subject_Property_Type__c,FHACaseNumber__c,Disbursement_Amount__c,Subject_Property_County__c,
-                Is_there_a_POA_Name_Representing_and__c,Trust_Required__c,FHA_Case_Number__c,Maximum_Claim_Amount__c,
+                Is_there_a_POA_Name_Representing_and__c,Trust_Required__c,FHA_Case_Number_Date__c,Maximum_Claim_Amount__c,
                 PrincipalLimit__c,Client_Chosen_Title__c,Flood_Zone__c,PropertyAppraisalValue__c,
                 Guardianship_Conservatorship_Required__c,Assisted_Signing__c,Remainderman_on_Loan__c,
                 Initial_Disbursement_Limit__c,MandatoryObligations__c,ExpectedInterestRate__c,InitialInterestRate__c,
@@ -368,9 +368,9 @@ private class OnBaseLookupsTest {
             [SELECT
                 Id,LoanStatus__c,LoanNumber__c,Client_Name__c,Purpose_of_Loan__c,Actual_Disbursement_Date__c,
                 Subject_Property_Address__c,Subject_Property_City__c,Subject_Property_State__c,
-                Actual_Closing_Date__c,Subject_Property_Zip_Code__c,Title_Company__c,Closing_Agent__c,
+                Closing_Date__c,Subject_Property_Zip_Code__c,Title_Company__c,Closing_Agent__c,
                 Subject_Property_Type__c,FHACaseNumber__c,Disbursement_Amount__c,Subject_Property_County__c,
-                Is_there_a_POA_Name_Representing_and__c,Trust_Required__c,FHA_Case_Number__c,Maximum_Claim_Amount__c,
+                Is_there_a_POA_Name_Representing_and__c,Trust_Required__c,FHA_Case_Number_Date__c,Maximum_Claim_Amount__c,
                 PrincipalLimit__c,Client_Chosen_Title__c,Flood_Zone__c,PropertyAppraisalValue__c,
                 Guardianship_Conservatorship_Required__c,Assisted_Signing__c,Remainderman_on_Loan__c,
                 Initial_Disbursement_Limit__c,MandatoryObligations__c,ExpectedInterestRate__c,InitialInterestRate__c,
@@ -382,7 +382,7 @@ private class OnBaseLookupsTest {
         loans[0].Flood_Zone__c= null;
         
         String actual = OnBaseLookups.validateFinalSend(loans);
-        String expected = 'The following value(s) must be entered before Docs out to Settlement Agent can be selected: LoanNumber,Borrower Name,Purpose of Loan,Actual Disbursement Date,Subject Property Address,Subject Property City,Subject Property State,Actual Closing Date,Subject Property Zip Code,Title Company,Closing Agent,Subject Property Type,FHA Case Number,Disbursement Amount,Subject Property County,Is there a POA?,Trust Required,FHA Case Number (date),Maximum Claim Amount,PrincipalLimit,Client Chosen Title,Flood Zone,PropertyAppraisalValue,Guardianship/Conservatorship Required,Assisted Signing,Remainderman on Loan,Initial Disbursement Limit,Mandatory Obligations,Expected Interest Rate,Initial Interest Rate,Non Borrower Title Holder,Non Borrowing Title Holder Spouse,POA NonBorrowing Title Holder,ORMS Documents';
+        String expected = 'The following value(s) must be entered before Docs out to Settlement Agent can be selected: LoanNumber,Borrower Name,Purpose of Loan,Actual Disbursement Date,Subject Property Address,Subject Property City,Subject Property State,Actual Closing Date,Subject Property Zip Code,Title Company,Closing Agent,Subject Property Type,FHA Case Number,Disbursement Amount,Subject Property County,Is there a POA?,Trust Required,FHA Case Number Ordered Date,Maximum Claim Amount,PrincipalLimit,Client Chosen Title,Flood Zone,PropertyAppraisalValue,Guardianship/Conservatorship Required,Assisted Signing,Remainderman on Loan,Initial Disbursement Limit,Mandatory Obligations,Expected Interest Rate,Initial Interest Rate,Non Borrower Title Holder,Non Borrowing Title Holder Spouse,POA NonBorrowing Title Holder,ORMS Documents';
         System.assertEquals(expected, actual);
     }
 }
