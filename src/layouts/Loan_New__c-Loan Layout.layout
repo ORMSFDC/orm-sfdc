@@ -22,10 +22,6 @@
                 <field>LoanStatus__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Loan_Status_Number__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Loan_Status_Change_Date__c</field>
             </layoutItems>
