@@ -65,7 +65,7 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Financial_Assessment_Result__c</field>
+                <field>FinancialAssessmentResult__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
@@ -124,8 +124,8 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Total_Monthly_Property_Charges__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <field>Total_Monthly_Property_Charge__c</field>
+                <uiBehavior>Readonly</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
