@@ -121,10 +121,15 @@
                 var a = component.get("v.Loan_Details");
                 helper.LoanDetailsSave(component, event, helper);
                 //helper.LoanContactsSave(component, event, helper);
-            } else {
+            } 
+            if(LDTS == undefined){ //1492705
+                component.set("v.showError2", true);               
+            }
+            else if (LDTS == "Yes"){ //1492705
                 component.set("v.Loan_Details", false);
                 var a = component.get("v.Loan_Details");
                 component.set("v.showError", false);
+                component.set("v.showError2", false);
                 component.set("v.NewLoan.Title_Company__c", "");
                 component.set("v.NewLoan.Contact_Name__c", "");
                 component.set("v.NewLoan.Contact_Phone_Number_LoanDetails__c", "");

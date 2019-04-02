@@ -20,6 +20,7 @@
     <aura:attribute name="manual" type="Boolean" default="true"/>
     <aura:attribute name="nextDataExist" type="Boolean" default="false"/>    
     <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showError2" type="boolean" default="false"/> <!-- 1492705 -->
     <aura:attribute name="showWarning" type="boolean" default="false"/>
     <aura:attribute name="itemsClicked" type="String" />
     <aura:attribute name="YesNoList" type="List" default="[
@@ -71,6 +72,11 @@
                                                   onchange="{! c.LoanDetails }"
                                                   />  
                         </div>
+                        <div align="left"><aura:if isTrue="{!v.showError2}">    <!-- 1492705 -->                        
+                            <ui:message title="Error" severity="error" closable="false">
+                                Please select at least one option
+                            </ui:message>
+                        </aura:if></div>
                         <aura:if isTrue="{!v.Loan_Details}">
                             <div style="margin-bottom:3%; "  class="slds-size_1-of-1">
                                 <ui:inputText label="Title Company " aura:id="TitleCompany" value="{!v.NewLoan.Title_Company__c}" class="slds-input" required="true" />
