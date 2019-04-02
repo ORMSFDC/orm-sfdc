@@ -4885,26 +4885,6 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorMessage>Must specify a reason while changing the ReDisclosure Date or vice-versa. You can select from picklist or submit your reason in the textbox below by selecting 'Other' in the picklist.</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Closing_and_ReDisclosure_dates</fullName>
-        <active>true</active>
-        <description>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</description>
-        <errorConditionFormula>OR( ( Re_disclosure_Date__c  + 3) &gt; Closing_Date__c,  ( Re_disclosure_Date__c + 3) &gt; Anticipated_Closing_Date__c )</errorConditionFormula>
-        <errorDisplayField>Closing_Date__c</errorDisplayField>
-        <errorMessage>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Texas_Loan_Validation_on_Closing_Dates</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND ( ISPICKVAL (Subject_Property_State__c, "Texas"),
-	( OR 
-		( Closing_Date__c &lt; (  Application_Disclosure_Signed_Date__c   + 12 ) ,
-							   Anticipated_Closing_Date__c &lt; (Application_Disclosure_Signed_Date__c + 12)
-							)
-	)
-)</errorConditionFormula>
-        <errorMessage>Texas Loan: The Closing Date cannot be within 12 days of the Application Disclosure Signed Date</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Utah_Counseling_Date_Prior_to_App_Date</fullName>
         <active>true</active>
         <description>The Counseling Date must be prior to the Application Date. Utah Loan</description>
@@ -4928,14 +4908,6 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>closing_and_appraisal_sent_to_clientDate</fullName>
-        <active>true</active>
-        <description>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</description>
-        <errorConditionFormula>OR( Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c,  Anticipated_Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c)</errorConditionFormula>
-        <errorDisplayField>Closing_Date__c</errorDisplayField>
-        <errorMessage>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Must_fill_Who_on_Withdrawn</fullName>
         <active>true</active>
         <description>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw' text box must be filled.</description>
@@ -4943,18 +4915,107 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorMessage>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw?' text box must be filled.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>Actual_Closing_Date_Appraisal_Sent_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>Actual Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Actual_Closing_and_ReDisclosure_Dates</fullName>
+        <active>true</active>
+        <description>Actual Closing Date cannot be within 3 days of the current Re-disclosure Date.</description>
+        <errorConditionFormula>( Re_disclosure_Date__c  + 3) &gt; Closing_Date__c</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>Actual Closing Date cannot be within 3 days of the current Re-disclosure Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Anticipated_Closing_Date_Appraisal_Sent</fullName>
+        <active>true</active>
+        <description>Anticipated Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</description>
+        <errorConditionFormula>Anticipated_Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
+        <errorDisplayField>Anticipated_Closing_Date__c</errorDisplayField>
+        <errorMessage>Anticipated Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Anticipated_Closing_and_ReDisclosure</fullName>
+        <active>true</active>
+        <description>Anticipated Closing Date cannot be within 3 days of the current Re-disclosure Date.</description>
+        <errorConditionFormula>( Re_disclosure_Date__c + 3) &gt; Anticipated_Closing_Date__c</errorConditionFormula>
+        <errorDisplayField>Anticipated_Closing_Date__c</errorDisplayField>
+        <errorMessage>Anticipated Closing Date cannot be within 3 days of the current Re-disclosure Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Closing_and_ReDisclosure_dates</fullName>
+        <active>false</active>
+        <description>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</description>
+        <errorConditionFormula>OR( ( Re_disclosure_Date__c  + 3) &gt; Closing_Date__c,  ( Re_disclosure_Date__c + 3) &gt; Anticipated_Closing_Date__c )</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>The Closing Date cannot be within 3 days of the current Re-disclosure Date.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>Loan_Status_and_Counseling_Date</fullName>
         <active>true</active>
         <description>Loan Status cannot be changed until 8 days after the Counseling Date.</description>
-        <errorConditionFormula>((Today() - Counseling_Date__c )&lt;8) &amp;&amp; (ISPICKVAL(Subject_Property_State__c,'California')) &amp;&amp; (!( 
-(ISPICKVAL(LoanStatus__c,'Proposal')) || 
-(ISPICKVAL(LoanStatus__c,'Incomplete')) ||
-(ISPICKVAL(LoanStatus__c,'Waiting for Full Package')) || 
-(ISPICKVAL(LoanStatus__c,'Application Package Received')) ||
-(ISPICKVAL(LoanStatus__c,'Loan Submission Received- Awaiting Review'))) 
-)</errorConditionFormula>
+        <errorConditionFormula>( ( Today() - Counseling_Date__c ) &lt; 8 ) &amp;&amp; 
+	(ISPICKVAL(Subject_Property_State__c,'California')) &amp;&amp; 
+	( ! ( 
+		( ISPICKVAL (LoanStatus__c, 'Incomplete') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Proposal') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Waiting for Full Package') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Application Package Received') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Loan Submission Received- Awaiting Review') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Full Application Received - Incomplete') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Underwriting Clear to Close') ) || 
+		( ISPICKVAL (LoanStatus__c, 'In final HUD Review') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Closed - Awaiting Funding') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Loan Rescinded') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Funded') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Application Approved but Not Accepted') ) || 
+		( ISPICKVAL (LoanStatus__c, 'File Closed for Incompleteness') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Suspended') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Withdrawn') ) || 
+		( ISPICKVAL (LoanStatus__c, 'Denied') )
+		) 
+	)</errorConditionFormula>
         <errorDisplayField>LoanStatus__c</errorDisplayField>
         <errorMessage>Loan Status cannot be changed until 8 days after the Counseling Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Texas_Loan_Actual_Closing_Date</fullName>
+        <active>true</active>
+        <description>The Actual Closing Date cannot be within 12 days of the Application Disclosure Signed Date.  (put it on Actual Closing Date field)</description>
+        <errorConditionFormula>AND( ISPICKVAL (Subject_Property_State__c, "Texas"),( Closing_Date__c &lt; (  Application_Disclosure_Signed_Date__c   + 12 ) ) )</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>The Actual Closing Date cannot be within 12 days of the Application Disclosure Signed Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Texas_Loan_Anticipated_Closing_Date</fullName>
+        <active>true</active>
+        <description>The Anticipated Closing Date cannot be within 12 days of the Application Disclosure Signed Date</description>
+        <errorConditionFormula>AND( ISPICKVAL (Subject_Property_State__c, "Texas"),( Anticipated_Closing_Date__c &lt; ( Application_Disclosure_Signed_Date__c + 12 ) ) )</errorConditionFormula>
+        <errorDisplayField>Anticipated_Closing_Date__c</errorDisplayField>
+        <errorMessage>The Anticipated Closing Date cannot be within 12 days of the Application Disclosure Signed Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Texas_Loan_Validation_on_Closing_Dates</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND ( ISPICKVAL (Subject_Property_State__c, "Texas"),
+	( OR 
+		( Closing_Date__c &lt; (  Application_Disclosure_Signed_Date__c   + 12 ) ,
+							   Anticipated_Closing_Date__c &lt; (Application_Disclosure_Signed_Date__c + 12)
+							)
+	)
+)</errorConditionFormula>
+        <errorMessage>Texas Loan: The Closing Date cannot be within 12 days of the Application Disclosure Signed Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>closing_and_appraisal_sent_to_clientDate</fullName>
+        <active>false</active>
+        <description>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</description>
+        <errorConditionFormula>OR( Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c,  Anticipated_Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c)</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>
