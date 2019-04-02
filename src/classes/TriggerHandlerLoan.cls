@@ -114,7 +114,6 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
             }
         }
         
-        RecursiveTriggerHandler.isFirstTime = false;
         Logger.pop();
     }
 }
