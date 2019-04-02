@@ -8,6 +8,78 @@
             </componentInstanceProperties>
             <componentName>force:highlightsPanel</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 255); font-size: 48px;&quot;&gt;HECM&lt;/b&gt;&lt;/p&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+            <visibilityRule>
+                <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+                <criteria>
+                    <leftValue>{!Record.Product_Type__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HECM</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>FHA Traditional HECM</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HECM to HECM Refinance</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HECM for Purchase</rightValue>
+                </criteria>
+            </visibilityRule>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>decorate</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>richTextValue</name>
+                <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 48px; color: rgb(0, 128, 0);&quot;&gt;HELO&lt;/b&gt;&lt;/p&gt;</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:richText</componentName>
+            <visibilityRule>
+                <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                <criteria>
+                    <leftValue>{!Record.Product_Type__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HELO</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HELO Refinance</rightValue>
+                </criteria>
+                <criteria>
+                    <leftValue>{!Record.Mortgage_Applied_for__c}</leftValue>
+                    <operator>EQUAL</operator>
+                    <rightValue>HELO for Purchase</rightValue>
+                </criteria>
+            </visibilityRule>
+        </componentInstances>
+        <componentInstances>
+            <componentName>LoanBanner</componentName>
+            <visibilityRule>
+                <criteria>
+                    <leftValue>{!Record.Banner__c}</leftValue>
+                    <operator>NE</operator>
+                </criteria>
+            </visibilityRule>
+        </componentInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>
@@ -20,6 +92,10 @@
             <componentName>ConditionMainCMP</componentName>
         </componentInstances>
         <componentInstances>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
             <componentName>force:relatedListContainer</componentName>
         </componentInstances>
         <mode>Replace</mode>
