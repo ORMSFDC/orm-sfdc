@@ -41,7 +41,8 @@ global class ScenarioExportUtil {
         PartnerId__r.Contact.Account.BillingCity,
         PartnerId__r.Contact.Account.BillingPostalcode,
         PartnerId__r.Contact.Account.Phone,
-        PartnerId__r.Contact.Account.Company_NMLS_ID__c
+        PartnerId__r.Contact.Account.Company_NMLS_ID__c,
+        PartnerId__r.Contact.Account.Partner_Type__c
         FROM Scenario__c
         WHERE  Id = :scenarioId];
     
@@ -68,7 +69,7 @@ global class ScenarioExportUtil {
         ScenarioExport.loanlead.put('Contact_NMLS', loanlead1.PartnerId__r.Contact.Contact_NMLS__c);
         ScenarioExport.loanlead.put('Company_NMLS', loanlead1.PartnerId__r.Contact.Account.Company_NMLS_ID__c);
         ScenarioExport.loanlead.put('Partner_Name', loanlead1.PartnerId__r.Contact.Account.Name);
-
+        ScenarioExport.loanlead.put('Partner_Tier', loanlead1.PartnerId__r.Contact.Account.Partner_Type__c);
 
         if (loanlead1.PartnerId__r.Contact.Account.BillingStreet != null) {
             // Get Billing Street and remove carriage returns if street is multi-line
