@@ -6272,6 +6272,216 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
+    <fields>
+        <fullName>KPI_App_Req__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL (  LoanStatus__c  , "Proposal")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI App Req</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Clear_to_Close__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Underwriting Clear to Close")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Clear to Close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Closed_Awaiting_Funding__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Closed - Awaiting Funding")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Closed - Awaiting Funding</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Cond_Appr__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Conditionally Approved")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Cond Appr</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Docs_Out_To_Settlement__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Docs Out To Settlement</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Funded__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Funded")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Funded</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_HUD_Review__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "In final HUD Review")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI HUD Review</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_In_Processing__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "In Processing")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI In Processing</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_In_UW_Review__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "In Underwriting Review")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI In UW Review</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Inc__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL (  LoanStatus__c  , "Incomplete")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Inc</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Loan_Awaiting_Review__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Loan Submission Received- Awaiting Review")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Loan Awaiting Review</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Loan_Incomplete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Full Application Received - Incomplete")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Loan Incomplete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Sub_to_Lender__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL (  LoanStatus__c  , "Application Package Received")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Sub to Lender</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_WF_Full_Package__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL (  LoanStatus__c  , "Waiting For Full Package")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI WF Full Package</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
