@@ -4360,16 +4360,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>In_final_HUD_Review_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>In final HUD Review Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>DateTime</type>
-    </fields>
-    <fields>
         <fullName>Initial_Disbursement_Limit__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>The maximum disbursement allowed at loan closing and during the first 12 month disbursement period.</inlineHelpText>
@@ -6481,6 +6471,16 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_final_HUD_Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>In Final HUD Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>

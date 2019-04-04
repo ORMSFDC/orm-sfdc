@@ -9060,11 +9060,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Loan_New__c.In_final_HUD_Review_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Opportunity.Approval_Date_for_Renewal__c</field>
         <readable>true</readable>
@@ -9532,11 +9527,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Docs_Out_to_Settlement_Agent_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Loan_New__c.File_Closed_for_Incompleteness_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -10337,6 +10327,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.KPI_WF_Full_Package__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.File_Closed_for_Incompleteness_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.In_final_HUD_Review_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
