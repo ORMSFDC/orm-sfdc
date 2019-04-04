@@ -809,6 +809,7 @@
     <members>TestLookupPropertyState</members>
     <members>TestLookupPurposeOfRefinance</members>
     <members>TestOnBase</members>
+    <members>TestLookupLoanStatus</members>
     <name>AuraDefinitionBundle</name>
   </types>
   <types>
@@ -974,6 +975,7 @@
     <members>Lookup_PropertyState_Keyword__mdt</members>
     <members>Lookup_PropertyState_State__mdt</members>
     <members>Lookup_Purpose_of_Refinance_Keyword__mdt</members>
+    <members>Lookup_LoanStatus_Keyword__mdt</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -6164,6 +6166,11 @@
     <members>ExternalServicesObjectFieldMapping.OnBase_Initial_LoanNumber</members>
     <members>ExternalServicesObjectFieldMapping.OnBase_Initial_Subject_Property_State</members>
     <members>TriggerLoan.onbaseValidateFinal</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_Initial_LoanStatus</members>
+    <members>Lookup_LoanStatus_Keyword.Docs_Out_to_Settlement_Agent</members>
+    <members>Lookup_LoanStatus_Keyword.Loan_Submission_Received_Awaiting_Review</members>
+    <members>Lookup_LoanStatus_Keyword.Submitted_to_Lender</members>
+    <members>Lookup_LoanStatus_Keyword.Waiting_for_Full_Package</members>
     <name>CustomMetadata</name>
   </types>
   <types>

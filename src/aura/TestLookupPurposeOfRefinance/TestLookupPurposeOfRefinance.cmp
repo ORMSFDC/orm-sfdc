@@ -1,8 +1,8 @@
 <aura:component controller="OnBaseLookups" implements="flexipage:availableForAllPageTypes">
     
-    <aura:attribute name="productType" type="String" />
-    <aura:attribute name="mortgageAppliedFor" type="String" />
-    <aura:attribute name="rateType" type="String" />
+    <aura:attribute name="cmdPurposeOfRefinance" type="Lookup_Purpose_of_Refinance_Keyword__mdt" 
+                    default="{'sobjectType':'Lookup_Purpose_of_Refinance_Keyword__mdt'}" />
+    <aura:attribute name="loan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}" />
     <aura:attribute name="keyword" type="String" />
     
     <div class="white">
@@ -15,24 +15,28 @@
                         </legend>
                         
                         <form class="slds-form--stacked">
-                            <lightning:input aura:id="testform"
-                                             label="Loan Type"
-                                             value="{!v.productType}" />
-                            <lightning:input aura:id="testform"
-                                             label="Mortgage Applied For"
-                                             value="{!v.mortgageAppliedFor}" />
-                            <lightning:input aura:id="Rate Type"
-                                             label="Rate Type"
-                                             value="{!v.rateType}" />
-                            <lightning:button label="Get Keyword"
-                                              onclick="{!c.clickGetKeyword}" />
+                            <div class="slds-text-heading_small slds-p-vertical--small">
+                            	Loan Type
+                                <!--force:inputField value="{!v.cmdPurposeOfRefinance.Product_Type__c}" /-->
+                                <force:inputField value="{!v.loan.Product_Type__c}" />
+                            </div>                            
+                            <div class="slds-text-heading_small slds-p-vertical--small">
+                            	Mortgage Applied For
+                                <!--force:inputField value="{!v.cmdPurposeOfRefinance.Mortgage_Applied_for__c}" /-->
+                                <force:inputField value="{!v.loan.Mortgage_Applied_for__c}" />
+                            </div>                            
+                            <div class="slds-text-heading_small slds-p-vertical--small">
+                            	Rate Type
+                                <!--force:inputField value="{!v.cmdPurposeOfRefinance.Rate_Type__c}" /-->
+                                <force:inputField value="{!v.loan.Rate_Type__c}" />
+                            </div>                            
+                            <lightning:button label="Get Keyword" onclick="{!c.clickGetKeyword}" />
                         </form>
+                        
                         <br/><br/>
                         <div class="slds-text-heading_medium">
-                            Keyword: <ui:outputText value="{!v.keyword}" 
-                                                    class="TextColor_red" />   
-                        </div>
-                        
+                            Keyword: <ui:outputText value="{!v.keyword}" class="TextColor_red" />   
+                        </div>                        
                     </fieldset>
                 </div>
             </lightning:layoutItem>

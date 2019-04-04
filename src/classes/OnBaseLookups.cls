@@ -142,32 +142,37 @@ public class OnBaseLookups {
         Logger.pop();
         return keyword;
     }
-    
+      
     public static String getLoanStatusKeyword(String loanStatus)
     {
         Logger.push('getLoanStatusKeyword','OnBaseLookups');
         
         // Returned keyword will be null if no matches found in lookup
         String keyword;
-        
-        /*
-        // Look up the Closing Provider keyword
-        switch on amRockAgent {
-            when 'Yes' {
-                keyword = 'AMROCK';
-            }
-            when 'No' {
-                keyword = '';
-            }
-            when else {
-                // Value not set, so null
-            }
+                
+        // Look up the product keyword        
+        List<Lookup_LoanStatus_Keyword__mdt> detailKeyword = [select Keyword__c from Lookup_LoanStatus_Keyword__mdt where
+                                                                 Loan_Status__c = :loanStatus];
+        if (detailKeyword != null && detailKeyword.size() > 0)
+        {
+            // Found the keyword
+            keyword = detailKeyword[0].Keyword__c;
+            // Handle the empty case to differentiate since null means lookup not found
+            // Returning blank is valid keyword
+            if (keyword == null) keyword = '';            
         }
-		*/
-        keyword = loanStatus + '(T)';
         
         System.debug('getLoanStatusKeyword keyword> ' + keyword);
         Logger.pop();
+        return keyword;
+    }
+    
+    @AuraEnabled
+    public static String getLoanStatusKeywordWrapper(String loanStatus) {
+        String keyword = OnBaseLookups.getLoanStatusKeyword(loanStatus);
+        if (keyword == null) {
+            keyword = String.format('LoanStatus Lookup was not found for loan status [{0}]', new String[]{loanStatus});
+        }
         return keyword;
     }
     

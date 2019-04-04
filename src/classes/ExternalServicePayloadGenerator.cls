@@ -171,7 +171,7 @@ public without sharing class ExternalServicePayloadGenerator {
         String finalValue;
         
         switch on keywordNumber {
-            when '105' {
+            when '101' {
                 // LoanStatus
                 System.debug('LoanStatus');
                 String value = String.valueOf(rootObject.get(fieldName));

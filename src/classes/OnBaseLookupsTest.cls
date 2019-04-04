@@ -4,10 +4,53 @@ private class OnBaseLookupsTest {
     @testSetup
     static void setupTestData()
     {
-        Loan_New__c loan = new Loan_New__c(
-            LoanNumber__c = '54321'
+        List<Loan_New__c> loans = new List<Loan_New__c>();
+        
+        Loan_New__c loanLite = new Loan_New__c(
+            LoanNumber__c = 'Lite'
+        );        
+        loans.add(loanLite);
+        
+        Loan_New__c loanFull = new Loan_New__c(
+            LoanStatus__c = 'Docs out to Settlement Agent',
+            LoanNumber__c = 'Full',
+            Client_Name__c = 'TestLast, TestFirst',
+            Purpose_of_Loan__c = 'Medical',
+            Actual_Disbursement_Date__c = System.Date.today(),
+            Subject_Property_Address__c = '123 Test Road',
+            Subject_Property_City__c = 'Test City',
+            Subject_Property_State__c = 'Florida',
+            Closing_Date__c = System.Date.today(),
+            Subject_Property_Zip_Code__c = '34787',
+            Title_Company__c = 'Test Title Company',
+            Closing_Agent__c = 'Test Closing Agent',
+            Subject_Property_Type__c = 'Single Family',
+            FHACaseNumber__c = '000-00000',
+            Disbursement_Amount__c = 111.11,
+            Subject_Property_County__c = 'Orange',
+            Is_there_a_POA_Name_Representing_and__c = 'NO',
+            Trust_Required__c = 'NO',
+            FHA_Case_Number_Date__c = System.Date.today(),
+            Maximum_Claim_Amount__c = 111.11,
+            PrincipalLimit__c = 111.11,
+            Client_Chosen_Title__c = 'YES',
+            Flood_Zone__c = 'YES',
+            PropertyAppraisalValue__c = 500000,
+            Guardianship_Conservatorship_Required__c = 'NO',
+            Assisted_Signing__c = 'NO',
+            Remainderman_on_Loan__c = 'NO',
+            Initial_Disbursement_Limit__c = 111.11,
+            MandatoryObligations__c = 111.11,
+            ExpectedInterestRate__c = '5.25',
+            InitialInterestRate__c = '9.25',
+            Non_Borrower_Title_Holder__c = 'NO',
+            Non_Borrowing_Title_Holder_Spouse__c = 'NO',
+            POA_NonBorrowing_Title_Holder__c = 'NO',
+            ORMS__c = 'Yes'
         );
-        insert loan;
+        loans.add(loanFull);
+        
+        insert loans;
     } 
     
     @isTest
@@ -280,6 +323,67 @@ private class OnBaseLookupsTest {
     }
     
     @isTest
+    static void getLoanStatusKeywordTest_10()
+    {        
+        String loanStatus = 'Waiting for Full Package';
+        String expected = '10';
+        
+        Loan_New__c loan = [SELECT Id from Loan_New__c LIMIT 1];
+        loan.LoanStatus__c = loanStatus;
+        update loan;
+        
+        String keyword = OnBaseLookups.getLoanStatusKeyword(loan.LoanStatus__c);
+        
+        System.assertEquals(expected, keyword);   
+    }
+    
+    @isTest
+    static void getLoanStatusKeywordTest_16()
+    {        
+        String loanStatus = 'Application Package Received';
+        String expected = '16';
+        
+        Loan_New__c loan = [SELECT Id from Loan_New__c LIMIT 1];
+        loan.LoanStatus__c = loanStatus;
+        update loan;
+        
+        String keyword = OnBaseLookups.getLoanStatusKeyword(loan.LoanStatus__c);
+        
+        System.assertEquals(expected, keyword);   
+    }
+    
+    @isTest
+    static void getLoanStatusKeywordTest_20()
+    {        
+        String loanStatus = 'Loan Submission Received- Awaiting Review';
+        String expected = '20';
+        
+        Loan_New__c loan = [SELECT Id from Loan_New__c LIMIT 1];
+        loan.LoanStatus__c = loanStatus;
+        update loan;
+        
+        String keyword = OnBaseLookups.getLoanStatusKeyword(loan.LoanStatus__c);
+        
+        System.assertEquals(expected, keyword);   
+    }
+    
+    @isTest
+    static void getLoanStatusKeywordTest_57()
+    {        
+        String loanStatus = 'Docs Out to Settlement Agent';
+        String expected = '57';
+        String loanNumber = 'Full';
+        
+        Loan_New__c loan = [SELECT Id from Loan_New__c WHERE LoanNumber__c = :loanNumber];
+        loan.LoanStatus__c = loanStatus;
+        update loan;
+        
+        String keyword = OnBaseLookups.getLoanStatusKeyword(loan.LoanStatus__c);
+        
+        System.assertEquals(expected, keyword);   
+    }
+    
+    @isTest
     static void getProductKeywordWrapperTest_Null() {
         String productType = 'Does not match';
         String mortgageAppliedFor = 'Does not match';
@@ -342,7 +446,32 @@ private class OnBaseLookupsTest {
     }
     
     @isTest
-    static void validateFinalSendTest_NoValidationErrors() {
+    static void getLoanStatusKeywordWrapperTest_Null() {
+        String loanStatus = 'Does not match';
+        String expected = 'LoanStatus Lookup was not found';
+        
+        String keyword = OnBaseLookups.getLoanStatusKeywordWrapper(loanStatus);
+        
+        System.assert(keyword.contains(expected));
+    }
+    
+    @isTest
+    static void getLoanStatusKeywordWrapperTest_Found()
+    {        
+        String loanStatus = 'Waiting for Full Package';
+        String expected = '10';
+        
+        Loan_New__c loan = [SELECT Id from Loan_New__c LIMIT 1];
+        loan.LoanStatus__c = loanStatus;
+        update loan;
+        
+        String keyword = OnBaseLookups.getLoanStatusKeywordWrapper(loan.LoanStatus__c);
+        
+        System.assertEquals(expected, keyword);   
+    }
+    
+    @isTest
+    static void validateFinalSendTest_NoValidationErrors_OtherLoanStatus() {
 		List<Loan_New__c> loans = 
             [SELECT
                 Id,LoanStatus__c,LoanNumber__c,Client_Name__c,Purpose_of_Loan__c,Actual_Disbursement_Date__c,
@@ -357,6 +486,28 @@ private class OnBaseLookupsTest {
             FROM Loan_New__c];
         loans[0].LoanStatus__c = 'Incomplete';
         loans[0].LoanNumber__c = null;
+        String actual = OnBaseLookups.validateFinalSend(loans);
+        String expected = '';
+        System.assertEquals(expected, actual);
+    }
+    
+    @isTest
+    static void validateFinalSendTest_NoValidationErrors_ValidateLoanStatus() {
+        String loanNumber = 'Full';
+        String loanStatus = 'Docs Out to Settlement Agent';
+		List<Loan_New__c> loans = 
+            [SELECT
+                Id,LoanStatus__c,LoanNumber__c,Client_Name__c,Purpose_of_Loan__c,Actual_Disbursement_Date__c,
+                Subject_Property_Address__c,Subject_Property_City__c,Subject_Property_State__c,
+                Closing_Date__c,Subject_Property_Zip_Code__c,Title_Company__c,Closing_Agent__c,
+                Subject_Property_Type__c,FHACaseNumber__c,Disbursement_Amount__c,Subject_Property_County__c,
+                Is_there_a_POA_Name_Representing_and__c,Trust_Required__c,FHA_Case_Number_Date__c,Maximum_Claim_Amount__c,
+                PrincipalLimit__c,Client_Chosen_Title__c,Flood_Zone__c,PropertyAppraisalValue__c,
+                Guardianship_Conservatorship_Required__c,Assisted_Signing__c,Remainderman_on_Loan__c,
+                Initial_Disbursement_Limit__c,MandatoryObligations__c,ExpectedInterestRate__c,InitialInterestRate__c,
+                Non_Borrower_Title_Holder__c,Non_Borrowing_Title_Holder_Spouse__c,POA_NonBorrowing_Title_Holder__c,ORMS__c
+            FROM Loan_New__c WHERE LoanNumber__c = :loanNumber];
+        loans[0].LoanStatus__c = loanStatus;
         String actual = OnBaseLookups.validateFinalSend(loans);
         String expected = '';
         System.assertEquals(expected, actual);

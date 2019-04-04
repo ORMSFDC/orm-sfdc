@@ -8,6 +8,9 @@
         <componentInstances>
             <componentName>TestLookupPropertyState</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentName>TestLookupLoanStatus</componentName>
+        </componentInstances>
         <name>region2</name>
         <type>Region</type>
     </flexiPageRegions>
