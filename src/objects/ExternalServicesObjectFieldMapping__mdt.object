@@ -158,4 +158,19 @@
         </filters>
         <label>Baydocs</label>
     </listViews>
+    <listViews>
+        <fullName>OnBase</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Order__c</columns>
+        <columns>ObjectAPIName__c</columns>
+        <columns>FieldAPIName__c</columns>
+        <columns>MappingProperty__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>MasterLabel</field>
+            <operation>contains</operation>
+            <value>OnBase</value>
+        </filters>
+        <label>OnBase</label>
+    </listViews>
 </CustomObject>

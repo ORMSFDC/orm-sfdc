@@ -11550,6 +11550,9 @@
     <layoutAssignments>
         <layout>Lookup_Purpose_of_Refinance_Keyword__mdt-Lookup Purpose of Refinance Keyword Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lookup_LoanStatus_Keyword__mdt-Lookup LoanStatus Keyword Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
