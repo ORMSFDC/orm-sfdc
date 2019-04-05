@@ -4707,11 +4707,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Loan_New__c.Total_Assets__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Loan_New__c.Total_Expenses__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4723,11 +4718,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Loan_New__c.Total_Monthly_Property_Charge__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Loan_New__c.Total_Monthly_Property_Charges__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8718,6 +8708,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.Withdrawn_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Total_Assets__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Total_Monthly_Property_Charges__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
