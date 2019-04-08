@@ -3948,7 +3948,7 @@ IF(
     <fields>
         <fullName>Appraisal_Expiration_Date__c</fullName>
         <externalId>false</externalId>
-        <formula>Appraisal_Effective_Date__c  + 180</formula>
+        <formula>Appraisal_Effective_Date__c  + 120</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Appraisal Expiration Date</label>
         <required>false</required>
