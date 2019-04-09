@@ -6325,6 +6325,34 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Team__c</fullName>
+        <description>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</description>
+        <externalId>false</externalId>
+        <formula>Related_Partner__r.Owner.Team__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</inlineHelpText>
+        <label>Team</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Company__c</fullName>
+        <description>Name of Title Company</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Title Company</inlineHelpText>
+        <label>Title Company</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Subject_Property_Type__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property Type</label>
@@ -6403,11 +6431,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
                     <label>Site Condominium</label>
                 </value>
                 <value>
-                    <fullName>Mixed Use – Residential</fullName>
-                    <default>false</default>
-                    <label>Mixed Use – Residential</label>
-                </value>
-                <value>
                     <fullName>PUD</fullName>
                     <default>false</default>
                     <label>PUD</label>
@@ -6420,39 +6443,16 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
                 <value>
                     <fullName>Mixed use - Residential</fullName>
                     <default>false</default>
-                    <isActive>false</isActive>
                     <label>Mixed use - Residential</label>
+                </value>
+                <value>
+                    <fullName>Mixed Use – Residential</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mixed Use – Residential</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Team__c</fullName>
-        <description>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</description>
-        <externalId>false</externalId>
-        <formula>Related_Partner__r.Owner.Team__c</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</inlineHelpText>
-        <label>Team</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Title_Company__c</fullName>
-        <description>Name of Title Company</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Name of Title Company</inlineHelpText>
-        <label>Title Company</label>
-        <length>80</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
