@@ -1753,76 +1753,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Margin__c</fullName>
-        <externalId>false</externalId>
-        <label>Margin*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>1.750</fullName>
-                    <default>false</default>
-                    <label>1.750</label>
-                </value>
-                <value>
-                    <fullName>1.875</fullName>
-                    <default>false</default>
-                    <label>1.875</label>
-                </value>
-                <value>
-                    <fullName>2.000</fullName>
-                    <default>false</default>
-                    <label>2.000</label>
-                </value>
-                <value>
-                    <fullName>2.125</fullName>
-                    <default>false</default>
-                    <label>2.125</label>
-                </value>
-                <value>
-                    <fullName>2.250</fullName>
-                    <default>false</default>
-                    <label>2.250</label>
-                </value>
-                <value>
-                    <fullName>2.375</fullName>
-                    <default>false</default>
-                    <label>2.375</label>
-                </value>
-                <value>
-                    <fullName>2.500</fullName>
-                    <default>false</default>
-                    <label>2.500</label>
-                </value>
-                <value>
-                    <fullName>2.625</fullName>
-                    <default>false</default>
-                    <label>2.625</label>
-                </value>
-                <value>
-                    <fullName>2.750</fullName>
-                    <default>false</default>
-                    <label>2.750</label>
-                </value>
-                <value>
-                    <fullName>2.875</fullName>
-                    <default>false</default>
-                    <label>2.875</label>
-                </value>
-                <value>
-                    <fullName>3.000</fullName>
-                    <default>false</default>
-                    <label>3.000</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>MonthlyPaymentavailabletoClient__c</fullName>
         <externalId>false</externalId>
         <label>MonthlyPaymentavailabletoClient*</label>
@@ -2897,18 +2827,6 @@ IF(
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Subject_Property_Address__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property Address*</label>
-        <length>200</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Subject_Property_City__c</fullName>
         <externalId>false</externalId>
         <label>Subject Property City</label>
@@ -2931,20 +2849,6 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Subject_Property_State__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property State</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetName>US_States</valueSetName>
-        </valueSet>
     </fields>
     <fields>
         <fullName>Subject_Property_Zip_Code__c</fullName>
@@ -4342,21 +4246,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Formula_IsActive__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF ( OR
-     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Formula: In Processing</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Formula_Waiting_For_Full_Package__c</fullName>
         <externalId>false</externalId>
         <formula>IF(ISBLANK( Waiting_for_Full_Package_Date__c ), 0, 1)</formula>
@@ -4582,21 +4471,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>KPI_Cond_Appr__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF ( OR 
-(ISPICKVAL ( LoanStatus__c , "Conditionally Approved")), 1, 0)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>KPI Cond Appr</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>KPI_Docs_Out_To_Settlement__c</fullName>
         <externalId>false</externalId>
         <formula>IF ( OR 
@@ -4745,6 +4619,161 @@ IF(
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Formula_IsActive__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR
+     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Underwriting Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Formula: In Processing</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Cond_Appr__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Conditionally Approved")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Cond Appr</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Margin__c</fullName>
+        <externalId>false</externalId>
+        <label>Margin*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1.125</fullName>
+                    <default>false</default>
+                    <label>1.125</label>
+                </value>
+                <value>
+                    <fullName>1.250</fullName>
+                    <default>false</default>
+                    <label>1.250</label>
+                </value>
+                <value>
+                    <fullName>1.375</fullName>
+                    <default>false</default>
+                    <label>1.375</label>
+                </value>
+                <value>
+                    <fullName>1.500</fullName>
+                    <default>false</default>
+                    <label>1.500</label>
+                </value>
+                <value>
+                    <fullName>1.625</fullName>
+                    <default>false</default>
+                    <label>1.625</label>
+                </value>
+                <value>
+                    <fullName>1.750</fullName>
+                    <default>false</default>
+                    <label>1.750</label>
+                </value>
+                <value>
+                    <fullName>1.875</fullName>
+                    <default>false</default>
+                    <label>1.875</label>
+                </value>
+                <value>
+                    <fullName>2.000</fullName>
+                    <default>false</default>
+                    <label>2.000</label>
+                </value>
+                <value>
+                    <fullName>2.125</fullName>
+                    <default>false</default>
+                    <label>2.125</label>
+                </value>
+                <value>
+                    <fullName>2.250</fullName>
+                    <default>false</default>
+                    <label>2.250</label>
+                </value>
+                <value>
+                    <fullName>2.375</fullName>
+                    <default>false</default>
+                    <label>2.375</label>
+                </value>
+                <value>
+                    <fullName>2.500</fullName>
+                    <default>false</default>
+                    <label>2.500</label>
+                </value>
+                <value>
+                    <fullName>2.625</fullName>
+                    <default>false</default>
+                    <label>2.625</label>
+                </value>
+                <value>
+                    <fullName>2.750</fullName>
+                    <default>false</default>
+                    <label>2.750</label>
+                </value>
+                <value>
+                    <fullName>2.875</fullName>
+                    <default>false</default>
+                    <label>2.875</label>
+                </value>
+                <value>
+                    <fullName>3.000</fullName>
+                    <default>false</default>
+                    <label>3.000</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_Address__c</fullName>
+        <description>Property Address</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Property Address</inlineHelpText>
+        <label>Subject Property Address*</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_State__c</fullName>
+        <description>Property State</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Property State</inlineHelpText>
+        <label>Subject Property State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
@@ -5226,6 +5255,14 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorConditionFormula>OR( Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c,  Anticipated_Closing_Date__c &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c)</errorConditionFormula>
         <errorDisplayField>Closing_Date__c</errorDisplayField>
         <errorMessage>The Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Loan_Number_validation</fullName>
+        <active>true</active>
+        <description>Validate that there is a loan number based on loanstatus* criteria</description>
+        <errorConditionFormula>AND ( OR ( ISPICKVAL ( LoanStatus__c , "Waiting For Full Package" ), ISPICKVAL ( LoanStatus__c , "Application Package Received" ) ), ISBLANK (  LoanNumber__c ) )</errorConditionFormula>
+        <errorDisplayField>LoanNumber__c</errorDisplayField>
+        <errorMessage>Loan number is required</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

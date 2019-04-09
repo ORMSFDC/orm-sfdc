@@ -4,6 +4,13 @@
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>AE_Home</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+    </profileActionOverrides>
     <userLicense>Salesforce</userLicense>
     <classAccesses>
         <apexClass>DocResponse</apexClass>

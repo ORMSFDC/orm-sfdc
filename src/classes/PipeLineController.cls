@@ -956,7 +956,27 @@ public class PipeLineController {
         t.WhoId = u.ContactId;    
         insert t;
         return t.id;                      
-    }   
+    }
+    
+    // Update the Loan Status after Full Package has been submitted for Loan
+    @AuraEnabled
+    public static void updateFullPackageLoanStatus(String loanId) {
+        Loan_New__c loan = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loanId];
+        
+        switch on loan.LoanStatus__c {
+            when 'Incomplete',                // Application Incomplete
+                 'Proposal',                  // Application Requested
+                 'Waiting for Full Package'   // Waiting for Full Package
+            {
+                // Update to Submitted to Lender
+                loan.LoanStatus__c = 'Application Package Received';
+                update loan;
+            }
+            when else {
+                // Do not update for other loan statuses
+            }
+        }        
+    }
     
    /* @AuraEnabled  //Commented by Bala - 4/20
     public static void SaveTask(Loan_New__c Objloan,string LoanId, string ClientName, Id IndividualId, string LoanOfficer, string AccountExecutive)

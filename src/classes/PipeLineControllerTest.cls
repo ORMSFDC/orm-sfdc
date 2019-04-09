@@ -1379,4 +1379,42 @@ public with sharing class PipeLineControllerTest {
            Test.stopTest();
         }
     }
+    
+    @isTest
+    static void updateFullPackageLoanStatusTest_ChangeStatus() {
+        List<Loan_New__c> testLoans = new List<Loan_New__c>();
+        Loan_New__c loanAI = new Loan_New__c(LoanStatus__c = 'Incomplete',LoanNumber__c = '1234533');
+        testLoans.add(loanAI);
+        Loan_New__c loanAR = new Loan_New__c(LoanStatus__c = 'Proposal',LoanNumber__c = '1234445');
+        testLoans.add(loanAR);
+        Loan_New__c loanWFFP = new Loan_New__c(LoanStatus__c = 'Waiting for Full Package',LoanNumber__c = '1255345');
+        testLoans.add(loanWFFP); 
+        insert testLoans;
+        
+        PipeLineController.updateFullPackageLoanStatus(loanAI.Id);
+        loanAI = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loanAI.Id];
+        PipeLineController.updateFullPackageLoanStatus(loanAR.Id);
+        loanAR = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loanAR.Id];
+        PipeLineController.updateFullPackageLoanStatus(loanWFFP.Id);
+        loanWFFP = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loanWFFP.Id];
+        
+        String expected = 'Application Package Received'; // Submitted to Lender
+        System.assertEquals(expected, loanAI.LoanStatus__c);
+        System.assertEquals(expected, loanAR.LoanStatus__c);
+        System.assertEquals(expected, loanWFFP.LoanStatus__c);
+    }
+    
+    @isTest
+    static void updateFullPackageLoanStatusTest_NoStatusChange() {
+        String expected = 'Loan Submission Received- Awaiting Review';
+        List<Loan_New__c> testLoans = new List<Loan_New__c>();
+        Loan_New__c loan = new Loan_New__c(LoanStatus__c = expected);
+        testLoans.add(loan);
+        insert testLoans;
+        
+        PipeLineController.updateFullPackageLoanStatus(loan.Id);
+        loan = [SELECT Id, LoanStatus__c FROM Loan_New__c WHERE Id = :loan.Id];
+ 
+        System.assertEquals(expected, loan.LoanStatus__c);
+    }
 }

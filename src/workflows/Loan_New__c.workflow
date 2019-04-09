@@ -78,7 +78,8 @@ IF(CONTAINS(Closing_Month__c,'November  2018'),24,
 IF(CONTAINS(Closing_Month__c,'December  2018'),22,
 IF(CONTAINS(Closing_Month__c,'January  2019'),27,
 IF(CONTAINS(Closing_Month__c,'February  2019'),23,
-IF(CONTAINS(Closing_Month__c,'March  2019'),22, 0 )))))))))))</formula>
+IF(CONTAINS(Closing_Month__c,'March  2019'),22,
+IF(CONTAINS(Closing_Month__c,'April  2019'),29, 0 ))))))))))))</formula>
         <name>Update Goal Field</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
