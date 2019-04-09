@@ -4348,18 +4348,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Hazard_Insurance__c</fullName>
-        <externalId>false</externalId>
-        <label>Annual Hazard Insurance</label>
-        <precision>17</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>Initial_Disbursement_Limit__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>The maximum disbursement allowed at loan closing and during the first 12 month disbursement period.</inlineHelpText>
@@ -4812,18 +4800,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>PrincipalLimit__c</fullName>
-        <externalId>false</externalId>
-        <label>PrincipalLimit*</label>
-        <precision>17</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>Principal_Limit_Lock_Expiration_Date__c</fullName>
         <externalId>false</externalId>
         <label>Principal Limit Lock Expiration Date</label>
@@ -4979,41 +4955,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Team__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF (ORMS_AE__c  = "Kathy Martinez" , "Braveheart",
-	IF (ORMS_AE__c = "Josh Posner" , "Braveheart",
-		IF (ORMS_AE__c = "Brian Burgan" , "Braveheart",
-			IF (ORMS_AE__c = "James Raymond" , "Braveheart",
-				IF (ORMS_AE__c = "Jesse Hanson" , "Braveheart",
-					IF ( ORMS_AE__c = "Matt Smith" , "wORMS",
-						IF (ORMS_AE__c = "Nathaniel Crusoe" , "wORMS",
-							IF (ORMS_AE__c = "Scott Clarke" , "wORMS",
-								IF (ORMS_AE__c = "Brad Stieber" , "wORMS",
-									IF (ORMS_AE__c = "Josh Evink" , "wORMS", " "
-
-
-
-
-					)
-				)
-			)
-		)
-	)
-					)
-				)
-			)
-		)
-	)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Team</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Title_Company_Contact__c</fullName>
@@ -5533,21 +5474,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>ExpectedInterestRate__c</fullName>
-        <description>Expected Interest Rate</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Expected Interest Rate</inlineHelpText>
-        <label>Expected Interest Rate*</label>
-        <precision>6</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>FHA_Case_Number_Expired__c</fullName>
         <externalId>false</externalId>
         <label>XFHA Case Number Expired</label>
@@ -5698,35 +5624,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>InitialInterestRate__c</fullName>
-        <description>Initial Interest rate.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Initial Interest rate.</inlineHelpText>
-        <label>Initial Interest Rate*</label>
-        <precision>6</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Lien_Creditor__c</fullName>
-        <description>If applicable, list one creditor we are paying off.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>If applicable, list one creditor we are paying off.</inlineHelpText>
-        <label>Lien Creditor</label>
-        <length>30</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Loan_Purpose__c</fullName>
@@ -5933,115 +5830,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         </valueSet>
     </fields>
     <fields>
-        <fullName>Subject_Property_Type__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property Type</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Single Family</fullName>
-                    <default>false</default>
-                    <label>Single Family</label>
-                </value>
-                <value>
-                    <fullName>Condominium</fullName>
-                    <default>false</default>
-                    <label>Condominium</label>
-                </value>
-                <value>
-                    <fullName>Site Condominium</fullName>
-                    <default>false</default>
-                    <label>Site Condominium</label>
-                </value>
-                <value>
-                    <fullName>PUD</fullName>
-                    <default>false</default>
-                    <label>PUD</label>
-                </value>
-                <value>
-                    <fullName>Two-to-four unit property</fullName>
-                    <default>false</default>
-                    <label>2 - 4 Family</label>
-                </value>
-                <value>
-                    <fullName>Co-operative</fullName>
-                    <default>false</default>
-                    <label>CO-OP</label>
-                </value>
-                <value>
-                    <fullName>Townhouse</fullName>
-                    <default>false</default>
-                    <label>Townhouse</label>
-                </value>
-                <value>
-                    <fullName>Manufactured/Mobile Home</fullName>
-                    <default>false</default>
-                    <label>Manufactured</label>
-                </value>
-                <value>
-                    <fullName>Manf Home/PUD</fullName>
-                    <default>false</default>
-                    <label>Manf Home/PUD</label>
-                </value>
-                <value>
-                    <fullName>Commercial - Non-Residential</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Commercial - Non-Residential</label>
-                </value>
-                <value>
-                    <fullName>Farm</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Farm</label>
-                </value>
-                <value>
-                    <fullName>Home and Business Combined</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Home and Business Combined</label>
-                </value>
-                <value>
-                    <fullName>Land</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Land</label>
-                </value>
-                <value>
-                    <fullName>Mixed Use – Residential</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Mixed Use – Residential</label>
-                </value>
-                <value>
-                    <fullName>Mixed use - Residential</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Mixed use - Residential</label>
-                </value>
-                <value>
-                    <fullName>Multifamily (more than 4 units)</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Multifamily (more than 4 units)</label>
-                </value>
-                <value>
-                    <fullName>Planned Unit Development (PUD)</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Planned Unit Development (PUD)</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Subject_Property_Zip_Code__c</fullName>
         <description>Property Zip Code</description>
         <externalId>false</externalId>
@@ -6217,20 +6005,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <inlineHelpText>Selecting "Yes" means the client is bringing cash to closing.</inlineHelpText>
         <label>Cash to Close</label>
         <length>15</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Title_Company__c</fullName>
-        <description>Name of Title Company</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Name of Title Company</inlineHelpText>
-        <label>Title Company</label>
-        <length>55</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -6481,6 +6255,204 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ExpectedInterestRate__c</fullName>
+        <description>Expected Interest Rate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expected Interest Rate</inlineHelpText>
+        <label>Expected Interest Rate*</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hazard_Insurance__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Hazard Insurance</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InitialInterestRate__c</fullName>
+        <description>Initial Interest rate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial Interest rate.</inlineHelpText>
+        <label>Initial Interest Rate*</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lien_Creditor__c</fullName>
+        <description>If applicable, list one creditor we are paying off.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If applicable, list one creditor we are paying off.</inlineHelpText>
+        <label>Lien Creditor</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrincipalLimit__c</fullName>
+        <externalId>false</externalId>
+        <label>PrincipalLimit*</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Subject Property Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Family</fullName>
+                    <default>false</default>
+                    <label>Single Family</label>
+                </value>
+                <value>
+                    <fullName>Condominium</fullName>
+                    <default>false</default>
+                    <label>Condominium</label>
+                </value>
+                <value>
+                    <fullName>Townhouse</fullName>
+                    <default>false</default>
+                    <label>Townhouse</label>
+                </value>
+                <value>
+                    <fullName>Co-operative</fullName>
+                    <default>false</default>
+                    <label>CO-OP</label>
+                </value>
+                <value>
+                    <fullName>Two-to-four unit property</fullName>
+                    <default>false</default>
+                    <label>2 - 4 Family</label>
+                </value>
+                <value>
+                    <fullName>Multifamily (more than 4 units)</fullName>
+                    <default>false</default>
+                    <label>Multifamily (more than 4 units)</label>
+                </value>
+                <value>
+                    <fullName>Manufactured/Mobile Home</fullName>
+                    <default>false</default>
+                    <label>Manufactured</label>
+                </value>
+                <value>
+                    <fullName>Commercial - Non-Residential</fullName>
+                    <default>false</default>
+                    <label>Commercial - Non-Residential</label>
+                </value>
+                <value>
+                    <fullName>Farm</fullName>
+                    <default>false</default>
+                    <label>Farm</label>
+                </value>
+                <value>
+                    <fullName>Home and Business Combined</fullName>
+                    <default>false</default>
+                    <label>Home and Business Combined</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
+                </value>
+                <value>
+                    <fullName>Planned Unit Development (PUD)</fullName>
+                    <default>false</default>
+                    <label>Planned Unit Development (PUD)</label>
+                </value>
+                <value>
+                    <fullName>Site Condominium</fullName>
+                    <default>false</default>
+                    <label>Site Condominium</label>
+                </value>
+                <value>
+                    <fullName>Mixed Use – Residential</fullName>
+                    <default>false</default>
+                    <label>Mixed Use – Residential</label>
+                </value>
+                <value>
+                    <fullName>PUD</fullName>
+                    <default>false</default>
+                    <label>PUD</label>
+                </value>
+                <value>
+                    <fullName>Manf Home/PUD</fullName>
+                    <default>false</default>
+                    <label>Manf Home/PUD</label>
+                </value>
+                <value>
+                    <fullName>Mixed use - Residential</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mixed use - Residential</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <description>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</description>
+        <externalId>false</externalId>
+        <formula>Related_Partner__r.Owner.Team__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Team - ORM AE (Source via Related Individual &gt; ORM Account Executive Name)</inlineHelpText>
+        <label>Team</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Company__c</fullName>
+        <description>Name of Title Company</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Title Company</inlineHelpText>
+        <label>Title Company</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
