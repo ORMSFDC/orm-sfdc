@@ -15,6 +15,7 @@
 * 09/07/2018: Sahitya: Add Margin for HELO
 * 09/19/2018: Sahitya: Added Borrower fields for Declaration Json req, SFDC - 282
 * 12/13/2018: Sahitya: SFDC - 579 added new fields for declaration mapping
+* 03/29/2019: Sahitya: add account Partner Type to the Loan JSON
 */
 global class LoanExportUtil {
 
@@ -94,7 +95,8 @@ global class LoanExportUtil {
                     Account.Phone ,
                     Account.Account_Executive_Name__c,
                     Account.Company_NMLS_ID__c,
-                    Account.Holding_Company_Federal_Tax_ID_Number_EI__c
+                    Account.Holding_Company_Federal_Tax_ID_Number_EI__c,
+                    Account.Partner_Type__c
             FROM Contact WHERE Id = :relatedIndividualId];
 
             if (relatedIndividual != null){
@@ -110,6 +112,7 @@ global class LoanExportUtil {
                 loanExport.loan.put('Individual_EmailAddress', relatedIndividual.email);
                 loanExport.loan.put('Individual_EmailAddress', relatedIndividual.email);
                 loanExport.loan.put('Partner_PhoneNumber', relatedIndividual.Account.phone);
+                loanExport.loan.put('Partner_Tier', relatedIndividual.Account.Partner_Type__c);//3/29
             }
 
         }

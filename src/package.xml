@@ -4264,6 +4264,11 @@
     <members>Task.UpdateStatus_8</members>
     <members>Task.UpdateStatus_9</members>
     <members>Loan_New__c.Request_App_Package</members>
+    <members>Loan_New__c.Closing</members>
+    <members>Loan_New__c.Extra</members>
+    <members>Loan_New__c.Purchase</members>
+    <members>Loan_New__c.Underwriting</members>
+    <members>Loan_New__c.Vendor</members>
     <name>QuickAction</name>
   </types>
   <types>
@@ -5540,6 +5545,8 @@
     <members>Task_to_PCS_regarding_Loan_Status_and_Application_Date-4</members>
     <members>Task_to_PCS_when_LoanStatus_is_Updated-2</members>
     <members>AE_Task_5_weeks_before_Recertification_Date-2</members>
+    <members>Task_for_PCS_Before_Credit_Expiration_Date_new-1</members>
+    <members>Update_Cash_to_close_on_Loan-1</members>
     <name>Flow</name>
   </types>
   <types>

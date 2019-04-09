@@ -3111,11 +3111,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Loan_New__c.Is_Loan_Created_Manually__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Loan_New__c.LoanCompleteFlag__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3274,6 +3269,11 @@
     <readable>false</readable>
     <field>Account.Number_of_loan_officers__c</field>
 </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Is_Loan_Created_Manually__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>

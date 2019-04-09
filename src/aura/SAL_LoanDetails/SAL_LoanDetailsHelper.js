@@ -30,7 +30,7 @@
                 component.set('v.nextDataExist', true);
             }
             else {
-                datais.Using_Title_Source_as_the_Closing_Agent__c = 'Yes';
+                datais.Using_Title_Source_as_the_Closing_Agent__c = ''; //1492705
                 document.getElementById('targetID').innerHTML = 'l9';
             }
             component.set("v.NewLoan", data.getReturnValue());

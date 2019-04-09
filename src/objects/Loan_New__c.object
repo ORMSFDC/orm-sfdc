@@ -64,16 +64,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Actual_Funding_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Actual Funding Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Adjusted_Discount__c</fullName>
         <externalId>false</externalId>
         <label>Adjusted Discount Value</label>
@@ -157,16 +147,6 @@
         <fullName>Application_Date__c</fullName>
         <externalId>false</externalId>
         <label>Application Requested Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Application_Requested_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Application Req Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -303,18 +283,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Broker_Origination__c</fullName>
-        <externalId>false</externalId>
-        <label>Broker Origination</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>CashAvaliabletoClient__c</fullName>
         <externalId>false</externalId>
         <label>CashAvaliabletoClient*</label>
@@ -379,18 +347,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Client_Name__c</fullName>
-        <externalId>false</externalId>
-        <label>Client Name*</label>
-        <length>100</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Client_s_credit_score__c</fullName>
         <externalId>false</externalId>
         <label>Client's credit score</label>
@@ -402,16 +358,6 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Closing_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Actual Closing Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Cond_Approved_Days__c</fullName>
@@ -738,18 +684,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>ExpectedInterestRate__c</fullName>
-        <externalId>false</externalId>
-        <label>ExpectedInterestRate*</label>
-        <length>10</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Extend_Application_Time__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -758,28 +692,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>FHACaseNumber__c</fullName>
-        <externalId>false</externalId>
-        <label>FHACaseNumber*</label>
-        <length>100</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>FHA_Case_Number_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>FHA Case Number Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>FHA_Case_Number_Expiration__c</fullName>
@@ -1120,18 +1032,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>InitialInterestRate__c</fullName>
-        <externalId>false</externalId>
-        <label>InitialInterestRate*</label>
-        <length>10</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>InitialUnpaidPrincipalBalance__c</fullName>
         <externalId>false</externalId>
         <label>InitialUnpaidPrincipalBalance*</label>
@@ -1426,18 +1326,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Lien_Creditor__c</fullName>
-        <externalId>false</externalId>
-        <label>Lien Creditor</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Life_Expectancy__c</fullName>
         <externalId>false</externalId>
         <label>Life Expectancy*</label>
@@ -1470,18 +1358,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>LoanNumber__c</fullName>
-        <externalId>false</externalId>
-        <label>LoanNumber*</label>
-        <length>50</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>LoanOfficer__c</fullName>
@@ -1741,18 +1617,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>MandatoryObligations__c</fullName>
-        <externalId>false</externalId>
-        <label>Mandatory Obligations*</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>MonthlyPaymentavailabletoClient__c</fullName>
         <externalId>false</externalId>
         <label>MonthlyPaymentavailabletoClient*</label>
@@ -1847,16 +1711,6 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Next_Tax_Due_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Next Tax Due Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>No_of_Units__c</fullName>
@@ -2156,18 +2010,6 @@ IF(
         <precision>18</precision>
         <required>false</required>
         <scale>3</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>PropertyAppraisalValue__c</fullName>
-        <externalId>false</externalId>
-        <label>PropertyAppraisalValue*</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -2584,18 +2426,6 @@ IF(
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>RepairSetAside__c</fullName>
-        <externalId>false</externalId>
-        <label>RepairSetAside*</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>Residence_Type__c</fullName>
         <externalId>false</externalId>
         <label>Residence Type</label>
@@ -2827,42 +2657,6 @@ IF(
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Subject_Property_City__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property City</label>
-        <length>200</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Subject_Property_County__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property County</label>
-        <length>50</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Subject_Property_Zip_Code__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property Zip Code</label>
-        <length>10</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Tell_the_story__c</fullName>
         <externalId>false</externalId>
         <label>Tell the story</label>
@@ -2910,18 +2704,6 @@ IF(
         </valueSet>
     </fields>
     <fields>
-        <fullName>Title_Company__c</fullName>
-        <externalId>false</externalId>
-        <label>Title Company</label>
-        <length>200</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Title_Ordered_Date__c</fullName>
         <externalId>false</externalId>
         <label>Title Ordered Date*</label>
@@ -2940,18 +2722,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>TotalLesa__c</fullName>
-        <externalId>false</externalId>
-        <label>TotalLesa*</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Total_Asset__c</fullName>
@@ -3080,16 +2850,6 @@ IF(
         <fullName>Waiting_for_Full_App_Date__c</fullName>
         <externalId>false</externalId>
         <label>Waiting for Full App Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Withdrawn_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Withdrawn Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -3316,93 +3076,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>Subject_Property_Type__c</fullName>
-        <externalId>false</externalId>
-        <label>Subject Property Type</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Single Family</fullName>
-                    <default>false</default>
-                    <label>Single Family</label>
-                </value>
-                <value>
-                    <fullName>Condominium</fullName>
-                    <default>false</default>
-                    <label>Condominium</label>
-                </value>
-                <value>
-                    <fullName>Townhouse</fullName>
-                    <default>false</default>
-                    <label>Townhouse</label>
-                </value>
-                <value>
-                    <fullName>Co-operative</fullName>
-                    <default>false</default>
-                    <label>Co-operative</label>
-                </value>
-                <value>
-                    <fullName>Two-to-four unit property</fullName>
-                    <default>false</default>
-                    <label>Two-to-four unit property</label>
-                </value>
-                <value>
-                    <fullName>Multifamily (more than 4 units)</fullName>
-                    <default>false</default>
-                    <label>Multifamily (more than 4 units)</label>
-                </value>
-                <value>
-                    <fullName>Manufactured/Mobile Home</fullName>
-                    <default>false</default>
-                    <label>Manufactured/Mobile Home</label>
-                </value>
-                <value>
-                    <fullName>Commercial - Non-Residential</fullName>
-                    <default>false</default>
-                    <label>Commercial - Non-Residential</label>
-                </value>
-                <value>
-                    <fullName>Farm</fullName>
-                    <default>false</default>
-                    <label>Farm</label>
-                </value>
-                <value>
-                    <fullName>Home and Business Combined</fullName>
-                    <default>false</default>
-                    <label>Home and Business Combined</label>
-                </value>
-                <value>
-                    <fullName>Land</fullName>
-                    <default>false</default>
-                    <label>Land</label>
-                </value>
-                <value>
-                    <fullName>Planned Unit Development (PUD)</fullName>
-                    <default>false</default>
-                    <label>Planned Unit Development (PUD)</label>
-                </value>
-                <value>
-                    <fullName>Mixed Use - Residential</fullName>
-                    <default>false</default>
-                    <label>Mixed Use - Residential</label>
-                </value>
-                <value>
-                    <fullName>Mixed Use – Residential</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Mixed Use – Residential</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
     </fields>
     <fields>
         <fullName>Appraisal_Expiration_Date__c</fullName>
@@ -4110,16 +3783,6 @@ IF(
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>Closed_Awaiting_Funding_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Closed – Awaiting Funding Date (old)</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Conditionally_Approved_Date0__c</fullName>
         <externalId>false</externalId>
         <label>Conditionally Approved Date</label>
@@ -4130,16 +3793,6 @@ IF(
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>Conditionally_Approved_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Conditionally Approved Date (old)</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Denied_Date0__c</fullName>
         <externalId>false</externalId>
         <label>Denied Date</label>
@@ -4148,16 +3801,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Denied_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Denied Date (old)</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Folder_to_Close_Days__c</fullName>
@@ -4270,16 +3913,6 @@ IF(
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>In_Processing_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>In Processing Date (old)</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>In_Underwriting_Review_Date__c</fullName>
         <description>All Vendor Items ordered and UW begins review</description>
         <externalId>false</externalId>
@@ -4386,16 +4019,6 @@ IF(
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>Suspended_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Suspended Date (old)</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Waiting_for_Full_Package_Date0__c</fullName>
         <externalId>false</externalId>
         <label>Waiting for Full Package Date</label>
@@ -4404,16 +4027,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Waiting_for_Full_Package_Date__c</fullName>
-        <externalId>false</externalId>
-        <label>Waiting for Full Package Date (old)</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>Withdrawn_Date0__c</fullName>
@@ -4621,10 +4234,741 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Subject_Property_State__c</fullName>
+        <description>Property State</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Property State</inlineHelpText>
+        <label>Subject Property State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>US_States</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Actual_Closing_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XActual Closing Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Disbursement_Date__c</fullName>
+        <description>The Actual Funding Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Funding Date.</inlineHelpText>
+        <label>Actual Disbursement Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Funding_Date__c</fullName>
+        <description>The Actual Funding Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Funding Date.</inlineHelpText>
+        <label>Actual Funding Date*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Application_Requested_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XApplication Requested Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Addendum_Ordered__c</fullName>
+        <externalId>false</externalId>
+        <label>Appraisal Addendum Ordered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Addendum_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Appraisal Addendum Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Appt_Date__c</fullName>
+        <description>Actual date of the appraisal appt</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Actual date of the appraisal appt</inlineHelpText>
+        <label>Appraisal Appt Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Effective_Date_c__c</fullName>
+        <externalId>false</externalId>
+        <label>XAppraisal Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Expected_Date__c</fullName>
+        <description>Date we are expecting to receive the appraisal in</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date we are expecting to receive the appraisal in</inlineHelpText>
+        <label>Appraisal Expected Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Expired_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XAppraisal Expired Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>XAppraisal Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Appraisal__c</fullName>
+        <description>Date appraisal was ordered</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date appraisal was ordered</inlineHelpText>
+        <label>XAppraisal Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Assisted_Signing__c</fullName>
+        <description>Selecting "Yes" means the client is with Blind or signing with an X.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes" means the client is with Blind or signing with an X.</inlineHelpText>
+        <label>Assisted Signing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Broker_Credit__c</fullName>
+        <externalId>false</externalId>
+        <label>Broker Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Origination__c</fullName>
+        <externalId>false</externalId>
+        <label>XBroker Origination</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Capacity_Result__c</fullName>
+        <externalId>false</externalId>
+        <label>Capacity Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pass</fullName>
+                    <default>false</default>
+                    <label>Pass</label>
+                </value>
+                <value>
+                    <fullName>Fail</fullName>
+                    <default>false</default>
+                    <label>Fail</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cash_to_Close__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT ( Declaration__r.CashtoClose__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cash to Close</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Chosen_Title__c</fullName>
+        <description>Selecting "Yes" means the client has chosen an outside Title company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes" means the client has chosen an outside Title company.</inlineHelpText>
+        <label>Client Chosen Title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>true</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Name__c</fullName>
+        <description>Format: Last Name, First Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Format: Last Name, First Name</inlineHelpText>
+        <label>Client Name*</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closed_Awaiting_Funding_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XClosed – Awaiting Funding Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Closing_Agent_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Closing Agent Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closing_Agent_Name__c</fullName>
+        <description>Name of the Closing Agent / Same as Settlement Agent.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the Closing Agent / Same as Settlement Agent.</inlineHelpText>
+        <label>Closing Agent Name</label>
+        <length>55</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closing_Agent_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Closing Agent Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Closing_Agent__c</fullName>
+        <externalId>false</externalId>
+        <label>Closing Agent Company</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Closing_Date__c</fullName>
+        <description>The Actual Closing Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Closing Date.</inlineHelpText>
+        <label>Actual Closing Date*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Closing_Provider__c</fullName>
+        <externalId>false</externalId>
+        <label>Closing Provider</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Co_Client_Name__c</fullName>
+        <description>Format: Last Name, First Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Format: Last Name, First Name</inlineHelpText>
+        <label>Co Client Name</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conditional_Commitment_Letter_Sent__c</fullName>
+        <externalId>false</externalId>
+        <label>Conditional Commitment Letter Sent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Conditionally_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XConditionally Approved Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Condo_Questionnaire_Ordered__c</fullName>
+        <externalId>false</externalId>
+        <label>Condo Questionnaire Ordered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Condo_Questionnaire_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Condo Questionnaire Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>XCredit Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Satisfactory__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Satisfactory</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>YES with Extenuating Circumstances</fullName>
+                    <default>false</default>
+                    <label>YES with Extenuating Circumstances</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Credit_Supplement_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Supplement Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Supplement__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Supplement Ordered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Declaration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Declaration</label>
+        <referenceTo>Declaration__c</referenceTo>
+        <relationshipLabel>Loans</relationshipLabel>
+        <relationshipName>Loans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Denied_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XDenied Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disbursement_Amount__c</fullName>
+        <description>Wire amount going to title company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Wire amount going to title company.</inlineHelpText>
+        <label>Disbursement Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Discounted_Value_of_Assets__c</fullName>
+        <externalId>false</externalId>
+        <label>Discounted Value of Assets</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Escrow_Funds_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Escrow Funds Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ExpectedInterestRate__c</fullName>
+        <description>Expected Interest Rate</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expected Interest Rate</inlineHelpText>
+        <label>Expected Interest Rate*</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FHACaseNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Number*</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Number Ordered Date*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number_Eff__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Number Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number_Expired__c</fullName>
+        <externalId>false</externalId>
+        <label>XFHA Case Number Expired</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Number Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number_Transferred_from_ORM__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Number Transferred from ORM</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number_Transferred_to_ORM__c</fullName>
+        <externalId>false</externalId>
+        <label>FHA Case Number Transferred to ORM</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FHA_Case_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>XFHA Case Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Assessment_Result__c</fullName>
+        <externalId>false</externalId>
+        <label>XFinancial Assessment Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PASS</fullName>
+                    <default>false</default>
+                    <label>PASS</label>
+                </value>
+                <value>
+                    <fullName>FAIL</fullName>
+                    <default>false</default>
+                    <label>FAIL</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Flood_Zone__c</fullName>
+        <description>Selecting "Yes" means the client home is in a Flood Zone.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes" means the client home is in a Flood Zone.</inlineHelpText>
+        <label>Flood Zone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>true</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Flood__c</fullName>
+        <externalId>false</externalId>
+        <label>Flood Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Call_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Call Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Formula_IsActive__c</fullName>
         <externalId>false</externalId>
         <formula>IF ( OR
-     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Underwriting Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
+     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Formula: In Processing</label>
         <precision>18</precision>
@@ -4636,6 +4980,208 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Funds_Needed_To_Close__c</fullName>
+        <description>Selecting "Yes" means the client is bringing cash to closing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes" means the client is bringing cash to closing.</inlineHelpText>
+        <label>Funds Needed To Close</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Gover__c</fullName>
+        <externalId>false</externalId>
+        <label>Government Reports Date - Final</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Government_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Government Reports Date - Initial</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Guardianship_Conservatorship_Required__c</fullName>
+        <description>Select "Yes" If there is a Guardianship or Conservatorship on the loan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select "Yes" If there is a Guardianship or Conservatorship on the loan.</inlineHelpText>
+        <label>Guardianship/Conservatorship Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Helo_Margin__c</fullName>
+        <externalId>false</externalId>
+        <label>XHelo Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>In_Processing_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XIn Processing Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>InitialInterestRate__c</fullName>
+        <description>Initial Interest rate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initial Interest rate.</inlineHelpText>
+        <label>Initial Interest Rate*</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Disbursement_Limit__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The maximum disbursement allowed at loan closing and during the first 12 month disbursement period.</inlineHelpText>
+        <label>Initial Disbursement Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Insurance_Binder_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Insurance Binder Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Insurance_Binder_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Insurance Binder Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Insurance_Binder_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Insurance Binder Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Insurance_Binder__c</fullName>
+        <externalId>false</externalId>
+        <label>Insurance Binder</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Investor__c</fullName>
+        <externalId>false</externalId>
+        <label>Investor</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>American Advisors Group</fullName>
+                    <default>false</default>
+                    <label>American Advisors Group</label>
+                </value>
+                <value>
+                    <fullName>Longbridge Financial, LLC</fullName>
+                    <default>false</default>
+                    <label>Longbridge Financial, LLC</label>
+                </value>
+                <value>
+                    <fullName>Traditional Mortgage Acceptance Corporation</fullName>
+                    <default>false</default>
+                    <label>Traditional Mortgage Acceptance Corporation</label>
+                </value>
+                <value>
+                    <fullName>Waterfall Asset Management, LLC</fullName>
+                    <default>false</default>
+                    <label>Waterfall Asset Management, LLC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>KPI_Cond_Appr__c</fullName>
         <externalId>false</externalId>
         <formula>IF ( OR 
@@ -4644,11 +5190,146 @@ IF(
         <label>KPI Cond Appr</label>
         <precision>18</precision>
         <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LESA_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>LESA Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FULL LESA</fullName>
+                    <default>false</default>
+                    <label>FULL LESA</label>
+                </value>
+                <value>
+                    <fullName>Partial LESA</fullName>
+                    <default>false</default>
+                    <label>Partial LESA</label>
+                </value>
+                <value>
+                    <fullName>No LESA Required</fullName>
+                    <default>false</default>
+                    <label>No LESA Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lender_Credit__c</fullName>
+        <externalId>false</externalId>
+        <label>Lender Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Lien_Creditor__c</fullName>
+        <description>If applicable, list one creditor we are paying off.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If applicable, list one creditor we are paying off.</inlineHelpText>
+        <label>Lien Creditor</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LoanNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>LoanNumber*</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Purpose__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(  Mortgage_Applied_for__c ,
+"FHA Traditional HECM", "Refinance",
+"HECM to HECM Refinance", "Refinance",
+"HELO Refinance", "Refinance",
+"HECM for Purchase", "Purchase",
+"HELO for Purchase", "Purchase",
+"")</formula>
+        <label>Loan Purpose</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Status_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(  LoanStatus__c  , 
+"Incomplete", 1, 
+"Proposal", 10, 
+"Waiting for Full Package", 10, 
+"Application Package Received", 16, 
+"Loan Submission Received- Awaiting Review", 20, 
+"Full Application Received - Incomplete", 19, 
+"In Processing", 21, 
+"In Underwriting Review", 30, 
+"Conditionally Approved", 35, 
+"Underwriting Clear to Close", 40, 
+"In final HUD Review", 38, 
+"Docs Out to Settlement Agent", 57, 
+"Closed - Awaiting Funding", 0, 
+"Funded", 65, 
+"Loan Rescinded", 111, 
+"Application Approved but Not Accepted", 150, 
+"File Closed for Incompleteness", 140, 
+"Suspended", 33, 
+"Withdrawn", 110, 
+"Denied", 100, 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loan Status Number</label>
+        <precision>18</precision>
+        <required>false</required>
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MandatoryObligations__c</fullName>
+        <description>Total Mandatory Obligations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Mandatory Obligations</inlineHelpText>
+        <label>Mandatory Obligations*</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>Margin__c</fullName>
@@ -4662,31 +5343,6 @@ IF(
         <valueSet>
             <valueSetDefinition>
                 <sorted>false</sorted>
-                <value>
-                    <fullName>1.125</fullName>
-                    <default>false</default>
-                    <label>1.125</label>
-                </value>
-                <value>
-                    <fullName>1.250</fullName>
-                    <default>false</default>
-                    <label>1.250</label>
-                </value>
-                <value>
-                    <fullName>1.375</fullName>
-                    <default>false</default>
-                    <label>1.375</label>
-                </value>
-                <value>
-                    <fullName>1.500</fullName>
-                    <default>false</default>
-                    <label>1.500</label>
-                </value>
-                <value>
-                    <fullName>1.625</fullName>
-                    <default>false</default>
-                    <label>1.625</label>
-                </value>
                 <value>
                     <fullName>1.750</fullName>
                     <default>false</default>
@@ -4746,12 +5402,306 @@ IF(
         </valueSet>
     </fields>
     <fields>
-        <fullName>Subject_Property_Address__c</fullName>
-        <description>Property Address</description>
+        <fullName>Maximum_Claim_Amount__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>Property Address</inlineHelpText>
-        <label>Subject Property Address*</label>
-        <length>200</length>
+        <label>Maximum Claim Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Benefits_Test_Complete__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Benefits Test Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Net_Benefits_Test_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Benefits Test Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Next_Tax_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>•	Next Tax Installment Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Next_Tax_Installment_Delinquent_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>•	Next Tax Installment Delinquent Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Non_Borrower_Title_Holder__c</fullName>
+        <externalId>false</externalId>
+        <label>Non Borrower Title Holder</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Non_Borrowing_Title_Holder_Spouse__c</fullName>
+        <externalId>false</externalId>
+        <label>Non Borrowing Title Holder Spouse</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ORMS_Lender_Compensation__c</fullName>
+        <externalId>false</externalId>
+        <label>ORMS Lender Compensation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ORMS__c</fullName>
+        <externalId>false</externalId>
+        <label>ORMS Documents</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>POA_NonBorrowing_Title_Holder__c</fullName>
+        <externalId>false</externalId>
+        <label>POA NonBorrowing Title Holder</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Payoff_1_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 1 Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 1 Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_2_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 2 Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 2 Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_3_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 3 Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 3 Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_Received_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 1 Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_Received_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 2 Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payoff_Received_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Payoff 3 Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Percent_of_Residual_Income_Fulfilled__c</fullName>
+        <externalId>false</externalId>
+        <label>XPercent of Residual Income Fulfilled</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Principal_Limit_Lock_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Principal Limit Lock Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -4760,11 +5710,23 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Subject_Property_State__c</fullName>
-        <description>Property State</description>
+        <fullName>PropertyAppraisalValue__c</fullName>
+        <description>Appraised value of the subject property.</description>
         <externalId>false</externalId>
-        <inlineHelpText>Property State</inlineHelpText>
-        <label>Subject Property State</label>
+        <inlineHelpText>Appraised value of the subject property.</inlineHelpText>
+        <label>PropertyAppraisalValue*</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Property_Charge_History_Satisfactory__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Charge History Satisfactory</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -4772,8 +5734,753 @@ IF(
         <type>Picklist</type>
         <valueSet>
             <restricted>true</restricted>
-            <valueSetName>US_States</valueSetName>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>YES with Extenuating Circumstances</fullName>
+                    <default>false</default>
+                    <label>YES with Extenuating Circumstances</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Property_Charges_as_a_Percent_of_Income__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Charges as a Percent of Income</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Property_State_Details__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(   Subject_Property_State__c   , 
+"Alabama", "Homestead", 
+"Alaska", "Homestead", 
+"Florida", "Homestead", 
+"Iowa", "Homestead", 
+"Illinois", "Homestead", 
+"Michigan", "Homestead", 
+"Minnesota", "Homestead", 
+"Missouri", "Homestead", 
+"Mississippi", "Homestead", 
+"Montana", "Homestead", 
+"North Dakota", "Homestead", 
+"Nebraska", "Homestead", 
+"New Hampshire", "Homestead", 
+"Oklahoma", "Homestead", 
+"South Dakota", "Homestead", 
+"Tennessee", "Homestead", 
+"Vermont", "Homestead", 
+"West Virginia", "Homestead", 
+"Wyoming", "Homestead", 
+"Arkansas", "Dower-Homestead", 
+"Kansas", "Dower-Homestead", 
+"Kentucky", "Dower-Homestead", 
+"North Carolina", "Dower-Homestead", 
+"New Jersey", "Dower-Homestead", 
+"Ohio", "Dower-Homestead", 
+"Arizona", "Community-Homestead", 
+"California", "Community-Homestead", 
+"Idaho", "Community-Homestead", 
+"Louisiana", "Community-Homestead", 
+"New Mexico", "Community-Homestead", 
+"Nevada", "Community-Homestead", 
+"Texas", "Community-Homestead", 
+"Washington", "Community-Homestead", 
+"Wisconsin", "Community-Homestead", 
+"")</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Property State Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Purpose_of_Refinance__c</fullName>
+        <externalId>false</externalId>
+        <label>Purpose of Refinance</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remainderman_on_Loan__c</fullName>
+        <description>Selecting "Yes' means all or part of Title must be held as Life estate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes' means all or part of Title must be held as Life estate.</inlineHelpText>
+        <label>Remainderman on Loan</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RepairSetAside__c</fullName>
+        <description>Dollar amount set aside to do all repairs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Dollar amount set aside to do all repairs.</inlineHelpText>
+        <label>RepairSetAside*</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Residual_Income_Cash_Flow_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Residual Income/Cash Flow Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>YES with Compensating Factor</fullName>
+                    <default>false</default>
+                    <label>YES with Compensating Factor</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Residual_Income_Cash_Flow_Satisfactory__c</fullName>
+        <externalId>false</externalId>
+        <label>Residual Income/Cash Flow Satisfactory</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>YES with Compensating Factor</fullName>
+                    <default>false</default>
+                    <label>YES with Compensating Factor</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Residual_Income_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Residual Income Required</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Disbursement_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Disbursement Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_Address__c</fullName>
+        <description>Property Address</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Property Address</inlineHelpText>
+        <label>Subject Property Address*</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_City__c</fullName>
+        <description>Property City</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Property City</inlineHelpText>
+        <label>Subject Property City</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_County__c</fullName>
+        <description>Property County</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Property County</inlineHelpText>
+        <label>Subject Property County</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Subject Property Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Family</fullName>
+                    <default>false</default>
+                    <label>Single Family</label>
+                </value>
+                <value>
+                    <fullName>Condominium</fullName>
+                    <default>false</default>
+                    <label>Condominium</label>
+                </value>
+                <value>
+                    <fullName>Townhouse</fullName>
+                    <default>false</default>
+                    <label>Townhouse</label>
+                </value>
+                <value>
+                    <fullName>Co-operative</fullName>
+                    <default>false</default>
+                    <label>CO-OP</label>
+                </value>
+                <value>
+                    <fullName>Two-to-four unit property</fullName>
+                    <default>false</default>
+                    <label>2 - 4 Family</label>
+                </value>
+                <value>
+                    <fullName>Multifamily (more than 4 units)</fullName>
+                    <default>false</default>
+                    <label>Multifamily (more than 4 units)</label>
+                </value>
+                <value>
+                    <fullName>Manufactured/Mobile Home</fullName>
+                    <default>false</default>
+                    <label>Manufactured</label>
+                </value>
+                <value>
+                    <fullName>Commercial - Non-Residential</fullName>
+                    <default>false</default>
+                    <label>Commercial - Non-Residential</label>
+                </value>
+                <value>
+                    <fullName>Farm</fullName>
+                    <default>false</default>
+                    <label>Farm</label>
+                </value>
+                <value>
+                    <fullName>Home and Business Combined</fullName>
+                    <default>false</default>
+                    <label>Home and Business Combined</label>
+                </value>
+                <value>
+                    <fullName>Land</fullName>
+                    <default>false</default>
+                    <label>Land</label>
+                </value>
+                <value>
+                    <fullName>Planned Unit Development (PUD)</fullName>
+                    <default>false</default>
+                    <label>Planned Unit Development (PUD)</label>
+                </value>
+                <value>
+                    <fullName>Site Condominium</fullName>
+                    <default>false</default>
+                    <label>Site Condominium</label>
+                </value>
+                <value>
+                    <fullName>PUD</fullName>
+                    <default>false</default>
+                    <label>PUD</label>
+                </value>
+                <value>
+                    <fullName>Manf Home/PUD</fullName>
+                    <default>false</default>
+                    <label>Manf Home/PUD</label>
+                </value>
+                <value>
+                    <fullName>Mixed use - Residential</fullName>
+                    <default>false</default>
+                    <label>Mixed use - Residential</label>
+                </value>
+                <value>
+                    <fullName>Mixed Use – Residential</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mixed Use – Residential</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject_Property_Zip_Code__c</fullName>
+        <description>Property Zip Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Property Zip Code</inlineHelpText>
+        <label>Subject Property Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suspended_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XSuspended Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Transcripts_Rec__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Transcripts Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Transcripts__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Transcripts Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Title_Company_Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Company Contact</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Company_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Company Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Company_Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Company Phone Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Title_Company__c</fullName>
+        <description>Name of Title Company</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Title Company</inlineHelpText>
+        <label>Title Company</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Eff__c</fullName>
+        <externalId>false</externalId>
+        <label>XTitle Eff</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Title_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Effective Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Title_Expired_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Expired_Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TotalLesa__c</fullName>
+        <description>The entire amount in the LESA (Lifetime Expectancy Set Aside)account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The entire amount in the LESA (Lifetime Expectancy Set Aside)account.</inlineHelpText>
+        <label>TotalLesa*</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Fees_Paid_to_ORM__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Fees Paid to ORM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Income_for_Client_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Income for Client 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Income_for_Each_Client__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Income for Client 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_LESA_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>XTotal LESA Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Lien_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Lien Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Trust_Required__c</fullName>
+        <description>Selecting "Yes" means if all or part of Title is held as a trust.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes" means if all or part of Title is held as a trust.</inlineHelpText>
+        <label>Trust Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unpaid_Principal_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Unpaid Principal Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>VOE_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>VOE Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VOE__c</fullName>
+        <externalId>false</externalId>
+        <label>VOE Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VOM_Expired_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>VOM Expired Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VOM_Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>VOM Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VOM__c</fullName>
+        <externalId>false</externalId>
+        <label>VOM Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Waiting_for_Full_Package_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XWaiting for Full Package Date (old)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Willingness_Result__c</fullName>
+        <externalId>false</externalId>
+        <label>Willingness Result</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pass</fullName>
+                    <default>false</default>
+                    <label>Pass</label>
+                </value>
+                <value>
+                    <fullName>Fail</fullName>
+                    <default>false</default>
+                    <label>Fail</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>XWithdrawn Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Appraisal_Mailed__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Appraisal Mailed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Appraisal_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>2nd Appraisal Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Appraisal_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Appraisal Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>decl_Cash_to_close__c</fullName>
+        <description>Selecting "Yes" means the client is bringing cash to closing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Selecting "Yes" means the client is bringing cash to closing.</inlineHelpText>
+        <label>Cash to Close</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
