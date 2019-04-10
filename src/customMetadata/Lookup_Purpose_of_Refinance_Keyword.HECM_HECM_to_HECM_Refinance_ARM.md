@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Keyword__c</field>
-        <value xsi:type="xsd:string">Streamline(HECM to HECM)</value>
+        <value xsi:type="xsd:string">Streamline (HECM to HECM)</value>
     </values>
     <values>
         <field>Mortgage_Applied_for__c</field>

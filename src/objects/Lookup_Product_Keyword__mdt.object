@@ -10,35 +10,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Mortgage_Applied_for__c</fullName>
-        <externalId>false</externalId>
-        <fieldManageability>DeveloperControlled</fieldManageability>
-        <label>Mortgage Applied for</label>
-        <required>false</required>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>FHA Traditional HECM</fullName>
-                    <default>true</default>
-                    <label>FHA Traditional HECM</label>
-                </value>
-                <value>
-                    <fullName>HECM to HECM Refinance</fullName>
-                    <default>false</default>
-                    <label>HECM to HECM Refinance</label>
-                </value>
-                <value>
-                    <fullName>HECM for Purchase</fullName>
-                    <default>false</default>
-                    <label>HECM for Purchase</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Product_Type__c</fullName>
         <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
@@ -82,6 +53,45 @@
                     <fullName>Fixed</fullName>
                     <default>false</default>
                     <label>Fixed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mortgage_Applied_for__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Mortgage Applied for</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FHA Traditional HECM</fullName>
+                    <default>true</default>
+                    <label>FHA Traditional HECM</label>
+                </value>
+                <value>
+                    <fullName>HECM to HECM Refinance</fullName>
+                    <default>false</default>
+                    <label>HECM to HECM Refinance</label>
+                </value>
+                <value>
+                    <fullName>HECM for Purchase</fullName>
+                    <default>false</default>
+                    <label>HECM for Purchase</label>
+                </value>
+                <value>
+                    <fullName>HELO Refinance</fullName>
+                    <default>false</default>
+                    <label>HELO Refinance</label>
+                </value>
+                <value>
+                    <fullName>HELO for Purchase</fullName>
+                    <default>false</default>
+                    <label>HELO for Purchase</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

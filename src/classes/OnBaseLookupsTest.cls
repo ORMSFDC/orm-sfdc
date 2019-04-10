@@ -191,7 +191,7 @@ private class OnBaseLookupsTest {
     static void getProductKeywordTest_HELO_FIXED_HOME_EQUITY_LOAN_OPTIMIZER()
     {        
         String productType = 'HELO';
-        String mortgageAppliedFor = 'HECM to HECM Refinance';
+        String mortgageAppliedFor = 'HELO Refinance';
         String rateType = 'FIXED';
         String expected = 'HELO FIXED – HOME EQUITY LOAN OPTIMIZER';
         
@@ -309,7 +309,7 @@ private class OnBaseLookupsTest {
         String productType = 'HECM';
         String mortgageAppliedFor = 'HECM to HECM Refinance';
         String rateType = 'FIXED';
-        String expected = 'Streamline(HECM to HECM)';
+        String expected = 'Streamline (HECM to HECM)';
         
         Loan_New__c loan = [SELECT Id from Loan_New__c LIMIT 1];
         loan.Product_Type__c = productType;
@@ -399,7 +399,7 @@ private class OnBaseLookupsTest {
     static void getProductKeywordWrapperTest_Found()
     {        
         String productType = 'HELO';
-        String mortgageAppliedFor = 'HECM to HECM Refinance';
+        String mortgageAppliedFor = 'HELO Refinance';
         String rateType = 'FIXED';
         String expected = 'HELO FIXED – HOME EQUITY LOAN OPTIMIZER';
         
@@ -432,7 +432,7 @@ private class OnBaseLookupsTest {
         String productType = 'HECM';
         String mortgageAppliedFor = 'HECM to HECM Refinance';
         String rateType = 'ARM';
-        String expected = 'Streamline(HECM to HECM)';
+        String expected = 'Streamline (HECM to HECM)';
         
         Loan_New__c loan = [SELECT Id from Loan_New__c LIMIT 1];
         loan.Product_Type__c = productType;
