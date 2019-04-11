@@ -5536,7 +5536,7 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
                 <sorted>false</sorted>
                 <value>
                     <fullName>YES</fullName>
-                    <default>true</default>
+                    <default>false</default>
                     <label>YES</label>
                 </value>
                 <value>
