@@ -6454,6 +6454,53 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>Cash_to_Close__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT ( Declaration__r.CashtoClose__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cash to Close</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Status_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(  LoanStatus__c  , 
+"Incomplete", 1, 
+"Proposal", 10, 
+"Waiting for Full Package", 10, 
+"Application Package Received", 16, 
+"Loan Submission Received- Awaiting Review", 20, 
+"Full Application Received - Incomplete", 19, 
+"In Processing", 21, 
+"In Underwriting Review", 30, 
+"Conditionally Approved", 35, 
+"Underwriting Clear to Close", 40, 
+"In final HUD Review", 38, 
+"Docs Out to Settlement Agent", 57, 
+"Closed - Awaiting Funding", 0, 
+"Funded", 65, 
+"Loan Rescinded", 111, 
+"Application Approved but Not Accepted", 150, 
+"File Closed for Incompleteness", 140, 
+"Suspended", 33, 
+"Withdrawn", 110, 
+"Denied", 100, 
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loan Status Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>

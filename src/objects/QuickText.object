@@ -58,6 +58,11 @@
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>FolderId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
   <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
   <enableFeeds>false</enableFeeds>
   <searchLayouts>
@@ -75,5 +80,4 @@
         <searchResultsAdditionalFields>Channel</searchResultsAdditionalFields>
     </searchLayouts>
   <sharingModel>Private</sharingModel>
-
 </CustomObject>
