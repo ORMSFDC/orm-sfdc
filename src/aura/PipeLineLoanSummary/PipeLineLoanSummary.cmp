@@ -141,7 +141,7 @@
                                             
                                             <td data-label="Expected Interest Rate">
                                                 <b>Expected Interest Rate: </b>
-                                                {!v.loan.ExpectedInterestRate}
+                                                {!v.loan.ExpectedInterestRate} %
                                             </td> 
                                         </tr>
                                         <tr > 
