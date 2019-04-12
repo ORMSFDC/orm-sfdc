@@ -2,6 +2,7 @@
 *     Description : This is to display loans in Pipeline based on statuses, and generate history
 *     Created     : 7/28/2017
 *     Modified    : 1/31: Sahitya, added new Loanstatuses for all the pipelines
+*     Modified    : 4/12: Sahitya, Updated ResidentialIncomeRequired mapping
 * */
 public class PipeLineController {
     @AuraEnabled
@@ -614,7 +615,7 @@ public class PipeLineController {
             objSummary.BrokerOrigination=String.valueOf(objl.Broker_Origination__c) ;
             
             objSummary.LifeExpectancy=objl.Life_Expectancy__c;
-            objSummary.ResidentialIncomeRequired=objl.Residential_Income_Required__c;
+            objSummary.ResidentialIncomeRequired=objl.Residual_Income_Required__c;
             objSummary.TotalIncome=objl.Total_Income__c;
             objSummary.TotalAssets=objl.Total_Asset__c;//prsn
             objSummary.TotalExpenses=objl.Total_Expenses__c;
