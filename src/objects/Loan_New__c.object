@@ -6058,21 +6058,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>KPI_Cond_Appr__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF ( OR 
-(ISPICKVAL ( LoanStatus__c , "Conditionally Approved")), 1, 0)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>KPI Cond Appr</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>KPI_Docs_Out_To_Settlement__c</fullName>
         <externalId>false</externalId>
         <formula>IF ( OR 
@@ -6493,6 +6478,21 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
 0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Loan Status Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KPI_Cond_Appr__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( LoanStatus__c , "Conditionally Approved")), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KPI Cond Appr</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
