@@ -5683,53 +5683,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Property_State_Details__c</fullName>
-        <externalId>false</externalId>
-        <formula>CASE(   Subject_Property_State__c   , 
-"Alabama", "Homestead", 
-"Alaska", "Homestead", 
-"Florida", "Homestead", 
-"Iowa", "Homestead", 
-"Illinois", "Homestead", 
-"Michigan", "Homestead", 
-"Minnesota", "Homestead", 
-"Missouri", "Homestead", 
-"Mississippi", "Homestead", 
-"Montana", "Homestead", 
-"North Dakota", "Homestead", 
-"Nebraska", "Homestead", 
-"New Hampshire", "Homestead", 
-"Oklahoma", "Homestead", 
-"South Dakota", "Homestead", 
-"Tennessee", "Homestead", 
-"Vermont", "Homestead", 
-"West Virginia", "Homestead", 
-"Wyoming", "Homestead", 
-"Arkansas", "Dower-Homestead", 
-"Kansas", "Dower-Homestead", 
-"Kentucky", "Dower-Homestead", 
-"North Carolina", "Dower-Homestead", 
-"New Jersey", "Dower-Homestead", 
-"Ohio", "Dower-Homestead", 
-"Arizona", "Community-Homestead", 
-"California", "Community-Homestead", 
-"Idaho", "Community-Homestead", 
-"Louisiana", "Community-Homestead", 
-"New Mexico", "Community-Homestead", 
-"Nevada", "Community-Homestead", 
-"Texas", "Community-Homestead", 
-"Washington", "Community-Homestead", 
-"Wisconsin", "Community-Homestead", 
-"")</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Property State Details</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Remainderman_on_Loan__c</fullName>
         <description>Selecting "Yes' means all or part of Title must be held as Life estate.</description>
         <externalId>false</externalId>

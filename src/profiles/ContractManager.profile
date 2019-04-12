@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
     <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
 <apexPage>UserActiveStatus</apexPage>
 <enabled>false</enabled>
@@ -4992,11 +4992,7 @@
         <field>Loan_New__c.Loan_Purpose__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Loan_New__c.Property_State_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
