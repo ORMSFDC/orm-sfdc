@@ -228,7 +228,7 @@
                                         <tr >
                                             <td data-label="Residual Income Fullfilled" >
                                                     <b>Percent of Residual Income Fullfilled: </b>
-                                                	<lightning:formattedNumber value="{!v.loan.ResidualIncome}" />
+                                                	<lightning:formattedNumber value="{!v.loan.ResidualIncome}" />%
                                             </td>                                             
                                             <td></td>                                                                                      
                                         </tr>
