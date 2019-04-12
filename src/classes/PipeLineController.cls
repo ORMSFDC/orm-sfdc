@@ -570,8 +570,7 @@ public class PipeLineController {
                     
                     ProceedsAvailableFirstYear__c,LineOfCreditAfterFirstYear__c,InitialUnpaidPrincipalBalance__c,
                     PrincipalLimit__c,Margin__c,MandatoryObligations__c,InitialInterestRate__c,ExpectedInterestRate__c,
-                    RepairEstimate__c,FHACaseNumber__c,RepairSetAside__c,Broker_Origination__c,
-                    
+                    RepairEstimate__c,FHACaseNumber__c,RepairSetAside__c,Broker_Origination__c,Residual_Income_Required__c,                    
                     Lien_Balance__c,Lien_Creditor__c,Life_Expectancy__c,Residual_Income_Fulfilled__c,Residential_Income_Required__c,
                     Total_Asset__c,Total_Expenses__c,Total_Income__c,Total_Monthly_Property_Charge__c,Contact_Email__c
                     
