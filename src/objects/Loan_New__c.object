@@ -3762,20 +3762,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Formula_Waiting_For_Full_Package__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(ISBLANK( Waiting_for_Full_Package_Date__c ), 0, 1)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Formula: Waiting For Full Package</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>In_Processing_Date0__c</fullName>
         <externalId>false</externalId>
         <label>In Processing Date</label>
@@ -6464,6 +6450,20 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Formula_Waiting_For_Full_Package__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( Waiting_for_Full_Package_Date0__c ), 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Formula: Waiting For Full Package</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
