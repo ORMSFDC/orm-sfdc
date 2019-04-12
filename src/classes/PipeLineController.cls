@@ -102,9 +102,7 @@ public class PipeLineController {
                         obj1.FullName= c.Name;
                     }
                 }
-                //Client__c objClient=new Client__c();
-                // objClient=[SELECT First_Name__c, Last_Name__c FROM Client__c where LoanId__c=:lc.Id and Primary_Client_for_the_Loan__c =: true];
-                // obj1.FullName= objClient.First_Name__c+' '+ objClient.Last_Name__c;
+                
                 obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala
                // obj1.LoanStatus=lc.LoanStatus__c;
                 obj1.LoanDate=lc.LastModifiedDate.date().format();
