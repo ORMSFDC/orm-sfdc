@@ -176,6 +176,106 @@ public class OnBaseLookups {
         return keyword;
     }
     
+    public static void updateFields(Map<Id, Loan_New__c> oldLoanMap, List<Loan_New__c> newLoans)
+    {
+        Logger.push('updateProduct','OnBaseLookups');
+        
+        for(Loan_New__c newLoan : newLoans)
+        {
+            Loan_New__c oldLoan = oldLoanMap.get(newLoan.Id);
+            updateProduct(newLoan, oldLoan);
+            updatePurposeOfRefinance(newLoan, oldLoan);
+            updatePropertyState(newLoan, oldLoan);
+        }            
+        
+        Logger.pop();
+    }
+    
+    public static void updateProduct(Loan_New__c newLoan, Loan_New__c oldLoan)
+    {
+        String newProductType = newLoan.Product_Type__c;
+        String newMortgageAppliedFor = newLoan.Mortgage_Applied_for__c;
+        String newRateType = newLoan.Rate_Type__c;
+        
+        String oldProductType = oldLoan.Product_Type__c;
+        String oldMortgageAppliedFor = oldLoan.Mortgage_Applied_for__c;
+        String oldRateType = oldLoan.Rate_Type__c;
+        
+        System.debug('New>>>>> ' + newProductType + ' ' + newMortgageAppliedFor + ' ' + newRateType);
+        System.debug('Old>>>>> ' + oldProductType + ' ' + oldMortgageAppliedFor + ' ' + oldRateType);
+        
+        if(String.isNotBlank(newProductType) && String.isNotBlank(newMortgageAppliedFor) && String.isNotBlank(newRateType))
+        {
+            if(!newProductType.equals(oldProductType) || !newMortgageAppliedFor.equals(oldMortgageAppliedFor) || !newRateType.equals(oldRateType))
+            {
+            	// Have all new values set, and at least one differs, so update
+            	String keyword = OnBaseLookups.getProductKeyword(newProductType, newMortgageAppliedFor, newRateType);
+                System.debug('Keyword>>>>> ' + keyword);
+            	newLoan.Product__c = keyword;
+            }
+        }
+        else
+        {
+            // Don't have all new values set, so erase any previous value if it exists
+            newLoan.Product__c = null;
+        }
+    }
+    
+    public static void updatePurposeOfRefinance(Loan_New__c newLoan, Loan_New__c oldLoan)
+    {
+        String newProductType = newLoan.Product_Type__c;
+        String newMortgageAppliedFor = newLoan.Mortgage_Applied_for__c;
+        String newRateType = newLoan.Rate_Type__c;
+        
+        String oldProductType = oldLoan.Product_Type__c;
+        String oldMortgageAppliedFor = oldLoan.Mortgage_Applied_for__c;
+        String oldRateType = oldLoan.Rate_Type__c;
+        
+        System.debug('New>>>>> ' + newProductType + ' ' + newMortgageAppliedFor + ' ' + newRateType);
+        System.debug('Old>>>>> ' + oldProductType + ' ' + oldMortgageAppliedFor + ' ' + oldRateType);
+        
+        if(String.isNotBlank(newProductType) && String.isNotBlank(newMortgageAppliedFor) && String.isNotBlank(newRateType))
+        {
+            if(!newProductType.equals(oldProductType) || !newMortgageAppliedFor.equals(oldMortgageAppliedFor) || !newRateType.equals(oldRateType))
+            {
+            	// Have all new values set, and at least one differs, so update
+            	String keyword = OnBaseLookups.getPurposeOfRefinanceKeyword(newProductType, newMortgageAppliedFor, newRateType);
+                System.debug('Keyword>>>>> ' + keyword);
+            	newLoan.Purpose_of_Refinance__c = keyword;
+            }            
+        }
+        else
+        {
+            // Don't have all new values set, so erase any previous value if it exists
+            newLoan.Purpose_of_Refinance__c = null;
+        }
+    }
+    
+    public static void updatePropertyState(Loan_New__c newLoan, Loan_New__c oldLoan)
+    {
+        String newPropertyState = newLoan.Subject_Property_State__c;        
+        String oldPropertyState = oldLoan.Subject_Property_State__c;
+        
+        System.debug('New>>>>> ' + newPropertyState);
+        System.debug('Old>>>>> ' + oldPropertyState);
+        
+        if(String.isNotBlank(newPropertyState))
+        {
+            if(!newPropertyState.equals(oldPropertyState))
+            {
+            	// Have new value, and it differs, so update
+            	String keyword = OnBaseLookups.getPropertyStateKeyword(newPropertyState);
+                System.debug('Keyword>>>>> ' + keyword);
+           	    newLoan.Property_State_Details__c = keyword;
+            }
+        }
+        else
+        {
+            // Don't have new value set, so erase any previous value if it exists
+            newLoan.Property_State_Details__c = null;
+        }
+    }
+    
     public static string validateFinalSend(List<Loan_New__c> loans)
     {
         Logger.push('validateFinalSend','OnBaseLookups');

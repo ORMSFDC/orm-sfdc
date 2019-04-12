@@ -19,7 +19,7 @@ private class OnBaseLookupsTest {
             Actual_Disbursement_Date__c = System.Date.today(),
             Subject_Property_Address__c = '123 Test Road',
             Subject_Property_City__c = 'Test City',
-            Subject_Property_State__c = 'Florida',
+            Subject_Property_State__c = 'California',
             Closing_Date__c = System.Date.today(),
             Subject_Property_Zip_Code__c = '34787',
             Title_Company__c = 'Test Title Company',
@@ -49,6 +49,15 @@ private class OnBaseLookupsTest {
             ORMS__c = 'Yes'
         );
         loans.add(loanFull);
+        
+        Loan_New__c loanFieldUpdates = new Loan_New__c(
+            LoanNumber__c = 'Field Updates',
+            Product_Type__c = 'HECM',
+            Mortgage_Applied_for__c = 'HECM to HECM Refinance',
+        	Rate_Type__c = 'FIXED',
+            Subject_Property_State__c = 'California'
+        );
+        loans.add(loanFieldUpdates);      
         
         insert loans;
     } 
@@ -535,5 +544,33 @@ private class OnBaseLookupsTest {
         String actual = OnBaseLookups.validateFinalSend(loans);
         String expected = 'The following value(s) must be entered before Docs out to Settlement Agent can be selected: LoanNumber,Borrower Name,Purpose of Loan,Actual Disbursement Date,Subject Property Address,Subject Property City,Subject Property State,Actual Closing Date,Subject Property Zip Code,Title Company,Closing Agent,Subject Property Type,FHA Case Number,Disbursement Amount,Subject Property County,Is there a POA?,Trust Required,FHA Case Number Ordered Date,Maximum Claim Amount,PrincipalLimit,Client Chosen Title,Flood Zone,PropertyAppraisalValue,Guardianship/Conservatorship Required,Assisted Signing,Remainderman on Loan,Initial Disbursement Limit,Mandatory Obligations,Expected Interest Rate,Initial Interest Rate,Non Borrower Title Holder,Non Borrowing Title Holder Spouse,POA NonBorrowing Title Holder,ORMS Documents';
         System.assertEquals(expected, actual);
+    }
+    
+    @isTest
+    static void updateFieldsTest() {
+        String loanNumber = 'Lite';
+		List<Loan_New__c> loans = 
+            [SELECT Id, Product__c, Purpose_of_Refinance__c, Property_State_Details__c, 
+             Subject_Property_State__c,Rate_Type__c,Product_Type__c,Mortgage_Applied_for__c
+             FROM Loan_New__c WHERE LoanNumber__c = :loanNumber];
+        
+        loans[0].Product_Type__c = 'HECM';
+        loans[0].Mortgage_Applied_for__c = 'HECM to HECM Refinance';
+        loans[0].Rate_Type__c = 'FIXED';
+        loans[0].Subject_Property_State__c = 'Florida';
+        
+        update loans[0];
+        
+        loans = [SELECT Id, Product__c, Purpose_of_Refinance__c, Property_State_Details__c, 
+                 Subject_Property_State__c,Rate_Type__c,Product_Type__c,Mortgage_Applied_for__c
+                 FROM Loan_New__c WHERE LoanNumber__c = :loanNumber];
+        
+        String expectedPurposeOfRefinance = 'Streamline (HECM to HECM)';
+        String expectedProduct = 'HFCH - HECM FIXED';
+        String expectedPropertyState = 'Homestead';      
+
+        System.assertEquals(expectedPurposeOfRefinance, loans[0].Purpose_of_Refinance__c);
+        System.assertEquals(expectedProduct, loans[0].Product__c);
+        System.assertEquals(expectedPropertyState, loans[0].Property_State_Details__c);
     }
 }

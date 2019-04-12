@@ -6174,6 +6174,7 @@
     <members>Lookup_LoanStatus_Keyword.Waiting_for_Full_Package</members>
     <members>Lookup_Product_Keyword.HELO_HELO_Refinance_Fixed</members>
     <members>Lookup_Purpose_of_Refinance_Keyword.HELO_HELO_Refinance_Fixed</members>
+    <members>TriggerLoan.onbaseTriggerFields</members>
     <name>CustomMetadata</name>
   </types>
   <types>
