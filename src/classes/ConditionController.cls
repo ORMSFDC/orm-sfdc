@@ -47,7 +47,7 @@ public class ConditionController {
         List<Condition__c> obj=new List<Condition__c>();
         try
         {
-            obj=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c from Condition__c where Loan_Id__c=:LoanId];
+            obj=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c  from Condition__c where Loan_Id__c=:LoanId];
             for(Condition__c ObjConc:obj)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -55,8 +55,20 @@ public class ConditionController {
                 objres.DescText=ObjConc.Comment__c;
                 objres.DropDownValue=ObjConc.Description__c;
                 objres.Status=ObjConc.Status__c;
-                datetime dt=ObjConc.CreatedDate;    
-                objres.CreatedDate=dt.date().format();
+               // datetime dt=ObjConc.CreatedDate;    
+               // objres.CreatedDate=dt.date().format();
+                //Display created date based on data upload from RV
+                datetime dt1=ObjConc.Condition_Created_Date__c;  
+                datetime dt2 = ObjConc.CreatedDate;               
+                if(dt1!= null){                
+                system.debug('###'+dt1);
+                    datetime dt = dt1.addDays(1); 
+                    objres.CreatedDate=dt.date().format();  
+                }
+                else{
+                    objres.CreatedDate=dt2.date().format();  
+                }
+                //end
                 datetime dtstatus=ObjConc.LastModifiedDate;  
                 objres.StatusDate=dtstatus.date().format();
                 objres.Id=ObjConc.Id;
