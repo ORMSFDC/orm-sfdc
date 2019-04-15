@@ -460,16 +460,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Contact_Phone_Number_LoanDetails__c</fullName>
-        <externalId>false</externalId>
-        <label>Contact Phone Number LoanDetails*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Phone</type>
-    </fields>
-    <fields>
         <fullName>Contract_Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Contract Closing Date</label>
@@ -6465,6 +6455,16 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone_Number_LoanDetails__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Company Contact Phone Number*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
