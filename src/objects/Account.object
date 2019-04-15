@@ -3752,17 +3752,6 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses.<
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Scouting_Report__c</fullName>
-        <externalId>false</externalId>
-        <formula>HYPERLINK("http://tableau/t/ql/views/QLMSMarketDashboard/ORMSBrokerScoutingReport?Loan Company NMLS ID="&amp; Company_NMLS_ID__c &amp;"&amp;Reverse Mortgage=Yes","Scouting Report","_blank")</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Scouting Report</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Updated_Broker_Comp_Rec_d__c</fullName>
         <description>Broker comp addendum has been received from partner.</description>
         <externalId>false</externalId>
@@ -4836,6 +4825,17 @@ IF( Partner_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
         <scale>0</scale>
         <trackHistory>false</trackHistory>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Scouting_Report__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK("https://app.powerbi.com/groups/me/apps/8429e94f-cf27-4c02-84b8-65f4eed64285/reports/cc05dfdc-4cc3-46a5-86e8-f2bd11e4e6d1/ReportSection2dc0351f9c432b9c0997?filter=vwMarketTrac_BLD~2FActual_x0020_Company_x0020_NMLS_x0020_Id eq '"&amp;Company_NMLS_ID__c &amp;"'" ,"Scouting Report")</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scouting Report</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields><compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment><enableEnhancedLookup>true</enableEnhancedLookup><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><externalSharingModel>Private</externalSharingModel><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.ADDRESS1_CITY</customTabListAdditionalFields>
