@@ -2,6 +2,7 @@
 *     Description : This is to display loans in Pipeline based on statuses, and generate history
 *     Created     : 7/28/2017
 *     Modified    : 1/31: Sahitya, added new Loanstatuses for all the pipelines
+*     Modified    : 4/12: Sahitya, Updated ResidentialIncomeRequired mapping
 * */
 public class PipeLineController {
     @AuraEnabled
@@ -16,11 +17,8 @@ public class PipeLineController {
         List<Client__c> objallclient=new List<Client__c>();
         List<Loan_New__c> objLoanid=new List<Loan_New__c>();  
         try{
-            
-            //          objLoanid=[SELECT Id FROM Loan_New__c where IsActiveFlag__c=: true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Proposal','Waiting for Full Package') ];
-            objLoanid=[SELECT Id FROM Loan_New__c where IsActiveFlag__c=: true and LoanCompleteFlag__c=: true and LoanStatus__c in('Proposal','Waiting for Full Package') ];
-            //          obj=  [SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c where IsActiveFlag__c=: true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Proposal','Waiting for Full Package') ORDER BY LoanStatus__c];            
-            obj=  [SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c where IsActiveFlag__c=: true and LoanCompleteFlag__c=: true and LoanStatus__c in('Proposal','Waiting for Full Package') ORDER BY LoanStatus__c];
+            objLoanid=[SELECT Id FROM Loan_New__c where IsActiveFlag__c=: true and LoanCompleteFlag__c=: true and LoanStatus__c in('Proposal','Waiting for Full Package') ];            
+            obj=  [SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate,Loan_Status_Change_Date__c FROM Loan_New__c where IsActiveFlag__c=: true and LoanCompleteFlag__c=: true and LoanStatus__c in('Proposal','Waiting for Full Package') ORDER BY LoanStatus__c];
             objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where Primary_Client_for_the_Loan__c =: true and LoanId__c IN:objLoanid  ];
             
             /* to display the Picklist Label instead of API - Bala */ 
@@ -52,8 +50,7 @@ public class PipeLineController {
                     }
                 }
                 obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala
-                //obj1.LoanStatus=lc.LoanStatus__c;
-                obj1.LoanDate=lc.LastModifiedDate.date().format();
+                obj1.LoanDate=lc.Loan_Status_Change_Date__c.date().format();
                 objRes.add(obj1);
             }
         }
@@ -71,7 +68,7 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>();  
         try
         {
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Application Package Received','In Processing','Full Application Received - Incomplete','Loan Submission Received- Awaiting Review') ORDER BY LoanStatus__c ];   
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate,Loan_Status_Change_Date__c FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Application Package Received','In Processing','Full Application Received - Incomplete','Loan Submission Received- Awaiting Review') ORDER BY LoanStatus__c ];   
             objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Application Package Received','In Processing','Full Application Received - Incomplete','Loan Submission Received- Awaiting Review')];
             objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
@@ -101,12 +98,8 @@ public class PipeLineController {
                         obj1.FullName= c.Name;
                     }
                 }
-                //Client__c objClient=new Client__c();
-                // objClient=[SELECT First_Name__c, Last_Name__c FROM Client__c where LoanId__c=:lc.Id and Primary_Client_for_the_Loan__c =: true];
-                // obj1.FullName= objClient.First_Name__c+' '+ objClient.Last_Name__c;
-                obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala
-               // obj1.LoanStatus=lc.LoanStatus__c;
-                obj1.LoanDate=lc.LastModifiedDate.date().format();
+                obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala               
+                obj1.LoanDate=lc.Loan_Status_Change_Date__c.date().format();
                 objRes.add(obj1);
             }
         }
@@ -124,7 +117,7 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>(); 
         try
         {
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Conditionally Approved','Underwriting clear to close','In Underwriting Review') ORDER BY LoanStatus__c ];   
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate,Loan_Status_Change_Date__c FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Conditionally Approved','Underwriting clear to close','In Underwriting Review') ORDER BY LoanStatus__c ];   
             objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Conditionally Approved','Underwriting clear to close','In Underwriting Review')];
             objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
@@ -154,12 +147,8 @@ public class PipeLineController {
                         obj1.FullName= c.Name;
                     }
                 }
-                //Client__c objClient=new Client__c();
-                //objClient=[SELECT First_Name__c, Last_Name__c FROM Client__c where LoanId__c=:lc.Id and Primary_Client_for_the_Loan__c =: true];
-                //obj1.FullName= objClient.First_Name__c+' '+ objClient.Last_Name__c;
-                obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala
-                //obj1.LoanStatus=lc.LoanStatus__c;
-                obj1.LoanDate=lc.LastModifiedDate.date().format();
+                obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala                
+                obj1.LoanDate=lc.Loan_Status_Change_Date__c.date().format();
                 objRes.add(obj1);
             }           
         }
@@ -177,12 +166,9 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>(); 
         try
         {
-           //    obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Suspended') ORDER BY LoanStatus__c ];   
-        //    objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Suspended')];
-        //    objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Suspended') ORDER BY LoanStatus__c ];   
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate,Loan_Status_Change_Date__c FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Suspended') ORDER BY LoanStatus__c ];   
             objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Suspended')];
-         objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
+            objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
             Schema.DescribeFieldResult fieldResult = Loan_New__c.LoanStatus__c.getDescribe();
             List<Schema.PicklistEntry> values = fieldResult.getPicklistValues();
@@ -211,12 +197,8 @@ public class PipeLineController {
                         obj1.FullName= c.Name;
                     }
                 }
-                //Client__c objClient=new Client__c();
-                // objClient=[SELECT First_Name__c, Last_Name__c FROM Client__c where LoanId__c=:lc.Id and Primary_Client_for_the_Loan__c =: true];
-                //obj1.FullName= objClient.First_Name__c+' '+ objClient.Last_Name__c;
                 obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala                
-                //obj1.LoanStatus=lc.LoanStatus__c;
-                obj1.LoanDate=lc.LastModifiedDate.date().format();
+                obj1.LoanDate=lc.Loan_Status_Change_Date__c.date().format();
                 objRes.add(obj1);
             }           
         }
@@ -234,10 +216,8 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>(); 
         try
         {
-             //   obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding') ORDER BY LoanStatus__c ];   
-         //   objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding')];
-         //   objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding','In final HUD Review','Docs Out to Settlement Agent') ORDER BY LoanStatus__c ];   
+            objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate,Loan_Status_Change_Date__c FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding','In final HUD Review','Docs Out to Settlement Agent') ORDER BY LoanStatus__c ];   
             objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Awaiting Closing','Closed - Awaiting Funding','In final HUD Review','Docs Out to Settlement Agent')];
             objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
@@ -268,12 +248,8 @@ public class PipeLineController {
                         obj1.FullName= c.Name;
                     }
                 }
-                // Client__c objClient=new Client__c();
-                //objClient=[SELECT First_Name__c, Last_Name__c FROM Client__c where LoanId__c=:lc.Id and Primary_Client_for_the_Loan__c =: true];
-                //obj1.FullName= objClient.First_Name__c+' '+ objClient.Last_Name__c;
                 obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala                
-                //obj1.LoanStatus=lc.LoanStatus__c;
-                obj1.LoanDate=lc.LastModifiedDate.date().format();
+                obj1.LoanDate=lc.Loan_Status_Change_Date__c.date().format();
                 objRes.add(obj1);
             }
         }
@@ -291,13 +267,9 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>(); 
         try
         {
-           //   obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Funded') ORDER BY LoanStatus__c ];   
-         //   objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and OwnerId=: userinfo.getUserId() and LoanStatus__c in('Funded')];
-         //   objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
-
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Funded') ORDER BY LoanStatus__c ];   
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate,Loan_Status_Change_Date__c FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Funded') ORDER BY LoanStatus__c ];   
             objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and LoanStatus__c in('Funded')];
-          objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
+            objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
              Schema.DescribeFieldResult fieldResult = Loan_New__c.LoanStatus__c.getDescribe();
             List<Schema.PicklistEntry> values = fieldResult.getPicklistValues();
@@ -316,7 +288,7 @@ public class PipeLineController {
                 }
                 else
                 {
-                    obj1.LoanNumber=lc.LoanNumber__c;
+                    obj1.LoanNumber=lc.LoanNumber__c;  
                 }
                 for(Client__c c:objallclient)  
                 {
@@ -325,13 +297,8 @@ public class PipeLineController {
                         obj1.FullName= c.Name;
                     }
                 }
-                //Client__c objClient=new Client__c();
-                //objClient=[SELECT First_Name__c, Last_Name__c FROM Client__c where LoanId__c=:lc.Id and Primary_Client_for_the_Loan__c =: true];
-                //obj1.FullName= objClient.First_Name__c+' '+ objClient.Last_Name__c;
-
                 obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala                               
-                //obj1.LoanStatus=lc.LoanStatus__c;
-                obj1.LoanDate=lc.LastModifiedDate.date().format();
+                obj1.LoanDate=lc.Loan_Status_Change_Date__c.date().format();
                 objRes.add(obj1);
             }
         }
@@ -349,7 +316,7 @@ public class PipeLineController {
         List<Loan_New__c> objLoanid=new List<Loan_New__c>(); 
         try
         {
-            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and LoanStatus__c in('Denied', 'Withdrawn','Loan Rescinded','Application Approved but Not Accepted','File Closed for Incompleteness' ) ORDER BY LoanStatus__c ];   
+            obj=[SELECT Id,Name,LoanNumber__c,LoanStatus__c ,LastModifiedDate,Loan_Status_Change_Date__c FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true and LoanStatus__c in('Denied', 'Withdrawn','Loan Rescinded','Application Approved but Not Accepted','File Closed for Incompleteness' ) ORDER BY LoanStatus__c ];   
             objLoanid=[SELECT Id FROM Loan_New__c  where IsActiveFlag__c=:true and LoanCompleteFlag__c=: true  and LoanStatus__c in('Denied','Withdrawn','Loan Rescinded','Application Approved but Not Accepted','File Closed for Incompleteness')];
             objallclient=[SELECT Name,First_Name__c, Last_Name__c,LoanId__c FROM Client__c where LoanId__c IN:objLoanid and Primary_Client_for_the_Loan__c =: true];
             
@@ -379,11 +346,7 @@ public class PipeLineController {
                         obj1.FullName= c.Name;
                     }
                 }
-                //Client__c objClient=new Client__c();
-                //objClient=[SELECT First_Name__c, Last_Name__c FROM Client__c where LoanId__c=:lc.Id and Primary_Client_for_the_Loan__c =: true];
-                //obj1.FullName= objClient.First_Name__c+' '+ objClient.Last_Name__c;
                 obj1.LoanStatus = valueLabelMap.get(lc.LoanStatus__c); //Bala
-                //obj1.LoanStatus=lc.LoanStatus__c;
                 obj1.LoanDate=lc.LastModifiedDate.date().format();
                 objRes.add(obj1);
             }
@@ -429,8 +392,6 @@ public class PipeLineController {
         {
             obj=[SELECT Id,Name,PreviousStatus__c,LastModifiedDate FROM LoanStatus__c  where LoanId__c=:LoanID ORDER BY LastModifiedDate DESC ];   
             
-            
-            //objRes.add(objr);
             for(LoanStatus__c lcStatus:obj)            
             {
                 PipeLineStatusChangeResponse obj1=new PipeLineStatusChangeResponse();
@@ -465,22 +426,17 @@ public class PipeLineController {
             
             objdate.ApplicationDate=obj1.Application_Date__c !=null?obj1.Application_Date__c.format():'';
             objdate.ApplicationSignedDate=obj1.Application_Signed_Date__c !=null?obj1.Application_Signed_Date__c.format():'';   //added by Bala
-            //objdate.AppraisalExpirationDate=obj1.Appraisal_Expiration_Date__c !=null?obj1.Appraisal_Expiration_Date__c.format():'';
             objdate.AppraisalOrderDate=obj1.Appraisal_Ordered_Date__c !=null?obj1.Appraisal_Ordered_Date__c.format():'';
             objdate.AppraisalReceivedDate=obj1.Appraisal_Received_Date__c !=null?obj1.Appraisal_Received_Date__c.format():'';
-            //objdate.AppraisalSenttoClientDate=obj1.Appraisal_sent_to_Client_Date__c !=null?obj1.Appraisal_sent_to_Client_Date__c.format():'';
             objdate.CounselingDate=obj1.Counseling_Date__c !=null?obj1.Counseling_Date__c.format():'';
             objdate.FHACaseNaumberDate=obj1.FHA_Case_Number_Date__c !=null?obj1.FHA_Case_Number_Date__c.format():'';
-            //objdate.HOIEffectiveDate=obj1.HOI_Effective_Date__c !=null?obj1.HOI_Effective_Date__c.format():'';
             objdate.NextTaxDueDate=obj1.Next_Tax_Due_Date__c !=null?obj1.Next_Tax_Due_Date__c.format():'';
             objdate.ReDiscloserDate=obj1.Re_disclosure_Date__c !=null?obj1.Re_disclosure_Date__c.format():'';
             objdate.ClosingDate=obj1.Closing_Date__c !=null?obj1.Closing_Date__c.format():'';
-            objdate.ReDiscloserReason=obj1.ReDisclosure_Reason__c =='Other'?obj1.Other_ReDisclosure_Reason__c:obj1.ReDisclosure_Reason__c;
-            
+            objdate.ReDiscloserReason=obj1.ReDisclosure_Reason__c =='Other'?obj1.Other_ReDisclosure_Reason__c:obj1.ReDisclosure_Reason__c;            
             objdate.AnticipatedClosingDate=obj1.Anticipated_Closing_Date__c !=null?obj1.Anticipated_Closing_Date__c.format():'';
             objdate.ScheduledClosingDate=obj1.Scheduled_Closing_Date__c !=null?obj1.Scheduled_Closing_Date__c.format():'';
-            objdate.ActualFundingDate=obj1.Actual_Funding_Date__c !=null?obj1.Actual_Funding_Date__c.format():'';
-            
+            objdate.ActualFundingDate=obj1.Actual_Funding_Date__c !=null?obj1.Actual_Funding_Date__c.format():'';            
             objdate.PayoffOrderDate=obj1.Payoff_Order_Date__c !=null?obj1.Payoff_Order_Date__c.format():'';
             objdate.CreditReportDate=obj1.Credit_Report_Date__c !=null?obj1.Credit_Report_Date__c.format():'';
             objdate.AppraisalScheduledDate=obj1.Appraisal_Scheduled_Date__c !=null?obj1.Appraisal_Scheduled_Date__c.format():'';
@@ -499,7 +455,7 @@ public class PipeLineController {
         catch(Exception ex){
             system.debug('getLoanDate--Exception---'+ex);
         }
-        // system.debug('objdate'+objdate);
+        
         return objdate;
     }
     
@@ -533,8 +489,7 @@ public class PipeLineController {
             
             objPinew.LoanNumberDetails=objl.LoanNumber__c;
             objPinew.FullName=clientObj.Name;
-            objPinew.LoanStatus = valueLabelMap.get(objl.LoanStatus__c);   //Bala         
-            //objPinew.LoanStatus=objl.LoanStatus__c;          
+            objPinew.LoanStatus = valueLabelMap.get(objl.LoanStatus__c);   //Bala                 
             objPinew.Address=objl.Subject_Property_Address__c+', '+objl.Subject_Property_City__c +', '+ objl.Subject_Property_State__c +', '+objl.Subject_Property_Zip_Code__c;
             objPinew.Email=clientObj.Email_Optional__c;
             objPinew.ContactEmail = objl.Contact_Email__c;
@@ -569,8 +524,7 @@ public class PipeLineController {
                     
                     ProceedsAvailableFirstYear__c,LineOfCreditAfterFirstYear__c,InitialUnpaidPrincipalBalance__c,
                     PrincipalLimit__c,Margin__c,MandatoryObligations__c,InitialInterestRate__c,ExpectedInterestRate__c,
-                    RepairEstimate__c,FHACaseNumber__c,RepairSetAside__c,Broker_Origination__c,
-                    
+                    RepairEstimate__c,FHACaseNumber__c,RepairSetAside__c,Broker_Origination__c,Residual_Income_Required__c,                    
                     Lien_Balance__c,Lien_Creditor__c,Life_Expectancy__c,Residual_Income_Fulfilled__c,Residential_Income_Required__c,
                     Total_Asset__c,Total_Expenses__c,Total_Income__c,Total_Monthly_Property_Charge__c,Contact_Email__c
                     
@@ -593,12 +547,10 @@ public class PipeLineController {
             }
             objSummary.Phone=clientObj.Phone_Number__c;
             objSummary.Email=clientObj.Email_Optional__c;
-            objSummary.CashDueClosing=objl.FundtoClose__c;
-            //objSummary.CashAvlClient=objl.CashAvaliabletoClient__c;
+            objSummary.CashDueClosing=objl.FundtoClose__c;            
             objSummary.ProAppValue=objl.PropertyAppraisalValue__c;
             objSummary.LESA=objl.TotalLesa__c;
             objSummary.BrokerComp=objl.BrokerCompensation__c;
-            //objSummary.MonthPayAvlClient=objl.MonthlyPaymentavailabletoClient__c;
             objSummary.FinancialAsstResult=objl.FinancialAssessmentResult__c;
             objSummary.ProcAvailFirstYear=objl.ProceedsAvailableFirstYear__c;
             objSummary.LineOfCredit=objl.LineOfCreditAfterFirstYear__c;
@@ -611,10 +563,9 @@ public class PipeLineController {
             objSummary.RepairEstimate=objl.RepairEstimate__c;
             objSummary.FHACaseNumber=objl.FHACaseNumber__c;
             objSummary.RepairSetAside=objl.RepairSetAside__c;
-            objSummary.BrokerOrigination=String.valueOf(objl.Broker_Origination__c) ;
-            
+            objSummary.BrokerOrigination=String.valueOf(objl.Broker_Origination__c) ;            
             objSummary.LifeExpectancy=objl.Life_Expectancy__c;
-            objSummary.ResidentialIncomeRequired=objl.Residential_Income_Required__c;
+            objSummary.ResidentialIncomeRequired=objl.Residual_Income_Required__c;
             objSummary.TotalIncome=objl.Total_Income__c;
             objSummary.TotalAssets=objl.Total_Asset__c;//prsn
             objSummary.TotalExpenses=objl.Total_Expenses__c;
@@ -663,16 +614,11 @@ public class PipeLineController {
             }  //Bala
             
             objSummary.LoanNumberDetails=objl.LoanNumber__c;
-            objSummary.BorrowerName=clientObj.Name; 
-            //datetime dt=objl.PipeLine_BestContactTime__c;   
-            // string dttest=dt.format('MM/dd/yyyy HH:mm a', 'America/New_York');
-            
+            objSummary.BorrowerName=clientObj.Name;             
             objSummary.ContactTime=objl.PipeLine_BestContactTime__c;
-            objSummary.Phone=clientObj.Phone_Number__c;
-            //objSummary.LoanOfficerName=objl.Loan_Originator_s_First_Name__c+' '+objl.Loan_Originator_s_Last_Name__c;
+            objSummary.Phone=clientObj.Phone_Number__c;            
             objSummary.partnerName=username;
             objSummary.LoanStatus = valueLabelMap.get(objl.LoanStatus__c); //Bala
-            //objSummary.LoanStatus=objl.LoanStatus__c;
             objSummary.OrderAppFlag=objl.IsOrderAppraisalFlag__c;
             objSummary.BestContact=objl.PipeLine_BestContact__c;
             objSummary.BestContactList=getBestContactList(LoanID);           

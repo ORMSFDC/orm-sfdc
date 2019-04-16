@@ -141,6 +141,9 @@
                                             
                                             <td data-label="Expected Interest Rate">
                                                 <b>Expected Interest Rate: </b>
+                                                <aura:if isTrue="{!v.loan.ExpectedInterestRate >=null}">
+                                                    {!v.loan.ExpectedInterestRate} %
+                                                </aura:if>
                                             </td> 
                                         </tr>
                                         <tr > 
@@ -227,7 +230,9 @@
                                         <tr >
                                             <td data-label="Residual Income Fullfilled" >
                                                     <b>Percent of Residual Income Fullfilled: </b>
-                                                	<lightning:formattedNumber value="{!v.loan.ResidualIncome}" />
+                                                	<aura:if isTrue="{!v.loan.ResidualIncome >=null}">
+                                                	    <lightning:formattedNumber value="{!v.loan.ResidualIncome}" />%
+                                                    </aura:if>
                                             </td>                                             
                                             <td></td>                                                                                      
                                         </tr>
