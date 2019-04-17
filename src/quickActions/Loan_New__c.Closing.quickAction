@@ -211,8 +211,8 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>decl_Cash_to_close__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <field>Cash_to_Close__c</field>
+                <uiBehavior>Readonly</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>
