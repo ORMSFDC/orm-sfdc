@@ -5380,32 +5380,6 @@ IF(
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Non_Borrower_Title_Holder__c</fullName>
-        <externalId>false</externalId>
-        <label>Non Borrower Title Holder</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>YES</fullName>
-                    <default>false</default>
-                    <label>YES</label>
-                </value>
-                <value>
-                    <fullName>NO</fullName>
-                    <default>false</default>
-                    <label>NO</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Non_Borrowing_Title_Holder_Spouse__c</fullName>
         <externalId>false</externalId>
         <label>Non Borrowing Title Holder Spouse</label>
@@ -6493,6 +6467,32 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Non_Borrower_Title_Holder__c</fullName>
+        <externalId>false</externalId>
+        <label>Non Borrowing Title Holder</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
