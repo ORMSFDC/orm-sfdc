@@ -1,11 +1,13 @@
 /**
  * @description: used to display Loan Conditions and Condition History in Portal and backend
- * @author: Ravi
+ * @author: GalaxE
  * @date: 11/16/2017
  *
  * changelog:
  * 04/15/2019: Sahitya - added new criterial to display Created date in the frontend and backend
  *                       based on data upload from RV
+ * 04/22/2019: Sahitya - Print PDF link was not working updated the code, added Status date from RV field 
+ *                       Display data similar to createdDate, do not display status date for Outstanding Conditions
  */
 
 public class ConditionController {
@@ -21,11 +23,9 @@ public class ConditionController {
             Conditionobj=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,CreatedById,LastModifiedById,LastModifiedDate,Description__c from Condition__c where id=:ConditionId ];
             ConditionResObj.Status=Conditionobj.Status__c;
             ConditionResObj.DescText=Conditionobj.Comment__c;
-            
-           
             string CreatedByName=[Select Name from User where Id=:Conditionobj.CreatedById].Name;
             string ModifyByname=[Select Name from User where Id=:Conditionobj.LastModifiedById].Name;            
-              datetime dtC=Conditionobj.CreatedDate;   
+            datetime dtC=Conditionobj.CreatedDate;   
             ConditionResObj.CreatedDate=dtC.format('MM/dd/yyyy HH:mm a', 'America/New_York');
             datetime dtM=Conditionobj.LastModifiedDate;   
             ConditionResObj.LastModifyDate=dtM.format('MM/dd/yyyy HH:mm a', 'America/New_York');
@@ -34,7 +34,8 @@ public class ConditionController {
             datetime dt=Conditionobj.LastModifiedDate;
             ConditionResObj.StatusDate=dt.format('MM/dd/yyyy');
             ObjCon.add(ConditionResObj);
-            obj=[SELECT Id, Old_Status__c, New_Status__c, Old_Comments__c, New_Comments__c, Old_ModifiedDate__c, LastModifiedDate fROM Condition_Log__c where ConditionId__c=:ConditionId ORDER BY LastModifiedDate desc ];
+            obj=[SELECT Id, Old_Status__c, New_Status__c, Old_Comments__c, New_Comments__c, Old_ModifiedDate__c, LastModifiedDate 
+                 FROM Condition_Log__c where ConditionId__c=:ConditionId ORDER BY LastModifiedDate desc ];
             for(Condition_Log__c CL:obj)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -57,7 +58,8 @@ public class ConditionController {
         List<Condition__c> obj=new List<Condition__c>();
         try
         {
-            obj=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c from Condition__c where Loan_Id__c=:LoanId];
+            obj=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c 
+                 FROM Condition__c where Loan_Id__c=:LoanId Order By Status__c Asc];
             
             for(Condition__c ObjConc:obj)
             {
@@ -66,7 +68,7 @@ public class ConditionController {
                 objres.DescText=ObjConc.Comment__c;
                 objres.DropDownValue=ObjConc.Description__c;
                 objres.Status=ObjConc.Status__c;                
-                //Display created date based on data upload from RV
+                //Display created date, status date based on data upload from RV
                 datetime dt1=ObjConc.Condition_Created_Date__c;  
                 datetime dt2 = ObjConc.CreatedDate;               
                 if(dt1!= null){  
@@ -76,17 +78,23 @@ public class ConditionController {
                 else{
                     objres.CreatedDate=dt2.date().format();  
                 }
-                //end
-                datetime dtstatus=ObjConc.LastModifiedDate;  
-                objres.StatusDate=dtstatus.date().format();
+                datetime ds1=ObjConc.Status_Date__c;  
+                datetime ds2=ObjConc.LastModifiedDate;
+                if(ds1 != null){
+                    datetime ds = ds1.addDays(1);
+                    objres.StatusDate=ds.date().format();
+                }
+                else{
+                    objres.StatusDate=ds2.date().format();
+                }
+                //end                
                 objres.Id=ObjConc.Id;
                 ObjCon.add(objres);
             }            
         }
         catch(exception e){
             system.debug('getLoanCondition--Exception---'+e);
-        }
-        system.debug('obj@@@'+obj);  
+        } 
         return ObjCon;
     }
     @AuraEnabled
@@ -100,6 +108,13 @@ public class ConditionController {
         return Name;        
     }
     
+    /*added this code to return domain URL instead of site URL for PrintPDF */
+    @AuraEnabled
+    public static string getBaseURL(){
+        string domain = String.valueof(System.Url.getOrgDomainUrl().toExternalForm());           
+        return domain;      
+    }
+
     @AuraEnabled
     public static void SaveConditions(string ConditionList,String LoanId,boolean MailSendneeded ) {
         try
@@ -135,7 +150,7 @@ public class ConditionController {
             string EmailTo;
             obj=[Select Name,Client_Name__c,CreatedById,LoanOfficer__c, Loan_Processor__c, Preferred_Contact_Type__c from Loan_New__c where id=:LoanId ];
             system.debug('Preferred_Contact_Type__c'+obj.Preferred_Contact_Type__c);
-            //Logic for findding email
+            //Logic for finding email
             if(obj.Preferred_Contact_Type__c !=null || obj.Preferred_Contact_Type__c !='')
             {
                 string UserId=obj.Preferred_Contact_Type__c=='Loan Officer'?obj.LoanOfficer__c:obj.Loan_Processor__c;
@@ -175,7 +190,6 @@ public class ConditionController {
         {
             system.debug(responseString);
             ConditionResponse ObjResponse=(ConditionResponse)JSON.deserialize(responseString, ConditionResponse.class);
-            //system.debug(ObjResponse);
             Condition__c objc=new Condition__c();
             objc.Status__c=ObjResponse.NewStatus;
             objc.Comment__c=ObjResponse.NewDescText;
@@ -248,7 +262,7 @@ public class ConditionController {
         ConditionResponse objres=new ConditionResponse();
         try
         {            
-            objCon=[SELECT Id,Comment__c,Description__c,Status__c,CreatedDate,LastModifiedDate   from Condition__c where Id=:ConditionId];
+            objCon=[SELECT Id,Comment__c,Description__c,Status__c,CreatedDate,LastModifiedDate,Condition_Created_Date__c,Status_Date__c FROM Condition__c where Id=:ConditionId];
             string CreatedById=[Select CreatedById from Condition__c where Id=:ConditionId ].CreatedById;
             string ModifyById=[Select LastModifiedById  from Condition__c where Id=:ConditionId ].LastModifiedById;
             string CreatedByName=[Select Name from User where Id=:CreatedById].Name;
@@ -256,10 +270,27 @@ public class ConditionController {
             objres.DescText=objCon.Comment__c;
             objres.DropDownValue=objCon.Description__c;
             objres.Status=objCon.Status__c;
-            datetime dtC=objCon.CreatedDate;   
-            objres.CreatedDate=dtC.format('MM/dd/yyyy HH:mm a', 'America/New_York');
-            datetime dtM=objCon.LastModifiedDate;   
-            objres.LastModifyDate=dtM.format('MM/dd/yyyy HH:mm a', 'America/New_York');
+
+            //Display created date, status date based on data upload from RV
+                datetime dt1=ObjCon.Condition_Created_Date__c;  
+                datetime dt2 = ObjCon.CreatedDate;               
+                if(dt1!= null){  
+                    datetime dt = dt1.addDays(1); 
+                    objres.CreatedDate=dt.date().format();  
+                }
+                else{
+                    objres.CreatedDate=dt2.date().format();  
+                }      
+                datetime ds1=ObjCon.Status_Date__c;  
+                datetime ds2=ObjCon.LastModifiedDate;
+                if(ds1 != null){
+                    datetime ds = ds1.addDays(1);
+                    objres.LastModifyDate=ds.date().format();
+                }
+                else{
+                    objres.LastModifyDate=ds2.date().format();
+                }
+                //end                
             objres.LastModifyBy=ModifyByname;
             objres.CreatedBy=CreatedByName;
         }
@@ -279,21 +310,24 @@ public class ConditionController {
         {
             Conditionobj=[Select Id,Condition_Number__c,Status__c from Condition__c where Id=:CinditionId];
             ConditionResObj.Status=Conditionobj.Status__c;
-            ConditionResObj.Index=Conditionobj.Condition_Number__c;          
+            ConditionResObj.Index=Conditionobj.Condition_Number__c;                    
         }
         catch(Exception e)
         {
             system.debug('getConditionCurrentStatusandCondition--Exception---'+e);
         }
         return ConditionResObj;        
-    }
+    } 
+
+    
     @AuraEnabled
     public static List<ConditionResponse> getConditionHistoryStatus(String LoanId, string conditionNumber) {
         List<ConditionResponse> ObjCon=new List<ConditionResponse>();      
         List<Condition_Log__c> obj=new List<Condition_Log__c>();        
         try
         {
-            obj=[SELECT Id, Old_Status__c, New_Status__c, Old_ModifiedDate__c, LastModifiedDate FROM Condition_Log__c where Loan_Id__c =:LoanId and ConditionId__c=:conditionNumber ORDER BY LastModifiedDate desc ];
+            obj=[SELECT Id, Old_Status__c, New_Status__c, Old_ModifiedDate__c, LastModifiedDate 
+                 FROM Condition_Log__c where Loan_Id__c =:LoanId and ConditionId__c=:conditionNumber ORDER BY LastModifiedDate desc ];
             for(Condition_Log__c CL:obj)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -327,7 +361,8 @@ public class ConditionController {
         List<Condition__c> objCleared =new List<Condition__c>();
         try
         {
-            objOutstanding=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Outstanding' ORDER BY LastModifiedDate desc];
+            objOutstanding=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c
+                            FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Outstanding' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objOutstanding)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -335,22 +370,33 @@ public class ConditionController {
                 objres.DescText=ObjConc.Comment__c;
                 objres.DropDownValue=ObjConc.Description__c;
                 objres.Status=ObjConc.Status__c;
-                //Display created date based on data upload from RV
+                //Display created date, status date based on data upload from RV
                 datetime dt1=ObjConc.Condition_Created_Date__c;  
                 datetime dt2 = ObjConc.CreatedDate;               
-                if(dt1!= null){ 
+                if(dt1!= null){  
                     datetime dt = dt1.addDays(1); 
                     objres.CreatedDate=dt.date().format();  
                 }
                 else{
                     objres.CreatedDate=dt2.date().format();  
+                }   
+                
+                datetime ds1=ObjConc.Status_Date__c;  
+                datetime ds2=ObjConc.LastModifiedDate;
+                if(ds1 != null){
+                    datetime ds = ds1.addDays(1);
+                    objres.StatusDate=ds.date().format();
                 }
-                datetime dtstatus=ObjConc.LastModifiedDate;  
-                objres.StatusDate=dtstatus.date().format();
+                else{
+                    objres.StatusDate=ds2.date().format();
+                }
+                //end
                 objres.Id=ObjConc.Id;
                 ObjConOutstanding.add(objres);
             }
-            objRevisionRequested=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Revision Requested' ORDER BY LastModifiedDate desc];
+
+            objRevisionRequested=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c 
+                                  FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Revision Requested' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objRevisionRequested)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -358,22 +404,32 @@ public class ConditionController {
                 objres.DescText=ObjConc.Comment__c;
                 objres.DropDownValue=ObjConc.Description__c;
                 objres.Status=ObjConc.Status__c;
-                //Display created date based on data upload from RV
+                //Display created date, status date based on data upload from RV
                 datetime dt1=ObjConc.Condition_Created_Date__c;  
                 datetime dt2 = ObjConc.CreatedDate;               
-                if(dt1!= null){ 
-                    datetime dt = dt1.addDays(1);
+                if(dt1!= null){  
+                    datetime dt = dt1.addDays(1); 
                     objres.CreatedDate=dt.date().format();  
                 }
                 else{
                     objres.CreatedDate=dt2.date().format();  
+                }   
+                
+                datetime ds1=ObjConc.Status_Date__c;  
+                datetime ds2=ObjConc.LastModifiedDate;
+                if(ds1 != null){
+                    datetime ds = ds1.addDays(1);
+                    objres.StatusDate=ds.date().format();
                 }
-                datetime dtstatus=ObjConc.LastModifiedDate;  
-                objres.StatusDate=dtstatus.date().format();
+                else{
+                    objres.StatusDate=ds2.date().format();
+                }
+                //end
                 objres.Id=ObjConc.Id;
                 ObjConRevisionRequested.add(objres);
             }
-            objCancelled=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Cancelled' ORDER BY LastModifiedDate desc];
+            objCancelled=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c 
+                          FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Cancelled' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objCancelled)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -381,22 +437,31 @@ public class ConditionController {
                 objres.DescText=ObjConc.Comment__c;
                 objres.DropDownValue=ObjConc.Description__c;
                 objres.Status=ObjConc.Status__c;
-                //Display created date based on data upload from RV
+                //Display created date, status date based on data upload from RV
                 datetime dt1=ObjConc.Condition_Created_Date__c;  
                 datetime dt2 = ObjConc.CreatedDate;               
-                if(dt1!= null){ 
+                if(dt1!= null){  
                     datetime dt = dt1.addDays(1); 
                     objres.CreatedDate=dt.date().format();  
                 }
                 else{
                     objres.CreatedDate=dt2.date().format();  
+                }               
+                datetime ds1=ObjConc.Status_Date__c;  
+                datetime ds2=ObjConc.LastModifiedDate;
+                if(ds1 != null){
+                    datetime ds = ds1.addDays(1);
+                    objres.StatusDate=ds.date().format();
                 }
-                datetime dtstatus=ObjConc.LastModifiedDate;  
-                objres.StatusDate=dtstatus.date().format();
+                else{
+                    objres.StatusDate=ds2.date().format();
+                }
+                //end
                 objres.Id=ObjConc.Id;
                 ObjConCancelled.add(objres);
             }
-            objCleared=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Cleared' ORDER BY LastModifiedDate desc];
+            objCleared=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c 
+                        FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Cleared' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objCleared)
             {
                 ConditionResponse objres=new ConditionResponse();                
@@ -404,18 +469,26 @@ public class ConditionController {
                 objres.DescText=ObjConc.Comment__c;
                 objres.DropDownValue=ObjConc.Description__c;
                 objres.Status=ObjConc.Status__c;
-                //Display created date based on data upload from RV
+               //Display created date, status date based on data upload from RV
                 datetime dt1=ObjConc.Condition_Created_Date__c;  
                 datetime dt2 = ObjConc.CreatedDate;               
-                if(dt1!= null){ 
+                if(dt1!= null){  
                     datetime dt = dt1.addDays(1); 
                     objres.CreatedDate=dt.date().format();  
                 }
                 else{
                     objres.CreatedDate=dt2.date().format();  
+                }                   
+                datetime ds1=ObjConc.Status_Date__c;  
+                datetime ds2=ObjConc.LastModifiedDate;
+                if(ds1 != null){
+                    datetime ds = ds1.addDays(1);
+                    objres.StatusDate=ds.date().format();
                 }
-                datetime dtstatus=ObjConc.LastModifiedDate;  
-                objres.StatusDate=dtstatus.date().format();
+                else{
+                    objres.StatusDate=ds2.date().format();
+                }
+                //end
                 objres.Id=ObjConc.Id;
                 ObjConCleared.add(objres);
             }

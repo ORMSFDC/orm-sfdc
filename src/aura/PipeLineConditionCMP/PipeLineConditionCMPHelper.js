@@ -21,7 +21,7 @@
                 component.set("v.showNoCondition",false);
                  component.set("v.showPrintCondition",true);
             }
-       		 component.set("v.ConditionD",result);
+                component.set("v.ConditionD",result);
             });
          
         $A.enqueueAction(action2); 
