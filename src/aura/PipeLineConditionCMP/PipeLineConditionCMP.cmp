@@ -112,11 +112,14 @@
                                         <div class="col-md-5" style= "color:white">
                                             <ui:outputText value="Created Date:" /><ui:outputText value="{!Con.CreatedDate}" />
                                         </div>
-                                        <div class="col-md-7" style= "color:white">
-                                            <div class="pull-right">
-                                                 <ui:outputText value="Status Date:" /><ui:outputText value="{!Con.StatusDate}" />&nbsp;&nbsp;
-                                            </div>
-                                        </div>
+                                            <div class="col-md-7" style= "color:white">
+                                                <div class="pull-right">
+                                                    <aura:if isTrue="{!Con.Status != 'Outstanding'}">
+                                                        <ui:outputText value="Status Date:" />
+                                                        <ui:outputText value="{!Con.StatusDate}" />&nbsp;&nbsp;
+                                                    </aura:if>
+                                                </div>
+                                            </div>                                        
                                     </div>
                                 </div>
                             </div>
