@@ -61,11 +61,6 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
-                <field>Lien_Creditor__c</field>
-                <uiBehavior>Edit</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>false</emptySpace>
                 <field>Client_Name__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
@@ -235,10 +230,6 @@
                 <emptySpace>false</emptySpace>
                 <field>Total_Monthly_Property_Charge__c</field>
                 <uiBehavior>Readonly</uiBehavior>
-            </quickActionLayoutItems>
-            <quickActionLayoutItems>
-                <emptySpace>true</emptySpace>
-                <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>true</emptySpace>
