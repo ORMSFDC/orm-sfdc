@@ -437,39 +437,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Contact_Email__c</fullName>
-        <externalId>false</externalId>
-        <label>Contact Email</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Contact_Name__c</fullName>
-        <externalId>false</externalId>
-        <label>Contact Name</label>
-        <length>200</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Contact_Phone_Number_LoanDetails__c</fullName>
-        <externalId>false</externalId>
-        <label>Contact Phone Number LoanDetails*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Phone</type>
-    </fields>
-    <fields>
         <fullName>Contract_Closing_Date__c</fullName>
         <externalId>false</externalId>
         <label>Contract Closing Date</label>
@@ -4546,32 +4513,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Non_Borrower_Title_Holder__c</fullName>
-        <externalId>false</externalId>
-        <label>Non Borrower Title Holder</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>YES</fullName>
-                    <default>false</default>
-                    <label>YES</label>
-                </value>
-                <value>
-                    <fullName>NO</fullName>
-                    <default>false</default>
-                    <label>NO</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Non_Borrowing_Title_Holder_Spouse__c</fullName>
         <externalId>false</externalId>
         <label>Non Borrowing Title Holder Spouse</label>
@@ -6466,6 +6407,77 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Contact_Phone_Number_LoanDetails__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Company Contact Phone Number*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Contact Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Title Contact Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cash_Requested__c</fullName>
+        <externalId>false</externalId>
+        <label>Cash Requested</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Non_Borrower_Title_Holder__c</fullName>
+        <externalId>false</externalId>
+        <label>Non Borrowing Title Holder</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>YES</fullName>
+                    <default>false</default>
+                    <label>YES</label>
+                </value>
+                <value>
+                    <fullName>NO</fullName>
+                    <default>false</default>
+                    <label>NO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
@@ -6954,6 +6966,14 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
 	)</errorConditionFormula>
         <errorDisplayField>LoanStatus__c</errorDisplayField>
         <errorMessage>Loan Status cannot be changed until 8 days after the Counseling Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Scheduled_Closing_Date_Appraisal_Sent</fullName>
+        <active>true</active>
+        <description>Scheduled Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</description>
+        <errorConditionFormula>Scheduled_Closing_Date__c  &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

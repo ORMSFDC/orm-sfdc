@@ -139,7 +139,7 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Property_State_Details__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <uiBehavior>Readonly</uiBehavior>
             </quickActionLayoutItems>
         </quickActionLayoutColumns>
     </quickActionLayout>

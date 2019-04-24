@@ -174,20 +174,22 @@
                         <div class="slds-size_1-of-2" >
                             <ui:inputSelect aura:id="auraPropertyType" label="Property Type " value="{!v.subjectProperty.Subject_Property_Type__c}" change="{!c.showNumberofUnits}" required="true">                            
                                <ui:inputSelectOption value="true" text="" label="Select Option" />
-                                <ui:inputSelectOption text="Single Family" label="Single Family" />
-                                <ui:inputSelectOption text="Condominium" label="Condominium" />
-                                <ui:inputSelectOption text="Townhouse" label="Townhouse" />
-                                <ui:inputSelectOption text="Co-operative" label="Co-operative" />
-                                <ui:inputSelectOption text="Two-to-four unit property" label="Two-to-four unit property" />
-                                <ui:inputSelectOption text="Multifamily (more than 4 units)" label="Multifamily (more than 4 units)" />
-                                <ui:inputSelectOption text="Manufactured/Mobile Home" label="Manufactured/Mobile Home" />
-                                <ui:inputSelectOption text="Commercial – Non-Residential" label="Commercial – Non-Residential" />
-                                <ui:inputSelectOption text="Mixed Use – Residential" label="Mixed Use – Residential" />
-                                <ui:inputSelectOption text="Farm" label="Farm" />
-                                <ui:inputSelectOption text="Home and Business Combined" label="Home and Business Combined" />
-                                <ui:inputSelectOption text="Land" label="Land" />
-                                <ui:inputSelectOption text="Planned Unit Development (PUD)" label="Planned Unit Development (PUD)" />
-
+                               <ui:inputSelectOption text="Single Family" label="Single Family" />
+                               <ui:inputSelectOption text="Condominium" label="Condominium" />
+                               <ui:inputSelectOption text="Townhouse" label="Townhouse" />
+                               <ui:inputSelectOption text="Co-operative" label="CO-OP" />
+                               <ui:inputSelectOption text="Two-to-four unit property" label="2 - 4 Family" /> 
+                               <ui:inputSelectOption text="Multifamily (more than 4 units)" label="Multifamily (more than 4 units)" />
+                               <ui:inputSelectOption text="Manufactured/Mobile Home" label="Manufactured" />
+                               <ui:inputSelectOption text="Commercial – Non-Residential" label="Commercial – Non-Residential" />                                
+                               <ui:inputSelectOption text="Farm" label="Farm" />
+                               <ui:inputSelectOption text="Home and Business Combined" label="Home and Business Combined" />
+                               <ui:inputSelectOption text="Land" label="Land" />
+                               <ui:inputSelectOption text="Planned Unit Development (PUD)" label="Planned Unit Development (PUD)" />
+                               <ui:inputSelectOption text="Site Condominium" label="Site Condominium" />
+                               <ui:inputSelectOption text="PUD" label="PUD" />
+                               <ui:inputSelectOption text="Manf Home/PUD" label="Manf Home/PUD" />
+                               <ui:inputSelectOption text="Mixed Use – Residential" label="Mixed Use – Residential" />
                             </ui:inputSelect>
                         </div>
                         <div id="Check_Condominium" style="display:none">

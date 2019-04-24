@@ -17,12 +17,14 @@
         component.set("v.showPopup",false);
     },
     
-    // Code added for Story No:- 1088 by Developer 3 
     openPDF : function(component, event, helper) {
-        var host = window.location.hostname;
-        //var frameSrc = 'https://ormmortgageservices--devsandbox--c.cs19.visual.force.com/apex/ConditionPDF?id=a0Q29000002d4seEAA';
-        var frameSrc = 'https://' + host + '/apex/ConditionPDF?id=' + component.get('v.LoanId');
-        window.open(frameSrc, '_blank');
+        var action = component.get("c.getBaseURL");
+        action.setCallback(this, function(data) {            
+            var result=data.getReturnValue();
+            var frameSrc= result + '/apex/ConditionPDF?id=' + component.get('v.LoanId');
+            window.open(frameSrc, '_blank');
+        });
+        $A.enqueueAction(action);  
     }
-    // End of Code change
+    
 })
