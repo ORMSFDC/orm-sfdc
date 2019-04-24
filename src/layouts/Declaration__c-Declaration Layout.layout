@@ -325,6 +325,6 @@
         <masterLabel>00h3900000VceMl</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
-        <summaryLayoutStyle>Default</summaryLayoutStyle>
+        <summaryLayoutStyle>Default</summaryLayoutStyle> 
     </summaryLayout>
 </Layout>
