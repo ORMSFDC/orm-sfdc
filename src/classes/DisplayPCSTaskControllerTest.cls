@@ -18,7 +18,7 @@ public class DisplayPCSTaskControllerTest{
         DisplayPCSTaskController.fetchNotesTasks('ActivityDate', true);
         DisplayPCSTaskController.fetchConditionTasks('ActivityDate', true);
         DisplayPCSTaskController.fetchAgedTasks('ActivityDate', true);
-         DisplayPCSTaskController.prioritySortTasks('ActivityDate', true);
+         DisplayPCSTaskController.prioritySortTasks('ActivityDate', true,'ActivityDate');
         
         DisplayPCSTaskController.getTaskStatus();
         DisplayPCSTaskController.getInitialTaskStatus();

@@ -747,27 +747,36 @@ public class DisplayPCSTaskController {
     /************************Sort by priority Tasks**************************/
     
     @AuraEnabled
-    public static list < WrapperpriTaskLoanClass > prioritySortTasks(String sortField, boolean isAsc) {
+    public static list < WrapperpriTaskLoanClass > prioritySortTasks(String sortField, boolean isAsc, String sortField2) {
         List<WrapperpriTaskLoanClass> wrapperTaskLoanClassList = new List<WrapperpriTaskLoanClass>();
         Id userId = UserInfo.getUserId();
         User loggedInUser = [Select Id, Email, ProfileId From User Where Id = :userId];
         String statusCompleted = 'Completed';
         
- 
         String sSoql = 'SELECT Id, Subject, ActivityDate,Created_DateTime__c, Priority, Status , WhoId, WhatId, Who.Name, What.Name, Task_Grouping__c ';
         sSoql += 'From Task Where what.type = \'Loan_New__c\' AND OwnerId = :userId And Status != \'' +String.escapeSingleQuotes(statusCompleted)+'\' ';
-        system.debug('sortField-->' + sortField);
-
-        if (sortField != '') {
-            sSoql += ' order by ' + sortField;
+        //display sorted tasks first with Priority then created datetime
+        if (sortField != '' && sortField2 != null) {
+            sSoql += ' order by ' + sortField + ' desc,' + sortField2;
             if (isAsc) {
                 sSoql += ' desc';
             } else {
                 sSoql += ' asc';
             }
         }
+        //sort tasks individually  
+        else if(sortField != '' && sortField2 == null ){
+            system.debug('$$$'+sortField2);
+            sSoql += ' order by ' + sortField;
+            if (isAsc) {
+                sSoql += ' desc';
+            } else {
+                sSoql += ' asc';
+            }
+
+        }
         sSoql += ' LIMIT 30';
-        
+        system.debug('sSoql'+sSoql);
         List < Task > returnTaskList = new List < Task > ();
         returnTaskList = Database.query(sSoql);
         Set<Id> loanIdSet = new Set<Id>();
@@ -815,14 +824,14 @@ public class DisplayPCSTaskController {
         }
         return DoctaskStatusList;
     }    
-        
+
     @AuraEnabled
     public static List<WrapperpriTaskLoanClass> savepriTaskStatus(String taskId, String status){
         Task taskRec = new Task();
         taskRec.Id = taskId;
         taskRec.Status = status;
         update taskRec;
-        return prioritySortTasks('Created_DateTime__c', true);        
+        return prioritySortTasks('Created_DateTime__c', true, 'Priority');        
     }
     
     @AuraEnabled
@@ -831,7 +840,7 @@ public class DisplayPCSTaskController {
         taskRec.Id = taskId;
         taskRec.Status = status;
         update taskRec;
-        return prioritySortTasks('ActivityDate', true);
+        return prioritySortTasks('ActivityDate', true, 'Priority');
     }
 
     @AuraEnabled
@@ -840,7 +849,7 @@ public class DisplayPCSTaskController {
         taskRec.Id = taskId;
         taskRec.Status = status;
         update taskRec;
-        return prioritySortTasks('Priority', true);
+        return prioritySortTasks('Priority', true, 'Priority');
     }
 
     @AuraEnabled
@@ -849,6 +858,6 @@ public class DisplayPCSTaskController {
         taskRec.Id = taskId;
         taskRec.Status = status;
         update taskRec;
-        return prioritySortTasks('Status', true);
+        return prioritySortTasks('Status', true, 'Priority');
     }
 }
