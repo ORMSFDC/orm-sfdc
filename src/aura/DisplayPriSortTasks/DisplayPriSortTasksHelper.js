@@ -1,10 +1,11 @@
 ({
-	onLoad: function(component, event, sortField) { 
+	onLoad: function(component, event, sortField, sortField2) { 
       //call apex class method
       var action = component.get('c.prioritySortTasks');
       // pass the apex method parameters to action
       action.setParams({
          'sortField': sortField,
+         'sortField2': sortField2,
          'isAsc': component.get("v.isAsc")
       });
       action.setCallback(this, function(response) {
