@@ -178,7 +178,7 @@ public class OnBaseLookups {
     
     public static void updateFields(Map<Id, Loan_New__c> oldLoanMap, List<Loan_New__c> newLoans)
     {
-        Logger.push('updateProduct','OnBaseLookups');
+        Logger.push('updateFields','OnBaseLookups');
         
         for(Loan_New__c newLoan : newLoans)
         {
@@ -193,6 +193,8 @@ public class OnBaseLookups {
     
     public static void updateProduct(Loan_New__c newLoan, Loan_New__c oldLoan)
     {
+        Logger.push('updateProduct','OnBaseLookups');
+        
         String newProductType = newLoan.Product_Type__c;
         String newMortgageAppliedFor = newLoan.Mortgage_Applied_for__c;
         String newRateType = newLoan.Rate_Type__c;
@@ -219,10 +221,13 @@ public class OnBaseLookups {
             // Don't have all new values set, so erase any previous value if it exists
             newLoan.Product__c = null;
         }
+        Logger.pop();
     }
     
     public static void updatePurposeOfRefinance(Loan_New__c newLoan, Loan_New__c oldLoan)
     {
+        Logger.push('updatePurposeOfRefinance','OnBaseLookups');
+        
         String newProductType = newLoan.Product_Type__c;
         String newMortgageAppliedFor = newLoan.Mortgage_Applied_for__c;
         String newRateType = newLoan.Rate_Type__c;
@@ -249,10 +254,13 @@ public class OnBaseLookups {
             // Don't have all new values set, so erase any previous value if it exists
             newLoan.Purpose_of_Refinance__c = null;
         }
+        Logger.pop();
     }
     
     public static void updatePropertyState(Loan_New__c newLoan, Loan_New__c oldLoan)
     {
+        Logger.push('updatePropertyState','OnBaseLookups');
+        
         String newPropertyState = newLoan.Subject_Property_State__c;        
         String oldPropertyState = oldLoan.Subject_Property_State__c;
         
@@ -274,6 +282,30 @@ public class OnBaseLookups {
             // Don't have new value set, so erase any previous value if it exists
             newLoan.Property_State_Details__c = null;
         }
+        Logger.pop();
+    }
+    
+    public static void sendKeywords(List<Loan_New__c> loans)
+    {
+        Logger.push('sendKeywords','OnBaseLookups');
+        
+        for (Loan_New__c loan: loans)
+        {
+            if(loan.LoanStatus__c == 'Waiting for Full Package')
+            {
+                // OnBase 10
+                // Publish Platform Event via External Service
+                ExternalServicePayloadGenerator.Request request = new ExternalServicePayloadGenerator.Request();
+                System.debug('Loan record Id> ' + loan.Id);
+                request.idList = new List<Id>{ loan.Id };
+                request.objectAPIName = 'Loan_New__c';
+                request.externalServiceType = 'OnBase_10';
+                List<ExternalServicePayloadGenerator.Request> requests = new List<ExternalServicePayloadGenerator.Request>{ request };
+                    
+                ExternalServicePayloadGenerator.insertExternalService( requests );
+            }
+        }
+        Logger.pop();
     }
     
     public static string validateFinalSend(List<Loan_New__c> loans)

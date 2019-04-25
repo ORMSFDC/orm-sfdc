@@ -576,6 +576,7 @@
     <members>et4ae5__log</members>
     <members>OnBaseLookups</members>
     <members>OnBaseLookupsTest</members>
+    <members>WS_OnBase</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -6175,6 +6176,28 @@
     <members>Lookup_Product_Keyword.HELO_HELO_Refinance_Fixed</members>
     <members>Lookup_Purpose_of_Refinance_Keyword.HELO_HELO_Refinance_Fixed</members>
     <members>TriggerLoan.onbaseTriggerFields</members>
+    <members>ExternalServiceRegistry.OnBase</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_Branch</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_CoClient</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_CreditToBorrower</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_EmployeeLoan</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_LoanNumber</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_LoanStatus</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_Mortgage_Applied_for</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_ORMS_Docs</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_POA</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_Product</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_Product_Type</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_ProductFeatureSet</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_Purpose_of_Refinance</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_Rate_Type</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_SubjectPropertyAddress</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_SubjectPropertyCity</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_SubjectPropertyCounty</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_SubjectPropertyState</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_SubjectPropertyZipCode</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_10_TrustRequired</members>
+    <members>TriggerLoan.onbaseSendKeywords</members>
     <name>CustomMetadata</name>
   </types>
   <types>

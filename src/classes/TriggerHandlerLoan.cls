@@ -99,6 +99,14 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
             }
         }
         
+        // Run Loan Update Partner Fields
+        if (testControlMap.get('onbaseSendKeywords') != NULL) {
+
+            if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseSendKeywords').Enable__c) {                
+                OnBaseLookups.sendKeywords((List<Loan_New__c>)Trigger.new);
+            }
+        }
+        
         RecursiveTriggerHandler.isFirstTime = false;
         Logger.pop();
     }
@@ -114,7 +122,7 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
             }
         }
         
-        // Validate required OnBase values for final send
+        // Update OnBase values
         if (testControlMap.get('onbaseTriggerFields') != NULL) {
             if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseTriggerFields').Enable__c) {
                 OnBaseLookups.updateFields((Map<Id, Loan_New__c>)Trigger.oldMap, (List<Loan_New__c>)Trigger.new);

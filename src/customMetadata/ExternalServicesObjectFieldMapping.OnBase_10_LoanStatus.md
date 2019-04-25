@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>OnBase_Initial_LoanStatus</label>
+    <label>OnBase_10_LoanStatus</label>
     <protected>false</protected>
     <values>
         <field>DefaultValue__c</field>
@@ -28,7 +28,7 @@
     </values>
     <values>
         <field>Order__c</field>
-        <value xsi:type="xsd:double">3.0</value>
+        <value xsi:type="xsd:double">2.0</value>
     </values>
     <values>
         <field>ParentFieldAPIName__c</field>
@@ -40,6 +40,6 @@
     </values>
     <values>
         <field>ServiceName__c</field>
-        <value xsi:type="xsd:string">OnBase_Initial</value>
+        <value xsi:type="xsd:string">OnBase_10</value>
     </values>
 </CustomMetadata>

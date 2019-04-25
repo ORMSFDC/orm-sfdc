@@ -136,16 +136,18 @@ public without sharing class ExternalServicePayloadGenerator {
                 List<sObject> rootData = (List<sObject>)objectData.get('root');
                 List<sObject> lookupData = (List<sObject>)objectData.get('lookup');
                 for (sObject rootObject: rootData){
-                    if ( c.MappingProperty__c == 'LoanNumber') {
-                        mapper.set(c.MappingProperty__c, String.valueOf(rootObject.get(fieldName))); 
+                    String keywordNumber = c.MappingProperty__c;
+                    if( keywordNumber.equals('101') )
+                    {
+                        // Set an additional property for Loan Number at the root level
+                        String mappingProperty = 'loanNumber';
+                        mapper.set(mappingProperty, String.valueOf(rootObject.get(fieldName)));
                     }
-                    else {                            
-                        String keywordNumber = c.MappingProperty__c;
-                        String value = translateKeywordOnBase(keywordNumber, fieldName, rootObject, lookupData);
-                        mapper.set('keywords[' + arrayIndex + '].value', value);
-                        mapper.set('keywords[' + arrayIndex + '].number', keywordNumber);
-                        arrayIndex++;
-                    }
+                    // Set properties in the keywords value array
+                    String value = translateKeywordOnBase(keywordNumber, fieldName, rootObject, lookupData);
+                    mapper.set('keywords[' + arrayIndex + '].value', value);
+                    mapper.set('keywords[' + arrayIndex + '].number', keywordNumber);
+                    arrayIndex++;
                 }                
             }
         }
@@ -171,7 +173,7 @@ public without sharing class ExternalServicePayloadGenerator {
         String finalValue;
         
         switch on keywordNumber {
-            when '101' {
+            when '105' {
                 // LoanStatus
                 System.debug('LoanStatus');
                 String value = String.valueOf(rootObject.get(fieldName));
@@ -185,6 +187,14 @@ public without sharing class ExternalServicePayloadGenerator {
                 System.debug('Product ' + productType + ' ' + mortgageAppliedFor + ' ' + rateType);
                 finalValue = OnBaseLookups.getProductKeyword(productType, mortgageAppliedFor, rateType);
             }
+            when '115' {
+                // Branch
+                finalValue = System.Label.OnBase_115;
+            }
+            when '294' {
+                // Employee Loan
+                finalValue = System.Label.OnBase_294;
+            }
             when '1127' {
                 // PurposeOfRefinance
                 String productType = String.valueOf(lookupData[0].get('Product_Type__c'));
@@ -192,6 +202,10 @@ public without sharing class ExternalServicePayloadGenerator {
                 String rateType = String.valueOf(lookupData[0].get('Rate_Type__c'));
                 System.debug('PurposeOfRefinance ' + productType + ' ' + mortgageAppliedFor + ' ' + rateType);
                 finalValue = OnBaseLookups.getPurposeOfRefinanceKeyword(productType, mortgageAppliedFor, rateType);
+            }
+            when '1132' {
+                // Product Feature Set
+                finalValue = System.Label.OnBase_1132;
             }
             when '1499' {
                 // PropertyState

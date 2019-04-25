@@ -572,5 +572,24 @@ private class OnBaseLookupsTest {
         System.assertEquals(expectedPurposeOfRefinance, loans[0].Purpose_of_Refinance__c);
         System.assertEquals(expectedProduct, loans[0].Product__c);
         System.assertEquals(expectedPropertyState, loans[0].Property_State_Details__c);
+        
+        loans[0].Product_Type__c = 'HELO';
+        loans[0].Mortgage_Applied_for__c = 'HELO Refinance';
+        loans[0].Rate_Type__c = 'FIXED';
+        loans[0].Subject_Property_State__c = 'Georgia';
+        
+        update loans[0];
+        
+        loans = [SELECT Id, Product__c, Purpose_of_Refinance__c, Property_State_Details__c, 
+                 Subject_Property_State__c,Rate_Type__c,Product_Type__c,Mortgage_Applied_for__c
+                 FROM Loan_New__c WHERE LoanNumber__c = :loanNumber];
+        
+         expectedPurposeOfRefinance = 'REVERSE Refinance';
+         expectedProduct = 'HELO FIXED – HOME EQUITY LOAN OPTIMIZER';
+         expectedPropertyState = '';      
+
+        System.assertEquals(expectedPurposeOfRefinance, loans[0].Purpose_of_Refinance__c);
+        System.assertEquals(expectedProduct, loans[0].Product__c);
+        System.assertEquals(expectedPropertyState, loans[0].Property_State_Details__c);
     }
 }
