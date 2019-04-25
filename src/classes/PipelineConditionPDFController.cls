@@ -257,8 +257,12 @@ public static List<ConditionResponsePipeline> getdata() {
             
             objres.ClientName = ObjLoan.Client_Name__c;
             datetime dtstatus=ObjLoan.Application_Signed_Date__c;  
-            datetime dt = dtstatus.addDays(1); 
+            if(dtstatus != null){
+            datetime dt = dtstatus.addDays(1);             
             objres.ApplicationDate=dt.date().format();
+            }else {
+               objres.ApplicationDate= '-'; 
+            }
             objres.Status = valueLabelMap.get(ObjLoan.LoanStatus__c);
             objres.PCS_Name = user.Name;
             objres.PhoneNumber = FormatPhone(user.Phone);
