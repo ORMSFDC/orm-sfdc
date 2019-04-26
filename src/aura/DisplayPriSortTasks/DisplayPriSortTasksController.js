@@ -1,7 +1,7 @@
 ({
 	doInit : function(component, event, helper) {
-		helper.onLoad(component, event, 'Created_DateTime__c');
-        var action = component.get("c.getDocTaskStatus");
+		helper.onLoad(component, event, 'Priority','Created_DateTime__c');
+        var action = component.get("c.getpriTaskStatus");
 		action.setCallback(this,function(response){
             var state = response.getState();        
             if (state === "SUCCESS") {
@@ -59,23 +59,18 @@
        helper.sortHelper(component, event, 'Created_DateTime__c');      
     },
     
-    sortDueDate2: function(component, event, helper) { //Added New
-        debugger;
+    sortDueDate2: function(component, event, helper) {
        component.set("v.selectedTabsoft", 'DueDate');
        helper.sortHelper(component, event, 'ActivityDate'); 
     },
 
     sortDueDate3: function(component, event, helper) {
-    debugger;
         component.set("v.selectedTabsoft", 'DueDate');
         helper.sortHelper(component, event, 'Priority'); 
      },
 
     sortDueDate4: function(component, event, helper) {
-        debugger;
-            component.set("v.selectedTabsoft", 'DueDate');
-            helper.sortHelper(component, event, 'Status');
-            
-           
+        component.set("v.selectedTabsoft", 'DueDate');
+        helper.sortHelper(component, event, 'Status');  
     },
 })
