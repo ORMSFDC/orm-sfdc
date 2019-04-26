@@ -6199,6 +6199,26 @@
     <members>ExternalServicesObjectFieldMapping.OnBase_10_TrustRequired</members>
     <members>TriggerLoan.onbaseSendKeywords</members>
     <members>ExternalServicesObjectFieldMapping.OnBase_10_Client</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_Branch</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_Client</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_CoClient</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_EmployeeLoan</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_LoanNumber</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_LoanStatus</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_Mortgage_Applied_for</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_ORMS_Docs</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_POA</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_Product</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_Product_Type</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_ProductFeatureSet</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_Purpose_of_Refinance</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_Rate_Type</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_SubjectPropertyAddress</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_SubjectPropertyCity</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_SubjectPropertyCounty</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_SubjectPropertyState</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_SubjectPropertyZipCode</members>
+    <members>ExternalServicesObjectFieldMapping.OnBase_16_TrustRequired</members>
     <name>CustomMetadata</name>
   </types>
   <types>

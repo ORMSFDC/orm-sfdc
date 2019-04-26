@@ -291,19 +291,42 @@ public class OnBaseLookups {
         
         for (Loan_New__c loan: loans)
         {
-            if(loan.LoanStatus__c == 'Waiting for Full Package')
-            {
-                // OnBase 10
-                // Publish Platform Event via External Service
-                ExternalServicePayloadGenerator.Request request = new ExternalServicePayloadGenerator.Request();
-                System.debug('Loan record Id> ' + loan.Id);
-                request.idList = new List<Id>{ loan.Id };
-                request.objectAPIName = 'Loan_New__c';
-                request.externalServiceType = 'OnBase_10';
-                List<ExternalServicePayloadGenerator.Request> requests = new List<ExternalServicePayloadGenerator.Request>{ request };
-                    
-                ExternalServicePayloadGenerator.insertExternalService( requests );
+            Boolean sendKeywords = false;
+            String serviceType = null;
+            
+            switch on loan.LoanStatus__c
+            { 
+                when 'Waiting for Full Package'
+                {
+                    // OnBase 10 at 'Waiting for Full Package'
+                	sendKeywords = true;
+                	serviceType = 'OnBase_10';
+                }
+                when 'Application Package Received'
+                {
+                    // OnBase 16 at 'Submitted to Lender'
+                	sendKeywords = true;
+                	serviceType = 'OnBase_16';
+                }
+                when else
+                {
+                    sendKeywords = false;
+                    serviceType = null;
+                }
             }
+            
+            if(sendKeywords)
+            {
+                // Publish Platform Event via External Service
+                System.debug('OnBase publishing platform event for> ' + serviceType);
+            	ExternalServicePayloadGenerator.Request request = new ExternalServicePayloadGenerator.Request();
+            	System.debug('Loan record Id> ' + loan.Id);
+            	request.idList = new List<Id>{ loan.Id };
+            	request.objectAPIName = 'Loan_New__c';
+            	request.externalServiceType = serviceType;
+            	List<ExternalServicePayloadGenerator.Request> requests = new List<ExternalServicePayloadGenerator.Request>{ request };                
+            	ExternalServicePayloadGenerator.insertExternalService( requests );
+            }            
         }
         Logger.pop();
     }
