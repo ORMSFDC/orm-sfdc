@@ -39,25 +39,25 @@ public class PipelineConditionPDFControllerTest {
             List<Client__c> clientListReturned;
             Loan_New__c loanInsert = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
                                                      LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                            
-                                                     Preferred_Contact_Type__c = 'Loan Officer',Related_Individual__c = contact.Id,
+                                                     Preferred_Contact_Type__c = 'Loan Officer',Related_Individual__c = contact.Id,                                                     
                                                      Related_Partner__c = portalAccount.Id);
             
             insert loanInsert;  
             list<condition__c> ConditionList = new list<condition__c>();
             Condition__c Conditio = new Condition__c(Condition_Number__c= '1', Comment__c ='Funded',Status__c='Outstanding',
-                                                     Description__c = 'Alternate Address Clarification' ,
+                                                     Description__c = 'Alternate Address Clarification' ,Condition_Created_Date__c=Date.parse('10/11/2019'),Status_Date__c=Date.parse('10/11/2019'),
                                                      Loan_Id__c = loanInsert.Id);
             Condition__c Conditio1 = new Condition__c(Condition_Number__c= '1', Comment__c ='Funded',Status__c='Cancelled',
-                                                      Description__c = 'Alternate Address Clarification' ,
+                                                      Description__c = 'Alternate Address Clarification' ,Condition_Created_Date__c=Date.parse('10/11/2019'),Status_Date__c=Date.parse('10/11/2019'),
                                                       Loan_Id__c = loanInsert.Id);
             Condition__c Conditio2 = new Condition__c(Condition_Number__c= '1', Comment__c ='Funded',Status__c='Cleared',
-                                                      Description__c = 'Alternate Address Clarification' ,
+                                                      Description__c = 'Alternate Address Clarification' ,Condition_Created_Date__c=Date.parse('10/11/2019'),Status_Date__c=Date.parse('10/11/2019'),
                                                       Loan_Id__c = loanInsert.Id);
             Condition__c Conditio3= new Condition__c(Condition_Number__c= '1', Comment__c ='Funded',Status__c='Revision Requested',
-                                                     Description__c = 'Alternate Address Clarification' ,
+                                                     Description__c = 'Alternate Address Clarification' ,Condition_Created_Date__c=Date.parse('10/11/2019'),Status_Date__c=Date.parse('10/11/2019'),
                                                      Loan_Id__c = loanInsert.Id);
             Condition__c Conditio5 = new Condition__c(Condition_Number__c= '1', Comment__c ='Funded',Status__c='Cleared',
-                                                      Description__c = 'Alternate Address Clarification' ,
+                                                      Description__c = 'Alternate Address Clarification' ,Condition_Created_Date__c=Date.parse('10/11/2019'),Status_Date__c=Date.parse('10/11/2019'),
                                                       Loan_Id__c = loanInsert.Id);
             
             ConditionList.add(Conditio);
@@ -66,8 +66,8 @@ public class PipelineConditionPDFControllerTest {
             ConditionList.add(Conditio3);
             ConditionList.add(Conditio5);
             insert ConditionList;
-            Condition__c Conditio6 = new Condition__c(Condition_Number__c= '1', Comment__c ='Funded',Status__c='Cleared',
-                                                      Description__c = 'Alternate Address Clarification',
+            Condition__c Conditio6 = new Condition__c(Condition_Number__c= '1', Comment__c ='Funded',Status__c='Outstanding',
+                                                      Description__c = 'Alternate Address Clarification',Condition_Created_Date__c=Date.parse('10/11/2019'),Status_Date__c=Date.parse('10/11/2019'),
                                                       Loan_Id__c = loanInsert.Id,id=ConditionList[0].id);
             update Conditio6; 
             
