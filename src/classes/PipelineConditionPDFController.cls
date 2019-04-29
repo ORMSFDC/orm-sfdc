@@ -5,7 +5,7 @@
  *
  * changelog:
  * 04/22/2019: Sahitya - added new criterial to display Created date in the frontend and backend
- *                       based on data upload from RV. modified UI, do not display status date for Outstanding Conditions
+ *                       based on data upload from RV. modified UI, do not display status date for Outstanding Conditions 
  */
 public class PipelineConditionPDFController {
     
