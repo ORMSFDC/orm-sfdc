@@ -5410,6 +5410,7 @@
     <members>Update_Standard_Title_Field</members>
     <members>Update_ORMS_Account_Executive</members>
     <members>Loan_Dates_Update</members>
+    <members>X0_loan_task_check</members>
     <name>FlowDefinition</name>
   </types>
   <types>
