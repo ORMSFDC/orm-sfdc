@@ -4287,6 +4287,7 @@
     <members>Loan_New__c.Purchase</members>
     <members>Loan_New__c.Underwriting</members>
     <members>Loan_New__c.Vendor</members>
+    <members>Loan_New__c.Folder_Rec_d</members>
     <name>QuickAction</name>
   </types>
   <types>
@@ -5568,6 +5569,7 @@
     <members>AE_Task_5_weeks_before_Recertification_Date-2</members>
     <members>Task_for_PCS_Before_Credit_Expiration_Date_new-1</members>
     <members>Update_Cash_to_close_on_Loan-1</members>
+    <members>Update_Date_on_Loan_Task_Check-2</members>
     <name>Flow</name>
   </types>
   <types>
