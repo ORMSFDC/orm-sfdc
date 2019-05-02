@@ -71,15 +71,6 @@
                 </criteria>
             </visibilityRule>
         </componentInstances>
-        <componentInstances>
-            <componentName>LoanBanner</componentName>
-            <visibilityRule>
-                <criteria>
-                    <leftValue>{!Record.Banner__c}</leftValue>
-                    <operator>NE</operator>
-                </criteria>
-            </visibilityRule>
-        </componentInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>
@@ -178,6 +169,21 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>updateQuickActionName</name>
+                <value>Loan_New__c.Folder_Rec_d</value>
+            </componentInstanceProperties>
+            <componentName>console:relatedRecord</componentName>
+        </componentInstances>
+        <name>Facet-1f0be8d7-cce8-4d73-bc6e-42135d1f5147</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>lookupFieldName</name>
+                <value>Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>updateQuickActionName</name>
                 <value>Loan_New__c.Underwriting</value>
             </componentInstanceProperties>
             <componentName>console:relatedRecord</componentName>
@@ -259,12 +265,27 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
+                <name>active</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>body</name>
                 <value>Facet-d1ccceb8-f307-4cb2-b74b-887a035c3cc9</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
                 <value>Vendor</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>Facet-1f0be8d7-cce8-4d73-bc6e-42135d1f5147</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Folder Rec&apos;d</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
@@ -308,7 +329,7 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
-                <value>Extra</value>
+                <value>AE</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>
