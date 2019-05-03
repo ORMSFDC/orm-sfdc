@@ -191,6 +191,11 @@ public without sharing class ExternalServicePayloadGenerator {
                 // Branch
                 finalValue = System.Label.OnBase_115;
             }
+            when '259' {
+                // Subject Property State
+                String value = String.valueOf(rootObject.get(fieldName));
+                finalValue = LoanExportUtil.getStateCode(value);
+            }
             when '294' {
                 // Employee Loan
                 finalValue = System.Label.OnBase_294;
