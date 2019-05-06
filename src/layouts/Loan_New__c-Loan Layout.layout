@@ -118,6 +118,10 @@
                 <behavior>Edit</behavior>
                 <field>Extend_Application_Time__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LoanNumber__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
