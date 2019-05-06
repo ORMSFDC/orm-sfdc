@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>PCS_to_PCS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PCS to PCS</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Client_Care_Specialist</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
