@@ -16,7 +16,7 @@ private with sharing class ExternalServicePayloadGenerator_Test {
 	private static final String LOAN_PROPERTY_TYPE = 'Single Family';
 	private static final String LOAN_PROPERTY_ZIP = '90202';
 	private static final Decimal LOAN_APPRAISED_VALUE = 500000;
-    private static final String EXTERNAL_SERVICE_NAME_ONBASE = 'OnBase_Final';
+    private static final String EXTERNAL_SERVICE_NAME_ONBASE = 'OnBase_10';
     private static final String LOAN_ONBASE_LOAN_NUMBER = '2000000000';
     private static final String LOAN_ONBASE_SUBJECT_PROPERTY_STATE = 'Louisiana';
     private static final String LOAN_ONBASE_PRODUCT_TYPE = 'HECM';
