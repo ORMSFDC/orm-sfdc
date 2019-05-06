@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AE on Loan --></label>
+        <name>AE_on_Loan__c</name>
+        <relationshipLabel><!-- UW Tasks (AE on Loan) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attempted Date --></label>
+        <name>Attempted_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Tasks --></label>
+        <name>Completed_Tasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Sleep Time --></label>
+        <name>Latest_Sleep_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Status Change --></label>
+        <name>Latest_Status_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- LoanStatus* --></label>
+        <name>LoanStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Loan Number --></label>
+        <name>Loan_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Loan --></label>
+        <name>Loan__c</name>
+        <relationshipLabel><!-- UW Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Date --></label>
+        <name>Open_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Tasks --></label>
+        <name>Open_Tasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ordered Date --></label>
+        <name>Ordered_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ordered Tasks --></label>
+        <name>Ordered_Tasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- PCS at Loan Level --></label>
+        <name>PCS_at_Loan_Level__c</name>
+        <relationshipLabel><!-- UW Tasks (PCS at Loan Level) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>01 High</masterLabel>
+            <translation><!-- 01 High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 Medium</masterLabel>
+            <translation><!-- 02 Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Received Date --></label>
+        <name>Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Received Tasks --></label>
+        <name>Received_Tasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revision Requested Date --></label>
+        <name>Revision_Requested_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revision Requests --></label>
+        <name>Revision_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sleep Task? --></label>
+        <name>Sleep_TaskCheckbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sleep Duration --></label>
+        <name>Sleep_Task__c</name>
+        <picklistValues>
+            <masterLabel>2 Hours</masterLabel>
+            <translation><!-- 2 Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Hours</masterLabel>
+            <translation><!-- 4 Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Hours</masterLabel>
+            <translation><!-- 6 Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Day</masterLabel>
+            <translation><!-- Next Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Week</masterLabel>
+            <translation><!-- Next Week --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Attempted</masterLabel>
+            <translation><!-- Attempted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clear for Closing</masterLabel>
+            <translation><!-- Clear for Closing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condition Added</masterLabel>
+            <translation><!-- Condition Added --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ordered</masterLabel>
+            <translation><!-- Ordered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision Requested Conditions</masterLabel>
+            <translation><!-- Revision Requested Conditions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+        <picklistValues>
+            <masterLabel>Appraisal Received</masterLabel>
+            <translation><!-- Appraisal Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditions Received</masterLabel>
+            <translation><!-- Conditions Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooling off letter received</masterLabel>
+            <translation><!-- Cooling off letter received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan Suspended</masterLabel>
+            <translation><!-- Loan Suspended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Underwrite</masterLabel>
+            <translation><!-- New Underwrite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Title Received</masterLabel>
+            <translation><!-- Title Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Items Received</masterLabel>
+            <translation><!-- Vendor Items Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UW on Loan --></label>
+        <name>UW_on_Loan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Underwriter --></label>
+        <name>Underwriter__c</name>
+        <relationshipLabel><!-- UW Tasks (Underwriter) --></relationshipLabel>
+    </fields>
+    <caseValues>
+        <plural>false</plural>
+        <value>UW Tasks</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>UW Tasks</value>
+    </caseValues>
+    <startsWith>Vowel</startsWith>
+    <fieldSets>
+        <label><!-- Sleep Task --></label>
+        <name>Sleep_Task</name>
+    </fieldSets>
+    <layouts>
+        <layout>Underwriter Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Latest Status Dates --></label>
+            <section>Latest Status Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Related Users --></label>
+            <section>Related Users</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Task --></label>
+            <section>Task</section>
+        </sections>
+        <sections>
+            <label><!-- UW Information --></label>
+            <section>UW Information</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to use this status --></errorMessage>
+        <name>PCS_Cannot_Pick_Status_Set</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Must select a duration --></errorMessage>
+        <name>Sleep_checked_must_select_time_rame</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to use this status --></errorMessage>
+        <name>UW_Cannot_Pick_Status_Set</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please add an UW to this Loan --></errorMessage>
+        <name>UW_on_Loan</name>
+    </validationRules>
+</CustomObjectTranslation>

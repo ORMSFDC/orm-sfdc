@@ -1149,6 +1149,7 @@
     <members>Lookup_PropertyState_State__mdt-Lookup PropertyState State Layout</members>
     <members>Lookup_Purpose_of_Refinance_Keyword__mdt-Lookup Purpose of Refinance Keyword Layout</members>
     <members>Lookup_LoanStatus_Keyword__mdt-Lookup LoanStatus Keyword Layout</members>
+    <members>Underwriter__c-Underwriter Layout</members>
     <name>Layout</name>
   </types>
   <types>
@@ -3899,6 +3900,8 @@
     <members>USMortgageCorporationPartnerExecutive</members>
     <members>USMortgageCorporationPartnerManager</members>
     <members>USMortgageCorporationPartnerUser</members>
+    <members>Underwriter</members>
+    <members>Underwriter_Lead</members>
     <name>Role</name>
   </types>
   <types>
@@ -4162,6 +4165,7 @@
     <members>User-it</members>
     <members>User-ja</members>
     <members>User-pt_BR</members>
+    <members>Underwriter__c-en_US</members>
     <name>CustomObjectTranslation</name>
   </types>
   <types>
@@ -4290,6 +4294,7 @@
     <members>Loan_New__c.Underwriting</members>
     <members>Loan_New__c.Vendor</members>
     <members>Loan_New__c.Folder_Rec_d</members>
+    <members>Loan_New__c.UW_Task</members>
     <name>QuickAction</name>
   </types>
   <types>
@@ -4325,6 +4330,7 @@
     <members>QLMS_Executive_profilePasswordPolicy1501334283194</members>
     <members>Trainer_profilePasswordPolicy1501334297459</members>
     <members>Trainer_profilePasswordPolicy1504133906278</members>
+    <members>Underwriter_profilePasswordPolicy1555639317242</members>
     <name>ProfilePasswordPolicy</name>
   </types>
   <types>
@@ -4404,6 +4410,8 @@
     <members>TestOnBase</members>
     <members>UW_Tasks</members>
     <members>UW_Tasks_Record_Page</members>
+    <members>PCS_Tasks</members>
+    <members>UW_Dashboard</members>
     <name>FlexiPage</name>
   </types>
   <types>
@@ -4580,6 +4588,10 @@
     <members>rh2__Rollup_Helper_Home</members>
     <members>PCS_Underwriter</members>
     <members>TestOnBase</members>
+    <members>PCS_Tasks</members>
+    <members>Underwriter__c</members>
+    <members>UW_Dashboard</members>
+    <members>UWPCS</members>
     <name>CustomTab</name>
   </types>
   <types>
@@ -5243,6 +5255,9 @@
     <members>ORM_Dashboards/mNMkKUKRvPCkcBnpDtnLYznaLLYrgB</members>
     <members>ORM_Dashboards/pZgUfKSUMpgHthKLKdvPpSMcGRhxfl</members>
     <members>Executive_Dashboards_Staging/zUtsaxWwXaTLguJpvqnXLEMRAJXLLk</members>
+    <members>Underwriter</members>
+    <members>Underwriter/LiLMRkdTfwIQghUANMxQkOvmQlrRXu</members>
+    <members>Underwriter/yzgXdKcfmkDsEmCkmgccOXcyfpwTKM</members>
     <name>Dashboard</name>
   </types>
   <types>
@@ -5430,6 +5445,11 @@
     <members>Update_ORMS_Account_Executive</members>
     <members>Loan_Dates_Update</members>
     <members>X0_loan_task_check</members>
+    <members>UW_Cooling_off_notice_signed_date</members>
+    <members>UW_Handoff_PCS_Ownership_and_back</members>
+    <members>UW_Sleep_Task_Record</members>
+    <members>UW_Status_Change_Date</members>
+    <members>uwtest_creation</members>
     <name>FlowDefinition</name>
   </types>
   <types>
@@ -5588,6 +5608,12 @@
     <members>Task_for_PCS_Before_Credit_Expiration_Date_new-1</members>
     <members>Update_Cash_to_close_on_Loan-1</members>
     <members>Update_Date_on_Loan_Task_Check-2</members>
+    <members>Loan_Dates_Update-11</members>
+    <members>UW_Cooling_off_notice_signed_date-2</members>
+    <members>UW_Handoff_PCS_Ownership_and_back-4</members>
+    <members>UW_Sleep_Task_Record-3</members>
+    <members>UW_Status_Change_Date-3</members>
+    <members>uwtest_creation-9</members>
     <name>Flow</name>
   </types>
   <types>

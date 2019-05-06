@@ -7330,6 +7330,16 @@
         <field>Loan_New__c.ESign_Addendum_Loan__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.UW_on_Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -7861,6 +7871,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lookup_LoanStatus_Keyword__mdt-Lookup LoanStatus Keyword Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
