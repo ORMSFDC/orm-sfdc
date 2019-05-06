@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>true</custom>
     <loginIpRanges>
         <endAddress>255.255.255.255</endAddress>
@@ -40,11 +40,7 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__Insights</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
+    
     <applicationVisibilities>
         <application>standard__LightningSales</application>
         <default>false</default>
@@ -75,11 +71,7 @@
         <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__SalesforceCMS</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities>
+    
     <applicationVisibilities>
         <application>standard__Service</application>
         <default>false</default>
