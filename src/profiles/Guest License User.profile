@@ -2936,6 +2936,22 @@
         <tab>TestOnBase</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
+    <tabVisibilities>
+        <tab>PCS_Tasks</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>UWPCS</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>UW_Dashboard</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Underwriter__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>
