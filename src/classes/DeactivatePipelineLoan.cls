@@ -6,7 +6,7 @@
 * Bala 6/26/2018 - Change Loanstatus from "Waiting for Full package" to "withdrawn" 
                     if the Loan is in "Waiting for Full package" status for 31 days. Portal Notes, Emails and Tasks will be created. 
 * QDA/MG 02/07/2018 - Refactor/review by Mike due to Async conflicts
-*
+* Bala 5/3/2019 - Added previous modified date instead of last modified, due to daily uploads from RV. added PB to update Previous Modified Date
 */
 
 global class DeactivatePipelineLoan implements Database.Batchable<sObject>{
@@ -17,7 +17,7 @@ global class DeactivatePipelineLoan implements Database.Batchable<sObject>{
     global Database.QueryLocator start(Database.batchableContext BC) {
 
         Logger.push('start','DeactivatePipelineLoan'); 
-        String query = 'SELECT Id, LoanStatus__c, IsActiveFlag__c, LastModifiedDate, '
+        String query = 'SELECT Id, LoanStatus__c, IsActiveFlag__c, LastModifiedDate, Previous_Modified_Date__c,'
         + '(select id, Name, createdDate from loanstatus__r where name = \'Waiting for Full Package\' order by createdDate desc  limit 1)' 
         + 'FROM Loan_New__c where IsActiveFlag__c = true and Extend_Application_Time__c != true ' 
         + ' and LoanStatus__c = \'Waiting for Full Package\' order by LastModifiedDate ';
@@ -41,7 +41,7 @@ global class DeactivatePipelineLoan implements Database.Batchable<sObject>{
                 LDate = l.LoanStatus__r[0].createdDate; // Will always be taken from latest Waiting got Full Package
             }
             else{
-                LDate = l.LastModifiedDate;
+                LDate = l.Previous_Modified_Date__c;
             }
 
             Date mDate = date.newinstance(lDate.year(), lDate.month(), lDate.day());
