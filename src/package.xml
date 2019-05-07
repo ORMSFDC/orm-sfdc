@@ -5639,6 +5639,7 @@
     <members>UW_Sleep_Task_Record-1</members>
     <members>UW_Status_Change_Date-1</members>
     <members>uwtest_creation-1</members>
+    <members>Update_Previous_Date-6</members>
     <name>Flow</name>
   </types>
   <types>
