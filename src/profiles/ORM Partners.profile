@@ -84,22 +84,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <pageAccesses>
-<apexPage>ConditionPDF</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>ForgotPasswordConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerLoginPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UploadFilePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -143,6 +127,22 @@
 <apexPage>zoom_app__ZoomSendEmail</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
+    <pageAccesses>
+        <apexPage>ConditionPDF</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPasswordConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerLoginPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UploadFilePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -5903,6 +5903,9 @@
     <layoutAssignments>
         <layout>Underwriter__c-Underwriter Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Individual-Individual Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
@@ -6722,13 +6725,17 @@
         <tab>Underwriter__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Individual</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Recommendation</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>
         <name>ApexRestServices</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ApiEnabled</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -6758,4 +6765,8 @@
         <enabled>true</enabled>
         <name>AllowUniversalSearch</name>
     </userPermissions>
+    <userPermissions>
+    <enabled>false</enabled>
+    <name>ApiEnabled</name>
+</userPermissions>
 </Profile>

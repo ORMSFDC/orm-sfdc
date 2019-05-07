@@ -4,13 +4,6 @@
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>AE_Home</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-    </profileActionOverrides>
     <userLicense>Salesforce</userLicense>
     <classAccesses>
         <apexClass>DocResponse</apexClass>
@@ -56,38 +49,6 @@
         <apexClass>CTIServices</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <pageAccesses>
-<apexPage>CTIServicePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CTIServicePage1</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>demoAdapterPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>Loan_Export_excel</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>Loan_Xml_download</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>LoanCount_by_Status</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>LoanTabComp</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerLoginPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
     <pageAccesses>
 <apexPage>pi__AddContactToList</apexPage>
 <enabled>false</enabled>
@@ -325,14 +286,6 @@
 <enabled>false</enabled>
 </pageAccesses>
     <pageAccesses>
-<apexPage>UploadFilePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UserActiveStatus</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -376,6 +329,46 @@
 <apexPage>zoom_app__ZoomSendEmail</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
+    <pageAccesses>
+        <apexPage>CTIServicePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CTIServicePage1</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>LoanCount_by_Status</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>LoanTabComp</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Loan_Export_excel</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Loan_Xml_download</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerLoginPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UploadFilePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UserActiveStatus</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>demoAdapterPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -10499,6 +10492,58 @@
         <field>Underwriter__c.Underwriter__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -11033,6 +11078,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Underwriter__c-Underwriter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Individual-Individual Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -12142,6 +12190,14 @@
     <tabVisibilities>
         <tab>Underwriter__c</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Individual</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Recommendation</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>

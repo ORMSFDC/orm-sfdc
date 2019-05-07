@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
     <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
-<apexPage>UserActiveStatus</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -47,6 +43,10 @@
 <apexPage>zoom_app__ZoomSendEmail</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
+    <pageAccesses>
+        <apexPage>UserActiveStatus</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -5722,6 +5722,9 @@
     <layoutAssignments>
         <layout>Underwriter__c-Underwriter Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Individual-Individual Layout</layout>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -6207,6 +6210,14 @@
     <tabVisibilities>
         <tab>Underwriter__c</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Individual</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Recommendation</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>

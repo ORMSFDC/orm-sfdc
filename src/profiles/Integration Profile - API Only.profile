@@ -1096,123 +1096,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <pageAccesses>
-<apexPage>AnswersHome</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>BandwidthExceeded</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>ChangePassword</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CommunitiesLanding</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CommunitiesLogin</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CommunitiesSelfReg</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CommunitiesSelfRegConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CommunitiesTemplate</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>ConditionPDF</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CTIServicePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CTIServicePage1</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>demoAdapterPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>Exception</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>f2b__MassTransferContacts</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
     <pageAccesses>
 <apexPage>f2b__transferContacts</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>FileNotFound</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>ForgotPassword</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>ForgotPasswordConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>guru_cookiecreator</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>IdeasHome</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>InMaintenance</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>Loan_Export_excel</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>Loan_Xml_download</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>LoanCount_by_Status</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>MyProfilePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerContactUs</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerForgotPassword</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerForgotPasswordConfirmation</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerLoginPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerZoomScreenShare</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
     <pageAccesses>
@@ -1536,42 +1424,6 @@
 <enabled>false</enabled>
 </pageAccesses>
     <pageAccesses>
-<apexPage>SiteLogin</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>SiteRegister</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>SiteRegisterConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>SiteTemplate</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>StdExceptionTemplate</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>Unauthorized</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UnderConstruction</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UploadFilePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UserActiveStatus</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -1615,6 +1467,154 @@
 <apexPage>zoom_app__ZoomSendEmail</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
+    <pageAccesses>
+        <apexPage>AnswersHome</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>BandwidthExceeded</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CTIServicePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CTIServicePage1</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ChangePassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesLanding</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesSelfReg</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesSelfRegConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ConditionPDF</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Exception</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FileNotFound</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPasswordConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>IdeasHome</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>InMaintenance</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>LoanCount_by_Status</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Loan_Export_excel</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Loan_Xml_download</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>MyProfilePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerContactUs</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerForgotPassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerForgotPasswordConfirmation</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerLoginPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerZoomScreenShare</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegister</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegisterConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>StdExceptionTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Unauthorized</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UnderConstruction</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UploadFilePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UserActiveStatus</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>demoAdapterPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>guru_cookiecreator</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -11068,6 +11068,62 @@
         <field>Underwriter__c.UW_on_Loan__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -11602,6 +11658,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Underwriter__c-Underwriter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Individual-Individual Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -12296,6 +12355,15 @@
         <object>Underwriter__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Individual</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -12783,6 +12851,14 @@
     <tabVisibilities>
         <tab>Underwriter__c</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Individual</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Recommendation</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>

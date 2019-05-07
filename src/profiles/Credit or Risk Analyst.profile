@@ -12,14 +12,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <pageAccesses>
-<apexPage>LoanTabComp</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerLoginPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>pi__AddContactToList</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -256,14 +248,6 @@
 <enabled>false</enabled>
 </pageAccesses>
     <pageAccesses>
-<apexPage>UploadFilePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UserActiveStatus</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -307,6 +291,22 @@
 <apexPage>zoom_app__ZoomSendEmail</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
+    <pageAccesses>
+        <apexPage>LoanTabComp</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerLoginPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UploadFilePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UserActiveStatus</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -8765,6 +8765,58 @@
         <field>Underwriter__c.UW_on_Loan__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -9299,6 +9351,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Underwriter__c-Underwriter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Individual-Individual Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -9904,6 +9959,14 @@
     <tabVisibilities>
         <tab>Underwriter__c</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Individual</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Recommendation</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>

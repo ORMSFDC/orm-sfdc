@@ -1128,6 +1128,11 @@
             <role>Underwriter_Lead</role>
         </sharedTo>
     </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <validationRules>
         <fullName>PCS_Cannot_Pick_Status_Set</fullName>
         <active>true</active>

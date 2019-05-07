@@ -43,53 +43,53 @@
         <enabled>true</enabled>
     </classAccesses>
     <pageAccesses>
-<apexPage>BandwidthExceeded</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>BandwidthExceeded</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>Exception</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>Exception</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>FileNotFound</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>FileNotFound</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>ForgotPassword</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>ForgotPassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>ForgotPasswordConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>ForgotPasswordConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>InMaintenance</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>InMaintenance</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>PartnerLoginPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>PartnerLoginPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>SiteLogin</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>SiteLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>SiteRegister</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>SiteRegister</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>SiteRegisterConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>SiteRegisterConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>SiteTemplate</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>SiteTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>Unauthorized</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>Unauthorized</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -2560,6 +2560,9 @@
     <layoutAssignments>
         <layout>Underwriter__c-Underwriter Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Individual-Individual Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -3062,6 +3065,14 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Underwriter__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Individual</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Recommendation</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>

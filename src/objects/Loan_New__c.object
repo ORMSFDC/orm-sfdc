@@ -6750,6 +6750,28 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <filterScope>Everything</filterScope>
         <label>All Loans</label>
     </listViews>
+    <listViews>
+        <fullName>UW_PCS_Test_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>LoanNumber__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>UW__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Client_Name__c</field>
+            <operation>contains</operation>
+            <value>,Test</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>UW PCS Test Loans</label>
+    </listViews>
     <sharingReasons>
         <fullName>Executive__c</fullName>
         <label>Executive</label>

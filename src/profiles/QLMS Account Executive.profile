@@ -264,46 +264,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <pageAccesses>
-<apexPage>ChangePassword</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CommunitiesLogin</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>CommunitiesSelfRegConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>ForgotPassword</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>ForgotPasswordConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerContactUs</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerForgotPassword</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerForgotPasswordConfirmation</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerLoginPage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>PartnerZoomScreenShare</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>pi__AddContactToList</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -540,26 +500,6 @@
 <enabled>false</enabled>
 </pageAccesses>
     <pageAccesses>
-<apexPage>SiteLogin</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>SiteRegister</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>SiteRegisterConfirm</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UploadFilePage</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
-<apexPage>UserActiveStatus</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <pageAccesses>
 <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
@@ -603,6 +543,66 @@
 <apexPage>zoom_app__ZoomSendEmail</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
+    <pageAccesses>
+        <apexPage>ChangePassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesSelfRegConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPasswordConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerContactUs</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerForgotPassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerForgotPasswordConfirmation</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerLoginPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PartnerZoomScreenShare</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegister</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegisterConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UploadFilePage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UserActiveStatus</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <applicationVisibilities>
         <application>Brandon</application>
         <default>false</default>
@@ -8801,6 +8801,58 @@
         <field>Underwriter__c.UW_on_Loan__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -9335,6 +9387,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Underwriter__c-Underwriter Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Individual-Individual Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>false</allowCreate>
@@ -10190,6 +10245,14 @@
     <tabVisibilities>
         <tab>Underwriter__c</tab>
         <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Individual</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Recommendation</tab>
+        <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>

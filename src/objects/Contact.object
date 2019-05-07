@@ -3402,6 +3402,11 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>IndividualId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
   <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
   <enableEnhancedLookup>true</enableEnhancedLookup>
   <enableFeeds>true</enableFeeds>
@@ -3428,7 +3433,6 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
   <sharingModel>ControlledByParent</sharingModel>
-
     <fieldSets>
         <fullName>f2b__MassTransferContacts_Results_List_Column</fullName>
         <availableFields>
