@@ -10492,58 +10492,11 @@
         <field>Underwriter__c.Underwriter__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Previous_Modified_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
