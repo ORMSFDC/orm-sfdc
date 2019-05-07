@@ -87,7 +87,7 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 			
             String serviceName = extSrvc.ServiceName__c;
             // Handle OnBase service naming
-            if (serviceName.startsWith('OnBase')) {
+            if (String.isNotBlank(serviceName) && serviceName.startsWith('OnBase')) {
                 serviceName = 'OnBase';
             }
             
