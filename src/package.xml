@@ -577,6 +577,7 @@
     <members>OnBaseLookups</members>
     <members>OnBaseLookupsTest</members>
     <members>WS_OnBase</members>
+    <members>WS_OnBase_Test</members>
     <name>ApexClass</name>
   </types>
   <types>
