@@ -52,6 +52,7 @@ public with sharing class DeactivatePipelineLoanTest {
             LoanCompleteFlag__c= true,
             LoanStatus__c ='Waiting for Full Package',
             LoanNumber__c = '12345',                
+            Previous_Modified_Date__c = datetime.newInstance(2019, 9, 15, 12, 30, 0),              
             Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                                          
             Related_Individual__c = contact.Id, 
             Related_Partner__c = portalAccount.Id);
