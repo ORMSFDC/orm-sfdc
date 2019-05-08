@@ -308,6 +308,12 @@ public class OnBaseLookups {
                 	sendKeywords = true;
                 	serviceType = 'OnBase_16';
                 }
+                when 'Loan Submission Received- Awaiting Review'
+                {
+                    // OnBase 20 at 'Loan Submission Received- Awaiting Review'
+                	sendKeywords = true;
+                	serviceType = 'OnBase_20';
+                }
                 when else
                 {
                     sendKeywords = false;
