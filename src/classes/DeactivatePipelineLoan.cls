@@ -37,11 +37,11 @@ global class DeactivatePipelineLoan implements Database.Batchable<sObject>{
             date todayDate = date.newinstance(systemDate.year(), systemDate.month(), systemDate.day()); 
             datetime lDate;
             
-            if(l.LoanStatus__r.size()>0){
-                LDate = l.LoanStatus__r[0].createdDate; // Will always be taken from latest Waiting got Full Package
+            if(l.Previous_Modified_Date__c != null){
+                LDate = l.Previous_Modified_Date__c;
             }
             else{
-                LDate = l.Previous_Modified_Date__c;
+               LDate = todayDate;
             }
 
             Date mDate = date.newinstance(lDate.year(), lDate.month(), lDate.day());
