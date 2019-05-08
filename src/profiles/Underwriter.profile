@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>true</custom>
-    <loginIpRanges>
-        <endAddress>255.255.255.255</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
     <userLicense>Salesforce</userLicense>
     <pageAccesses>
         <apexPage>UserActiveStatus</apexPage>
@@ -4959,29 +4955,6 @@
         <field>Contact.Username__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.userLoginId__c</field>
@@ -6587,29 +6560,6 @@
         <field>Lead.is_Converted__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>true</editable>
         <field>LenderLink__c.IsActive__c</field>
@@ -9770,12 +9720,6 @@
         <field>User.Total_Run_Scenarios__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
-    
-    
-    
     <fieldPermissions>
         <editable>false</editable>
         <field>User.user_email_Id__c</field>
@@ -11827,51 +11771,51 @@
         <name>ViewSetup</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>AddDirectMessageMembers</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>AddDirectMessageMembers</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>AssignTopics</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>AssignTopics</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterEditOwnPost</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ChatterEditOwnPost</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterFileLink</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ChatterFileLink</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ChatterOwnGroups</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ChatterOwnGroups</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ContentWorkspaces</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ContentWorkspaces</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>CreateTopics</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>CreateTopics</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>EnableCommunityAppLauncher</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>EnableCommunityAppLauncher</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>ImportPersonal</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>ImportPersonal</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>OverrideForecasts</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>OverrideForecasts</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>RemoveDirectMessageMembers</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>RemoveDirectMessageMembers</name>
+</userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
-        <name>SubmitMacrosAllowed</name>
-    </userPermissions>
+    <enabled>false</enabled>
+    <name>SubmitMacrosAllowed</name>
+</userPermissions>
 </Profile>
