@@ -5395,6 +5395,8 @@
     <members>unfiled$public/HELO_in_WSJ</members>
     <members>unfiled$public/How_can_we_help_2_4</members>
     <members>unfiled$public/Text_w_Signature_122</members>
+    <members>unfiled$public/External_Service_Error</members>
+    <members>unfiled$public/Loan_Status_Full_Package_Received</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -5642,6 +5644,8 @@
     <members>uwtest_creation-1</members>
     <members>Update_Is_there_a_POA_on_Loan-1</members>
     <members>Update_Previous_Date-6</members>
+    <members>External_Service_Alert</members>
+    <members>Loan_Status_Email_Alerts</members>
     <name>Flow</name>
   </types>
   <types>
