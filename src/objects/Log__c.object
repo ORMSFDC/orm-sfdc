@@ -186,9 +186,9 @@
     <description>Logs</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
@@ -217,24 +217,6 @@
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
     <listViews>
-        <fullName>Today</fullName>
-        <columns>NAME</columns>
-        <columns>ApexClass__c</columns>
-        <columns>ApexMethod__c</columns>
-        <columns>CREATEDBY_USER</columns>
-        <columns>CREATEDBY_USER.ALIAS</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>ExceptionLine__c</columns>
-        <columns>ExceptionType__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>TODAY</value>
-        </filters>
-        <label>Today</label>
-    </listViews>
-    <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>LoanID__c</columns>
@@ -247,17 +229,56 @@
         <columns>ExceptionLine__c</columns>
         <columns>ExceptionType__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>CREATED_DATE</field>
-            <operation>greaterThan</operation>
-            <value>1/31/2019 12:00 AM</value>
-        </filters>
-        <filters>
-            <field>CREATED_DATE</field>
-            <operation>lessThan</operation>
-            <value>2/13/2019 12:00 AM</value>
-        </filters>
         <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Test</fullName>
+        <columns>NAME</columns>
+        <columns>ApexClass__c</columns>
+        <columns>Message__c</columns>
+        <columns>ApexMethod__c</columns>
+        <columns>ExceptionLine__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LoanID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ApexClass__c</field>
+            <operation>equals</operation>
+            <value>EnglishChannelClient</value>
+        </filters>
+        <label>JSON for Loan Application</label>
+    </listViews>
+    <listViews>
+        <fullName>TitleFee</fullName>
+        <columns>NAME</columns>
+        <columns>ApexClass__c</columns>
+        <columns>ApexMethod__c</columns>
+        <columns>Message__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LogType__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>TitleFee</label>
+    </listViews>
+    <listViews>
+        <fullName>Today</fullName>
+        <columns>NAME</columns>
+        <columns>ApexClass__c</columns>
+        <columns>ApexMethod__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>ExceptionLine__c</columns>
+        <columns>ExceptionType__c</columns>
+        <columns>LoanID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today</label>
     </listViews>
     <webLinks>
         <fullName>Delete</fullName>

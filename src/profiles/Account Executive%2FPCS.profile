@@ -4,13 +4,6 @@
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>AE_Home</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-    </profileActionOverrides>
     <userLicense>Salesforce</userLicense>
     <classAccesses>
         <apexClass>DocResponse</apexClass>
@@ -10314,11 +10307,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Loan_New__c.Property_State_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Loan_New__c.Purpose_of_Refinance__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -10490,6 +10478,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Condition__c.Status_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Property_State_Details__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

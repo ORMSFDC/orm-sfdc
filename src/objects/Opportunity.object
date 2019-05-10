@@ -3000,23 +3000,6 @@
         <label>My Opportunities</label>
     </listViews>
     <listViews>
-        <fullName>NewThisWeek</fullName>
-        <columns>OPPORTUNITY.NAME</columns>
-        <columns>LoanOfficerName__c</columns>
-        <columns>ClientID__c</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>OPPORTUNITY.AMOUNT</columns>
-        <columns>OPPORTUNITY.CLOSE_DATE</columns>
-        <columns>OPPORTUNITY.STAGE_NAME</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>OPPORTUNITY.CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>THIS_WEEK</value>
-        </filters>
-        <label>New This Week</label>
-    </listViews>
-    <listViews>
         <fullName>Won</fullName>
         <filterScope>Everything</filterScope>
         <filters>
@@ -3030,6 +3013,24 @@
             <value>1</value>
         </filters>
         <label>Won</label>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>LoanOfficerName__c</columns>
+        <columns>ClientID__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
     </listViews>
     <recordTypes>
         <fullName>Loan</fullName>

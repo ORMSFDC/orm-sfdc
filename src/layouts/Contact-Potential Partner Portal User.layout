@@ -602,7 +602,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>ClientId__c</fields>
+        <fields>Client_Lead__c</fields>
         <fields>Estimated_home_value__c</fields>
         <fields>PartnerId__c</fields>
         <fields>CREATED_DATE</fields>

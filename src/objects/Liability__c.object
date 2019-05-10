@@ -1,34 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>Account_Number__c</fullName>
         <externalId>false</externalId>
         <label>Account Number</label>
@@ -37,7 +48,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Additional_Remarks__c</fullName>
         <externalId>false</externalId>
         <label>Additional Remarks</label>
@@ -46,7 +58,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Address__c</fullName>
         <description>Mandatory if Real Estate Schedule is selected in the category</description>
         <externalId>false</externalId>
@@ -56,7 +69,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Alimony_Type__c</fullName>
         <externalId>false</externalId>
         <label>Alimony Type</label>
@@ -84,7 +98,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Amount__c</fullName>
         <description>Must be greater than 0</description>
         <externalId>false</externalId>
@@ -94,7 +109,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Annual_Hazard_Insurance__c</fullName>
         <externalId>false</externalId>
         <label>Annual Hazard Insurance</label>
@@ -103,7 +119,8 @@
         <scale>3</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Check_If_Title_is_also_Held_As__c</fullName>
         <externalId>false</externalId>
         <label>Check If Title is also Held As</label>
@@ -126,7 +143,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>City__c</fullName>
         <description>Mandatory if Real Estate Schedule is selected in the category</description>
         <externalId>false</externalId>
@@ -136,7 +154,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Condominium_FHA_Approved__c</fullName>
         <externalId>false</externalId>
         <label>Condominium FHA Approved</label>
@@ -159,7 +178,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>County__c</fullName>
         <description>Must have only digits or can have one hyphen(-)</description>
         <externalId>false</externalId>
@@ -169,14 +189,16 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Foreclosure__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Foreclosure</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Gross_Rental_Income__c</fullName>
         <externalId>false</externalId>
         <label>Gross_Rental_Income</label>
@@ -185,7 +207,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>HOA_Monthly_Dues__c</fullName>
         <externalId>false</externalId>
         <label>HOA Monthly Dues</label>
@@ -194,7 +217,8 @@
         <scale>3</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Insurance_Taxes_etc__c</fullName>
         <externalId>false</externalId>
         <label>Insurance_Taxes_etc</label>
@@ -203,21 +227,24 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>IsJoint__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>IsJoint</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Is_Liability_Validated__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
         <label>Is Liability Validated?</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Job_Expense_Type__c</fullName>
         <externalId>false</externalId>
         <label>Job Expense Type</label>
@@ -240,7 +267,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Job_Related_Expenses__c</fullName>
         <description>Vale must be greater than Zero</description>
         <externalId>false</externalId>
@@ -250,7 +278,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Legal_Description_of_Property__c</fullName>
         <externalId>false</externalId>
         <label>Legal Description of Property</label>
@@ -259,7 +288,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_Category__c</fullName>
         <externalId>false</externalId>
         <label>Category</label>
@@ -291,7 +321,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_Monthly_Payment__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Payment</label>
@@ -300,7 +331,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_Type__c</fullName>
         <externalId>false</externalId>
         <label>Type</label>
@@ -466,7 +498,8 @@
                 <valueName>Property</valueName>
             </valueSettings>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_Unpaid_Balance__c</fullName>
         <externalId>false</externalId>
         <label>Unpaid Balance</label>
@@ -475,7 +508,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_willBeClosed_by_paying__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -483,7 +517,8 @@
         <label>Liability wil be closed by Payin Alimony</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_will_be_closed_by_Paying_RES__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -491,7 +526,8 @@
         <label>Liability will be closed by Paying RES</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_will_be_closed_by_payingThis__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -499,7 +535,8 @@
         <label>Liability will be closed by Paying this</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Liability_will_be_closed_by_paying__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -507,7 +544,8 @@
         <label>Liability will be closed by Paying</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Monthly_Flood_Insurance_Premium__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Flood Insurance Premium</label>
@@ -516,7 +554,8 @@
         <scale>3</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Monthly_Ground_Rents_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Ground Rents Amount</label>
@@ -525,7 +564,8 @@
         <scale>3</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Monthly_PUD_Fees_Amount__c</fullName>
         <externalId>false</externalId>
         <label>Monthly PUD Fees Amount</label>
@@ -534,7 +574,8 @@
         <scale>3</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Mortgage_Liens__c</fullName>
         <description>Must be greater than 0</description>
         <externalId>false</externalId>
@@ -544,7 +585,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Mortgage_Payments__c</fullName>
         <description>Must be greater than 0</description>
         <externalId>false</externalId>
@@ -554,7 +596,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Name_of_Company__c</fullName>
         <description>Mandatory if Real Estate Schedule is selected in the category</description>
         <externalId>false</externalId>
@@ -564,7 +607,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Net_Rental_Income_RealEstate__c</fullName>
         <description>Must be greater than 0</description>
         <externalId>false</externalId>
@@ -574,7 +618,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Other_Expense__c</fullName>
         <externalId>false</externalId>
         <label>Other_Expense</label>
@@ -583,7 +628,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Payments_Owed_to__c</fullName>
         <externalId>false</externalId>
         <label>Payments Owed to</label>
@@ -592,7 +638,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Present_Mortgage_Value__c</fullName>
         <description>Must be greater than 0</description>
         <externalId>false</externalId>
@@ -602,7 +649,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_Address2__c</fullName>
         <externalId>false</externalId>
         <label>Property_Address2</label>
@@ -611,7 +659,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_Address__c</fullName>
         <externalId>false</externalId>
         <label>Property_Address</label>
@@ -620,7 +669,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_City__c</fullName>
         <externalId>false</externalId>
         <label>Property_City</label>
@@ -629,7 +679,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_County__c</fullName>
         <externalId>false</externalId>
         <label>Property County</label>
@@ -638,7 +689,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_Held_as__c</fullName>
         <externalId>false</externalId>
         <label>Property Held as</label>
@@ -666,7 +718,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_State__c</fullName>
         <externalId>false</externalId>
         <label>Property_State</label>
@@ -913,7 +966,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_States__c</fullName>
         <externalId>false</externalId>
         <label>Property_State</label>
@@ -924,7 +978,8 @@
             <restricted>true</restricted>
             <valueSetName>US_States</valueSetName>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_Status__c</fullName>
         <externalId>false</externalId>
         <label>Property Status</label>
@@ -977,7 +1032,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_Title_is_Held_in_These_Names__c</fullName>
         <externalId>false</externalId>
         <label>Property Title is Held in These Names</label>
@@ -986,7 +1042,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_Type__c</fullName>
         <externalId>false</externalId>
         <label>Property_Type</label>
@@ -1082,7 +1139,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Property_ZIP__c</fullName>
         <externalId>false</externalId>
         <label>Property_ZIP</label>
@@ -1091,7 +1149,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Real_Estate_Liability__c</fullName>
         <externalId>false</externalId>
         <label>Real_Estate_Schedule (RES) Type</label>
@@ -1100,7 +1159,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Real_Estate_Taxes_Monthly__c</fullName>
         <externalId>false</externalId>
         <label>Real Estate Taxes - Monthly</label>
@@ -1109,7 +1169,8 @@
         <scale>2</scale>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>RelatedClient__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -1120,7 +1181,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>RelatedLoan__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -1131,7 +1193,8 @@
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>RemainingMonths__c</fullName>
         <description>To auto calculate remaining months</description>
         <externalId>false</externalId>
@@ -1144,7 +1207,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Remaining_months__c</fullName>
         <description>Must not be less than 0</description>
         <externalId>false</externalId>
@@ -1155,7 +1219,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Square_Footage__c</fullName>
         <externalId>false</externalId>
         <label>Square Footage</label>
@@ -1164,7 +1229,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <description>Mandatory if Real Estate Schedule is selected in the category</description>
         <externalId>false</externalId>
@@ -1176,7 +1242,8 @@
             <restricted>true</restricted>
             <valueSetName>US_States</valueSetName>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Type__c</fullName>
         <externalId>false</externalId>
         <label>Liability Type</label>
@@ -1244,7 +1311,8 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Year_Built__c</fullName>
         <externalId>false</externalId>
         <label>Year Built</label>
@@ -1253,7 +1321,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Zip__c</fullName>
         <description>Mandatory if Real Estate Schedule is selected in the category</description>
         <externalId>false</externalId>
@@ -1264,18 +1333,37 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>isActive__c</fullName>
         <defaultValue>true</defaultValue>
         <externalId>false</externalId>
         <label>isActive</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Liability object</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Liability</label><nameField>
+    </fields>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Liability object</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Liability</label>
+    <nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Liability ID</label>
         <type>AutoNumber</type>
-    </nameField><pluralLabel>Liabilities</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>Liabilities</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>Liability_Unpaid_Balance__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>RelatedClient__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>RelatedLoan__c</customTabListAdditionalFields>
@@ -1309,7 +1397,10 @@
         <searchResultsAdditionalFields>Liability_Category__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Liability_Type__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>isActive__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><listViews>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <listViews>
         <fullName>All_Liabilities</fullName>
         <columns>Liability_Unpaid_Balance__c</columns>
         <columns>NAME</columns>
@@ -1320,113 +1411,133 @@
         <columns>isActive__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Liabilities</label>
-    </listViews><sharingReasons>
+    </listViews>
+    <sharingReasons>
         <fullName>LoanProcessor__c</fullName>
         <label>Loan Processor</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Loan_Officer__c</fullName>
         <label>Loan Officer</label>
-    </sharingReasons><sharingReasons>
+    </sharingReasons>
+    <sharingReasons>
         <fullName>Origination_Loan_Officer__c</fullName>
         <label>Origination Loan Officer</label>
-    </sharingReasons><validationRules>
+    </sharingReasons>
+    <validationRules>
         <fullName>Address_validation</fullName>
         <active>false</active>
         <errorConditionFormula>AND(Address__c = '',
 OR(ISPICKVAL (Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
         <errorDisplayField>Address__c</errorDisplayField>
         <errorMessage>Address mandatory for this category</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Amount_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Amount__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Amount__c</errorDisplayField>
         <errorMessage>Amount must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>City_validation</fullName>
         <active>false</active>
         <errorConditionFormula>AND(City__c = '',
 OR(ISPICKVAL (Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
         <errorDisplayField>City__c</errorDisplayField>
         <errorMessage>Mandatory for this category</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>County_validations</fullName>
         <active>false</active>
         <errorConditionFormula>AND(County__c = '',
 OR(ISPICKVAL (Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
         <errorDisplayField>County__c</errorDisplayField>
         <errorMessage>County is mandatory for this category</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Gross_Rental_Income_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Gross_Rental_Income__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Gross_Rental_Income__c</errorDisplayField>
         <errorMessage>Value must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Insurance_Taxes_etc_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Insurance_Taxes_etc__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Insurance_Taxes_etc__c</errorDisplayField>
         <errorMessage>Value must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Job_Related_Expenses_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Job_Related_Expenses__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Job_Related_Expenses__c</errorDisplayField>
         <errorMessage>Value must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Liability_Monthly_Payment_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Liability_Monthly_Payment__c  &gt; 0)</errorConditionFormula>
         <errorDisplayField>Liability_Monthly_Payment__c</errorDisplayField>
         <errorMessage>Liability Monthly Payment value must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Liability_Unpaid_Balance_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Liability_Unpaid_Balance__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Liability_Unpaid_Balance__c</errorDisplayField>
         <errorMessage>Unpaid balance must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Mortgage_Liens_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Mortgage_Liens__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Mortgage_Liens__c</errorDisplayField>
         <errorMessage>Must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Mortgage_Payments_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Mortgage_Payments__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Mortgage_Payments__c</errorDisplayField>
         <errorMessage>Value must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Net_Rental_Income_RealEstate_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Net_Rental_Income_RealEstate__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Net_Rental_Income_RealEstate__c</errorDisplayField>
         <errorMessage>Value must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Present_Mortgage_Value_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Present_Mortgage_Value__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Present_Mortgage_Value__c</errorDisplayField>
         <errorMessage>Value must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Remaining_months_validation</fullName>
         <active>false</active>
         <errorConditionFormula>NOT(Remaining_months__c &gt; 0)</errorConditionFormula>
         <errorDisplayField>Remaining_months__c</errorDisplayField>
         <errorMessage>Must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Zip_validation</fullName>
         <active>false</active>
         <errorConditionFormula>AND( OR(), NOT(REGEX(Zip__c , "\\d{5}(-\\d{4})?")))</errorConditionFormula>
         <errorDisplayField>Zip__c</errorDisplayField>
         <errorMessage>Zip Can  contain numbers and hypen(-)</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>Zip_validation_for_mandatory</fullName>
         <active>false</active>
         <errorConditionFormula>AND(Zip__c ='',
 OR(ISPICKVAL(Liability_Category__c, "Real Estate Schedule")))</errorConditionFormula>
         <errorDisplayField>Zip__c</errorDisplayField>
         <errorMessage>Mandatory for this category</errorMessage>
-    </validationRules></CustomObject>
+    </validationRules>
+</CustomObject>

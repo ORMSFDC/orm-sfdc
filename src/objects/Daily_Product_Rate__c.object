@@ -160,9 +160,9 @@ HELO-Origination Fee requires the Rate1, Rate2, and Rate3 fields to be filled ou
     <description>Update daily rates by product.  Updates here sent to Baydocs.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>false</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>false</enableSharing>

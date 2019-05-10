@@ -18,14 +18,6 @@
         <template>unfiled$public/Loan_Status_Waiting_for_Full_Package</template>
     </alerts>
     <alerts>
-        <fullName>ReOS_Email_Alert_Loan</fullName>
-        <ccEmails>team-reos-dev@reosapp.io</ccEmails>
-        <description>ReOS Email Alert Loan</description>
-        <protected>false</protected>
-        <senderType>CurrentUser</senderType>
-        <template>reOS_Email_Templates/reOS_Email_Alert_Loan</template>
-    </alerts>
-    <alerts>
         <fullName>Alert_Withdrawn_Loan_after_In_processing_before_Final_HUD_Review</fullName>
         <ccEmails>ORMSVendor@onereverse.com</ccEmails>
         <description>Alert: Withdrawn Loan after In processing, before Final HUD Review</description>
@@ -36,7 +28,19 @@
         </recipients>
         <senderAddress>ormssupport@onereverse.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Alert_Loan_Withdrawn_w_Criteria</template>
+        <template>Revisit/Alert_Loan_Withdrawn_w_Criteria</template>
+    </alerts>
+    <alerts>
+        <fullName>ReOS_Email_Alert_Loan</fullName>
+        <ccEmails>team-reos-dev@reosapp.io</ccEmails>
+        <description>ReOS Email Alert Loan</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>balasahityadeekonda@orms.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>reOS_Email_Templates/reOS_Email_Alert_Loan</template>
     </alerts>
     <fieldUpdates>
         <fullName>Extend_Application_Time</fullName>
@@ -79,7 +83,8 @@ IF(CONTAINS(Closing_Month__c,'December  2018'),22,
 IF(CONTAINS(Closing_Month__c,'January  2019'),27,
 IF(CONTAINS(Closing_Month__c,'February  2019'),23,
 IF(CONTAINS(Closing_Month__c,'March  2019'),22,
-IF(CONTAINS(Closing_Month__c,'April  2019'),29, 0 ))))))))))))</formula>
+IF(CONTAINS(Closing_Month__c,'April  2019'),29,
+IF(CONTAINS(Closing_Month__c,'May  2019'),38, 0 )))))))))))))</formula>
         <name>Update Goal Field</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>

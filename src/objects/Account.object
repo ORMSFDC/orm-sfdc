@@ -5045,6 +5045,11 @@ IF( Partner_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
             <operation>equals</operation>
             <value>Approved</value>
         </filters>
+        <filters>
+            <field>Account_Executive_Name__c</field>
+            <operation>equals</operation>
+            <value>Nathaniel Crusoe</value>
+        </filters>
         <label>All Accounts</label>
     </listViews>
     <listViews>
@@ -5054,7 +5059,7 @@ IF( Partner_Closed_Loans__c &gt;= 5, 1250,0)))))))</formula>
         <columns>ACCOUNT.PHONE1</columns>
         <columns>Contacts_Count__c</columns>
         <columns>Last_Call__c</columns>
-        <filterScope>Mine</filterScope>
+        <filterScope>Everything</filterScope>
         <filters>
             <field>AE_Partner_Type__c</field>
             <operation>equals</operation>

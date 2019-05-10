@@ -4269,6 +4269,7 @@
     <members>Loan_New__c.Purchase</members>
     <members>Loan_New__c.Underwriting</members>
     <members>Loan_New__c.Vendor</members>
+    <members>Client__c.Task_2</members>
     <name>QuickAction</name>
   </types>
   <types>
@@ -5328,6 +5329,11 @@
     <members>unfiled$public/HELO_in_WSJ</members>
     <members>unfiled$public/How_can_we_help_2_4</members>
     <members>unfiled$public/Text_w_Signature_122</members>
+    <members>Keep</members>
+    <members>Partner_Notification_Emails</members>
+    <members>QLMS_AE_Notification_Emails</members>
+    <members>Remove</members>
+    <members>Revisit</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -5390,6 +5396,14 @@
     <members>Update_Standard_Title_Field</members>
     <members>Update_ORMS_Account_Executive</members>
     <members>Loan_Dates_Update</members>
+    <members>AE_On_Close</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS</members>
+    <members>Email_Alert_For_Renewal</members>
+    <members>Renewal_Approved_Process</members>
+    <members>Renewal_Update_date_time_for_checkboxes</members>
+    <members>Task_for_PCS_Before_Credit_Expiration_Date_new</members>
+    <members>Update_Cash_to_close_on_Loan</members>
+    <members>Update_ORM_Account_Executive_Name</members>
     <name>FlowDefinition</name>
   </types>
   <types>
@@ -5547,6 +5561,73 @@
     <members>AE_Task_5_weeks_before_Recertification_Date-2</members>
     <members>Task_for_PCS_Before_Credit_Expiration_Date_new-1</members>
     <members>Update_Cash_to_close_on_Loan-1</members>
+    <members>AE_On_Close</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date</members>
+    <members>AE_Task_5_weeks_before_Recertification_Date_non_QLMS</members>
+    <members>AE_Task_Creation_on_Docs_Needed_7_Days_Contact</members>
+    <members>App_Outstanding_Update</members>
+    <members>Auto_Populate_ReDisclosure_History</members>
+    <members>Automatic_Task_and_Email_to_AE_and_PCS</members>
+    <members>Automatic_task_for_Notes_added_in_the_portal</members>
+    <members>Automatic_tasks_on_Loans</members>
+    <members>Automatically_populate_PCS_at_loan_level_with_the_PCS_at_partner_level_value</members>
+    <members>Change_Opportunity_Stage_based_on_Account_Stage</members>
+    <members>Chatter_feed_capture</members>
+    <members>Create_Portal_User_Onboarding_Opportunity</members>
+    <members>Date_change_on_field_pdate</members>
+    <members>Email_Alert_For_Renewal</members>
+    <members>External_Services_Inbound_Processing</members>
+    <members>External_Services_Outbound_Processing</members>
+    <members>Last_Activity_Update</members>
+    <members>Last_Call_Update</members>
+    <members>Last_Significant_Contact</members>
+    <members>Lead_Status_field_update_date</members>
+    <members>Loan_Dates_Update</members>
+    <members>Loan_Status_Change_Date_Field_Update</members>
+    <members>Loan_Status_Email_Alerts</members>
+    <members>Loan_Status_Update_Dates</members>
+    <members>Notification_for_AEs_when_CRA_status_changes_and_for_Recertification_date</members>
+    <members>Notify_loan_primary_contact_on_a_new_portal_note</members>
+    <members>Opp_Stage_Field_Update_Date_Fields_for_Reporting</members>
+    <members>Opportunity_Approval_Denial_Record_updates</members>
+    <members>Opportunity_Stage_Account_date_update</members>
+    <members>Partner_Lead_Status_changes_to_In_Process</members>
+    <members>Portal_User_Onboarding_and_Potential_Partner_Portal_User_contact_stages</members>
+    <members>Portal_User_Onboarding_Fields</members>
+    <members>Potential_Partner_Status_Change</members>
+    <members>QLMS_AE_Notification_on_Account_Onboarding_Status_Update</members>
+    <members>QLMS_AE_Notification_on_Lead_Update</members>
+    <members>QuickActionRequestAppPackage</members>
+    <members>QuickActionRequestTitleFees</members>
+    <members>Recertification_date_task_for_AE</members>
+    <members>Renewal_Approved_Process</members>
+    <members>Renewal_Update_date_time_for_checkboxes</members>
+    <members>Run_Scenario_History</members>
+    <members>Task_Creation_On_Business_Partner</members>
+    <members>Task_for_PCS_Before_Credit_Expiration_Date_new</members>
+    <members>Task_for_PCS_on_creating_a_condition</members>
+    <members>Task_to_PCS_before_Payoff_Expiration_Date</members>
+    <members>Task_to_PCS_for_Appraisal_Expiration_Date</members>
+    <members>Task_to_PCS_for_Conditionally_Approved_status</members>
+    <members>Task_to_PCS_for_Counseling_Expiration_Date</members>
+    <members>Task_to_PCS_for_FHA_Case_Number_Expiration_Date</members>
+    <members>Task_to_PCS_regarding_Loan_Status_and_Application_Date</members>
+    <members>Task_to_PCS_when_LoanStatus_is_Updated</members>
+    <members>Track_CRA_status_change_history_and_send_Email_notification_to_AE</members>
+    <members>Track_Partner_CRA_Status_change_history</members>
+    <members>Track_Partner_Lead_Status_and_CRA_Status_Change_History</members>
+    <members>Update_Cash_to_close_on_Loan</members>
+    <members>Update_Date_on_Loan_Task_Check</members>
+    <members>Update_Days_for_Partner_Lead_and_CRA</members>
+    <members>Update_Last_Login_Time</members>
+    <members>Update_Loan_officer_and_Processor_Phone_on_Loan</members>
+    <members>Update_ORM_Account_Executive_Name</members>
+    <members>Update_ORMS_Account_Executive</members>
+    <members>Update_Scenarios_on_Contacts</members>
+    <members>Update_Standard_Title_Field</members>
+    <members>Updates_Dates_WRT_Checkboxes</members>
+    <members>Updating_the_Record_Type_of_Account_Object</members>
+    <members>Withdrawn_Incomplete_Broker_Apps</members>
     <name>Flow</name>
   </types>
   <types>

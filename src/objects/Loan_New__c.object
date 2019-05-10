@@ -4522,18 +4522,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Closing_Date__c</fullName>
-        <description>The Actual Closing Date.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>The Actual Closing Date.</inlineHelpText>
-        <label>Actual Closing Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Closing_Provider__c</fullName>
         <externalId>false</externalId>
         <label>Closing Provider</label>
@@ -4888,21 +4876,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Formula_IsActive__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF ( OR
-     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Formula: In Processing</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Funds_Needed_To_Close__c</fullName>
@@ -5649,53 +5622,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Property_State_Details__c</fullName>
-        <externalId>false</externalId>
-        <formula>CASE(   Subject_Property_State__c   , 
-"Alabama", "Homestead", 
-"Alaska", "Homestead", 
-"Florida", "Homestead", 
-"Iowa", "Homestead", 
-"Illinois", "Homestead", 
-"Michigan", "Homestead", 
-"Minnesota", "Homestead", 
-"Missouri", "Homestead", 
-"Mississippi", "Homestead", 
-"Montana", "Homestead", 
-"North Dakota", "Homestead", 
-"Nebraska", "Homestead", 
-"New Hampshire", "Homestead", 
-"Oklahoma", "Homestead", 
-"South Dakota", "Homestead", 
-"Tennessee", "Homestead", 
-"Vermont", "Homestead", 
-"West Virginia", "Homestead", 
-"Wyoming", "Homestead", 
-"Arkansas", "Dower-Homestead", 
-"Kansas", "Dower-Homestead", 
-"Kentucky", "Dower-Homestead", 
-"North Carolina", "Dower-Homestead", 
-"New Jersey", "Dower-Homestead", 
-"Ohio", "Dower-Homestead", 
-"Arizona", "Community-Homestead", 
-"California", "Community-Homestead", 
-"Idaho", "Community-Homestead", 
-"Louisiana", "Community-Homestead", 
-"New Mexico", "Community-Homestead", 
-"Nevada", "Community-Homestead", 
-"Texas", "Community-Homestead", 
-"Washington", "Community-Homestead", 
-"Wisconsin", "Community-Homestead", 
-"")</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Property State Details</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Purpose_of_Refinance__c</fullName>
@@ -6494,29 +6420,68 @@ IF(
             </valueSetDefinition>
         </valueSet>
     </fields>
-  <allowInChatterGroups>true</allowInChatterGroups>
-  <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
-  <deploymentStatus>Deployed</deploymentStatus>
-  <enableActivities>true</enableActivities>
-  <enableBulkApi>true</enableBulkApi>
-  <enableChangeDataCapture>false</enableChangeDataCapture>
-  <enableFeeds>true</enableFeeds>
-  <enableHistory>true</enableHistory>
-  <enableReports>true</enableReports>
-  <enableSearch>true</enableSearch>
-  <enableSharing>true</enableSharing>
-  <enableStreamingApi>true</enableStreamingApi>
-  <externalSharingModel>Private</externalSharingModel>
-  <label>Loan</label>
-  <nameField>
+    <fields>
+        <fullName>Closing_Date__c</fullName>
+        <description>The Actual Closing Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Closing Date.</inlineHelpText>
+        <label>Actual Closing Date*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Formula_IsActive__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR
+     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Formula: In Processing</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Property_State_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Property State Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Loan</label>
+    <nameField>
         <displayFormat>L-{00000}</displayFormat>
         <label>Loan ID</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-  <pluralLabel>Loans</pluralLabel>
-  <searchLayouts>
+    <pluralLabel>Loans</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>Client_Name__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IsActiveFlag__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>LoanNumber__c</customTabListAdditionalFields>
@@ -6551,37 +6516,8 @@ IF(
         <searchResultsAdditionalFields>Related_Individual__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Partner__c</searchResultsAdditionalFields>
     </searchLayouts>
-  <sharingModel>ReadWrite</sharingModel>
-  <visibility>Public</visibility>
-    <listViews>
-        <fullName>All_Active_Loans</fullName>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Mortgage_Applied_for__c</columns>
-        <columns>Subject_Property_State__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Loan_Status_Change_Date__c</columns>
-        <columns>InitialUnpaidPrincipalBalance__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>Appraisal_Received_Date__c</columns>
-        <columns>Contract_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>ORMS_AE__c</columns>
-        <columns>Title_Company__c</columns>
-        <columns>LoanOfficer__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LoanStatus__c</field>
-            <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
-        </filters>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>All Active Loans</label>
-    </listViews>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
     <listViews>
         <fullName>All_Active_Loans_Closing</fullName>
         <columns>Loan_Number__c</columns>
@@ -6613,35 +6549,6 @@ IF(
         <label>All Active Loans - Closing</label>
     </listViews>
     <listViews>
-        <fullName>All_Active_Loans_Kahlieh</fullName>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Mortgage_Applied_for__c</columns>
-        <columns>Subject_Property_State__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Loan_Status_Change_Date__c</columns>
-        <columns>InitialUnpaidPrincipalBalance__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>Appraisal_Received_Date__c</columns>
-        <columns>Contract_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>ORMS_AE__c</columns>
-        <columns>Title_Company__c</columns>
-        <columns>LoanOfficer__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LoanStatus__c</field>
-            <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete</value>
-        </filters>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>All Active Loans - Kahlieh</label>
-    </listViews>
-    <listViews>
         <fullName>All_Active_Loans_Underwriting</fullName>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
@@ -6671,24 +6578,85 @@ IF(
         <label>All Active Loans - Underwriting</label>
     </listViews>
     <listViews>
+        <fullName>All_Active_Loans</fullName>
+        <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>InitialUnpaidPrincipalBalance__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,Closed - Awaiting Funding,Suspended</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Docs Out to Settlement Agent</value>
+        </filters>
+        <label>All Active Loans</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_App_Doc_Review</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Counseling_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Loan Submission Received- Awaiting Review,Full Application Received - Incomplete</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans - App Doc Review</label>
+    </listViews>
+    <listViews>
         <fullName>All_Active_Loans_Eric</fullName>
+        <booleanFilter>2 AND 3 AND (1 OR 4)</booleanFilter>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
         <columns>Last_Chatter_Activity__c</columns>
         <columns>LoanStatus__c</columns>
         <columns>Loan_Status_Change_Date__c</columns>
         <columns>Subject_Property_State__c</columns>
+        <columns>Partner_State__c</columns>
         <columns>Appraisal_Scheduled_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
         <columns>Appraisal_sent_to_Client_Date__c</columns>
         <columns>Anticipated_Closing_Date__c</columns>
-        <columns>Title_Company__c</columns>
         <columns>LoanOfficer__c</columns>
         <columns>ORMS_AE__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>LoanStatus__c</field>
             <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Closed - Awaiting Funding,Suspended</value>
         </filters>
         <filters>
             <field>IsActiveFlag__c</field>
@@ -6700,29 +6668,99 @@ IF(
             <operation>equals</operation>
             <value>Eric Sele</value>
         </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Docs Out to Settlement Agent</value>
+        </filters>
         <label>All Active Loans - Eric</label>
     </listViews>
     <listViews>
-        <fullName>All_Active_Loans_Keith</fullName>
+        <fullName>All_Active_Loans_Greg</fullName>
+        <booleanFilter>2 AND 3 AND (1 OR 4)</booleanFilter>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
+        <columns>Last_Chatter_Activity__c</columns>
         <columns>LoanStatus__c</columns>
         <columns>Loan_Status_Change_Date__c</columns>
-        <columns>Last_Chatter_Activity__c</columns>
-        <columns>In_Processing_Date__c</columns>
         <columns>Subject_Property_State__c</columns>
+        <columns>Partner_State__c</columns>
         <columns>Appraisal_Scheduled_Date__c</columns>
         <columns>Appraisal_Received_Date__c</columns>
         <columns>Appraisal_sent_to_Client_Date__c</columns>
         <columns>Anticipated_Closing_Date__c</columns>
-        <columns>Title_Company__c</columns>
         <columns>LoanOfficer__c</columns>
         <columns>ORMS_AE__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>LoanStatus__c</field>
             <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Closed - Awaiting Funding,Suspended</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PCS_at_Loan_Level__c</field>
+            <operation>equals</operation>
+            <value>Greg Davidson</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Docs Out to Settlement Agent</value>
+        </filters>
+        <label>All Active Loans - Greg</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Kahlieh</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>Loan_Received_Awaiting_Review__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>Counseling_Date__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <columns>Related_Partner__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Loan Submission Received- Awaiting Review,Full Application Received - Incomplete,In Processing</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans - Folder Received</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Keith</fullName>
+        <booleanFilter>2 AND 3 AND (1 OR 4)</booleanFilter>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>Last_Chatter_Activity__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>Partner_State__c</columns>
+        <columns>Appraisal_Scheduled_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Appraisal_sent_to_Client_Date__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <columns>ORMS_AE__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Application Package Received,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,Closed - Awaiting Funding,Suspended</value>
         </filters>
         <filters>
             <field>IsActiveFlag__c</field>
@@ -6733,6 +6771,11 @@ IF(
             <field>PCS_at_Loan_Level__c</field>
             <operation>equals</operation>
             <value>Keith Cassidy</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>equals</operation>
+            <value>Docs Out to Settlement Agent</value>
         </filters>
         <label>All Active Loans - Keith</label>
     </listViews>
@@ -6754,7 +6797,37 @@ IF(
         <columns>OWNER.LAST_NAME</columns>
         <columns>ORMS_AE__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>Funded_Date__c</field>
+            <operation>equals</operation>
+        </filters>
         <label>All Loans</label>
+    </listViews>
+    <listViews>
+        <fullName>Data_Import</fullName>
+        <columns>NAME</columns>
+        <columns>LoanNumber__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>Related_Partner__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UPDATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Data Upload</value>
+        </filters>
+        <label>Data Import</label>
+        <sharedTo>
+            <role>Client_Care_Specialist_Lead</role>
+            <role>DMB_Jesse</role>
+            <role>DMB_Josh</role>
+            <role>System_Administrator</role>
+        </sharedTo>
     </listViews>
     <sharingReasons>
         <fullName>Executive__c</fullName>

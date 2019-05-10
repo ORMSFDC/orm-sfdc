@@ -1,34 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>Body__c</fullName>
         <externalId>false</externalId>
         <label>Body</label>
@@ -36,7 +47,8 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Confirm_to_Show_Notes_in_Portal__c</fullName>
         <defaultValue>false</defaultValue>
         <description>You are posting this note to the portal. Are you sure you would like to continue?</description>
@@ -45,7 +57,8 @@
         <label>Confirm to Post Note to Portal</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email_of_AE_for_Loan__c</fullName>
         <externalId>false</externalId>
         <label>Email of AE for Loan</label>
@@ -53,7 +66,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email_of_PCS_at_Loan_Level__c</fullName>
         <externalId>false</externalId>
         <label>Email of PCS at Loan Level</label>
@@ -61,7 +75,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Email_of_PCS_at_Partner_Level__c</fullName>
         <externalId>false</externalId>
         <label>Email of PCS at Partner Level</label>
@@ -69,7 +84,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>LoanId__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -79,7 +95,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Id__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -89,7 +106,8 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Officer_Email__c</fullName>
         <externalId>false</externalId>
         <label>Loan Officer Email</label>
@@ -97,7 +115,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Loan_Processor_Email__c</fullName>
         <externalId>false</externalId>
         <label>Loan Processor Email</label>
@@ -105,7 +124,8 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Notify_Primary_Loan_Contact__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
@@ -113,7 +133,8 @@
         <label>Notify Primary Loan Contact</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Client_Name__c</fullName>
         <externalId>false</externalId>
         <formula>Loan_Id__r.Client_Name__c</formula>
@@ -123,7 +144,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>User_Name__c</fullName>
         <externalId>false</externalId>
         <label>User Name</label>
@@ -132,7 +154,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>User_Profile__c</fullName>
         <externalId>false</externalId>
         <label>User Profile</label>
@@ -141,10 +164,30 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ReadWrite</externalSharingModel><label>Portal Note</label><nameField>
+    </fields>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <label>Portal Note</label>
+    <nameField>
         <label>Title</label>
         <type>Text</type>
-    </nameField><pluralLabel>Portal Notes</pluralLabel><searchLayouts /><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility><listViews>
+    </nameField>
+    <pluralLabel>Portal Notes</pluralLabel>
+    <searchLayouts />
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <listViews>
         <fullName>All_Portal_Notes</fullName>
         <columns>NAME</columns>
         <columns>Loan_Id__c</columns>
@@ -152,11 +195,13 @@
         <columns>Body__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Portal Notes</label>
-    </listViews><validationRules>
+    </listViews>
+    <validationRules>
         <fullName>Checkbox_must_be_checked_confirmation</fullName>
         <active>true</active>
         <description>Please check this checkbox to confirm that you are posting this note to the portal.</description>
         <errorConditionFormula>!Confirm_to_Show_Notes_in_Portal__c</errorConditionFormula>
         <errorDisplayField>Confirm_to_Show_Notes_in_Portal__c</errorDisplayField>
         <errorMessage>Please check this checkbox to confirm that you are posting this note to the portal.</errorMessage>
-    </validationRules></CustomObject>
+    </validationRules>
+</CustomObject>

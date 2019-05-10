@@ -5113,11 +5113,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Loan_New__c.Property_State_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Loan_New__c.Purpose_of_Refinance__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -5284,6 +5279,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Condition__c.Status_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Property_State_Details__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

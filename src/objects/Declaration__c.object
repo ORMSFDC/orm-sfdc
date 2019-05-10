@@ -1148,10 +1148,27 @@
         <label>White</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Declaration</label><nameField>
+    </fields>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Declaration</label>
+    <nameField>
         <label>Declaration Name</label>
         <type>Text</type>
-    </nameField><pluralLabel>Declarations</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>Declarations</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>DeclarationClient__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>DeclarationLoan__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IsActive__c</customTabListAdditionalFields>
@@ -1175,7 +1192,9 @@
         <searchResultsAdditionalFields>DeclarationLoan__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>IsActive__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>US_Citizen__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>

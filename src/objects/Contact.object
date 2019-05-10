@@ -3836,20 +3836,6 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <label>Individuals Created on 10-30-2017</label>
     </listViews>
     <listViews>
-        <fullName>AllContacts</fullName>
-        <columns>ORM_Account_Executive_Name__c</columns>
-        <columns>FULL_NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>CONTACT.RECORDTYPE</columns>
-        <columns>CONTACT.PHONE1</columns>
-        <columns>CONTACT.EMAIL</columns>
-        <columns>CONTACT.LAST_ACTIVITY</columns>
-        <columns>CONTACT.ADDRESS2_STATE</columns>
-        <columns>MailingState__c</columns>
-        <filterScope>Mine</filterScope>
-        <label>All Contacts</label>
-    </listViews>
-    <listViews>
         <fullName>All_Approved_Individuals</fullName>
         <columns>FULL_NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -3923,6 +3909,20 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
             <role>DMB_Josh</role>
             <role>wORMS</role>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AllContacts</fullName>
+        <columns>ORM_Account_Executive_Name__c</columns>
+        <columns>FULL_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CONTACT.RECORDTYPE</columns>
+        <columns>CONTACT.PHONE1</columns>
+        <columns>CONTACT.EMAIL</columns>
+        <columns>CONTACT.LAST_ACTIVITY</columns>
+        <columns>CONTACT.ADDRESS2_STATE</columns>
+        <columns>MailingState__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Contacts</label>
     </listViews>
     <recordTypes>
         <fullName>Approved_Individuals</fullName>

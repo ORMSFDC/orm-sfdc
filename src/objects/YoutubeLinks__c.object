@@ -1,41 +1,53 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>IsActive__c</fullName>
         <defaultValue>true</defaultValue>
         <externalId>false</externalId>
         <label>IsActive</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Thumbnails_Image__c</fullName>
         <externalId>false</externalId>
         <label>Thumbnails Image</label>
@@ -43,7 +55,8 @@
         <trackTrending>false</trackTrending>
         <type>Html</type>
         <visibleLines>10</visibleLines>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Video_sequence__c</fullName>
         <externalId>false</externalId>
         <label>Video sequence</label>
@@ -53,7 +66,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>true</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>YouTubeHeader__c</fullName>
         <caseSensitive>true</caseSensitive>
         <externalId>false</externalId>
@@ -63,18 +77,36 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>true</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>YoutubeURL__c</fullName>
         <externalId>false</externalId>
         <label>YoutubeURL</label>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Url</type>
-    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>false</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Read</externalSharingModel><label>Reversity Video</label><nameField>
+    </fields>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <label>Reversity Video</label>
+    <nameField>
         <displayFormat>YID-{0000}</displayFormat>
         <label>YID</label>
         <type>AutoNumber</type>
-    </nameField><pluralLabel>Reversity Videos</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>Reversity Videos</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>YouTubeHeader__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>YoutubeURL__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>IsActive__c</customTabListAdditionalFields>
@@ -104,7 +136,11 @@
         <searchResultsAdditionalFields>IsActive__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><startsWith>Vowel</startsWith><visibility>Public</visibility><listViews>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+    <listViews>
         <fullName>All_Reversity_Videos</fullName>
         <columns>NAME</columns>
         <columns>YouTubeHeader__c</columns>
@@ -115,4 +151,5 @@
         <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Reversity Videos</label>
-    </listViews></CustomObject>
+    </listViews>
+</CustomObject>

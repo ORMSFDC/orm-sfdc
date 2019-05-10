@@ -745,9 +745,9 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
@@ -825,6 +825,11 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
         <columns>BayDocsOrderNumber__c</columns>
         <columns>Age__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORMS_AE__c</field>
+            <operation>equals</operation>
+            <value>Nathaniel Crusoe</value>
+        </filters>
         <label>All Scenarios</label>
     </listViews>
     <sharingReasons>

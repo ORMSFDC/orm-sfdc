@@ -1028,11 +1028,28 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Read</externalSharingModel><label>State License</label><nameField>
+    </fields>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <label>State License</label>
+    <nameField>
         <displayFormat>LIC-{00000}</displayFormat>
         <label>License ID</label>
         <type>AutoNumber</type>
-    </nameField><pluralLabel>State Licenses</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>State Licenses</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>License_Number__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>License_Expiration__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Related_Contact__c</customTabListAdditionalFields>
@@ -1056,7 +1073,9 @@
         <searchResultsAdditionalFields>License_Expiration__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Account__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Related_Contact__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
     <listViews>
         <fullName>All_Licenses</fullName>
         <columns>NAME</columns>

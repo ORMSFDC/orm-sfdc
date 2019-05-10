@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>false</custom>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>AE_Dashboard</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-    </profileActionOverrides>
     <userLicense>Salesforce</userLicense>
     <classAccesses>
         <apexClass>AmrockTitleFeesDomainService</apexClass>
@@ -13000,11 +12993,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Loan_New__c.Property_State_Details__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Loan_New__c.Purpose_of_Refinance__c</field>
         <readable>true</readable>
@@ -13172,6 +13160,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Condition__c.Status_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Property_State_Details__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

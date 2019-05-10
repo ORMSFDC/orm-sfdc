@@ -1,34 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>CancelEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Delete</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Edit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>New</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>SaveEdit</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <type>Default</type>
-    </actionOverrides><actionOverrides>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>View</actionName>
         <type>Default</type>
-    </actionOverrides><fields>
+    </actionOverrides>
+    <fields>
         <fullName>City__c</fullName>
         <externalId>false</externalId>
         <label>City</label>
@@ -38,7 +49,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Number_of_years__c</fullName>
         <description>Must be greater than 0</description>
         <externalId>false</externalId>
@@ -50,7 +62,8 @@
         <trackTrending>false</trackTrending>
         <type>Number</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Related_Client_New__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -62,7 +75,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Releted_Loan_New__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <externalId>false</externalId>
@@ -74,7 +88,8 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>State__c</fullName>
         <externalId>false</externalId>
         <label>State</label>
@@ -86,7 +101,8 @@
             <restricted>true</restricted>
             <valueSetName>US_States</valueSetName>
         </valueSet>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>Zip__c</fullName>
         <description>Can have only numbers and/or one - (Hyphen)</description>
         <externalId>false</externalId>
@@ -97,7 +113,8 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields><fields>
+    </fields>
+    <fields>
         <fullName>isActive__c</fullName>
         <defaultValue>true</defaultValue>
         <description>To check whether the record is active or not</description>
@@ -106,11 +123,28 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableChangeDataCapture>false</enableChangeDataCapture><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Address</label><nameField>
+    </fields>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Address</label>
+    <nameField>
         <label>Street Address</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
-    </nameField><pluralLabel>Addresses</pluralLabel><searchLayouts>
+    </nameField>
+    <pluralLabel>Addresses</pluralLabel>
+    <searchLayouts>
         <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>State__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Zip__c</customTabListAdditionalFields>
@@ -144,7 +178,11 @@
         <searchResultsAdditionalFields>Related_Client_New__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Number_of_years__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>isActive__c</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWrite</sharingModel><startsWith>Vowel</startsWith><visibility>Public</visibility><listViews>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+    <listViews>
         <fullName>All_Clients_Former_Addresses</fullName>
         <columns>Related_Client_New__c</columns>
         <columns>NAME</columns>
@@ -154,16 +192,19 @@
         <columns>isActive__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Clients' Former Addresses</label>
-    </listViews><validationRules>
+    </listViews>
+    <validationRules>
         <fullName>Number_of_years_validation</fullName>
         <active>false</active>
         <errorConditionFormula>Number_of_years__c &lt;= 0</errorConditionFormula>
         <errorDisplayField>Number_of_years__c</errorDisplayField>
         <errorMessage>Number of years must be greater than 0</errorMessage>
-    </validationRules><validationRules>
+    </validationRules>
+    <validationRules>
         <fullName>zip_Address_Validation</fullName>
         <active>false</active>
         <errorConditionFormula>AND( OR(), NOT(REGEX(Zip__c , "\\d{5}(-\\d{4})?")) )</errorConditionFormula>
         <errorDisplayField>Zip__c</errorDisplayField>
         <errorMessage>Can have only numbers and/or one - (Hyphen)</errorMessage>
-    </validationRules></CustomObject>
+    </validationRules>
+</CustomObject>
