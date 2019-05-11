@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Send to partners after approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Nate Welcome Email</name>
+    <style>none</style>
+    <subject>Response Required: Your Reverse Mortgage Account Executive Contact</subject>
+    <textOnly>Hello {!Contact.FirstName},  
+
+My name is {!Account.Account_Executive_Name__c}, and I’m your Account Executive with One Reverse Mortgage Services.  
+
+I’m excited to announce we’ve recently partnered with {!Account.Name} as a Reverse Mortgage Lender.  
+
+We offer tremendous support, excellent training resources, marketing tools, and competitive pricing to help you increase your business!  
+
+I’ve closed over 600 retail loans with One Reverse Mortgage before joining the wholesale team, and I look forward to sharing my experience with you!  
+
+Please call or email me to request access to our broker portal and to schedule a group or one on one webinar.  
+
+I look forward to helping you increase your business!  
+
+Best regards, 
+
+{!Contact.OwnerFullName} 
+{!Contact.OwnerEmail} 
+{!Contact.OwnerTitle} 
+{!Contact.OwnerPhone}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

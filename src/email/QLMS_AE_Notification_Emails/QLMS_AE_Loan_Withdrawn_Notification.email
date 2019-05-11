@@ -1,0 +1,10 @@
+Hello {!Account.QLMS_First_Name__c},
+
+Your partner, {!Account.Name}, had a loan withdrawn with ORMS.
+
+Sincerely,
+
+{!Account.OwnerFullName}
+{!Account.OwnerTitle}
+{!Account.OwnerPhone}
+{!Account.OwnerEmail}

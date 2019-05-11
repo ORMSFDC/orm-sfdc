@@ -47,6 +47,27 @@
         <senderType>OrgWideEmailAddress</senderType>
         <template>Renewals/Renewal_is_Withdrawn</template>
     </alerts>
+    <alerts>
+        <fullName>Application_Approved_Opp</fullName>
+        <ccEmails>lisaboheim@onereverse.com</ccEmails>
+        <ccEmails>ormscreditriskteam@onereverse.com</ccEmails>
+        <description>Application Approved Opp</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Primary_Contact_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>chloechelf@onereverse.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>ormssupport@onereverse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Account_Approved_Email</template>
+    </alerts>
     <fieldUpdates>
         <fullName>App_Sent_Date</fullName>
         <field>App_Sent__c</field>

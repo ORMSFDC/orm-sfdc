@@ -2,6 +2,15 @@
     <description>PCS Underwriting App permission</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>PCS Underwriting Permission</label>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Underwriter__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <tabSettings>
         <tab>PCS_Underwriter</tab>
         <visibility>Visible</visibility>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QLMS AE Not Interested notification</name>
+    <style>none</style>
+    <subject>Your Lead: {!Lead.Company}  is Not Interested</subject>
+    <textOnly>Hello {!Lead.QLMS_First_Name__c},
+
+Your partner is not currently interested in becoming an ORMS partner.
+Company Name: {!Lead.Company}
+Contact Name: {!Lead.Name}
+
+Sincerely,
+{!User.Name}
+{!User.Title}
+{!User.Phone}
+{!User.Email}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

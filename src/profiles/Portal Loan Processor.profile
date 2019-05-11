@@ -3791,6 +3791,9 @@
     <layoutAssignments>
         <layout>lib__App_Task__c-lib__AppTaskLayout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>

@@ -4213,30 +4213,6 @@ IF(
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Actual_Disbursement_Date__c</fullName>
-        <description>The Actual Funding Date.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>The Actual Funding Date.</inlineHelpText>
-        <label>Actual Disbursement Date</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Actual_Funding_Date__c</fullName>
-        <description>The Actual Funding Date.</description>
-        <externalId>false</externalId>
-        <inlineHelpText>The Actual Funding Date.</inlineHelpText>
-        <label>Actual Funding Date*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Application_Requested_Date__c</fullName>
         <externalId>false</externalId>
         <label>XApplication Requested Date</label>
@@ -6421,6 +6397,42 @@ IF(
         </valueSet>
     </fields>
     <fields>
+        <fullName>Property_State_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Property State Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Disbursement_Date__c</fullName>
+        <description>The Actual Funding Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Actual Funding Date.</inlineHelpText>
+        <label>XActual Disbursement Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Funding_Date__c</fullName>
+        <description>The Actual Funding Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date funds are disbursed to the client</inlineHelpText>
+        <label>Actual Funding Date*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Closing_Date__c</fullName>
         <description>The Actual Closing Date.</description>
         <externalId>false</externalId>
@@ -6428,15 +6440,25 @@ IF(
         <label>Actual Closing Date*</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ESign_Addendum_Loan__c</fullName>
+        <externalId>false</externalId>
+        <formula>Related_Partner__r.E_sign_Addendum__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>E-sign Addendum</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Formula_IsActive__c</fullName>
         <externalId>false</externalId>
         <formula>IF ( OR
-     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
+     (ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), 1, 0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Formula: In Processing</label>
         <precision>18</precision>
@@ -6448,16 +6470,26 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Property_State_Details__c</fullName>
+        <fullName>Is_there_a_POA__c</fullName>
         <externalId>false</externalId>
-        <label>Property State Details</label>
-        <length>255</length>
+        <label>Is there a POA</label>
+        <length>5</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Previous_Modified_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Modified Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
     </fields>
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
@@ -6829,6 +6861,28 @@ IF(
             <role>System_Administrator</role>
         </sharedTo>
     </listViews>
+    <listViews>
+        <fullName>UW_PCS_Test_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>LoanNumber__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>UW__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Client_Name__c</field>
+            <operation>contains</operation>
+            <value>,Test</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>UW PCS Test Loans</label>
+    </listViews>
     <sharingReasons>
         <fullName>Executive__c</fullName>
         <label>Executive</label>
@@ -7063,6 +7117,17 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorConditionFormula>Scheduled_Closing_Date__c  &lt; (Appraisal_sent_to_Client_Date__c + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
         <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
         <errorMessage>Scheduled Closing Date cannot be within 7 days of the Appraisal Sent to Client Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UW_Must_be_named</fullName>
+        <active>false</active>
+        <description>Underwriter field must be populated at this stage</description>
+        <errorConditionFormula>AND(
+TEXT( LoanStatus__c ) = "In Processing",
+NOT(ISBLANK( UW__c ))
+)</errorConditionFormula>
+        <errorDisplayField>UW__c</errorDisplayField>
+        <errorMessage>Need Underwriter Assigned</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

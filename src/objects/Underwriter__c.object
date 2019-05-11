@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>UW_Tasks_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <fields>
+        <fullName>AE_on_Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>AE on Loan</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Account Executive/PCS</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Underwriters1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attempted_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Attempted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL (  Status__c  , "Completed")), 1, 0)</formula>
+        <label>Completed Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Sleep_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest Sleep Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Status_Change__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest Status Change</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LoanStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Loan__r.LoanStatus__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LoanStatus*</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Loan__r.Loan_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Loan Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Loan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Loan</label>
+        <referenceTo>Loan_New__c</referenceTo>
+        <relationshipName>Underwriters</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Open_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Open_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( Status__c , "Open")), 1, 0)</formula>
+        <label>Open Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ordered_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Ordered Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Ordered_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( Status__c , "Ordered")), 1, 0)</formula>
+        <label>Ordered Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCS_at_Loan_Level__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PCS at Loan Level</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Partner Care Specialist</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Partner Care Specialist Lead</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Underwriters</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>01 High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>true</default>
+                    <label>02 Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Received_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Received_Tasks__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( Status__c , "Received")), 1, 0)</formula>
+        <label>Received Tasks</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revision_Requested_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Revision Requested Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Revision_Requests__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR 
+(ISPICKVAL ( Status__c , "Revision Requested Conditions")), 1, 0)</formula>
+        <label>Revision Requests</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sleep_TaskCheckbox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sleep Task?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sleep_Task__c</fullName>
+        <externalId>false</externalId>
+        <label>Sleep Duration</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2 Hours</fullName>
+                    <default>false</default>
+                    <label>2 Hours</label>
+                </value>
+                <value>
+                    <fullName>4 Hours</fullName>
+                    <default>false</default>
+                    <label>4 Hours</label>
+                </value>
+                <value>
+                    <fullName>6 Hours</fullName>
+                    <default>false</default>
+                    <label>6 Hours</label>
+                </value>
+                <value>
+                    <fullName>Next Day</fullName>
+                    <default>false</default>
+                    <label>Next Day</label>
+                </value>
+                <value>
+                    <fullName>Next Week</fullName>
+                    <default>false</default>
+                    <label>Next Week</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Received</fullName>
+                    <default>false</default>
+                    <label>Received</label>
+                </value>
+                <value>
+                    <fullName>Revision Requested Conditions</fullName>
+                    <default>false</default>
+                    <label>Revision Requested Conditions</label>
+                </value>
+                <value>
+                    <fullName>Condition Added</fullName>
+                    <default>false</default>
+                    <label>Condition Added</label>
+                </value>
+                <value>
+                    <fullName>Clear for Closing</fullName>
+                    <default>false</default>
+                    <label>Clear for Closing</label>
+                </value>
+                <value>
+                    <fullName>Ordered</fullName>
+                    <default>false</default>
+                    <label>Ordered</label>
+                </value>
+                <value>
+                    <fullName>Attempted</fullName>
+                    <default>false</default>
+                    <label>Attempted</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Not Started</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <externalId>false</externalId>
+        <label>Subject</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conditions Received</fullName>
+                    <default>false</default>
+                    <label>Conditions Received</label>
+                </value>
+                <value>
+                    <fullName>Appraisal Received</fullName>
+                    <default>false</default>
+                    <label>Appraisal Received</label>
+                </value>
+                <value>
+                    <fullName>Title Received</fullName>
+                    <default>false</default>
+                    <label>Title Received</label>
+                </value>
+                <value>
+                    <fullName>Vendor Items Received</fullName>
+                    <default>false</default>
+                    <label>Vendor Items Received</label>
+                </value>
+                <value>
+                    <fullName>Loan Suspended</fullName>
+                    <default>false</default>
+                    <label>Loan Suspended</label>
+                </value>
+                <value>
+                    <fullName>Cooling off letter received</fullName>
+                    <default>false</default>
+                    <label>Cooling off letter received</label>
+                </value>
+                <value>
+                    <fullName>New Underwrite</fullName>
+                    <default>false</default>
+                    <label>New Underwrite</label>
+                </value>
+                <value>
+                    <fullName>Clear for Closing</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Clear for Closing</label>
+                </value>
+                <value>
+                    <fullName>Condition Added</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Condition Added</label>
+                </value>
+                <value>
+                    <fullName>Revision Requested Conditions</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Revision Requested Conditions</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UW_on_Loan__c</fullName>
+        <externalId>false</externalId>
+        <formula>Loan__r.UW__r.FUll_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>UW on Loan</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Underwriter__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Underwriter</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Underwriter</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Underwriter Lead</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Underwriters2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>UW Tasks</label>
+    <nameField>
+        <displayFormat>UW-{00000}</displayFormat>
+        <label>UWID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>UW Tasks</pluralLabel>
+    <searchLayouts />
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+    <fieldSets>
+        <fullName>Sleep_Task</fullName>
+        <description>Sleeping Task</description>
+        <displayedFields>
+            <field>Sleep_TaskCheckbox__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Sleep_Task__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Sleep Task</label>
+    </fieldSets>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>Loan__c</columns>
+        <columns>Underwriter__c</columns>
+        <columns>Loan_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Master_PCS_Appraisals_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Appraisal Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Master PCS Appraisals Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_PCS_Conditions_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Conditions Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Master PCS Conditions Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_PCS_Slept_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Sleep_TaskCheckbox__c</columns>
+        <columns>Sleep_Task__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Master PCS Slept Items</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_PCS_Titles_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Title Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Master PCS Titles Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_PCS_Vendor_Items_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Vendor Items Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Master PCS Vendor Items Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Appraisals_Received_y7C</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Appraisal Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Received</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Appraisals Received</label>
+        <sharedTo>
+            <role>Underwriter</role>
+            <role>Underwriter_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Conditions_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Conditions Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Received</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Conditions Received</label>
+        <sharedTo>
+            <role>Underwriter</role>
+            <role>Underwriter_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Cooling_Office_Notices_Signed</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Cooling off letter received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Cooling Office Notices Signed</label>
+        <sharedTo>
+            <role>Underwriter</role>
+            <role>Underwriter_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_New_Underwrite</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>New Underwrite</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My New Underwrite</label>
+        <sharedTo>
+            <role>Underwriter</role>
+            <role>Underwriter_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_PCS_Appraisals_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Appraisal Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My PCS Appraisals Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_PCS_Conditions_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Conditions Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My PCS Conditions Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_PCS_Slept_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Sleep_TaskCheckbox__c</columns>
+        <columns>Sleep_Task__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My PCS Slept Items</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_PCS_Titles_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Title Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My PCS Titles Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_PCS_Vendor_Items_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Vendor Items Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My PCS Vendor Items Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Slept_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Sleep_TaskCheckbox__c</columns>
+        <columns>Sleep_Task__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Received</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Slept Items</label>
+        <sharedTo>
+            <role>Underwriter</role>
+            <role>Underwriter_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Titles_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Title Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Received</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Titles Received</label>
+        <sharedTo>
+            <role>Underwriter</role>
+            <role>Underwriter_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Vendor_Items_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Vendor Items Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Received</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Vendor Items Received</label>
+        <sharedTo>
+            <role>Underwriter</role>
+            <role>Underwriter_Lead</role>
+        </sharedTo>
+    </listViews>
+    <validationRules>
+        <fullName>PCS_Cannot_Pick_Status_Set</fullName>
+        <active>true</active>
+        <description>PCS is limited to status selections</description>
+        <errorConditionFormula>AND(   $UserRole.Name = 'Partner Care Specialist', ISCHANGED( Status__c ), 
+OR( 
+ISPICKVAL(Status__c, 'Revision Requested Conditions')
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>You are not allowed to use this status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sleep_checked_must_select_time_rame</fullName>
+        <active>true</active>
+        <description>If checkbox is selected, must select a time frame</description>
+        <errorConditionFormula>AND( Sleep_TaskCheckbox__c  = TRUE, ISBLANK( TEXT( Sleep_Task__c) ))</errorConditionFormula>
+        <errorDisplayField>Sleep_Task__c</errorDisplayField>
+        <errorMessage>Must select a duration</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UW_Cannot_Pick_Status_Set</fullName>
+        <active>true</active>
+        <description>UW is limited to status selections</description>
+        <errorConditionFormula>AND( $UserRole.Name = 'Underwriter', ISCHANGED( Status__c ), 
+OR( 
+ISPICKVAL(Status__c, 'Ordered'),
+ISPICKVAL(Status__c, 'Attempted'),
+ISPICKVAL(Status__c, 'Received')
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>You are not allowed to use this status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UW_on_Loan</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(Loan__r.UW__c)</errorConditionFormula>
+        <errorMessage>Please add an UW to this Loan</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -13239,6 +13239,20 @@ ISBLANK( Text(Reason_for_Not_being_Interested__c ))</errorConditionFormula>
         <errorDisplayField>Partner_Type__c</errorDisplayField>
         <errorMessage>Please select Partner Type</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>Must_have_primary_contact</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( OR ( ISPICKVAL (  Partner_Onboarding_Status__c  , "App Outstanding" ) ), ISBLANK (   Primary_contact_name__c  ) )</errorConditionFormula>
+        <errorDisplayField>Primary_contact_name__c</errorDisplayField>
+        <errorMessage>Must have primary contact identified</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_have_primary_contact_email</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( OR ( ISPICKVAL (  Partner_Onboarding_Status__c  , "App Outstanding" ) ), ISBLANK (    Primary_Contact_Email__c   ) )</errorConditionFormula>
+        <errorDisplayField>Primary_Contact_Email__c</errorDisplayField>
+        <errorMessage>Must have primary contact email identified</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email notifies the Primary contact of Business Individuals when the Note add</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Business Individuals notification when Notes value changes</name>
+    <style>none</style>
+    <subject>ORMS Portal - Note posted on Loan {!Note__c.Loan_Id__c} of Client {!Note__c.Related_Client_Name__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

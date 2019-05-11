@@ -1,0 +1,11 @@
+Hello {!Lead.QLMS_First_Name__c},
+<P>
+Your partner is not currently interested in becoming an ORMS partner. <br/>
+Company Name: {!Lead.Company}<br/>
+Contact Name: {!Lead.Name} <br/>
+<P>
+Sincerely,<br/>
+{!User.Name}<br />
+{!User.Title}<br />
+{!User.Phone}<br />
+{!User.Email}<br />

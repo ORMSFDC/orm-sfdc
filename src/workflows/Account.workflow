@@ -54,6 +54,19 @@
         <senderType>CurrentUser</senderType>
         <template>QLMS_AE_Notification_Emails/QLMS_AE_In_Process_notification</template>
     </alerts>
+    <alerts>
+        <fullName>Application_Approved</fullName>
+        <ccEmails>dmcguffin@outlook.com</ccEmails>
+        <description>Application Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>danny@onereverse.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>ormssupport@onereverse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Account_Approved_Email</template>
+    </alerts>
     <fieldUpdates>
         <fullName>App_Processed_Date</fullName>
         <description>When Lead Status is Approved</description>

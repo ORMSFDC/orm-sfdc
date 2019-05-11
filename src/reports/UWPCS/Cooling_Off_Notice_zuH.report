@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Underwriter__c.Latest_Status_Change__c</field>
+    </columns>
+    <columns>
+        <field>Underwriter__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Underwriter__c.Loan_Number__c</field>
+    </columns>
+    <columns>
+        <field>Underwriter__c.LoanStatus__c</field>
+    </columns>
+    <columns>
+        <field>Underwriter__c.Priority__c</field>
+    </columns>
+    <columns>
+        <field>Underwriter__c.Subject__c</field>
+    </columns>
+    <description>Cooling Off Notice Signed</description>
+    <filter>
+        <criteriaItems>
+            <column>Underwriter__c.Subject__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Cooling off letter received</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Underwriter__c.Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Underwriter__c.Sleep_TaskCheckbox__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Cooling Off Notice Signed</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Underwriter__c</reportType>
+    <scope>team</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

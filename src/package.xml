@@ -964,6 +964,7 @@
     <members>rh2__PS_Settings__c</members>
     <members>rh2__RH_Job__c</members>
     <members>rh2__Rollup_Helper_Record_Scope__c</members>
+    <members>Underwriter__c</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -1130,6 +1131,8 @@
     <members>rh2__PS_Rollup_Conditions__c-rh2__Rollup Condition Layout</members>
     <members>rh2__PS_Rollup_Dummy__c-rh2__Rollup Dummy Layout</members>
     <members>rh2__RH_Job__c-rh2__Rollup Job Layout</members>
+    <members>Underwriter__c-Underwriter Layout</members>
+    <members>Underwriter__c-UW Tasks Layout</members>
     <name>Layout</name>
   </types>
   <types>
@@ -3880,6 +3883,8 @@
     <members>USMortgageCorporationPartnerExecutive</members>
     <members>USMortgageCorporationPartnerManager</members>
     <members>USMortgageCorporationPartnerUser</members>
+    <members>Underwriter</members>
+    <members>Underwriter_Lead</members>
     <name>Role</name>
   </types>
   <types>
@@ -3944,6 +3949,7 @@
     <members>rh2__PS_Rollup_Helper_All_Access</members>
     <members>Marketing_Cloud_Connected_App</members>
     <members>PCS_Underwriting_Permission</members>
+    <members>UW</members>
     <name>PermissionSet</name>
   </types>
   <types>
@@ -4008,6 +4014,7 @@
     <members>Standard</members>
     <members>test Profile</members>
     <members>Trainer</members>
+    <members>Underwriter</members>
     <name>Profile</name>
   </types>
   <types>
@@ -4270,6 +4277,8 @@
     <members>Loan_New__c.Underwriting</members>
     <members>Loan_New__c.Vendor</members>
     <members>Client__c.Task_2</members>
+    <members>Loan_New__c.Folder_Rec_d</members>
+    <members>Loan_New__c.UW_Task</members>
     <name>QuickAction</name>
   </types>
   <types>
@@ -4381,6 +4390,10 @@
     <members>undefined_UtilityBar</members>
     <members>OnBoarding</members>
     <members>Associate_PCS</members>
+    <members>PCS_Tasks</members>
+    <members>UW_Dashboard</members>
+    <members>UW_Tasks</members>
+    <members>UW_Tasks_Record_Page</members>
     <name>FlexiPage</name>
   </types>
   <types>
@@ -4556,6 +4569,10 @@
     <members>rh2__Rollup_Helper_Help</members>
     <members>rh2__Rollup_Helper_Home</members>
     <members>PCS_Underwriter</members>
+    <members>PCS_Tasks</members>
+    <members>Underwriter__c</members>
+    <members>UW_Dashboard</members>
+    <members>UWPCS</members>
     <name>CustomTab</name>
   </types>
   <types>
@@ -5177,6 +5194,21 @@
     <members>RV_REX/RV_Mirror_zk3</members>
     <members>Sahitya_Reports/Brian_Burgan</members>
     <members>Sahitya_Reports/Brian_Burgan/KM_BB_Yesterday_s_call_activity</members>
+    <members>unfiled$public/UW_task_48hrs</members>
+    <members>UWPCS</members>
+    <members>UWPCS/Cooling_Off_Notice_zuH</members>
+    <members>UWPCS/Open_UW_Queue</members>
+    <members>UWPCS/PCS_Appriasal_Items_ypr</members>
+    <members>UWPCS/PCS_Conditions_Received_zun</members>
+    <members>UWPCS/PCS_Slept_Tasks_jSO</members>
+    <members>UWPCS/PCS_Title_jZ0</members>
+    <members>UWPCS/PCS_Vendor_Items_ZyL</members>
+    <members>UWPCS/Underwriters_Appraisals_Received_lBz</members>
+    <members>UWPCS/Underwriters_Conditions_Received_BoM</members>
+    <members>UWPCS/Underwriters_Tasks_Asleep_yS8</members>
+    <members>UWPCS/Underwriters_Title_Received_TtH</members>
+    <members>UWPCS/Underwriters_Vendor_Items_Received_Msl</members>
+    <members>UWPCS/UW_Status_on_Subjects_g7d</members>
     <name>Report</name>
   </types>
   <types>
@@ -5205,6 +5237,9 @@
     <members>ORM_Dashboards/mNMkKUKRvPCkcBnpDtnLYznaLLYrgB</members>
     <members>ORM_Dashboards/pZgUfKSUMpgHthKLKdvPpSMcGRhxfl</members>
     <members>Executive_Dashboards_Staging/zUtsaxWwXaTLguJpvqnXLEMRAJXLLk</members>
+    <members>Underwriter</members>
+    <members>Underwriter/LiLMRkdTfwIQghUANMxQkOvmQlrRXu</members>
+    <members>Underwriter/yzgXdKcfmkDsEmCkmgccOXcyfpwTKM</members>
     <name>Dashboard</name>
   </types>
   <types>
@@ -5334,6 +5369,33 @@
     <members>QLMS_AE_Notification_Emails</members>
     <members>Remove</members>
     <members>Revisit</members>
+    <members>AE_Templates/AE_Intro_Email</members>
+    <members>AE_Templates/Brad_Welcome_Email</members>
+    <members>AE_Templates/Nate_Welcome_Email</members>
+    <members>AE_Templates/Scott_Intro_Email</members>
+    <members>Keep/Business_Individuals_notification_when_Notes_value_changes</members>
+    <members>Keep/Intro_Broker_Package</members>
+    <members>Partner_Notification_Emails/Partner_Loan_Closed_Notification</members>
+    <members>Partner_Notification_Emails/Partner_Loan_Denied_Notification</members>
+    <members>Partner_Notification_Emails/Partner_Loan_In_Process_Notification</members>
+    <members>Partner_Notification_Emails/Partner_Loan_Withdrawn_Notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_App_Sent_notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Approved_notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Contacted_notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Denied_notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_In_Process_notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Loan_Closed_Notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Loan_Denied_Notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Loan_In_Process</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Loan_Withdrawn_Notification</members>
+    <members>QLMS_AE_Notification_Emails/QLMS_AE_Not_Interested_notification</members>
+    <members>QLMS_AE_Notification_Emails/Test_QLMS_AE_Approved_notification</members>
+    <members>Remove/PartnerWithUsEmail</members>
+    <members>Revisit/Account_Activity_Report</members>
+    <members>Revisit/Alert_Loan_Withdrawn_w_Criteria</members>
+    <members>unfiled$public/Account_Approved_Email</members>
+    <members>unfiled$public/H4P</members>
+    <members>unfiled$public/Say_HELLO_to_HELO</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -5404,6 +5466,14 @@
     <members>Task_for_PCS_Before_Credit_Expiration_Date_new</members>
     <members>Update_Cash_to_close_on_Loan</members>
     <members>Update_ORM_Account_Executive_Name</members>
+    <members>Primary_Contact_Email</members>
+    <members>Update_Is_there_a_POA_on_Loan</members>
+    <members>Update_Previous_Date</members>
+    <members>UW_Cooling_off_notice_signed_date</members>
+    <members>UW_Handoff_PCS_Ownership_and_back</members>
+    <members>UW_Sleep_Task_Record</members>
+    <members>UW_Status_Change_Date</members>
+    <members>uwtest_creation</members>
     <name>FlowDefinition</name>
   </types>
   <types>
@@ -5628,6 +5698,16 @@
     <members>Updates_Dates_WRT_Checkboxes</members>
     <members>Updating_the_Record_Type_of_Account_Object</members>
     <members>Withdrawn_Incomplete_Broker_Apps</members>
+    <members>Opportunity_Approval_Denial_Record_updates-4</members>
+    <members>Primary_Contact_Email-1</members>
+    <members>Update_Date_on_Loan_Task_Check-5</members>
+    <members>Update_Is_there_a_POA_on_Loan-1</members>
+    <members>Update_Previous_Date-6</members>
+    <members>UW_Cooling_off_notice_signed_date-1</members>
+    <members>UW_Handoff_PCS_Ownership_and_back-1</members>
+    <members>UW_Sleep_Task_Record-1</members>
+    <members>UW_Status_Change_Date-1</members>
+    <members>uwtest_creation-1</members>
     <name>Flow</name>
   </types>
   <types>

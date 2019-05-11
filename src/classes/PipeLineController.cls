@@ -3,6 +3,7 @@
 *     Created     : 7/28/2017
 *     Modified    : 1/31: Sahitya, added new Loanstatuses for all the pipelines
 *     Modified    : 4/12: Sahitya, Updated ResidentialIncomeRequired mapping
+*     Modified    : 5/5: Sahitya, added Cash Requested field to reflect in portal
 * */
 public class PipeLineController {
     @AuraEnabled
@@ -526,7 +527,7 @@ public class PipeLineController {
                     PrincipalLimit__c,Margin__c,MandatoryObligations__c,InitialInterestRate__c,ExpectedInterestRate__c,
                     RepairEstimate__c,FHACaseNumber__c,RepairSetAside__c,Broker_Origination__c,Residual_Income_Required__c,                    
                     Lien_Balance__c,Lien_Creditor__c,Life_Expectancy__c,Residual_Income_Fulfilled__c,Residential_Income_Required__c,
-                    Total_Asset__c,Total_Expenses__c,Total_Income__c,Total_Monthly_Property_Charge__c,Contact_Email__c
+                    Total_Asset__c,Total_Expenses__c,Total_Income__c,Total_Monthly_Property_Charge__c,Contact_Email__c,Cash_Requested__c
                     
                     FROM Loan_New__c where id=: LoanID limit 1];
             Client__c clientObj=new Client__c();
@@ -554,6 +555,7 @@ public class PipeLineController {
             objSummary.FinancialAsstResult=objl.FinancialAssessmentResult__c;
             objSummary.ProcAvailFirstYear=objl.ProceedsAvailableFirstYear__c;
             objSummary.LineOfCredit=objl.LineOfCreditAfterFirstYear__c;
+            objSummary.CashRequested=objl.Cash_Requested__c; 
             objSummary.InitialUnpaidPriBal=objl.InitialUnpaidPrincipalBalance__c;
             objSummary.PrincipalLimit=objl.PrincipalLimit__c;
             objSummary.MandatoryObligation=objl.MandatoryObligations__c;
@@ -570,14 +572,10 @@ public class PipeLineController {
             objSummary.TotalAssets=objl.Total_Asset__c;//prsn
             objSummary.TotalExpenses=objl.Total_Expenses__c;
             objSummary.ResidualIncome=objl.Residual_Income_Fulfilled__c;
-            objSummary.TotalMonthlyPropertyCharges=objl.Total_Monthly_Property_Charge__c;//prsn
-            
-            objSummary.LienBalance=objl.Lien_Balance__c;
-           objSummary.LienCreditor=Decimal.valueOf(objl.Lien_Creditor__c);
-            
+            objSummary.TotalMonthlyPropertyCharges=objl.Total_Monthly_Property_Charge__c;//prsn            
+            objSummary.LienBalance=objl.Lien_Balance__c;            
             objSummary.ContactEmail=objl.Contact_Email__c;
-            
-            
+            objSummary.LienCreditor=Decimal.valueOf(objl.Lien_Creditor__c);                        
         }
         catch(Exception ex){
             system.debug('getLoanSummary--Exception---'+ex);
