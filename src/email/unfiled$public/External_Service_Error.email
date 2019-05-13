@@ -1,8 +1,0 @@
-External Service Number: {!ExternalService__c.Name}<br/>
-<br/> 
-Service Name: {!ExternalService__c.ServiceName__c}<br/> 
-<br/> 
-Request Payload: {!ExternalService__c.RequestPayload__c}<br/> 
-<br/> 
-Response Payload: {!ExternalService__c.ResponsePayload__c}<br/> 
-<br/>

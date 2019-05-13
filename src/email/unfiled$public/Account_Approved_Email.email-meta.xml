@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Onboarding Account Approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Account: Approved Email</name>
+    <style>none</style>
+    <subject>Congratulations you have been approved!</subject>
+    <textOnly>You have been Approved!
+
+Hello {!Account.Primary_contact_name__c},
+
+Congratulations on your partnership with One Reverse Mortgage Services! We are excited to build your business together while providing an incredible experience to you and your clients.
+
+The next step will be to train your team on our products, pricing, processes, and technology; so you can begin originating reverse mortgage loans. Your Account Executive will be reaching out to you shortly to schedule training. Their direct contact information is below:
+
+{!Account.OwnerFullName}
+{!Account.OwnerPhone}
+{!Account.OwnerEmail}
+
+At any time you can reach our dedicated team through email at: ORMSSupport@onereverse.com
+Or by phone at: #888-980-2989.
+
+
+Respectfully,
+ORMS Renewals Team
+
+Let&apos;s Get Started!
+
+4445 Eastgate Mall, Ste 320, San Diego, CA 92121</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
