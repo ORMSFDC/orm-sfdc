@@ -5398,6 +5398,7 @@
     <members>unfiled$public/Text_w_Signature_122</members>
     <members>unfiled$public/External_Service_Error</members>
     <members>unfiled$public/Loan_Status_Full_Package_Received</members>
+    <members>unfiled$public/Account_Approved_Email</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -5474,6 +5475,9 @@
     <members>Task_for_PCS_Before_Credit_Expiration_Date_new</members>
     <members>Update_Cash_to_close_on_Loan</members>
     <members>Update_ORM_Account_Executive_Name</members>
+    <members>Primary_Contact_Email</members>
+    <members>Update_Is_there_a_POA_on_Loan</members>
+    <members>Update_Previous_Date</members>
     <name>FlowDefinition</name>
   </types>
   <types>
