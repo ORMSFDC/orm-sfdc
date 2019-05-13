@@ -3172,22 +3172,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <label>Web Leads Created Last 30 Days</label>
     </listViews>
     <listViews>
-        <fullName>AllOpenLeads</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.COMPANY</columns>
-        <columns>LEAD.TITLE</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.LAST_ACTIVITY</columns>
-        <columns>LEAD.PHONE</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>CORE.USERS.FIRST_NAME</columns>
-        <columns>CORE.USERS.LAST_NAME</columns>
-        <columns>QLMS_Account_Executive__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Open Leads</label>
-    </listViews>
-    <listViews>
         <fullName>All_Leads</fullName>
         <columns>LEAD.COMPANY</columns>
         <columns>FULL_NAME</columns>
@@ -3203,32 +3187,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>nj</value>
         </filters>
         <label>All Leads</label>
-    </listViews>
-    <listViews>
-        <fullName>Leads_Contacted_Presented1</fullName>
-        <columns>LEAD.COMPANY</columns>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>Office_Phone__c</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>LEAD.UNREAD</columns>
-        <columns>Last_Activity_Date__c</columns>
-        <columns>No_Activity_Days__c</columns>
-        <columns>Last_Activity_Type__c</columns>
-        <columns>QLMS_Account_Executive__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>LEAD.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Lead.Partner_Lead</value>
-        </filters>
-        <filters>
-            <field>LEAD.STATUS</field>
-            <operation>equals</operation>
-            <value>Attempted to Contact,Contacted,Presented</value>
-        </filters>
-        <label>Leads - Contacted/Presented</label>
     </listViews>
     <listViews>
         <fullName>Leads_with_NO_Activities</fullName>
@@ -3263,6 +3221,53 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <sharedTo>
             <allInternalUsers></allInternalUsers>
         </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AllOpenLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.TITLE</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.LAST_ACTIVITY</columns>
+        <columns>LEAD.PHONE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Lead.Partner_Lead</value>
+        </filters>
+        <label>All Open Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>Leads_Contacted_Presented1</fullName>
+        <columns>LEAD.COMPANY</columns>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>Office_Phone__c</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>Last_Activity_Date__c</columns>
+        <columns>No_Activity_Days__c</columns>
+        <columns>Last_Activity_Type__c</columns>
+        <columns>QLMS_Account_Executive__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Lead.Partner_Lead</value>
+        </filters>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>equals</operation>
+            <value>Attempted to Contact,Contacted,Presented</value>
+        </filters>
+        <label>Leads - Contacted/Presented</label>
     </listViews>
     <recordTypes>
         <fullName>Banker</fullName>

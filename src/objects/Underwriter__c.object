@@ -596,14 +596,6 @@
         <label>Sleep Task</label>
     </fieldSets>
     <listViews>
-        <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
-    <listViews>
         <fullName>Master_PCS_Appraisals_Received</fullName>
         <columns>NAME</columns>
         <columns>Priority__c</columns>
@@ -1130,6 +1122,20 @@
     </listViews>
     <listViews>
         <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>Loan__c</columns>
+        <columns>Underwriter__c</columns>
+        <columns>Loan_Number__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

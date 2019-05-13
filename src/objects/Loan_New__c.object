@@ -6794,6 +6794,33 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         </filters>
         <label>UW PCS Test Loans</label>
     </listViews>
+    <listViews>
+        <fullName>Test</fullName>
+        <columns>NAME</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>IsActiveFlag__c</columns>
+        <columns>Related_Partner__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Loan_Processor__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>SentToBayDocs__c</columns>
+        <columns>TitleFeeIsComplete__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Closing_Date__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Test</label>
+        <sharedTo>
+            <role>System_Administrator</role>
+        </sharedTo>
+    </listViews>
     <sharingReasons>
         <fullName>Executive__c</fullName>
         <label>Executive</label>
