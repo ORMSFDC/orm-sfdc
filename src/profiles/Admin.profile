@@ -1,10 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
-    <custom>false</custom>
-    <loginIpRanges>
-        <description>temp for qa sandbox clone</description>
-        <endAddress>255.255.255.255</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
+    <custom>false</custom>    
     <profileActionOverrides>
         <actionName>Tab</actionName>
         <content>AE_Dashboard</content>
