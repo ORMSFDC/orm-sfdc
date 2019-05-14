@@ -13502,7 +13502,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>TestOnBase</tab>
-        <visibility>DefaultOff</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Underwriter__c</tab>
