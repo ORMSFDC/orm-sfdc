@@ -5654,6 +5654,8 @@
     <members>Opportunity_Approval_Denial_Record_updates-4</members>
     <members>Primary_Contact_Email-1</members>
     <members>Task_to_PCS_when_LoanStatus_is_Updated-3</members>
+    <members>Update_Is_there_a_POA_on_Loan-2</members>
+    <members>Update_Is_there_a_POA_on_Loan-3</members>
     <name>Flow</name>
   </types>
   <types>
