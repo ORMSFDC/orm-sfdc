@@ -8654,11 +8654,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Loan_New__c.Underwriting_clear_to_close_date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Loan_New__c.Unpaid_Principal_Balance__c</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -11049,6 +11044,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Underwriter__c.UW_on_Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Underwriting_clear_to_close_date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>

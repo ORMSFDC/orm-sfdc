@@ -6238,11 +6238,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Loan_New__c.Income_and_Asset_Documentation__c</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -7414,11 +7409,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>Loan_New__c.Trust_Required__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Underwriting_clear_to_close_date__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -10088,6 +10078,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Underwriter__c.Underwriter__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Underwriting_clear_to_close_date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
