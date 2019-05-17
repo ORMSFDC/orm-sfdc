@@ -123,6 +123,19 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- UW on Loan --></label>
+        <name>UW_on_Loan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Underwriter --></label>
+        <name>Underwriter__c</name>
+        <relationshipLabel><!-- UW Tasks (Underwriter) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Condition Reviewed Date --></label>
+        <name>Condition_Reviewed_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Status --></label>
         <name>Status__c</name>
         <picklistValues>
@@ -142,6 +155,10 @@
             <translation><!-- Condition Added --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Condition Reviewed</masterLabel>
+            <translation><!-- Condition Reviewed --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Open</masterLabel>
             <translation><!-- Open --></translation>
         </picklistValues>
@@ -152,10 +169,6 @@
         <picklistValues>
             <masterLabel>Received</masterLabel>
             <translation><!-- Received --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Revision Requested Conditions</masterLabel>
-            <translation><!-- Revision Requested Conditions --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -170,16 +183,8 @@
             <translation><!-- Conditions Received --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Cooling off letter received</masterLabel>
-            <translation><!-- Cooling off letter received --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Loan Suspended</masterLabel>
-            <translation><!-- Loan Suspended --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>New Underwrite</masterLabel>
-            <translation><!-- New Underwrite --></translation>
+            <masterLabel>Suspense Requested</masterLabel>
+            <translation><!-- Suspense Requested --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Title Received</masterLabel>
@@ -189,15 +194,6 @@
             <masterLabel>Vendor Items Received</masterLabel>
             <translation><!-- Vendor Items Received --></translation>
         </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- UW on Loan --></label>
-        <name>UW_on_Loan__c</name>
-    </fields>
-    <fields>
-        <label><!-- Underwriter --></label>
-        <name>Underwriter__c</name>
-        <relationshipLabel><!-- UW Tasks (Underwriter) --></relationshipLabel>
     </fields>
     <caseValues>
         <plural>false</plural>
@@ -243,6 +239,14 @@
             <section>UW Information</section>
         </sections>
     </layouts>
+    <recordTypes>
+        <label><!-- PCS --></label>
+        <name>PCS</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- UW --></label>
+        <name>UW</name>
+    </recordTypes>
     <validationRules>
         <errorMessage><!-- You are not allowed to use this status --></errorMessage>
         <name>PCS_Cannot_Pick_Status_Set</name>

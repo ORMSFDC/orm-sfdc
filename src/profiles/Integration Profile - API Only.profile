@@ -1615,13 +1615,11 @@
 <apexPage>UserActiveStatus</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
-    
     <applicationVisibilities>
         <application>CMS</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__AllTabSet</application>
         <default>false</default>
@@ -1642,7 +1640,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__LightningSales</application>
         <default>false</default>
@@ -1688,8 +1685,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
     <customPermissions>
         <enabled>true</enabled>
         <name>pi__Sobo</name>
@@ -10751,16 +10746,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Underwriter__c.Due_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.UW_on_Loan__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>User.Booking_URL__c</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -11058,6 +11043,16 @@
     <readable>false</readable>
     <field>YoutubeLinks__c.Video_sequence__c</field>
 </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.UW_on_Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -11595,6 +11590,14 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Individual-Individual Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.PCS</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.UW</recordType>
     </layoutAssignments>
     <objectPermissions>
     <object>Account</object>
@@ -12272,15 +12275,6 @@
     <viewAllRecords>false</viewAllRecords>
 </objectPermissions>
     <objectPermissions>
-    <object>Underwriter__c</object>
-    <allowCreate>false</allowCreate>
-    <allowDelete>false</allowDelete>
-    <allowEdit>false</allowEdit>
-    <allowRead>false</allowRead>
-    <modifyAllRecords>false</modifyAllRecords>
-    <viewAllRecords>false</viewAllRecords>
-</objectPermissions>
-    <objectPermissions>
     <object>WorkOrder</object>
     <allowCreate>false</allowCreate>
     <allowDelete>false</allowDelete>
@@ -12298,6 +12292,15 @@
     <modifyAllRecords>false</modifyAllRecords>
     <viewAllRecords>false</viewAllRecords>
 </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Underwriter__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -12429,6 +12432,16 @@
         <default>false</default>
         <recordType>Opportunity.Renewals</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.PCS</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.UW</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Activities</tab>

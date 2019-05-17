@@ -94,13 +94,18 @@
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Underwriter__c.Subject__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
                     <flexTableSortInfo>
                         <sortColumn>CUST_NAME</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
-                <header>Cooling Off Notice Signed</header>
+                <header>UW Expiration and Notifications</header>
                 <report>UWPCS/Cooling_Off_Notice_zuH</report>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
@@ -366,7 +371,7 @@
     </dashboardGridLayout>
     <dashboardType>MyTeamUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>balasahityadeekonda@orms.com</runningUser>
+    <runningUser>heatherdosch1@quickenloans.com</runningUser>
     <textColor>#000000</textColor>
     <title>Underwriter</title>
     <titleColor>#000000</titleColor>

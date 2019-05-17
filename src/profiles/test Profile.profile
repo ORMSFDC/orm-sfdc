@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><userLicense>Guest User License</userLicense>
-    
     <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
         <application>CMS</application>
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__AllTabSet</application>
         <default>false</default>
@@ -26,7 +24,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__LightningSales</application>
         <default>false</default>
@@ -72,8 +69,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -2452,6 +2447,14 @@
     <layoutAssignments>
         <layout>Individual-Individual Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.PCS</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.UW</recordType>
+    </layoutAssignments>
     <objectPermissions>
     <object>Idea</object>
     <allowCreate>false</allowCreate>
@@ -2589,6 +2592,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Renewals</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.PCS</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.UW</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
