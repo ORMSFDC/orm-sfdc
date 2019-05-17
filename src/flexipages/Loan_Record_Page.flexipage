@@ -176,23 +176,23 @@
                 <name>lookupFieldName</name>
                 <value>Id</value>
             </componentInstanceProperties>
-            <componentInstanceProperties>            
+            <componentInstanceProperties>
                 <name>updateQuickActionName</name>
-       <value>Loan_New__c.Folder_Rec_d</value>
-      </componentInstanceProperties>
-      <componentName>console:relatedRecord</componentName>
-    </componentInstances>
-    <name>Facet-1f0be8d7-cce8-4d73-bc6e-42135d1f5147</name>
-    <type>Facet</type>
-  </flexiPageRegions>
-  <flexiPageRegions>
-    <componentInstances>
-      <componentInstanceProperties>
-        <name>lookupFieldName</name>
-        <value>Id</value>
-      </componentInstanceProperties>
-      <componentInstanceProperties>
-        <name>updateQuickActionName</name>
+                <value>Loan_New__c.Folder_Rec_d</value>
+            </componentInstanceProperties>
+            <componentName>console:relatedRecord</componentName>
+        </componentInstances>
+        <name>Facet-1f0be8d7-cce8-4d73-bc6e-42135d1f5147</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>lookupFieldName</name>
+                <value>Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>updateQuickActionName</name>
                 <value>Loan_New__c.Underwriting</value>
             </componentInstanceProperties>
             <componentName>console:relatedRecord</componentName>
@@ -274,10 +274,10 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
-            <name>active</name>
-        <value>false</value>
-      </componentInstanceProperties>
-      <componentInstanceProperties>
+                <name>active</name>
+                <value>false</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>body</name>
                 <value>Facet-d1ccceb8-f307-4cb2-b74b-887a035c3cc9</value>
             </componentInstanceProperties>
@@ -290,17 +290,17 @@
         <componentInstances>
             <componentInstanceProperties>
                 <name>body</name>
-                 <value>Facet-1f0be8d7-cce8-4d73-bc6e-42135d1f5147</value>
-      </componentInstanceProperties>
-      <componentInstanceProperties>
-        <name>title</name>
-        <value>Folder Rec'd</value>
-      </componentInstanceProperties>
-      <componentName>flexipage:tab</componentName>
-    </componentInstances>
-    <componentInstances>
-      <componentInstanceProperties>
-        <name>body</name>
+                <value>Facet-1f0be8d7-cce8-4d73-bc6e-42135d1f5147</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Folder Rec&apos;d</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>body</name>
                 <value>Facet-2fulol1fp4q</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
@@ -391,6 +391,25 @@
     <flexiPageRegions>
         <componentInstances>
             <componentInstanceProperties>
+                <name>parentFieldApiName</name>
+                <value>Loan_New__c.Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListApiName</name>
+                <value>AttachedContentNotes</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListSingleContainer</componentName>
+        </componentInstances>
+        <name>Facet-079f28bd-ff8b-46e7-b874-89ef7a8c46a5</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
                 <name>active</name>
                 <value>false</value>
             </componentInstanceProperties>
@@ -406,12 +425,27 @@
         </componentInstances>
         <componentInstances>
             <componentInstanceProperties>
+                <name>active</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
                 <name>body</name>
                 <value>facet-4495da8b-ebff-44fc-9902-d9564272e6b7</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>title</name>
                 <value>Standard.Tab.collaborate</value>
+            </componentInstanceProperties>
+            <componentName>flexipage:tab</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>body</name>
+                <value>Facet-079f28bd-ff8b-46e7-b874-89ef7a8c46a5</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Notes</value>
             </componentInstanceProperties>
             <componentName>flexipage:tab</componentName>
         </componentInstances>

@@ -848,42 +848,6 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Master_PCS_Conditions_Received</fullName>
-        <columns>NAME</columns>
-        <columns>Priority__c</columns>
-        <columns>Latest_Status_Change__c</columns>
-        <columns>Status__c</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>OWNER.LAST_NAME</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Conditions Received</value>
-        </filters>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Revision Requested Conditions,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS</value>
-        </filters>
-        <label>Master PCS Conditions Received</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>Master_PCS_Slept_Items</fullName>
         <columns>NAME</columns>
         <columns>Priority__c</columns>
@@ -984,42 +948,6 @@
             <value>Underwriter__c.PCS</value>
         </filters>
         <label>Master PCS Vendor Items Received</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>My_PCS_Appraisals_Received</fullName>
-        <columns>NAME</columns>
-        <columns>Priority__c</columns>
-        <columns>Latest_Status_Change__c</columns>
-        <columns>Status__c</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Notes__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Appraisal Received</value>
-        </filters>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Revision Requested Conditions,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS</value>
-        </filters>
-        <label>My PCS Appraisals Received</label>
         <sharedTo>
             <role>Client_Care_Specialist</role>
             <role>Client_Care_Specialist_Lead</role>
@@ -1162,6 +1090,78 @@
             <value>Underwriter__c.PCS</value>
         </filters>
         <label>My PCS Vendor Items Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_PCS_Conditions_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Conditions Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <label>Master PCS Conditions Received</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_PCS_Appraisals_Received</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Appraisal Received</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <label>My PCS Appraisals Received</label>
         <sharedTo>
             <role>Client_Care_Specialist</role>
             <role>Client_Care_Specialist_Lead</role>

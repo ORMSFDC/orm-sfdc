@@ -358,6 +358,43 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>User</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.PCS_at_Loan_Level__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>myRule_11_A1</targetReference>
             </connector>
@@ -489,7 +526,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_8741871485</name>
+        <name>formula_3_myRule_1_A1_3914809338</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -500,7 +537,7 @@
                 <stringValue>&apos;Underwriting Clear to Close on loan ID: &apos; + [Loan_New__c].Name +&apos; for the Client &apos;+ [Loan_New__c].Client_Name__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_5985690522</name>
+        <name>formula_4_myRule_1_A1_2409895853</name>
         <dataType>String</dataType>
         <expression>&apos;Underwriting Clear to Close on loan ID: &apos; + {!myVariable_current.Name} +&apos; for the Client &apos;+ {!myVariable_current.Client_Name__c}</expression>
     </formulas>
@@ -511,7 +548,7 @@
                 <stringValue>Today()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_8_myRule_6_A1_0233995902</name>
+        <name>formula_8_myRule_6_A1_4042514450</name>
         <dataType>Date</dataType>
         <expression>Today()</expression>
     </formulas>
@@ -522,11 +559,11 @@
                 <stringValue>&apos;Loan has been Conditionally Approved&apos;</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_9_myRule_6_A1_7125449436</name>
+        <name>formula_9_myRule_6_A1_5985862891</name>
         <dataType>String</dataType>
         <expression>&apos;Loan has been Conditionally Approved&apos;</expression>
     </formulas>
-    <interviewLabel>Task_to_PCS_when_LoanStatus_is_Updated-2_InterviewLabel</interviewLabel>
+    <interviewLabel>Task_to_PCS_when_LoanStatus_is_Updated-3_InterviewLabel</interviewLabel>
     <label>Task to PCS when LoanStatus is Updated</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -886,7 +923,7 @@
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_8741871485</elementReference>
+                <elementReference>formula_3_myRule_1_A1_3914809338</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1012,7 +1049,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_5985690522</elementReference>
+                <elementReference>formula_4_myRule_1_A1_2409895853</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1091,7 +1128,7 @@
             </processMetadataValues>
             <field>ActivityDate</field>
             <value>
-                <elementReference>formula_8_myRule_6_A1_0233995902</elementReference>
+                <elementReference>formula_8_myRule_6_A1_4042514450</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1217,7 +1254,7 @@
             </processMetadataValues>
             <field>Subject</field>
             <value>
-                <elementReference>formula_9_myRule_6_A1_7125449436</elementReference>
+                <elementReference>formula_9_myRule_6_A1_5985862891</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
