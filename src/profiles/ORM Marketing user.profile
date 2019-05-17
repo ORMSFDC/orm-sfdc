@@ -195,13 +195,11 @@
 <apexPage>UserActiveStatus</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
-    
     <applicationVisibilities>
         <application>CMS</application>
         <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__AllTabSet</application>
         <default>false</default>
@@ -222,7 +220,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__LightningSales</application>
         <default>false</default>
@@ -268,8 +265,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -7023,16 +7018,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Underwriter__c.Due_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.UW_on_Loan__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>User.Booking_URL__c</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -7325,6 +7310,16 @@
     <readable>false</readable>
     <field>YoutubeLinks__c.Video_sequence__c</field>
 </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.UW_on_Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -7863,6 +7858,14 @@
     <layoutAssignments>
         <layout>Individual-Individual Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.PCS</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.UW</recordType>
+    </layoutAssignments>
     <objectPermissions>
     <object>Contact_Us__c</object>
     <allowCreate>false</allowCreate>
@@ -8117,6 +8120,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Renewals</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.PCS</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.UW</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>

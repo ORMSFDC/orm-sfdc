@@ -51,6 +51,12 @@
             <operator>equals</operator>
             <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,New Underwrite</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Underwriter__c.UW</value>
+        </criteriaItems>
     </filter>
     <format>Tabular</format>
     <name>Underwriters Tasks Asleep</name>

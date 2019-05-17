@@ -91,13 +91,11 @@
 <apexPage>zoom_app__ZoomSendEmail</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
-    
     <applicationVisibilities>
         <application>CMS</application>
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__AllTabSet</application>
         <default>false</default>
@@ -118,7 +116,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
     <applicationVisibilities>
         <application>standard__LightningSales</application>
         <default>false</default>
@@ -164,8 +161,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -3954,6 +3949,14 @@
     <layoutAssignments>
         <layout>Individual-Individual Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.PCS</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.UW</recordType>
+    </layoutAssignments>
     <objectPermissions>
     <object>Account</object>
     <allowCreate>false</allowCreate>
@@ -4217,6 +4220,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Renewals</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.PCS</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.UW</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>

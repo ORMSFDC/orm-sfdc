@@ -85,7 +85,6 @@
 <apexPage>UserActiveStatus</apexPage>
 <enabled>false</enabled>
 </pageAccesses>
-    
     <applicationVisibilities>
         <application>CMS</application>
         <default>false</default>
@@ -9659,126 +9658,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Underwriter__c.AE_on_Loan__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Completed_Tasks__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Due_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Latest_Sleep_Time__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Latest_Status_Change__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Loan__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Loan_Number__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.LoanStatus__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Notes__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Open_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Open_Tasks__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Ordered_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Ordered_Tasks__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.PCS_at_Loan_Level__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Received_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Received_Tasks__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Revision_Requested_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Revision_Requests__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Sleep_Task__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Sleep_TaskCheckbox__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Subject__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.Underwriter__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Underwriter__c.UW_on_Loan__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>User.Booking_URL__c</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -10076,6 +9955,141 @@
     <readable>false</readable>
     <field>YoutubeLinks__c.IsActive__c</field>
 </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.AE_on_Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Attempted_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Completed_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Completed_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Condition_Reviewed_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Latest_Sleep_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Latest_Status_Change__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.LoanStatus__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Loan_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Notes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Open_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Open_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Ordered_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Ordered_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.PCS_at_Loan_Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Received_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Received_Tasks__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Revision_Requested_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.Revision_Requests__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Sleep_TaskCheckbox__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Sleep_Task__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Subject__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Underwriter__c.UW_on_Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Underwriter__c.Underwriter__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -10553,6 +10567,14 @@
     <layoutAssignments>
         <layout>Opportunity-Renewals</layout>
         <recordType>Opportunity.Renewals</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.PCS</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.UW</recordType>
     </layoutAssignments>
     <objectPermissions>
     <object>Account</object>
@@ -11149,15 +11171,6 @@
     <viewAllRecords>false</viewAllRecords>
 </objectPermissions>
     <objectPermissions>
-    <object>Underwriter__c</object>
-    <allowCreate>false</allowCreate>
-    <allowDelete>false</allowDelete>
-    <allowEdit>false</allowEdit>
-    <allowRead>false</allowRead>
-    <modifyAllRecords>false</modifyAllRecords>
-    <viewAllRecords>false</viewAllRecords>
-</objectPermissions>
-    <objectPermissions>
     <object>WorkOrder</object>
     <allowCreate>false</allowCreate>
     <allowDelete>false</allowDelete>
@@ -11175,6 +11188,15 @@
     <modifyAllRecords>false</modifyAllRecords>
     <viewAllRecords>false</viewAllRecords>
 </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Underwriter__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -11303,6 +11325,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Opportunity.Renewals</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.PCS</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Underwriter__c.UW</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
