@@ -125,37 +125,6 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.LoanStatus__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Underwriting Clear to Close</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
@@ -169,7 +138,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_2207768609</name>
+        <name>formula_3_myRule_1_A1_6240754155</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -180,11 +149,11 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_0970990270</name>
+        <name>formula_4_myRule_1_A1_9547656965</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
-    <interviewLabel>UW_Cooling_off_notice_signed_date-2_InterviewLabel</interviewLabel>
+    <interviewLabel>UW_Cooling_off_notice_signed_date-5_InterviewLabel</interviewLabel>
     <label>_UW Cooling off notice signed date</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -285,7 +254,7 @@
             </processMetadataValues>
             <field>Latest_Status_Change__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_2207768609</elementReference>
+                <elementReference>formula_3_myRule_1_A1_6240754155</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -357,7 +326,7 @@
             </processMetadataValues>
             <field>Open_Date__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_0970990270</elementReference>
+                <elementReference>formula_4_myRule_1_A1_9547656965</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -466,6 +435,42 @@
             <field>Priority__c</field>
             <value>
                 <stringValue>Medium</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>012S0000000aIlLIAU</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

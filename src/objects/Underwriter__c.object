@@ -525,6 +525,16 @@
                     <default>false</default>
                     <label>Suspense Requested</label>
                 </value>
+                <value>
+                    <fullName>New Underwrite</fullName>
+                    <default>false</default>
+                    <label>New Underwrite</label>
+                </value>
+                <value>
+                    <fullName>Cooling off letter received</fullName>
+                    <default>false</default>
+                    <label>Cooling off letter received</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

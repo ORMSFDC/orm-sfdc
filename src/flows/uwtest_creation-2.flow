@@ -13,41 +13,9 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>isChangedDecision2_myRule_1_Cooling_Off_Notice_Signed_Date_c</targetReference>
+            <targetReference>myDecision</targetReference>
         </connector>
     </assignments>
-    <decisions>
-        <name>isChangedDecision2_myRule_1_Cooling_Off_Notice_Signed_Date_c</name>
-        <label>isChangedDecision2_myRule_1_Cooling_Off_Notice_Signed_Date_c</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>isChangedRule_2_myRule_1_Cooling_Off_Notice_Signed_Date_c</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>myVariable_old</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>myVariable_old.Cooling_Off_Notice_Signed_Date__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>myVariable_current.Cooling_Off_Notice_Signed_Date__c</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myDecision</targetReference>
-            </connector>
-            <label>isChangedRule_2_myRule_1_Cooling_Off_Notice_Signed_Date_c</label>
-        </rules>
-    </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -71,71 +39,15 @@
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
-                    <name>leftHandSideType</name>
+                    <name>leftHandSideReferenceTo</name>
                     <value>
-                        <stringValue>Date</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Date</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>isChangedRule_2_myRule_1_Cooling_Off_Notice_Signed_Date_c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
+                        <stringValue>User</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
                     <name>leftHandSideType</name>
                     <value>
-                        <stringValue>Date</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>Date</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>Boolean</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Cooling_Off_Notice_Signed_Date__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>ID</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -147,19 +59,19 @@
                 <processMetadataValues>
                     <name>rightHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>Boolean</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.LoanStatus__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>myVariable_current.Loan__r.UW__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>Underwriting Clear to Close</stringValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>Cooling off notice signed date</label>
+            <label>uw record created</label>
         </rules>
     </decisions>
     <formulas>
@@ -169,7 +81,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_2207768609</name>
+        <name>formula_2_myRule_1_A1_3763799499</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -180,16 +92,16 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myRule_1_A1_0970990270</name>
+        <name>formula_3_myRule_1_A1_8055042231</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
-    <interviewLabel>UW_Cooling_off_notice_signed_date-2_InterviewLabel</interviewLabel>
-    <label>_UW Cooling off notice signed date</label>
+    <interviewLabel>uwtest_creation-2_InterviewLabel</interviewLabel>
+    <label>_uwtest creation</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Loan_New__c</stringValue>
+            <stringValue>Underwriter__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -207,15 +119,52 @@
     <processMetadataValues>
         <name>TriggerType</name>
         <value>
-            <stringValue>onAllChanges</stringValue>
+            <stringValue>onCreateOnly</stringValue>
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
-    <recordCreates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Underwriter__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Create UW Cooling Off Noticed Signed Date</label>
+        <label>update related</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
@@ -249,7 +198,7 @@
             </processMetadataValues>
             <field>AE_on_Loan__c</field>
             <value>
-                <elementReference>myVariable_current.Related_Partner__r.Account_Executive_Name__c</elementReference>
+                <elementReference>myVariable_current.Loan__r.Related_Partner__r.Account_Executive_Name__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -285,43 +234,7 @@
             </processMetadataValues>
             <field>Latest_Status_Change__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_2207768609</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>ID</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Related Loan</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue>Loan_New__c</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Reference</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Loan__c</field>
-            <value>
-                <elementReference>myVariable_current.Id</elementReference>
+                <elementReference>formula_2_myRule_1_A1_3763799499</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -357,7 +270,7 @@
             </processMetadataValues>
             <field>Open_Date__c</field>
             <value>
-                <elementReference>formula_4_myRule_1_A1_0970990270</elementReference>
+                <elementReference>formula_3_myRule_1_A1_8055042231</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -393,7 +306,7 @@
             </processMetadataValues>
             <field>OwnerId</field>
             <value>
-                <elementReference>myVariable_current.UW__c</elementReference>
+                <elementReference>myVariable_current.Loan__r.UW__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -429,14 +342,14 @@
             </processMetadataValues>
             <field>PCS_at_Loan_Level__c</field>
             <value>
-                <elementReference>myVariable_current.PCS_at_Loan_Level__c</elementReference>
+                <elementReference>myVariable_current.Loan__r.PCS_at_Loan_Level__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
-                    <stringValue>Picklist</stringValue>
+                    <stringValue>ID</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -448,96 +361,24 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Priority</stringValue>
+                    <stringValue>Record Type ID</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>leftHandSideReferenceTo</name>
                 <value>
-                    <stringValue></stringValue>
+                    <stringValue>RecordType</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
                 <name>rightHandSideType</name>
                 <value>
-                    <stringValue>Picklist</stringValue>
+                    <stringValue>ID</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Priority__c</field>
+            <field>RecordTypeId</field>
             <value>
-                <stringValue>Medium</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Status</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Status__c</field>
-            <value>
-                <stringValue>Open</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Subject</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Picklist</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Subject__c</field>
-            <value>
-                <stringValue>Cooling off letter received</stringValue>
+                <stringValue>012S0000000e21MIAQ</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -573,11 +414,11 @@
             </processMetadataValues>
             <field>Underwriter__c</field>
             <value>
-                <elementReference>myVariable_current.UW__c</elementReference>
+                <elementReference>myVariable_current.Loan__r.UW__c</elementReference>
             </value>
         </inputAssignments>
         <object>Underwriter__c</object>
-    </recordCreates>
+    </recordUpdates>
     <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
     <variables>
         <name>myVariable_current</name>
@@ -585,7 +426,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Loan_New__c</objectType>
+        <objectType>Underwriter__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -593,7 +434,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Loan_New__c</objectType>
+        <objectType>Underwriter__c</objectType>
     </variables>
     <variables>
         <name>myVariable_waitStartTimeVariable</name>
