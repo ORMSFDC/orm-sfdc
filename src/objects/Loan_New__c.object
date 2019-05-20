@@ -6938,14 +6938,6 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorMessage>Utah Loan: Counseling Date must be prior to the Application Date</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Utah_HELO_Cooling_Off_Period</fullName>
-        <active>true</active>
-        <description>Cooling off Period for Utah HELO Loans</description>
-        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
-        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
-        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Must_fill_Who_on_Withdrawn</fullName>
         <active>true</active>
         <description>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw' text box must be filled.</description>
@@ -7081,6 +7073,22 @@ NOT(ISBLANK( UW__c ))
 )</errorConditionFormula>
         <errorDisplayField>UW__c</errorDisplayField>
         <errorMessage>Need Underwriter Assigned</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>State_Cooling_Off_Period_Rules</fullName>
+        <active>true</active>
+        <description>Cooling off Period for multiple states including Utah and Minnesota</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ) || ( ISPICKVAL( Subject_Property_State__c , "Minnesota")), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_HELO_Cooling_Off_Period</fullName>
+        <active>false</active>
+        <description>Cooling off Period for Utah HELO Loans</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>
