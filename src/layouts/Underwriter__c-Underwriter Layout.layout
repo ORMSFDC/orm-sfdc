@@ -43,7 +43,7 @@
         <label>Task</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Readonly</behavior>
                 <field>Subject__c</field>
             </layoutItems>
             <layoutItems>
