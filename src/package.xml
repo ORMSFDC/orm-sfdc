@@ -5676,6 +5676,7 @@
     <members>UW_Sleep_Task_Record-2</members>
     <members>UW_Status_Change_Date-2</members>
     <members>uwtest_creation-2</members>
+    <members>UW_Suspense_Requested-1</members>
     <name>Flow</name>
   </types>
   <types>
