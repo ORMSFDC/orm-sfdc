@@ -27,7 +27,7 @@
             <column>Underwriter__c.Subject__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Cooling off letter received</value>
+            <value>Loan Suspended,Cooling off letter received</value>
         </criteriaItems>
         <criteriaItems>
             <column>Underwriter__c.Status__c</column>
@@ -59,6 +59,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>Underwriter__c.Priority__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
