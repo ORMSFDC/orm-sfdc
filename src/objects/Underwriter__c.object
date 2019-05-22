@@ -562,7 +562,13 @@
     <pluralLabel>UW Tasks</pluralLabel>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
-    <searchLayouts />
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
@@ -1358,18 +1364,6 @@
         <errorMessage>Please add an UW to this Loan</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>PCS_Cannot_Pick_Status_Set</fullName>
-        <active>false</active>
-        <description>PCS is limited to status selections</description>
-        <errorConditionFormula>AND(   $UserRole.Name = 'Partner Care Specialist', ISCHANGED( Status__c ), 
-OR( 
-ISPICKVAL(Status__c, 'Revision Requested Conditions')
-) 
-)</errorConditionFormula>
-        <errorDisplayField>Status__c</errorDisplayField>
-        <errorMessage>You are not allowed to use this status</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>UW_Cannot_Pick_Status_Set</fullName>
         <active>false</active>
         <description>UW is limited to status selections</description>
@@ -1382,5 +1376,21 @@ ISPICKVAL(Status__c, 'Received')
 )</errorConditionFormula>
         <errorDisplayField>Status__c</errorDisplayField>
         <errorMessage>You are not allowed to use this status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PCS_Cannot_Pick_Status_Set</fullName>
+        <active>true</active>
+        <description>PCS is unable to change status of UW Record Type</description>
+        <errorConditionFormula>AND( $UserRole.Name = 'Partner Care Specialist', ISCHANGED( Status__c ), $RecordType.Name = 'UW',
+OR( 
+ISPICKVAL(Status__c, 'Condition Reviewed'),
+ISPICKVAL(Status__c, 'Ordered'),
+ISPICKVAL(Status__c, 'Attempted'),
+ISPICKVAL(Status__c, 'Received'),
+ISPICKVAL(Status__c, 'Opened')
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>You are not allowed to change the status</errorMessage>
     </validationRules>
 </CustomObject>
