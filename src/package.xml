@@ -4304,6 +4304,7 @@
     <members>Loan_New__c.Vendor</members>
     <members>Loan_New__c.Folder_Rec_d</members>
     <members>Loan_New__c.UW_Task</members>
+    <members>Loan_New__c.Email</members>
     <name>QuickAction</name>
   </types>
   <types>
