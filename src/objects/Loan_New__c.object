@@ -1995,37 +1995,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Property_Held_as__c</fullName>
-        <externalId>false</externalId>
-        <label>Property Held as</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Fee Simple</fullName>
-                    <default>false</default>
-                    <label>Fee Simple</label>
-                </value>
-                <value>
-                    <fullName>Leasehold</fullName>
-                    <default>false</default>
-                    <label>Leasehold</label>
-                </value>
-                <value>
-                    <fullName>Life Estate</fullName>
-                    <default>false</default>
-                    <label>Life Estate</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Property_Title_is_Held_in_These_Names__c</fullName>
         <externalId>false</externalId>
         <label>Property Title is Held in These Names</label>
@@ -3300,19 +3269,6 @@ IF(
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>UW__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>UW</label>
-        <referenceTo>User</referenceTo>
-        <relationshipName>Loans2</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>update__c</fullName>
         <defaultValue>false</defaultValue>
         <description>DELETE</description>
@@ -3406,17 +3362,6 @@ IF(
         <label>Application Disclosure Signed Date</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Cooling_Off_Expiration_Date__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( ISPICKVAL ( Subject_Property_State__c , "Utah" ), Cooling_Off_Notice_Signed_Date__c + 7 , NULL )</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Cooling Off Expiration Date</label>
-        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
@@ -6491,6 +6436,95 @@ IF(
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Cooling_Off_Expiration_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL ( Subject_Property_State__c , "Utah" ) ||  ISPICKVAL( Subject_Property_State__c , "Minnesota")  , Cooling_Off_Notice_Signed_Date__c + 7 , NULL )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cooling Off Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_After_FRC__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR
+(ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), NOW() -  In_Underwriting_Review_Date__c, 0)</formula>
+        <label>Days After FRC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Property_Held_as__c</fullName>
+        <externalId>false</externalId>
+        <label>Property Held as</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fee Simple</fullName>
+                    <default>false</default>
+                    <label>Fee Simple</label>
+                </value>
+                <value>
+                    <fullName>Leasehold</fullName>
+                    <default>false</default>
+                    <label>Leasehold</label>
+                </value>
+                <value>
+                    <fullName>Life Estate</fullName>
+                    <default>false</default>
+                    <label>Life Estate</label>
+                </value>
+                <value>
+                    <fullName>Living Trust</fullName>
+                    <default>false</default>
+                    <label>Living Trust</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UW__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>UW</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Underwriter</value>
+            </filterItems>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Underwriter Lead</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Loans2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -6985,14 +7019,6 @@ OR(LEN(Account_Number__c) &lt; 0, NOT(ISNUMBER(Account_Number__c)),NOT(REGEX( Ac
         <errorMessage>Utah Loan: Counseling Date must be prior to the Application Date</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Utah_HELO_Cooling_Off_Period</fullName>
-        <active>true</active>
-        <description>Cooling off Period for Utah HELO Loans</description>
-        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
-        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
-        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>Must_fill_Who_on_Withdrawn</fullName>
         <active>true</active>
         <description>If 'Withdrawn' is selected in the LoanStatus picklist, then the 'Who Requested the Withdraw' text box must be filled.</description>
@@ -7128,6 +7154,22 @@ NOT(ISBLANK( UW__c ))
 )</errorConditionFormula>
         <errorDisplayField>UW__c</errorDisplayField>
         <errorMessage>Need Underwriter Assigned</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>State_Cooling_Off_Period_Rules</fullName>
+        <active>true</active>
+        <description>Cooling off Period for multiple states including Utah and Minnesota</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ) || ( ISPICKVAL( Subject_Property_State__c , "Minnesota")), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Utah_HELO_Cooling_Off_Period</fullName>
+        <active>false</active>
+        <description>Cooling off Period for Utah HELO Loans</description>
+        <errorConditionFormula>AND ( ISPICKVAL ( Subject_Property_State__c , "Utah" ), OR( ISPICKVAL ( Mortgage_Applied_for__c, "HELO Refinance" ), ISPICKVAL ( Mortgage_Applied_for__c, "HELO For Purchase" ) ), Scheduled_Closing_Date__c  &lt; Cooling_Off_Expiration_Date__c )</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

@@ -19,21 +19,22 @@
         <field>Underwriter__c.Priority__c</field>
     </columns>
     <columns>
-        <field>Underwriter__c.Subject__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Underwriter__c.Days_in_Status__c</field>
     </columns>
-    <description>Cooling Off Notice Signed</description>
+    <description>UW Expiration and Notifications</description>
     <filter>
         <criteriaItems>
             <column>Underwriter__c.Subject__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Cooling off letter received</value>
+            <value>Loan Suspended,Cooling off letter received</value>
         </criteriaItems>
         <criteriaItems>
             <column>Underwriter__c.Status__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Open</value>
+            <value>Open,Ordered,Attempted</value>
         </criteriaItems>
         <criteriaItems>
             <column>Underwriter__c.Sleep_TaskCheckbox__c</column>
@@ -41,9 +42,20 @@
             <operator>equals</operator>
             <value>0</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Underwriter__c.UW</value>
+        </criteriaItems>
     </filter>
-    <format>Tabular</format>
-    <name>Cooling Off Notice Signed</name>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Underwriter__c.Subject__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>UW Expiration and Notifications</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -53,6 +65,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>Underwriter__c.Priority__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
