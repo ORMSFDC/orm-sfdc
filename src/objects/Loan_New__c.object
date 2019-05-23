@@ -2062,6 +2062,11 @@ IF(
                     <default>false</default>
                     <label>Life Estate</label>
                 </value>
+	    	<value>
+                    <fullName>Living Trust</fullName>
+                    <default>false</default>
+                    <label>Living Trust</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

@@ -236,7 +236,8 @@
                                 <ui:inputSelectOption value="true" text="" label="---Select option---"/> 
                                 <ui:inputSelectOption text="Fee Simple" label="Fee Simple"/> 
                                 <ui:inputSelectOption text="Leasehold" label="Leasehold"/> 
-                                <ui:inputSelectOption text="Life Estate" label="Life Estate"/> 
+                                <ui:inputSelectOption text="Life Estate" label="Life Estate"/>
+                                <ui:inputSelectOption text="Living Trust" label="Living Trust"/> 
                                 
                             </ui:inputSelect>
                             
