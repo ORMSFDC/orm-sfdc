@@ -3770,19 +3770,6 @@ IF(
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>Folder_to_Close_Days__c</fullName>
-        <externalId>false</externalId>
-        <formula>Closing_Date__c -  In_Processing_Date__c</formula>
-        <label>Folder to Close Days</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Formula_Closed__c</fullName>
         <externalId>false</externalId>
         <formula>IF(ISBLANK(  Closing_Date__c  ), 0, 1)</formula>
@@ -6490,6 +6477,19 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Folder_to_Close_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>Closing_Date__c -   DATEVALUE(In_Underwriting_Review_Date__c)</formula>
+        <label>Folder to Close Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>

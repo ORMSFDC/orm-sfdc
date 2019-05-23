@@ -1139,6 +1139,216 @@
             <role>Underwriter_Lead</role>
         </sharedTo>
     </listViews>
+    <recordTypes>
+        <fullName>PCS</fullName>
+        <active>true</active>
+        <label>PCS</label>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sleep_Task__c</picklist>
+            <values>
+                <fullName>2 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear for Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Condition Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ordered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision Requested Conditions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject__c</picklist>
+            <values>
+                <fullName>Appraisal Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conditions Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooling off letter received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Underwrite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Title Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Items Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>UW</fullName>
+        <active>true</active>
+        <label>UW</label>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sleep_Task__c</picklist>
+            <values>
+                <fullName>2 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear for Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Condition Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ordered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision Requested Conditions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject__c</picklist>
+            <values>
+                <fullName>Appraisal Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conditions Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooling off letter received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Underwrite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Title Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Items Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <validationRules>
         <fullName>PCS_Cannot_Pick_Status_Set</fullName>
         <active>true</active>
