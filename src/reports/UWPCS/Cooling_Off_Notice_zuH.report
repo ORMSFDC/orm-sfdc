@@ -19,7 +19,8 @@
         <field>Underwriter__c.Priority__c</field>
     </columns>
     <columns>
-        <field>Underwriter__c.Subject__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Underwriter__c.Days_in_Status__c</field>
     </columns>
     <description>UW Expiration and Notifications</description>
     <filter>
@@ -48,7 +49,12 @@
             <value>Underwriter__c.UW</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Underwriter__c.Subject__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>UW Expiration and Notifications</name>
     <params>
         <name>co</name>

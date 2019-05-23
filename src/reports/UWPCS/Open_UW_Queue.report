@@ -10,9 +10,6 @@
         <field>Underwriter__c.Status__c</field>
     </columns>
     <columns>
-        <field>Underwriter__c.Loan_Number__c</field>
-    </columns>
-    <columns>
         <field>Underwriter__c.LoanStatus__c</field>
     </columns>
     <columns>
@@ -48,7 +45,12 @@
             <value>Underwriter__c.UW</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Underwriter__c.Loan_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Open UW Queue</name>
     <params>
         <name>co</name>
@@ -59,6 +61,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>Underwriter__c.Latest_Status_Change__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

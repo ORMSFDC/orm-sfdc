@@ -51,7 +51,12 @@
             <value>Underwriter__c.UW</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Underwriter__c.Priority__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Underwriters Conditions Received</name>
     <params>
         <name>co</name>
