@@ -24,6 +24,10 @@
     <columns>
         <field>Underwriter__c.Loan_Number__c</field>
     </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Underwriter__c.Days_in_Status__c</field>
+    </columns>
     <description>PCS Communication to UW that Title has been received</description>
     <filter>
         <criteriaItems>
@@ -51,7 +55,12 @@
             <value>Underwriter__c.UW</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Underwriter__c.Priority__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Underwriters Title Received</name>
     <params>
         <name>co</name>
