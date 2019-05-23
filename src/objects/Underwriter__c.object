@@ -1197,6 +1197,70 @@
             <role>Client_Care_Specialist_Lead</role>
         </sharedTo>
     </listViews>
+    <listViews>
+        <fullName>Master_Conditions_Reviewed_by_UW</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <label>Master Conditions Reviewed by UW</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Conditions_Reviewed_by_Underwriting</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <label>My PCS Conditions Reviewed by UW</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
     <recordTypes>
         <fullName>PCS</fullName>
         <active>true</active>
