@@ -1020,40 +1020,6 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>My_PCS_Slept_Items</fullName>
-        <columns>NAME</columns>
-        <columns>Priority__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Latest_Status_Change__c</columns>
-        <columns>Status__c</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Notes__c</columns>
-        <columns>Sleep_TaskCheckbox__c</columns>
-        <columns>Sleep_Task__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Revision Requested Conditions,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS</value>
-        </filters>
-        <label>My PCS Slept Items</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>My_PCS_Titles_Received</fullName>
         <columns>NAME</columns>
         <columns>Priority__c</columns>
@@ -1212,7 +1178,7 @@
         <filters>
             <field>Status__c</field>
             <operation>equals</operation>
-            <value>Condition Reviewed,Ordered,Attempted</value>
+            <value>Open,Condition Reviewed,Ordered,Attempted</value>
         </filters>
         <filters>
             <field>Sleep_TaskCheckbox__c</field>
@@ -1234,16 +1200,17 @@
         <fullName>My_Conditions_Reviewed_by_Underwriting</fullName>
         <columns>NAME</columns>
         <columns>Priority__c</columns>
-        <columns>Latest_Status_Change__c</columns>
+        <columns>Due_Date__c</columns>
+        <columns>Subject__c</columns>
         <columns>Status__c</columns>
+        <columns>Latest_Status_Change__c</columns>
         <columns>Loan_Number__c</columns>
         <columns>LoanStatus__c</columns>
-        <columns>Notes__c</columns>
         <filterScope>Mine</filterScope>
         <filters>
             <field>Status__c</field>
             <operation>equals</operation>
-            <value>Condition Reviewed,Ordered,Attempted</value>
+            <value>Open,Condition Reviewed,Ordered,Attempted</value>
         </filters>
         <filters>
             <field>Sleep_TaskCheckbox__c</field>
@@ -1255,7 +1222,39 @@
             <operation>equals</operation>
             <value>Underwriter__c.PCS</value>
         </filters>
-        <label>My PCS Conditions Reviewed by UW</label>
+        <label>Conditions Reviewed by Underwriting</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_PCS_Slept_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Sleep_Task__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Revision Requested Conditions,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <label>PCS Sleeping Tasks</label>
         <sharedTo>
             <role>Client_Care_Specialist</role>
             <role>Client_Care_Specialist_Lead</role>
