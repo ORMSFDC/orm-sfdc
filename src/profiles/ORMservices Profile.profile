@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><userLicense>Guest User License</userLicense>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><userLicense>Guest User License</userLicense>
     <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
 <apexPage>BandwidthExceeded</apexPage>
 <enabled>false</enabled>
@@ -3058,10 +3058,7 @@
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    <tabVisibilities>
-        <tab>UWPCS</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
+    
     <tabVisibilities>
         <tab>UW_Dashboard</tab>
         <visibility>Hidden</visibility>
