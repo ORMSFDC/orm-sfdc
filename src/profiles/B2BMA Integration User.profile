@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><loginIpRanges>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><loginIpRanges>
         <description>Pardot Public Cloud</description>
         <endAddress>18.232.248.67</endAddress>
         <startAddress>18.232.248.67</startAddress>
@@ -6087,10 +6087,7 @@
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    <tabVisibilities>
-        <tab>UWPCS</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
+    
     <tabVisibilities>
         <tab>UW_Dashboard</tab>
         <visibility>Hidden</visibility>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>This profile is use for ORM partners</description><userLicense>Partner Community</userLicense>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>This profile is use for ORM partners</description><userLicense>Partner Community</userLicense>
     <classAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
     <enabled>false</enabled>
     <apexClass>AttachmentResponse</apexClass>
@@ -6722,10 +6722,7 @@
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    <tabVisibilities>
-        <tab>UWPCS</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
+    
     <tabVisibilities>
         <tab>UW_Dashboard</tab>
         <visibility>Hidden</visibility>

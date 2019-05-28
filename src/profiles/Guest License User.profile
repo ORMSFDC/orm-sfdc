@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Guest User License</userLicense>
+﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Guest User License</userLicense>
     <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
         <application>CMS</application>
         <default>false</default>
@@ -2939,10 +2939,7 @@
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    <tabVisibilities>
-        <tab>UWPCS</tab>
-        <visibility>Hidden</visibility>
-    </tabVisibilities>
+    
     <tabVisibilities>
         <tab>UW_Dashboard</tab>
         <visibility>Hidden</visibility>
