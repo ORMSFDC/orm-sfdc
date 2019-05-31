@@ -8,7 +8,7 @@
     <subject>Congratulations you have been approved!</subject>
     <textOnly>You have been Approved!
 
-Hello {!Account.Primary_contact_name__c},
+Hello {!Account.Name},
 
 Congratulations on your partnership with One Reverse Mortgage Services! We are excited to build your business together while providing an incredible experience to you and your clients.
 
