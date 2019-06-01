@@ -5,14 +5,15 @@
     <!--<div class="slds-grid slds-grid_align-center">
        <div><p>Welcome,{!v.runningUser.FirstName}&nbsp;{!v.runningUser.LastName}</p>
         </div>  </div> -->
-    <div class="ql-color-bar ql-color-bar-primary" ></div>
+        <head></head>
+   <!-- <div class="ql-color-bar ql-color-bar-primary" ></div>-->
     <table><tr><td height="24px"></td></tr></table>
     <div class="demo-only demo-only--sizing slds-grid slds-wrap" style="margin-left: 66px;">
         
         <div class="slds-size_1-of-3 ">
             <div class="slds-text-align_right" style="padding-top: 22px;">
                 <a href="/s/" style="text-decoration:none !important;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="awesomeAdmin" src="/resource/ORMLogo" width="350" height="200" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="awesomeAdmin" src="{!$Resource.ORMLogo}" width="450" height="350" /> 
                 </a></div>
         </div>
         <!--<div class="slds-size_1-of-2 slds-show_x-small">-->

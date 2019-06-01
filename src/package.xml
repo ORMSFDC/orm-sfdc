@@ -578,6 +578,8 @@
     <members>OnBaseLookupsTest</members>
     <members>WS_OnBase</members>
     <members>WS_OnBase_Test</members>
+    <members>MarketingHub_Controller</members>
+    <members>MarketingHub_ControllerTest</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -812,6 +814,7 @@
     <members>TestLookupPurposeOfRefinance</members>
     <members>TestOnBase</members>
     <members>TestLookupLoanStatus</members>
+    <members>MarketingHub_ORM</members>
     <name>AuraDefinitionBundle</name>
   </types>
   <types>
@@ -1210,6 +1213,9 @@
     <members>rh2__PT_TimePicker_JS</members>
     <members>rh2__SFStyleSheets</members>
     <members>rh2__svg4everybody</members>
+    <members>Marketing_hub</members>
+    <members>ORM_Map</members>
+    <members>QLMS_Portal</members>
     <name>StaticResource</name>
   </types>
   <types>

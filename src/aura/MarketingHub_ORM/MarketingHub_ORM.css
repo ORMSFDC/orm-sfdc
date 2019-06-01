@@ -1,0 +1,36 @@
+.THIS {
+}
+
+.THIS .uibutton{
+   
+    
+    width: 500px !important;
+    height: 100px !important;
+    
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding-left : 100px; 
+    align-content: center;
+}
+
+
+.THIS .uibutton2{
+   
+    
+    width: 500px !important;
+    height: 100px !important;
+    
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding-left : 100px; 
+}
+
+.THIS .customFont1{    
+     
+    font-size: 25px !important;
+    font-weight:bold !important;
+    text-align: left;
+    color:#2081BF;
+}

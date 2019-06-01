@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+controller="MarketingHub_Controller" access="global">
+
+<aura:attribute name="Link" type="String"/>
+<aura:attribute name="Link2" type="String" default="https://portal.qlmortgageservices.com/sign-in"/>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-col">
+        <div class="slds-col; align:Center;">
+            <img src="{!$Resource.Marketing_hub}" onclick="{!c.navigateToURL}" class="uibutton" />
+            
+            <img src="{!$Resource.QLMS_Portal}" onclick="{!c.navigateToURL2}" class="uibutton2" /><br/><br/><br/>
+        </div>    
+            <div class="customFont1">
+                <b>Where we Lend</b>
+            </div><br/><br/>     
+
+        <img src="{!$Resource.ORM_Map}" Style="Width:1400px; height:650px;"/>
+    </div>   
+
+</aura:component>
