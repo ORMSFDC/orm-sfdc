@@ -953,4 +953,18 @@ Please call your account executive with any questions or if you need assistance!
         <shortDescription>Hard-coded OnBase value for Employee Loan</shortDescription>
         <value>No Reverse</value>
     </labels>
+    <labels>
+        <fullName>MarketingHub</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MarketingHub</shortDescription>
+        <value>https://www.four51.com/UI/Profile.hcf?id=564801e9-6b5b-40b8-bcfa-68aaa5a58475&amp;</value>
+    </labels>
+    <labels>
+        <fullName>QLMSPortal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QLMSPortal</shortDescription>
+        <value>https://portal.qlmortgageservices.com/sign-in</value>
+    </labels>
 </CustomLabels>

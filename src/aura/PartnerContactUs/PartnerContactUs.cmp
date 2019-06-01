@@ -2,25 +2,38 @@
                 access="global">
     <link charset="utf-8" href="{!$Resource.AuthCss}" media="screen" rel="stylesheet" type="text/css"></link>
     <link charset="utf-8" href="{!$Resource.GlobalCss}" media="screen" rel="stylesheet" type="text/css"></link>
-    <body id="category_sign_in" class="signed_out">
+   <!-- <body id="category_sign_in" class="signed_out"> -->
         
-        <footer class="ql-footer" style="background-color: transparent;">
+        <footer>
+            <div class="slds-border_top" ></div>      
+            <div class="slds-row" style="padding-left:14%; padding-top: 1.5%; font-family:Myriad Pro; font-size:medium;">                        
+                    <div>
+                        <b><strong>ORMS FHA Lender ID Number:</strong></b> 2165000074.
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <b><strong>Email: </strong></b> <ui:outputURL value="mailto:ORMSSupport@onereverse.com"   label="ORMSSupport@onereverse.com"/>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b><strong>Title/CPL/HOI/Flood:</strong></b> One Reverse Mortgage,LLC ISAOA, 4445 Eastgate Mall,Ste 320, San Diego,CA 92121.                                
+                    </div> 
+            </div><br/>
             
-            <div class="ql-row" style="padding-left: 13%;padding-top: 3%;">
-                <div class="ql-col-fifth" style="width:15.4%"><a href="/s/zoom"><img id="quick-share" src="{!$Resource.QuickShare}" 
-                                                                 alt="Zoom logo" title="Share your screen with Zoom." /></a></div>
-                <div class="ql-col-three-fifth">
-                    <p class="ql-copyright" style="color: #444444;font-size: 16px;font-family: Myriad Pro">&copy; {!$Label.c.partnerCopyright}</p>
-                </div>
-                <div  >
-                    <a target="_blank"   href="{!$Label.c.PartnerLenderURL}" title="One Reverse Mortgage is an Equal Housing Lender">
-                        <img  src="{!$Resource.Lender}" alt="Lender" title="One Reverse Mortgage is an Equal Housing Lender" style="padding-left:51px" /></a>
-                </div>
-            </div>
+            <div class="slds-col" style="padding-left:14%;  font-family:Myriad Pro; font-size:16px; font-style:italic ">                           
+                <div>                                    
+                    &copy;{!$Label.c.partnerCopyright}
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/s/zoom"><img src="{!$Resource.QuickShare}"  title="Share your screen with Zoom." style="padding-left: 5%; width:250px; height:45px; " /></a>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <a href="{!$Label.c.PartnerLenderURL}" >
+                            <img  src="{!$Resource.Lender}" alt="Lender" title="One Reverse Mortgage is an Equal Housing Lender"  width="140" height="170"/></a>
+                </div><br/>                                               
+            </div>                
         </footer>
-        
-        <div class="ql-color-bar ql-color-bar-primary"></div>
-        
-    </body>
+    <!--</body> -->
     
 </aura:component>
