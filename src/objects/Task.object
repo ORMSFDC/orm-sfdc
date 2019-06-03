@@ -108,36 +108,12 @@
     <fields>
         <fullName>WhoId</fullName>
         <type>Lookup</type>
-    </fields><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><enableFeeds>true</enableFeeds><searchLayouts /><sharingModel>Private</sharingModel>
-    <listViews>
-        <fullName>All_PCS_Tasks_Heather</fullName>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <columns>SUBJECT</columns>
-        <columns>CORE.USERS.FULL_NAME</columns>
-        <columns>OWNER_ROLE</columns>
-        <columns>PRIORITY</columns>
-        <columns>WHAT_NAME</columns>
-        <columns>DUE_DATE</columns>
-        <columns>STATUS</columns>
-        <columns>LAST_UPDATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>OWNER_ROLE</field>
-            <operation>equals</operation>
-            <value>Partner Care Specialist</value>
-        </filters>
-        <filters>
-            <field>OWNER_ROLE</field>
-            <operation>equals</operation>
-            <value>Partner Care Specialist Lead</value>
-        </filters>
-        <label>All PCS Tasks - Heather</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-            <role>System_Administrator</role>
-        </sharedTo>
-    </listViews>
+    </fields>
+  <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+  <enableFeeds>true</enableFeeds>
+  <searchLayouts />
+  <sharingModel>Private</sharingModel>
+
     <listViews>
         <fullName>CompletedTasks</fullName>
         <columns>SUBJECT</columns>

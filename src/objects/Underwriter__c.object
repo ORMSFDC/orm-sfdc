@@ -343,47 +343,6 @@
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Sleep_Task__c</fullName>
-        <externalId>false</externalId>
-        <label>Sleep Duration</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>2 Hours</fullName>
-                    <default>false</default>
-                    <label>2 Hours</label>
-                </value>
-                <value>
-                    <fullName>4 Hours</fullName>
-                    <default>false</default>
-                    <label>4 Hours</label>
-                </value>
-                <value>
-                    <fullName>6 Hours</fullName>
-                    <default>false</default>
-                    <label>6 Hours</label>
-                </value>
-                <value>
-                    <fullName>Next Day</fullName>
-                    <default>false</default>
-                    <label>Next Day</label>
-                </value>
-                <value>
-                    <fullName>Next Week</fullName>
-                    <default>false</default>
-                    <label>Next Week</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>UW_on_Loan__c</fullName>
         <externalId>false</externalId>
         <formula>Loan__r.UW__r.FUll_Name__c</formula>
@@ -489,6 +448,123 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Days_in_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() - DATEVALUE( Latest_Status_Change__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days in Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Closing_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Loan__r.Anticipated_Closing_Date__c</formula>
+        <label>Anticipated Closing Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Property_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Loan__r.Subject_Property_State__c)</formula>
+        <label>Property State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_Client_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Loan__r.Client_Name__c</formula>
+        <label>Related Client Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sleep_Task__c</fullName>
+        <externalId>false</externalId>
+        <label>Sleep Duration</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Sleep_TaskCheckbox__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2 Hours</fullName>
+                    <default>false</default>
+                    <label>2 Hours</label>
+                </value>
+                <value>
+                    <fullName>4 Hours</fullName>
+                    <default>false</default>
+                    <label>4 Hours</label>
+                </value>
+                <value>
+                    <fullName>6 Hours</fullName>
+                    <default>false</default>
+                    <label>6 Hours</label>
+                </value>
+                <value>
+                    <fullName>Next Day</fullName>
+                    <default>false</default>
+                    <label>Next Day</label>
+                </value>
+                <value>
+                    <fullName>Next Week</fullName>
+                    <default>false</default>
+                    <label>Next Week</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>2 Hours</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>4 Hours</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>6 Hours</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Next Day</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Next Week</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Subject__c</fullName>
         <externalId>false</externalId>
         <label>Subject</label>
@@ -535,22 +611,63 @@
                     <default>false</default>
                     <label>Cooling off letter received</label>
                 </value>
+                <value>
+                    <fullName>Credit Expiration Date is approaching</fullName>
+                    <default>false</default>
+                    <label>Credit Report Expiration Date</label>
+                </value>
+                <value>
+                    <fullName>Loan is Aged over 30 Days</fullName>
+                    <default>false</default>
+                    <label>Loan is Aged over 30 Days</label>
+                </value>
+                <value>
+                    <fullName>Loan - Conditionally Approved</fullName>
+                    <default>false</default>
+                    <label>Loan - Conditionally Approved</label>
+                </value>
+                <value>
+                    <fullName>Underwriter Clear to Close</fullName>
+                    <default>false</default>
+                    <label>Underwriter Clear to Close</label>
+                </value>
+                <value>
+                    <fullName>FHA Case Number Expiration</fullName>
+                    <default>false</default>
+                    <label>FHA Case Number Expiration</label>
+                </value>
+                <value>
+                    <fullName>Pay Off Expiration Date</fullName>
+                    <default>false</default>
+                    <label>Pay Off Expiration Date</label>
+                </value>
+                <value>
+                    <fullName>Pay Off 1 Expiration Date</fullName>
+                    <default>false</default>
+                    <label>Pay Off 1 Expiration Date</label>
+                </value>
+                <value>
+                    <fullName>Pay Off 2 Expiration Date</fullName>
+                    <default>false</default>
+                    <label>Pay Off 2 Expiration Date</label>
+                </value>
+                <value>
+                    <fullName>Pay Off 3 Expiration Date</fullName>
+                    <default>false</default>
+                    <label>Pay Off 3 Expiration Date</label>
+                </value>
+                <value>
+                    <fullName>Appraisal Expiration Date</fullName>
+                    <default>false</default>
+                    <label>Appraisal Expiration Date</label>
+                </value>
+                <value>
+                    <fullName>Title Expiration Date</fullName>
+                    <default>false</default>
+                    <label>Title Expiration Date</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Days_in_Status__c</fullName>
-        <externalId>false</externalId>
-        <formula>TODAY() - DATEVALUE( Latest_Status_Change__c )</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Days in Status</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
@@ -586,21 +703,6 @@
     <sharingModel>ReadWrite</sharingModel>
     <startsWith>Vowel</startsWith>
     <visibility>Public</visibility>
-    <fieldSets>
-        <fullName>Sleep_Task</fullName>
-        <description>Sleeping Task</description>
-        <displayedFields>
-            <field>Sleep_TaskCheckbox__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <displayedFields>
-            <field>Sleep_Task__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </displayedFields>
-        <label>Sleep Task</label>
-    </fieldSets>
     <listViews>
         <fullName>All</fullName>
         <columns>NAME</columns>
@@ -616,40 +718,6 @@
         <columns>RECORDTYPE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
-    </listViews>
-    <listViews>
-        <fullName>Master_PCS_Slept_Items</fullName>
-        <columns>NAME</columns>
-        <columns>Priority__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Latest_Status_Change__c</columns>
-        <columns>Status__c</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Sleep_TaskCheckbox__c</columns>
-        <columns>Sleep_Task__c</columns>
-        <columns>OWNER.LAST_NAME</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Revision Requested Conditions,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS</value>
-        </filters>
-        <label>Master PCS Slept Items</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
     </listViews>
     <listViews>
         <fullName>Master_Conditions_Reviewed_by_UW</fullName>
@@ -717,6 +785,296 @@
         </sharedTo>
     </listViews>
     <listViews>
+        <fullName>Aged_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Related_Client_Name__c</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Loan is Aged over 30 Days</value>
+        </filters>
+        <label>Aged Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Final_Goals_Calls</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Related_Client_Name__c</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Underwriter Clear to Close</value>
+        </filters>
+        <label>Final Goals Calls</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Initial_Post_Suspense_Call</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Related_Client_Name__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Loan - Conditionally Approved</value>
+        </filters>
+        <label>Initial/Post Suspense Call</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Aged_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Related_Client_Name__c</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Loan is Aged over 30 Days</value>
+        </filters>
+        <label>Master Aged Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Final_Goals_Calls</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Related_Client_Name__c</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Underwriter Clear to Close</value>
+        </filters>
+        <label>Master Final Goals Calls</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Initial_Post_Suspense_Call</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Related_Client_Name__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Loan - Conditionally Approved</value>
+        </filters>
+        <label>Master Initial/Post Suspense Call</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_PCS_Slept_Items</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Sleep_TaskCheckbox__c</columns>
+        <columns>Sleep_Task__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS,Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <label>Master PCS Slept Items</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Priority_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Due_Date__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>contains</operation>
+            <value>FHA Case Number Expiration,Pay Off Expiration Date</value>
+        </filters>
+        <label>Master Priority Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>My_PCS_Slept_Items</fullName>
         <columns>NAME</columns>
         <columns>Priority__c</columns>
@@ -728,11 +1086,6 @@
         <columns>LoanStatus__c</columns>
         <filterScope>Mine</filterScope>
         <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Revision Requested Conditions,Ordered,Attempted</value>
-        </filters>
-        <filters>
             <field>Sleep_TaskCheckbox__c</field>
             <operation>equals</operation>
             <value>1</value>
@@ -740,9 +1093,46 @@
         <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
-            <value>Underwriter__c.PCS</value>
+            <value>Underwriter__c.PCS,Underwriter__c.PCS_Workflow</value>
         </filters>
         <label>PCS Sleeping Tasks</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Priority_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Due_Date__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>LoanStatus__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>contains</operation>
+            <value>FHA Case Number Expiration,Pay Off Expiration Date</value>
+        </filters>
+        <label>Priority Loans</label>
         <sharedTo>
             <role>Client_Care_Specialist</role>
             <role>Client_Care_Specialist_Lead</role>
@@ -783,6 +1173,95 @@
             </values>
             <values>
                 <fullName>Next Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ordered</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject__c</picklist>
+            <values>
+                <fullName>Appraisal Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conditions Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Title Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Items Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PCS_Workflow</fullName>
+        <active>true</active>
+        <label>PCS Workflow</label>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sleep_Task__c</picklist>
+            <values>
+                <fullName>2 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
@@ -866,6 +1345,10 @@
                 <fullName>Next Week</fullName>
                 <default>false</default>
             </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
         </picklistValues>
         <picklistValues>
             <picklist>Status__c</picklist>
@@ -915,14 +1398,6 @@
         </picklistValues>
     </recordTypes>
     <validationRules>
-        <fullName>Sleep_checked_must_select_time_rame</fullName>
-        <active>true</active>
-        <description>If checkbox is selected, must select a time frame</description>
-        <errorConditionFormula>AND( Sleep_TaskCheckbox__c  = TRUE, ISBLANK( TEXT( Sleep_Task__c) ))</errorConditionFormula>
-        <errorDisplayField>Sleep_Task__c</errorDisplayField>
-        <errorMessage>Must select a duration</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>UW_on_Loan</fullName>
         <active>true</active>
         <errorConditionFormula>ISBLANK(Loan__r.UW__c)</errorConditionFormula>
@@ -957,5 +1432,16 @@ ISPICKVAL(Status__c, 'Opened')
 )</errorConditionFormula>
         <errorDisplayField>Status__c</errorDisplayField>
         <errorMessage>You are not allowed to change the status</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_time_frame_selected</fullName>
+        <active>true</active>
+        <description>If checkbox is selected, must select a time frame</description>
+        <errorConditionFormula>AND(
+    ISPICKVAL( Sleep_Task__c , 'Other'),
+    ISBLANK( Due_Date__c )
+)</errorConditionFormula>
+        <errorDisplayField>Due_Date__c</errorDisplayField>
+        <errorMessage>Must select a duration</errorMessage>
     </validationRules>
 </CustomObject>
