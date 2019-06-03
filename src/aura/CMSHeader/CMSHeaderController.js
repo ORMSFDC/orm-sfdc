@@ -12,6 +12,17 @@
                    helper.GetMessagforDisplay(component, event, helper); 
                 }
             }
+
+            //get Related AE phone number onto Homepage
+            var action = component.get("c.getAEInfo");		
+		    action.setCallback(this,function(response){
+            var state = response.getState();            
+            if (state === "SUCCESS") {
+                component.set("v.Phone", response.getReturnValue());
+                console.log('phone: ',component.get('v.Phone'));
+            }
+        });
+        $A.enqueueAction(action);
        
 },
     doCookieSet:function(component, event, helper){

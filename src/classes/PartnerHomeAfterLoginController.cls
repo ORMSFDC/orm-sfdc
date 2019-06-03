@@ -90,4 +90,17 @@ public class PartnerHomeAfterLoginController{
              order by Link_sequence__c asc];
         return lenderslink;
     }
+
+    @AuraEnabled
+    public static String getAEInfo(String phone) {        
+      user u =[SELECT contact.Account.ORM_Phone__c FROM user WHERE  id=:userinfo.getUserId()];
+      String aePhone;
+      String p = u.contact.Account.ORM_Phone__c;
+       if(p == null){
+           aePhone = '(888) 980-2898';
+       }else{
+           aePhone = p;
+       }      
+    return aePhone; 
+    }
 }

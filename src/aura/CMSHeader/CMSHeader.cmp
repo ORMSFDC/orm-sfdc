@@ -1,34 +1,25 @@
 <aura:component controller="PartnerHomeAfterLoginController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
                 access="global">     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="Phone" type="String"/>
     <ltng:require styles="/resource/SLDS0122/assets/styles/salesforce-lightning-design-system.min.css"/>
-    <!--<div class="slds-grid slds-grid_align-center">
-       <div><p>Welcome,{!v.runningUser.FirstName}&nbsp;{!v.runningUser.LastName}</p>
-        </div>  </div> -->
         <head></head>
    <!-- <div class="ql-color-bar ql-color-bar-primary" ></div>-->
     <table><tr><td height="24px"></td></tr></table>
-    <div class="demo-only demo-only--sizing slds-grid slds-wrap" style="margin-left: 66px;">
-        
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap" style="margin-left: 66px;">        
         <div class="slds-size_1-of-3 ">
             <div class="slds-text-align_right" style="padding-top: 22px;">
                 <a href="/s/" style="text-decoration:none !important;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="awesomeAdmin" src="{!$Resource.ORMLogo}" width="450" height="350" /> 
                 </a></div>
-        </div>
-        <!--<div class="slds-size_1-of-2 slds-show_x-small">-->
-        
+        </div>        
         <div class="slds-size_1-of-2 ">
             <span class="medium-hide">
                 <div class="slds-text-align_right bodyText">
-                   <!-- {!$Label.c.Need_Guideline}-->
                     Need Guideline Info? Use &nbsp;<a onclick="{!c.doCookieSet}" href="#"> <img style="width:10%" src="{!$Resource.guru}" /> </a>      
-                    <div>Need help? Give us a call!  <a href="{!$Label.c.PartnerTelNo}"> {!$Label.c.PartnerTelNumber}  </a></div>
-                
-                </div>
-                
-            </span></div>
-        
+                <div>Need help? Give us a call!  <a href="{!$Label.c.PartnerTelNo}"> {!v.Phone}  </a></div>                
+            </div>
+            </span></div>        
     </div>
     
 </aura:component>
