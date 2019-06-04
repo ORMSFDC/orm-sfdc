@@ -8,5 +8,5 @@
 
     <div aura:id="newtag">
         {!v.body}
-    </div>
+    </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </aura:component>
