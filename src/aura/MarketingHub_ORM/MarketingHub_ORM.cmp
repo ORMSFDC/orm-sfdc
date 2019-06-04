@@ -15,7 +15,7 @@ controller="MarketingHub_Controller" access="global">
                 <b>Where we Lend</b>
             </div><br/><br/>     
 
-        <img src="{!$Resource.ORM_Map}" Style="Width:1400px; height:650px;"/>
+        <img src="{!$Resource.ORM_Map}" Style="Width:1200px; height:950px;"/>
     </div>   
 
 </aura:component>
