@@ -315,11 +315,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Account.E_sign_Addendum_Provider__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Account.Email__c</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -5165,6 +5160,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.E_sign_Addendum_Provider__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.E_sign_Addendum_Provider__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
