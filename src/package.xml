@@ -5684,6 +5684,8 @@
     <members>UW_Status_Change_Date-2</members>
     <members>uwtest_creation-2</members>
     <members>UW_Suspense_Requested-1</members>
+    <members>Updates_Dates_WRT_Checkboxes-13</members>
+    <members>Updates_Dates_WRT_Checkboxes-14</members>
     <name>Flow</name>
   </types>
   <types>
@@ -6499,6 +6501,7 @@
   </types>
   <types>
     <members>US_States</members>
+    <members>E_Sign_Addendum</members>
     <name>GlobalValueSet</name>
   </types>
   <types>
