@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <custom>false</custom>    
     <profileActionOverrides>
         <actionName>Tab</actionName>
@@ -10112,11 +10112,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Opportunity.E_sign_Addendum_Provider__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Opportunity.E_sign_Addendum_Received_Date__c</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -12484,6 +12479,11 @@
         <field>Loan_New__c.Underwriting_clear_to_close_date__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.E_sign_Addendum_Provider__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -13448,7 +13448,6 @@
         <tab>PCS_Tasks</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>UW_Dashboard</tab>
         <visibility>DefaultOn</visibility>
