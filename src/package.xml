@@ -5700,6 +5700,7 @@
     <members>Task_for_PCS_Before_Credit_Expiration_Date_new-9</members>
     <members>Loan_Dates_Update-10</members>
     <members>Task_to_PCS_when_LoanStatus_is_Updated-8</members>
+    <members>Task_to_PCS_when_LoanStatus_is_Updated-9</members>
     <name>Flow</name>
   </types>
   <types>
