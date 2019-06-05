@@ -666,6 +666,11 @@
                     <default>false</default>
                     <label>Title Expiration Date</label>
                 </value>
+                <value>
+                    <fullName>Counseling Expiration Date</fullName>
+                    <default>false</default>
+                    <label>Counseling Expiration Date</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
