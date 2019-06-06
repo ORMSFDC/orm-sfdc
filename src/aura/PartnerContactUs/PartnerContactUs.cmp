@@ -2,6 +2,7 @@
                 access="global">
     <link charset="utf-8" href="{!$Resource.AuthCss}" media="screen" rel="stylesheet" type="text/css"></link>
     <link charset="utf-8" href="{!$Resource.GlobalCss}" media="screen" rel="stylesheet" type="text/css"></link>
+    <aura:attribute name="Link" type="String" default="https://ormmortgageservices.my.salesforce.com/sfc/p/390000004ayX/a/390000015ACm/wCxsH2ilJ2ipWb997HfY5xqgNa.J8krInHtr7donsKY"/>
    <!-- <body id="category_sign_in" class="signed_out"> -->
         
         <footer>
@@ -10,18 +11,19 @@
                     <div>
                         <b><strong>ORMS FHA Lender ID Number:</strong></b> 2165000074.
                     
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                       
                         <b><strong>Email: </strong></b> <ui:outputURL value="mailto:ORMSSupport@onereverse.com"   label="ORMSSupport@onereverse.com"/>
 
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <b><strong>Title/CPL/HOI/Flood:</strong></b> One Reverse Mortgage,LLC ISAOA, 4445 Eastgate Mall,Ste 320, San Diego,CA 92121.                                
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <b><strong>Title/CPL/HOI/Flood:</strong></b> One Reverse Mortgage,LLC ISAOA, 4445 Eastgate Mall,Ste 320, San Diego,CA 92121.      
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a onclick="{!c.navigateToURL}"><b><u>Fair Lending Policy</u></b></a>
                     </div> 
             </div><br/>
             
             <div class="slds-col" style="padding-left:14%;  font-family:Myriad Pro; font-size:16px; font-style:italic ">                           
-                <div>                                    
+                <div>    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                
                     &copy;{!$Label.c.partnerCopyright}
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
