@@ -82,11 +82,13 @@ public with sharing class PartnerHomeAfterLoginControllerTest{
             Profile  getProfile=[select id from profile where name='Prospective Partner User'];
             string ProfileId = getProfile.Id;
             UserRole  UserRoleID=[select id from UserRole where name='Loan Officer'];
+            string phone = '9999999999';
             Test.startTest();
             integer msg = PartnerHomeAfterLoginController.getMessage();
             List<LenderLink__c> lst = PartnerHomeAfterLoginController.getLenderLinksWithAEData();
             List<LenderLink__c> lst1 = PartnerHomeAfterLoginController.getLenderLinksData();
             integer Retmsg = PartnerHomeAfterLoginController.getContactId(user1.id);
+            string p = PartnerHomeAfterLoginController.getAEInfo(phone);
             Test.stopTest();
         }
     }
