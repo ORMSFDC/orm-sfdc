@@ -11,50 +11,6 @@
         <template>unfiled$public/AE_notification_when_CRA_value_changes</template>
     </alerts>
     <alerts>
-        <fullName>QLMS_AE_App_Sent_notification_email</fullName>
-        <description>QLMS AE App Sent notification email</description>
-        <protected>false</protected>
-        <recipients>
-            <field>QLMS_Email__c</field>
-            <type>email</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>AE_Notification_Emails/QLMS_AE_App_Sent_notification</template>
-    </alerts>
-    <alerts>
-        <fullName>QLMS_AE_Approved_notification_email</fullName>
-        <description>QLMS AE Approved notification email</description>
-        <protected>false</protected>
-        <recipients>
-            <field>QLMS_Email__c</field>
-            <type>email</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>AE_Notification_Emails/QLMS_AE_Approved_notification</template>
-    </alerts>
-    <alerts>
-        <fullName>QLMS_AE_Denied_notification_email</fullName>
-        <description>QLMS AE Denied notification email</description>
-        <protected>false</protected>
-        <recipients>
-            <field>QLMS_Email__c</field>
-            <type>email</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>AE_Notification_Emails/QLMS_AE_Denied_notification</template>
-    </alerts>
-    <alerts>
-        <fullName>QLMS_AE_In_Process_notification_email</fullName>
-        <description>QLMS AE In Process notification email</description>
-        <protected>false</protected>
-        <recipients>
-            <field>QLMS_Email__c</field>
-            <type>email</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>AE_Notification_Emails/QLMS_AE_In_Process_notification</template>
-    </alerts>
-    <alerts>
         <fullName>Application_Approved</fullName>
         <ccEmails>dmcguffin@outlook.com</ccEmails>
         <description>Application Approved</description>
@@ -66,6 +22,50 @@
         <senderAddress>ormssupport@onereverse.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>unfiled$public/Account_Approved_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>QLMS_AE_App_Sent_notification_email</fullName>
+        <description>QLMS AE App Sent notification email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>QLMS_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QLMS_AE_Notification_Emails/QLMS_AE_App_Sent_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>QLMS_AE_Approved_notification_email</fullName>
+        <description>QLMS AE Approved notification email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>QLMS_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QLMS_AE_Notification_Emails/QLMS_AE_Approved_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>QLMS_AE_Denied_notification_email</fullName>
+        <description>QLMS AE Denied notification email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>QLMS_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QLMS_AE_Notification_Emails/QLMS_AE_Denied_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>QLMS_AE_In_Process_notification_email</fullName>
+        <description>QLMS AE In Process notification email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>QLMS_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>QLMS_AE_Notification_Emails/QLMS_AE_In_Process_notification</template>
     </alerts>
     <fieldUpdates>
         <fullName>App_Processed_Date</fullName>

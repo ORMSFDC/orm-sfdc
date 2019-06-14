@@ -10,5 +10,20 @@
         <sharedTo>danny@onereverse.com</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>josecorona@onereverse.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>joshevink@onereverse.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>sarahsandhu@onereverse.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
     <name>Chloe Share Folder</name>
 </ReportFolder>

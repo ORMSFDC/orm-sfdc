@@ -9,14 +9,19 @@
     <dashboardColorPalette>unity</dashboardColorPalette>
     <dashboardGridLayout>
         <dashboardGridComponents>
-            <colSpan>4</colSpan>
+            <colSpan>6</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <flexComponentProperties>
                     <flexTableColumn>
-                        <reportColumn>Contact.ORM_Account_Executive_Name__c</reportColumn>
+                        <reportColumn>Account.Team__c</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>grouping</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>OWNER_FULL_NAME</reportColumn>
                         <showTotal>true</showTotal>
                         <type>grouping</type>
                     </flexTableColumn>
@@ -36,7 +41,7 @@
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Contact.ORM_Account_Executive_Name__c</sortColumn>
+                        <sortColumn>Account.Team__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -48,12 +53,17 @@
             <rowSpan>5</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>5</colSpan>
-            <columnIndex>4</columnIndex>
+            <colSpan>6</colSpan>
+            <columnIndex>6</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <flexComponentProperties>
+                    <flexTableColumn>
+                        <reportColumn>Account.Team__c</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>grouping</type>
+                    </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Contact.ORM_Account_Executive_Name__c</reportColumn>
                         <showTotal>true</showTotal>
@@ -75,7 +85,7 @@
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Contact.ORM_Account_Executive_Name__c</sortColumn>
+                        <sortColumn>Account.Team__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -87,12 +97,17 @@
             <rowSpan>5</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>4</colSpan>
+            <colSpan>6</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <flexComponentProperties>
+                    <flexTableColumn>
+                        <reportColumn>Account.Team__c</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>grouping</type>
+                    </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Contact.ORM_Account_Executive_Name__c</reportColumn>
                         <showTotal>true</showTotal>
@@ -114,7 +129,7 @@
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Contact.ORM_Account_Executive_Name__c</sortColumn>
+                        <sortColumn>Account.Team__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -126,12 +141,17 @@
             <rowSpan>5</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>5</colSpan>
-            <columnIndex>4</columnIndex>
+            <colSpan>6</colSpan>
+            <columnIndex>6</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <flexComponentProperties>
+                    <flexTableColumn>
+                        <reportColumn>Account.Team__c</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>grouping</type>
+                    </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Contact.ORM_Account_Executive_Name__c</reportColumn>
                         <showTotal>true</showTotal>
@@ -153,7 +173,7 @@
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Contact.ORM_Account_Executive_Name__c</sortColumn>
+                        <sortColumn>Account.Team__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -165,104 +185,114 @@
             <rowSpan>5</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>4</colSpan>
+            <colSpan>12</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <flexComponentProperties>
                     <flexTableColumn>
-                        <reportColumn>Contact.ORM_Account_Executive_Name__c</reportColumn>
+                        <reportColumn>Loan_New__c.ORMS_AE__c</reportColumn>
                         <showTotal>true</showTotal>
                         <type>grouping</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_Incomplete__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_Inc__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_App_Requested__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_App_Req__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_Full_Package_Rec__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_WF_Full_Package__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_Full_Package_Inc__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_Sub_to_Lender__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_In_Processing__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_Loan_Awaiting_Review__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>aggregate</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>s!Loan_New__c.KPI_In_Processing__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Contact.ORM_Account_Executive_Name__c</sortColumn>
+                        <sortColumn>Loan_New__c.ORMS_AE__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
-                <header>KPI Pipeline Pre Folder Received Complete</header>
-                <report>Executive_Dashboard/Saved_Scenarios_KPI_report_YTD_3GC11112</report>
+                <header>KPI Pipeline Real Time Pre Folder</header>
+                <report>Executive_Dashboard/KPI_Real_Time_kRn</report>
             </dashboardComponent>
             <rowIndex>10</rowIndex>
             <rowSpan>5</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>5</colSpan>
-            <columnIndex>4</columnIndex>
+            <colSpan>12</colSpan>
+            <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <componentType>FlexTable</componentType>
                 <flexComponentProperties>
                     <flexTableColumn>
-                        <reportColumn>Contact.ORM_Account_Executive_Name__c</reportColumn>
+                        <reportColumn>Loan_New__c.ORMS_AE__c</reportColumn>
                         <showTotal>true</showTotal>
                         <type>grouping</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_In_UW_Review__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_In_UW_Review__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_Conditionally_App__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_Cond_Appr__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_UW_Clear_to_Close__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_Clear_to_Close__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_Awaiting_Closing__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_HUD_Review__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>s!Contact.KPI_Closed__c</reportColumn>
+                        <reportColumn>s!Loan_New__c.KPI_Docs_Out_To_Settlement__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>aggregate</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>s!Loan_New__c.KPI_Closed_Awaiting_Funding__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Contact.ORM_Account_Executive_Name__c</sortColumn>
+                        <sortColumn>Loan_New__c.ORMS_AE__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
                 </flexComponentProperties>
-                <header>KPI Pipeline Folder to Close</header>
-                <report>Executive_Dashboard/Saved_Scenarios_KPI_report_YTD_3GC11112</report>
+                <header>KPI Pipeline Real Time Post Folder</header>
+                <report>Executive_Dashboard/KPI_Real_Time_kRn</report>
             </dashboardComponent>
-            <rowIndex>10</rowIndex>
+            <rowIndex>15</rowIndex>
             <rowSpan>5</rowSpan>
         </dashboardGridComponents>
-        <numberOfColumns>9</numberOfColumns>
+        <numberOfColumns>12</numberOfColumns>
         <rowHeight>80</rowHeight>
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>

@@ -1,0 +1,173 @@
+<apex:page standardStylesheets="false" sidebar="false" applyBodyTag="false" docType="html-5.0" showHeader="true">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head> 
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/modernizr-1.7.min.js') }"/>
+        <apex:stylesheet value="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+        <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
+     
+        <apex:includeScript value="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"/>
+        <apex:includeScript value="{!$Resource.rh2__svg4everybody}"/>
+        <apex:stylesheet value="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+    </head> 
+    <style>
+    	.linkTile
+    	{
+    		height:200px !important;
+    		width:300px !important;
+    	}
+    	a:hover{
+    		text-decoration:none !important;
+    	}
+    </style>
+    <apex:slds />
+    <script>
+    	sessionStorage.setItem('rootPage','home');
+    </script>
+	
+    <div class="slds-scope" role="main">
+    	<div class="slds-card">
+    		<header class="slds-card__header slds-text-heading_small slds-theme_alt-inverse">
+    			<h1 class="slds-text-heading_large">Welcome to Rollup Helper!</h1>
+    		</header>
+    		<section class="slds-card__body" >
+    		<br/>
+		    	<table style="margin-left:auto !important; margin-right:auto !important; max-width:920px !important;">
+		    		<tr>
+		    			
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<a href="{!URLFOR($Page.PS_SelectMaster)}">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">Create</h2>
+		    					<span class="slds-icon__container slds-icon-action-new">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/new_120.png')}" 
+									>
+								</img>
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">A New Rollup</h3>
+		    				</div>
+		    				</a>
+		    			</td>
+		    			
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<a href="{!URLFOR($Page.PS_AllSettings)}">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">View</h2>
+		    					<span class="slds-icon__container slds-icon-action-update-status">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/update_status_120.png')}" 
+									>
+								</img>
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">Existing Rollups</h3>
+		    				</div>
+		    				</a>
+		    			</td>
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<a href="{!URLFOR($Page.PS_ImportData)}">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">Export</h2>
+		    					<span class="slds-icon__container slds-icon-action-fallback">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/download_120.png')}" 
+									>
+								</img>
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">To CSV File</h3>
+		    				</div>
+		    				</a>
+		    			</td>
+	    			</tr>
+	    			<tr>
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<a href="{!URLFOR($Page.PS_healthCheck)}">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">View</h2>
+		    					<span class="slds-icon__container slds-icon-action-question-post-action">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/approval_120.png')}" 
+									>
+								</img>
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">Health Check</h3>
+		    				</div>
+		    				</a>
+		    			</td>		    		
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<a href="{!URLFOR($Page.PS_helpPage)}">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">Help</h2>
+		    					<span class="slds-icon__container slds-icon-action-question-post-action">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/question_post_action_120.png')}" 
+									>
+								</img>
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">And FAQ</h3>
+		    				</div>
+		    				</a>
+		    			</td>
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<a href="{!URLFOR($Page.PS_Select_Object)}">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">Enable</h2>
+		    					<span class="slds-icon__container slds-icon-action-fallback">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/fallback_120.png')}" 
+									>
+								</img>
+								
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">Real Time</h3>
+		    				</div>
+		    				</a>
+		    			</td>
+	    			</tr>
+	    			<tr>
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<apex:outputLink target="_blank" value="http://www.passagetechnology.com/use-cases">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">Browse</h2>
+		    					<span class="slds-icon__container slds-icon-action-email">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/canvas_120.png')}" 
+									>
+								</img>
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">Use Cases</h3>
+		    				</div>
+		    				</apex:outputLink>
+		    			</td>
+		    			<td class="linkTile slds-button slds-button_neutral">
+		    				<a href="https://success.salesforce.com/_ui/core/chatter/groups/GroupProfilePage?g=0F9300000009QWe">
+		    				<div>
+		    					<h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">Get Help</h2>
+		    					<span class="slds-icon__container slds-icon-action-email">
+		    					<img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/announcement_120.png')}" 
+									>
+								</img>
+		    					</span>
+		        				<h3 class="slds-text-heading_medium" style="padding-top:15px;">From the Community</h3>
+		    				</div>
+		    				</a>
+		    			</td>
+		    			<td class="linkTile slds-button slds-button_neutral">
+                            <a href="https://passagetechnology.force.com/Services" target="_blank">
+                            <div>
+                                <h2 class="slds-text-heading_large" style="padding-bottom:15px; padding-top:15px;">Get Custom Dev</h2>
+                                <span class="slds-icon__container slds-icon-action-email">
+	                                <img class="slds-icon slds-icon_large" src="{!URLFOR($Asset.SLDS, 'assets/icons/action/apex_120.png')}">
+	                                </img>
+                                </span>
+                                <h3 class="slds-text-heading_medium" style="padding-top:15px;">For Your Org</h3>
+                            </div>
+                            </a>
+                        </td>
+		    		</tr>
+		    
+		    	</table>
+    		</section>
+    		<footer><hr/>
+    			<div style="padding-left:15px;">Want to give us feedback?  Need assistance?  Contact 
+    					<a href="mailto:support@passagetech.com">support@passagetech.com</a>.</div>
+    		</footer>
+    	</div>
+    </div>
+    <br/>
+    <c:PS_additionalInformation ></c:PS_additionalInformation>  
+    </html>
+</apex:page>

@@ -19,9 +19,6 @@
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.ORMS_AE__c</field>
-    </columns>
-    <columns>
         <field>Loan_New__c.Waiting_for_Full_Package_Date0__c</field>
     </columns>
     <filter>
@@ -44,7 +41,12 @@
             <value>THIS_MONTH</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Loan_New__c.ORMS_AE__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Applications Sent Out MTD</name>
     <params>
         <name>co</name>

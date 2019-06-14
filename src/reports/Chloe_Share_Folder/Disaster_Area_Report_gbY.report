@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Loan_Number__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Mortgage_Applied_for__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Rate_Type__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Subject_Property_City__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Subject_Property_County__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Subject_Property_State__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Subject_Property_Zip_Code__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanStatus__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Loan_New__c.ORMS_AE__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test AE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Loan Submission Received- Awaiting Review,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Docs Out to Settlement Agent,Closed - Awaiting Funding,Funded,Suspended</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Disaster Area Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Loan_New__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Loan_New__c.LoanStatus__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

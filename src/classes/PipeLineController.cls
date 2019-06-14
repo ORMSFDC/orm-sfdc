@@ -824,30 +824,40 @@ public class PipeLineController {
         }
     }
     
-     @AuraEnabled //Bala - A task will be created for PCS/AE based on LoanStatus, when an Appraisal is requested -- 4/20
+     @AuraEnabled //Bala - A task will be created for PCS/AE based on LoanStatus, when an Appraisal is requested -- 4/20 
     public static void createTask(String LoanID){
         
         List<Loan_New__c> ls = new List<Loan_New__c>();
         
         System.debug('>>>'+LoanID);
-         ls =  [SELECT Id, Name, LoanStatus__c
+         ls =  [SELECT Id, Name, LoanStatus__c, PCS_at_Loan_Level__r.id
                FROM Loan_New__c 
                where Id = :LoanID
                and IsActiveFlag__c=: true 
                and LoanCompleteFlag__c=: true               
-               ORDER BY LoanStatus__c];           
-        user u = [SELECT contactId, contact.AccountId FROM user WHERE id=:userinfo.getUserId()];        
-        system.debug('###'+u.ContactId);
+               ORDER BY LoanStatus__c];                   
+        user u = [SELECT contactId, contact.AccountId FROM user WHERE id=:userinfo.getUserId()];  
         
+        Loan_New__c l = new Loan_New__c();
+        l = [SELECT PCS_at_Loan_Level__r.id FROM Loan_New__c WHERE Id = :LoanID];
         Account a = new Account();
-        a = [SELECT name, Account_Executive_Name__c, Assigned_PCS__r.id  FROM Account WHERE id =:u.contact.AccountId ];        
-        system.debug('$$$$' +a.Account_Executive_Name__c);        
+        a = [SELECT name, Account_Executive_Name__c, Assigned_PCS__r.id  FROM Account WHERE id =:u.contact.AccountId ]; 
         
+        String pcsLoan = l.PCS_at_Loan_Level__r.id;
+        String pcsPartner = a.Assigned_PCS__r.id;
+        String assignId;
+
+        if(pcsLoan != null){
+            assignId = pcsLoan;
+        }else{
+            assignId = pcsPartner;
+        }
+
          // Only create a task for PCS if these loan statuses
          if(ls.size() > 0 && a != null && (ls[0].LoanStatus__c == 'Loan Submission Received- Awaiting Review' || ls[0].LoanStatus__c == 'In Processing' || ls[0].LoanStatus__c == 'In Underwriting Review' || ls[0].LoanStatus__c == 'Conditionally Approved' ))
          {   
               Task t = new Task();
-              t.OwnerId = a.Assigned_PCS__r.id;
+              t.OwnerId = assignId;
               t.Subject = 'An Appraisal has been requested by this Partner';
               t.Status = 'Open';
               t.Priority = 'Normal';                
@@ -870,7 +880,7 @@ public class PipeLineController {
     }   
    
     
-     @AuraEnabled //Bala - A task will be created for PCS/AE based on LoanStatus, when Full Application is submitted  4/20
+     @AuraEnabled //Bala - A task will be created for AE based on LoanStatus, when Full Application is submitted  4/20
     public static string createLoanTask(String LoanID){
         
         List<Loan_New__c> ls = new List<Loan_New__c>();

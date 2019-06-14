@@ -5,7 +5,7 @@
  *
  * changelog:
  * 04/22/2019: Sahitya - added new criterial to display Created date in the frontend and backend
- *                       based on data upload from RV. modified UI, do not display status date for Outstanding Conditions 
+ *                       based on data upload from RV. modified UI, do not display status date for Outstanding Conditions
  */
 public class PipelineConditionPDFController {
     
@@ -29,7 +29,7 @@ public static List<ConditionResponsePipeline> getdata() {
         List<Condition__c> objCleared =new List<Condition__c>();
         try
         {
-            objOutstanding=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Outstanding' ORDER BY LastModifiedDate asc];
+            objOutstanding=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Outstanding' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objOutstanding)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -60,7 +60,7 @@ public static List<ConditionResponsePipeline> getdata() {
                 objres.Id=ObjConc.Id;
                 ObjConOutstanding.add(objres);
             }
-            objRevisionRequested=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Revision Requested' ORDER BY LastModifiedDate asc];
+            objRevisionRequested=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Revision Requested' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objRevisionRequested)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -91,7 +91,7 @@ public static List<ConditionResponsePipeline> getdata() {
                 objres.Id=ObjConc.Id;
                 ObjConRevisionRequested.add(objres);
             }
-            objCancelled=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Cancelled' ORDER BY LastModifiedDate asc];
+            objCancelled=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Cancelled' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objCancelled)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -122,7 +122,7 @@ public static List<ConditionResponsePipeline> getdata() {
                 objres.Id=ObjConc.Id;
                 ObjConCancelled.add(objres);
             }
-            objCleared=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Cleared' ORDER BY LastModifiedDate asc];
+            objCleared=[Select Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c from Condition__c where Loan_Id__c=:LoanId and Status__c='Cleared' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objCleared)
             {
                 ConditionResponse objres=new ConditionResponse();                

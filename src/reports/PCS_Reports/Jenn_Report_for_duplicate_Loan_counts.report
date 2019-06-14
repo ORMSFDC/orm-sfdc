@@ -19,10 +19,7 @@
         <field>Loan_New__c$Loan_Status_Change_Date__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c$In_Processing_Date__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c$Mortgage_Applied_for__c</field>
+        <field>Loan_New__c$In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c$PCS_at_Loan_Level__c</field>
@@ -34,10 +31,13 @@
         <field>Loan_New__c$Related_Partner__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c$Remove_Dups_Loans__c</field>
+        <field>Loan_New__c$ORMS_AE__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c$ORMS_AE__c</field>
+        <field>Loan_New__c$Using_Title_Source_as_the_Closing_Agent__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c$Remove_Dups_Loans__c</field>
     </columns>
     <filter>
         <criteriaItems>

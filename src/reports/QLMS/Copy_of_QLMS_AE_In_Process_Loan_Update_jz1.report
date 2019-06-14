@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts.Loans__r$LoanStatus__c</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts.Loans__r$LoanOfficer__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Contacts.Loans__r$LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Waiting for Full Package,In Underwriting Review,Withdrawn,Denied</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$QLMS_Account_Executive__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$QLMS_Account_Executive__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Mike DePugh</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$QLMS_Account_Executive__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>QLMS House Accounts In Process Updates</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Loans_Accounts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Contacts.Loans__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

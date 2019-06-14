@@ -981,18 +981,6 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>InitialUnpaidPrincipalBalance__c</fullName>
-        <externalId>false</externalId>
-        <label>InitialUnpaidPrincipalBalance*</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>Initial_Call_Date__c</fullName>
         <externalId>false</externalId>
         <label>Initial Call Date</label>
@@ -3388,139 +3376,6 @@ IF(
         </valueSet>
     </fields>
     <fields>
-        <fullName>LoanStatus__c</fullName>
-        <externalId>false</externalId>
-        <label>LoanStatus*</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Incomplete</fullName>
-                    <default>true</default>
-                    <label>Application Incomplete</label>
-                </value>
-                <value>
-                    <fullName>Proposal</fullName>
-                    <default>false</default>
-                    <label>Application Requested</label>
-                </value>
-                <value>
-                    <fullName>Waiting for Full Package</fullName>
-                    <default>false</default>
-                    <label>Waiting for Full Package</label>
-                </value>
-                <value>
-                    <fullName>Application Package Received</fullName>
-                    <default>false</default>
-                    <label>Submitted to Lender</label>
-                </value>
-                <value>
-                    <fullName>Loan Submission Received- Awaiting Review</fullName>
-                    <default>false</default>
-                    <label>Loan Submission Received- Awaiting Review</label>
-                </value>
-                <value>
-                    <fullName>Full Application Received - Incomplete</fullName>
-                    <default>false</default>
-                    <label>Loan Submitted - Incomplete</label>
-                </value>
-                <value>
-                    <fullName>In Processing</fullName>
-                    <default>false</default>
-                    <label>In Processing</label>
-                </value>
-                <value>
-                    <fullName>In Underwriting Review</fullName>
-                    <default>false</default>
-                    <label>In Underwriting Review</label>
-                </value>
-                <value>
-                    <fullName>Conditionally Approved</fullName>
-                    <default>false</default>
-                    <label>Conditionally Approved</label>
-                </value>
-                <value>
-                    <fullName>Underwriting Clear to Close</fullName>
-                    <default>false</default>
-                    <label>Clear to Close</label>
-                </value>
-                <value>
-                    <fullName>In final HUD Review</fullName>
-                    <default>false</default>
-                    <label>In Final HUD Review</label>
-                </value>
-                <value>
-                    <fullName>Docs Out to Settlement Agent</fullName>
-                    <default>false</default>
-                    <label>Docs Out to Settlement Agent</label>
-                </value>
-                <value>
-                    <fullName>Closed - Awaiting Funding</fullName>
-                    <default>false</default>
-                    <label>Closed - Awaiting Funding</label>
-                </value>
-                <value>
-                    <fullName>Funded</fullName>
-                    <default>false</default>
-                    <label>Loan Funded</label>
-                </value>
-                <value>
-                    <fullName>Loan Rescinded</fullName>
-                    <default>false</default>
-                    <label>Loan Rescinded</label>
-                </value>
-                <value>
-                    <fullName>Application Approved but Not Accepted</fullName>
-                    <default>false</default>
-                    <label>Application Approved but Not Accepted</label>
-                </value>
-                <value>
-                    <fullName>File Closed for Incompleteness</fullName>
-                    <default>false</default>
-                    <label>File Closed for Incompleteness</label>
-                </value>
-                <value>
-                    <fullName>Suspended</fullName>
-                    <default>false</default>
-                    <label>Suspended</label>
-                </value>
-                <value>
-                    <fullName>Withdrawn</fullName>
-                    <default>false</default>
-                    <label>Withdrawn</label>
-                </value>
-                <value>
-                    <fullName>Denied</fullName>
-                    <default>false</default>
-                    <label>Denied</label>
-                </value>
-                <value>
-                    <fullName>Sandbox</fullName>
-                    <default>false</default>
-                    <label>Sandbox</label>
-                </value>
-                <value>
-                    <fullName>Awaiting Closing</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Awaiting Closing</label>
-                </value>
-                <value>
-                    <fullName>Cancelled/Denied</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>Cancelled/Denied</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Account_Type__c</fullName>
         <externalId>false</externalId>
         <formula>TEXT ( Related_Partner__r.AE_Partner_Type__c )</formula>
@@ -3607,19 +3462,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>DateTime</type>
-    </fields>
-    <fields>
-        <fullName>Folder_to_Close_Days__c</fullName>
-        <externalId>false</externalId>
-        <formula>Closing_Date__c -  In_Processing_Date__c</formula>
-        <label>Folder to Close Days</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Formula_Closed__c</fullName>
@@ -4014,65 +3856,6 @@ IF(
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Credit_Reissue_Vendor__c</fullName>
-        <externalId>false</externalId>
-        <label>Credit Reissue Vendor</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>KFD</fullName>
-                    <default>false</default>
-                    <label>KFD</label>
-                </value>
-                <value>
-                    <fullName>CredStar</fullName>
-                    <default>false</default>
-                    <label>CredStar</label>
-                </value>
-                <value>
-                    <fullName>Credco</fullName>
-                    <default>false</default>
-                    <label>Credco</label>
-                </value>
-                <value>
-                    <fullName>Equifax</fullName>
-                    <default>false</default>
-                    <label>Equifax</label>
-                </value>
-                <value>
-                    <fullName>FundingSuite</fullName>
-                    <default>false</default>
-                    <label>FundingSuite</label>
-                </value>
-                <value>
-                    <fullName>ADV</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>ADV</label>
-                </value>
-                <value>
-                    <fullName>CD</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>CD</label>
-                </value>
-                <value>
-                    <fullName>CPLUS</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>CPLUS</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Credit_Satisfactory__c</fullName>
         <externalId>false</externalId>
         <label>Credit Satisfactory</label>
@@ -4134,24 +3917,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>DocViewer_Link__c</fullName>
-        <description>This link cannot be edited - it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</description>
-        <externalId>false</externalId>
-        <formula>IF( 
-ISBLANK(LoanNumber__c ), 
-HYPERLINK("http://documentviewer/documentviewerbeta/#/", ''), 
-HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Please click here to view the documents') 
-)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>This link cannot be edited - "it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</inlineHelpText>
-        <label>DocViewer Link</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Escrow_Funds_Required__c</fullName>
@@ -4556,40 +4321,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>PCS_at_Loan_Level__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <inlineHelpText>PCS at loan level can be different from PCS at Partner level</inlineHelpText>
-        <label>PCS at Loan Level</label>
-        <lookupFilter>
-            <active>true</active>
-            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
-            <filterItems>
-                <field>User.Profile.Name</field>
-                <operation>equals</operation>
-                <value>Account Executive/PCS</value>
-            </filterItems>
-            <filterItems>
-                <field>User.UserRole.Name</field>
-                <operation>equals</operation>
-                <value>Partner Care Specialist</value>
-            </filterItems>
-            <filterItems>
-                <field>User.UserRole.Name</field>
-                <operation>equals</operation>
-                <value>Partner Care Specialist Lead</value>
-            </filterItems>
-            <isOptional>false</isOptional>
-        </lookupFilter>
-        <referenceTo>User</referenceTo>
-        <relationshipName>Loans</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>POA_NonBorrowing_Title_Holder__c</fullName>
@@ -6530,6 +6261,285 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>Credit_Reissue_Vendor__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Reissue Vendor</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CredStar</fullName>
+                    <default>false</default>
+                    <label>CredStar</label>
+                </value>
+                <value>
+                    <fullName>Credco</fullName>
+                    <default>false</default>
+                    <label>Credco</label>
+                </value>
+                <value>
+                    <fullName>Equifax</fullName>
+                    <default>false</default>
+                    <label>Equifax</label>
+                </value>
+                <value>
+                    <fullName>FundingSuite</fullName>
+                    <default>false</default>
+                    <label>FundingSuite</label>
+                </value>
+                <value>
+                    <fullName>KFD</fullName>
+                    <default>false</default>
+                    <label>KFD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Days_After_FRC__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( OR
+(ISPICKVAL ( LoanStatus__c , "Suspended") , ISPICKVAL ( LoanStatus__c , "In Processing"), ISPICKVAL ( LoanStatus__c , "In Underwriting Review") , ISPICKVAL ( LoanStatus__c , "Conditionally Approved") , ISPICKVAL ( LoanStatus__c , "Clear to Close") , ISPICKVAL ( LoanStatus__c , "In Final HUD Review") , ISPICKVAL ( LoanStatus__c , "Docs Out to Settlement Agent") ), NOW() -  In_Underwriting_Review_Date__c, 0)</formula>
+        <label>Days After FRC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocViewer_Link__c</fullName>
+        <description>This link cannot be edited - it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(LoanNumber__c ), 
+HYPERLINK("http://documentviewer/documentviewer/#/", ''), 
+HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please click here to view the documents') 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This link cannot be edited - "it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</inlineHelpText>
+        <label>DocViewer Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Folder_to_Close_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>Closing_Date__c -   DATEVALUE(In_Underwriting_Review_Date__c)</formula>
+        <label>Folder to Close Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InitialUnpaidPrincipalBalance__c</fullName>
+        <externalId>false</externalId>
+        <label>InitialUnpaidPrincipalBalance*</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LoanStatus__c</fullName>
+        <externalId>false</externalId>
+        <label>LoanStatus*</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>true</default>
+                    <label>Application Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Proposal</fullName>
+                    <default>false</default>
+                    <label>Application Requested</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Full Package</fullName>
+                    <default>false</default>
+                    <label>Waiting for Full Package</label>
+                </value>
+                <value>
+                    <fullName>Application Package Received</fullName>
+                    <default>false</default>
+                    <label>Submitted to Lender</label>
+                </value>
+                <value>
+                    <fullName>Loan Submission Received- Awaiting Review</fullName>
+                    <default>false</default>
+                    <label>Loan Submission Received- Awaiting Review</label>
+                </value>
+                <value>
+                    <fullName>Full Application Received - Incomplete</fullName>
+                    <default>false</default>
+                    <label>Loan Submitted - Incomplete</label>
+                </value>
+                <value>
+                    <fullName>In Processing</fullName>
+                    <default>false</default>
+                    <label>In Processing</label>
+                </value>
+                <value>
+                    <fullName>In Underwriting Review</fullName>
+                    <color>#33FF33</color>
+                    <default>false</default>
+                    <label>In Underwriting Review</label>
+                </value>
+                <value>
+                    <fullName>Conditionally Approved</fullName>
+                    <color>#33CC00</color>
+                    <default>false</default>
+                    <label>Conditionally Approved</label>
+                </value>
+                <value>
+                    <fullName>Underwriting Clear to Close</fullName>
+                    <default>false</default>
+                    <label>Clear to Close</label>
+                </value>
+                <value>
+                    <fullName>In final HUD Review</fullName>
+                    <default>false</default>
+                    <label>In Final HUD Review</label>
+                </value>
+                <value>
+                    <fullName>Docs Out to Settlement Agent</fullName>
+                    <default>false</default>
+                    <label>Docs Out to Settlement Agent</label>
+                </value>
+                <value>
+                    <fullName>Closed - Awaiting Funding</fullName>
+                    <default>false</default>
+                    <label>Closed - Awaiting Funding</label>
+                </value>
+                <value>
+                    <fullName>Funded</fullName>
+                    <default>false</default>
+                    <label>Loan Funded</label>
+                </value>
+                <value>
+                    <fullName>Loan Rescinded</fullName>
+                    <default>false</default>
+                    <label>Loan Rescinded</label>
+                </value>
+                <value>
+                    <fullName>Application Approved but Not Accepted</fullName>
+                    <default>false</default>
+                    <label>Application Approved but Not Accepted</label>
+                </value>
+                <value>
+                    <fullName>File Closed for Incompleteness</fullName>
+                    <default>false</default>
+                    <label>File Closed for Incompleteness</label>
+                </value>
+                <value>
+                    <fullName>Suspended</fullName>
+                    <color>#CC0000</color>
+                    <default>false</default>
+                    <label>Suspended</label>
+                </value>
+                <value>
+                    <fullName>Withdrawn</fullName>
+                    <default>false</default>
+                    <label>Withdrawn</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+                <value>
+                    <fullName>Sandbox</fullName>
+                    <default>false</default>
+                    <label>Sandbox</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Closing</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Awaiting Closing</label>
+                </value>
+                <value>
+                    <fullName>Cancelled/Denied</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Cancelled/Denied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PCS_at_Loan_Level__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>PCS at loan level can be different from PCS at Partner level</inlineHelpText>
+        <label>PCS at Loan Level</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Account Executive/PCS</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Partner Care Specialist</value>
+            </filterItems>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Partner Care Specialist Lead</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Loans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>QLMS_CommonID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Related_Partner__r.QLMS_CommonID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>QLMS CommonID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
@@ -6590,35 +6600,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
   <sharingModel>ReadWrite</sharingModel>
   <visibility>Public</visibility>
     <listViews>
-        <fullName>All_Active_Loans</fullName>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Mortgage_Applied_for__c</columns>
-        <columns>Subject_Property_State__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Loan_Status_Change_Date__c</columns>
-        <columns>InitialUnpaidPrincipalBalance__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>Appraisal_Received_Date__c</columns>
-        <columns>Contract_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>ORMS_AE__c</columns>
-        <columns>Title_Company__c</columns>
-        <columns>LoanOfficer__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LoanStatus__c</field>
-            <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
-        </filters>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>All Active Loans</label>
-    </listViews>
-    <listViews>
         <fullName>All_Active_Loans_Closing</fullName>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
@@ -6647,35 +6628,6 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
             <value>1</value>
         </filters>
         <label>All Active Loans - Closing</label>
-    </listViews>
-    <listViews>
-        <fullName>All_Active_Loans_Kahlieh</fullName>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Mortgage_Applied_for__c</columns>
-        <columns>Subject_Property_State__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Loan_Status_Change_Date__c</columns>
-        <columns>InitialUnpaidPrincipalBalance__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>Appraisal_Received_Date__c</columns>
-        <columns>Contract_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>ORMS_AE__c</columns>
-        <columns>Title_Company__c</columns>
-        <columns>LoanOfficer__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LoanStatus__c</field>
-            <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete</value>
-        </filters>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>All Active Loans - Kahlieh</label>
     </listViews>
     <listViews>
         <fullName>All_Active_Loans_Underwriting</fullName>
@@ -6707,24 +6659,102 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <label>All Active Loans - Underwriting</label>
     </listViews>
     <listViews>
-        <fullName>All_Active_Loans_Eric</fullName>
+        <fullName>UW_PCS_Test_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanOfficer__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>LoanNumber__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>UW__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Client_Name__c</field>
+            <operation>contains</operation>
+            <value>,Test</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>UW PCS Test Loans</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans</fullName>
+        <columns>NAME</columns>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
-        <columns>Last_Chatter_Activity__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
         <columns>LoanStatus__c</columns>
         <columns>Loan_Status_Change_Date__c</columns>
-        <columns>Subject_Property_State__c</columns>
-        <columns>Appraisal_Scheduled_Date__c</columns>
-        <columns>Appraisal_sent_to_Client_Date__c</columns>
+        <columns>InitialUnpaidPrincipalBalance__c</columns>
         <columns>Anticipated_Closing_Date__c</columns>
+        <columns>Appraisal_Received_Date__c</columns>
+        <columns>Contract_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <columns>ORMS_AE__c</columns>
         <columns>Title_Company__c</columns>
         <columns>LoanOfficer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Incomplete,Proposal,Funded,Loan Rescinded,Application Approved but Not Accepted,File Closed for Incompleteness,Withdrawn,Denied,Sandbox</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_App_Doc_Review</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>Counseling_Date__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
         <columns>ORMS_AE__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>LoanStatus__c</field>
             <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+            <value>Loan Submission Received- Awaiting Review,Full Application Received - Incomplete</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans - App Doc Review</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Eric</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Partner_State__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>In_Underwriting_Review_Date__c</columns>
+        <columns>Last_Chatter_Activity__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>PropertyAppraisalValue__c</columns>
+        <columns>Appraisal_Scheduled_Date__c</columns>
+        <columns>Appraisal_sent_to_Client_Date__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Incomplete,Proposal,Waiting for Full Package,Application Package Received,Funded,Loan Rescinded,Application Approved but Not Accepted,File Closed for Incompleteness,Withdrawn,Denied,Sandbox</value>
         </filters>
         <filters>
             <field>IsActiveFlag__c</field>
@@ -6739,26 +6769,83 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <label>All Active Loans - Eric</label>
     </listViews>
     <listViews>
-        <fullName>All_Active_Loans_Keith</fullName>
+        <fullName>All_Active_Loans_Greg</fullName>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
+        <columns>Partner_State__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
         <columns>LoanStatus__c</columns>
         <columns>Loan_Status_Change_Date__c</columns>
+        <columns>In_Underwriting_Review_Date__c</columns>
         <columns>Last_Chatter_Activity__c</columns>
-        <columns>In_Processing_Date__c</columns>
         <columns>Subject_Property_State__c</columns>
+        <columns>PropertyAppraisalValue__c</columns>
         <columns>Appraisal_Scheduled_Date__c</columns>
-        <columns>Appraisal_Received_Date__c</columns>
         <columns>Appraisal_sent_to_Client_Date__c</columns>
         <columns>Anticipated_Closing_Date__c</columns>
-        <columns>Title_Company__c</columns>
-        <columns>LoanOfficer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Incomplete,Proposal,Waiting for Full Package,Application Package Received,Funded,Loan Rescinded,Application Approved but Not Accepted,File Closed for Incompleteness,Withdrawn,Denied,Sandbox</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PCS_at_Loan_Level__c</field>
+            <operation>equals</operation>
+            <value>Greg Davidson</value>
+        </filters>
+        <label>All Active Loans - Greg</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Kahlieh</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Mortgage_Applied_for__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>Counseling_Date__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
         <columns>ORMS_AE__c</columns>
+        <columns>Title_Company__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>LoanStatus__c</field>
             <operation>equals</operation>
-            <value>Application Package Received,Full Application Received - Incomplete,In Processing,Conditionally Approved,Underwriting Clear to Close,Suspended,Awaiting Closing,Closed - Awaiting Funding</value>
+            <value>Loan Submission Received- Awaiting Review,Full Application Received - Incomplete,In Processing</value>
+        </filters>
+        <filters>
+            <field>IsActiveFlag__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active Loans - Folder Received</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Active_Loans_Keith</fullName>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Partner_State__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Loan_Status_Change_Date__c</columns>
+        <columns>In_Underwriting_Review_Date__c</columns>
+        <columns>Last_Chatter_Activity__c</columns>
+        <columns>Subject_Property_State__c</columns>
+        <columns>PropertyAppraisalValue__c</columns>
+        <columns>Appraisal_Scheduled_Date__c</columns>
+        <columns>Appraisal_sent_to_Client_Date__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Incomplete,Proposal,Waiting for Full Package,Application Package Received,Funded,Loan Rescinded,Application Approved but Not Accepted,File Closed for Incompleteness,Withdrawn,Denied,Sandbox</value>
         </filters>
         <filters>
             <field>IsActiveFlag__c</field>
@@ -6782,64 +6869,15 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <columns>LoanStatus__c</columns>
         <columns>Mortgage_Applied_for__c</columns>
         <columns>Rate_Type__c</columns>
-        <columns>PropertyAppraisalValue__c</columns>
         <columns>Related_Partner__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>LAST_UPDATE</columns>
         <columns>OWNER.FIRST_NAME</columns>
-        <columns>OWNER.LAST_NAME</columns>
         <columns>ORMS_AE__c</columns>
+        <columns>App_Incomplete_Date__c</columns>
+        <columns>App_Requested_Date__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Loans</label>
-    </listViews>
-    <listViews>
-        <fullName>UW_PCS_Test_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanOfficer__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>LoanNumber__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <columns>UW__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Client_Name__c</field>
-            <operation>contains</operation>
-            <value>,Test</value>
-        </filters>
-        <filters>
-            <field>CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>THIS_MONTH</value>
-        </filters>
-        <label>UW PCS Test Loans</label>
-    </listViews>
-    <listViews>
-        <fullName>Test</fullName>
-        <columns>NAME</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>IsActiveFlag__c</columns>
-        <columns>Related_Partner__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>Loan_Processor__c</columns>
-        <columns>LoanOfficer__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>SentToBayDocs__c</columns>
-        <columns>TitleFeeIsComplete__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>IsActiveFlag__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <filters>
-            <field>Closing_Date__c</field>
-            <operation>notEqual</operation>
-        </filters>
-        <label>Test</label>
-        <sharedTo>
-            <role>System_Administrator</role>
-        </sharedTo>
     </listViews>
     <sharingReasons>
         <fullName>Executive__c</fullName>
@@ -7096,12 +7134,28 @@ NOT(ISBLANK( UW__c ))
         <errorMessage>Scheduled Closing Date cannot be prior to Cooling off Expiration Date</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>UW_Needed</fullName>
+        <fullName>ACD_and_2nd_Appraisal_Mailed_Date</fullName>
         <active>true</active>
-        <description>Validate that there is a Underwriter based on loanstatus* criteria</description>
-        <errorConditionFormula>AND ( OR ( ISPICKVAL ( LoanStatus__c , "In Processing" ), ISPICKVAL ( LoanStatus__c , "In Underwriting Review" ) ), ISBLANK (  UW__c  ) )</errorConditionFormula>
-        <errorDisplayField>UW__c</errorDisplayField>
-        <errorMessage>UW is required</errorMessage>
+        <description>Anticipated Closing Date cannot be within 7 days of the 2nd Appraisal Mailed Date</description>
+        <errorConditionFormula>Anticipated_Closing_Date__c &lt; ( X2nd_Appraisal_Mailed__c  + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
+        <errorDisplayField>Anticipated_Closing_Date__c</errorDisplayField>
+        <errorMessage>Anticipated Closing Date cannot be within 7 days of the 2nd Appraisal Mailed Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Actual_Closing_and_x2nd_Appraisal_Mailed</fullName>
+        <active>true</active>
+        <description>Actual Closing Date cannot be within 7 days of the 2nd Appraisal Mailed Date</description>
+        <errorConditionFormula>Closing_Date__c &lt; ( X2nd_Appraisal_Mailed__c  + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
+        <errorDisplayField>Closing_Date__c</errorDisplayField>
+        <errorMessage>Actual Closing Date cannot be within 7 days of the 2nd Appraisal Mailed date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SCD_and_2nd_Appraisal_Mailed_Date</fullName>
+        <active>true</active>
+        <description>Scheduled Closing Date cannot be within 7 days of the 2nd Appraisal Mailed Date</description>
+        <errorConditionFormula>Scheduled_Closing_Date__c  &lt; ( X2nd_Appraisal_Mailed__c  + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
+        <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
+        <errorMessage>Scheduled Closing Date cannot be within 7 days of the 2nd Appraisal Mailed Date</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

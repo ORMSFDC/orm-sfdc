@@ -661,6 +661,11 @@
         <label>Yozons</label>
     </customValue>
     <customValue>
+        <fullName>Ziplogix</fullName>
+        <default>false</default>
+        <label>Ziplogix</label>
+    </customValue>
+    <customValue>
         <fullName>Zoho Sign</fullName>
         <default>false</default>
         <label>Zoho Sign</label>

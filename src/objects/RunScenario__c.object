@@ -138,6 +138,16 @@
         <columns>LAST_UPDATE</columns>
         <columns>Business_Partner_Name__c</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORM_Account_Executive__c</field>
+            <operation>equals</operation>
+            <value>Nathaniel Crusoe</value>
+        </filters>
+        <filters>
+            <field>Business_individual__c</field>
+            <operation>equals</operation>
+            <value>Michelle Miller</value>
+        </filters>
         <label>All</label>
     </listViews>
 </CustomObject>

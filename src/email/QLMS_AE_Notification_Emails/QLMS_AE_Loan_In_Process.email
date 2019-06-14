@@ -1,0 +1,10 @@
+Hello {!Account.QLMS_First_Name__c},
+
+Your partner, {!Account.Name}, has a loan in process with ORMS.
+
+Sincerely,
+
+{!Account.OwnerFullName}
+{!Account.OwnerTitle}
+{!Account.OwnerPhone}
+{!Account.OwnerEmail}

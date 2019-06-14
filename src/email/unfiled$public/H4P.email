@@ -1,0 +1,132 @@
+<span style="font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif'; font-size: 16px;">
+Hi {!Contact.Preferred_First_Name__c},
+<br><br> 
+Purchase season is in full swing, and luckily for your 62+ clients, you have access to a special loan option that allows them to buy a new home without making monthly mortgage payments. It’s called the HECM for Purchase (H4P), and it lets your clients use a reverse mortgage to buy a home.
+<br><br> 
+Check out our <a href="https://p.widencdn.net/hdcrpv/PP-HECMForPurchasePresentation-20190325">presentation</a> that you can show to your clients when explaining the HECM for Purchase (H4P).
+<br><br> 
+What questions do you have about the H4P?
+<br><br>
+<table>
+	<tbody>
+		<tr>
+			<td colspan="7" valign="top" style="FONT-SIZE: 10px; HEIGHT: 10px; LINE-HEIGHT: 10px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top" style="WIDTH: 8px">&nbsp;</td>
+			<td valign="top" style="WIDTH: 137px">
+				<table align="center" width="141" border="0" cellpadding="0" cellspacing="0" style="WIDTH: 141px; BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px auto; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+					<tr>
+						<td valign="top" style="FONT-SIZE: 25px; HEIGHT: 25px; LINE-HEIGHT: 25px">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" style="WIDTH: 141px"><a href="https://www.ormservices.com/" target="_blank"><img style="TEXT-DECORATION: none; BORDER-TOP: 0px; HEIGHT: auto; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; OUTLINE-WIDTH: medium; OUTLINE-STYLE: none; BORDER-LEFT: 0px; DISPLAY: block; OUTLINE-COLOR: invert; LINE-HEIGHT: 100%; -MS-INTERPOLATION-MODE: bicubic" border="0" alt="One Reverse Mortgage | A Quicken Loans Company" src="http://go.pardot.com/l/476012/2019-01-11/2rg5gv/476012/58375/ORMLogo.png" width="141" height="56"></a></td>
+					</tr>
+				</table>
+			</td>
+			<td valign="top" style="WIDTH: 8px">&nbsp;</td>
+			<td valign="top" style="WIDTH: 4px; BACKGROUND-COLOR: #2081bf">&nbsp;</td>
+			<td valign="top" style="WIDTH: 8px">&nbsp;</td>
+			<td valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+					<tr>
+						<td colspan="2" style="FONT-SIZE: 14px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #222222; LINE-HEIGHT: 14px">
+							<strong>{!Contact.OwnerFullName}</strong><br>
+							<strong style="FONT-SIZE: 12px; FONT-WEIGHT: normal">{!Contact.OwnerTitle}&nbsp;&nbsp;</strong>
+							<br><br>
+						
+						</td>
+					</tr>
+					<tr>
+						<td style="FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; WIDTH: 70px; COLOR: #222222; LINE-HEIGHT: 12px" valign="top">
+							
+							<table width="70" border="0" cellpadding="0" cellspacing="0" style="WIDTH: 70px; BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+								<tr>
+									<td style="FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #222222; LINE-HEIGHT: 12px">
+										
+										<strong>Direct</strong><br>
+										<strong>Mobile</strong><br>
+								        <strong>Toll Free</strong><br>
+										<strong>Email</strong><br>
+                                        <strong>Fax</strong><br>
+									</td>
+								</tr>
+							</table>
+							
+						</td>
+						<td style="FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #222222; LINE-HEIGHT: 12px" valign="top">
+							
+							<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+								<tr>
+									<td style="FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #222222; LINE-HEIGHT: 12px"> 
+                                                                                 {!Contact.OwnerPhone}<br>
+                                                                                 {!Contact.OwnerMobile__c}<br>
+                                                                                 (800) 655-8533 ext. {!Contact.OwnerExtension__c}<br>
+										<a title="{!Contact.OwnerEmail}" style="COLOR: #2081bf" href="mailto:{!Contact.OwnerEmail}"><strong style="COLOR: #2081bf">{!Contact.OwnerEmail}</strong></a><br>
+                                                                                 {!Contact.OwnerFax__c} <br> 
+									</td>
+								</tr>
+							</table>
+							
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td valign="top" style="WIDTH: 10px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="7" valign="top" style="FONT-SIZE: 10px; HEIGHT: 10px; LINE-HEIGHT: 10px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="3" valign="top">&nbsp;</td>
+			<td colspan="4" valign="top">
+				
+				<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+					
+					<tr>
+						<td valign="top" style="WIDTH: 84px">
+							
+							<table align="center" width="84" border="0" cellpadding="0" cellspacing="0" style="WIDTH: 84px; BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px auto; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+								
+								<tr>
+									<td valign="top" style="WIDTH: 84px"><a href="https://www.bbb.org/sdoc/business-reviews/reverse-mortgage/one-reverse-mortgage-llc-in-san-diego-ca-171990295/" target="_blank"><img border="0" alt="A+ rating with the BBB" src="http://go.pardot.com/l/476012/2019-01-11/2rg5dv/476012/58373/BBB.png" width="84" height="32"></a></td>
+								</tr>
+								
+							</table>
+							
+						</td>
+						<td valign="top" style="WIDTH: 10px">&nbsp;</td>
+						<td valign="top" style="WIDTH: 70px">
+							
+							<table align="center" width="70" border="0" cellpadding="0" cellspacing="0" style="WIDTH: 70px; BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px auto; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+								
+								<tr>
+									<td valign="top" style="WIDTH: 70px"><a href="https://www.nrmlaonline.org/" target="_blank"><img border="0" alt="NRMLA" src="http://go.pardot.com/l/476012/2019-01-11/2rg5dn/476012/58369/NRMLA.png" width="70" height="31"></a></td>
+								</tr>
+								
+							</table>
+							
+						</td>
+						<td valign="top" style="WIDTH: 10px">&nbsp;</td>
+						<td valign="middle" style="WIDTH: 115px">
+							
+							<table align="center" width="115" border="0" cellpadding="0" cellspacing="0" style="WIDTH: 115px; BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px auto; PADDING-RIGHT: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+								
+								<tr>
+									<td valign="middle" style="WIDTH: 115px"><a href="https://www.onereversemortgage.com/client-reviews/" target="_blank"><img border="0" alt="Read What Other Clients Say About Me" src="http://go.pardot.com/l/476012/2019-01-11/2rg5dq/476012/58367/ReadClientsSay_2x.png" width="115" height="23"></a></td>
+								</tr>
+								
+							</table>
+							
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="7" valign="top" style="FONT-SIZE: 10px; HEIGHT: 10px; LINE-HEIGHT: 10px">&nbsp;</td>
+		</tr>
+	</tbody>
+	</table>
+	</span>
+	<br><br>

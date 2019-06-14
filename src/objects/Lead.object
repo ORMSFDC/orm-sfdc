@@ -2919,11 +2919,11 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <fields>
-        <fullName>IndividualId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields><compactLayoutAssignment>Leads_Custom_Compact_Layout</compactLayoutAssignment><enableFeeds>true</enableFeeds><enableHistory>false</enableHistory><recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory><searchLayouts>
+  <compactLayoutAssignment>Leads_Custom_Compact_Layout</compactLayoutAssignment>
+  <enableFeeds>true</enableFeeds>
+  <enableHistory>false</enableHistory>
+  <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+  <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.COMPANY</customTabListAdditionalFields>
         <customTabListAdditionalFields>LEAD.PHONE</customTabListAdditionalFields>
@@ -2951,7 +2951,9 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <searchResultsAdditionalFields>LEAD.EMAIL</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LEAD.STATUS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
-    </searchLayouts><sharingModel>ReadWriteTransfer</sharingModel>
+    </searchLayouts>
+  <sharingModel>ReadWriteTransfer</sharingModel>
+
     <listViews>
         <fullName>AE_Leads_w_o_Activity</fullName>
         <columns>FULL_NAME</columns>
@@ -3126,52 +3128,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <label>My Scenario Leads</label>
     </listViews>
     <listViews>
-        <fullName>TodaysLeads</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.COMPANY</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>LEAD.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>LEAD.UNREAD</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LEAD.CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>TODAY</value>
-        </filters>
-        <label>Today's Leads</label>
-    </listViews>
-    <listViews>
-        <fullName>Web_Leads_Created_Last_30_Days</fullName>
-        <columns>FULL_NAME</columns>
-        <columns>LEAD.EMAIL</columns>
-        <columns>LEAD.COMPANY</columns>
-        <columns>LEAD.STATE</columns>
-        <columns>LEAD.STATUS</columns>
-        <columns>LEAD.UNREAD</columns>
-        <columns>LEAD.CREATED_DATE</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>LEAD.CREATED_DATE</field>
-            <operation>equals</operation>
-            <value>LAST_N_DAYS:30</value>
-        </filters>
-        <filters>
-            <field>LEAD.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Lead.Partner_Lead</value>
-        </filters>
-        <filters>
-            <field>IsLeadCreatedFromPortal__c</field>
-            <operation>equals</operation>
-            <value>1</value>
-        </filters>
-        <label>Web Leads Created Last 30 Days</label>
-    </listViews>
-    <listViews>
         <fullName>All_Leads</fullName>
         <columns>LEAD.COMPANY</columns>
         <columns>FULL_NAME</columns>
@@ -3236,11 +3192,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <columns>CORE.USERS.LAST_NAME</columns>
         <columns>QLMS_Account_Executive__c</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>LEAD.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Lead.Partner_Lead</value>
-        </filters>
         <label>All Open Leads</label>
     </listViews>
     <listViews>
@@ -3256,7 +3207,7 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <columns>No_Activity_Days__c</columns>
         <columns>Last_Activity_Type__c</columns>
         <columns>QLMS_Account_Executive__c</columns>
-        <filterScope>Everything</filterScope>
+        <filterScope>Mine</filterScope>
         <filters>
             <field>LEAD.RECORDTYPE</field>
             <operation>equals</operation>
@@ -3268,6 +3219,52 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             <value>Attempted to Contact,Contacted,Presented</value>
         </filters>
         <label>Leads - Contacted/Presented</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Today's Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>Web_Leads_Created_Last_30_Days</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <filters>
+            <field>LEAD.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Lead.Partner_Lead</value>
+        </filters>
+        <label>Web Leads Created Last 30 Days</label>
     </listViews>
     <recordTypes>
         <fullName>Banker</fullName>

@@ -45,10 +45,34 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>CREATED_BY</column>
+            <column>Activity.CTI_Id__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCTRECORDTYPE</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Josh Posner</value>
+            <value>Account.Potential_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Team__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Braveheart</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Activity.Call_Duration_In_Seconds__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>30</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -77,6 +101,6 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>CREATED_DATE</dateColumn>
-        <interval>INTERVAL_THISWEEK</interval>
+        <interval>INTERVAL_TODAY</interval>
     </timeFrameFilter>
 </Report>

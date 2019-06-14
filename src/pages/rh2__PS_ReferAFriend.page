@@ -1,0 +1,59 @@
+<apex:page controller="rh2.PS_ReferAFriend_Controller" standardStylesheets="false" sidebar="false" applyBodyTag="false" docType="html-5.0" tabstyle="PS_Rollup_Helper__tab" showHeader="true">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <head>
+    	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    	<apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/modernizr-1.7.min.js') }" />
+    	<apex:stylesheet value="{! URLFOR($Resource.PT_Resources_v1, '/css/grid.css') }"/>
+    </head>
+    
+    <style>
+    
+        [id$=heading] { padding-top:20px; padding-bottom:5px;}
+        .h_scroll {overflow-x:auto;}
+        .caption {font-size:smallest; padding-left:10px; padding-bottom:5px; padding-top:5px;}
+        .breadcrumb {font-size:small;}
+        
+        @media screen and (max-width: 1024px)
+        {
+        	width:
+        }
+        
+        
+        #progressbar { height: 10px; margin-left:50px; margin-top: 10px; }
+        
+    </style>
+    
+    <div>
+    	<apex:slds />
+	    <div class="slds-scope" role="main">
+	    	<apex:form >
+				  <apex:outputPanel >	
+				  	<div class="slds-card">
+				  		<header class="slds-card__header slds-theme_alt-inverse">
+				  			<h3 class="slds-text-heading_medium slds-truncate">Invite a friend to try Rollup Helper: </h3>				
+				  		</header>
+				  		<section class="slds-card__body">
+					  		<div class="slds-m-left_medium">
+						  		<apex:outputText style="padding-top:5px;" value="Email Address(es): "/> <br/>
+								<apex:inputTextArea value="{!unsplitEmails}" rows="3" style="width:75%;"/>
+								<br/>
+								<apex:outputText value="*Accepts up to 10 email addresses, separated by commas."/>
+						    </div>
+					  		<div class="slds-m-left_medium">
+						  		<apex:outputText style="padding-top:5px;" value="Body:"/>
+								<br/>
+								<apex:inputTextarea value="{!body}" rows="15" style="width:75%;"/>						  		
+					  		</div>				  		
+				  		</section>
+				  		<footer class="slds-card__footer">
+				  			<Apex:commandButton action="{!send}" Value="Send Email" styleClass="slds-button slds-button_brand slds-m-around_small"/>
+				  		</footer>	
+				  	</div>
+				  	
+				  </apex:outputPanel>
+			</apex:form>  
+	    </div>
+	</div>
+	</html>
+</apex:page>

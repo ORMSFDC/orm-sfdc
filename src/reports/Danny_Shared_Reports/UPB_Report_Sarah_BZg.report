@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Loan_Number__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Mortgage_Applied_for__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Loan_New__c.In_Underwriting_Review_Date__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.ORMS_AE__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test AE</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_OWNER_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Mario Kart</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>UPB Report - Sarah</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$Loan_New__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <sortColumn>Loan_New__c.Mortgage_Applied_for__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

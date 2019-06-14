@@ -13,7 +13,7 @@
         <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Closing_Date__c</field>
@@ -51,6 +51,12 @@
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>LAST_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Sandbox</value>
         </criteriaItems>
     </filter>
     <format>Tabular</format>

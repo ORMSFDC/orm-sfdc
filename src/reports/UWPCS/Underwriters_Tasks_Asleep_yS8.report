@@ -34,12 +34,6 @@
     <description>UW Tasks put to sleep</description>
     <filter>
         <criteriaItems>
-            <column>Underwriter__c.Status__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Open,Received</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Underwriter__c.Sleep_TaskCheckbox__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
@@ -49,7 +43,7 @@
             <column>Underwriter__c.Subject__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,New Underwrite</value>
+            <value>,Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received</value>
         </criteriaItems>
         <criteriaItems>
             <column>CUST_RECORDTYPE</column>

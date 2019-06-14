@@ -762,30 +762,30 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
     </nameField>
     <pluralLabel>Saved Scenarios</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>ClientId__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Client_Lead__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>Estimated_home_value__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>PartnerId__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
         <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <lookupDialogsAdditionalFields>ClientId__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Client_Lead__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>Estimated_home_value__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>PartnerId__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>ClientId__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Client_Lead__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>Estimated_home_value__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>PartnerId__c</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CREATED_DATE</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>LAST_UPDATE</lookupPhoneDialogsAdditionalFields>
         <searchFilterFields>NAME</searchFilterFields>
-        <searchFilterFields>ClientId__c</searchFilterFields>
+        <searchFilterFields>Client_Lead__c</searchFilterFields>
         <searchFilterFields>Estimated_home_value__c</searchFilterFields>
         <searchFilterFields>PartnerId__c</searchFilterFields>
         <searchFilterFields>CREATED_DATE</searchFilterFields>
         <searchFilterFields>LAST_UPDATE</searchFilterFields>
-        <searchResultsAdditionalFields>ClientId__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Client_Lead__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PartnerId__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Estimated_home_value__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
@@ -813,23 +813,18 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
         <columns>NAME</columns>
         <columns>Client_Lead__c</columns>
         <columns>Client_State__c</columns>
-        <columns>PartnerId__c</columns>
+        <columns>Age__c</columns>
+        <columns>RateType__c</columns>
         <columns>Margin__c</columns>
         <columns>Estimated_home_value__c</columns>
-        <columns>OWNER.ALIAS</columns>
-        <columns>ORM_AE__c</columns>
-        <columns>LAST_UPDATE</columns>
-        <columns>Print_count__c</columns>
-        <columns>CREATED_DATE</columns>
+        <columns>Principal_Limit__c</columns>
+        <columns>Unpaid_Principal_Balance__c</columns>
+        <columns>Cash_at_close__c</columns>
         <columns>Cash_to_close__c</columns>
-        <columns>BayDocsOrderNumber__c</columns>
-        <columns>Age__c</columns>
+        <columns>PartnerId__c</columns>
+        <columns>ORM_AE__c</columns>
+        <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
-        <filters>
-            <field>ORMS_AE__c</field>
-            <operation>equals</operation>
-            <value>Nathaniel Crusoe</value>
-        </filters>
         <label>All Scenarios</label>
     </listViews>
     <sharingReasons>

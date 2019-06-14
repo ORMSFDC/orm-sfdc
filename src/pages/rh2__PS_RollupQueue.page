@@ -1,0 +1,149 @@
+<apex:page Controller="rh2.PS_Queue_Controller" standardStylesheets="false"  sidebar="false" applyBodyTag="false" docType="html-5.0" tabStyle="PS_Rollup_Helper__tab" showHeader="true">
+     <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	     <head> 
+	     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	     <apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/UI_Utilities.js') }"/>	     
+	     </head>
+
+	    <style>
+	    	.dropdownFormatting{
+	    		margin-top:.125rem;
+	    		margin-bottom:.125rem;
+	    		border:1px solid #d8dde6;
+	    		border-radius:.25rem;
+	    		padding:.25rem 0;
+	    		font-size:.75rem;
+	    		background:#fdfdfd;
+	    		box-shadow:0 2px 3px 0 rgba(0,0,0,.16);
+	    	}
+	    
+	    </style> 
+
+	    <apex:slds />
+	    <apex:form id="rollupQueuePage">
+	   	<div class="slds-scope" role="main">
+			<div class="slds-card">
+	    		<header class="slds-card__header slds-grid">
+	        		<div class="slds-media slds-media_center slds-has-flexi-truncate">
+	             		<div class="slds-media__body">
+	                		<h4 class="slds-text-heading_small slds-truncate">Rollup Helper Queue</h4>	                		
+	             		</div> 
+	        		</div>
+	    		</header>
+			    <section class="slds-card__body" id="the page">	
+	                <apex:outputPanel style="height:575px; width:95%;">
+	                	<div style="margin-left:auto; margin-right:auto;">
+							
+							<br/>
+							<div style="float:left;">										
+								<apex:selectList value="{!selectedObject}" size="1" styleClass="slds-m-left_large dropdownFormatting" >
+				                    <apex:selectOptions value="{!targetObjectWithQueueItems}"/>
+				                </apex:selectList>	&nbsp;
+				                 <apex:commandButton styleclass="slds-button slds-button_neutral " value="Go!" action="{!populateQueueItemList}" rerender="tableContainer" />	
+				            </div>				               
+				            <div style="float:right; padding-right:25px;">
+				            <apex:commandButton styleclass="slds-button slds-button_neutral slds-m-left_medium"  value="Refresh" onclick="window.location.top.reload();"/>
+							</div>
+						</div >
+		                
+						<br/>
+						<apex:outputPanel id="tableContainer">
+							<apex:outputPanel id="noQueueItems" rendered="{!IF(numberOfQueueItems == 0, true, false)}">
+								<br/><br/>
+								<center>
+									No queue items were found.  Please select an object from the dropdown above.  If no objects are populated in the dropdown, the queue may be empty.
+								</center>
+							</apex:outputPanel>
+							<apex:outputPanel id="hasQueueItems" rendered="{!IF(numberOfQueueItems != 0, true, false)}">
+								<br/><br/>
+								<div style="float:right; padding-right:25px;">
+								<c:Paginate pageController="{! pgCon }" renderedComponent="queueList" />
+								</div>
+						        <table class="slds-table slds-table_bordered" >
+					        		<tr>
+					        			<td style="width:15%; " class="slds-text-heading_label" ><apex:commandLink value="ID" action="{! doSettingSort}">
+							            	<apex:param name="sortingField" value="ID" assignTo="{!sortingField}"/>
+				                            <apex:outputText value="{!IF(sortingField=='ID', IF(ascOrDesc=='asc', ' ▲', ' ▼'),'')}"/>
+				                        </apex:commandLink> </td>
+				                    	<td style="width:10%; " class="slds-text-heading_label"><apex:commandLink value="Priority" action="{! doSettingSort}">
+								        	<apex:param name="sortingField" value="Priority__c" assignTo="{!sortingField}"/>
+					                    	<apex:outputText value="{!IF(sortingField=='Priority__c', IF(ascOrDesc=='asc', ' ▲', ' ▼'),'')}"/>
+					                 	</apex:commandLink>    </td>
+				                    	<td style="width:15%; " class="slds-text-heading_label"><apex:commandLink value="Source Object" action="{! doSettingSort }" > 
+				                        	<apex:param name="sortingField" value="Source_Object__c" assignTo="{!sortingField}"/> 
+				                        	<apex:outputText value="{!IF(sortingField=='Source_Object__c', IF(ascOrDesc=='asc', ' ▲', ' ▼'),'')}"/> 
+				                     	</apex:commandLink> </td>
+				                    	<td style="width:10%; " class="slds-text-heading_label"><apex:commandLink value="Status" action="{! doSettingSort}"> 
+								        	<apex:param name="sortingField" value="Status__c" assignTo="{!sortingField}"/>
+					                    	<apex:outputText value="{!IF(sortingField=='Status__c', IF(ascOrDesc=='asc', ' ▲', ' ▼'),'')}"/> 
+					                	</apex:commandLink> </td>
+				                    	<td style="width:20%; " class="slds-text-heading_label"><apex:commandLink value="CreatedDate" action="{! doSettingSort}">
+								            <apex:param name="sortingField" value="CreatedDate" assignTo="{!sortingField}"/>
+					                        <apex:outputText value="{!IF(sortingField=='CreatedDate', IF(ascOrDesc=='asc', ' ▲', ' ▼'),'')}"/>  
+					                	</apex:commandLink>   </td>
+				                     	<td style="width:15%; " class="slds-text-heading_label"><apex:commandLink value="Records Remaining" action="{! doSettingSort }" > 
+				                        	<apex:param name="sortingField" value="Max_Record_Scope__c" assignTo="{!sortingField}"/> 
+				                        	<apex:outputText value="{!IF(sortingField=='Max_Record_Scope__c', IF(ascOrDesc=='asc', ' ▲', ' ▼'),'')}"/> 
+				                     	</apex:commandLink> </td>
+				                     	<td style="width:15%; " class="slds-text-heading_label">Which Rollups are In This Queue Item?</td>
+				              		</tr>
+				              	</table>
+				              	<div style="overflow-y:auto; max-height:550px;">
+					              	<table class="slds-table slds-table_bordered" style="table-layout:fixed !important;" rendered="{!IF(numberOfQueueItems != 0, true, false)}">	
+					              		<apex:repeat value="{!modifiedQueue}" var="q">
+					              			<tr>
+					              				<td class="slds-cell-wrap" style="width:15%; " > {!q.Id}</td>
+					              				<td class="slds-cell-wrap" style="width:10%; " > {!q.Batch_Class__c}</td>
+					              				<td class="slds-cell-wrap" style="width:15%; " > {!q.Source_Object__c}</td>
+					              				<td class="slds-cell-wrap" style="width:10%; " > {!q.status__c}</td>
+					              				<td class="slds-cell-wrap" style="width:20%; " > {!q.CreatedDate}</td>
+					              				<td class="slds-cell-wrap" style="width:15%; " > {!q.Max_Record_Scope__c}</td>
+					              				<td class="slds-cell-wrap slds-truncate" style="width:15%; text-align:left;" >
+					              					<apex:commandLink value="Show Rollups"  rerender="rollupQueuePage" action="{!showPopup}" oncomplete="showModal(true, 'rollupPopup');">
+					              						<apex:param name="queueItemID" value="{!q.Id}" assignTo="{!queueItemID}"/>
+					              					</apex:commandLink>	
+					              				</td>
+					              			</tr> 
+					              		</apex:repeat>
+					                </table>
+				                </div>	
+			                </apex:outputPanel>
+		                </apex:outputPanel>		               
+				    </apex:outputPanel>					    				    
+				</section>
+			</div>
+		</div>
+			<div class="slds slds-scope">
+                <div style="display:none" id="rollupPopup">
+		            <div aria-hidden="false" role="dialog" class="slds-modal slds-fade-in-open">
+						<div class ="slds-modal__container" style="width:640px !important;"  >
+							<div class="slds-modal__header">
+                    			<h2 class="slds-text-heading--medium">Which Rollups are Being Run In This Queue Item?</h2>                  			
+                    		</div>							
+								<div class="slds-modal__content">
+									<apex:outputPanel > 
+                        				<table class="slds-table slds-table--striped" style="overflow:hidden;">
+                            				<thead> 
+                                				<th style="width:50%;" class="slds-text-heading--label"><strong>Rollup Name</strong></th>               
+                           					 </thead>
+                            				<tbody>
+	                                			<apex:repeat value="{!rollupsInQueueNameSet}" var="item">
+	                                    			<tr>                                  
+	                                        			<td style="width:50%; word-wrap:break-word !important;" class="slds-cell-wrap">{!item}</td>
+	                                   	 			</tr>
+	                                			</apex:repeat>
+                            				</tbody>
+                        				</table>
+                    				</apex:outputPanel>
+                   			    </div>
+							<div class="slds-modal__footer">
+								<apex:commandButton styleclass="slds-button slds-button--neutral slds-button--small slds-m-bottom--x-small" value="Close" onclick="showModal(false, 'rollupPopup'); return false;" />
+							</div>
+						</div>
+					</div>
+					<div class="slds-backdrop slds-backdrop--open"></div>
+				</div>
+			</div>
+		</apex:form>
+	</html>
+</apex:page>

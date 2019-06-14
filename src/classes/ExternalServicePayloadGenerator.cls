@@ -53,15 +53,8 @@ public without sharing class ExternalServicePayloadGenerator {
         
 
         // Query Salesforce Data - @TODO needs bulking
-        Map<String, List<sObject>> objectData = queryObjectData(objectMap, objectParentMap, soqlWhereMap, soqlQueryMap);
-        
-        String jsonPayload;
-        if (serviceType.startsWith('OnBase')) {
-            jsonPayload = createPayloadOnBase(objectData);
-        }
-        else {
-            jsonPayload = createPayload(objectData);
-        }
+        Map<String, List<sObject>> objectData = queryObjectData(objectMap, objectParentMap, soqlWhereMap, soqlQueryMap); 
+        String jsonPayload = createPayload(objectData);
 
        
         Map<Id, String> payloadMap = new Map<Id, String>{ recordIdList[0] => jsonPayload }; 
@@ -118,124 +111,6 @@ public without sharing class ExternalServicePayloadGenerator {
     }
     
     /**
-     * createPayloadOnBase Generate OnBase JSON payload to be sent to External Service Request
-     * @param  List of sObject data nested inside JSON tokens
-     * @return Json payload
-     */
-    public static String createPayloadOnBase(Map<String, List<sObject>> objectData){
-        
-        Logger.push('createPayloadOnBase','ExternalServicePayloadGenerator');
-        System.debug('createPayloadOnBase');
-
-        lib.JsonMapper mapper = new lib.JsonMapper(); // Instantiate JsonMapper lib        
-    
-        Integer arrayIndex = 0;
-        for (ExternalServicesObjectFieldMapping__mdt c : cmt) {            
-            if (c.JSON_Object_Property__c == 'root') {
-                String fieldName = c.FieldAPIName__c;
-                List<sObject> rootData = (List<sObject>)objectData.get('root');
-                List<sObject> lookupData = (List<sObject>)objectData.get('lookup');
-                for (sObject rootObject: rootData){
-                    String keywordNumber = c.MappingProperty__c;
-                    if( keywordNumber.equals('101') )
-                    {
-                        // Set an additional property for Loan Number at the root level
-                        String mappingProperty = 'loanNumber';
-                        mapper.set(mappingProperty, String.valueOf(rootObject.get(fieldName)));
-                    }
-                    // Set properties in the keywords value array
-                    String value = translateKeywordOnBase(keywordNumber, fieldName, rootObject, lookupData);
-                    mapper.set('keywords[' + arrayIndex + '].value', value);
-                    mapper.set('keywords[' + arrayIndex + '].number', keywordNumber);
-                    arrayIndex++;
-                }                
-            }
-        }
-
-        Logger.debug(mapper.toJson());         
-        
-        Logger.pop();
-        return mapper.toJson();
-    }
-    
-    /**
-     * translateKeywordOnBase Translate Salesforce values to OnBase equivalents
-     * @param OnBase keyword number
-     * @param Field API Name on Salesforce Object
-     * @param Salesforce Object with field data
-     * @param Map of data for table lookup
-     * @return Translated (if necessary) data value
-     */
-    public static String translateKeywordOnBase(String keywordNumber, String fieldName, sObject rootObject, List<sObject> lookupData) {
-        Logger.push('translateKeywordOnBase','ExternalServicePayloadGenerator');
-        System.debug('translateKeywordOnBase>>>>>>>>>>');
-        
-        String finalValue;
-        
-        switch on keywordNumber {
-            when '105' {
-                // LoanStatus
-                System.debug('LoanStatus');
-                String value = String.valueOf(rootObject.get(fieldName));
-                finalValue = OnBaseLookups.getLoanStatusKeyword(value);
-            }
-            when '110' {
-                // Product
-                String productType = String.valueOf(lookupData[0].get('Product_Type__c'));
-                String mortgageAppliedFor = String.valueOf(lookupData[0].get('Mortgage_Applied_for__c'));
-                String rateType = String.valueOf(lookupData[0].get('Rate_Type__c'));
-                System.debug('Product ' + productType + ' ' + mortgageAppliedFor + ' ' + rateType);
-                finalValue = OnBaseLookups.getProductKeyword(productType, mortgageAppliedFor, rateType);
-            }
-            when '115' {
-                // Branch
-                finalValue = System.Label.OnBase_115;
-            }
-            when '259' {
-                // Subject Property State
-                String value = String.valueOf(rootObject.get(fieldName));
-                finalValue = LoanExportUtil.getStateCode(value);
-            }
-            when '294' {
-                // Employee Loan
-                finalValue = System.Label.OnBase_294;
-            }
-            when '1127' {
-                // PurposeOfRefinance
-                String productType = String.valueOf(lookupData[0].get('Product_Type__c'));
-                String mortgageAppliedFor = String.valueOf(lookupData[0].get('Mortgage_Applied_for__c'));
-                String rateType = String.valueOf(lookupData[0].get('Rate_Type__c'));
-                System.debug('PurposeOfRefinance ' + productType + ' ' + mortgageAppliedFor + ' ' + rateType);
-                finalValue = OnBaseLookups.getPurposeOfRefinanceKeyword(productType, mortgageAppliedFor, rateType);
-            }
-            when '1132' {
-                // Product Feature Set
-                finalValue = System.Label.OnBase_1132;
-            }
-            when '1499' {
-                // PropertyState
-                System.debug('PropertyState');
-                String value = String.valueOf(rootObject.get(fieldName));
-                finalValue = OnBaseLookups.getPropertyStateKeyword(value);
-            }
-            when '1544' {
-                // ClosingProvider
-                System.debug('ClosingProvider');
-                String value = String.valueOf(rootObject.get(fieldName));
-                finalValue = OnBaseLookups.getClosingProviderKeyword(value);
-            }            
-            when else {
-                // Value is not translated
-                System.debug('No translation');
-                finalValue = String.valueOf(rootObject.get(fieldName));
-            }
-        }
-        
-        Logger.pop();
-        return finalValue;
-    }
-    
-    /**
      * @description Query Salesforce Data Dymanically from CMT
      * @param Map of Salesforce object > JSON Object
      * @param Map of Salesforce object > parent Salesforce field
@@ -263,9 +138,10 @@ public without sharing class ExternalServicePayloadGenerator {
             // Query data
             Logger.debug('Query='+query);
             System.debug('XXX Query = '+query);
-            List<sObject> queryData = Database.query(query); // Query Salesforce Data
-            System.debug('XXX queryData = ' + queryData);
-            returnMap.put(objectType, queryData); // Add to return map            
+            List<sObject> queryData = Database.query(query); // Query Salesforce Data        
+            returnMap.put(objectType, queryData); // Add to return map
+
+            
         }
    
         Logger.pop();

@@ -362,7 +362,7 @@ public class ConditionController {
         try
         {
             objOutstanding=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c
-                            FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Outstanding' ORDER BY LastModifiedDate asc];
+                            FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Outstanding' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objOutstanding)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -396,7 +396,7 @@ public class ConditionController {
             }
 
             objRevisionRequested=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c 
-                                  FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Revision Requested' ORDER BY LastModifiedDate asc];
+                                  FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Revision Requested' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objRevisionRequested)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -429,7 +429,7 @@ public class ConditionController {
                 ObjConRevisionRequested.add(objres);
             }
             objCancelled=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c 
-                          FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Cancelled' ORDER BY LastModifiedDate asc];
+                          FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Cancelled' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objCancelled)
             {
                 ConditionResponse objres=new ConditionResponse();
@@ -461,7 +461,7 @@ public class ConditionController {
                 ObjConCancelled.add(objres);
             }
             objCleared=[SELECT Id,Condition_Number__c,Comment__c,Status__c,CreatedDate,LastModifiedDate,Description__c,Condition_Created_Date__c,Status_Date__c 
-                        FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Cleared' ORDER BY LastModifiedDate asc];
+                        FROM Condition__c where Loan_Id__c=:LoanId and Status__c='Cleared' ORDER BY LastModifiedDate desc];
             for(Condition__c ObjConc:objCleared)
             {
                 ConditionResponse objres=new ConditionResponse();                

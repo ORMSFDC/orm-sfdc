@@ -88,11 +88,11 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Gauge</componentType>
                 <displayUnits>Integer</displayUnits>
-                <gaugeMax>100.0</gaugeMax>
+                <gaugeMax>120.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
                 <header>Braveheart - Calls to Approved Partner Contacts Today</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorBreakpoint1>40.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>80.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
@@ -117,11 +117,11 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Gauge</componentType>
                 <displayUnits>Integer</displayUnits>
-                <gaugeMax>100.0</gaugeMax>
+                <gaugeMax>600.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
                 <header>Braveheart - Calls to Approved Partner Contacts This Week</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorBreakpoint1>200.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>400.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
@@ -146,11 +146,11 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Gauge</componentType>
                 <displayUnits>Integer</displayUnits>
-                <gaugeMax>100.0</gaugeMax>
+                <gaugeMax>2400.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
                 <header>CTI Call Times - This Month (DMB) BHeart</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorBreakpoint1>800.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>1600.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
@@ -309,11 +309,11 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Gauge</componentType>
                 <displayUnits>Integer</displayUnits>
-                <gaugeMax>100.0</gaugeMax>
+                <gaugeMax>120.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
                 <header>wORMS - Calls to Approved Partner Contacts Today</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorBreakpoint1>40.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>80.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
@@ -338,11 +338,11 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Gauge</componentType>
                 <displayUnits>Integer</displayUnits>
-                <gaugeMax>100.0</gaugeMax>
+                <gaugeMax>600.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
                 <header>wORMS - Calls to Approved Partner Contacts This Week</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorBreakpoint1>200.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>400.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
@@ -367,11 +367,11 @@
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Gauge</componentType>
                 <displayUnits>Integer</displayUnits>
-                <gaugeMax>100.0</gaugeMax>
+                <gaugeMax>2400.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
                 <header>wORMS - Calls to Approved Partner Contacts This Month</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorBreakpoint1>800.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>1600.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>

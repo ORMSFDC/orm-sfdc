@@ -166,6 +166,17 @@
         <processMetadataValues>
             <name>originalFormula</name>
             <value>
+                <stringValue>Now()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_5_myRule_4_A1_0627267012</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
                 <stringValue>AND(
     ISCHANGED([Underwriter__c].Status__c ),
     TEXT(PRIORVALUE([Underwriter__c].Status__c)) = &quot;Completed&quot;,
@@ -317,7 +328,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012S0000000e21RIAQ</stringValue>
+                <stringValue>012f20000006n9yAAA</stringValue>
             </value>
         </inputAssignments>
         <object>Underwriter__c</object>
@@ -364,6 +375,42 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Open Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Open_Date__c</field>
+            <value>
+                <elementReference>formula_5_myRule_4_A1_0627267012</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
@@ -433,7 +480,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012S0000000e21MIAQ</stringValue>
+                <stringValue>012f20000006n9tAAA</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

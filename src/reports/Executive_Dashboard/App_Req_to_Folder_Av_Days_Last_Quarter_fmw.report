@@ -42,7 +42,7 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>Loan_New__c.In_Processing_Date__c</column>
+            <column>Loan_New__c.In_Underwriting_Review_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value></value>
@@ -75,7 +75,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Loan_New__c.Waiting_for_Full_Package_Date__c</dateColumn>
+        <dateColumn>Loan_New__c.Waiting_for_Full_Package_Date0__c</dateColumn>
         <interval>INTERVAL_PREV1</interval>
     </timeFrameFilter>
 </Report>

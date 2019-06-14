@@ -31,7 +31,7 @@
         <field>CUST_NAME</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Closing_Date__c</field>
@@ -46,6 +46,12 @@
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Sandbox</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -71,11 +77,11 @@
     </params>
     <reportType>CustomEntity$Loan_New__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Loan_New__c.In_Processing_Date__c</dateColumn>
+        <dateColumn>Loan_New__c.In_Underwriting_Review_Date__c</dateColumn>
         <interval>INTERVAL_PREV1</interval>
     </timeFrameFilter>
 </Report>

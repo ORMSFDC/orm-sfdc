@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Scott Intro Email</name>
+    <style>none</style>
+    <subject>Changes at One Reverse Mortgage Services</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+I am reaching out to you today to introduce myself as your new account executive at One Reverse Mortgage Services. My name is Brad Stieber, and I am looking forward to helping facilitate your client’s reverse mortgage needs with us. If you have any questions, you can reach out to me via email at bradstieber@onereverse.com, or you can call me directly at 858-652-4715.
+
+Your partner in business,
+
+{!Contact.OwnerFullName}
+{!Contact.OwnerEmail}
+{!Contact.OwnerTitle}
+{!Contact.OwnerPhone}
+
+Let&apos;s Get Started!
+
+Contact me at {!User.Phone} or just hit reply to this email
+
+4445 Eastgate Mall, Ste 320, San Diego, CA 92121</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

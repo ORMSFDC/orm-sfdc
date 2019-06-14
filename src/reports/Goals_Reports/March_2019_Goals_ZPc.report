@@ -7,7 +7,7 @@
         <isActive>true</isActive>
         <isCrossBlock>false</isCrossBlock>
         <masterLabel>Goal</masterLabel>
-        <scale>0</scale>
+        <scale>2</scale>
     </aggregates>
     <aggregates>
         <calculatedFormula>RowCount</calculatedFormula>
@@ -16,10 +16,13 @@
         <isActive>true</isActive>
         <isCrossBlock>false</isCrossBlock>
         <masterLabel>Total Closed</masterLabel>
-        <scale>0</scale>
+        <scale>2</scale>
     </aggregates>
     <columns>
         <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Client_Name__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -43,7 +46,6 @@
     </filter>
     <format>Summary</format>
     <groupingsDown>
-        <dateGranularity>Month</dateGranularity>
         <field>Loan_New__c.Closing_Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>

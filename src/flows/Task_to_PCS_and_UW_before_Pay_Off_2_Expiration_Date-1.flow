@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <assignments>
-        <name>myVariable_waitStartTimeAssignment</name>
-        <label>myVariable_waitStartTimeAssignment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>myPreWaitDecision_myWait_myRule_1</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>myWaitAssignment_myWait_myRule_1</name>
         <label>myWaitAssignment_myWait_myRule_1</label>
         <locationX>0</locationX>
@@ -488,7 +472,29 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myWaitEvent_myWait_myRule_1_event_0_SA1_6367340039</name>
+        <name>formula_2_myWaitEvent_myWait_myRule_1_event_0_SA1_5624219069</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>&apos;The Payoff  2 Expiration Date for Loan: &apos;+ [Loan_New__c].Name + &apos; will expire soon on &apos; + text ([Loan_New__c].Payoff_2_Exp__c )+ &apos;.  Please take necessary action.&apos;</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myWaitEvent_myWait_myRule_1_event_0_SA1_0945831599</name>
+        <dataType>String</dataType>
+        <expression>&apos;The Payoff  2 Expiration Date for Loan: &apos;+ {!myVariable_current.Name} + &apos; will expire soon on &apos; + text ({!myVariable_current.Payoff_2_Exp__c} )+ &apos;.  Please take necessary action.&apos;</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>Now()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_4_myWaitEvent_myWait_myRule_1_event_0_SA1_2350832883</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -499,9 +505,20 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myWaitEvent_myWait_myRule_1_event_0_SA1_3187736767</name>
+        <name>formula_5_myWaitEvent_myWait_myRule_1_event_1_SA1_5740680869</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>&apos;The Payoff  2 Expiration Date for Loan: &apos;+ [Loan_New__c].Name + &apos; will expire soon on &apos; + text ([Loan_New__c].Payoff_2_Exp__c )+ &apos;.  Please take necessary action.&apos;</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_6_myWaitEvent_myWait_myRule_1_event_1_SA1_4928626315</name>
+        <dataType>String</dataType>
+        <expression>&apos;The Payoff  2 Expiration Date for Loan: &apos;+ {!myVariable_current.Name} + &apos; will expire soon on &apos; + text ({!myVariable_current.Payoff_2_Exp__c} )+ &apos;.  Please take necessary action.&apos;</expression>
     </formulas>
     <formulas>
         <processMetadataValues>
@@ -510,22 +527,11 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_4_myWaitEvent_myWait_myRule_1_event_1_SA1_4596671716</name>
+        <name>formula_7_myWaitEvent_myWait_myRule_1_event_1_SA1_2805941250</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>Now()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_5_myWaitEvent_myWait_myRule_1_event_1_SA1_6593211985</name>
-        <dataType>DateTime</dataType>
-        <expression>Now()</expression>
-    </formulas>
-    <interviewLabel>Task_to_PCS_and_UW_before_Pay_Off_2_Expiration_Date-1_InterviewLabel</interviewLabel>
+    <interviewLabel>Task_to_PCS_and_UW_before_Pay_Off_2_Expiration_Date-3_InterviewLabel</interviewLabel>
     <label>Task to PCS and UW before Pay Off 2 Expiration Date</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -629,7 +635,7 @@
             </processMetadataValues>
             <field>Latest_Status_Change__c</field>
             <value>
-                <elementReference>formula_2_myWaitEvent_myWait_myRule_1_event_0_SA1_6367340039</elementReference>
+                <elementReference>formula_2_myWaitEvent_myWait_myRule_1_event_0_SA1_5624219069</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -672,6 +678,42 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Notes</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>formula_3_myWaitEvent_myWait_myRule_1_event_0_SA1_0945831599</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>DateTime</stringValue>
                 </value>
             </processMetadataValues>
@@ -701,7 +743,7 @@
             </processMetadataValues>
             <field>Open_Date__c</field>
             <value>
-                <elementReference>formula_3_myWaitEvent_myWait_myRule_1_event_0_SA1_3187736767</elementReference>
+                <elementReference>formula_4_myWaitEvent_myWait_myRule_1_event_0_SA1_2350832883</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -845,7 +887,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012S0000000DOdWIAW</stringValue>
+                <stringValue>012f20000006nnOAAQ</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1035,7 +1077,7 @@
             </processMetadataValues>
             <field>Latest_Status_Change__c</field>
             <value>
-                <elementReference>formula_4_myWaitEvent_myWait_myRule_1_event_1_SA1_4596671716</elementReference>
+                <elementReference>formula_5_myWaitEvent_myWait_myRule_1_event_1_SA1_5740680869</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1078,6 +1120,42 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Notes</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>formula_6_myWaitEvent_myWait_myRule_1_event_1_SA1_4928626315</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>DateTime</stringValue>
                 </value>
             </processMetadataValues>
@@ -1107,7 +1185,7 @@
             </processMetadataValues>
             <field>Open_Date__c</field>
             <value>
-                <elementReference>formula_5_myWaitEvent_myWait_myRule_1_event_1_SA1_6593211985</elementReference>
+                <elementReference>formula_7_myWaitEvent_myWait_myRule_1_event_1_SA1_2805941250</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1215,7 +1293,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012S0000000e21MIAQ</stringValue>
+                <stringValue>012f20000006n9tAAA</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1328,7 +1406,7 @@
         </inputAssignments>
         <object>Underwriter__c</object>
     </recordCreates>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <startElementReference>myPreWaitDecision_myWait_myRule_1</startElementReference>
     <variables>
         <name>cancelWaits</name>
         <dataType>String</dataType>
@@ -1351,16 +1429,6 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Loan_New__c</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_waitStartTimeVariable</name>
-        <dataType>DateTime</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>$Flow.CurrentDateTime</elementReference>
-        </value>
     </variables>
     <variables>
         <name>myWaitEvent_myWait_myRule_1_event_0_postActionExecutionVariable</name>

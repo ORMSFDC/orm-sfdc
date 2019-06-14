@@ -1141,11 +1141,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>E_sign_Addendum_Provider__c</field>
-            <table>Account</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>PardotTest__c</field>
             <table>Account</table>
         </columns>

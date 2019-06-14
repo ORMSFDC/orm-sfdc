@@ -88,7 +88,7 @@ public with sharing class PartnerHomeAfterLoginControllerTest{
             List<LenderLink__c> lst = PartnerHomeAfterLoginController.getLenderLinksWithAEData();
             List<LenderLink__c> lst1 = PartnerHomeAfterLoginController.getLenderLinksData();
             integer Retmsg = PartnerHomeAfterLoginController.getContactId(user1.id);
-            string p = PartnerHomeAfterLoginController.getAEInfo(phone);
+            String p = PartnerHomeAfterLoginController.getAEInfo(phone);
             Test.stopTest();
         }
     }

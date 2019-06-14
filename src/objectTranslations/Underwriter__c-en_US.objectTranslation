@@ -99,30 +99,6 @@
         <name>Sleep_TaskCheckbox__c</name>
     </fields>
     <fields>
-        <label><!-- Sleep Duration --></label>
-        <name>Sleep_Task__c</name>
-        <picklistValues>
-            <masterLabel>2 Hours</masterLabel>
-            <translation><!-- 2 Hours --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>4 Hours</masterLabel>
-            <translation><!-- 4 Hours --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>6 Hours</masterLabel>
-            <translation><!-- 6 Hours --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Next Day</masterLabel>
-            <translation><!-- Next Day --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Next Week</masterLabel>
-            <translation><!-- Next Week --></translation>
-        </picklistValues>
-    </fields>
-    <fields>
         <label><!-- UW on Loan --></label>
         <name>UW_on_Loan__c</name>
     </fields>
@@ -172,8 +148,60 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Anticipated Closing Date --></label>
+        <name>Anticipated_Closing_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Name --></label>
+        <name>Client_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days in Status --></label>
+        <name>Days_in_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Property State --></label>
+        <name>Property_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Client Name --></label>
+        <name>Related_Client_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sleep Duration --></label>
+        <name>Sleep_Task__c</name>
+        <picklistValues>
+            <masterLabel>2 Hours</masterLabel>
+            <translation><!-- 2 Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 Hours</masterLabel>
+            <translation><!-- 4 Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 Hours</masterLabel>
+            <translation><!-- 6 Hours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Day</masterLabel>
+            <translation><!-- Next Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Week</masterLabel>
+            <translation><!-- Next Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <label><!-- Subject --></label>
         <name>Subject__c</name>
+        <picklistValues>
+            <masterLabel>Appraisal Expiration Date</masterLabel>
+            <translation><!-- Appraisal Expiration Date --></translation>
+        </picklistValues>
         <picklistValues>
             <masterLabel>Appraisal Received</masterLabel>
             <translation><!-- Appraisal Received --></translation>
@@ -183,12 +211,68 @@
             <translation><!-- Conditions Received --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Cooling off letter received</masterLabel>
+            <translation><!-- Cooling off letter received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Counseling Expiration Date</masterLabel>
+            <translation><!-- Counseling Expiration Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Report Expiration Date</masterLabel>
+            <translation><!-- Credit Report Expiration Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FHA Case Number Expiration</masterLabel>
+            <translation><!-- FHA Case Number Expiration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan - Conditionally Approved</masterLabel>
+            <translation><!-- Loan - Conditionally Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loan is Aged over 30 Days</masterLabel>
+            <translation><!-- Loan is Aged over 30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Underwrite</masterLabel>
+            <translation><!-- New Underwrite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCS Schedule Follow Up</masterLabel>
+            <translation><!-- PCS Schedule Follow Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Off 1 Expiration Date</masterLabel>
+            <translation><!-- Pay Off 1 Expiration Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Off 2 Expiration Date</masterLabel>
+            <translation><!-- Pay Off 2 Expiration Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Off 3 Expiration Date</masterLabel>
+            <translation><!-- Pay Off 3 Expiration Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Off Expiration Date</masterLabel>
+            <translation><!-- Pay Off Expiration Date --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Suspense Requested</masterLabel>
             <translation><!-- Suspense Requested --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Title Expiration Date</masterLabel>
+            <translation><!-- Title Expiration Date --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Title Received</masterLabel>
             <translation><!-- Title Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriter Clear to Close</masterLabel>
+            <translation><!-- Underwriter Clear to Close --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Vendor Items Received</masterLabel>
@@ -247,10 +331,14 @@
         <label><!-- UW --></label>
         <name>UW</name>
     </recordTypes>
-    <validationRules>
-        <errorMessage><!-- You are not allowed to use this status --></errorMessage>
-        <name>PCS_Cannot_Pick_Status_Set</name>
-    </validationRules>
+    <recordTypes>
+        <label><!-- AE --></label>
+        <name>AE</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PCS Workflow --></label>
+        <name>PCS_Workflow</name>
+    </recordTypes>
     <validationRules>
         <errorMessage><!-- Must select a duration --></errorMessage>
         <name>Sleep_checked_must_select_time_rame</name>
@@ -262,5 +350,9 @@
     <validationRules>
         <errorMessage><!-- Please add an UW to this Loan --></errorMessage>
         <name>UW_on_Loan</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You are not allowed to change the status --></errorMessage>
+        <name>PCS_Cannot_Pick_Status_Set</name>
     </validationRules>
 </CustomObjectTranslation>

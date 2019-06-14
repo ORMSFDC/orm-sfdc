@@ -10,10 +10,10 @@
         <scale>2</scale>
     </aggregates>
     <columns>
-        <field>Loan_New__c.Waiting_for_Full_Package_Date__c</field>
+        <field>Loan_New__c.Waiting_for_Full_Package_Date0__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>CUST_NAME</field>
@@ -26,6 +26,14 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Loan_New__c.Formula_In_Processing__c</field>
     </columns>
+    <filter>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Sandbox</value>
+        </criteriaItems>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
@@ -47,8 +55,10 @@
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>Loan_New__c.Waiting_for_Full_Package_Date0__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
-        <dateColumn>Loan_New__c.Waiting_for_Full_Package_Date__c</dateColumn>
+        <dateColumn>Loan_New__c.Waiting_for_Full_Package_Date0__c</dateColumn>
         <interval>INTERVAL_LAST90</interval>
     </timeFrameFilter>
 </Report>

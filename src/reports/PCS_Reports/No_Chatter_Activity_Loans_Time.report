@@ -10,29 +10,26 @@
         <field>Loan_New__c.Client_Name__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Mortgage_Applied_for__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Subject_Property_State__c</field>
+        <field>Loan_New__c.Last_Chatter_Activity__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Loan_New__c.PropertyAppraisalValue__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.PCS_at_Partner_Level__c</field>
+        <field>Loan_New__c.Appraisal_Scheduled_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.PCS_at_Loan_Level__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.ORMS_AE__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Related_Partner__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.Last_Chatter_Activity__c</field>
     </columns>
     <description>Active Loans no Chatter activity in two weeks</description>
     <filter>

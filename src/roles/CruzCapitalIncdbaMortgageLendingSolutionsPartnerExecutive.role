@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Cruz Capital Inc. dba Mortgage Lending Solutions Partner Executive</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>wORMS</parentRole>
+    <parentRole>System_Administrator</parentRole>
 </Role>

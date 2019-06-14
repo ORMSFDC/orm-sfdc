@@ -7,7 +7,7 @@
         <field>CUST_NAME</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Closing_Date__c</field>
@@ -40,6 +40,31 @@
     <columns>
         <field>Loan_New__c.FHA_Case_Transfer_Date__c</field>
     </columns>
+    <columns>
+        <field>Loan_New__c.Application_Approved_Not_Accepted_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.File_Closed_for_Incompleteness_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Withdrawn_Date0__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Denied_Date0__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Loan_Funded_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Subject_Property_State__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Loan_New__c.Maximum_Claim_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Subject_Property_Zip_Code__c</field>
+    </columns>
     <format>Tabular</format>
     <name>Legal BI Request</name>
     <params>
@@ -54,7 +79,7 @@
     <sortColumn>Loan_New__c.Related_Partner__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
-        <dateColumn>Loan_New__c.Closing_Date__c</dateColumn>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

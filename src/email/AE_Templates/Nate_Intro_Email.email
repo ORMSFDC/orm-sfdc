@@ -158,10 +158,20 @@
 Hello {!Contact.FirstName},
 <br>
 <br>
-	I am reaching out to you today to introduce myself as your new account executive at One Reverse Mortgage Services. My name is Nathaniel Crusoe, and I am looking forward to helping facilitate your client’s reverse mortgage needs with us. If you have any questions, you can reach out to me via email at NathanielCrusoe@onereverse.com, or you can call me directly at 858-652-4706.</p>
+My name is {!Account.Account_Executive_Name__c}, and I’m your Account Executive with One Reverse Mortgage Services. 
+
+I’m excited to announce we’ve recently partnered with {!Account.Name} as a Reverse Mortgage Lender. 
+
+We offer tremendous support, excellent training resources, marketing tools, and competitive pricing to help you increase your business! 
+
+I’ve closed over 600 retail loans with One Reverse Mortgage before joining the wholesale team, and I look forward to sharing my experience with you! 
+
+Please call or email me to request access to our broker portal and to schedule a group or one on one webinar. 
+
+I look forward to helping you increase your business! </p>
 <br>
 <br>
-Your partner in business,
+Best regards,
 <br>
 <br>
 {!Contact.OwnerFullName}<br>

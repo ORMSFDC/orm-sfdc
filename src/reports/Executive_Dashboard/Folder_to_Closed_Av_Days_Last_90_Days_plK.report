@@ -30,7 +30,7 @@
         <field>CUST_NAME</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Closing_Date__c</field>
@@ -40,6 +40,14 @@
         <field>Loan_New__c.Folder_to_Close_Days__c</field>
     </columns>
     <description>Last 90 Days</description>
+    <filter>
+        <criteriaItems>
+            <column>Loan_New__c.Closing_Date__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
@@ -67,7 +75,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Loan_New__c.In_Processing_Date__c</dateColumn>
+        <dateColumn>Loan_New__c.In_Underwriting_Review_Date__c</dateColumn>
         <interval>INTERVAL_LAST90</interval>
     </timeFrameFilter>
 </Report>

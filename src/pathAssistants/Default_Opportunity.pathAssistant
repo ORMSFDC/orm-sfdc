@@ -14,7 +14,7 @@
     <pathAssistantSteps>
         <fieldNames>CloseDate</fieldNames>
         <fieldNames>Amount</fieldNames>
-        <info>&lt;img alt=&quot;User-added image&quot; src=&quot;http://ormmortgageservices--c.na53.content.force.com/servlet/rtaImage?eid=1CF390000008Oqb&amp;amp;feoid=Info&amp;amp;refid=0EM39000000xp0a&quot; style=&quot;height: 118px; width: 500px;&quot;&gt;&lt;/img&gt;</info>
+        <info>&lt;img alt=&quot;User-added image&quot; src=&quot;http://ormmortgageservices--QA1--c.cs40.content.force.com/servlet/rtaImage?eid=1CF390000008Oqb&amp;amp;feoid=Info&amp;amp;refid=0EM39000000xp0a&quot; style=&quot;height: 118px; width: 500px;&quot;&gt;&lt;/img&gt;</info>
         <picklistValueName>Closed Won</picklistValueName>
     </pathAssistantSteps>
     <pathAssistantSteps>

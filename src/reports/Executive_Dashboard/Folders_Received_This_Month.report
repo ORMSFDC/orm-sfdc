@@ -22,12 +22,6 @@
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.ORMS_AE__c</field>
-    </columns>
-    <columns>
-        <field>Loan_New__c.In_Processing_Date0__c</field>
-    </columns>
-    <columns>
         <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <filter>
@@ -38,13 +32,18 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.In_Processing_Date0__c</column>
+            <column>Loan_New__c.In_Underwriting_Review_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>THIS_MONTH</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Loan_New__c.ORMS_AE__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Folders Received This Month</name>
     <params>
         <name>co</name>
@@ -55,7 +54,7 @@
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
-    <sortColumn>FK_ACC_OWNER_NAME</sortColumn>
+    <sortColumn>Loan_New__c.In_Underwriting_Review_Date__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>

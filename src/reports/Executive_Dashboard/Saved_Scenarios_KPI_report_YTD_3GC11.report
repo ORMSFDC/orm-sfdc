@@ -37,6 +37,12 @@
             <operator>notEqual</operator>
             <value>Danny McGuffin</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>OWNER_FULL_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Chloe Chelf</value>
+        </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>

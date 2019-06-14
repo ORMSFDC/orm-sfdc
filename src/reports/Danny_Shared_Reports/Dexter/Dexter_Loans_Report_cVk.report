@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanNumber__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanStatus__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Closing_Date__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Denied_Date0__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Withdrawn_Date0__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Loan_Funded_Date__c</field>
+    </columns>
+    <description>Dexter&apos;s Loan report</description>
+    <filter>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Docs Out to Settlement Agent,Closed - Awaiting Funding,Funded,File Closed for Incompleteness,Withdrawn,Denied</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Dexter Loans Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Loan_New__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Loan_New__c.LoanStatus__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Loan_New__c.Closing_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

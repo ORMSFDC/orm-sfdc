@@ -130,6 +130,11 @@
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
+                <field>Hazard_Insurance__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
                 <field>HOA_PUD_Condo_Fees__c</field>
                 <uiBehavior>Edit</uiBehavior>
             </quickActionLayoutItems>

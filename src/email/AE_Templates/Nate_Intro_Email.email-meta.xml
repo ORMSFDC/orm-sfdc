@@ -4,12 +4,22 @@
     <encodingKey>ISO-8859-1</encodingKey>
     <name>Nate Intro Email</name>
     <style>none</style>
-    <subject>Changes at One Reverse Mortgage Services</subject>
+    <subject>Response Required: Your Reverse Mortgage Account Executive Contact</subject>
     <textOnly>Hello {!Contact.FirstName},
 
-I am reaching out to you today to introduce myself as your new account executive at One Reverse Mortgage Services. My name is Brad Stieber, and I am looking forward to helping facilitate your client’s reverse mortgage needs with us. If you have any questions, you can reach out to me via email at bradstieber@onereverse.com, or you can call me directly at 858-652-4715.
+My name is {!Account.Account_Executive_Name__c}, and I’m your Account Executive with One Reverse Mortgage Services. 
 
-Your partner in business,
+I’m excited to announce we’ve recently partnered with {!Account.Name} as a Reverse Mortgage Lender. 
+
+We offer tremendous support, excellent training resources, marketing tools, and competitive pricing to help you increase your business! 
+
+I’ve closed over 600 retail loans with One Reverse Mortgage before joining the wholesale team, and I look forward to sharing my experience with you! 
+
+Please call or email me to request access to our broker portal and to schedule a group or one on one webinar. 
+
+I look forward to helping you increase your business! 
+
+Best regards, 
 
 {!Contact.OwnerFullName}
 {!Contact.OwnerEmail}

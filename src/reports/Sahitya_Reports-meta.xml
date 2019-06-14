@@ -12,17 +12,17 @@
     </folderShares>
     <folderShares>
         <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>testae@onereverse.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
         <sharedTo>jessehanson@onereverse.com</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
     <folderShares>
         <accessLevel>Manage</accessLevel>
         <sharedTo>joshevink@onereverse.com</sharedTo>
-        <sharedToType>User</sharedToType>
-    </folderShares>
-    <folderShares>
-        <accessLevel>EditAllContents</accessLevel>
-        <sharedTo>testae@onereverse.com</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
     <folderShares>

@@ -4,22 +4,15 @@ trigger ClientToLoanClientFieldTrigger on Client__c (after insert, after update)
     string clientID = c.Id;
     string LoanId = c.LoanId__c;    
     try{
-        
-        if(![select LoanCompleteFlag__c from Loan_new__c where id=:LoanId ].LoanCompleteFlag__c )
+        if(c.Primary_Client_for_the_Loan__c == true)
         {
-            Loan_New__c objLoan = new Loan_New__c();
-            objLoan.Id = LoanId;
-			String fullName = (c.Last_Name__c + ', ' + c.First_Name__c).left(60);
-            
-            if(c.Primary_Client_for_the_Loan__c == true)
+            if(![select LoanCompleteFlag__c from Loan_new__c where id=:LoanId ].LoanCompleteFlag__c )
             {
-                objLoan.Client_Name__c = fullName;
+                Loan_New__c objLoan = new Loan_New__c();
+                objLoan.Id = LoanId;
+                objLoan.Client_Name__c = c.Last_Name__c + ', ' + c.First_Name__c;
+                update objLoan;
             }
-            else
-            {
-           		objLoan.Co_Client_Name__c = fullName;
-            }
-            update objLoan;
         }
   
     if(trigger.isAfter && trigger.IsInsert) {

@@ -132,6 +132,12 @@
     </nameField><pluralLabel>Residual Incomes</pluralLabel><searchLayouts /><sharingModel>ReadWrite</sharingModel><visibility>Public</visibility>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>MidWest__c</columns>
+        <columns>NorthEast__c</columns>
+        <columns>South__c</columns>
+        <columns>West__c</columns>
+        <columns>Family_Size__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
