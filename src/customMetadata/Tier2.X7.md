@@ -8,42 +8,42 @@
     </values>
     <values>
         <field>X0_to_10__c</field>
-        <value xsi:type="xsd:double">111.84</value>
+        <value xsi:type="xsd:double">112.09</value>
     </values>
     <values>
         <field>X10_to_20__c</field>
-        <value xsi:type="xsd:double">111.79</value>
+        <value xsi:type="xsd:double">112.04</value>
     </values>
     <values>
         <field>X20_to_30__c</field>
-        <value xsi:type="xsd:double">111.53</value>
+        <value xsi:type="xsd:double">111.78</value>
     </values>
     <values>
         <field>X30_to_40__c</field>
-        <value xsi:type="xsd:double">111.24</value>
+        <value xsi:type="xsd:double">111.49</value>
     </values>
     <values>
         <field>X40_to_50__c</field>
-        <value xsi:type="xsd:double">110.44</value>
+        <value xsi:type="xsd:double">110.69</value>
     </values>
     <values>
         <field>X50_to_60__c</field>
-        <value xsi:type="xsd:double">109.5</value>
+        <value xsi:type="xsd:double">109.75</value>
     </values>
     <values>
         <field>X60_to_70__c</field>
-        <value xsi:type="xsd:double">108.86</value>
+        <value xsi:type="xsd:double">109.11</value>
     </values>
     <values>
         <field>X70_to_80__c</field>
-        <value xsi:type="xsd:double">107.82</value>
+        <value xsi:type="xsd:double">108.07</value>
     </values>
     <values>
         <field>X80_to_90__c</field>
-        <value xsi:type="xsd:double">107.55</value>
+        <value xsi:type="xsd:double">107.8</value>
     </values>
     <values>
         <field>X90_to_100__c</field>
-        <value xsi:type="xsd:double">106.58</value>
+        <value xsi:type="xsd:double">106.83</value>
     </values>
 </CustomMetadata>

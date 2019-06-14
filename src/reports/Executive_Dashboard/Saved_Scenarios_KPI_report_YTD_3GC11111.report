@@ -24,6 +24,10 @@
     <columns>
         <field>ACCOUNT.NAME</field>
     </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Partner_Closed_Loans__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>Account.Team__c</column>

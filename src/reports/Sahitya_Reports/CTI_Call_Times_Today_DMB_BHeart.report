@@ -37,6 +37,12 @@
     <columns>
         <field>CREATED_BY</field>
     </columns>
+    <columns>
+        <field>PHONE3</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>Activity.CTI_Id__c</column>
@@ -60,7 +66,7 @@
             <column>Contact.Title__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Principal,Loan Officer,Branch Manager,Regional Manager</value>
+            <value>Principal,Loan Officer,Branch Manager,Regional Manager,Assistant Loan Officer</value>
         </criteriaItems>
         <criteriaItems>
             <column>Account.Team__c</column>
@@ -69,16 +75,10 @@
             <value>Braveheart</value>
         </criteriaItems>
         <criteriaItems>
-            <column>CREATED_BY</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Jesse Hanson,Kathy Martinez,Brian Burgan,Josh Posner,James Raymond</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Activity.Call_Duration_In_Seconds__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>30</value>
+            <value>20</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

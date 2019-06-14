@@ -284,33 +284,6 @@
         <pageOrSobjectType>Opportunity</pageOrSobjectType>
         <recordType>Opportunity.Partner_Onboarding</recordType>
         <type>Flexipage</type>
-        <profile>Credit or Risk Analyst</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Opportunity_Record_Page6</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
-        <recordType>Opportunity.Partner_Onboarding</recordType>
-        <type>Flexipage</type>
-        <profile>MarketingProfile</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Opportunity_Record_Page6</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
-        <recordType>Opportunity.Partner_Onboarding</recordType>
-        <type>Flexipage</type>
-        <profile>Guest License User</profile>
-    </profileActionOverrides>
-    <profileActionOverrides>
-        <actionName>View</actionName>
-        <content>Opportunity_Record_Page6</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>Opportunity</pageOrSobjectType>
-        <recordType>Opportunity.Partner_Onboarding</recordType>
-        <type>Flexipage</type>
         <profile>ORM Partner</profile>
     </profileActionOverrides>
     <profileActionOverrides>
@@ -420,6 +393,33 @@
         <recordType>Opportunity.Partner_Onboarding</recordType>
         <type>Flexipage</type>
         <profile>QLMS Account Executive</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page6</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Partner_Onboarding</recordType>
+        <type>Flexipage</type>
+        <profile>Guest License User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page6</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Partner_Onboarding</recordType>
+        <type>Flexipage</type>
+        <profile>Credit or Risk Analyst</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page6</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.Partner_Onboarding</recordType>
+        <type>Flexipage</type>
+        <profile>MarketingProfile</profile>
     </profileActionOverrides>
     <tabs>My_Home1</tabs>
     <tabs>CRA_Dashboard</tabs>

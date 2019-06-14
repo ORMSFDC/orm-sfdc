@@ -324,11 +324,6 @@
                         <showTotal>false</showTotal>
                         <type>aggregate</type>
                     </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>RowCount</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>aggregate</type>
-                    </flexTableColumn>
                     <flexTableSortInfo>
                         <sortColumn>Loan_New__c.Team__c</sortColumn>
                         <sortOrder>1</sortOrder>

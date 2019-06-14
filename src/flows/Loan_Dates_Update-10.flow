@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <assignments>
-        <name>myVariable_waitStartTimeAssignment</name>
-        <label>myVariable_waitStartTimeAssignment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>myDecision</targetReference>
-        </connector>
-    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -193,7 +177,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision24</targetReference>
+            <targetReference>myDecision26</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
@@ -243,16 +227,16 @@
                 <numberValue>6.0</numberValue>
             </value>
         </processMetadataValues>
-        <name>myDecision24</name>
-        <label>myDecision24</label>
+        <name>myDecision26</name>
+        <label>myDecision26</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>myDecision28</targetReference>
+            <targetReference>myDecision32</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
-            <name>myRule_25</name>
+            <name>myRule_27</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -286,7 +270,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_25_A1</targetReference>
+                <targetReference>myRule_27_A1</targetReference>
             </connector>
             <label>Clear to Close</label>
         </rules>
@@ -296,61 +280,6 @@
             <name>index</name>
             <value>
                 <numberValue>7.0</numberValue>
-            </value>
-        </processMetadataValues>
-        <name>myDecision28</name>
-        <label>myDecision28</label>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>myDecision32</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
-        <rules>
-            <name>myRule_29</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.Name</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Application Approved but Not Accepted</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>myRule_29_A1</targetReference>
-            </connector>
-            <label>App Approved not accepted</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <processMetadataValues>
-            <name>index</name>
-            <value>
-                <numberValue>8.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision32</name>
@@ -392,20 +321,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Suspended</stringValue>
+                    <stringValue>Application Approved but Not Accepted</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_33_A1</targetReference>
             </connector>
-            <label>Suspended</label>
+            <label>App Approved not accepted</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>9.0</numberValue>
+                <numberValue>8.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision36</name>
@@ -447,13 +376,13 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Docs out to Settlement Agent</stringValue>
+                    <stringValue>Suspended</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_37_A1</targetReference>
             </connector>
-            <label>Docs out to Settlement</label>
+            <label>Suspended</label>
         </rules>
     </decisions>
     <decisions>
@@ -515,7 +444,7 @@
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>10.0</numberValue>
+                <numberValue>9.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision40</name>
@@ -557,20 +486,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Closed - Awaiting Funding</stringValue>
+                    <stringValue>Docs out to Settlement Agent</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_41_A1</targetReference>
             </connector>
-            <label>Closed - Awaiting Funding</label>
+            <label>Docs out to Settlement</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>11.0</numberValue>
+                <numberValue>10.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision44</name>
@@ -612,20 +541,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Loan Funded</stringValue>
+                    <stringValue>Closed - Awaiting Funding</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_45_A1</targetReference>
             </connector>
-            <label>Loan Funded</label>
+            <label>Closed - Awaiting Funding</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>12.0</numberValue>
+                <numberValue>11.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision48</name>
@@ -667,20 +596,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Denied</stringValue>
+                    <stringValue>Loan Funded</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_49_A1</targetReference>
             </connector>
-            <label>Denied</label>
+            <label>Loan Funded</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>13.0</numberValue>
+                <numberValue>12.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision52</name>
@@ -722,20 +651,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Withdrawn</stringValue>
+                    <stringValue>Denied</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_53_A1</targetReference>
             </connector>
-            <label>Withdrawn</label>
+            <label>Denied</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>14.0</numberValue>
+                <numberValue>13.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision56</name>
@@ -777,20 +706,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Loan Submitted - Incomplete</stringValue>
+                    <stringValue>Withdrawn</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_57_A1</targetReference>
             </connector>
-            <label>Loan Submitted - Incomplete</label>
+            <label>Withdrawn</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>15.0</numberValue>
+                <numberValue>14.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision60</name>
@@ -832,20 +761,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>In Final HUD Review</stringValue>
+                    <stringValue>Loan Submitted - Incomplete</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_61_A1</targetReference>
             </connector>
-            <label>Final HUD Review</label>
+            <label>Loan Submitted - Incomplete</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>16.0</numberValue>
+                <numberValue>15.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision64</name>
@@ -887,20 +816,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Loan Submission Received- Awaiting Review</stringValue>
+                    <stringValue>In Final HUD Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_65_A1</targetReference>
             </connector>
-            <label>Loan Awaiting Review</label>
+            <label>Final HUD Review</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>17.0</numberValue>
+                <numberValue>16.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision68</name>
@@ -942,20 +871,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>In Underwriting Review</stringValue>
+                    <stringValue>Loan Submission Received- Awaiting Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_69_A1</targetReference>
             </connector>
-            <label>In Underwriting Review</label>
+            <label>Loan Awaiting Review</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>18.0</numberValue>
+                <numberValue>17.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision72</name>
@@ -997,20 +926,20 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Loan Rescinded</stringValue>
+                    <stringValue>In Underwriting Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_73_A1</targetReference>
             </connector>
-            <label>Loan Rescinded</label>
+            <label>In Underwriting Review</label>
         </rules>
     </decisions>
     <decisions>
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>19.0</numberValue>
+                <numberValue>18.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision76</name>
@@ -1052,13 +981,13 @@
                 <leftValueReference>myVariable_current.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Application Incomplete</stringValue>
+                    <stringValue>Loan Rescinded</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>myRule_77_A1</targetReference>
             </connector>
-            <label>Application Incomplete</label>
+            <label>Loan Rescinded</label>
         </rules>
     </decisions>
     <decisions>
@@ -1120,16 +1049,71 @@
         <processMetadataValues>
             <name>index</name>
             <value>
-                <numberValue>20.0</numberValue>
+                <numberValue>19.0</numberValue>
             </value>
         </processMetadataValues>
         <name>myDecision80</name>
         <label>myDecision80</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision84</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_81</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Application Incomplete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_81_A1</targetReference>
+            </connector>
+            <label>Application Incomplete</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>20.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision84</name>
+        <label>myDecision84</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_85</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
@@ -1163,7 +1147,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_81_A1</targetReference>
+                <targetReference>myRule_85_A1</targetReference>
             </connector>
             <label>Sandbox</label>
         </rules>
@@ -1176,7 +1160,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_10_myRule_9_A1_3854722201</name>
+        <name>formula_10_myRule_9_A1_7843166437</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -1187,7 +1171,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_9_A1_8108947840</name>
+        <name>formula_11_myRule_9_A1_7755559031</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1198,7 +1182,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_14_myRule_13_A1_1616407839</name>
+        <name>formula_14_myRule_13_A1_4099165054</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1209,7 +1193,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_15_myRule_13_A1_7458796653</name>
+        <name>formula_15_myRule_13_A1_3459002444</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1220,7 +1204,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_18_myRule_17_A1_8434546426</name>
+        <name>formula_18_myRule_17_A1_6657389212</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1231,62 +1215,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_19_myRule_17_A1_3352246104</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_22_myRule_21_A1_7674338191</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_23_myRule_21_A1_3912777908</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_26_myRule_25_A1_6296665237</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_27_myRule_25_A1_2991884034</name>
-        <dataType>DateTime</dataType>
-        <expression>NOW()</expression>
-    </formulas>
-    <formulas>
-        <processMetadataValues>
-            <name>originalFormula</name>
-            <value>
-                <stringValue>NOW()</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>formula_2_myRule_1_A1_4760623120</name>
+        <name>formula_19_myRule_17_A1_7859058351</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1297,7 +1226,18 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_30_myRule_29_A1_0571352991</name>
+        <name>formula_22_myRule_21_A2_4259650800</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>Now()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_23_myRule_21_A2_2632851647</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -1308,7 +1248,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_31_myRule_29_A1_9349480848</name>
+        <name>formula_24_myRule_21_A1_8776475535</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1319,7 +1259,40 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_34_myRule_33_A1_2569078106</name>
+        <name>formula_25_myRule_21_A1_0405886560</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>Now()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_28_myRule_27_A2_4999823215</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>Now()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_29_myRule_27_A2_2515453861</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>NOW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_8801597039</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1330,7 +1303,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_35_myRule_33_A1_9368240719</name>
+        <name>formula_30_myRule_27_A1_6732680046</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1341,7 +1314,29 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_38_myRule_37_A1_0472222354</name>
+        <name>formula_31_myRule_27_A1_4428925829</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>Now()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_34_myRule_33_A1_0030341820</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>NOW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_35_myRule_33_A1_0912033281</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1352,7 +1347,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_39_myRule_37_A1_0693424729</name>
+        <name>formula_38_myRule_37_A1_0982076023</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1363,7 +1358,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_2458586272</name>
+        <name>formula_39_myRule_37_A1_3990230836</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1374,7 +1369,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_42_myRule_41_A1_6288524521</name>
+        <name>formula_3_myRule_1_A1_4775583034</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1385,7 +1380,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_43_myRule_41_A1_2767114948</name>
+        <name>formula_42_myRule_41_A1_1081393742</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1396,7 +1391,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_46_myRule_45_A1_3078948620</name>
+        <name>formula_43_myRule_41_A1_0176958364</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1407,7 +1402,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_47_myRule_45_A1_6186478451</name>
+        <name>formula_46_myRule_45_A1_2711916557</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1418,7 +1413,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_50_myRule_49_A1_9160650795</name>
+        <name>formula_47_myRule_45_A1_7942170221</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1429,7 +1424,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_51_myRule_49_A1_9138356296</name>
+        <name>formula_50_myRule_49_A1_4632478154</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1440,7 +1435,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_54_myRule_53_A1_6661432154</name>
+        <name>formula_51_myRule_49_A1_0333939249</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1451,7 +1446,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_55_myRule_53_A1_3981855444</name>
+        <name>formula_54_myRule_53_A1_5094627296</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1462,7 +1457,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_58_myRule_57_A1_5434001288</name>
+        <name>formula_55_myRule_53_A1_0135006040</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1473,7 +1468,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_59_myRule_57_A1_6157707988</name>
+        <name>formula_58_myRule_57_A1_0399281943</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1484,7 +1479,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_62_myRule_61_A1_3743371592</name>
+        <name>formula_59_myRule_57_A1_0871631443</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1495,7 +1490,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_63_myRule_61_A1_6945242382</name>
+        <name>formula_62_myRule_61_A1_1981196850</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1506,7 +1501,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_66_myRule_65_A1_3781694914</name>
+        <name>formula_63_myRule_61_A1_9120700007</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1517,7 +1512,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_67_myRule_65_A1_9768396333</name>
+        <name>formula_66_myRule_65_A1_6244587971</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1528,7 +1523,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_6_myRule_5_A1_2396248235</name>
+        <name>formula_67_myRule_65_A1_0491569119</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1539,7 +1534,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_70_myRule_69_A1_1310894935</name>
+        <name>formula_6_myRule_5_A1_5683437354</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1550,7 +1545,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_71_myRule_69_A1_0531040680</name>
+        <name>formula_70_myRule_69_A1_3802530555</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1561,7 +1556,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_74_myRule_73_A1_4360035795</name>
+        <name>formula_71_myRule_69_A1_1219776767</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1572,7 +1567,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_75_myRule_73_A1_7255016567</name>
+        <name>formula_74_myRule_73_A1_0247841122</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1583,7 +1578,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_78_myRule_77_A1_9593053106</name>
+        <name>formula_75_myRule_73_A1_4748207959</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1594,7 +1589,7 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_79_myRule_77_A1_4673967711</name>
+        <name>formula_78_myRule_77_A1_5377898386</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1605,7 +1600,40 @@
                 <stringValue>NOW()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_7_myRule_5_A1_1385287838</name>
+        <name>formula_79_myRule_77_A1_0971530751</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>NOW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_7_myRule_5_A1_2904783892</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>NOW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_82_myRule_81_A1_2354375188</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>NOW()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_83_myRule_81_A1_0198733641</name>
         <dataType>DateTime</dataType>
         <expression>NOW()</expression>
     </formulas>
@@ -1637,9 +1665,671 @@
     </processMetadataValues>
     <processType>Workflow</processType>
     <recordCreates>
-        <name>myRule_69_A2</name>
+        <name>myRule_21_A2</name>
+        <label>UW Task For PCS</label>
+        <locationX>2100</locationX>
+        <locationY>300</locationY>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>AE on Loan</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>AE_on_Loan__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.Related_Partner__r.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Status Change</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Status_Change__c</field>
+            <value>
+                <elementReference>formula_22_myRule_21_A2_4259650800</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Related Loan</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Loan_New__c</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Loan__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Open Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Open_Date__c</field>
+            <value>
+                <elementReference>formula_23_myRule_21_A2_2632851647</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Owner ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Group;User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.PCS_at_Loan_Level__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>PCS at Loan Level</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>PCS_at_Loan_Level__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.PCS_at_Loan_Level__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>01256000000S5JzAAK</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Subject</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Subject__c</field>
+            <value>
+                <stringValue>Loan - Conditionally Approved</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Underwriter</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Underwriter__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.UW__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Underwriter__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>myRule_27_A2</name>
+        <label>UW Task for PCS</label>
+        <locationX>2700</locationX>
+        <locationY>300</locationY>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>AE on Loan</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>AE_on_Loan__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.Related_Partner__r.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Status Change</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Status_Change__c</field>
+            <value>
+                <elementReference>formula_28_myRule_27_A2_4999823215</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Related Loan</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Loan_New__c</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Loan__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Open Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Open_Date__c</field>
+            <value>
+                <elementReference>formula_29_myRule_27_A2_2515453861</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Owner ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Group;User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.PCS_at_Loan_Level__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>PCS at Loan Level</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>PCS_at_Loan_Level__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.PCS_at_Loan_Level__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Record Type ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>RecordType</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>RecordTypeId</field>
+            <value>
+                <stringValue>01256000000S5JzAAK</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Subject</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Subject__c</field>
+            <value>
+                <stringValue>Underwriter Clear to Close</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Underwriter</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Underwriter__c</field>
+            <value>
+                <elementReference>myVariable_current.LoanId__r.UW__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Underwriter__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>myRule_73_A2</name>
         <label>Create New Underwrite</label>
-        <locationX>6900</locationX>
+        <locationX>7300</locationX>
         <locationY>300</locationY>
         <inputAssignments>
             <processMetadataValues>
@@ -1854,7 +2544,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012S0000000aIlLIAU</stringValue>
+                <stringValue>01256000000S4wIAAS</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2078,7 +2768,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_14_myRule_13_A1_1616407839</elementReference>
+                <elementReference>formula_14_myRule_13_A1_4099165054</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2114,7 +2804,7 @@
             </processMetadataValues>
             <field>Submitted_to_Lender_Date__c</field>
             <value>
-                <elementReference>formula_15_myRule_13_A1_7458796653</elementReference>
+                <elementReference>formula_15_myRule_13_A1_3459002444</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -2194,7 +2884,7 @@
             </processMetadataValues>
             <field>In_Processing_Date0__c</field>
             <value>
-                <elementReference>formula_18_myRule_17_A1_8434546426</elementReference>
+                <elementReference>formula_18_myRule_17_A1_6657389212</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2266,7 +2956,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_19_myRule_17_A1_3352246104</elementReference>
+                <elementReference>formula_19_myRule_17_A1_7859058351</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -2346,7 +3036,7 @@
             </processMetadataValues>
             <field>App_Requested_Date__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_4760623120</elementReference>
+                <elementReference>formula_2_myRule_1_A1_8801597039</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2418,7 +3108,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_2458586272</elementReference>
+                <elementReference>formula_3_myRule_1_A1_4775583034</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -2452,6 +3142,9 @@
         <label>Update Dates</label>
         <locationX>2100</locationX>
         <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_21_A2</targetReference>
+        </connector>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -2498,7 +3191,7 @@
             </processMetadataValues>
             <field>Conditionally_Approved_Date0__c</field>
             <value>
-                <elementReference>formula_22_myRule_21_A1_7674338191</elementReference>
+                <elementReference>formula_24_myRule_21_A1_8776475535</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2570,7 +3263,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_23_myRule_21_A1_3912777908</elementReference>
+                <elementReference>formula_25_myRule_21_A1_0405886560</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -2600,10 +3293,13 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_25_A1</name>
+        <name>myRule_27_A1</name>
         <label>Update Dates</label>
-        <locationX>2500</locationX>
+        <locationX>2700</locationX>
         <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_27_A2</targetReference>
+        </connector>
         <filters>
             <processMetadataValues>
                 <name>implicit</name>
@@ -2650,7 +3346,7 @@
             </processMetadataValues>
             <field>Clear_to_Close_Date__c</field>
             <value>
-                <elementReference>formula_26_myRule_25_A1_6296665237</elementReference>
+                <elementReference>formula_30_myRule_27_A1_6732680046</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2722,7 +3418,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_27_myRule_25_A1_2991884034</elementReference>
+                <elementReference>formula_31_myRule_27_A1_4428925829</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -2752,9 +3448,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_29_A1</name>
+        <name>myRule_33_A1</name>
         <label>Update Date</label>
-        <locationX>2900</locationX>
+        <locationX>3300</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2802,7 +3498,7 @@
             </processMetadataValues>
             <field>Application_Approved_Not_Accepted_Date__c</field>
             <value>
-                <elementReference>formula_30_myRule_29_A1_0571352991</elementReference>
+                <elementReference>formula_34_myRule_33_A1_0030341820</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2838,7 +3534,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_31_myRule_29_A1_9349480848</elementReference>
+                <elementReference>formula_35_myRule_33_A1_0912033281</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -2868,9 +3564,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_33_A1</name>
+        <name>myRule_37_A1</name>
         <label>Update Dates</label>
-        <locationX>3300</locationX>
+        <locationX>3700</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -2954,7 +3650,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_34_myRule_33_A1_2569078106</elementReference>
+                <elementReference>formula_38_myRule_37_A1_0982076023</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2990,159 +3686,7 @@
             </processMetadataValues>
             <field>Suspended_Date0__c</field>
             <value>
-                <elementReference>formula_35_myRule_33_A1_9368240719</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Loan_New__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <processMetadataValues>
-            <name>evaluationType</name>
-            <value>
-                <stringValue>always</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>extraTypeInfo</name>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>isChildRelationship</name>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>reference</name>
-            <value>
-                <stringValue>[LoanStatus__c].Loan Id</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>referenceTargetField</name>
-        </processMetadataValues>
-        <name>myRule_37_A1</name>
-        <label>Update Date</label>
-        <locationX>3700</locationX>
-        <locationY>200</locationY>
-        <filters>
-            <processMetadataValues>
-                <name>implicit</name>
-                <value>
-                    <booleanValue>true</booleanValue>
-                </value>
-            </processMetadataValues>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>myVariable_current.LoanId__c</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>DateTime</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Docs Out to Settlement Agent Date</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Docs_Out_to_Settlement_Agent_Date__c</field>
-            <value>
-                <elementReference>formula_38_myRule_37_A1_0472222354</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>IsActive</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>IsActiveFlag__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>DateTime</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>Loan Status Change Date</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Formula</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>Loan_Status_Change_Date__c</field>
-            <value>
-                <elementReference>formula_39_myRule_37_A1_0693424729</elementReference>
+                <elementReference>formula_39_myRule_37_A1_3990230836</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -3205,7 +3749,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Closed - Awaiting Funding Date0</stringValue>
+                    <stringValue>Docs Out to Settlement Agent Date</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -3220,9 +3764,9 @@
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Closed_Awaiting_Funding_Date0__c</field>
+            <field>Docs_Out_to_Settlement_Agent_Date__c</field>
             <value>
-                <elementReference>formula_42_myRule_41_A1_6288524521</elementReference>
+                <elementReference>formula_42_myRule_41_A1_1081393742</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3294,7 +3838,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_43_myRule_41_A1_2767114948</elementReference>
+                <elementReference>formula_43_myRule_41_A1_0176958364</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -3325,7 +3869,7 @@
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_45_A1</name>
-        <label>Update Dates</label>
+        <label>Update Date</label>
         <locationX>4500</locationX>
         <locationY>200</locationY>
         <filters>
@@ -3357,7 +3901,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Loan Funded Date</stringValue>
+                    <stringValue>Closed - Awaiting Funding Date0</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -3372,9 +3916,45 @@
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Loan_Funded_Date__c</field>
+            <field>Closed_Awaiting_Funding_Date0__c</field>
             <value>
-                <elementReference>formula_46_myRule_45_A1_3078948620</elementReference>
+                <elementReference>formula_46_myRule_45_A1_2711916557</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>IsActive</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>IsActiveFlag__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3410,7 +3990,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_47_myRule_45_A1_6186478451</elementReference>
+                <elementReference>formula_47_myRule_45_A1_7942170221</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -3473,7 +4053,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Denied Date0</stringValue>
+                    <stringValue>Loan Funded Date</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -3488,9 +4068,9 @@
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Denied_Date0__c</field>
+            <field>Loan_Funded_Date__c</field>
             <value>
-                <elementReference>formula_50_myRule_49_A1_9160650795</elementReference>
+                <elementReference>formula_50_myRule_49_A1_4632478154</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3526,7 +4106,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_51_myRule_49_A1_9138356296</elementReference>
+                <elementReference>formula_51_myRule_49_A1_0333939249</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -3589,7 +4169,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Loan Status Change Date</stringValue>
+                    <stringValue>Denied Date0</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -3604,9 +4184,9 @@
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Loan_Status_Change_Date__c</field>
+            <field>Denied_Date0__c</field>
             <value>
-                <elementReference>formula_54_myRule_53_A1_6661432154</elementReference>
+                <elementReference>formula_54_myRule_53_A1_5094627296</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3625,7 +4205,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Withdrawn Date0</stringValue>
+                    <stringValue>Loan Status Change Date</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -3640,9 +4220,9 @@
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Withdrawn_Date0__c</field>
+            <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_55_myRule_53_A1_3981855444</elementReference>
+                <elementReference>formula_55_myRule_53_A1_0135006040</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -3693,42 +4273,6 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>IsActive</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideReferenceTo</name>
-                <value>
-                    <stringValue></stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>Boolean</stringValue>
-                </value>
-            </processMetadataValues>
-            <field>IsActiveFlag__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
                     <stringValue>DateTime</stringValue>
                 </value>
             </processMetadataValues>
@@ -3758,7 +4302,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_58_myRule_57_A1_5434001288</elementReference>
+                <elementReference>formula_58_myRule_57_A1_0399281943</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3777,7 +4321,7 @@
             <processMetadataValues>
                 <name>leftHandSideLabel</name>
                 <value>
-                    <stringValue>Loan Submitted - Incomplete</stringValue>
+                    <stringValue>Withdrawn Date0</stringValue>
                 </value>
             </processMetadataValues>
             <processMetadataValues>
@@ -3792,9 +4336,9 @@
                     <stringValue>Formula</stringValue>
                 </value>
             </processMetadataValues>
-            <field>Loan_Submitted_Incomplete__c</field>
+            <field>Withdrawn_Date0__c</field>
             <value>
-                <elementReference>formula_59_myRule_57_A1_6157707988</elementReference>
+                <elementReference>formula_59_myRule_57_A1_0871631443</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -3910,7 +4454,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_6_myRule_5_A1_2396248235</elementReference>
+                <elementReference>formula_6_myRule_5_A1_5683437354</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -3946,7 +4490,7 @@
             </processMetadataValues>
             <field>Waiting_for_Full_Package_Date0__c</field>
             <value>
-                <elementReference>formula_7_myRule_5_A1_1385287838</elementReference>
+                <elementReference>formula_7_myRule_5_A1_2904783892</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -3977,8 +4521,160 @@
             <name>referenceTargetField</name>
         </processMetadataValues>
         <name>myRule_61_A1</name>
-        <label>Update Date/Time</label>
+        <label>Update Dates</label>
         <locationX>6100</locationX>
+        <locationY>200</locationY>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.LoanId__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>IsActive</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>IsActiveFlag__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Loan Status Change Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Loan_Status_Change_Date__c</field>
+            <value>
+                <elementReference>formula_62_myRule_61_A1_1981196850</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Loan Submitted - Incomplete</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Loan_Submitted_Incomplete__c</field>
+            <value>
+                <elementReference>formula_63_myRule_61_A1_9120700007</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Loan_New__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[LoanStatus__c].Loan Id</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_65_A1</name>
+        <label>Update Date/Time</label>
+        <locationX>6500</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -4026,7 +4722,7 @@
             </processMetadataValues>
             <field>In_final_HUD_Review_Date__c</field>
             <value>
-                <elementReference>formula_62_myRule_61_A1_3743371592</elementReference>
+                <elementReference>formula_66_myRule_65_A1_6244587971</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4098,7 +4794,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_63_myRule_61_A1_6945242382</elementReference>
+                <elementReference>formula_67_myRule_65_A1_0491569119</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -4128,9 +4824,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_65_A1</name>
+        <name>myRule_69_A1</name>
         <label>Update Date/Time</label>
-        <locationX>6500</locationX>
+        <locationX>6900</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -4214,7 +4910,7 @@
             </processMetadataValues>
             <field>Loan_Received_Awaiting_Review__c</field>
             <value>
-                <elementReference>formula_66_myRule_65_A1_3781694914</elementReference>
+                <elementReference>formula_70_myRule_69_A1_3802530555</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4250,7 +4946,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_67_myRule_65_A1_9768396333</elementReference>
+                <elementReference>formula_71_myRule_69_A1_1219776767</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -4280,12 +4976,12 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_69_A1</name>
+        <name>myRule_73_A1</name>
         <label>Update Date/Time</label>
-        <locationX>6900</locationX>
+        <locationX>7300</locationX>
         <locationY>200</locationY>
         <connector>
-            <targetReference>myRule_69_A2</targetReference>
+            <targetReference>myRule_73_A2</targetReference>
         </connector>
         <filters>
             <processMetadataValues>
@@ -4333,7 +5029,7 @@
             </processMetadataValues>
             <field>In_Underwriting_Review_Date__c</field>
             <value>
-                <elementReference>formula_70_myRule_69_A1_1310894935</elementReference>
+                <elementReference>formula_74_myRule_73_A1_0247841122</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4405,7 +5101,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_71_myRule_69_A1_0531040680</elementReference>
+                <elementReference>formula_75_myRule_73_A1_4748207959</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4477,9 +5173,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_73_A1</name>
+        <name>myRule_77_A1</name>
         <label>Update Date/Time</label>
-        <locationX>7300</locationX>
+        <locationX>7700</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -4527,7 +5223,7 @@
             </processMetadataValues>
             <field>Loan_Rescinded_Date__c</field>
             <value>
-                <elementReference>formula_74_myRule_73_A1_4360035795</elementReference>
+                <elementReference>formula_78_myRule_77_A1_5377898386</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4563,7 +5259,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_75_myRule_73_A1_7255016567</elementReference>
+                <elementReference>formula_79_myRule_77_A1_0971530751</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -4593,9 +5289,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_77_A1</name>
+        <name>myRule_81_A1</name>
         <label>Update Date/Time</label>
-        <locationX>7700</locationX>
+        <locationX>8100</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -4643,7 +5339,7 @@
             </processMetadataValues>
             <field>App_Incomplete_Date__c</field>
             <value>
-                <elementReference>formula_78_myRule_77_A1_9593053106</elementReference>
+                <elementReference>formula_82_myRule_81_A1_2354375188</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4715,7 +5411,7 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_79_myRule_77_A1_4673967711</elementReference>
+                <elementReference>formula_83_myRule_81_A1_0198733641</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
@@ -4745,9 +5441,9 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
-        <name>myRule_81_A1</name>
+        <name>myRule_85_A1</name>
         <label>Inactivate Loan</label>
-        <locationX>8100</locationX>
+        <locationX>8500</locationX>
         <locationY>200</locationY>
         <filters>
             <processMetadataValues>
@@ -4875,7 +5571,7 @@
             </processMetadataValues>
             <field>File_Closed_for_Incompleteness_Date__c</field>
             <value>
-                <elementReference>formula_10_myRule_9_A1_3854722201</elementReference>
+                <elementReference>formula_10_myRule_9_A1_7843166437</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -4911,12 +5607,12 @@
             </processMetadataValues>
             <field>Loan_Status_Change_Date__c</field>
             <value>
-                <elementReference>formula_11_myRule_9_A1_8108947840</elementReference>
+                <elementReference>formula_11_myRule_9_A1_7755559031</elementReference>
             </value>
         </inputAssignments>
         <object>Loan_New__c</object>
     </recordUpdates>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <startElementReference>myDecision</startElementReference>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>
@@ -4932,15 +5628,5 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>LoanStatus__c</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_waitStartTimeVariable</name>
-        <dataType>DateTime</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>$Flow.CurrentDateTime</elementReference>
-        </value>
     </variables>
 </Flow>

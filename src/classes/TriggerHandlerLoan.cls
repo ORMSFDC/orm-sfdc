@@ -58,6 +58,7 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
     public override void afterUpdate() {
         Logger.push('afterUpdate', 'TriggerHandlerLoan');
 
+
         // Run Loan Status Tracking Hanlder
         if (testControlMap.get('trackLoanStatus') != NULL) {
 
@@ -99,36 +100,7 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
             }
         }
         
-        // Run Loan Update Partner Fields
-        if (testControlMap.get('onbaseSendKeywords') != NULL) {
-
-            if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseSendKeywords').Enable__c) {                
-                OnBaseLookups.sendKeywords((List<Loan_New__c>)Trigger.new);
-            }
-        }
-        
         RecursiveTriggerHandler.isFirstTime = false;
-        Logger.pop();
-    }
-    
-    public override void beforeUpdate() {
-        Logger.push('beforeUpdate', 'TriggerHandlerLoan');
-        System.debug('TriggerHandlerLoan|beforeUpdate');
-
-        // Validate required OnBase values for final send
-        if (testControlMap.get('onbaseValidateFinal') != NULL) {
-            if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseValidateFinal').Enable__c) {
-                OnBaseLookups.validateFinalSend((List<Loan_New__c>)Trigger.new);
-            }
-        }
-        
-        // Update OnBase values
-        if (testControlMap.get('onbaseTriggerFields') != NULL) {
-            if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseTriggerFields').Enable__c) {
-                OnBaseLookups.updateFields((Map<Id, Loan_New__c>)Trigger.oldMap, (List<Loan_New__c>)Trigger.new);
-            }
-        }
-        
         Logger.pop();
     }
 }

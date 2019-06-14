@@ -42,6 +42,11 @@
             <start>172.30.0.0</start>
         </ipRanges>
         <ipRanges>
+            <description>Rahul_DT</description>
+            <end>162.252.136.24</end>
+            <start>162.252.136.0</start>
+        </ipRanges>
+        <ipRanges>
             <end>161.71.35.254</end>
             <start>161.71.32.0</start>
         </ipRanges>
@@ -108,6 +113,11 @@
         <ipRanges>
             <end>13.111.17.17</end>
             <start>13.111.17.0</start>
+        </ipRanges>
+        <ipRanges>
+            <description>Rahul_DT</description>
+            <end>12.165.188.24</end>
+            <start>12.165.188.0</start>
         </ipRanges>
         <ipRanges>
             <end>10.166.127.254</end>

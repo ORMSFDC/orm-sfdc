@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>STATE</field>
+    </columns>
+    <columns>
+        <field>Lead.Last_Activity_Date_Time__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Last_Activity_Type__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Live Well</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LEAD_OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Live Well - Leads</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignLead</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+</Report>

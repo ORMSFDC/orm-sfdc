@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.App_Processed__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.ORMS_Folder_Loans__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.ORMS_Closed_Loans__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.Committed_Partner,Account.Partners,Account.Approved_Partners</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>USERS.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Jesse&apos;s Report</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

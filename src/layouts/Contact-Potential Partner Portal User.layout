@@ -406,6 +406,16 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>SmsHighlightAction</actionName>
+            <actionType>ProductivityAction</actionType>
+            <sortOrder>26</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>EmailHighlightAction</actionName>
+            <actionType>ProductivityAction</actionType>
+            <sortOrder>27</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>0</sortOrder>
@@ -436,6 +446,21 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>LoginToNetworkAsUser</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>ContactHierarchy</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>ViewPartnerPortalUser</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>13</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>NewContact</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
@@ -459,21 +484,6 @@
             <actionName>FeedItem.PollPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>10</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>LoginToNetworkAsUser</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>11</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>ContactHierarchy</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>12</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>ViewPartnerPortalUser</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>13</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Submit</actionName>
@@ -534,16 +544,6 @@
             <actionName>CallHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
             <sortOrder>25</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>SmsHighlightAction</actionName>
-            <actionType>ProductivityAction</actionType>
-            <sortOrder>26</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>EmailHighlightAction</actionName>
-            <actionType>ProductivityAction</actionType>
-            <sortOrder>27</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedContent>

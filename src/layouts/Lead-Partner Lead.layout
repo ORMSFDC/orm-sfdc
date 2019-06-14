@@ -307,6 +307,21 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>NewEvent</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>10</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
@@ -355,21 +370,6 @@
             <actionName>Lead.Email</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>9</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>NewEvent</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>10</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>11</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>12</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>

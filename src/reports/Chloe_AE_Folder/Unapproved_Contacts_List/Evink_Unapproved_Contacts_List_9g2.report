@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Contact.Office_Phone__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Cell__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT_RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.Potential_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER_FULL_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Josh Evink</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Partner_Onboarding_Status__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>App Complete/Approved,App Complete/Denied,Withdrawn</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Evink - Unapproved Contacts List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -311,6 +311,10 @@
             <section>Non-Borrower Information</section>
         </sections>
     </layouts>
+    <quickActions>
+        <label><!-- Task 2 --></label>
+        <name>Task_2</name>
+    </quickActions>
     <sharingReasons>
         <label><!-- Loan Processor --></label>
         <name>LoanProcessor</name>

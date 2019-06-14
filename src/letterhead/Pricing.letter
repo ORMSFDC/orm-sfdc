@@ -17,7 +17,6 @@
         <backgroundColor>#FFFFFF</backgroundColor>
         <height>10</height>
         <horizontalAlignment>Left</horizontalAlignment>
-        <logo>SharedDocuments/ORM_Email_Logo.png</logo>
         <verticalAlignment>Top</verticalAlignment>
     </header>
     <middleLine>

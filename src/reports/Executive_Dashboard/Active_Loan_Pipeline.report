@@ -30,6 +30,9 @@
     <columns>
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
+    <columns>
+        <field>Loan_New__c.Waiting_for_Full_Package_Date0__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>

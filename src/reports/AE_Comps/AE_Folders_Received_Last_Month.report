@@ -10,7 +10,7 @@
         <field>Loan_New__c.LoanStatus__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Client_Name__c</field>
@@ -27,9 +27,6 @@
     <columns>
         <field>FK_$Account.Company_NMLS_ID__c</field>
     </columns>
-    <columns>
-        <field>FK_ACC_OWNER_NAME</field>
-    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>
@@ -38,19 +35,24 @@
             <value>Test Partner</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.In_Processing_Date__c</column>
+            <column>Loan_New__c.In_Underwriting_Review_Date__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>LAST_MONTH</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.In_Processing_Date__c</column>
+            <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>LAST_MONTH</value>
+            <operator>notEqual</operator>
+            <value>Sandbox</value>
         </criteriaItems>
     </filter>
-    <format>Tabular</format>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_ACC_OWNER_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>AE Folders Received Last Month</name>
     <params>
         <name>co</name>

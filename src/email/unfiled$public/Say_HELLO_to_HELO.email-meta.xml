@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Say HELLO to HELO</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Say HELLO to HELO</name>
+    <style>none</style>
+    <subject>Great News, Learn about HELO!</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+ORMS has exciting news you’ll want to know about! Introducing our newest mortgage product – say hello to HELO! Short for Home Equity Loan Optimizer, HELO was created by One Reverse Mortgage Services as a more inclusive option for borrowers
+
+The key features of our HELO include:
+
+1. The max loan amount for HELO is $4 million, compared to only $509,738 for the HECM. This makes it a great option for clients with high-value homes.
+2. There is more flexibility on property types, opening the reverse mortgage up to many borrowers with condominiums, solar panels, and other home features that do not qualify for the HECM.
+3. A Mortgage Insurance Premium is not required, meaning your clients will have access to more money at lower costs.
+4. There are no fund restrictions at closing. Your clients can take as much of their proceeds as they want from the moment they close.
+
+Let us tell you how much your clients could receive with HELO. Please review the fact sheet attached in this email and call me today. I can give you even more information on this exciting new product and tell you how it can benefit your clients.
+
+I know you have borrowers who can benefit from HELO, help them become some of the first clients to get this exclusive, new product from One Reverse Mortgage Services!
+
+Best,
+
+{!Contact.OwnerFullName}
+{!Contact.OwnerEmail}
+{!Contact.OwnerTitle}
+{!Contact.OwnerPhone}
+
+Let&apos;s Get Started!
+Contact me at {!User.Phone} or just hit reply to this email</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

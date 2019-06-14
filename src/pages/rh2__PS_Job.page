@@ -1,0 +1,262 @@
+<apex:page standardcontroller="rh2__RH_Job__c"  extensions="rh2.PS_DefineJob_Controller" sidebar="false" applyBodyTag="false" docType="html-5.0" showHeader="true">
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	   	<head> 
+	    	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	    
+        <apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/RollupRun.js') }"/>                
+	    	<apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/UI_Utilities.js') }"/>	       	
+	    	<apex:includeScript value="//code.jquery.com/jquery-1.11.3.min.js"/>   
+	     </head>
+	
+	     <script type="text/javascript">
+    	//Verify namespace is ready
+        var rh = rh || {};
+        rh.rollupRun = new RollupRun();            
+        
+        rh.j$ = jQuery.noConflict();
+        rh.j$(document).ready(function() {
+            rh.rollupRun.batchSize = {!maxBatchSize};
+            countRecords();
+            displayValidationError();
+        });
+    
+        var maxRecords, totalRecords;
+        var valueChecked = Boolean('{!JSENCODE(IF(RH_Job__c.RunForAllRecords__c, "non_emptystring", ""))}');
+         
+        
+      var objName = '{!JSENCODE(parentObjectName)}';
+      function countRecords() {
+          Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.PS_DefineJob_Controller.maxRecords}',
+              objName, populateRecordCount, {escape:true, timeout:120000}); 
+        }     
+
+      function displayValidationError(){
+      	var showMessage = false;
+      	if({!numRecsIssue}){
+      		document.getElementById('numRecs').class = 'slds-col slds-size_1-of-24 slds-align-middle slds-p-left_xxx-small slds-has-error';
+      		showMessage = true;
+      	}
+      	if({!runTimeIssue}){
+      		document.getElementById('runTime').class = 'slds-col_padded slds-align-middle slds-m-left_small slds-size_1-of-24 slds-has-error';   
+      		showMessage = true;     		
+      	}
+      	
+      	showModal(showMessage, 'validateSchedule');
+      }   
+ 		
+
+ 		</script>
+        
+    <script>
+  function changeValue() {
+    if (valueChecked == true) {
+      valueChecked = false;
+    } else if (valueChecked == false) {
+      valueChecked = true;
+      rfaCheck();
+      setRunAll();
+    } 
+  }
+
+    	</script>
+
+
+		<script> 
+      window.onload = function() {
+       if({!showScheduleWarning}){
+          document.getElementById('scheduleWarning').style.display = "block";
+       }
+     }
+    </script>
+
+        
+	     <body>
+	     <apex:form >
+        <apex:slds />
+          <apex:actionFunction action="{!ensureRFAJobExists}" name="rfaCheck" />
+          <apex:actionFunction action="{!setMaxRecordsForRunAll}" name="setRunAll"/>
+
+		     <div class="slds-scope" role="main"> 
+		     	<apex:inputHidden value="{!maxRecords}" id="maxRecords"/>   
+		     	<apex:inputHidden value="{!rollupRunTime}" id="rollupRunTime"/>   
+			 	<apex:outputPanel id="ClonePopup">
+			 	<apex:outputPanel rendered="{!showClonepopup}" >
+            		<div aria-hidden="false" role="dialog" class="slds-modal slds-fade-in-open">
+			    		<div class="slds-modal__container">
+			      			<div class="slds-modal__header">
+			        			<h2 class="slds-text-heading_medium">Clone from Existing Schedule</h2>
+			        		</div>
+			      			<div class="slds-modal__content">	
+			      			<center>			      			
+			      				<apex:Selectlist value="{!selectedSchedule}" styleclass="slds-button slds-button_neutral slds-picklist__label" style="width: 80%;" multiselect="false" size="1">
+			      					<apex:selectOptions value="{!JobSchedules}"/>
+			      				</apex:Selectlist>		        
+			      			</center>
+			      			</div>  			
+			      			<div class="slds-modal__footer">
+         						<apex:commandButton styleClass="slds-button slds-button_neutral" action="{!closeClonePopup}" rerender="ClonePopup" value="Cancel"/>					        					       
+			        			<apex:commandButton styleClass="slds-button slds-button_brand" action="{!cloneSchedule}" rerender="ClonePopup, jobForm" value="Clone"/>
+			      			</div>
+			    		</div>
+			  		</div>
+			  		<div class="slds-modal-backdrop slds-modal-backdrop_open"></div>
+				</apex:outputPanel>	
+				</apex:outputPanel>
+				
+       				<div class="slds-card slds-card_empty">
+  					<header class="slds-card__header slds-grid grid_flex-spread">
+                		<nav role="navigation">
+        					<ol class="slds-breadcrumb slds-list_horizontal">
+                				<li class="slds-list__item slds-text-heading_label"><a href="{!URLFOR($Page.PS_Allsettings)}">All Rollup Settings</a></li>
+             				</ol>
+        				</nav>
+  					</header>
+					</div>
+			    		
+    			<div class="slds-card">
+					<header class="slds-card__header slds-grid">
+           				<div class="slds-col">
+               				<h3 class="slds-text-heading_small slds-truncate">Define Rollup Schedule</h3>
+             			</div>
+             			
+           				<div class="slds-col" align="right">   
+         					<apex:commandButton styleClass="slds-button slds-button_brand" action="{! save }" value="Save"/>   
+         					<apex:commandButton styleClass="slds-button slds-button_neutral" action="{!openClonePopup}" rerender="ClonePopup" value="Clone from Existing"/>					        					       
+         					<apex:commandButton styleClass="slds-button slds-button_neutral" rendered="{!not(isBlank(rh2__RH_Job__c.Id))}" action="{!oDelete}" value="Delete" />                   
+         					<apex:commandButton styleClass="slds-button slds-button_neutral" action="{!URLFOR($Page.PS_AllSettings)}" value="Cancel" />       
+         				</div>
+         			</header>
+         			<section class="slds-card__body">
+         			<div class="slds-grid slds-grid_align-center">
+	         			<table class="slds-table slds-col slds-size_1-of-1">
+	                		<tr style="width:100%">
+	                  			<th class="slds-text-heading_label" scope="col">
+	                    			<apex:outputText value="{!targetField} Rollup"/>
+	                   			 	<apex:inputHidden value="{!rh2__RH_Job__c.rh2__Rollup_Name__c}" />
+	                  			</th>                  
+	                    	</tr> 
+	                    </table>  
+                    </div>
+                    <apex:outputPanel id="jobForm">
+                        <br/>
+                    <div class="slds-grid">                    
+	        			<div class="slds-col_padded slds-text-align_right slds-size_1-of-12" >      				
+	        				Active
+	                    </div>
+	                    <div class="slds-col slds-size_1-of-12" >
+                            <apex:inputcheckbox value="{!rh2__RH_Job__c.rh2__Active__c}" onclick=" if(!{!showScheduleWarning} && {!rh2__RH_Job__c.rh2__Active__c}) return confirm('This schedule appears to be critical to ensuring automatic rollup updates.  Are you sure you would like to deactivate this schedule?');"/>
+	                    </div>	
+                        <div class="slds-col slds-size_10-of-12"></div>
+          			</div>
+                        <br/>
+                        
+          			<div class="slds-grid">
+          				<div class="slds-col_padded slds-text-align_right slds-size_1-of-12">
+          					Schedule Name
+          				</div>
+          				<div class="slds-col  slds-size_2-of-12">
+	          				<apex:inputField value="{!rh2__RH_Job__c.rh2__Schedule_Name__c}"/>                    			                  
+          				</div>
+          				<div class="slds-col slds-size_9-of-12"> </div>
+          			</div>
+                        <br/>
+          			<div class="slds-grid">
+          				<div class="slds-col_padded slds-text-align_right slds-size_1-of-12">
+          					Run Every
+          				</div>
+                        <div class="slds-col slds-size_1-of-12 " id="runTime">
+                            <apex:inputField value="{!rh2__RH_Job__c.rh2__Increment__c}" style="width:95%;"/>                    			                  
+                        </div>
+                        <div class="slds-col slds-size_1-of-12">
+                             <apex:inputField value="{!rh2__RH_Job__c.rh2__Unit__c}"/> 
+                        </div>         
+                        <div class="slds-col slds-size_9-of-12"></div>
+                               				        				          			
+          			</div>
+                        <br/>
+                    <div class="slds-grid">
+                        <div class="slds-col_padded slds-size_1-of-12   slds-text-align_right ">
+                           For      			
+                        </div>
+                        <div class="slds-col slds-size_11-of-12" id="numRecs">
+                            <apex:inputText id="amount" value="{!rh2__RH_Job__c.rh2__BatchSize__c}" />  
+                            &nbsp;  
+                            {!parentObjectName} Records. &nbsp;
+                            (<apex:outputtext id="NumRecords" value="Calculating Number Of Parent Records."/>)
+                        </div>
+                    </div>  
+                    
+                        <br/>
+                    <div class="slds-grid">                    
+	        			<div class="slds-col_padded slds-text-align_right slds-size_1-of-12" >      				
+	        				Run for all records
+	                    </div>
+	                    <div class="slds-col slds-size_1-of-12" >
+                            <apex:inputcheckbox value="{!rh2__RH_Job__c.rh2__RunForAllRecords__c}" onchange="changeValue(); return false;"  />
+	                    </div>	
+                        <div class="slds-col slds-size_10-of-12"></div>
+          			</div>
+          			<br/>
+          			<div class="slds-grid">          		
+          				<div class="slds-col_padded slds-size_1-of-12 slds-text-align_right" >
+          					<span>Last Run</span>
+          				</div>
+          				<div class="slds-col slds-grow slds-size_3-of-12"> 
+          					<apex:outputField value="{!rh2__RH_Job__c.rh2__PreviousFireTime__c}"/>
+						</div>
+                        <div class="slds-col slds-size_8-of-12"></div> 
+                    </div>
+                        <br/>
+          			<div class="slds-grid">
+          				
+          				<div class="slds-col_padded slds-size_1-of-12 slds-text-align_right" >
+          					Next Run
+          				</div>
+          				<div class="slds-col slds-size_2-of-12 " >
+          					<apex:inputField value="{!rh2__RH_Job__c.rh2__NextFireTime__c}"/>
+						</div>
+          				
+          				<div class="slds-col slds-size_9-of-12"></div>
+          			</div>
+                        <br/>
+                    <div class="slds-grid">
+                    	
+                    	<div class="slds-col slds-size-1-of-1 slds-text-align_center"> Please Note:
+          						Rollups will restart where they stopped on the last run to ensure all records are eventually updated.
+          					
+                    	</div>
+                    </div>    
+                    	<br/>
+ 	    			<div id='validateSchedule' style="display:none; margin-left:auto; margin-right:auto;" class="slds-box slds-box_xsmall slds-theme_error slds-size_6-of-12">
+ 	    				{!invalidScheduleMessage}
+ 	    			</div>
+            <div id="scheduleWarning" style="display:none; margin-left:auto; margin-right:auto;" class="slds-box slds-box_xsmall slds-theme_error slds-size_6-of-12">
+              <center>
+                      <p>Scheduling a rollup with real-time enabled is not necessary and can cause complications with the rollup. 
+                      Such complications can include record locks, organization slowdowns, un-necessary hitting of governor limits, 
+                      and other issues. We recommend only running schedules when real-time is not enabled or if there is a filter 
+                      that has a date condition within it as real-time will not account for this on all records.</p>
+                      <br></br>
+                      <p>If you have any questions regarding real-time, scheduling, or any combination of the two please feel free 
+                      to contact support at <apex:outputlink value="mailto:support@passagetech.com"> support@passagetech.com</apex:outputLink> where one of our support staff will be happy to answer any 
+                      questions you may have.</p>
+              </center>        
+            </div>
+          			</apex:outputPanel>	
+           			</section>
+           			<footer class="slds-card__footer slds-grid" >
+           				<div class="slds-col" align="right">   			
+           					<apex:commandButton styleClass="slds-button slds-button_brand" action="{! save }" value="Save" oncomplete="displayValidationError();"/>          
+           					<apex:commandButton styleClass="slds-button slds-button_neutral" action="{!openClonePopup}" rerender="ClonePopup" value="Clone from Existing"/>					        					                  					
+           					<apex:commandButton styleClass="slds-button slds-button_neutral" rendered="{!not(isBlank(rh2__RH_Job__c.Id))}" action="{!oDelete}" value="Delete" />                   
+           					<apex:commandButton styleClass="slds-button slds-button_neutral" action="{!URLFOR($Page.PS_AllSettings)}" value="Cancel" />       
+         				</div>
+           			</footer>
+           		</div>     			     	
+       	</div>      	
+       		
+       	
+       	</apex:form>
+     	</body>
+	</html>
+</apex:page>

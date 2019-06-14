@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Text Only H4P</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>H4P</name>
+    <style>none</style>
+    <subject>Another Option</subject>
+    <textOnly>Hi {!Contact.Preferred_First_Name__c},
+
+Purchase season is in full swing, and luckily for your 62+ clients, you have access to a special loan option that allows them to buy a new home without making monthly mortgage payments. It’s called the HECM for Purchase (H4P), and it lets your clients use a reverse mortgage to buy a home.
+
+Check out our presentation that you can show to your clients when explaining the HECM for Purchase (H4P): https://p.widencdn.net/hdcrpv/PP-HECMForPurchasePresentation-20190325 
+
+What questions do you have about the H4P?
+
+{!Contact.OwnerFullName}
+{!Contact.OwnerTitle}
+
+Direct: {!Contact.OwnerPhone}
+Mobile: {!Contact.OwnerMobile__c}
+Toll Free: (800) 655-8533 ext. {!Contact.OwnerExtension__c}
+Email: {!Contact.OwnerEmail}
+Fax: {!Contact.OwnerFax__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

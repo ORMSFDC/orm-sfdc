@@ -1,49 +1,213 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Partner Community</userLicense>
-    <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
-<apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Partner Community</userLicense>
+    <classAccesses>
+        <apexClass>relateiq__OrganizationInfo</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>relateiq__OrganizationInfoTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>relateiq__SalesforceIqPslChecker</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>relateiq__SalesforceIqPslCheckerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__CreateZooomMeetingsQueue</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ExternalZoomMeetingAutoBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ExternalZoomMeetingAutoBatchTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ExternalZoomMeetingDetailsCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ExternalZoomMeetingDetailsCtrlTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ExternalZoomMeetingSchedule</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ExternalZoomMeetingScheduleTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__MeetingMetricsBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__MeetingMetricsBatchTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__PostInstallClass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__PostInstallClass2_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomAPIUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomAPIUtils_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomCalloutTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomDetailCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomDetailCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomHttpMock</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingCreationCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingCreationCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingCreationTriggerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingLaunchCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingLaunchCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartCaseCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartCaseCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartContactCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartContactCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartLeadCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomMeetingStartLeadCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomRecordingLinksCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomRecordingLinksCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomSendEmailCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomSendEmailCtrl_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__ZoomUtils_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>zoom_app__scheduleMeetingMetricsBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomDetail</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__zoomheader</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomDetail</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomMeetingCreation</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomMeetingCreation</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomMeetingLaunch</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomMeetingLaunch</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomMeetingStart</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomMeetingStart</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomMeetingStartCase</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomMeetingStartCase</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomMeetingStartContact</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomMeetingStartContact</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomMeetingStartLead</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomMeetingStartLead</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomRecordingLinks</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
+        <apexPage>zoom_app__ZoomRecordingLinks</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <pageAccesses>
-<apexPage>zoom_app__ZoomSendEmail</apexPage>
-<enabled>false</enabled>
-</pageAccesses>
-    <applicationVisibilities>
+        <apexPage>zoom_app__ZoomSendEmail</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>zoom_app__zoomheader</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
         <application>CMS</application>
         <default>false</default>
         <visible>false</visible>
@@ -113,20 +277,25 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Broker_Origination__c</field>
-</fieldPermissions>
+    <applicationVisibilities>
+        <application>f2b__Mass_Contact_Transfer</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>rh2__PS_Rollup_Helper</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>rh2__Rollup_Helper_Lightning</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
     <field>Account.AccountSource</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.Approval_Status__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -136,22 +305,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Account.Cell__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.Corporate_Resolution_Received_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Account.Description</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.Email__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -166,32 +320,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Account.Main_Phone__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.NMLS_ID__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.NMLS_ID_Received_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Account.NumberOfEmployees</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.ORM_Account_Executive_Email__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.ORMS_Number_of_Scenarios_Run__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -201,27 +330,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Account.Partner_Lead_Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Account.Phone</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.Previous_ORM_AE__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.QLMS_Account_Executive__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Account.Request__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -246,26 +355,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Address__c.City__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Address__c.Releted_Loan_New__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Address__c.State__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Address__c.Zip__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Asset.AccountId</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -286,17 +375,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Asset.Is_Asset_Validated__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Asset.IsCompetitorProduct</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Asset.isJoint__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -601,252 +680,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>ChangeInCircumstances__c.Act_of_God__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Add_a_Non_Borrowing_Spouse__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Adding_a_non_borrowing_resident__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Additional_Loan_Explanation__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.AddRemove_Borrowe__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Appraisal_Received__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Bring_Optional_Funds_to_Closing__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.change_circumstance_occurred_on__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Change_in_Employment__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Change_in_Loan_Officer__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Change_in_Requested_Payment_Plan__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.CIC_RESPA__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Fee_Change_Explanation__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Inaccurate_Information__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Loan_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.No_fee_changes__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Other__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Other_Change__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Other_Circumstance_Client_or_Transaction__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Other_Information_to_Client_Transaction__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Reduce_Origination_Fee__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Title_Fees_Received__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ChangeInCircumstances__c.Withdraw__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.If_yes_Name_of_POA__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.Is_Client_Validated__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.Is_Non_Borrowing_Resident__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.Is_Non_Borrowing_Spouse_Filled__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.Is_there_a_POA__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.IsNBSAvaliable__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.Monthly_Income__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.Non_Borrowing_Resident__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Client__c.Place_of_Celebration__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition__c.Comment__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition__c.Condition_Number__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition__c.Description__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition__c.Loan_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition__c.Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.ConditionID__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.Description__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.Loan_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.New_Comments__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.New_Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.Old_Comments__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.Old_CreatedBy__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.Old_ModifiedBy__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.Old_ModifiedDate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Condition_Log__c.Old_Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Contact.AccountId</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.Cell__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.Check_to_create_a_Prospective_User_Login__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -866,21 +700,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Contact.How_did_you_hear_about_us__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.Individual_Lead_source__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.Individual_lead_Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Contact.Jigsaw</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -896,17 +715,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Contact.Office_Phone__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Contact.Phone</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.Potential_Portal_User_Status__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -917,21 +726,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>Contact.Title</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.Title__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.userLoginId__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Contact.Username__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -1016,127 +810,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Daily_Product_Rate__c.Rate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Declaration__c.Ethnicity__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.City__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.EmployerAddress__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.EmployerName__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.EmployerPhone__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.Income_Type__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.IncomeCategory__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.IncomeValue__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.Is_Employment_Validated__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.PositionTitle__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.SelfEmployment__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Employment__c.State__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Error_Log__c.Action_Name__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Error_Log__c.Entity_Name__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Error_Log__c.Exception_Message__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Error_Log__c.Exception_type__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Error_Log__c.Running_User__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.Call_Duration_In_Seconds__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.Call_End_Time__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.Call_Start_Time__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.Create_Follow_up_task__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.CTI_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Event.Description</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.Disposition__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -1146,32 +820,12 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Event.Loan_Officer__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Event.Location</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Event.Note__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.SubjectType__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Event.Type</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Event.userLoginId__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -1186,67 +840,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>FeeChangeHistory__c.ChangeInCircumtances_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>FeeChangeHistory__c.Fee_Name__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>FeeChangeHistory__c.Loan_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>FeeChangeHistory__c.New_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>FeeChangeHistory__c.Previous_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Idea.Status</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Income_New__c.Is_Income_Validated__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Knowledge__kav.Answer__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Knowledge__kav.Procedure_Audience__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Knowledge__kav.Procedure_Purpose__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Knowledge__kav.Procedure_Steps__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Knowledge__kav.Procedure_Warnings__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Knowledge__kav.Question__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -1262,16 +856,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>Lead.Industry</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Lead.is_Active__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Lead.IsLeadCreatedFromPortal__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -1296,16 +880,6 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Lead.ORM_Account_Executive__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Lead.Pardot_list_id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Lead.Phone</field>
 </fieldPermissions>
     <fieldPermissions>
@@ -1326,562 +900,12 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>LenderLink__c.Visible_if_QLMS_AE_Assigned_to_Partner__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Annual_Hazard_Insurance__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Check_If_Title_is_also_Held_As__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Condominium_FHA_Approved__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.HOA_Monthly_Dues__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Is_Liability_Validated__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.IsJoint__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Legal_Description_of_Property__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Monthly_Flood_Insurance_Premium__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Monthly_Ground_Rents_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Monthly_PUD_Fees_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Property_County__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Property_Held_as__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Property_Title_is_Held_in_These_Names__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Real_Estate_Taxes_Monthly__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.RelatedClient__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.RemainingMonths__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Square_Footage__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Liability__c.Year_Built__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>License__c.Related_Contact__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Account_Number__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Actual_Funding_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Amount_Of_Other_Funds__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Anticipated_Closing_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Appraisal_Effective_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Appraisal_Scheduled_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Assets_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.BayDocsOrderNumber__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.BrokerOrigination__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Condominium_FHA_Approved__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Condominium_Name__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Contact_Email__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Contract_Closing_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Contract_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Cooling_Off_Notice_Signed_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Credit_Report_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Credit_to_Borrower__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Driver_License_and_Social_Security_Card__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Earnest_Money_Deposit__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.ExpectedInterestRate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Extend_Application_Time__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.FHACaseNumber__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Flood_Ordered_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Flood_Received_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Fully_Signed_Application_Package__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Gift_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Gross_Rental_Income__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.HECM_Counseling_Certificate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.HOA_Monthly_Dues__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Income_and_Asset_Documentation__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.InitialInterestRate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Insurance_Binder_Ordered_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Insurance_Binder_Received_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Is_Loan_Created_Manually__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.IsLoanContactFilled_Flag__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.IsLoanCreatedByLoanProcessor__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Lien_Balance__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Lien_Creditor__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Life_Expectancy__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.LineOfCreditAfterFirstYear__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.MandatoryObligations__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Margin__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Monthly_Flood_Insurance_Premium__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Monthly_Ground_Rents_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Monthly_Mortgage_Payment__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Monthly_PUD_Fees_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Mortgage_and_Liens__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Name_of_Company__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Net_Rental_Income__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Originating_Loan_Officer__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Other_Closing_Costs__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Other_Closing_Costs_URL__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Other_Source_Of_Funds__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Payoff_Order_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Present_Market_Value__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.PrincipalLimit__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.ProceedsAvailableFirstYear__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Property_Charge_Payment_History_Result__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Purchase_Price__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Rate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Rate_Type__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.RepairEstimate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.RepairSetAside__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Residential_Income_Required__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Residual_Income_Fulfilled__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Sale_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Sale_Proceeds__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Scheduled_Closing_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Source_Of_Funds__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Status_Of_Current_Address__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Subject_Property_County__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Subject_Property_Type__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Title_Ordered_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Title_Received_Date__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Total_Assets__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Total_Expenses__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Total_Income__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Loan_New__c.Total_Monthly_Property_Charges__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Non_Borrowing_Resident__c.Client_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Non_Borrowing_Resident__c.Date_of_Birth__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Non_Borrowing_Resident__c.IsActiveNBR__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Non_Borrowing_Resident__c.Loan_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Non_Borrowing_Resident__c.Monthly_Income__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Non_Borrowing_Resident__c.Non_Borrowing_Resident_Name__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Non_Borrowing_Resident__c.Relationship_to_Client__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Note__c.LoanId__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Note__c.User_Name__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Note__c.User_Profile__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Opportunity.AccountId</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
     <field>Opportunity.Amount</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Opportunity.Budget_Confirmed__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -1896,27 +920,7 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Opportunity.Discovery_Completed__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Opportunity.LeadSource</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Opportunity.Loss_Reason__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Opportunity.New_CRA_Status__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Opportunity.Next_Recertification_Date__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -1927,16 +931,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>Opportunity.Probability</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Opportunity.ROI_Analysis_Completed__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Opportunity.State__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -2042,11 +1036,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>OrderItem.ServiceDate</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Partner_CRA_Status_History__c.Old_CRA_Status__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -2237,196 +1226,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>QuoteLineItem.TotalPrice</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ResidualIncome__c.Family_Size__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ResidualIncome__c.MidWest__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ResidualIncome__c.NorthEast__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ResidualIncome__c.South__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>ResidualIncome__c.West__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>RunScenario__c.Business_individual__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>RunScenario__c.Business_Partner_Name__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>RunScenario__c.Scenarios_Run__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.BarChartResponse__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.BayDocsOrderNumber__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Cash_at_close__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Cash_Flow_12_months_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Cash_Flow_2_Month_Number__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Cash_Flow_60_months_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Cash_Flow_Remaining_Month__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Cash_Flow_Remaining_months_Amount__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Cash_to_close__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.CashFlow10__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.CashFlow1__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.CashFlow5__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Client_Lead__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Current_Mortgage_Balance__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Desired_Origination_for_Adjustable_Rate__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.EOF__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Estimated_home_value__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Index__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.is_Converted__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Line_of_Credit__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Loan__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Margin__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.MIP__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.ORMS_Number_of_Scenarios_Run__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.PieChartResponse__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Principal_Limit__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.RateType__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Request_Scenario_Package_Count__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Scenario_Response__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Scenario__c.Scenario_Type__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -2801,62 +1600,12 @@
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Task.Call_Duration_In_Seconds__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.Call_End_Time__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.Call_Start_Time__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.Create_Follow_up_task__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.CTI_Id__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Task.Description</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
-    <field>Task.Disposition__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.Loan_Officer__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.Note__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.SubjectType__c</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
     <field>Task.Type</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>Task.userLoginId__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -2867,11 +1616,6 @@
     <editable>false</editable>
     <readable>false</readable>
     <field>Task.WhoId</field>
-</fieldPermissions>
-    <fieldPermissions>
-    <editable>false</editable>
-    <readable>false</readable>
-    <field>User.user_email_Id__c</field>
 </fieldPermissions>
     <fieldPermissions>
     <editable>false</editable>
@@ -3118,6 +1862,1446 @@
     <readable>false</readable>
     <field>WorkOrderLineItem.UnitPrice</field>
 </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Approval_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Cell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Corporate_Resolution_Received_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Main_Phone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.NMLS_ID_Received_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.NMLS_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ORMS_Number_of_Scenarios_Run__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ORM_Account_Executive_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Partner_Lead_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Previous_ORM_AE__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.QLMS_Account_Executive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Address__c.City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Address__c.Releted_Loan_New__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Address__c.State__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Address__c.Zip__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Is_Asset_Validated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.isJoint__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Act_of_God__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.AddRemove_Borrowe__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Add_a_Non_Borrowing_Spouse__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Adding_a_non_borrowing_resident__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Additional_Loan_Explanation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Appraisal_Received__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Bring_Optional_Funds_to_Closing__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.CIC_RESPA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Change_in_Employment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Change_in_Loan_Officer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Change_in_Requested_Payment_Plan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Fee_Change_Explanation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Inaccurate_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Loan_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.No_fee_changes__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Other_Change__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Other_Circumstance_Client_or_Transaction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Other_Information_to_Client_Transaction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Reduce_Origination_Fee__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Title_Fees_Received__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.Withdraw__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ChangeInCircumstances__c.change_circumstance_occurred_on__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Client__c.If_yes_Name_of_POA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Client__c.IsNBSAvaliable__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Client__c.Is_Client_Validated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Client__c.Is_Non_Borrowing_Resident__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Client__c.Is_Non_Borrowing_Spouse_Filled__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Client__c.Is_there_a_POA__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Client__c.Monthly_Income__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Client__c.Non_Borrowing_Resident__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Client__c.Place_of_Celebration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.ConditionID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.Loan_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.New_Comments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.New_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.Old_Comments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.Old_CreatedBy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.Old_ModifiedBy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.Old_ModifiedDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition_Log__c.Old_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition__c.Comment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition__c.Condition_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition__c.Loan_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Condition__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Cell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Check_to_create_a_Prospective_User_Login__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.How_did_you_hear_about_us__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Individual_Lead_source__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Individual_lead_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Office_Phone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Potential_Portal_User_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Title__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Username__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.userLoginId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Daily_Product_Rate__c.Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Declaration__c.Ethnicity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.City__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.EmployerAddress__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.EmployerName__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.EmployerPhone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.IncomeCategory__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.IncomeValue__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.Income_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Employment__c.Is_Employment_Validated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.PositionTitle__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.SelfEmployment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employment__c.State__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Error_Log__c.Action_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Error_Log__c.Entity_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Error_Log__c.Exception_Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Error_Log__c.Exception_type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Error_Log__c.Running_User__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.CTI_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Call_Duration_In_Seconds__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Call_End_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Call_Start_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Create_Follow_up_task__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Disposition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Loan_Officer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.Note__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.SubjectType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Event.userLoginId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FeeChangeHistory__c.ChangeInCircumtances_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FeeChangeHistory__c.Fee_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FeeChangeHistory__c.Loan_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FeeChangeHistory__c.New_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FeeChangeHistory__c.Previous_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Income_New__c.Is_Income_Validated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Knowledge__kav.Answer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Knowledge__kav.Procedure_Audience__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Knowledge__kav.Procedure_Purpose__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Knowledge__kav.Procedure_Steps__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Knowledge__kav.Procedure_Warnings__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Knowledge__kav.Question__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.IsLeadCreatedFromPortal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.ORM_Account_Executive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.Pardot_list_id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Lead.is_Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>LenderLink__c.Visible_if_QLMS_AE_Assigned_to_Partner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.Annual_Hazard_Insurance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Check_If_Title_is_also_Held_As__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Condominium_FHA_Approved__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.HOA_Monthly_Dues__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.IsJoint__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.Is_Liability_Validated__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Legal_Description_of_Property__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.Monthly_Flood_Insurance_Premium__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.Monthly_Ground_Rents_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.Monthly_PUD_Fees_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Property_County__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Property_Held_as__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Property_Title_is_Held_in_These_Names__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Real_Estate_Taxes_Monthly__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.RelatedClient__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Liability__c.RemainingMonths__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Square_Footage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Liability__c.Year_Built__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>License__c.Related_Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Account_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Actual_Funding_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Amount_Of_Other_Funds__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Anticipated_Closing_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Appraisal_Effective_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Appraisal_Scheduled_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Assets_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.BayDocsOrderNumber__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.BrokerOrigination__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Broker_Origination__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Condominium_FHA_Approved__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Condominium_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Contact_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Contract_Closing_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Contract_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Cooling_Off_Notice_Signed_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Credit_Report_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Credit_to_Borrower__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Driver_License_and_Social_Security_Card__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Earnest_Money_Deposit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.ExpectedInterestRate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Extend_Application_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.FHACaseNumber__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Flood_Ordered_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Flood_Received_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Fully_Signed_Application_Package__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Gift_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Gross_Rental_Income__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.HECM_Counseling_Certificate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.HOA_Monthly_Dues__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Income_and_Asset_Documentation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.InitialInterestRate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Insurance_Binder_Ordered_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Insurance_Binder_Received_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.IsLoanContactFilled_Flag__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.IsLoanCreatedByLoanProcessor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Is_Loan_Created_Manually__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Lien_Balance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Lien_Creditor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Life_Expectancy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.LineOfCreditAfterFirstYear__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.MandatoryObligations__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Margin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Monthly_Flood_Insurance_Premium__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Monthly_Ground_Rents_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Monthly_Mortgage_Payment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Monthly_PUD_Fees_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Mortgage_and_Liens__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Name_of_Company__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Net_Rental_Income__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Originating_Loan_Officer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Other_Closing_Costs_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Other_Closing_Costs__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Other_Source_Of_Funds__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Payoff_Order_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Present_Market_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Previous_Modified_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.PrincipalLimit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.ProceedsAvailableFirstYear__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Property_Charge_Payment_History_Result__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Purchase_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Rate_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.RepairEstimate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.RepairSetAside__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Residential_Income_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Residual_Income_Fulfilled__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Sale_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Sale_Proceeds__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Scheduled_Closing_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Source_Of_Funds__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Status_Of_Current_Address__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Subject_Property_County__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.Subject_Property_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Title_Ordered_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Title_Received_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Total_Assets__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Total_Expenses__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Total_Income__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Loan_New__c.Total_Monthly_Property_Charges__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Non_Borrowing_Resident__c.Client_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Non_Borrowing_Resident__c.Date_of_Birth__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Non_Borrowing_Resident__c.IsActiveNBR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Non_Borrowing_Resident__c.Loan_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Non_Borrowing_Resident__c.Monthly_Income__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Non_Borrowing_Resident__c.Non_Borrowing_Resident_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Non_Borrowing_Resident__c.Relationship_to_Client__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Note__c.LoanId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Note__c.User_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Note__c.User_Profile__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Budget_Confirmed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Discovery_Completed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Loss_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.New_CRA_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Next_Recertification_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.ROI_Analysis_Completed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.State__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Partner_CRA_Status_History__c.Old_CRA_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ResidualIncome__c.Family_Size__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ResidualIncome__c.MidWest__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ResidualIncome__c.NorthEast__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ResidualIncome__c.South__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ResidualIncome__c.West__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RunScenario__c.Business_Partner_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RunScenario__c.Business_individual__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RunScenario__c.Scenarios_Run__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.BarChartResponse__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.BayDocsOrderNumber__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.CashFlow10__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.CashFlow1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.CashFlow5__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Cash_Flow_12_months_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Cash_Flow_2_Month_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Cash_Flow_60_months_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Cash_Flow_Remaining_Month__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Cash_Flow_Remaining_months_Amount__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Cash_at_close__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Cash_to_close__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Client_Lead__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Current_Mortgage_Balance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Desired_Origination_for_Adjustable_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.EOF__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Estimated_home_value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Index__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Line_of_Credit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Loan__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.MIP__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Margin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.ORMS_Number_of_Scenarios_Run__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.PieChartResponse__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Principal_Limit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.RateType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Request_Scenario_Package_Count__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Scenario_Response__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.Scenario_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Scenario__c.is_Converted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.CTI_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Call_Duration_In_Seconds__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Call_End_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Call_Start_Time__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Create_Follow_up_task__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Disposition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Loan_Officer__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Note__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.SubjectType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.userLoginId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.user_email_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -3664,6 +3848,14 @@
         <layout>Underwriter__c-Underwriter Layout</layout>
         <recordType>Underwriter__c.UW</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.AE</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Underwriter__c-Underwriter Layout</layout>
+        <recordType>Underwriter__c.PCS_Workflow</recordType>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -3802,6 +3994,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Underwriter__c.UW</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.AE</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Underwriter__c.PCS_Workflow</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
@@ -4140,14 +4342,7 @@
         <tab>PCS_Underwriter</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
-    <tabVisibilities>
-        <tab>TestOnBase</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
-        <tab>Underwriter__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
+    
     <tabVisibilities>
         <tab>standard-Individual</tab>
         <visibility>Hidden</visibility>
@@ -4156,17 +4351,17 @@
         <tab>standard-Recommendation</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    <tabVisibilities>
-        <tab>Condition__c</tab>
-        <visibility>DefaultOff</visibility>
-    </tabVisibilities>
+    
     <tabVisibilities>
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>UW_Dashboard</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Underwriter__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>

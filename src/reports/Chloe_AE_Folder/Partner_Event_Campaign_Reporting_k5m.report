@@ -10,6 +10,9 @@
         <field>ACCOUNT.NAME</field>
     </columns>
     <columns>
+        <field>Account.QLMS_Account_Executive__c</field>
+    </columns>
+    <columns>
         <field>CONTACT_RECORDTYPE</field>
     </columns>
     <columns>
@@ -52,6 +55,10 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Contact.Closings_MTD__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Partner_Closed_Loans__c</field>
     </columns>
     <filter>
         <criteriaItems>

@@ -104,6 +104,11 @@
         <columns>CREATEDBY_USER</columns>
         <columns>CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Jesse Hanson</value>
+        </filters>
         <label>All</label>
     </listViews>
 </CustomObject>

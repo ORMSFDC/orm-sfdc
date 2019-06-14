@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_CNTC_FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>License__c.State__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>License__c.State__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Arizona,California,Colorado,Connecticut,Florida,Georgia,Hawaii,Michigan,Nevada,New Jersey,Oregon,Pennsylvania,South Carolina,Texas,Utah,Virginia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_ACC_RECORDTYPE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.Committed_Partner,Account.Partners,Account.Approved_Partners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_ACC_NAME</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Test Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Account.Account_Executive_Name__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Jesse</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Contact.ORM_Account_Executive_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_ACC_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Jesse Hanson - HELO Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$License__c@License__c.Related_Contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

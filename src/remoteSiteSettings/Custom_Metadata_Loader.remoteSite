@@ -2,5 +2,5 @@
 <RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
     <disableProtocolSecurity>false</disableProtocolSecurity>
     <isActive>true</isActive>
-    <url>https://ormmortgageservices--c.na53.visual.force.com</url>
+    <url>https://ormmortgageservices--uat--c.cs93.visual.force.com</url>
 </RemoteSiteSetting>

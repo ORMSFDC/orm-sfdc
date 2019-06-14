@@ -35,19 +35,19 @@
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartSummary>
                     <axisBinding>y</axisBinding>
-                    <column>RowCount</column>
+                    <column>FORMULA1</column>
                 </chartSummary>
                 <componentType>Gauge</componentType>
                 <displayUnits>Auto</displayUnits>
-                <gaugeMax>22.0</gaugeMax>
+                <gaugeMax>38.0</gaugeMax>
                 <gaugeMin>0.0</gaugeMin>
-                <header>March 2019 Goals</header>
-                <indicatorBreakpoint1>7.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>15.0</indicatorBreakpoint2>
+                <header>May 2019 Goals</header>
+                <indicatorBreakpoint1>16.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>24.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
                 <indicatorLowColor>#C23934</indicatorLowColor>
                 <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>Goals_Reports/March_2019_Goals_ZPc</report>
+                <report>Goals_Reports/May_2019_Goals_l0P</report>
                 <showPercentage>true</showPercentage>
                 <showRange>false</showRange>
                 <showTotal>true</showTotal>
@@ -134,8 +134,38 @@
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>2</colSpan>
+            <colSpan>3</colSpan>
             <columnIndex>6</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <axisBinding>y</axisBinding>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Donut</componentType>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>true</expandOthers>
+                <groupingColumn>Loan_New__c.LoanStatus__c</groupingColumn>
+                <header>PCS Greg Loan Status</header>
+                <legendPosition>Right</legendPosition>
+                <maxValuesDisplayed>6</maxValuesDisplayed>
+                <report>PCS_Reports/PCS_Gregg_Loan_Status</report>
+                <showPercentage>false</showPercentage>
+                <showTotal>true</showTotal>
+                <showValues>true</showValues>
+                <sortBy>RowValueDescending</sortBy>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>4</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
@@ -159,11 +189,44 @@
                 <sortBy>RowValueDescending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>4</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>4</colSpan>
+            <colSpan>6</colSpan>
+            <columnIndex>3</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Maximum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>Loan_New__c.Goal__c</column>
+                </chartSummary>
+                <chartSummary>
+                    <axisBinding>y</axisBinding>
+                    <column>FORMULA1</column>
+                </chartSummary>
+                <componentType>ColumnLine</componentType>
+                <displayUnits>Integer</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>Loan_New__c.Closing_Date__c</groupingColumn>
+                <header>Monthly 2018 Goals</header>
+                <legendPosition>Right</legendPosition>
+                <report>Goals_Reports/Monthly_2018_Goals_aEO</report>
+                <showPercentage>false</showPercentage>
+                <showValues>false</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>8</rowIndex>
+            <rowSpan>4</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>9</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
@@ -218,40 +281,7 @@
                 <header>Ops Prod Summary - FUNDED</header>
                 <report>PCS_Reports/Ops_Prod_Summary_Funded</report>
             </dashboardComponent>
-            <rowIndex>8</rowIndex>
-            <rowSpan>4</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>5</colSpan>
-            <columnIndex>4</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartAxisRange>Auto</chartAxisRange>
-                <chartSummary>
-                    <aggregate>Maximum</aggregate>
-                    <axisBinding>y</axisBinding>
-                    <column>Loan_New__c.Goal__c</column>
-                </chartSummary>
-                <chartSummary>
-                    <axisBinding>y</axisBinding>
-                    <column>FORMULA1</column>
-                </chartSummary>
-                <componentType>ColumnLine</componentType>
-                <displayUnits>Integer</displayUnits>
-                <drillEnabled>false</drillEnabled>
-                <drillToDetailEnabled>false</drillToDetailEnabled>
-                <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
-                <groupingColumn>Loan_New__c.Closing_Date__c</groupingColumn>
-                <header>Monthly 2018 Goals</header>
-                <legendPosition>Right</legendPosition>
-                <report>Goals_Reports/Monthly_2018_Goals_aEO</report>
-                <showPercentage>false</showPercentage>
-                <showValues>false</showValues>
-                <sortBy>RowLabelAscending</sortBy>
-                <useReportChart>false</useReportChart>
-            </dashboardComponent>
-            <rowIndex>8</rowIndex>
+            <rowIndex>12</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -282,7 +312,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Loan_New__c.In_Processing_Date__c</reportColumn>
+                        <reportColumn>Loan_New__c.In_Underwriting_Review_Date__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
@@ -310,7 +340,7 @@
                 <header>No Chatter Activity Loans - Time</header>
                 <report>PCS_Reports/No_Chatter_Activity_Loans_Time</report>
             </dashboardComponent>
-            <rowIndex>12</rowIndex>
+            <rowIndex>16</rowIndex>
             <rowSpan>4</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>9</numberOfColumns>

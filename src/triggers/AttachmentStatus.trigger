@@ -35,7 +35,7 @@ trigger AttachmentStatus on Attachment(after insert) {
         Loan_New__c ln = new Loan_New__c();
     
         ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
-        PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: LoanId];
+        PCS_at_Loan_Level__c,PCS_at_Loan_Level__r.id, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: LoanId];
     
         Profile P = [Select Name from profile Where Id =:userInfo.getProfileId()];
     
@@ -57,8 +57,9 @@ trigger AttachmentStatus on Attachment(after insert) {
         else{
             if((ln.Loanstatus__c == 'In Processing' || ln.Loanstatus__c == 'In Underwriting Review' || ln.Loanstatus__c == 'Conditionally Approved' || ln.Loanstatus__c == 'Underwriting Clear to Close' || ln.Loanstatus__c == 'In Final HUD Review' || ln.Loanstatus__c == 'Docs out to Settlement Agent')
             && (P.Name == 'ORM Partner' || P.Name == 'ORM Partners' || P.Name == 'Partner Community Login User' || P.Name == 'Partner Community User' || P.Name == 'Portal Loan Processor' || 
-                P.Name == 'Portal Loan Processors' || P.Name == 'Prospective Partner User' || P.Name == 'Prospective Partner Users')){
-                t.OwnerId = ln.Related_Partner__r.Assigned_PCS__c;
+                P.Name == 'Portal Loan Processors' || P.Name == 'Prospective Partner User' || P.Name == 'Prospective Partner Users')
+            && (ln.PCS_at_Loan_Level__c != null)    ){
+                t.OwnerId = ln.PCS_at_Loan_Level__r.id;
             }
         }		
                   

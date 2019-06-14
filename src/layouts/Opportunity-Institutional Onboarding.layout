@@ -222,10 +222,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>E_sign_Addendum_Provider__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>RV_Agreement_Received__c</field>
             </layoutItems>
         </layoutColumns>
@@ -263,11 +259,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>FeedItem.ContentPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>1</sortOrder>
@@ -286,6 +277,11 @@
             <actionName>Opportunity.Email</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>NewContact</actionName>

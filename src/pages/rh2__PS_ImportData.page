@@ -1,0 +1,159 @@
+<apex:page controller="rh2.PS_ImportDataController"  sidebar="false"  applyBodyTag="false" docType="html-5.0" showHeader="true">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">	 
+	 <head>
+      
+    	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+      <apex:includeScript value="{! URLFOR($Resource.HS_Jquery, 'jquery-1.12.1.min.js')}" />
+      <apex:includeScript value="{! URLFOR($Resource.PT_Resources_v1, '/js/hs_breadcrumbs.js')}" />
+    	<style>
+    		.pageNumber {
+				margin: 4px;
+				display: inline;
+			}
+    	</style>
+     </head>
+     
+     <script type="text/javascript">
+    
+        $(document).ready(function(){
+          selectBreadcrumb_HS();
+        });
+
+        function replacePageRefDL(){ 
+        
+            if(window.location.replace){     
+                window.location.replace("PS_ExportFile");
+            } else { 
+                window.location.href="PS_ExportFile";
+            }
+        
+        }   
+    
+    </script>
+    
+     <body>
+    	<apex:form >
+	 	<apex:actionFunction action="{!deleteAllExportedRollups}" name="deleteExportedRollupAF" rerender="exportTable" status="inprogress"/>
+	 	<div class="slds-scope" role="main"> 	  
+	 		<div class="slds-card">
+  				<header class="slds-card__header">
+	       			<nav role="navigation">
+    					<ol class="slds-breadcrumb slds-list_horizontal">
+    						<li class="slds-list__item slds-text-heading_label home-crumb"><a href="{!URLFOR($Page.PS_landingPage)}">Home</a></li>
+                <li class="slds-list__item slds-text-heading_label setting-crumb"><a href="{!URLFOR($Page.PS_Allsettings)}">All Rollup Settings</a></li>
+     					</ol>
+        			</nav>
+  				</header>
+  			</div>
+ 			<div class="slds-card">
+				<header class="slds-card__header ">
+           			<div >
+               			<h3 class="slds-text-heading_small slds-truncate">Select Rollups for Export</h3>               
+             		</div>
+             		<div style="float:right;">
+             			<apex:commandButton styleClass="slds-button slds-button_neutral" value="Export Selected" action="{! regExport }" rerender="exportedRollups, exportTable" status="inprogress"/>
+             			&nbsp;
+                   		<apex:commandButton styleClass="slds-button slds-button_neutral" value="Export All" action="{! allExport }" rerender="exportedRollups, rollupToExport, exportTable" status="inprogress"/>
+             		</div>
+             	</header>
+             	
+             	<apex:outputPanel id="rollupTable">
+	             	<apex:outputPanel style="width:100%;" id="rollupExport">
+						<div>
+                        	<c:Paginate pageController="{! rollupPaginateController }" renderedComponent="rollupTable" />
+                    	</div>		
+					</apex:outputPanel>
+	             	<section class="slds-card__body">
+	            		<table class="slds-table slds-table_bordered hideFullColumn" id="allRollups">
+	              			<thead>
+	                		<tr style="width:100%;">
+	                  			<th class="slds-text-heading_label">
+	                    			<apex:commandLink value="Select"/  > 
+	                    		</th>   
+	                   
+	                  			<th class="slds-text-heading_label" scope="col">
+	                     			<apex:commandLink value="Target Field"  > 
+	                        		<apex:param name="sortField" value="targetField__c" assignTo="{!sortField}"/> 
+	                    
+	                     			</apex:commandLink> 
+	                  			</th>
+	                  			<th class="slds-text-heading_label" scope="col">
+	                     			<apex:commandLink value="Logic" > 
+	                        		<apex:param name="sortField" value="Logic__c" assignTo="{!sortField}"/> 
+	                     			</apex:commandLink> 
+	                  			</th>
+	                  			<th class="slds-text-heading_label" scope="col">
+	                     			<apex:commandLink value="Source Field" > 
+	                        		<apex:param name="sortField" value="sourceField__c" assignTo="{!sortField}"/> 
+	                     			</apex:commandLink> 
+	                  			</th>
+	                  		</tr>
+	                  		</thead>
+	                  		<tbody>
+	               				<apex:repeat value="{!paginatedListForRollups}" var="item">
+	               				
+	               				<tr>           					
+									<td><apex:inputCheckbox value="{!item.selected}" id="inputId"/></td>
+	               					<td class="slds-truncate" data-label="Source Field">{! item.ds.targetField__c }</td>
+	               					<td data-label="Type">{! item.ds.logic__c }</td>              					
+	               					<td class="slds-truncate" data-label="Source Field">{! item.ds.sourceField__c }</td>
+	               				</tr>
+	               				</apex:repeat>
+	               			</tbody>
+	             		</table>
+	             	</section>  
+             	</apex:outputPanel>          	
+         	</div>
+         	<div class="slds-card">
+				<header class="slds-card__header ">
+           			<div >
+               			<h3 class="slds-text-heading_small slds-truncate">Rollups To Be Exported</h3> 
+               			<div class="slds-text-body_medium"> <apex:actionStatus startText="Processing..." id="inprogress"/> </div>
+                    <div  style="float:right;">
+                        <apex:commandButton styleClass="slds-button slds-button_neutral" value="Download"  onclick="replacePageRefDL();" oncomplete="deleteExportedRollupAF();"  rerender="false" status="inprogress"/> 
+                      
+                        &nbsp;                   
+                        <apex:commandButton styleClass="slds-button slds-button_neutral"  value="Clear" action="{!deleteExportRollup}" rerender="exportTable, sec2" status="inprogress"/>                   
+                    </div>
+             		</div>
+             		
+             	</header>
+             	<apex:outputpanel id="exportTable">
+             	<apex:outputPanel style="width:100%;">
+						<div>
+	                        <c:Paginate pageController="{! exportPaginateController }" renderedComponent="exportTable" />
+	                    </div>	
+					</apex:outputPanel> 
+             	<section class="slds-card__body ">
+             		
+            		<table class="slds-table slds-table_bordered hideFullColumn" id="allRollups">
+              			<thead>
+                		<tr style="width:100%;">
+                  			<th class="slds-text-heading_label">
+                  				<span>PS_Export_Rollups ID</span>
+                  			</th>
+                  		</tr>
+                  		</thead>
+                  		<tbody>
+                  			<apex:repeat value="{!paginatedListForExports}" var="exprol">
+                  			<tr>
+                  				<td>{!exprol.er.name} </td>
+                				<td>{!exprol.nameField} </td>
+                				<td>{!exprol.targetField} </td>
+                				<td>{!exprol.sourceField} </td>
+                				<td>{!exprol.logic} </td>
+                  			</tr>                 			
+                  			</apex:repeat>
+                  		</tbody>
+                  	</table>
+                  
+                  </section>
+          		</apex:outputpanel>
+        	</div>
+      	</div>
+      	<br/>
+      	<c:PS_additionalInformation ></c:PS_additionalInformation>  
+      	</apex:form>
+      </body>
+</html>
+</apex:page>

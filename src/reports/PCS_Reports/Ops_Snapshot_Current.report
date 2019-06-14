@@ -16,7 +16,7 @@
         <field>Loan_New__c.Last_Chatter_Activity__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.In_Processing_Date0__c</field>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.PCS_at_Loan_Level__c</field>
@@ -40,7 +40,7 @@
         <field>Loan_New__c.Subject_Property_State__c</field>
     </columns>
     <columns>
-        <field>Loan_New__c.Title_Company__c</field>
+        <field>Loan_New__c.Client_Chosen_Title__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.ORMS_AE__c</field>

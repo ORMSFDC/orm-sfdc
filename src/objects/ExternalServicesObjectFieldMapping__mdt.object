@@ -119,7 +119,12 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
-    </fields><description>External Service Object / Field Mapping Configuration</description><label>External Services Object/Field Mapping</label><pluralLabel>External Services Object/Field Mapping</pluralLabel><visibility>Public</visibility>
+    </fields>
+  <description>External Service Object / Field Mapping Configuration</description>
+  <label>External Services Object/Field Mapping</label>
+  <pluralLabel>External Services Object/Field Mapping</pluralLabel>
+  <visibility>Public</visibility>
+
     <listViews>
         <fullName>All_Details</fullName>
         <columns>ServiceName__c</columns>
@@ -157,20 +162,5 @@
             <value>Baydocs</value>
         </filters>
         <label>Baydocs</label>
-    </listViews>
-    <listViews>
-        <fullName>OnBase</fullName>
-        <columns>MasterLabel</columns>
-        <columns>Order__c</columns>
-        <columns>ObjectAPIName__c</columns>
-        <columns>FieldAPIName__c</columns>
-        <columns>MappingProperty__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>MasterLabel</field>
-            <operation>contains</operation>
-            <value>OnBase</value>
-        </filters>
-        <label>OnBase</label>
     </listViews>
 </CustomObject>

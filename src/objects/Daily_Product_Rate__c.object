@@ -212,6 +212,7 @@ HELO-Origination Fee requires the Rate1, Rate2, and Rate3 fields to be filled ou
         <columns>RateMargin3__c</columns>
         <columns>Processed__c</columns>
         <columns>UPDATEDBY_USER</columns>
+        <columns>OBJECT_ID</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

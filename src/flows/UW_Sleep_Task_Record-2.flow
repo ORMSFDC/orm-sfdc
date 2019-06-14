@@ -65,6 +65,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>myWaitAssignment_myWait_myRule_19</name>
+        <label>myWaitAssignment_myWait_myRule_19</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>cancelWaits</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>myWait_myRule_19</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myPreWaitDecision_myWait_myRule_16</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>myWaitAssignment_myWait_myRule_4</name>
         <label>myWaitAssignment_myWait_myRule_4</label>
         <locationX>0</locationX>
@@ -142,6 +158,22 @@
         </assignmentItems>
         <connector>
             <targetReference>myWait_myRule_16</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>myWaitEvent_myWait_myRule_19_event_0_postWaitExecutionAssignment</name>
+        <label>myWaitEvent_myWait_myRule_19_event_0_postWaitExecutionAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myWaitEvent_myWait_myRule_19_event_0_postActionExecutionVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myWait_myRule_19</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -375,6 +407,9 @@
         <label>myDecision15</label>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision18</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myRule_16</name>
@@ -476,6 +511,89 @@
                 <targetReference>myRule_16_pmetdec</targetReference>
             </connector>
             <label>Status Attempted</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision18</name>
+        <label>myDecision18</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_19</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Sleep_TaskCheckbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Due_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_19_pmetdec</targetReference>
+            </connector>
+            <label>Sleep till Due Date</label>
         </rules>
     </decisions>
     <decisions>
@@ -809,6 +927,31 @@
                 <targetReference>myWaitEvent_myWait_myRule_16_event_0_SA1</targetReference>
             </connector>
             <label>myPostWaitRule_myWaitEvent_myWait_myRule_16_event_0</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myPostWaitDecision_myWaitEvent_myWait_myRule_19_event_0</name>
+        <label>myPostWaitDecision_myWaitEvent_myWait_myRule_19_event_0</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myWaitEvent_myWait_myRule_19_event_0_postWaitExecutionAssignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myPostWaitRule_myWaitEvent_myWait_myRule_19_event_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_current.Due_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myWaitEvent_myWait_myRule_19_event_0_SA1</targetReference>
+            </connector>
+            <label>myPostWaitRule_myWaitEvent_myWait_myRule_19_event_0</label>
         </rules>
     </decisions>
     <decisions>
@@ -1235,6 +1378,86 @@
                 <targetReference>myPreWaitDecision_myWait_myRule_13</targetReference>
             </connector>
             <label>myPreWaitRule_myWait_myRule_16</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myPreWaitDecision_myWait_myRule_19</name>
+        <label>myPreWaitDecision_myWait_myRule_19</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myWaitAssignment_myWait_myRule_19</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myPreWaitRule_myWait_myRule_19</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Sleep_TaskCheckbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Due_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myPreWaitDecision_myWait_myRule_16</targetReference>
+            </connector>
+            <label>myPreWaitRule_myWait_myRule_19</label>
         </rules>
     </decisions>
     <decisions>
@@ -1705,6 +1928,98 @@
         </rules>
     </decisions>
     <decisions>
+        <name>myRule_19_pmetdec</name>
+        <label>Previously Met Decision</label>
+        <locationX>1900</locationX>
+        <locationY>100</locationY>
+        <defaultConnector>
+            <targetReference>myRule_19_A1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Previously Met</defaultConnectorLabel>
+        <rules>
+            <name>myRule_19_pmetnullrule</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_19_A1</targetReference>
+            </connector>
+            <label>Previously Met - Null</label>
+        </rules>
+        <rules>
+            <name>myRule_19_pmetrule</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Sleep_TaskCheckbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_old.Due_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Previously Met - Prev</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>myRule_1_pmetdec</name>
         <label>Previously Met Decision</label>
         <locationX>100</locationX>
@@ -1987,7 +2302,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_11_myRule_10_A1_5328160128</name>
+        <name>formula_11_myRule_10_A1_2762482210</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -1998,7 +2313,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_14_myRule_13_A1_3338695653</name>
+        <name>formula_14_myRule_13_A1_4249527451</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -2009,7 +2324,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_17_myRule_16_A1_3582022220</name>
+        <name>formula_17_myRule_16_A1_7927818815</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -2020,7 +2335,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_2754273136</name>
+        <name>formula_20_myRule_19_A1_1765154278</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -2031,7 +2346,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_4_A1_1487419477</name>
+        <name>formula_2_myRule_1_A1_0688740779</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -2042,11 +2357,22 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_8_myRule_7_A1_7959388689</name>
+        <name>formula_5_myRule_4_A1_4633573959</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
-    <interviewLabel>UW_Sleep_Task_Record-4_InterviewLabel</interviewLabel>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>Now()</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_8_myRule_7_A1_0469895409</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <interviewLabel>UW_Sleep_Task_Record-3_InterviewLabel</interviewLabel>
     <label>_UW Sleep Task Record</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -2151,7 +2477,7 @@
             </processMetadataValues>
             <field>Latest_Sleep_Time__c</field>
             <value>
-                <elementReference>formula_11_myRule_10_A1_5328160128</elementReference>
+                <elementReference>formula_11_myRule_10_A1_2762482210</elementReference>
             </value>
         </inputAssignments>
         <object>Underwriter__c</object>
@@ -2234,7 +2560,7 @@
             </processMetadataValues>
             <field>Latest_Sleep_Time__c</field>
             <value>
-                <elementReference>formula_14_myRule_13_A1_3338695653</elementReference>
+                <elementReference>formula_14_myRule_13_A1_4249527451</elementReference>
             </value>
         </inputAssignments>
         <object>Underwriter__c</object>
@@ -2317,7 +2643,7 @@
             </processMetadataValues>
             <field>Latest_Sleep_Time__c</field>
             <value>
-                <elementReference>formula_17_myRule_16_A1_3582022220</elementReference>
+                <elementReference>formula_17_myRule_16_A1_7927818815</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2419,6 +2745,89 @@
         <processMetadataValues>
             <name>referenceTargetField</name>
         </processMetadataValues>
+        <name>myRule_19_A1</name>
+        <label>Capture Sleep Time</label>
+        <locationX>1900</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myWait_myRule_19</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+            <value>
+                <elementReference>formula_20_myRule_19_A1_1765154278</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Underwriter__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Underwriter__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
         <name>myRule_1_A1</name>
         <label>Capture Sleep Time</label>
         <locationX>100</locationX>
@@ -2472,7 +2881,7 @@
             </processMetadataValues>
             <field>Latest_Sleep_Time__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_2754273136</elementReference>
+                <elementReference>formula_2_myRule_1_A1_0688740779</elementReference>
             </value>
         </inputAssignments>
         <object>Underwriter__c</object>
@@ -2555,7 +2964,7 @@
             </processMetadataValues>
             <field>Latest_Sleep_Time__c</field>
             <value>
-                <elementReference>formula_5_myRule_4_A1_1487419477</elementReference>
+                <elementReference>formula_5_myRule_4_A1_4633573959</elementReference>
             </value>
         </inputAssignments>
         <object>Underwriter__c</object>
@@ -2638,7 +3047,7 @@
             </processMetadataValues>
             <field>Latest_Sleep_Time__c</field>
             <value>
-                <elementReference>formula_8_myRule_7_A1_7959388689</elementReference>
+                <elementReference>formula_8_myRule_7_A1_0469895409</elementReference>
             </value>
         </inputAssignments>
         <object>Underwriter__c</object>
@@ -2692,6 +3101,39 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
@@ -2723,6 +3165,39 @@
             <value>
                 <booleanValue>false</booleanValue>
             </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sleep Duration</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sleep_Task__c</field>
         </inputAssignments>
         <object>Underwriter__c</object>
     </recordUpdates>
@@ -2775,6 +3250,39 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
@@ -2806,6 +3314,39 @@
             <value>
                 <booleanValue>false</booleanValue>
             </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sleep Duration</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sleep_Task__c</field>
         </inputAssignments>
         <object>Underwriter__c</object>
     </recordUpdates>
@@ -2854,6 +3395,221 @@
                 <elementReference>myVariable_current.Id</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sleep Task?</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sleep_TaskCheckbox__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sleep Duration</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sleep_Task__c</field>
+        </inputAssignments>
+        <object>Underwriter__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Underwriter__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myWaitEvent_myWait_myRule_19_event_0_SA1</name>
+        <label>Turn Sleep Off for Task</label>
+        <locationX>1900</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myWaitEvent_myWait_myRule_19_event_0_postWaitExecutionAssignment</targetReference>
+        </connector>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Due Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Due_Date__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+        </inputAssignments>
         <inputAssignments>
             <processMetadataValues>
                 <name>dataType</name>
@@ -2941,6 +3697,39 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
@@ -2972,6 +3761,39 @@
             <value>
                 <booleanValue>false</booleanValue>
             </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sleep Duration</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sleep_Task__c</field>
         </inputAssignments>
         <object>Underwriter__c</object>
     </recordUpdates>
@@ -3024,6 +3846,39 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
@@ -3055,6 +3910,39 @@
             <value>
                 <booleanValue>false</booleanValue>
             </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sleep Duration</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sleep_Task__c</field>
         </inputAssignments>
         <object>Underwriter__c</object>
     </recordUpdates>
@@ -3107,6 +3995,39 @@
             <processMetadataValues>
                 <name>dataType</name>
                 <value>
+                    <stringValue>DateTime</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Latest Sleep Time</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Latest_Sleep_Time__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
                     <stringValue>Boolean</stringValue>
                 </value>
             </processMetadataValues>
@@ -3139,9 +4060,42 @@
                 <booleanValue>false</booleanValue>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Sleep Duration</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Sleep_Task__c</field>
+        </inputAssignments>
         <object>Underwriter__c</object>
     </recordUpdates>
-    <startElementReference>myPreWaitDecision_myWait_myRule_16</startElementReference>
+    <startElementReference>myPreWaitDecision_myWait_myRule_19</startElementReference>
     <variables>
         <name>cancelWaits</name>
         <dataType>String</dataType>
@@ -3187,6 +4141,16 @@
     </variables>
     <variables>
         <name>myWaitEvent_myWait_myRule_16_event_0_postActionExecutionVariable</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>myWaitEvent_myWait_myRule_19_event_0_postActionExecutionVariable</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -3459,6 +4423,65 @@
                 </value>
             </inputParameters>
             <label>myWaitEvent_myWait_myRule_16_event_0</label>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>myWait_myRule_19</name>
+        <label>myWait_myRule_19</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>defaultLabel</defaultConnectorLabel>
+        <waitEvents>
+            <processMetadataValues>
+                <name>inputParameterType</name>
+                <value>
+                    <stringValue>referenced</stringValue>
+                </value>
+            </processMetadataValues>
+            <name>myWaitEvent_myWait_myRule_19_event_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myWaitEvent_myWait_myRule_19_event_0_postActionExecutionVariable</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myPostWaitDecision_myWaitEvent_myWait_myRule_19_event_0</targetReference>
+            </connector>
+            <eventType>DateRefAlarmEvent</eventType>
+            <inputParameters>
+                <name>TimeTableColumnEnumOrId</name>
+                <value>
+                    <stringValue>Underwriter__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>EntityObjectId</name>
+                <value>
+                    <elementReference>myVariable_current.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffsetUnit</name>
+                <value>
+                    <stringValue>Hours</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeOffset</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeFieldColumnEnumOrId</name>
+                <value>
+                    <stringValue>Due_Date__c</stringValue>
+                </value>
+            </inputParameters>
+            <label>myWaitEvent_myWait_myRule_19_event_0</label>
         </waitEvents>
     </waits>
     <waits>

@@ -57,22 +57,16 @@
             <value>Account.Potential_Partners</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Account.Team__c</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Braveheart</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>CREATED_BY</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Jesse Hanson,Kathy Martinez,Brian Burgan,Josh Posner,James Raymond</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Activity.Call_Duration_In_Seconds__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
             <value>30</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Team__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Braveheart</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

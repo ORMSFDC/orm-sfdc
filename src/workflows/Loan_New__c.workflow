@@ -36,7 +36,7 @@
         </recipients>
         <senderAddress>ormssupport@onereverse.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Alert_Loan_Withdrawn_w_Criteria</template>
+        <template>Revisit/Alert_Loan_Withdrawn_w_Criteria</template>
     </alerts>
     <fieldUpdates>
         <fullName>Extend_Application_Time</fullName>

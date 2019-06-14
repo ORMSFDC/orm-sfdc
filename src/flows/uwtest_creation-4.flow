@@ -68,37 +68,6 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <processMetadataValues>
-                    <name>inputDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>leftHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>operatorDataType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <processMetadataValues>
-                    <name>rightHandSideType</name>
-                    <value>
-                        <stringValue>String</stringValue>
-                    </value>
-                </processMetadataValues>
-                <leftValueReference>myVariable_current.RecordType.Name</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>UW</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
@@ -112,7 +81,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_2169576057</name>
+        <name>formula_2_myRule_1_A1_7287394816</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -123,7 +92,7 @@
                 <stringValue>Now()</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_3_myRule_1_A1_1357625508</name>
+        <name>formula_3_myRule_1_A1_8327901040</name>
         <dataType>DateTime</dataType>
         <expression>Now()</expression>
     </formulas>
@@ -265,7 +234,7 @@
             </processMetadataValues>
             <field>Latest_Status_Change__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_2169576057</elementReference>
+                <elementReference>formula_2_myRule_1_A1_7287394816</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -301,7 +270,7 @@
             </processMetadataValues>
             <field>Open_Date__c</field>
             <value>
-                <elementReference>formula_3_myRule_1_A1_1357625508</elementReference>
+                <elementReference>formula_3_myRule_1_A1_8327901040</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -409,7 +378,7 @@
             </processMetadataValues>
             <field>RecordTypeId</field>
             <value>
-                <stringValue>012S0000000e21MIAQ</stringValue>
+                <stringValue>012f20000006n9tAAA</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>

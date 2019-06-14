@@ -21,17 +21,17 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
+                        <reportColumn>Underwriter__c.Latest_Status_Change__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
                         <reportColumn>Underwriter__c.Priority__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Subject__c</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>Underwriter__c.Latest_Status_Change__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
@@ -50,8 +50,19 @@
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
+                    <flexTableColumn>
+                        <breakPoint1>1.0</breakPoint1>
+                        <breakPoint2>2.0</breakPoint2>
+                        <breakPointOrder>0</breakPointOrder>
+                        <highRangeColor>16711680</highRangeColor>
+                        <lowRangeColor>16777215</lowRangeColor>
+                        <midRangeColor>16777215</midRangeColor>
+                        <reportColumn>Underwriter__c.Days_in_Status__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>CUST_NAME</sortColumn>
+                        <sortColumn>Underwriter__c.Latest_Status_Change__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -85,7 +96,7 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Underwriter__c.Status__c</reportColumn>
+                        <reportColumn>Underwriter__c.Subject__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
@@ -95,12 +106,23 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Underwriter__c.Subject__c</reportColumn>
+                        <reportColumn>Underwriter__c.Status__c</reportColumn>
+                        <showTotal>false</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <breakPoint1>1.0</breakPoint1>
+                        <breakPoint2>2.0</breakPoint2>
+                        <breakPointOrder>0</breakPointOrder>
+                        <highRangeColor>16711680</highRangeColor>
+                        <lowRangeColor>16777215</lowRangeColor>
+                        <midRangeColor>16777215</midRangeColor>
+                        <reportColumn>Underwriter__c.Days_in_Status__c</reportColumn>
                         <showTotal>false</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>CUST_NAME</sortColumn>
+                        <sortColumn>Underwriter__c.Latest_Status_Change__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -139,17 +161,28 @@
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
+                        <reportColumn>Underwriter__c.Loan_Number__c</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
                         <reportColumn>CUST_OWNER_NAME</reportColumn>
                         <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
-                        <reportColumn>Underwriter__c.Loan_Number__c</reportColumn>
+                        <breakPoint1>1.0</breakPoint1>
+                        <breakPoint2>2.0</breakPoint2>
+                        <breakPointOrder>0</breakPointOrder>
+                        <highRangeColor>16711680</highRangeColor>
+                        <lowRangeColor>16777215</lowRangeColor>
+                        <midRangeColor>16777215</midRangeColor>
+                        <reportColumn>Underwriter__c.Days_in_Status__c</reportColumn>
                         <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Underwriter__c.Status__c</sortColumn>
+                        <sortColumn>Underwriter__c.Priority__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -169,32 +202,43 @@
                 <flexComponentProperties>
                     <flexTableColumn>
                         <reportColumn>CUST_NAME</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>Underwriter__c.Priority__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Latest_Status_Change__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Underwriter__c.Priority__c</reportColumn>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Status__c</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>CUST_OWNER_NAME</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Loan_Number__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>CUST_OWNER_NAME</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <breakPoint1>1.0</breakPoint1>
+                        <breakPoint2>2.0</breakPoint2>
+                        <breakPointOrder>0</breakPointOrder>
+                        <highRangeColor>16711680</highRangeColor>
+                        <lowRangeColor>16777215</lowRangeColor>
+                        <midRangeColor>16777215</midRangeColor>
+                        <reportColumn>Underwriter__c.Days_in_Status__c</reportColumn>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
@@ -218,36 +262,47 @@
                 <flexComponentProperties>
                     <flexTableColumn>
                         <reportColumn>CUST_NAME</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Latest_Status_Change__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Priority__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Status__c</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>CUST_OWNER_NAME</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Loan_Number__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>CUST_OWNER_NAME</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <breakPoint1>1.0</breakPoint1>
+                        <breakPoint2>2.0</breakPoint2>
+                        <breakPointOrder>0</breakPointOrder>
+                        <highRangeColor>16711680</highRangeColor>
+                        <lowRangeColor>16777215</lowRangeColor>
+                        <midRangeColor>16777215</midRangeColor>
+                        <reportColumn>Underwriter__c.Days_in_Status__c</reportColumn>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
-                        <sortColumn>Underwriter__c.Loan_Number__c</sortColumn>
+                        <sortColumn>Underwriter__c.Priority__c</sortColumn>
                         <sortOrder>1</sortOrder>
                     </flexTableSortInfo>
                     <hideChatterPhotos>true</hideChatterPhotos>
@@ -267,32 +322,43 @@
                 <flexComponentProperties>
                     <flexTableColumn>
                         <reportColumn>CUST_NAME</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>Underwriter__c.Priority__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Latest_Status_Change__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>Underwriter__c.Priority__c</reportColumn>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Status__c</reportColumn>
-                        <showTotal>false</showTotal>
-                        <type>detail</type>
-                    </flexTableColumn>
-                    <flexTableColumn>
-                        <reportColumn>CUST_OWNER_NAME</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableColumn>
                         <reportColumn>Underwriter__c.Loan_Number__c</reportColumn>
-                        <showTotal>false</showTotal>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <reportColumn>CUST_OWNER_NAME</reportColumn>
+                        <showTotal>true</showTotal>
+                        <type>detail</type>
+                    </flexTableColumn>
+                    <flexTableColumn>
+                        <breakPoint1>1.0</breakPoint1>
+                        <breakPoint2>2.0</breakPoint2>
+                        <breakPointOrder>0</breakPointOrder>
+                        <highRangeColor>16711680</highRangeColor>
+                        <lowRangeColor>16777215</lowRangeColor>
+                        <midRangeColor>16777215</midRangeColor>
+                        <reportColumn>Underwriter__c.Days_in_Status__c</reportColumn>
+                        <showTotal>true</showTotal>
                         <type>detail</type>
                     </flexTableColumn>
                     <flexTableSortInfo>
@@ -371,7 +437,7 @@
     </dashboardGridLayout>
     <dashboardType>MyTeamUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>heatherdosch1@quickenloans.com</runningUser>
+    <runningUser>danny@onereverse.com</runningUser>
     <textColor>#000000</textColor>
     <title>Underwriter</title>
     <titleColor>#000000</titleColor>

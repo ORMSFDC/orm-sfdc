@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.In_Underwriting_Review_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Loan_New__c.Days_After_FRC__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.LoanStatus__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.ORMS_AE__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Client_Name__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Related_Partner__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Loan_New__c.In_Underwriting_Review_Date__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Docs Out to Settlement Agent,Suspended</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Days after FRC</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Loan_New__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

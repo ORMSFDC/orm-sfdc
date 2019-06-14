@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Panarea Capital, Inc. Partner Executive</name>
     <opportunityAccessLevel>None</opportunityAccessLevel>
-    <parentRole>DMB_Jesse</parentRole>
+    <parentRole>System_Administrator</parentRole>
 </Role>

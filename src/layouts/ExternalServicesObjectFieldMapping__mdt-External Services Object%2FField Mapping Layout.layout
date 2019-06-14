@@ -44,26 +44,6 @@
                 <behavior>Required</behavior>
                 <field>NamespacePrefix</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>JSON_Object_Property__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>JSON_Parent_Object_Property__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Order__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ParentFieldAPIName__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SOQLWhereCriteria__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
@@ -102,7 +82,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hf200000Nl0UX</masterLabel>
+        <masterLabel>00h5B000000GryH</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

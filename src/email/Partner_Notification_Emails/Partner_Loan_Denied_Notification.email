@@ -1,0 +1,12 @@
+Hello {!Contact.FirstName}, 
+
+Your loan with {!Client__c.Name} is denied. 
+
+To view your pipeline, please visit the ORMS portal: https://www.onereversemortgageservices.com/PartnerLoginPage 
+
+Sincerely,
+
+{!Account.OwnerFullName}
+{!Account.OwnerTitle}
+{!Account.OwnerPhone}
+{!Account.OwnerEmail}

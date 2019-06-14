@@ -12,16 +12,16 @@
             <outputField>Cell__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>Company_NMLS_ID__c</inputField>
-            <outputField>Company_NMLS_ID__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Ext__c</inputField>
             <outputField>Ext__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Federal_Tax_ID_EIN__c</inputField>
             <outputField>Holding_Company_Federal_Tax_ID_Number_EI__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Company_NMLS_ID__c</inputField>
+            <outputField>Company_NMLS_ID__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Office_Phone__c</inputField>
@@ -36,12 +36,12 @@
             <outputField>Other_Contact_Cell__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>Other_Contact_Email__c</inputField>
-            <outputField>Other_Contact_Email__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Other_Contact_Name__c</inputField>
             <outputField>Other_Contact_Name__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Other_Contact_Email__c</inputField>
+            <outputField>Other_Contact_Email__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Other_Contact_Phone__c</inputField>
@@ -92,20 +92,20 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
-            <inputField>Ext__c</inputField>
-            <outputField>Ext__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Office_Phone__c</inputField>
-            <outputField>Office_Phone__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Primary_Contact_Email__c</inputField>
             <outputField>Secondary_Email__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Primary_Contact_Title__c</inputField>
             <outputField>Title__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Ext__c</inputField>
+            <outputField>Ext__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Office_Phone__c</inputField>
+            <outputField>Office_Phone__c</outputField>
         </mappingFields>
         <outputObject>Contact</outputObject>
     </objectMapping>

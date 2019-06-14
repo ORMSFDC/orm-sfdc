@@ -20,5 +20,10 @@
         <sharedTo>Account_Executive_Lead</sharedTo>
         <sharedToType>Role</sharedToType>
     </folderShares>
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>Credit_Risk_Analyst</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
     <name>Danny Shared Reports</name>
 </ReportFolder>

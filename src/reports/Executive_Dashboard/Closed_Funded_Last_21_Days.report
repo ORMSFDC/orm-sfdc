@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+        <field>Loan_New__c.LoanStatus__c</field>
+    </columns>
+    <columns>
         <field>CUST_NAME</field>
     </columns>
     <columns>
         <field>Loan_New__c.LoanNumber__c</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Loan_New__c.InitialUnpaidPrincipalBalance__c</field>
+    </columns>
+    <columns>
+        <field>Loan_New__c.Scheduled_Closing_Date__c</field>
     </columns>
     <columns>
         <field>Loan_New__c.Closing_Date__c</field>
@@ -30,15 +37,18 @@
     <columns>
         <field>Loan_New__c.Mortgage_Applied_for__c</field>
     </columns>
-    <columns>
-        <field>Loan_New__c.AE_On_Close__c</field>
-    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
             <value>Test Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Loan_New__c.LoanStatus__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Incomplete,Proposal,Waiting for Full Package,Application Package Received,Loan Submission Received- Awaiting Review,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Docs Out to Settlement Agent</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.Closing_Date__c</column>
@@ -50,7 +60,7 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Loan_New__c.LoanStatus__c</field>
+        <field>Loan_New__c.ORMS_AE__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Closed This Month</name>
@@ -62,7 +72,9 @@
     <scope>team</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>false</showSubTotals>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Loan_New__c.InitialUnpaidPrincipalBalance__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

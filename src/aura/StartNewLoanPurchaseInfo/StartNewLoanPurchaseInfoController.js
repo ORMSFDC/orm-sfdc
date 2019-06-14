@@ -58,6 +58,9 @@
         if('Fixed' == rateType){
             component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
         }
+        if('ARM' == rateType){
+            component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', '');
+        }
     },
 
     changeSource: function (component, event, helper) {

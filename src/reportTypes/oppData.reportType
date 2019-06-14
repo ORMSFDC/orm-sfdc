@@ -323,11 +323,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>E_sign_Addendum_Provider__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>E_sign_Addendum_Received_Date__c</field>
             <table>Opportunity</table>
         </columns>

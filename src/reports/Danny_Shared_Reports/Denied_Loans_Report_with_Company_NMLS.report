@@ -32,7 +32,7 @@
             <value>Denied</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Loan_New__c.Denied_Date__c</column>
+            <column>Loan_New__c.Denied_Date0__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>LAST_MONTH</value>
