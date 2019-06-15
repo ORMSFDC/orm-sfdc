@@ -2919,6 +2919,11 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>IndividualId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
   <compactLayoutAssignment>Leads_Custom_Compact_Layout</compactLayoutAssignment>
   <enableFeeds>true</enableFeeds>
   <enableHistory>false</enableHistory>
@@ -2953,7 +2958,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
   <sharingModel>ReadWriteTransfer</sharingModel>
-
     <listViews>
         <fullName>AE_Leads_w_o_Activity</fullName>
         <columns>FULL_NAME</columns>

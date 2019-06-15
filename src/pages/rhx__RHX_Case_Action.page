@@ -1,3 +1,0 @@
-<apex:page standardController="Case">
-    <rh2:PS_Rollup_Runner scope="CaseArticle, CaseMilestone" />
-</apex:page>

@@ -30,7 +30,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>MasterFlowVersionId</field>
+                <field>MasterFlowVersion</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>

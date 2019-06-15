@@ -6830,6 +6830,7 @@
     <members>f2b__Mass_Contact_Transfer</members>
     <members>rh2__PS_Rollup_Helper</members>
     <members>rh2__Rollup_Helper_Lightning</members>
+    <members>standard__SalesforceCMS</members>
     <name>CustomApplication</name>
   </types>
   <types>
@@ -6894,6 +6895,7 @@
   </types>
   <types>
     <members>Salesforce1</members>
+    <members>AppSwitcher</members>
     <name>AppMenu</name>
   </types>
   <types>

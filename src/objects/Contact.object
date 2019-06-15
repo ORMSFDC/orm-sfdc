@@ -3451,6 +3451,11 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>IndividualId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
   <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
   <enableEnhancedLookup>true</enableEnhancedLookup>
   <enableFeeds>true</enableFeeds>
