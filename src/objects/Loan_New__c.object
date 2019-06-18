@@ -6201,18 +6201,6 @@ IF(
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Is_there_a_POA__c</fullName>
-        <externalId>false</externalId>
-        <label>Is there a POA</label>
-        <length>5</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Previous_Modified_Date__c</fullName>
         <externalId>false</externalId>
         <label>Previous Modified Date</label>
@@ -6313,24 +6301,6 @@ IF(
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>DocViewer_Link__c</fullName>
-        <description>This link cannot be edited - it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</description>
-        <externalId>false</externalId>
-        <formula>IF( 
-ISBLANK(LoanNumber__c ), 
-HYPERLINK("http://documentviewer/documentviewer/#/", ''), 
-HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please click here to view the documents') 
-)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <inlineHelpText>This link cannot be edited - "it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</inlineHelpText>
-        <label>DocViewer Link</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
@@ -6535,6 +6505,36 @@ HYPERLINK("http://documentviewer/documentviewer/#/"&amp; LoanNumber__c , 'Please
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>QLMS CommonID</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DocViewer_Link__c</fullName>
+        <description>This link cannot be edited - it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(LoanNumber__c ), 
+HYPERLINK("http://documentviewer/documentviewerbeta/#/", ''), 
+HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Please click here to view the documents') 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This link cannot be edited - "it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</inlineHelpText>
+        <label>DocViewer Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_there_a_POA__c</fullName>
+        <externalId>false</externalId>
+        <label>Is there a POA</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -7156,6 +7156,13 @@ NOT(ISBLANK( UW__c ))
         <errorConditionFormula>Scheduled_Closing_Date__c  &lt; ( X2nd_Appraisal_Mailed__c  + 8) &amp;&amp; ! Appraisal_Delivery__c</errorConditionFormula>
         <errorDisplayField>Scheduled_Closing_Date__c</errorDisplayField>
         <errorMessage>Scheduled Closing Date cannot be within 7 days of the 2nd Appraisal Mailed Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LoanNumber_Cannot_Contain_Text</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(REGEX(LoanNumber__c,"^[0-9]*$"))</errorConditionFormula>
+        <errorDisplayField>LoanNumber__c</errorDisplayField>
+        <errorMessage>Loan Number can only contain numbers</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

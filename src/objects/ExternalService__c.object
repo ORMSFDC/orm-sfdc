@@ -216,7 +216,28 @@
         <columns>CREATEDBY_USER</columns>
         <columns>CREATED_DATE</columns>
         <columns>UPDATEDBY_USER</columns>
+        <columns>RequestPayload__c</columns>
+        <columns>ResponsePayload__c</columns>
+        <columns>Status__c</columns>
         <filterScope>Everything</filterScope>
         <label>All External Services</label>
+    </listViews>
+    <listViews>
+        <fullName>OnBase</fullName>
+        <columns>NAME</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>RequestPayload__c</columns>
+        <columns>ResponsePayload__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Status__c</columns>
+        <columns>ServiceName__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ServiceName__c</field>
+            <operation>contains</operation>
+            <value>OnBase</value>
+        </filters>
+        <label>OnBase</label>
     </listViews>
 </CustomObject>

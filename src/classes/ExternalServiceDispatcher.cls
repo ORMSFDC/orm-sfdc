@@ -16,6 +16,7 @@ public without sharing class ExternalServiceDispatcher {
 	*/
 	@TestVisible
 	private static Map<String, ExternalServiceRegistry__mdt> esrControlMap {
+
 		get {
 			if ( esrControlMap == NULL ) {
 				esrControlMap = new Map<String, ExternalServiceRegistry__mdt>();
@@ -43,6 +44,8 @@ public without sharing class ExternalServiceDispatcher {
 	public class serviceRequest {
 		public ExternalServiceRegistry__mdt control;
 		public String payload;
+		public String extserId;
+		public String serName;
 	}
 
 	/*******************************************************************************************************
@@ -67,54 +70,99 @@ public without sharing class ExternalServiceDispatcher {
 	@Future( Callout=TRUE )
 	public static void processESOlist( List<String> serialESOlist ) {
 
-		System.debug( '>>> ExternalServiceDispatcher.processESOlist called...' );
+		System.debug( '--------------- ExternalServiceDispatcher.processESOlist called...' );
+        system.debug('serialESOlist----------'+serialESOlist);
 		// deserialize list of ESO objects
 		List<ExternalServiceOutbound__e> esoList = new List<ExternalServiceOutbound__e>();
 		for ( String serialESO : serialESOlist ) {
 			ExternalServiceOutbound__e eso = ( ExternalServiceOutbound__e )JSON.deserialize( serialESO, ExternalServiceOutbound__e.class );
 			esoList.add( eso );
 		}
+        system.debug('esoList----------'+esoList);
 		System.debug( 'ExternalServiceDispatcher.processESOlist:  processing list: ' + esoList );
 		// collect the ExternalService__c records referenced by this events into map
 		Set<Id> esIdSet = new Set<Id>();
 		for ( ExternalServiceOutbound__e eso : esoList ) {
 			esIdSet.add( eso.ExternalServiceID__c );
 		}
+        system.debug('esIdSet----------'+esIdSet);
 		Map<Id, ExternalService__c> esIdMap = new Map<Id, ExternalService__c>( [
 			SELECT Id, Status__c
 			FROM ExternalService__c
 			WHERE Id IN :esIdSet
 		] );
-
+		system.debug('----------'+[select id from ExternalService__c WHERE Id IN :esIdSet]);
+		system.debug('esIdMap------'+esIdMap);
 		// loop through ESOs...
 		for ( ExternalServiceOutbound__e eso : esoList ) {
 			// dispatch to appropriate service
+			//@@TODO sometimes this value is returned as null, need to debug why- bala
 			ExternalServiceRegistry__mdt esrControl = esrControlMap.get( eso.ServiceName__c );
+
+		String serviceName = eso.ServiceName__c;
+		String serviceId = eso.ExternalServiceID__c ;
+		System.debug('%% sname :'+serviceName);
+		System.debug('%% sid :'+serviceId);
 			// fetch original referenced external service record
+			//@@TODO sometimes this value is returned as null mainle not for my user but it happens with all the other users - bala
+			system.debug('eso.ExternalServiceID__c------'+eso.ExternalServiceID__c);
 			ExternalService__c es = esIdMap.get( eso.ExternalServiceID__c );
+			system.debug('es------'+es);
 			// ensure controls and external service record are present
-			System.debug( 'ExternalServiceDispatcher.processESOlist.esrControl: ' + esrControl );
-			if ( esrControl != NULL && String.isNotBlank( esrControl.ExternalServiceDispatcherClass__c ) && es != NULL ) {
+				System.debug( 'ExternalServiceDispatcher.processESOlist.esrControl: ' + esrControl );
+
+
+			if ( esrControl != NULL && String.isNotBlank( esrControl.ExternalServiceDispatcherClass__c ) && es != NULL ) { 
 				// todo:  use interface https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_type.htm
+				system.debug('esrControl.ExternalServiceDispatcherClass__c--------'+esrControl.ExternalServiceDispatcherClass__c);
 				es.ReplayID__c = eso.ReplayId;
 				// instantiate the appropriate dispatch handler class
 				Type handlerType = Type.forName( esrControl.ExternalServiceDispatcherClass__c );
 				DispatchHandler handler = ( DispatchHandler )handlerType.newInstance();
-				// setup callout to service
-				serviceRequest newRequest = new serviceRequest();
-				newRequest.control = esrControl;
-				newRequest.payload = eso.Payload__c;
-				// make callout
-				serviceResponse resp = handler.invokeService( newRequest );
-				if ( resp.success ) {
-					// good response, update external service record
-					es.Status__c = 'Request Sent';
-					es.ResponsePayload__c = resp.response;
-				} else {
-					// bad response, capture error message to external service record
-					es.Status__c = 'Error/Exception';
-					es.ResponsePayload__c = String.join( resp.errorMessageList, ',' );
+				system.debug('if(serviceName--------'+serviceName);
+				// setup callout to AmrockBot service
+				if(serviceName.startsWith('AmrockBot') && String.isNotBlank(serviceName)){
+					System.debug( '###1 ' + eso.ServiceName__c );
+					serviceRequest newRequest = new serviceRequest();
+					newRequest.control = esrControl;
+					newRequest.payload = eso.Payload__c;
+					// make callout
+					serviceResponse resp = handler.invokeService( newRequest );
+					if ( resp.success ) {
+						// good response, update external service record
+						es.Status__c = 'Request Sent';
+						es.ResponsePayload__c = resp.response;
+					} else {
+						// bad response, capture error message to external service record
+						es.Status__c = 'Error/Exception';
+						es.ResponsePayload__c = String.join( resp.errorMessageList, ',' );
+					}
 				}
+				//setup callout to OnBase service
+				else if(serviceName.startsWith('OnBase') && String.isNotBlank(serviceName)){
+					System.debug( '###2 ' + eso.ServiceName__c );
+					serviceRequest newRequest = new serviceRequest();
+					newRequest.control = esrControl;
+					newRequest.payload = eso.Payload__c;
+					newRequest.extserId = eso.ExternalServiceID__c;
+					newRequest.serName = serviceName;
+					// make callout
+					
+					serviceResponse resp = handler.invokeService( newRequest );
+					system.debug('resp--------'+resp);
+					system.debug('resp.success--------'+resp.success);
+					if ( resp.success ) {
+						// good response, update external service record
+						es.Status__c = 'Request Sent';
+						es.ResponsePayload__c = resp.response;
+					} else {
+						// bad response, capture error message to external service record
+						es.Status__c = 'Error/Exception';
+						es.ResponsePayload__c = String.join( resp.errorMessageList, ',' );
+					}					
+				}
+
+
 			} else if ( es != NULL ) {
 				// config missing for this external service
 				es.Status__c = 'Error/Exception';

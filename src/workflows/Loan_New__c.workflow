@@ -38,6 +38,17 @@
         <senderType>OrgWideEmailAddress</senderType>
         <template>Revisit/Alert_Loan_Withdrawn_w_Criteria</template>
     </alerts>
+    <alerts>
+        <fullName>Loan_Full_Package_Received_Alert</fullName>
+        <ccEmails>balasahityadeekonda@quickenloans.com</ccEmails>
+        <ccEmails>MichelleLarkin@quickenloans.com</ccEmails>
+        <ccEmails>MarieTaiariol@quickenloans.com</ccEmails>
+        <description>Loan Full Package Received Alert</description>
+        <protected>false</protected>
+        <senderAddress>ormssupport@onereverse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Loan_Status_Full_Package_Received</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Extend_Application_Time</fullName>
         <field>Extend_Application_Time__c</field>

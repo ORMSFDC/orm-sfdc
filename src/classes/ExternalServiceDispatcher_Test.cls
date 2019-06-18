@@ -167,12 +167,12 @@ private class ExternalServiceDispatcher_Test {
                     new ExternalServiceOutbound__e(
                         ExternalServiceID__c = testExternalService.Id,
                         Payload__c = '{ "just" : "testing", "reference" : "JustTesting" }',
-                        ServiceName__c = EXTERNAL_SERVICE_NAME
+                        ServiceName__c = 'OnBase'
                     ),
                     new ExternalServiceOutbound__e(
                         ExternalServiceID__c = testExternalService.Id,
                         Payload__c = '{ "just" : "testing" }',
-                        ServiceName__c = EXTERNAL_SERVICE_NAME
+                        ServiceName__c = 'OnBase'
                     )
                 };
                 for ( ExternalServiceOutbound__e eso : testESOlist ) {

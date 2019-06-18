@@ -1,0 +1,13 @@
+Go into Where’s The File and create a record for the following client:<br/> 
+<br/> 
+Client first and last name: {!Loan_New__c.Client_Name__c}<br/> 
+<br/> 
+Street Number and Name: {!Loan_New__c.Subject_Property_Address__c}<br/> 
+<br/> 
+City, State: {!Loan_New__c.Subject_Property_City__c}, {!Loan_New__c.Subject_Property_State__c}<br/> 
+<br/> 
+Zip: {!Loan_New__c.Subject_Property_Zip_Code__c}<br/> 
+<br/> 
+Flag keyword: ORM<br/> 
+<br/> 
+Employee Loan Keyword: No Reverse
