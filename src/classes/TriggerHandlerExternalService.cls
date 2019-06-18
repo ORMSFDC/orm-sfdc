@@ -70,28 +70,44 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 	private void publishEvents( List<SObject> newSOList ) {
 
 		Logger.push( 'publishEvents', 'TriggerHandlerExternalService' );
-		System.debug( '>>> executing TriggerHandlerExternalService.publishEvent() method...' );
+		System.debug( '------------------- executing TriggerHandlerExternalService.publishEvent() method...' );
 		Logger.debug( 'executing TriggerHandlerExternalService.publishEvent() method...' );
 
 		// need to update these ExternalService__c records, so re-query
 		Map<Id, ExternalService__c> newExternalServiceMap = new Map<Id,ExternalService__c> ( [
-			SELECT Id, Status__c, RequestPayload__c, ServiceName__c, RequestingUserID__c
+			SELECT Id, Status__c, RequestPayload__c, ServiceName__c, RequestingUserID__c, SourceID__c
 			FROM ExternalService__c
 			WHERE Id IN :newSOList
 		] );
+		
 		// list of ExternalServiceOutbound__e events to publish
 		List<ExternalServiceOutbound__e> publishExternalServiceEventList = new List<ExternalServiceOutbound__e>();
 		// publish event for each external service in scope
 		for ( ExternalService__c extSrvc : newExternalServiceMap.values() ) {
 			// create platform event
+			
+            String serviceName = extSrvc.ServiceName__c;
+			String extservId = extSrvc.id;
+			String payload = extSrvc.RequestPayload__c;
+			system.debug('@@loanId'+extservId);
+            // Handle OnBase service naming
+            if (String.isNotBlank(serviceName) && serviceName.startsWith('OnBase')) {
+                serviceName = 'OnBase';
+            }
+            
 			ExternalServiceOutbound__e newESOevent = new ExternalServiceOutbound__e(
 				ExternalServiceID__c = extSrvc.Id,
 				Payload__c = ExternalServiceDispatcher.fixPayloadReference( extSrvc.RequestPayload__c, extSrvc.Id ),
-				ServiceName__c = extSrvc.ServiceName__c
+				ServiceName__c = serviceName
 			);
+
+			           
+            System.debug( '>>> TriggerHandlerExternalService.publishEvents.newESOevent: ' + newESOevent );
 			System.debug( '>>> TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
 			Logger.debug( 'TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
-			publishExternalServiceEventList.add( newESOevent );
+			publishExternalServiceEventList.add( newESOevent ); 
+			
+			
 		}
 		// publish events and update ExternalService__c records
 		// there is no way to bulkify the publishing of events, inspect results and update ExternalService__c records

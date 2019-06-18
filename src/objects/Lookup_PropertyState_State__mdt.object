@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Community__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Community</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Dower__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Dower</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Homestead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Homestead</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>State</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <description>Lookup for mapping a state to its PropertyState values.</description>
+    <label>Lookup PropertyState State</label>
+    <pluralLabel>Lookup PropertyState States</pluralLabel>
+    <visibility>Public</visibility>
+    <listViews>
+        <fullName>Details</fullName>
+        <columns>State__c</columns>
+        <columns>Community__c</columns>
+        <columns>Dower__c</columns>
+        <columns>Homestead__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Details</label>
+    </listViews>
+</CustomObject>

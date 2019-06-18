@@ -946,4 +946,39 @@ Please call your account executive with any questions or if you need assistance!
         <shortDescription>account_link</shortDescription>
         <value>https://ormmortgageservices.lightning.force.com/lightning/r/Account/</value>
     </labels>
+    <labels>
+        <fullName>OnBase_1132</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hard-coded OnBase value for Product Feature Set</shortDescription>
+        <value>Reverse</value>
+    </labels>
+    <labels>
+        <fullName>OnBase_115</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hard-coded OnBase value for Branch</shortDescription>
+        <value>ORMS</value>
+    </labels>
+    <labels>
+        <fullName>OnBase_294</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hard-coded OnBase value for Employee Loan</shortDescription>
+        <value>No Reverse</value>
+    </labels>
+    <labels>
+        <fullName>OnBase_ClientID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OnBase_ClientID</shortDescription>
+        <value>f8d925caeb2e4414802419bfda1a8f42</value>
+    </labels>
+    <labels>
+        <fullName>OnBase_ClientSecret</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OnBase_ClientSecret</shortDescription>
+        <value>E8D99Ab57d5f4272853ED69C605928E8</value>
+    </labels>
 </CustomLabels>

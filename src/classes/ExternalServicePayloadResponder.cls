@@ -40,7 +40,8 @@ public without sharing class ExternalServicePayloadResponder {
 	 */
 	@InvocableMethod( Label='Process External Service Responses' Description='Process External Service responses and update business records' )
 	public static void updateDomainRecords( List<Id> esIdList ) {
-
+		system.debug('updateDomainRecords--------------');
+		system.debug('esIdList--------------'+esIdList);
 		// query and organize external service record by map of record list
 		// map key = service name
 		// map value = list of external service records
@@ -57,13 +58,16 @@ public without sharing class ExternalServicePayloadResponder {
 			FROM ExternalService__c
 			WHERE Id IN :esIdList
 		]) {
+			System.debug('es.ServiceName__c---------------'+es.ServiceName__c);
 			if ( !serviceNameESlistMap.containsKey( es.ServiceName__c ) ) {
 				serviceNameESlistMap.put( es.ServiceName__c, new List<ExternalService__c>() );
 			}
 			serviceNameESlistMap.get( es.ServiceName__c ).add( es );
 		}
+		System.debug('serviceNameESlistMap---------------'+serviceNameESlistMap);
 		// for each service referenced instantiate interface indicated by matching registry entry
 		for ( String serviceName : serviceNameESlistMap.keySet() ) {
+			System.debug('esrControlMap---------------'+esrControlMap);
 			if ( esrControlMap.get( serviceName ) != NULL  ) {
 				// registry entry found, get handler class name
 				String extServiceClass = esrControlMap.get( serviceName ).ExternalServiceClass__c;
@@ -75,6 +79,8 @@ public without sharing class ExternalServicePayloadResponder {
 						// handler class found
 						ExternalServiceInterface esHandler = ( ExternalServiceInterface )t.newInstance();
 						// call handler with list of external service records
+						system.debug('serviceNameESlistMap--------------'+serviceNameESlistMap);
+						system.debug('serviceName--------------'+serviceName);
 						esHandler.processResponses( serviceNameESlistMap.get( serviceName ) );
 					}
 				}
