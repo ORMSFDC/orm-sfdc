@@ -358,7 +358,7 @@ public class OnBaseLookups {
                 Boolean hasError = false;
                 String requiredFields = '';
                 
-				if(String.isEmpty(loan.LoanNumber__c)) {
+		if(String.isEmpty(loan.LoanNumber__c)) {
                     hasError = true;
                     requiredFields += 'LoanNumber,';
                 }
@@ -403,7 +403,7 @@ public class OnBaseLookups {
                     requiredFields += 'Subject Property Zip Code,';
                 }
 
-				if(String.isEmpty(loan.Title_Company__c)) {
+		if(String.isEmpty(loan.Title_Company__c)) {
                     hasError = true;
                     requiredFields += 'Title Company,';
                 }                
@@ -420,12 +420,12 @@ public class OnBaseLookups {
 				
                 //TODO: Lien Type does not have a Salesforce mapping
 
-    			if(String.isEmpty(loan.FHACaseNumber__c )) {
+    		if(String.isEmpty(loan.FHACaseNumber__c )) {
                     hasError = true;
                     requiredFields += 'FHA Case Number,';
                 }
                 
-    			if(loan.Disbursement_Amount__c == null) {
+    		if(loan.Disbursement_Amount__c == null) {
                     hasError = true;
                     requiredFields += 'Disbursement Amount,';
                 }
@@ -435,7 +435,7 @@ public class OnBaseLookups {
                     requiredFields += 'Subject Property County,';
                 }
                 
-				if(String.isEmpty(loan.Is_there_a_POA_Name_Representing_and__c)) {
+		if(String.isEmpty(loan.Is_there_a_POA__c)) {
                     hasError = true;
                     requiredFields += 'Is there a POA?,';
                 }
@@ -455,32 +455,32 @@ public class OnBaseLookups {
                     requiredFields += 'Maximum Claim Amount,';
                 }
                 
-    			if(loan.PrincipalLimit__c == null) {
+    		if(loan.PrincipalLimit__c == null) {
                     hasError = true;
                     requiredFields += 'PrincipalLimit,';
                 }
                 
-				if(String.isEmpty(loan.Client_Chosen_Title__c)) {
+		if(String.isEmpty(loan.Client_Chosen_Title__c)) {
                     hasError = true;
                     requiredFields += 'Client Chosen Title,';
                 }
 
-    			if(String.isEmpty(loan.Flood_Zone__c)) {
+    		if(String.isEmpty(loan.Flood_Zone__c)) {
                     hasError = true;
                     requiredFields += 'Flood Zone,';
                 }
                 
-    			if(loan.PropertyAppraisalValue__c == null) {
+    		if(loan.PropertyAppraisalValue__c == null) {
                     hasError = true;
                     requiredFields += 'PropertyAppraisalValue,';
                 }
 
-    			if(String.isEmpty(loan.Guardianship_Conservatorship_Required__c)) {
+    		if(String.isEmpty(loan.Guardianship_Conservatorship_Required__c)) {
                     hasError = true;
                     requiredFields += 'Guardianship/Conservatorship Required,';
                 }
                 
-				if(String.isEmpty(loan.Assisted_Signing__c)) {
+		if(String.isEmpty(loan.Assisted_Signing__c)) {
                     hasError = true;
                     requiredFields += 'Assisted Signing,';
                 }
@@ -490,7 +490,7 @@ public class OnBaseLookups {
                     requiredFields += 'Remainderman on Loan,';
                 }
                 
-    			if(loan.Initial_Disbursement_Limit__c == null) {
+    		if(loan.Initial_Disbursement_Limit__c == null) {
                     hasError = true;
                     requiredFields += 'Initial Disbursement Limit,';
                 }
@@ -505,27 +505,27 @@ public class OnBaseLookups {
                     requiredFields += 'Expected Interest Rate,';
                 }
 
-    			if(loan.InitialInterestRate__c == null) {
+    		if(loan.InitialInterestRate__c == null) {
                     hasError = true;
                     requiredFields += 'Initial Interest Rate,';
                 }
                 
-    			if(String.isEmpty(loan.Non_Borrower_Title_Holder__c)) {
+    		if(String.isEmpty(loan.Non_Borrower_Title_Holder__c)) {
                     hasError = true;
                     requiredFields += 'Non Borrower Title Holder,';
                 }
                 
-    			if(String.isEmpty(loan.Non_Borrowing_Title_Holder_Spouse__c)) {
+    		if(String.isEmpty(loan.Non_Borrowing_Title_Holder_Spouse__c)) {
                     hasError = true;
                     requiredFields += 'Non Borrowing Title Holder Spouse,';
                 }
                 
-    			if(String.isEmpty(loan.POA_NonBorrowing_Title_Holder__c)) {
+    		if(String.isEmpty(loan.POA_NonBorrowing_Title_Holder__c)) {
                     hasError = true;
                     requiredFields += 'POA NonBorrowing Title Holder,';
                 }
                 
-				if(String.isEmpty(loan.ORMS__c)) {
+		if(String.isEmpty(loan.ORMS__c)) {
                     hasError = true;
                     requiredFields += 'ORMS Documents,';
                 }
