@@ -151,7 +151,7 @@ public without sharing class ExternalServiceDispatcher {
 					serviceResponse resp = handler.invokeService( newRequest );
 					system.debug('resp--------'+resp);
 					system.debug('resp.success--------'+resp.success);
-					if ( resp.success ) {
+					/*if ( resp.success ) {
 						// good response, update external service record
 						es.Status__c = 'Request Sent';
 						es.ResponsePayload__c = resp.response;
@@ -159,7 +159,7 @@ public without sharing class ExternalServiceDispatcher {
 						// bad response, capture error message to external service record
 						es.Status__c = 'Error/Exception';
 						es.ResponsePayload__c = String.join( resp.errorMessageList, ',' );
-					}					
+					}*/					
 				}
 
 
