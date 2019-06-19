@@ -214,13 +214,12 @@ public without sharing class ExternalServicePayloadGenerator {
             }
             when '1499' {
                 // PropertyState
-                System.debug('PropertyState');
-                String value = String.valueOf(rootObject.get(fieldName));
-                finalValue = OnBaseLookups.getPropertyStateKeyword(value);
+                finalValue = String.valueOf(rootObject.get(fieldName));
             }
+            //Added API Name in metadata as Using_Title_Source_as_the_Closing_Agent__c,
+            // passing this value to send the Closing Provider value from OnBaseLookups
             when '1544' {
                 // ClosingProvider
-                System.debug('ClosingProvider');
                 String value = String.valueOf(rootObject.get(fieldName));
                 finalValue = OnBaseLookups.getClosingProviderKeyword(value);
             }            
