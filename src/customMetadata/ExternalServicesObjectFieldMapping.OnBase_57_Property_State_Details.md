@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>FieldAPIName__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">Property_State_Details__c</value>
     </values>
     <values>
         <field>JSON_Object_Property__c</field>
@@ -40,6 +40,6 @@
     </values>
     <values>
         <field>ServiceName__c</field>
-        <value xsi:type="xsd:string">OnBase_XX</value>
+        <value xsi:type="xsd:string">OnBase_57</value>
     </values>
 </CustomMetadata>

@@ -4536,6 +4536,7 @@
     <members>Client__c.Task_2</members>
     <members>Loan_New__c.Follow_Up</members>
     <members>Loan_New__c.PCS_Schedule_Call</members>
+    <members>Loan_New__c.BA</members>
     <name>QuickAction</name>
   </types>
   <types>
@@ -6101,6 +6102,8 @@
     <members>External_Service_Alert-2</members>
     <members>External_Services_Inbound_Processing-5</members>
     <members>Loan_Status_Email_Alerts-6</members>
+    <members>External_Service_Alert-3</members>
+    <members>Update_Previous_Date-9</members>
     <name>Flow</name>
   </types>
   <types>
