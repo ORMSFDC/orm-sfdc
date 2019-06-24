@@ -461,11 +461,6 @@
             <sortOrder>16</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Share</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>17</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>18</sortOrder>
@@ -514,6 +509,11 @@
             <actionName>EmailHighlightAction</actionName>
             <actionType>ProductivityAction</actionType>
             <sortOrder>27</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Share</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>17</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedContent>
@@ -571,6 +571,8 @@
         <fields>License_Number__c</fields>
         <fields>License_Expiration__c</fields>
         <fields>Related_Account__c</fields>
+        <fields>State__c</fields>
+        <fields>RECORDTYPE</fields>
         <relatedList>License__c.Related_Contact__c</relatedList>
     </relatedLists>
     <relatedLists>
