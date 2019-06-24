@@ -446,21 +446,6 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>LoginToNetworkAsUser</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>11</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>ContactHierarchy</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>12</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>ViewPartnerPortalUser</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>13</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>NewContact</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
@@ -484,6 +469,21 @@
             <actionName>FeedItem.PollPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>10</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>LoginToNetworkAsUser</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>11</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>ContactHierarchy</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>ViewPartnerPortalUser</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>13</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Submit</actionName>
@@ -592,6 +592,8 @@
         <fields>License_Number__c</fields>
         <fields>License_Expiration__c</fields>
         <fields>Related_Account__c</fields>
+        <fields>State__c</fields>
+        <fields>RECORDTYPE</fields>
         <relatedList>License__c.Related_Contact__c</relatedList>
     </relatedLists>
     <relatedLists>
@@ -602,7 +604,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
-        <fields>ClientId__c</fields>
+        <fields>Client_Lead__c</fields>
         <fields>Estimated_home_value__c</fields>
         <fields>PartnerId__c</fields>
         <fields>CREATED_DATE</fields>
