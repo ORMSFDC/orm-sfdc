@@ -29,23 +29,15 @@ public class GenericControllerTest{
         insert user1;            
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             system.debug('user1.Name'+user1.Id);
             Account portalAccount = new Account(
                 Name='poAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
                 Partner_Lead_Status__c='New',
-                ORM_Account_Executive_Email__c=user1.Email,
-                Account_Executive_Name__c=user1.Id);
+                ORM_Account_Executive_Email__c=user1.Email);
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -65,12 +57,12 @@ public class GenericControllerTest{
             List<Client__c> clientListReturned;
             Loan_New__c loan = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
                                                
-                                               LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                            
+                                               LoanNumber__c = '5999',Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                            
                                                Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id,IsDeclarationFilled_Flag__c=false);
             
             insert loan;
             Loan_New__c loanNew = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
-                                                  LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                            
+                                                  LoanNumber__c = '123453215',Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                            
                                                   Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id,IsDeclarationFilled_Flag__c=false);
             
             insert loanNew;
@@ -182,21 +174,13 @@ System.assertEquals(testClient.First_Name__c, c.First_Name__c,'Values Not Matche
         insert user1;            
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='pAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -220,7 +204,7 @@ System.assertEquals(testClient.First_Name__c, c.First_Name__c,'Values Not Matche
             
             insert loan;
             Loan_New__c loanNew = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
-                                                  LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                            
+                                                  LoanNumber__c = '12345987',Appraisal_Received_Date__c=Date.parse('10/11/2017'),                                            
                                                   Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             
             insert loanNew;

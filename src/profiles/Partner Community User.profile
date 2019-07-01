@@ -1,45 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Partner Community</userLicense>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
         <apexPage>zoom_app__ExternalZoomMeetingDetails</apexPage>
         <enabled>true</enabled>
@@ -154,10 +113,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -4156,18 +4111,6 @@
         <tab>OnBoarding</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
         <visibility>DefaultOff</visibility>
@@ -4190,6 +4133,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Underwriter__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>

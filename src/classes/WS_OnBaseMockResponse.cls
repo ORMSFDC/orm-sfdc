@@ -1,3 +1,9 @@
+/**
+* @description: Mock response class for WS_OnBase
+* @author Sahitya
+* @date 6/28/2019
+*
+*/
 @isTest
 global class WS_OnBaseMockResponse implements HttpCalloutMock {
 

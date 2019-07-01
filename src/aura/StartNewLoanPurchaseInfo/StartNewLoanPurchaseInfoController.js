@@ -21,6 +21,8 @@
         else {
             component.find("ApplicationDate").set("v.value", ApplicationDate);
         }
+        console.log('rate type: ',rtype);
+
         var checkId = component.get("v.LoanId");
         if (typeof checkId === "undefined" || checkId == null) {
             component.set('v.NewLoan.Children_Under_the_age_of_6_living_in_th__c', 'No');
@@ -28,6 +30,7 @@
         else {
             component.set("v.NewStartLoan", false);
             helper.PopulateLoanBasedonId(component, event, helper);
+            console.log('rate type2: ',rtype);
         }
         helper.showHideMortgage(component, event, helper);
     },

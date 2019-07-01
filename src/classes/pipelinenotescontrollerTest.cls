@@ -89,7 +89,7 @@ public with sharing class pipelinenotescontrollerTest {
         
         Loan_New__c objLoan =  new Loan_New__c(Related_Partner__c = portalAccount.Id,
                                                  IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Proposal',
-                                               LoanNumber__c = 'L-000');
+                                               LoanNumber__c = '00011');
        Insert objLoan;
      
         

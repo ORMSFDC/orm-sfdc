@@ -1,0 +1,38 @@
+<aura:component  controller="OnBaseLookups"  implements="force:lightningQuickAction,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" 
+    access="global">
+    <aura:attribute name="LoanId" type="String" />
+    <aura:attribute name="NewLoan" type="Loan_New__c" default="{'sobjectType':'Loan_New__c'}"/>
+   <!-- <aura:handler name="init"  value="{!this}" action="{!c.doInIt}" />-->
+    <aura:attribute name="loanList" type="List" />
+    <aura:attribute name="success_message" type="String" default=""/>
+    <aura:attribute name="KeywordVal" type="String" default=""/>
+    <aura:attribute name="Keyword10" type="String" default=""/>
+    <aura:attribute name="Keyword16" type="String" default=""/>
+    <aura:attribute name="Keyword20" type="String" default=""/>
+    <aura:attribute name="Keyword57" type="String" default=""/>
+
+    <div class="slds-box">
+        <div class="customFont1">
+            ReSend OnBase Keywords:<br/>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Send before 57" onclick="{!c.getLoanData}"  /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <lightning:button variant="brand" label="Send 57" onclick="{!c.getLoanData}"  /> 
+        </div><br/><br/>
+        
+        <div>
+        <aura:if isTrue="{!v.success_message == 'true'}">           
+                Request Sent Successfully! Please refer External Services to check the OnBase Payload Status.<br/>
+                {!v.Keyword10}
+                {!v.Keyword16}
+                {!v.Keyword20}
+                {!v.Keyword57}
+
+        </aura:if>
+        <aura:if isTrue="{!v.success_message == 'false'}">           
+                Couldn't send the Keywords, Loan has not been updated to Keyword status.
+        </aura:if>
+        </div>
+    </div>
+
+</aura:component>

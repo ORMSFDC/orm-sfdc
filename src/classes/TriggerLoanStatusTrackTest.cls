@@ -1,16 +1,8 @@
 /** * File Name   : TriggerLoanStatusTrackTest.apxt
 *     Description : Test class
-*     Modified    : 11/27/2017, prsn
-*     covers      : TriggerLoanStatusTrackHandler,TriggerLoanStatusTrack
-*   * @author     : 
+*     covers      : TriggerLoanStatusTrackHandler,TriggerLoanStatusTrack, TriggerHandlerLoan
+*   * @author     : Sahitya
 * */
-
-
-/*
-    @description Apex Tests for TriggerLoanStatusTrackTest
-    @author Mike Gill
-    @date 29th June 2018
- */
 
 @isTest
 private class TriggerLoanStatusTrackTest {

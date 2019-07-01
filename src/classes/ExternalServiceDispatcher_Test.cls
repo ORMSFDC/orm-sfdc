@@ -1,12 +1,10 @@
 /**
 * @description test class for ExternalServiceDispatcher.cls
 *
-* @author Dennis Wilson
-* @date 5/14/2018
-*
 * changelog:
 * 06/05/2018: DWilson - refactored to implement interface
 * 09/10/2018: Sahitya - Fixed test class error for testEScontrolMap method
+* 06/28/2019: sahitya - refactored to test Onbase
 */
 
 @IsTest

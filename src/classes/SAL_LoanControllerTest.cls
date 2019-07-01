@@ -237,7 +237,7 @@ public class SAL_LoanControllerTest {
             List<Client__c> clientListReturned;
             Loan_New__c loanInsert = new Loan_New__c(
                 IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
-                LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
+                LoanNumber__c = '12345345',Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id,Subject_Property_Type__c= 'Condominium');
             
             insert loanInsert;  
@@ -422,7 +422,7 @@ public class SAL_LoanControllerTest {
         SAL_LoanController.get_heloStatesRefi();
         Test.stopTest();
         
-    }/**/
+    }
     @IsTest Static void UpdateLiabilityTest(){
         Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
         UserRole UR=[Select Id from UserRole where Name='Partner Care Specialist'];        
@@ -496,16 +496,9 @@ public class SAL_LoanControllerTest {
         insert user1;            
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user1.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
@@ -536,7 +529,7 @@ public class SAL_LoanControllerTest {
             string LoanId = LoanInsert.Id;
             Loan_New__c loanInsert1 = new Loan_New__c(
                 IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
-                LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
+                LoanNumber__c = '12345007',Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id,Is_Loan_Created_Manually__c=false);
             
             insert loanInsert1;        
@@ -553,7 +546,6 @@ public class SAL_LoanControllerTest {
         Insert liability;
             Test.startTest();
             SAL_LoanController.checkAndUpdateLiabilityClient(LoanId);
-            //SAL_LoanController.checkAndUpdateLiabilityClient(LoanId1);
             Test.stopTest();
         }
     }

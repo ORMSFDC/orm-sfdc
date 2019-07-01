@@ -2508,62 +2508,6 @@ IF(
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Selected_Loan_Payment_Plan__c</fullName>
-        <externalId>false</externalId>
-        <label>Selected Loan Payment Plan</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Line of Credit</fullName>
-                    <default>false</default>
-                    <label>Line of Credit</label>
-                </value>
-                <value>
-                    <fullName>Term</fullName>
-                    <default>false</default>
-                    <label>Term</label>
-                </value>
-                <value>
-                    <fullName>Tenure</fullName>
-                    <default>false</default>
-                    <label>Tenure</label>
-                </value>
-                <value>
-                    <fullName>Single Lump Sum</fullName>
-                    <default>false</default>
-                    <label>Single Lump Sum</label>
-                </value>
-                <value>
-                    <fullName>Undecided</fullName>
-                    <default>false</default>
-                    <label>Undecided</label>
-                </value>
-                <value>
-                    <fullName>Single Lump Sum (Fixed)</fullName>
-                    <default>false</default>
-                    <label>Single Lump Sum (Fixed)</label>
-                </value>
-                <value>
-                    <fullName>Modified Term</fullName>
-                    <default>false</default>
-                    <label>Modified Term</label>
-                </value>
-                <value>
-                    <fullName>Modified Tenure</fullName>
-                    <default>false</default>
-                    <label>Modified Tenure</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Source_Of_Funds__c</fullName>
         <externalId>false</externalId>
         <label>Source Of Funds</label>
@@ -6539,6 +6483,75 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OnBase_Keyword__c</fullName>
+        <externalId>false</externalId>
+        <label>OnBase_Keyword</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Selected_Loan_Payment_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Selected Loan Payment Plan</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Line of Credit</fullName>
+                    <default>false</default>
+                    <label>Line of Credit</label>
+                </value>
+                <value>
+                    <fullName>Term</fullName>
+                    <default>false</default>
+                    <label>Term</label>
+                </value>
+                <value>
+                    <fullName>Tenure</fullName>
+                    <default>false</default>
+                    <label>Tenure</label>
+                </value>
+                <value>
+                    <fullName>Single Lump Sum</fullName>
+                    <default>false</default>
+                    <label>Single Lump Sum</label>
+                </value>
+                <value>
+                    <fullName>Single Lump Sum (Fixed)</fullName>
+                    <default>false</default>
+                    <label>Single Lump Sum (Fixed)</label>
+                </value>
+                <value>
+                    <fullName>Modified Term</fullName>
+                    <default>false</default>
+                    <label>Modified Term</label>
+                </value>
+                <value>
+                    <fullName>Modified Tenure</fullName>
+                    <default>false</default>
+                    <label>Modified Tenure</label>
+                </value>
+                <value>
+                    <fullName>Undecided</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Undecided</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>

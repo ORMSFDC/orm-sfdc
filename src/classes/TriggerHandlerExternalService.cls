@@ -4,11 +4,9 @@
 * See specific method descriptions for functionality.
 * Custom Metadata Type records (TriggerExternalService__mdt) control method functionality.
 *
-* @author Dennis Wilson
-* @date 5/9/2018
-*
 * changelog:
 * 06/15/2018: DWilson - added Logger
+* 06/28/2019: Sahitya - handle OnBase external service event
 *
 */
 public without sharing class TriggerHandlerExternalService extends TriggerHandler {
@@ -36,8 +34,6 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 	private Boolean testException = FALSE;
 
 	public TriggerHandlerExternalService() {
-
-//		System.debug( '>>> tesControlMap: ' + tesControlMap );
 	}
 
 	/* context overrides */
@@ -71,7 +67,6 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 
 		Logger.push( 'publishEvents', 'TriggerHandlerExternalService' );
 		System.debug( '------------------- executing TriggerHandlerExternalService.publishEvent() method...' );
-		Logger.debug( 'executing TriggerHandlerExternalService.publishEvent() method...' );
 
 		// need to update these ExternalService__c records, so re-query
 		Map<Id, ExternalService__c> newExternalServiceMap = new Map<Id,ExternalService__c> ( [
@@ -100,10 +95,6 @@ public without sharing class TriggerHandlerExternalService extends TriggerHandle
 				Payload__c = ExternalServiceDispatcher.fixPayloadReference( extSrvc.RequestPayload__c, extSrvc.Id ),
 				ServiceName__c = serviceName
 			);
-
-			           
-            System.debug( '>>> TriggerHandlerExternalService.publishEvents.newESOevent: ' + newESOevent );
-			System.debug( '>>> TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
 			Logger.debug( 'TriggerHandlerExternalService.publishEvents.newESOevent.Payload__c: ' + newESOevent.Payload__c );
 			publishExternalServiceEventList.add( newESOevent ); 
 			

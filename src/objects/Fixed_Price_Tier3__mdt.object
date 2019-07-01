@@ -46,4 +46,14 @@
     <label>Fixed Price Tier3</label>
     <pluralLabel>Fixed Price Tier3</pluralLabel>
     <visibility>Public</visibility>
+    <listViews>
+        <fullName>All_data</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Rate__c</columns>
+        <columns>Price__c</columns>
+        <columns>Credit_to_Borrower__c</columns>
+        <columns>Origination_to_ORM__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All data</label>
+    </listViews>
 </CustomObject>

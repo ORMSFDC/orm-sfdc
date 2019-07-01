@@ -138,6 +138,7 @@ public class CreateLoanFromScenario {
         if(se.RateType__c == 'Helo' || se.RateType__c == 'Fixed'){
             newLoan.Rate_Type__c = 'Fixed';
             newLoan.Rate__c =  se.Margin__c;
+            newLoan.Selected_Loan_Payment_Plan__c = 'Single Lump Sum';
         }else if(se.RateType__c == 'Adjust' ){
             newLoan.Rate_Type__c = 'ARM';
             newLoan.Margin__c = String.valueOf(se.Margin__c);

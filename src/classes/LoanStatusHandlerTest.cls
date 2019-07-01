@@ -1,6 +1,5 @@
 /**
  * @description Apex Tests for LoanStatusHandler
- * @author Mike Gill
  * @date 28th June 2018
  * 
  * 07/27/18 MG/QDA BUG FIX - Tighten up tests for to explicitly check SFDC-222
@@ -68,14 +67,8 @@ private class LoanStatusHandlerTest {
         List<LoanStatus__c> loanStatusHistory = [SELECT Id, Name, PreviousStatus__c, Status__c FROM LoanStatus__c];
         System.assertEquals(loanStatusHistory.size(), 1);
 		System.assertEquals(loanStatusHistory[0].Name, 'Application Requested');
-		System.assertEquals(loanStatusHistory[0].PreviousStatus__c, 'Funded');
+		System.assertEquals(loanStatusHistory[0].PreviousStatus__c, 'Loan Funded');
 		System.assertEquals(loanStatusHistory[0].Status__c, 'Application Requested');
-		
-
-		
-
-       
-
     }
 
 

@@ -16,16 +16,9 @@ public with sharing class SAL_ClientControllerTest {
         insert user1;            
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user1.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
@@ -111,7 +104,7 @@ public with sharing class SAL_ClientControllerTest {
             insert loan;        
             Loan_New__c LoanWithoutClient =  new Loan_New__c(
                 IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Funded',
-                LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
+                LoanNumber__c = '12345878',Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             Insert LoanWithoutClient;
             string loanId  = Loan.Id;

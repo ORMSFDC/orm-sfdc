@@ -240,4 +240,25 @@
         </filters>
         <label>OnBase</label>
     </listViews>
+    <listViews>
+        <fullName>OnBase_History</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>RequestPayload__c</columns>
+        <columns>ResponsePayload__c</columns>
+        <columns>Status__c</columns>
+        <columns>ServiceName__c</columns>
+        <columns>SourceID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ServiceName__c</field>
+            <operation>contains</operation>
+            <value>OnBase</value>
+        </filters>
+        <filters>
+            <field>SourceID__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>OnBase History</label>
+    </listViews>
 </CustomObject>

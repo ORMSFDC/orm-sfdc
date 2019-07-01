@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>MG 07/11 Review &amp; Consolidate with AE</description><userLicense>Salesforce</userLicense>
-    <classAccesses>
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><description>MG 07/11 Review &amp; Consolidate with AE</description><userLicense>Salesforce</userLicense>
+    <classAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
         <apexClass>AttachmentResponse</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -263,47 +263,6 @@
         <apexClass>pipelinenotescontrollerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <pageAccesses>
         <apexPage>ChangePassword</apexPage>
         <enabled>true</enabled>
@@ -408,7 +367,7 @@
         <apexPage>zoom_app__zoomheader</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
-    <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
         <application>CMS</application>
         <default>false</default>
         <visible>true</visible>
@@ -478,9 +437,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -9256,9 +9212,11 @@
         <field>YoutubeLinks__c.Video_sequence__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.OnBase_Keyword__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -10191,7 +10149,6 @@
         <object>YoutubeLinks__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>
@@ -10628,23 +10585,10 @@
         <tab>OnBoarding</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>standard-Individual</tab>
         <visibility>Hidden</visibility>
@@ -10653,7 +10597,6 @@
         <tab>standard-Recommendation</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
@@ -10664,6 +10607,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Underwriter__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>

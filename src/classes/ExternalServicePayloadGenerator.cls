@@ -8,9 +8,7 @@
 *
 * changelog: Sprint 5 - Refactor for dynamic Payload Generator & Credit Report
 * changelog: Sprint 6 - MG/QDA 16/07/18 Cast all json data types to String
-*                       
-*
-* @todo reorganise code / review with Dennis
+* changelog: Sahitya - refactored to generate external services record for OnBase service
 * @todo bulkification.
 */
 
@@ -168,8 +166,6 @@ public without sharing class ExternalServicePayloadGenerator {
      */
     public static String translateKeywordOnBase(String keywordNumber, String fieldName, sObject rootObject, List<sObject> lookupData) {
         Logger.push('translateKeywordOnBase','ExternalServicePayloadGenerator');
-        System.debug('---------External service payload_ranslateKeywordOnBase--------------');
-        
         String finalValue;
         
         switch on keywordNumber {
@@ -256,7 +252,7 @@ public without sharing class ExternalServicePayloadGenerator {
         Map<String, List<sObject>> returnMap = new Map<String, List<sObject>>(); // empty return map
        
         for  (String objectType : soqlQueryMap.keySet()){
-           // try{
+           
             // Build main query
             String query = 'SELECT ' + soqlQueryMap.get(objectType)  + ' Id, LastModifiedDate FROM ' + objectMap.get(objectType) + ' WHERE '
                                     +  objectParentMap.get(objectMap.get(objectType)) + ' in: recordIdList ';
@@ -269,11 +265,7 @@ public without sharing class ExternalServicePayloadGenerator {
             System.debug('XXX Query = '+query);
             List<sObject> queryData = Database.query(query); // Query Salesforce Data
             System.debug('XXX queryData = ' + queryData);
-            returnMap.put(objectType, queryData); // Add to return map            
-           // }
-           // catch(Exception ex){
-           //     System.debug('@@@@> exception ' + ex);
-           // }
+            returnMap.put(objectType, queryData); // Add to return map     
         }
    
         Logger.pop();
@@ -292,8 +284,7 @@ public without sharing class ExternalServicePayloadGenerator {
         for (ExternalServicesObjectFieldMapping__mdt c: cmt){
                 if (c.FieldAPIName__c != null){
                     returnMap.put(c.FieldAPIName__c, c.MappingProperty__c);
-                }
-                
+                }                
         }
         Logger.pop();
         return returnMap;
@@ -308,11 +299,8 @@ public without sharing class ExternalServicePayloadGenerator {
         Logger.push('getObjectToParent', 'ExternalServicePayloadGenerator');
         Map<String, String> returnMap = new Map<String, String>();
         for (ExternalServicesObjectFieldMapping__mdt c: cmt){
-
                 returnMap.put(c.ObjectAPIName__c, c.ParentFieldAPIName__c);
         }
-
-
         Logger.pop();
         return returnMap;
     }
@@ -328,11 +316,8 @@ public without sharing class ExternalServicePayloadGenerator {
         for (ExternalServicesObjectFieldMapping__mdt c: cmt){
                 if (c.SOQLWhereCriteria__c != null){
                     returnMap.put(c.JSON_Object_Property__c, c.SOQLWhereCriteria__c);
-                }
-                
+                }                
         }
-
-
         Logger.pop();
         return returnMap;
     }
@@ -379,18 +364,10 @@ public without sharing class ExternalServicePayloadGenerator {
                 } else if (currentObject != lastObject){
                     queryString = c.FieldAPIName__c +',';
                     lastObject = currentObject;
-                   
                 }
-                  
                 dataMap.put(currentObject, queryString);
-                
             }
-    
         }
-        
-        System.debug('#### dataMap='+dataMap);
-        Logger.debug('dataMap='+dataMap);
-
         Logger.pop();
         return dataMap;
     }
@@ -419,23 +396,13 @@ public without sharing class ExternalServicePayloadGenerator {
                 es.ServiceName__c = serviceName;
                 es.RequestPayload__c = jsonPayload;
                 externalServiceInserts.add(es);
-
         }
-
-        
-        Database.SaveResult[] results = Database.insert(externalServiceInserts);
-        
+        Database.SaveResult[] results = Database.insert(externalServiceInserts);        
         for (Database.SaveResult result : results) {
-
             if (result.isSuccess()) {
-
                 externalServiceIdList.add(result.getId());
-
             }
-
-        }
-        
-
+        }       
         Logger.pop();
         return externalServiceIdList;
 

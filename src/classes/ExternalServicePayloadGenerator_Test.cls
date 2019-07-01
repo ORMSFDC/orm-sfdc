@@ -1,12 +1,9 @@
 /**
 * @description test class for ExternalServicePayloadGenerator.cls
 *
-* @author Dennis Wilson
-* @date 05/20/2018
-*
 * changelog:
 * 06/04/2018: DWilson - changed to private class declaration
-*
+* 06/28/2019: Sahitya - modified code to cover onbase
 */
 @IsTest
 private with sharing class ExternalServicePayloadGenerator_Test {

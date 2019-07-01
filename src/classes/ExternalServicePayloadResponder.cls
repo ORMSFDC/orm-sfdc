@@ -39,9 +39,8 @@ public without sharing class ExternalServicePayloadResponder {
 	 * @param  esIdList List<Id> of ExternalService__c records to process
 	 */
 	@InvocableMethod( Label='Process External Service Responses' Description='Process External Service responses and update business records' )
-	public static void updateDomainRecords( List<Id> esIdList ) {
-		system.debug('updateDomainRecords--------------');
-		system.debug('esIdList--------------'+esIdList);
+	public static void updateDomainRecords( List<Id> esIdList ) {		
+		system.debug('updateDomainRecords--------------'+esIdList);
 		// query and organize external service record by map of record list
 		// map key = service name
 		// map value = list of external service records
@@ -79,8 +78,6 @@ public without sharing class ExternalServicePayloadResponder {
 						// handler class found
 						ExternalServiceInterface esHandler = ( ExternalServiceInterface )t.newInstance();
 						// call handler with list of external service records
-						system.debug('serviceNameESlistMap--------------'+serviceNameESlistMap);
-						system.debug('serviceName--------------'+serviceName);
 						esHandler.processResponses( serviceNameESlistMap.get( serviceName ) );
 					}
 				}

@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><loginIpRanges>
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><loginIpRanges>
         <endAddress>255.255.255.255</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges><userLicense>Guest User License</userLicense>
-    <classAccesses>
+    <classAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
         <apexClass>LoanController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -90,7 +90,7 @@
         <apexPage>Unauthorized</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
-    <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
         <application>CMS</application>
         <default>false</default>
         <visible>false</visible>
@@ -160,9 +160,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -3009,23 +3006,10 @@
         <tab>OnBoarding</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
@@ -3046,7 +3030,10 @@
         <tab>standard-Recommendation</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>
         <name>ContentWorkspaces</name>

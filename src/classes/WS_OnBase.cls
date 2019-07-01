@@ -1,6 +1,11 @@
 /**
-* @description WS_OnBase encapsulates the OnBase external (web) service
+* @description: WS_OnBase encapsulates the OnBase external (web) service
+*               send http callout when external service is created for Onbase service
+* @author Sahitya
+* @date 6/28/2019
+*
 */
+
 public without sharing class WS_OnBase implements ExternalServiceDispatcher.DispatchHandler{
 
 	/*******************************************************************************************************

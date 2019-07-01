@@ -65,7 +65,7 @@
                                     <ol class="listWithNumbers">
                                         <li>All borrowers must have minimum middle credit score of 640.</li>
                                         <li>Non-Borrowing Spouses are not permitted.</li>
-                                        <li>Minimum home value of $350,000.</li>
+                                        <li>Minimum home value of $250,000.</li>
                                     </ol>
                                 </ui:message>
                             </aura:if>
@@ -111,7 +111,6 @@
                                             <ui:inputSelectOption text="Tenure" label="Tenure" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
                                             <ui:inputSelectOption text="Line of Credit" label="Line of Credit" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
                                             <ui:inputSelectOption text="Modified Tenure" label="Modified Tenure" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
-                                            <ui:inputSelectOption text="Undecided" label="Undecided" disabled="{!v.NewLoan.Rate_Type__c == 'Fixed'}" />
                                         </aura:if>
                                 <aura:if isTrue="{!v.NewLoan.Rate_Type__c == 'Fixed'}">
                                         <ui:inputSelectOption text="Single Lump Sum" label="Single Lump Sum"/>                                    
@@ -134,8 +133,8 @@
                                     class="slds-input" blur="{!c.populateFee}"/>
                                 
                                 <aura:if isTrue="{!v.NewLoan.Product_Type__c == 'HELO'}">
-                                    <ui:message aura:id="invalidAppraisedValue" title="Error" severity="error" closable="false" class="{!if(v.NewLoan.Estimate_of_Appraised_Value__c lt 350000,'slds-show','slds-hide')}">
-                                    Minimum home value of $350,000 is required for HELO
+                                    <ui:message aura:id="invalidAppraisedValue" title="Error" severity="error" closable="false" class="{!if(v.NewLoan.Estimate_of_Appraised_Value__c lt 250000,'slds-show','slds-hide')}">
+                                    Minimum home value of $250,000 is required for HELO
                                     </ui:message>
                                 </aura:if>
                             </div>

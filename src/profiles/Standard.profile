@@ -1,46 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <pageAccesses>
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><userLicense>Salesforce</userLicense>
+    <pageAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
         <apexPage>UserActiveStatus</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
@@ -88,7 +47,7 @@
         <apexPage>zoom_app__zoomheader</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
-    <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
         <application>CMS</application>
         <default>false</default>
         <visible>false</visible>
@@ -158,9 +117,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -5216,9 +5172,11 @@
         <field>User.zoom_app__isPMI_Enabled__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.OnBase_Keyword__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -6207,23 +6165,10 @@
         <tab>OnBoarding</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>standard-Individual</tab>
         <visibility>Hidden</visibility>
@@ -6232,7 +6177,6 @@
         <tab>standard-Recommendation</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
@@ -6243,6 +6187,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Underwriter__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>

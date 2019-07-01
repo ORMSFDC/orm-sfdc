@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Price__c</field>
-        <value xsi:type="xsd:double">2.5</value>
+        <value xsi:type="xsd:double">6.0</value>
     </values>
     <values>
         <field>Rate__c</field>

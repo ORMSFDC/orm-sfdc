@@ -1,6 +1,15 @@
+/**
+* @description: OnBaseLookups class creates data for Onbase Keywords and 
+*               capture keywords and sent to external service payload generate with updated keywords
+* @author Sahitya
+* @date 6/28/2019
+*
+*/
+
 public class OnBaseLookups {
     
-    public static String getPropertyStateKeyword(String state){
+    public static String getPropertyStateKeyword(String state)
+    {
         Logger.push('getPropertyStateKeyword','OnBaseLookups');
         
         // Returned keyword will be null if no matches found in lookups
@@ -9,7 +18,8 @@ public class OnBaseLookups {
         // Look up the property state details by state
         List<Lookup_PropertyState_State__mdt> detail = [select Community__c, Dower__c, Homestead__c from Lookup_PropertyState_State__mdt 
                                                         where State__c = :state];        
-        if (detail != null && detail.size() > 0){
+        if (detail != null && detail.size() > 0)
+        {
             Boolean community = detail[0].Community__c;
             Boolean dower = detail[0].Dower__c;
             Boolean homestead = detail[0].Homestead__c;
@@ -184,11 +194,53 @@ public class OnBaseLookups {
             updateProduct(newLoan, oldLoan);
             updatePurposeOfRefinance(newLoan, oldLoan);
             updatePropertyState(newLoan, oldLoan);
+            updateOnBaseKeyword(newLoan, oldLoan);
         }            
         
         Logger.pop();
     }
     
+    //populate OnBase Keyword when loan is updated, used this field for Repull and Rebase logic
+    public static void updateOnBaseKeyword(Loan_New__c newLoan, Loan_New__c oldLoan){
+        Logger.push('updateOnBaseKeyword','OnBaseLookups');
+        
+        String newloanStatus = newLoan.loanstatus__c;
+        String oldloanStatus = oldLoan.loanstatus__c;
+
+        if(newloanStatus == 'Waiting for Full Package'){
+            newLoan.OnBase_Keyword__c = 'OnBase_10';
+        } 
+        if(newloanStatus == 'Application Package Received'){
+            newLoan.OnBase_Keyword__c = 'OnBase_16';
+        }
+        if(newloanStatus == 'Loan Submission Received- Awaiting Review'){
+            newLoan.OnBase_Keyword__c = 'OnBase_20';
+        }
+        if(newloanStatus == 'Docs Out to Settlement Agent'){
+            newLoan.OnBase_Keyword__c = 'OnBase_57';
+        }
+        Logger.pop();
+    }
+
+
+    @AuraEnabled
+    public static Loan_New__c resendOnBase(Id LoanId) {
+      Logger.push('resendOnBase','OnBaseLookups');
+        Loan_New__c loanList = [select id,OnBase_Keyword__c,loanstatus__c from Loan_New__c where Id=: LoanId];
+        String serviceType = loanList.OnBase_Keyword__c;
+
+        if(serviceType != null){
+            ExternalServicePayloadGenerator.Request request = new ExternalServicePayloadGenerator.Request();
+            request.idList = new List<Id>{LoanId};
+            request.objectAPIName = 'Loan_New__c';
+            request.externalServiceType = serviceType;
+            List<ExternalServicePayloadGenerator.Request> requests = new List<ExternalServicePayloadGenerator.Request>{ request };                
+            ExternalServicePayloadGenerator.insertExternalService( requests );
+        }
+        Logger.pop();
+        return loanList;
+    }
+
     public static void updateProduct(Loan_New__c newLoan, Loan_New__c oldLoan)
     {
         Logger.push('updateProduct','OnBaseLookups');
@@ -262,18 +314,18 @@ public class OnBaseLookups {
         String newPropertyState = newLoan.Subject_Property_State__c;        
         String oldPropertyState = oldLoan.Subject_Property_State__c;
         
-        System.debug('New>>>>>1 ' + newPropertyState);
-        System.debug('Old>>>>>2 ' + oldPropertyState);
+        System.debug('New>>>>> ' + newPropertyState);
+        System.debug('Old>>>>> ' + oldPropertyState);
         
         if(String.isNotBlank(newPropertyState))
         {
-           // if(!newPropertyState.equals(oldPropertyState))
-           // {
+            if(!newPropertyState.equals(oldPropertyState))
+            {
             	// Have new value, and it differs, so update
             	String keyword = OnBaseLookups.getPropertyStateKeyword(newPropertyState);
-                System.debug('State Keyword>>>>> ' + keyword);
+                System.debug('Keyword>>>>> ' + keyword);
            	    newLoan.Property_State_Details__c = keyword;
-            //}
+            }
         }
         else
         {
@@ -282,7 +334,6 @@ public class OnBaseLookups {
         }
         Logger.pop();
     }
-    
     
     public static void sendKeywords(List<Loan_New__c> loans)
     {
@@ -313,12 +364,6 @@ public class OnBaseLookups {
                 	sendKeywords = true;
                 	serviceType = 'OnBase_20';
                 }
-                when 'Docs Out to Settlement Agent'
-                {
-                    // OnBase 57 at 'Docs Out to Settlement Agent'
-                	sendKeywords = true;
-                	serviceType = 'OnBase_57';
-                }
                 when else
                 {
                     sendKeywords = false;
@@ -329,14 +374,12 @@ public class OnBaseLookups {
             if(sendKeywords)
             {
                 // Publish Platform Event via External Service
-                System.debug('OnBaseLookups publishing platform event for>----------------- ' + serviceType);
+                System.debug('OnBase publishing platform event for> ' + serviceType);
             	ExternalServicePayloadGenerator.Request request = new ExternalServicePayloadGenerator.Request();
-				system.debug('request--------------------------'+request);
             	System.debug('Loan record Id> ' + loan.Id);
             	request.idList = new List<Id>{ loan.Id };
             	request.objectAPIName = 'Loan_New__c';
             	request.externalServiceType = serviceType;
-				system.debug('request--------------------------'+request);
             	List<ExternalServicePayloadGenerator.Request> requests = new List<ExternalServicePayloadGenerator.Request>{ request };                
             	ExternalServicePayloadGenerator.insertExternalService( requests );
             }            
@@ -358,7 +401,7 @@ public class OnBaseLookups {
                 Boolean hasError = false;
                 String requiredFields = '';
                 
-		if(String.isEmpty(loan.LoanNumber__c)) {
+				if(String.isEmpty(loan.LoanNumber__c)) {
                     hasError = true;
                     requiredFields += 'LoanNumber,';
                 }
@@ -375,7 +418,7 @@ public class OnBaseLookups {
                 
                 if(loan.Actual_Funding_Date__c == null) {
                     hasError = true;
-                    requiredFields += 'Actual Funding Date,'; 
+                    requiredFields += 'Actual Funding Date,';
                 }
                 
                 if(String.isEmpty(loan.Subject_Property_Address__c)) {
@@ -403,7 +446,7 @@ public class OnBaseLookups {
                     requiredFields += 'Subject Property Zip Code,';
                 }
 
-		if(String.isEmpty(loan.Title_Company__c)) {
+				if(String.isEmpty(loan.Title_Company__c)) {
                     hasError = true;
                     requiredFields += 'Title Company,';
                 }                
@@ -420,12 +463,12 @@ public class OnBaseLookups {
 				
                 //TODO: Lien Type does not have a Salesforce mapping
 
-    		if(String.isEmpty(loan.FHACaseNumber__c )) {
+    			if(String.isEmpty(loan.FHACaseNumber__c )) {
                     hasError = true;
                     requiredFields += 'FHA Case Number,';
                 }
                 
-    		if(loan.Disbursement_Amount__c == null) {
+    			if(loan.Disbursement_Amount__c == null) {
                     hasError = true;
                     requiredFields += 'Disbursement Amount,';
                 }
@@ -435,7 +478,7 @@ public class OnBaseLookups {
                     requiredFields += 'Subject Property County,';
                 }
                 
-		if(String.isEmpty(loan.Is_there_a_POA__c)) {
+				if(String.isEmpty(loan.Is_there_a_POA_Name_Representing_and__c)) {
                     hasError = true;
                     requiredFields += 'Is there a POA?,';
                 }
@@ -455,32 +498,32 @@ public class OnBaseLookups {
                     requiredFields += 'Maximum Claim Amount,';
                 }
                 
-    		if(loan.PrincipalLimit__c == null) {
+    			if(loan.PrincipalLimit__c == null) {
                     hasError = true;
                     requiredFields += 'PrincipalLimit,';
                 }
                 
-		if(String.isEmpty(loan.Client_Chosen_Title__c)) {
+				if(String.isEmpty(loan.Client_Chosen_Title__c)) {
                     hasError = true;
                     requiredFields += 'Client Chosen Title,';
                 }
 
-    		if(String.isEmpty(loan.Flood_Zone__c)) {
+    			if(String.isEmpty(loan.Flood_Zone__c)) {
                     hasError = true;
                     requiredFields += 'Flood Zone,';
                 }
                 
-    		if(loan.PropertyAppraisalValue__c == null) {
+    			if(loan.PropertyAppraisalValue__c == null) {
                     hasError = true;
                     requiredFields += 'PropertyAppraisalValue,';
                 }
 
-    		if(String.isEmpty(loan.Guardianship_Conservatorship_Required__c)) {
+    			if(String.isEmpty(loan.Guardianship_Conservatorship_Required__c)) {
                     hasError = true;
                     requiredFields += 'Guardianship/Conservatorship Required,';
                 }
                 
-		if(String.isEmpty(loan.Assisted_Signing__c)) {
+				if(String.isEmpty(loan.Assisted_Signing__c)) {
                     hasError = true;
                     requiredFields += 'Assisted Signing,';
                 }
@@ -490,7 +533,7 @@ public class OnBaseLookups {
                     requiredFields += 'Remainderman on Loan,';
                 }
                 
-    		if(loan.Initial_Disbursement_Limit__c == null) {
+    			if(loan.Initial_Disbursement_Limit__c == null) {
                     hasError = true;
                     requiredFields += 'Initial Disbursement Limit,';
                 }
@@ -505,27 +548,27 @@ public class OnBaseLookups {
                     requiredFields += 'Expected Interest Rate,';
                 }
 
-    		if(loan.InitialInterestRate__c == null) {
+    			if(loan.InitialInterestRate__c == null) {
                     hasError = true;
                     requiredFields += 'Initial Interest Rate,';
                 }
                 
-    		if(String.isEmpty(loan.Non_Borrower_Title_Holder__c)) {
+    			if(String.isEmpty(loan.Non_Borrower_Title_Holder__c)) {
                     hasError = true;
                     requiredFields += 'Non Borrower Title Holder,';
                 }
                 
-    		if(String.isEmpty(loan.Non_Borrowing_Title_Holder_Spouse__c)) {
+    			if(String.isEmpty(loan.Non_Borrowing_Title_Holder_Spouse__c)) {
                     hasError = true;
                     requiredFields += 'Non Borrowing Title Holder Spouse,';
                 }
                 
-    		if(String.isEmpty(loan.POA_NonBorrowing_Title_Holder__c)) {
+    			if(String.isEmpty(loan.POA_NonBorrowing_Title_Holder__c)) {
                     hasError = true;
                     requiredFields += 'POA NonBorrowing Title Holder,';
                 }
                 
-		if(String.isEmpty(loan.ORMS__c)) {
+				if(String.isEmpty(loan.ORMS__c)) {
                     hasError = true;
                     requiredFields += 'ORMS Documents,';
                 }

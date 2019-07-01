@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><userLicense>Guest User License</userLicense>
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>true</custom><userLicense>Guest User License</userLicense>
     <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
         <application>CMS</application>
         <default>false</default>
@@ -69,9 +69,6 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
-    
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -2909,23 +2906,10 @@
         <tab>OnBoarding</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
@@ -2946,7 +2930,10 @@
         <tab>standard-Recommendation</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
     <userPermissions>
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>

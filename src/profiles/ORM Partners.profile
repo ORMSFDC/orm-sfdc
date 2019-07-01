@@ -83,47 +83,6 @@
         <apexClass>UploadController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <pageAccesses>
         <apexPage>ConditionPDF</apexPage>
         <enabled>true</enabled>
@@ -254,10 +213,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -5393,9 +5348,6 @@
         <field>YoutubeLinks__c.Thumbnails_Image__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -6717,18 +6669,6 @@
         <tab>OnBoarding</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
         <visibility>DefaultOff</visibility>
@@ -6751,6 +6691,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Underwriter__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>

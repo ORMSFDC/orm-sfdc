@@ -54,11 +54,11 @@ public with sharing class CICControllerTest {
             insert contact;
             //Create Loan
             Loan_New__c LoanInsert1 = new Loan_New__c(PCS_at_Loan_Level__c = user1.Id, Loan_Payment_Plan_Term__c = 'test',
-                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Waiting for Full Package',LoanNumber__c = '12345'
+                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Conditionally Approved',LoanNumber__c = '12345'
                                                      ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                                                    ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
-            Loan_New__c LoanInsert2 = new Loan_New__c(Loan_Payment_Plan_Term__c = 'test',
-                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Waiting for Full Package',LoanNumber__c = ''
+            Loan_New__c LoanInsert2 = new Loan_New__c(Loan_Payment_Plan_Term__c = 'test',PCS_at_Loan_Level__c = user1.Id,
+                                                      IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Waiting for Full Package',LoanNumber__c = '222'
                                                      ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                                                    ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             list<Loan_New__c> LoanList = new list<Loan_New__c>();
@@ -118,6 +118,7 @@ public with sharing class CICControllerTest {
             Test.startTest();
               CICController.SaveCICData(CICFRJson,CICList[1],CICList[1].Loan_Id__c);
               CICController.SaveCICData(CICFRJson,CICList[0],CICList[0].Loan_Id__c);
+              CICController.CreateTasksAndSendEmails(CICFRJson,CICList[1],CICList[1].Loan_Id__c);
             Test.stopTest();
         }
     }    

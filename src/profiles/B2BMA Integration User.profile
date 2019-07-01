@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><loginIpRanges>
+<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata"><custom>false</custom><loginIpRanges>
         <description>Pardot Public Cloud</description>
         <endAddress>18.232.248.67</endAddress>
         <startAddress>18.232.248.67</startAddress>
@@ -37,7 +37,7 @@
         <endAddress>136.147.104.23</endAddress>
         <startAddress>136.147.104.20</startAddress>
     </loginIpRanges><userLicense>B2BMA Integration User</userLicense>
-    <classAccesses>
+    <classAccesses xmlns="http://soap.sforce.com/2006/04/metadata">
         <apexClass>SoftphoneContactSearchController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -61,7 +61,7 @@
         <apexClass>SoftphoneProviderHelperTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <applicationVisibilities xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
         <application>CMS</application>
         <default>false</default>
         <visible>false</visible>
@@ -131,9 +131,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-    
-    
-    
     <fieldPermissions>
     <editable>false</editable>
     <readable>false</readable>
@@ -5049,9 +5046,11 @@
         <field>User.zoom_app__isPMI_Enabled__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    
-    
-    
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Loan_New__c.OnBase_Keyword__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
@@ -6040,23 +6039,10 @@
         <tab>OnBoarding</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <tabVisibilities>
         <tab>PCS_Underwriter</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>standard-Individual</tab>
         <visibility>Hidden</visibility>
@@ -6065,7 +6051,6 @@
         <tab>standard-Recommendation</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
-    
     <tabVisibilities>
         <tab>PCS_Tasks</tab>
         <visibility>Hidden</visibility>
@@ -6076,6 +6061,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Underwriter__c</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>TestOnBase</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userPermissions>

@@ -226,7 +226,7 @@
             helper.checkFor62(component,event,helper);          
         } 
         if(component.get("v.Show_FHA_Hecm")  || component.get("v.Show_FHA_Purchase")){ 
-            if(component.get("v.EHV") >= 350000){
+            if(component.get("v.EHV") >= 250000){
                 component.set("v.displayHelo", true);
             }else{
                 component.set("v.displayHelo", false);
@@ -280,11 +280,11 @@
             console.log('show fha Hecm',component.get("v.Show_FHA_Hecm"));
             console.log('show fha Purchase',component.get("v.Show_FHA_Purchase"));
             //alert('init'+component.get("v.EHV"));
-            if(component.get("v.EHV") >= 350000){
-                console.log(' displayHelo above 350k');
+            if(component.get("v.EHV") >= 250000){
+                console.log(' displayHelo above 250k');
                 component.set("v.displayHelo", true);
             } else{
-                console.log(' displayHelo below 350k');
+                console.log(' displayHelo below 250k');
                 component.set("v.displayHelo", false);
             }
         } 

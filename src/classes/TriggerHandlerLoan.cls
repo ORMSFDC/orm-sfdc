@@ -7,7 +7,8 @@
 * @author Mike Gill
 * @date 6/19/2018
 *
-* changelog:
+* changelog: 6/28/2019: Sahitya: Refactored method to send request to OnBase when loan status is updated, 
+*                       added logic in after Update and before update
 *
 */
 public without sharing class TriggerHandlerLoan extends TriggerHandler {
@@ -57,8 +58,7 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
      */
     public override void afterUpdate() {
         Logger.push('afterUpdate', 'TriggerHandlerLoan');
-        system.debug('----------TriggerHandlerLoan afterUpdate--------------');
-
+        //Call Onbase method only when the loan status is updated to certain statuses
         List<Loan_New__c> loanList;
         Set<Id> changeStatusIdSet;
         system.debug('RecursiveTriggerHandler.isFirstTimeCopy-------'+RecursiveTriggerHandler.isFirstTimeCopy);
@@ -72,23 +72,12 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
             oldMap = (Map<Id, Loan_New__c>)Trigger.oldMap;
             
             Loan_New__c ln = (Loan_New__c)Trigger.new[0];
-            Loan_New__c lo = (Loan_New__c)Trigger.old[0];
-            Loan_New__c ln1 = (Loan_New__c)Trigger.newMap.values()[0];
-            Loan_New__c lo2 = (Loan_New__c)Trigger.oldMap.values()[0];
-            system.debug('in loanHandler new------'+ln.LoanStatus__c);
-            system.debug('in loanHandler old------'+lo.LoanStatus__c);
-            system.debug('in loanHandler new------'+ln1.LoanStatus__c);
-            system.debug('in loanHandler old------'+lo2.LoanStatus__c);
-            
+            Loan_New__c lo = (Loan_New__c)Trigger.old[0];            
             
             for(Loan_New__c newLoan :(List<Loan_New__c>)Trigger.new){
-                Loan_New__c oldLoan = oldMap.get(newLoan.Id);
-                system.debug('newLoan.LoanStatus__c------'+newLoan.LoanStatus__c);
-                system.debug('oldLoan.LoanStatus__c------'+oldLoan.LoanStatus__c);
-                
+                Loan_New__c oldLoan = oldMap.get(newLoan.Id);                
                 if(newLoan.LoanStatus__c != oldLoan.LoanStatus__c && statusSet.contains(newLoan.LoanStatus__c)){
-                system.debug('in------');
-                   // changeStatusIdSet.add(newLoan.id);
+                    // changeStatusIdSet.add(newLoan.id);
                     OnBaseLookups.sendKeywords((List<Loan_New__c>)Trigger.new);
                 }
             }
@@ -137,43 +126,12 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
                 }
             }
         }
-        
-     
-        // Run Loan Update Partner Fields
-      /*  if (testControlMap.get('onbaseSendKeywords') != NULL) {
-            system.debug('sendKeywords4-----------------');
-            //try{
-            if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseSendKeywords').Enable__c) {
-
-                String jsonNewMap = JSON.serialize((Map<Id, sObject>) Trigger.newMap);
-                String jsonOldMap = JSON.serialize((Map<Id, sObject>) Trigger.oldMap);
-                System.debug('@@jsonnewmap---'+jsonNewMap);
-                System.debug('@@jsonoldmap---'+jsonOldMap);
-
-                string newLoanKey = jsonNewMap.substring(jsonNewMap.indexof('Loan_Status_Number__c":')+23,jsonNewMap.indexof('ORMS_AE')-2);
-                system.debug('test---->'+newLoanKey);
-
-                string oldLoanKey = jsonOldMap.substring(jsonOldMap.indexof('Loan_Status_Number__c":')+23,jsonOldMap.indexof('ORMS_AE')-2);
-                system.debug('test2---->'+oldLoanKey);
-                Loan_New__c ln = (Loan_New__c)Trigger.new[0];
-                String loanValue = ln.loanstatus__c;
-
-                if(newLoanKey != oldLoanKey && (loanValue != 'Proposal')){  
-                    system.debug('--in here--');              
-                    OnBaseLookups.sendKeywords((List<Loan_New__c>)Trigger.new);
-                } 
-            }
-            //}catch(exception ex){ System.debug('@@after update error'+ex);}
-        }*/
-       
         RecursiveTriggerHandler.isFirstTime = false;
         Logger.pop();
     }
     
     public override void beforeUpdate() {
         Logger.push('beforeUpdate', 'TriggerHandlerLoan');
-        System.debug('---------TriggerHandlerLoan-beforeUpdate-----------');
-
         // Validate required OnBase values for final send    
         if (testControlMap.get('onbaseValidateFinal') != NULL) {
             if (RecursiveTriggerHandler.isFirstTime && testControlMap.get('onbaseValidateFinal').Enable__c) {
@@ -188,6 +146,16 @@ public without sharing class TriggerHandlerLoan extends TriggerHandler {
             }
         }
         
+        //Update status date fields on loan status change
+        Map<Id, Loan_New__c> oldMap = new Map<Id, Loan_New__c>();
+        oldMap = (Map<Id, Loan_New__c>)Trigger.oldMap;
+        for(Loan_New__c newLoan :(List<Loan_New__c>)Trigger.new){
+            Loan_New__c oldLoan = oldMap.get(newLoan.Id);            
+            if(newLoan.LoanStatus__c != oldLoan.LoanStatus__c){
+                LoanStatusDate.loanDate((Map<Id, Loan_New__c>)Trigger.oldMap, (List<Loan_New__c>)Trigger.new);
+            }            
+        }
+
         Logger.pop();
     }
 }

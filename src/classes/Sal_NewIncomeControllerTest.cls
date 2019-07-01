@@ -29,21 +29,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         insert user1;            
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -105,21 +97,12 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
-                Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Company_NMLS_ID__c = '1234');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -152,12 +135,14 @@ public with sharing class Sal_NewIncomeControllerTest {
         Income_New__c IncomeInsert = new Income_New__c(Income_Source__c='',Income_Types__c='',Income_Value__c=0.00,
                                                 RelatedClient__c = ClientInsert.Id, isActive__c = true, Related_Loan__c = Loan.Id);
         insert IncomeInsert;
+
                     
         Test.startTest();
         Sal_NewIncomeController.getAllIncome(ClientId);
         Test.stopTest();
         }
     }
+    
     @IsTest Static void incomesaveTest(){
      Profile p = [SELECT Id FROM Profile WHERE Name='Account Executive/PCS'];
         UserRole UR=[Select Id from UserRole where Name='Account Executive'];   
@@ -187,21 +172,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -268,21 +245,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -350,21 +319,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -437,21 +398,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -487,8 +440,6 @@ public with sharing class Sal_NewIncomeControllerTest {
             PositionTitle__c = 'Manager',RelatedLoan__c = LoanInsert.Id ,Client_id__c = ClientId,
             State__c = 'California',Years__c = 2);
         Insert objEmployment;
-        /*Asset ObjAsset = new asset(Name = 'Drush', RelatedClient__c = ClientInsert.Id, RelatedLoan__c = LoanInsert.Id,Category__c = 'Others', isActive__c = true, Name_of_Institution__c = 'DS',AccountId = portalAccount.Id, ContactId= contact.Id);
-        Insert ObjAsset;*/
         string EmploymentRecord = objEmployment.Id;
         Test.startTest();
         Sal_NewIncomeController.getEmploymentById(EmploymentRecord);
@@ -525,21 +476,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -621,21 +564,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
@@ -703,21 +638,13 @@ public with sharing class Sal_NewIncomeControllerTest {
         
         system.runAs(user1)
         {
-            QLMS_AE__c QLMSAE1= new QLMS_AE__c();        
-            QLMSAE1.Email__c='abc@glx.com';
-            QLMSAE1.isActive__c=true;
-            QLMSAE1.Office_Phone__c='9630266959';
-            QLMSAE1.Name='Nausad';
-            insert QLMSAE1;
             Account portalAccount = new Account(
                 Name='portalAccount',
                 Cell__c='1236547410',
-                QLMS_Account_Executive__c=QLMSAE1.ID,
                 Assigned_PCS__c=user2.Id,
                 Main_Phone__c='5414147852',
                 Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                Account_Executive_Name__c=user1.Id);
+                Partner_Lead_Status__c='New');
             insert portalAccount;
             Id RecortypeId = Schema.SObjectType.contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(

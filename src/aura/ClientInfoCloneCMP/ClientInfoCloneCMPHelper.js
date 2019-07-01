@@ -964,6 +964,7 @@
                 var t =  Parseddata[i].ExpectedRate;//+'0';
                 console.log('fixedmetadata1',t);
                 pricing = fixedValues.fixed[t];
+                console.log('fixed pricing value', pricing);
                 pricing1 = parseInt(fixedValues.fixed_orm[t]);
                 //SFDC-250
                 var fixedRate = 0;

@@ -203,7 +203,6 @@
                 result.Children_Under_the_age_of_6_living_in_th__c = 'No';
             }
             component.set("v.NewLoan", result);
-
             if (result.Mortgage_Applied_for__c && result.Mortgage_Applied_for__c.includes('Purchase')) {
                 var fundSource = result.Source_Of_Funds__c;
                 if (fundSource != undefined) {
