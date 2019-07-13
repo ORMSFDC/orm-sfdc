@@ -583,6 +583,7 @@
     <members>WS_OnBaseMockResponse</members>
     <members>LoanStatusDate</members>
     <members>LoanStatusDate_Test</members>
+    <members>ClientLoan</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -6117,6 +6118,11 @@
     <members>Opportunity_Approval_Denial_Record_updates-5</members>
     <members>Update_Previous_Date-10</members>
     <members>Update_Previous_Date-11</members>
+    <members>Loan_Dates_Update-15</members>
+    <members>Loan_Status_Change_Date_Field_Update-4</members>
+    <members>Send_OnBase_Keywords-1</members>
+    <members>UW_Handoff_PCS_Ownership_and_back-8</members>
+    <members>UW_Status_Change_Date-5</members>
     <name>Flow</name>
   </types>
   <types>

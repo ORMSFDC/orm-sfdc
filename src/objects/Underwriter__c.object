@@ -393,61 +393,6 @@
         <type>DateTime</type>
     </fields>
     <fields>
-        <fullName>Status__c</fullName>
-        <externalId>false</externalId>
-        <label>Status</label>
-        <required>false</required>
-        <trackFeedHistory>true</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Open</fullName>
-                    <default>true</default>
-                    <label>Open</label>
-                </value>
-                <value>
-                    <fullName>Condition Reviewed</fullName>
-                    <default>false</default>
-                    <label>Condition Reviewed</label>
-                </value>
-                <value>
-                    <fullName>Received</fullName>
-                    <default>false</default>
-                    <label>Received</label>
-                </value>
-                <value>
-                    <fullName>Condition Added</fullName>
-                    <default>false</default>
-                    <label>Condition Added</label>
-                </value>
-                <value>
-                    <fullName>Clear for Closing</fullName>
-                    <default>false</default>
-                    <label>Clear for Closing</label>
-                </value>
-                <value>
-                    <fullName>Ordered</fullName>
-                    <default>false</default>
-                    <label>Ordered</label>
-                </value>
-                <value>
-                    <fullName>Attempted</fullName>
-                    <default>false</default>
-                    <label>Attempted</label>
-                </value>
-                <value>
-                    <fullName>Completed</fullName>
-                    <default>false</default>
-                    <label>Completed</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Days_in_Status__c</fullName>
         <externalId>false</externalId>
         <formula>TODAY() - DATEVALUE( Latest_Status_Change__c )</formula>
@@ -576,6 +521,71 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Condition Reviewed</fullName>
+                    <default>false</default>
+                    <label>Condition Reviewed</label>
+                </value>
+                <value>
+                    <fullName>Received</fullName>
+                    <default>false</default>
+                    <label>Received</label>
+                </value>
+                <value>
+                    <fullName>Condition Added</fullName>
+                    <default>false</default>
+                    <label>Condition Added</label>
+                </value>
+                <value>
+                    <fullName>Clear for Closing</fullName>
+                    <default>false</default>
+                    <label>Clear for Closing</label>
+                </value>
+                <value>
+                    <fullName>Ordered</fullName>
+                    <default>false</default>
+                    <label>Ordered</label>
+                </value>
+                <value>
+                    <fullName>Attempted</fullName>
+                    <default>false</default>
+                    <label>Attempted</label>
+                </value>
+                <value>
+                    <fullName>Updated Suspense</fullName>
+                    <default>false</default>
+                    <label>Updated Suspense</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Suspense Action Needed</fullName>
+                    <default>false</default>
+                    <label>Suspense Action Needed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Subject__c</fullName>
         <externalId>false</externalId>
         <label>Subject</label>
@@ -686,6 +696,11 @@
                     <fullName>PCS Schedule Follow Up</fullName>
                     <default>false</default>
                     <label>PCS Schedule Follow Up</label>
+                </value>
+                <value>
+                    <fullName>Loan is suspended</fullName>
+                    <default>false</default>
+                    <label>Loan is suspended</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1097,46 +1112,6 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Master_Priority_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Condition Reviewed,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>notEqual</operation>
-            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close</value>
-        </filters>
-        <label>Master Priority Loans</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>My_Conditions_Reviewed_by_Underwriting</fullName>
         <columns>NAME</columns>
         <columns>Loan_Number__c</columns>
@@ -1274,87 +1249,110 @@
             <role>Client_Care_Specialist_Lead</role>
         </sharedTo>
     </listViews>
-    <recordTypes>
-        <fullName>AE</fullName>
-        <active>true</active>
-        <label>AE</label>
-        <picklistValues>
-            <picklist>Priority__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sleep_Task__c</picklist>
-            <values>
-                <fullName>2 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>6 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Next Day</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Next Week</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Attempted</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Open</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Ordered</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Subject__c</picklist>
-            <values>
-                <fullName>Appraisal Received</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Conditions Received</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Loan Suspended</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Title Received</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Vendor Items Received</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
+    <listViews>
+        <fullName>AE_Loans_In_Suspense</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Loan__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>contains</operation>
+            <value>Loan is suspended</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Suspense Action Needed</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.AE</value>
+        </filters>
+        <label>AE Loans In Suspense</label>
+        <sharedTo>
+            <role>Braveheart</role>
+            <role>DMB_Jesse</role>
+            <role>DMB_Josh</role>
+            <role>wORMS</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Priority_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>notEqual</operation>
+            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close,PCS Schedule Follow Up</value>
+        </filters>
+        <label>Master Priority Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Loans_In_Suspense</fullName>
+        <columns>NAME</columns>
+        <columns>Subject__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Status__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Loan__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>contains</operation>
+            <value>Loan is suspended</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Suspense Action Needed</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.AE</value>
+        </filters>
+        <label>My Loans In Suspense</label>
+        <sharedTo>
+            <role>Braveheart</role>
+            <role>DMB_Jesse</role>
+            <role>DMB_Josh</role>
+            <role>wORMS</role>
+        </sharedTo>
+    </listViews>
     <recordTypes>
         <fullName>PCS</fullName>
         <active>true</active>
@@ -1506,6 +1504,79 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
+        <fullName>AE</fullName>
+        <active>true</active>
+        <label>AE</label>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sleep_Task__c</picklist>
+            <values>
+                <fullName>2 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Updated Suspense</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject__c</picklist>
+            <values>
+                <fullName>Appraisal Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conditions Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Title Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Items Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
         <fullName>UW</fullName>
         <active>true</active>
         <label>UW</label>
@@ -1563,6 +1634,10 @@
             </values>
             <values>
                 <fullName>Ordered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspense Action Needed</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

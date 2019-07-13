@@ -180,4 +180,12 @@
         <name>standard__SalesforceCMS</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>Salesforce_CLI</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>MuleSoft_Onbase</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>

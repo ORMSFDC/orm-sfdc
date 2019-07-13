@@ -1328,6 +1328,10 @@
         <apexClass>LoanStatusDate_Test</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>ClientLoan</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <pageAccesses>
 <apexPage>pi__AddContactToList</apexPage>
 <enabled>false</enabled>

@@ -6553,6 +6553,184 @@ HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Pl
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>Suspense_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Suspense Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Suspense_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Suspense Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>LoanStatus__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aged Loan</fullName>
+                    <default>false</default>
+                    <label>Aged Loan</label>
+                </value>
+                <value>
+                    <fullName>Approved/Client does not accept</fullName>
+                    <default>false</default>
+                    <label>Approved/Client does not accept</label>
+                </value>
+                <value>
+                    <fullName>Assets</fullName>
+                    <default>false</default>
+                    <label>Assets</label>
+                </value>
+                <value>
+                    <fullName>Client Not Responding</fullName>
+                    <default>false</default>
+                    <label>Client Not Responding</label>
+                </value>
+                <value>
+                    <fullName>Client Requested Withdrawal</fullName>
+                    <default>false</default>
+                    <label>Client Requested Withdrawal</label>
+                </value>
+                <value>
+                    <fullName>Collateral</fullName>
+                    <default>false</default>
+                    <label>Collateral</label>
+                </value>
+                <value>
+                    <fullName>Credit</fullName>
+                    <default>false</default>
+                    <label>Credit</label>
+                </value>
+                <value>
+                    <fullName>Income</fullName>
+                    <default>false</default>
+                    <label>Income</label>
+                </value>
+                <value>
+                    <fullName>Product Specific</fullName>
+                    <default>false</default>
+                    <label>Product Specific</label>
+                </value>
+                <value>
+                    <fullName>Title</fullName>
+                    <default>false</default>
+                    <label>Title</label>
+                </value>
+                <value>
+                    <fullName>Suspense 1</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 1</label>
+                </value>
+                <value>
+                    <fullName>Suspense 10</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 10</label>
+                </value>
+                <value>
+                    <fullName>Suspense 2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 2</label>
+                </value>
+                <value>
+                    <fullName>Suspense 3</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 3</label>
+                </value>
+                <value>
+                    <fullName>Suspense 4</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 4</label>
+                </value>
+                <value>
+                    <fullName>Suspense 5</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 5</label>
+                </value>
+                <value>
+                    <fullName>Suspense 6</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 6</label>
+                </value>
+                <value>
+                    <fullName>Suspense 7</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 7</label>
+                </value>
+                <value>
+                    <fullName>Suspense 8</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 8</label>
+                </value>
+                <value>
+                    <fullName>Suspense 9</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Suspense 9</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Aged Loan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Approved/Client does not accept</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Assets</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Client Not Responding</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Client Requested Withdrawal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Collateral</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Credit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Income</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Product Specific</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Suspended</controllingFieldValue>
+                <valueName>Title</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>

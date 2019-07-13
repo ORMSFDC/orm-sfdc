@@ -73,7 +73,7 @@ public without sharing class WS_OnBase implements ExternalServiceDispatcher.Disp
 			System.debug( '>>> res:sc ' + res.getStatusCode() );
 			// either status 200 or 202 interpreted as success 
 			//Commented this code as response status is updated by mulesoft
-		/*	if ( res.getStatusCode() == 200 || res.getStatusCode() == 202 ) {
+			/*if ( res.getStatusCode() == 200 || res.getStatusCode() == 202 ) {
 				if ( String.isNotBlank( res.getBody() ) ) {
 					serResp.success = TRUE;
 					serResp.response = '[Status=' + res.getStatus() + ', StatusCode=' + res.getStatusCode() + ']\r\n';

@@ -235,16 +235,6 @@
             //end Pie Graph
             //Error MEssage
             if (Object.values(myObj.errorMessages) != "") {
-                /*        var p = myObj.errorMessages;
-                var errormessage = '<html><body>';
-                for (var key in p) {
-                    if (p.hasOwnProperty(key)) {
-                        errormessage += '<span style="color:red !important">*' + p[key] + '</span><br></br>';
-                        //console.log(key + " -> " + p[key]);
-                    }
-                }
-                errormessage+='<span style="color:red !important">*Please call your account executive to review your scenario.</span><br></br>'
-                component.set("v.RESTError", errormessage);  */
                 this.cshflow(component,event,helper);
             }
             //End Error MEssage
