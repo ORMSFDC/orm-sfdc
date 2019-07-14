@@ -21,9 +21,12 @@ trigger ClientToLoanClientFieldTrigger on Client__c (after insert, after update,
         }
         
        if(Trigger.isBefore){
-            if(Trigger.isUpdate || Trigger.isInsert){
-                ClientLoan.validatePrimaryClient(clientId, LoanId, (List<Client__c>)Trigger.new); 
+             if(Trigger.isUpdate){
+                ClientLoan.validatePrimaryClient(clientId, LoanId, (List<Client__c>)Trigger.new, (List<Client__c>)Trigger.old ); 
             }
+            if(Trigger.isInsert){
+                ClientLoan.validateNewPrimaryClient(clientId, LoanId, (List<Client__c>)Trigger.new);
+            }  
         }
     }catch(Exception ex){system.debug(' ClientToLoanClientFieldTrigger----Exception---'+ex);}
     
