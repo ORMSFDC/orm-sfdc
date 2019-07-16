@@ -11001,6 +11001,15 @@
     <layoutAssignments>
         <layout>zoom_app__Zoom__c-zoom_app__Zoom Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>HELO_ARM_1__mdt-HELO_ARM Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>HELO_ARM_2__mdt-HELO_ARM_2 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>HELO_ARM_3__mdt-HELO_ARM_3 Layout</layout>
+    </layoutAssignments>
     <objectPermissions>
     <object>Individual</object>
     <allowCreate>false</allowCreate>

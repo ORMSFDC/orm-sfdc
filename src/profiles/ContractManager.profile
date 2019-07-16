@@ -5736,6 +5736,15 @@
         <layout>Underwriter__c-Underwriter Layout</layout>
         <recordType>Underwriter__c.PCS_Workflow</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>HELO_ARM_1__mdt-HELO_ARM Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>HELO_ARM_2__mdt-HELO_ARM_2 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>HELO_ARM_3__mdt-HELO_ARM_3 Layout</layout>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Approved_Partners</recordType>

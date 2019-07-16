@@ -6,6 +6,7 @@
  * changelog:
  * 07/17/2018: Sahitya - Added Helo for Pricing table
  * 09/20/2018: Sahitya -SFDC - 289 Added 3rd Tier for Portal and Backend Calculator
+ * 07/08/2019: Sahitya - New HELO ARM for Pricing Table
  */
 public class Pricing {
     
@@ -266,6 +267,89 @@ public class Pricing {
             ResponseObj.OriginationToPartner=String.valueOf(obj.Origination_to_Partner__c)+'%'; 
             ResponseObj.CreditToBorrower=String.valueOf(obj.Credit_to_Borrower__c)+'%';
             ResponseObj.ServicingFee=String.valueOf(obj.Servicing_Fee__c);
+            PricingResponseList.add(ResponseObj);
+        }
+        return PricingResponseList;
+    }  
+
+
+
+    //HELO ARM
+
+    @AuraEnabled
+    public static List<HeloARMRateResponse> getHeloARMRateORM( ) {
+        List<HeloArmRateResponse> PricingResponseFinalList=new List<HeloArmRateResponse>();
+        String partnerType;
+        try{
+            Id AccountID=[select AccountId from User where id=:UserInfo.getUserId()].AccountId;
+            //SFDC - 289
+            partnerType = [select Partner_Type__c from account where id=:AccountID].Partner_Type__c;
+            if(partnerType == 'Premier'){
+                PricingResponseFinalList= HeloArmRateTier2_Data();
+            }
+            else if(partnerType == 'Non Premier'){
+                PricingResponseFinalList= HeloArmRateTier1_Data();
+            }
+            else if(partnerType == 'Premier Plus'){
+                PricingResponseFinalList= HeloArmRateTier3_Data();
+            }  
+        } 
+        catch(Exception ex)
+        {
+            system.debug('getHeloRateORM .....'+ ex.getMessage());
+        }
+        return PricingResponseFinalList;
+    }
+    
+    public static  List<HeloArmRateResponse> HeloArmRateTier2_Data()
+    {
+        List<HeloArmRateResponse> PricingResponseList=new List<HeloArmRateResponse>();
+        List<HELO_ARM_2__mdt> Pricing = [SELECT   HeloPrice__c, HeloArmMargin__c, HELO_Credit_to_borrower__c, HELO_Origination_to_partner__c, HELO_Rate__c, HELO_Servicing_Fee__c
+                                                from  HELO_ARM_2__mdt order by HELO_Rate__c desc ];
+        for(	HELO_ARM_2__mdt obj:Pricing )
+        {
+            HeloArmRateResponse  ResponseObj=new HeloArmRateResponse();
+            ResponseObj.Rate=String.valueOf(obj.HELO_Rate__c);
+            ResponseObj.Price=String.valueOf(obj.HeloPrice__c)+'%';
+            ResponseObj.OriginationToPartner=String.valueOf(obj.HELO_Origination_to_partner__c)+'%';
+            ResponseObj.CreditToBorrower=String.valueOf(obj.HELO_Credit_to_borrower__c)+'%';
+            ResponseObj.ServicingFee=String.valueOf(obj.HELO_Servicing_Fee__c);
+            PricingResponseList.add(ResponseObj);
+        }
+        return PricingResponseList;
+    }
+    
+    public static  List<HeloArmRateResponse> HeloArmRateTier1_Data()
+    {
+        List<HeloArmRateResponse> PricingResponseList=new List<HeloArmRateResponse>();
+        List<HELO_ARM_1__mdt> Pricing = [SELECT   HeloPrice__c, HeloArmMargin__c, HELO_Credit_to_borrower__c, HELO_Origination_to_partner__c, HELO_Rate__c, HELO_Servicing_Fee__c
+                                                from  HELO_ARM_1__mdt order by HELO_Rate__c desc ];
+        for(HELO_ARM_1__mdt obj:Pricing )
+        {
+            HeloArmRateResponse  ResponseObj=new HeloArmRateResponse();
+            ResponseObj.Rate=String.valueOf(obj.HELO_Rate__c);
+            ResponseObj.Price=String.valueOf(obj.HeloPrice__c)+'%';
+            ResponseObj.OriginationToPartner=String.valueOf(obj.HELO_Origination_to_partner__c)+'%';
+            ResponseObj.CreditToBorrower=String.valueOf(obj.HELO_Credit_to_borrower__c)+'%';
+            ResponseObj.ServicingFee=String.valueOf(obj.HELO_Servicing_Fee__c);
+            PricingResponseList.add(ResponseObj);
+        }
+        return PricingResponseList;
+    }
+    
+    public static  List<HeloArmRateResponse> HeloArmRateTier3_Data()
+    {
+        List<HeloArmRateResponse> PricingResponseList=new List<HeloArmRateResponse>();
+        List<HELO_ARM_3__mdt> Pricing = [SELECT   HeloPrice__c, HeloArmMargin__c, HELO_Credit_to_borrower__c, HELO_Origination_to_partner__c, HELO_Rate__c, HELO_Servicing_Fee__c
+                                                from  HELO_ARM_3__mdt order by HELO_Rate__c desc ];
+        for(HELO_ARM_3__mdt obj:Pricing )
+        {
+            HeloArmRateResponse  ResponseObj=new HeloArmRateResponse();
+            ResponseObj.Rate=String.valueOf(obj.HELO_Rate__c);
+            ResponseObj.Price=String.valueOf(obj.HeloPrice__c)+'%';
+            ResponseObj.OriginationToPartner=String.valueOf(obj.HELO_Origination_to_partner__c)+'%';
+            ResponseObj.CreditToBorrower=String.valueOf(obj.HELO_Credit_to_borrower__c)+'%';
+            ResponseObj.ServicingFee=String.valueOf(obj.HELO_Servicing_Fee__c);
             PricingResponseList.add(ResponseObj);
         }
         return PricingResponseList;
