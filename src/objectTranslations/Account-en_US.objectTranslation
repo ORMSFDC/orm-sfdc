@@ -1,180 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Geocode Accuracy</value>
-        </caseValues>
-        <name>billing_accuracy_geocode_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Address</value>
-        </caseValues>
-        <name>billing_address_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>City</value>
-        </caseValues>
-        <name>billing_city_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Country</value>
-        </caseValues>
-        <name>billing_country_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Country Code</value>
-        </caseValues>
-        <name>billing_country_code_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Latitude</value>
-        </caseValues>
-        <name>billing_latitude_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Longitude</value>
-        </caseValues>
-        <name>billing_longitude_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>State/Province</value>
-        </caseValues>
-        <name>billing_state_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>State/Province Code</value>
-        </caseValues>
-        <name>billing_state_code_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Street</value>
-        </caseValues>
-        <name>billing_street_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Zip/Postal Code</value>
-        </caseValues>
-        <name>billing_zip_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Geocode Accuracy</value>
-        </caseValues>
-        <name>shipping_accuracy_geocode_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Address</value>
-        </caseValues>
-        <name>shipping_address_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing City</value>
-        </caseValues>
-        <name>shipping_city_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Country</value>
-        </caseValues>
-        <name>shipping_country_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Country Code</value>
-        </caseValues>
-        <name>shipping_country_code_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Latitude</value>
-        </caseValues>
-        <name>shipping_latitude_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Longitude</value>
-        </caseValues>
-        <name>shipping_longitude_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing State/Province</value>
-        </caseValues>
-        <name>shipping_state_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing State/Province Code</value>
-        </caseValues>
-        <name>shipping_state_code_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Street</value>
-        </caseValues>
-        <name>shipping_street_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
-    <fields>
-        <caseValues>
-            <plural>false</plural>
-            <value>Billing Zip/Postal Code</value>
-        </caseValues>
-        <name>shipping_zip_account</name>
-        <startsWith>Consonant</startsWith>
-    </fields>
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <fields>
         <label><!-- AE Transfer Date --></label>
         <name>AE_Transfer_Date__c</name>

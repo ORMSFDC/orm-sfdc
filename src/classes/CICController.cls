@@ -10,6 +10,7 @@
 public with sharing class CICController {
     @AuraEnabled
     public static void SaveCICData(string CICFeeList,ChangeInCircumstances__c CICDataValue,String LoanId) {
+        Logger.push('SaveCICData','CICController');
         try
         {
             List<CICFeeResponse>RequestList = (List<CICFeeResponse>)JSON.deserialize(CICFeeList, List<CICFeeResponse>.class);            
@@ -36,10 +37,12 @@ public with sharing class CICController {
         catch(exception e){
             system.debug('SaveCICData--Exception---'+e);
         }
+        Logger.Pop();
     }
     
     @AuraEnabled
     public static void createRecordAndSendEmails(string CICFeeList, ChangeInCircumstances__c CICDataValue, String LoanId) {  
+        Logger.push('createRecordAndSendEmails','CICController');
         Loan_New__c ln = new Loan_New__c();
         ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
               PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: LoanId];
@@ -97,14 +100,28 @@ public with sharing class CICController {
                 createPCSRecord(CICFeeList, CICDataValue, LoanId, recOwner);
             }            
         }
+        Logger.Pop();
     }
 
     @AuraEnabled
     public static void createPCSRecord(string CICFeeListData, ChangeInCircumstances__c objCICDataValue, String strLoanId, String recOwner){
-        
+        Logger.push('createPCSRecord','CICController');
         Loan_New__c ln = new Loan_New__c();
             ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
                   PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c, UW__c from Loan_New__c where id =: strLoanId];  
+
+        user u = new user();
+        u = [SELECT UserRoleId from user where id =: recOwner ];
+        string uId = u.UserRoleId;
+        userRole r = new userRole();
+        r = [SELECT Name from userRole where id =: uId];
+
+        String recordType;
+        if(r.Name == 'Partner Care Specialist' || r.Name == 'Partner Care Specialist Lead'){
+            recordType = Schema.SObjectType.Underwriter__c.getRecordTypeInfosByName().get('PCS Workflow').getRecordTypeId();
+        }else if(r.Name == 'Braveheart' || r.Name == 'wORMS' || r.Name == 'DMB - Jesse' || r.Name == 'DMB - Josh'){
+            recordType = Schema.SObjectType.Underwriter__c.getRecordTypeInfosByName().get('AE').getRecordTypeId();
+        }
 
         String pcs;
         if(ln.PCS_at_Loan_Level__c != null){
@@ -119,7 +136,7 @@ public with sharing class CICController {
         }
         try{
             Underwriter__c uw = new Underwriter__c();
-            uw.recordtypeid = Schema.SObjectType.Underwriter__c.getRecordTypeInfosByName().get('PCS Workflow').getRecordTypeId();
+            uw.recordtypeid = recordType;
             uw.Loan__c = strLoanId;
             uw.Priority__c = 'Medium';
             uw.Status__c = 'Open';
@@ -215,21 +232,20 @@ public with sharing class CICController {
             Description=Description+'\r\n'+'Business Individual Name: '+userinfo.getname();
             Datetime dt=system.now();
             string datefordisplay=dt.format('MM/dd/yyyy HH:mm a');
-            Description=Description+'\r\n'+'Date & Time: '+datefordisplay;
-            
+            Description=Description+'\r\n'+'Date & Time: '+datefordisplay;            
             uw.More_Notes__c = Description;
             
             insert uw;
         }catch(exception e){
             system.debug('createPCSRecord--Exception---'+e);
         }
+        Logger.Pop();
     }        
     
     @AuraEnabled
     public static void SendEmail(String strLoanId, String OwnerId) {
-        try
-        {
-            //string Link= '<a href='+Label.CIC_Email_Url+TaskId+'>Link to Task</a>';
+        Logger.push('SendEmail','CICController');
+        try{
             string EmailTo;
             Datetime dt=system.now();
             string datefordisplay=dt.format('MM/dd/yyyy HH:mm a');
@@ -238,8 +254,6 @@ public with sharing class CICController {
                   PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: strLoanId];
             
             EmailTo=[SELECT user_email_Id__c from User where Id=:OwnerId ].user_email_Id__c;
-            //EmailTo='dkumar3@galaxe.com';
-             system.debug('EmailTo'+EmailTo);
             EmailTemplate template = [SELECT Id, Name, Subject, HtmlValue, Body, Markup FROM EmailTemplate where Name='CIC Email Template' ];
             List<Messaging.SingleEmailMessage> mails = 
                 new List<Messaging.SingleEmailMessage>();
@@ -251,17 +265,16 @@ public with sharing class CICController {
             sendTo.add( EmailTo);
             mail.setToAddresses(sendTo);
             mail.setReplyTo(UserInfo.getUserEmail());
-              //mail.setTargetObjectId(OwnerId);
             mail.setSubject('A new UW record has been created for you for a CIC on '+ ln.Client_Name__c+ '\'s '+' loan');
             String body =  template.HtmlValue ;    
             body =   body.replace('#BusinessIndividualName',userinfo.getName()).replace('#ClientName',ln.Client_Name__c).replace('#LoanId',ln.Name).replace('#Date',datefordisplay);        
             mail.setHtmlBody(body);
             mails.add(mail);
-            Messaging.sendEmail(mails);
-            
+            Messaging.sendEmail(mails);            
         }
         catch(exception e){
             system.debug('SendEmail--Exception---'+e);
-        }        
+        }     
+        Logger.Pop();   
     }    
 }
