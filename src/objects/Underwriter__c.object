@@ -586,6 +586,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>More_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>More Notes</label>
+        <length>131070</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Subject__c</fullName>
         <externalId>false</externalId>
         <label>Subject</label>
@@ -701,6 +712,11 @@
                     <fullName>Loan is suspended</fullName>
                     <default>false</default>
                     <label>Loan is suspended</label>
+                </value>
+                <value>
+                    <fullName>Change In Circumstance</fullName>
+                    <default>false</default>
+                    <label>Change In Circumstance</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -1435,148 +1451,6 @@
         </picklistValues>
     </recordTypes>
     <recordTypes>
-        <fullName>PCS_Workflow</fullName>
-        <active>true</active>
-        <label>PCS Workflow</label>
-        <picklistValues>
-            <picklist>Priority__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sleep_Task__c</picklist>
-            <values>
-                <fullName>2 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>6 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Next Day</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Next Week</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Other</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Attempted</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Completed</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Open</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Ordered</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Subject__c</picklist>
-            <values>
-                <fullName>PCS Schedule Follow Up</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
-    <recordTypes>
-        <fullName>AE</fullName>
-        <active>true</active>
-        <label>AE</label>
-        <picklistValues>
-            <picklist>Priority__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Sleep_Task__c</picklist>
-            <values>
-                <fullName>2 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>4 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>6 Hours</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Next Day</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Next Week</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Status__c</picklist>
-            <values>
-                <fullName>Open</fullName>
-                <default>true</default>
-            </values>
-            <values>
-                <fullName>Updated Suspense</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Subject__c</picklist>
-            <values>
-                <fullName>Appraisal Received</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Conditions Received</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Loan Suspended</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Title Received</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Vendor Items Received</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-    </recordTypes>
-    <recordTypes>
         <fullName>UW</fullName>
         <active>true</active>
         <label>UW</label>
@@ -1662,6 +1536,156 @@
             <values>
                 <fullName>Vendor Items Received</fullName>
                 <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AE</fullName>
+        <active>true</active>
+        <label>AE</label>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sleep_Task__c</picklist>
+            <values>
+                <fullName>2 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Updated Suspense</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject__c</picklist>
+            <values>
+                <fullName>Appraisal Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Change In Circumstance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conditions Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loan Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Title Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor Items Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PCS_Workflow</fullName>
+        <active>true</active>
+        <label>PCS Workflow</label>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sleep_Task__c</picklist>
+            <values>
+                <fullName>2 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Hours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Day</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Next Week</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Attempted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ordered</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject__c</picklist>
+            <values>
+                <fullName>Change In Circumstance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PCS Schedule Follow Up</fullName>
+                <default>true</default>
             </values>
         </picklistValues>
     </recordTypes>
