@@ -1336,6 +1336,10 @@
         <apexClass>HeloArmRateResponse</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>attachmentTriggerHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <pageAccesses>
 <apexPage>pi__AddContactToList</apexPage>
 <enabled>false</enabled>
