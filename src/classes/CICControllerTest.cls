@@ -118,7 +118,7 @@ public with sharing class CICControllerTest {
             Test.startTest();
               CICController.SaveCICData(CICFRJson,CICList[1],CICList[1].Loan_Id__c);
               CICController.SaveCICData(CICFRJson,CICList[0],CICList[0].Loan_Id__c);
-              CICController.CreateTasksAndSendEmails(CICFRJson,CICList[1],CICList[1].Loan_Id__c);
+              CICController.createRecordAndSendEmails(CICFRJson,CICList[1],CICList[1].Loan_Id__c);
             Test.stopTest();
         }
     }    

@@ -1,17 +1,22 @@
-public class CICController {
+/**
+ * @description: used to save change in circumstances when submitted in the portal
+ * @author: GalaxE
+ * @date: 11/16/2017
+ *
+ * changelog:
+ * 07/16/2019: Sahitya - added new criterial to create a new UW record for AE/PCS and send them emails
+ *                        
+ */
+public with sharing class CICController {
     @AuraEnabled
     public static void SaveCICData(string CICFeeList,ChangeInCircumstances__c CICDataValue,String LoanId) {
         try
         {
-            //system.debug(CICFeeList);
-            //system.debug(CICDataValue);
             List<CICFeeResponse>RequestList = (List<CICFeeResponse>)JSON.deserialize(CICFeeList, List<CICFeeResponse>.class);            
             CICDataValue.Loan_Id__c=LoanId;
-            //system.debug('Loan id'+CICDataValue.Loan_Id__c);
             upsert CICDataValue;
             
             string CICId=CICDataValue.Id;
-            //system.debug('CICId'+CICId);
             List<FeeChangeHistory__c> FeeList=new List<FeeChangeHistory__c>();
             for(CICFeeResponse i:RequestList)
             {
@@ -25,7 +30,7 @@ public class CICController {
             }
             insert FeeList;
             
-            CreateTasksAndSendEmails(CICFeeList, CICDataValue, LoanId);            
+            createRecordAndSendEmails(CICFeeList, CICDataValue, LoanId);            
         }
         
         catch(exception e){
@@ -34,12 +39,12 @@ public class CICController {
     }
     
     @AuraEnabled
-    public static void CreateTasksAndSendEmails(string CICFeeList, ChangeInCircumstances__c CICDataValue, String LoanId) {  
+    public static void createRecordAndSendEmails(string CICFeeList, ChangeInCircumstances__c CICDataValue, String LoanId) {  
         Loan_New__c ln = new Loan_New__c();
         ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
               PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: LoanId];
         
-        String taskOwner;
+        String recOwner;
         
         switch on ln.Loanstatus__c {
             when 'Loan Submission Received- Awaiting Review',
@@ -49,39 +54,16 @@ public class CICController {
             {
                 // To PCS
                 if (ln.PCS_at_Loan_Level__c != null) {
-                    taskOwner = ln.PCS_at_Loan_Level__c;
+                    recOwner = ln.PCS_at_Loan_Level__c;
                 }
                 else if(ln.PCS_at_Loan_Level__c == null) {
-                    taskOwner = ln.Related_Partner__r.Assigned_PCS__c;
-                }
+                    recOwner = ln.Related_Partner__r.Assigned_PCS__c;
+                }                
                 
-                String pcsTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
-				SendEmail(LoanId, pcsTaskId, taskOwner);
+				SendEmail(LoanId, recOwner);
+                createPCSRecord(CICFeeList, CICDataValue, LoanId, recOwner);
             }	
-            when 'Conditionally Approved' {
-                // To PCS and to AE
-                
-                // PCS
-                if (ln.PCS_at_Loan_Level__c != null) {
-                    taskOwner = ln.PCS_at_Loan_Level__c;
-                }
-                else if(ln.PCS_at_Loan_Level__c == null) {
-                    taskOwner = ln.Related_Partner__r.Assigned_PCS__c;
-                }
-                
-                String pcsTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
-				SendEmail(LoanId, pcsTaskId, taskOwner);
-                
-                // To AE
-                if (ln.Related_Partner__r.Account_Executive_Name__c != null) {
-                    taskOwner = ln.Related_Partner__r.Account_Executive_Name__c;
-                }
-                
-                String aeTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
-				SendEmail(LoanId, aeTaskId, taskOwner);
-            }
-            when 'Incomplete',
-                 'Proposal',
+            when 'Proposal',
                  'Waiting for Full Package',
                  'Application Package Received',
                  'Full Application Received - Incomplete',
@@ -89,33 +71,68 @@ public class CICController {
             {
                 // AE
                 if (ln.Related_Partner__r.Account_Executive_Name__c != null) {
-                    taskOwner = ln.Related_Partner__r.Account_Executive_Name__c;
+                    recOwner = ln.Related_Partner__r.Account_Executive_Name__c;
+                }
+				SendEmail(LoanId, recOwner);
+                createPCSRecord(CICFeeList, CICDataValue, LoanId, recOwner);
+            }            
+            // To PCS and to AE
+            when 'Conditionally Approved' 
+            {                                
+                // PCS
+                if (ln.PCS_at_Loan_Level__c != null) {
+                    recOwner = ln.PCS_at_Loan_Level__c;
+                }
+                else if(ln.PCS_at_Loan_Level__c == null) {
+                    recOwner = ln.Related_Partner__r.Assigned_PCS__c;
                 }
                 
-                String aeTaskId = CreateTask(CICFeeList, CICDataValue, LoanId, taskOwner);
-				SendEmail(LoanId, aeTaskId, taskOwner);
-            }
+				SendEmail(LoanId, recOwner);
+                createPCSRecord(CICFeeList, CICDataValue, LoanId, recOwner);
+                // To AE
+                if (ln.Related_Partner__r.Account_Executive_Name__c != null) {
+                    recOwner = ln.Related_Partner__r.Account_Executive_Name__c;
+                }      
+				SendEmail(LoanId, recOwner);
+                createPCSRecord(CICFeeList, CICDataValue, LoanId, recOwner);
+            }            
         }
     }
-    
+
     @AuraEnabled
-    public static string CreateTask(string CICFeeListData, ChangeInCircumstances__c objCICDataValue, String strLoanId, String taskOwner) {
-        string TaskId;
-        try {
-            
-            string Description='A Change in Circumstance has been submitted for the following reasons:'+'\r\n';
-            Loan_New__c ln = new Loan_New__c();
+    public static void createPCSRecord(string CICFeeListData, ChangeInCircumstances__c objCICDataValue, String strLoanId, String recOwner){
+        
+        Loan_New__c ln = new Loan_New__c();
             ln = [select Name, Related_Partner__r.Assigned_PCS__c, LoanStatus__c, Related_Partner__r.Account_Executive_Name__c,
-                  PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c from Loan_New__c where id =: strLoanId];            
-            
-            Task t = new Task();            
-            t.OwnerId = taskOwner;            
-            t.Subject = 'Change in Circumstance submitted on ' + ln.Client_Name__c + '\'s loan by ' + userinfo.getname();
-            t.WhatId = strLoanId;
-            t.Client_name__c = ln.Client_Name__c;       
-            t.ActivityDate = Date.Today();
-            t.WhoId = ln.Related_Individual__c;
+                  PCS_at_Loan_Level__c, PCS_at_Partner_Level__c, Client_Name__c, Related_Individual__c, Related_Partner__c, UW__c from Loan_New__c where id =: strLoanId];  
+
+        String pcs;
+        if(ln.PCS_at_Loan_Level__c != null){
+            pcs = ln.PCS_at_Loan_Level__c;
+        }else{
+            pcs = ln.Related_Partner__r.Assigned_PCS__c;
+        }
+
+        String underWriter;
+        if(ln.UW__c != null){
+            underWriter = ln.UW__c;
+        }
+        try{
+            Underwriter__c uw = new Underwriter__c();
+            uw.recordtypeid = Schema.SObjectType.Underwriter__c.getRecordTypeInfosByName().get('PCS Workflow').getRecordTypeId();
+            uw.Loan__c = strLoanId;
+            uw.Priority__c = 'Medium';
+            uw.Status__c = 'Open';
+            uw.Latest_Status_Change__c = DateTime.now();
+            uw.Open_Date__c = DateTime.now();
+            uw.AE_on_Loan__c = ln.Related_Partner__r.Account_Executive_Name__c;
+            uw.PCS_at_Loan_Level__c = pcs;
+            uw.Subject__c = 'Change In Circumstance';
+            uw.Underwriter__c = underWriter;
+            uw.OwnerId = recOwner;
+
             //Check for Adding ChekBox
+            string Description='A Change in Circumstance has been submitted for the following reasons:'+'\r\n';
             if(objCICDataValue.Add_a_Non_Borrowing_Spouse__c==true)
             {
                 Description=Description+'Add a Non Borrowing Spouse,';
@@ -162,8 +179,7 @@ public class CICController {
             }  
             if(objCICDataValue.Change_in_Employment__c==true)
             {
-                Description=Description+'Change in Employment, ';
-                
+                Description=Description+'Change in Employment, ';                
             }  
             if(objCICDataValue.Change_in_Loan_Officer__c==true)
             {
@@ -185,15 +201,8 @@ public class CICController {
             {
                 Description=Description+'Other Change, ';
             }
-             system.debug('BC'+Description);
-           // Description = Description.removeEnd(',');
-            
-            
-             //Description=Description +'.';
-           Description= Description.reverse().replaceFirst(',', '.').reverse();
-             system.debug('AC'+Description);
-            //Description=Description +' .';
-            //End  
+            Description= Description.reverse().replaceFirst(',', '.').reverse();
+                system.debug('AC'+Description);
             //Check for Adding Fee Comment
             List<CICFeeResponse>RequestList = (List<CICFeeResponse>)JSON.deserialize(CICFeeListData, List<CICFeeResponse>.class); 
             if(RequestList.size()>0)
@@ -202,27 +211,25 @@ public class CICController {
             }
             Description=Description+'\r\n'+'Please see the Change in Circumstances under Related for more information. ';
             Description=Description+'\r\n'+'Loan Id: '+ln.Name;
-           Description=Description+'\r\n'+'Client Name: '+ln.Client_Name__c;
+            Description=Description+'\r\n'+'Client Name: '+ln.Client_Name__c;
             Description=Description+'\r\n'+'Business Individual Name: '+userinfo.getname();
-             Datetime dt=system.now();
+            Datetime dt=system.now();
             string datefordisplay=dt.format('MM/dd/yyyy HH:mm a');
-              Description=Description+'\r\n'+'Date & Time: '+datefordisplay;
-            //End
-            t.Description  = Description;
-            insert t;
-            TaskId=t.Id;
+            Description=Description+'\r\n'+'Date & Time: '+datefordisplay;
+            
+            uw.More_Notes__c = Description;
+            
+            insert uw;
+        }catch(exception e){
+            system.debug('createPCSRecord--Exception---'+e);
         }
-        catch(exception e){
-            system.debug('CreateTask--Exception---'+e);
-        }
-        return TaskId;        
-    }
+    }        
     
     @AuraEnabled
-    public static void SendEmail(String strLoanId, string TaskId, String OwnerId) {
+    public static void SendEmail(String strLoanId, String OwnerId) {
         try
         {
-            string Link= '<a href='+Label.CIC_Email_Url+TaskId+'>Link to Task</a>';
+            //string Link= '<a href='+Label.CIC_Email_Url+TaskId+'>Link to Task</a>';
             string EmailTo;
             Datetime dt=system.now();
             string datefordisplay=dt.format('MM/dd/yyyy HH:mm a');
@@ -242,12 +249,12 @@ public class CICController {
             List<String> sendTo = new List<String>();
             
             sendTo.add( EmailTo);
-           mail.setToAddresses(sendTo);
+            mail.setToAddresses(sendTo);
             mail.setReplyTo(UserInfo.getUserEmail());
               //mail.setTargetObjectId(OwnerId);
-            mail.setSubject('A new task has been created for you for a CIC on '+ ln.Client_Name__c+ '\'s '+' loan');
+            mail.setSubject('A new UW record has been created for you for a CIC on '+ ln.Client_Name__c+ '\'s '+' loan');
             String body =  template.HtmlValue ;    
-            body =   body.replace('#BusinessIndividualName',userinfo.getName()).replace('#ClientName',ln.Client_Name__c).replace('#LoanId',ln.Name).replace('#Date',datefordisplay).replace('#Link',Link);        
+            body =   body.replace('#BusinessIndividualName',userinfo.getName()).replace('#ClientName',ln.Client_Name__c).replace('#LoanId',ln.Name).replace('#Date',datefordisplay);        
             mail.setHtmlBody(body);
             mails.add(mail);
             Messaging.sendEmail(mails);
