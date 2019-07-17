@@ -718,6 +718,11 @@
                     <default>false</default>
                     <label>Change In Circumstance</label>
                 </value>
+                <value>
+                    <fullName>Document Upload</fullName>
+                    <default>false</default>
+                    <label>Document Upload</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -1603,6 +1608,10 @@
                 <default>false</default>
             </values>
             <values>
+                <fullName>Document Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
                 <fullName>Loan Suspended</fullName>
                 <default>false</default>
             </values>
@@ -1681,6 +1690,10 @@
             <picklist>Subject__c</picklist>
             <values>
                 <fullName>Change In Circumstance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document Upload</fullName>
                 <default>false</default>
             </values>
             <values>
