@@ -1200,44 +1200,6 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Priority_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Condition Reviewed,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>notEqual</operation>
-            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <label>Priority Loans</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>My_Appointments</fullName>
         <columns>NAME</columns>
         <columns>Loan_Number__c</columns>
@@ -1372,6 +1334,44 @@
             <role>DMB_Jesse</role>
             <role>DMB_Josh</role>
             <role>wORMS</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Priority_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Condition Reviewed,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>notEqual</operation>
+            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close,PCS Schedule Follow Up</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <label>Priority Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
         </sharedTo>
     </listViews>
     <recordTypes>
