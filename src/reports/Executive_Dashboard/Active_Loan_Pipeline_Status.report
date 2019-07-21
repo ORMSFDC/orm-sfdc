@@ -30,6 +30,9 @@
     <columns>
         <field>Loan_New__c.Last_AE_Call_to_Contact__c</field>
     </columns>
+    <columns>
+        <field>Loan_New__c.Subject_Property_State__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>FK_NAME</column>

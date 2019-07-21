@@ -820,10 +820,11 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
         <columns>Principal_Limit__c</columns>
         <columns>Unpaid_Principal_Balance__c</columns>
         <columns>Cash_at_close__c</columns>
-        <columns>Cash_to_close__c</columns>
         <columns>PartnerId__c</columns>
         <columns>ORM_AE__c</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Scenario_Type__c</columns>
+        <columns>Desired_Origination_for_Adjustable_Rate__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Scenarios</label>
     </listViews>

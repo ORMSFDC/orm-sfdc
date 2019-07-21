@@ -54,13 +54,13 @@
             <column>ACCTRECORDTYPE</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Account.Committed_Partner,Account.Partners,Account.Approved_Partners</value>
+            <value>Account.Committed_Partner,Account.Partners,Account.Potential_Partners,Account.Approved_Partners</value>
         </criteriaItems>
         <criteriaItems>
             <column>Contact.Title__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Principal,Loan Officer,Branch Manager,Regional Manager</value>
+            <value>Principal,Loan Officer,Processor,Branch Manager,Regional Manager,Assistant Loan Officer,Processing manager,Owner</value>
         </criteriaItems>
         <criteriaItems>
             <column>Account.Team__c</column>
@@ -69,16 +69,10 @@
             <value>Braveheart</value>
         </criteriaItems>
         <criteriaItems>
-            <column>CREATED_BY</column>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Jesse Hanson,Kathy Martinez,Brian Burgan,Josh Posner,James Raymond</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Activity.Call_Duration_In_Seconds__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>greaterOrEqual</operator>
-            <value>30</value>
+            <value>20</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>

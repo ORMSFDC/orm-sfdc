@@ -48,7 +48,7 @@
             <column>Loan_New__c.LoanStatus__c</column>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
-            <value>Incomplete,Proposal,Waiting for Full Package,Application Package Received,Loan Submission Received- Awaiting Review,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Docs Out to Settlement Agent</value>
+            <value>Incomplete,Proposal,Waiting for Full Package,Application Package Received,Loan Submission Received- Awaiting Review,Full Application Received - Incomplete,In Processing,In Underwriting Review,Conditionally Approved,Underwriting Clear to Close,In final HUD Review,Docs Out to Settlement Agent,Loan Rescinded,Application Approved but Not Accepted</value>
         </criteriaItems>
         <criteriaItems>
             <column>Loan_New__c.Closing_Date__c</column>
