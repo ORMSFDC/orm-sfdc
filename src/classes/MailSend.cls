@@ -1,16 +1,13 @@
-public class MailSend {
+public with sharing class MailSend {
   
     @AuraEnabled
     public static void SendMail2Partnernew(String LoanID,String getUsername, String getUserEmailID)
-    //public static void SendMail2Partnernew(String LoanID)
     {
+           Logger.push('SendMail2Partnernew', 'MailSend');
         try
         {
             EmailTemplate template = [SELECT Id, Name, Subject, HtmlValue, Body, Markup FROM EmailTemplate where 
                                       Name='Communities Partner Email' ];
-            
-            //String getUsername =UserInfo.getName();    
-            //String getUserEmailID =UserInfo.getUserEmail();
             List<Messaging.SingleEmailMessage> mails = 
                 new List<Messaging.SingleEmailMessage>();
             // Step 1: Create a new Email
@@ -22,7 +19,6 @@ public class MailSend {
             sendTo.add(getUserEmailID);
             mail.setToAddresses(sendTo);
             mail.setReplyTo(System.Label.Orm_support1);
-           mail.setOrgWideEmailAddressId(System.Label.Orm_support);
             mail.setSubject('Reverse Mortgage Application Submitted Successfully');
             String body =  template.HtmlValue ;    
             body =  body.replace('#name',getUsername).replace('#Loan_Id',LoanID);        
@@ -33,20 +29,17 @@ public class MailSend {
         catch(Exception ex)
         {
              Exception_log.Create_Custom_Logs(ex.getMessage(),'Mail Send','SendMail2Partnernew','Date'+System.today());
-            system.debug('SendMail2Partnernew--Exception---'+ex);
+             system.debug('SendMail2Partnernew--Exception---'+ex);
         }
+        Logger.Pop();
     }
     
-    //new mrthods//
     
     @AuraEnabled
     public static void SendMail2ORMnew(String LoanID,String getUsername, String getUserEmailID)
-   // public static void SendMail2ORMnew(String LoanID)
     {
         try
         {
-            //String getUsername =UserInfo.getName();    
-            //String getUserEmailID =UserInfo.getUserEmail();
             EmailTemplate template = [SELECT Id, Name, Subject, HtmlValue, Body, Markup FROM EmailTemplate where Name='Communities ORM Team Template' ];
             List<Messaging.SingleEmailMessage> mails = 
                 new List<Messaging.SingleEmailMessage>();
@@ -70,7 +63,4 @@ public class MailSend {
             system.debug('SendMail2ORMnew--Exception---'+ex);
         }
     }
-    
-    
-    
 }
