@@ -726,6 +726,122 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>PCS_Task_Bucket__c</fullName>
+        <description>What bucket should task fall into on PCS Tasks page</description>
+        <externalId>false</externalId>
+        <label>PCS Task Bucket</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>My Appointments</fullName>
+                    <default>false</default>
+                    <label>My Appointments</label>
+                </value>
+                <value>
+                    <fullName>Final Goals Calls</fullName>
+                    <default>false</default>
+                    <label>Final Goals Calls</label>
+                </value>
+                <value>
+                    <fullName>Priority Loans</fullName>
+                    <default>false</default>
+                    <label>Priority Loans</label>
+                </value>
+                <value>
+                    <fullName>Initial/Post Suspense Call</fullName>
+                    <default>false</default>
+                    <label>Initial/Post Suspense Call</label>
+                </value>
+                <value>
+                    <fullName>Documents Uploaded</fullName>
+                    <default>false</default>
+                    <label>Documents Uploaded</label>
+                </value>
+                <value>
+                    <fullName>Notes</fullName>
+                    <default>false</default>
+                    <label>Notes</label>
+                </value>
+                <value>
+                    <fullName>Conditions Reviewed By Underwriting</fullName>
+                    <default>false</default>
+                    <label>Conditions Reviewed By Underwriting</label>
+                </value>
+                <value>
+                    <fullName>Aged Loans</fullName>
+                    <default>false</default>
+                    <label>Aged Loans</label>
+                </value>
+                <value>
+                    <fullName>CIC Request</fullName>
+                    <default>false</default>
+                    <label>CIC Request</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>10</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>6</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>7</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>8</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>9</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
