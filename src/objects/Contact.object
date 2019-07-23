@@ -3456,6 +3456,21 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
     </fields>
+    <fields>
+        <fullName>Approved_Partner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+OR(
+ISPICKVAL(Account.Approval_Sub_Status__c , "Approved") 
+),
+TRUE,
+FALSE
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approved Partner</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
   <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
   <enableEnhancedLookup>true</enableEnhancedLookup>
   <enableFeeds>true</enableFeeds>
