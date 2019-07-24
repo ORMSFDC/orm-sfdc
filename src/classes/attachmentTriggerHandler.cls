@@ -90,6 +90,7 @@ public with sharing class attachmentTriggerHandler {
         uw.PCS_at_Loan_Level__c = pcs;
         uw.Subject__c = 'Document Upload';
         uw.Underwriter__c = underWriter;
+        uw.PCS_Task_Bucket__c = 'Documents Uploaded';
         uw.Notes__c = 'A Document has been uploaded for ' + ln.Client_Name__c+ ' by ' + userinfo.getfirstname() + ' ' + userinfo.getlastname();
         
         if (ln.PCS_at_Loan_Level__c != null && uw.Ownerid != null && ln.PCS_at_Loan_Level__c != userinfo.getuserId()) {
