@@ -226,6 +226,7 @@ public with sharing class CICController {
                 uw.Subject__c = 'Change In Circumstance';
                 uw.Underwriter__c = underWriter;
                 uw.OwnerId = recOwner;
+		uw.PCS_Task_Bucket__c = 'CIC Request';
                 uw.More_Notes__c = Description;
                 insert uw;
             }else if(r.Name == 'Braveheart' || r.Name == 'wORMS' || r.Name == 'DMB - Jesse' || r.Name == 'DMB - Josh'){
