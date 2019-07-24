@@ -4,7 +4,7 @@
  * @date: 11/16/2017
  *
  * changelog:
- * 07/16/2019: Sahitya - added new criterial to create a new UW record for AE/PCS and send them emails
+ * 07/16/2019: Sahitya - added new criterial to create a new UW record for PCS, tasks for AE and send them emails
  *                        
  */
 public with sharing class CICController {
@@ -116,13 +116,6 @@ public with sharing class CICController {
         userRole r = new userRole();
         r = [SELECT Name from userRole where id =: uId];
 
-        String recordType;
-        if(r.Name == 'Partner Care Specialist' || r.Name == 'Partner Care Specialist Lead'){
-            recordType = Schema.SObjectType.Underwriter__c.getRecordTypeInfosByName().get('PCS Workflow').getRecordTypeId();
-        }else if(r.Name == 'Braveheart' || r.Name == 'wORMS' || r.Name == 'DMB - Jesse' || r.Name == 'DMB - Josh'){
-            recordType = Schema.SObjectType.Underwriter__c.getRecordTypeInfosByName().get('AE').getRecordTypeId();
-        }
-
         String pcs;
         if(ln.PCS_at_Loan_Level__c != null){
             pcs = ln.PCS_at_Loan_Level__c;
@@ -134,21 +127,7 @@ public with sharing class CICController {
         if(ln.UW__c != null){
             underWriter = ln.UW__c;
         }
-        try{
-            Underwriter__c uw = new Underwriter__c();
-            uw.recordtypeid = recordType;
-            uw.Loan__c = strLoanId;
-            uw.Priority__c = 'Medium';
-            uw.Status__c = 'Open';
-            uw.Latest_Status_Change__c = DateTime.now();
-            uw.Open_Date__c = DateTime.now();
-            uw.AE_on_Loan__c = ln.Related_Partner__r.Account_Executive_Name__c;
-            uw.PCS_at_Loan_Level__c = pcs;
-            uw.Subject__c = 'Change In Circumstance';
-            uw.Underwriter__c = underWriter;
-            uw.OwnerId = recOwner;
-
-            //Check for Adding ChekBox
+        //Check for Adding ChekBox
             string Description='A Change in Circumstance has been submitted for the following reasons:'+'\r\n';
             if(objCICDataValue.Add_a_Non_Borrowing_Spouse__c==true)
             {
@@ -233,9 +212,33 @@ public with sharing class CICController {
             Datetime dt=system.now();
             string datefordisplay=dt.format('MM/dd/yyyy HH:mm a');
             Description=Description+'\r\n'+'Date & Time: '+datefordisplay;            
-            uw.More_Notes__c = Description;
-            
-            insert uw;
+        try{
+            if(r.Name == 'Partner Care Specialist' || r.Name == 'Partner Care Specialist Lead'){    
+                Underwriter__c uw = new Underwriter__c();
+                uw.recordtypeid = Schema.SObjectType.Underwriter__c.getRecordTypeInfosByName().get('PCS Workflow').getRecordTypeId();
+                uw.Loan__c = strLoanId;
+                uw.Priority__c = 'Medium';
+                uw.Status__c = 'Open';
+                uw.Latest_Status_Change__c = DateTime.now();
+                uw.Open_Date__c = DateTime.now();
+                uw.AE_on_Loan__c = ln.Related_Partner__r.Account_Executive_Name__c;
+                uw.PCS_at_Loan_Level__c = pcs;
+                uw.Subject__c = 'Change In Circumstance';
+                uw.Underwriter__c = underWriter;
+                uw.OwnerId = recOwner;
+                uw.More_Notes__c = Description;
+                insert uw;
+            }else if(r.Name == 'Braveheart' || r.Name == 'wORMS' || r.Name == 'DMB - Jesse' || r.Name == 'DMB - Josh'){
+                Task t = new Task();            
+                t.OwnerId = recOwner;            
+                t.Subject = 'Change in Circumstance submitted on ' + ln.Client_Name__c + '\'s loan by ' + userinfo.getname();
+                t.WhatId = strLoanId;
+                t.Client_name__c = ln.Client_Name__c;       
+                t.ActivityDate = Date.Today();
+                t.WhoId = ln.Related_Individual__c;
+                t.Description  = Description;
+                insert t;
+            }
         }catch(exception e){
             system.debug('createPCSRecord--Exception---'+e);
         }
