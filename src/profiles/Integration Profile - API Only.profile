@@ -11623,9 +11623,6 @@
         <layout>Proprietary_Tier_3__mdt-Proprietary Tier 3 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Tier_3__mdt-Tier 3 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>CommunityMemberLayout-Community Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
