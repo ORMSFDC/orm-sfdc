@@ -9,7 +9,8 @@
     <aura:attribute name="PrincipalLimitIs" type="String"/>
     <aura:attribute name="FHA_Hecm_AdjustableMargin" type="object[]" />
     <aura:attribute name="FHA_Hecm_FixedMargin" type="object[]" /> 
-    <aura:attribute name="FHA_Hecm_HeloMargin" type="object[]" /> <!--Helo-->      																			
+    <aura:attribute name="FHA_Hecm_HeloMargin" type="object[]" /> <!--Helo-->  
+    <aura:attribute name="FHA_Hecm_HeloMargin_Arm" type="object[]" />							
     <aura:attribute name="senResp" type="String"/> 
     <aura:attribute name="MarginTypeiS" type="String"/> 
     <aura:attribute name="initialLOC" type="String"/>  
@@ -30,8 +31,11 @@
     <aura:attribute name="stateZip3" type="boolean"  default="false"/>
     <aura:attribute name="stateZip4" type="boolean"  default="false"/>
     <aura:attribute name="stateZip5" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip6" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip7" type="boolean"  default="false"/>
     <!--SFDC-363-->
     <aura:attribute name="isDisplayHelo" type="boolean"  default="true"/> <!--Helo-->
+    <aura:attribute name="isDisplayHeloArm" type="boolean"  default="true"/>
     <aura:attribute name="printcounter" default="0" type="integer"/> <!--SFDC-566-->
     <aura:attribute name="capacitycounter" default="0" type="integer"/>
     <aura:attribute name="render_popup" type="Boolean" default="false"/>  <!--SFDC-487-->
@@ -58,6 +62,7 @@
     <aura:attribute name="Index" type="string"  />
     <aura:attribute name="Margin" type="string" />
     <aura:attribute name="HeloMargin" type="string" /> <!--Helo Margin new-->
+    <aura:attribute name="HeloArmMargin" type="string" /> 
     <aura:attribute name="MIP" type="string" />
     <aura:attribute name="IGR" type="string" />
     <aura:attribute name="AGR" type="string" />
@@ -154,6 +159,7 @@
     <aura:attribute name="metadatavalues" type="object"/> 
     <aura:attribute name="metadatavaluesFixed" type="object"/>  
     <aura:attribute name="metadatavaluesHelo" type="object"/><!--Helo-->    
+    <aura:attribute name="metadatavaluesHeloArm" type="object"/>
     <aura:attribute name="text" type="String"/> 
     <aura:attribute name="Environment" type="String" default="Community"/> 
     <aura:attribute name="show_sharing_popup" type="Boolean" default="false"/>
@@ -177,16 +183,151 @@
         <aura:if isTrue="{!v.Show_FHA_Hecm_FixedMargin}">
             <br/>
             <h4>Pricing Options</h4>            
-	    <aura:if isTrue="{!!v.isDisplayHelo}"> <!-- removing text below but may be added in future-->
-            	<span style="margin:auto; display:table; font-size: 15pt;"></span>
-            </aura:if>
-	    <!--SFDC-379-->
+	    
+        <!--SFDC-379-->
 	    <aura:if isTrue="{!and(v.isDisplayHelo ,!v.isTraditional)}">
             	<span style="margin:auto; display:table; font-size: 15pt;"></span> <!--fixed helo purchase-->
             </aura:if>
             <aura:if isTrue="{!!v.isTraditional}">
             <aura:set attribute="else"><!--end SFDC-379-->
+            <aura:if isTrue="{!v.isDisplayHeloArm}">
+                   
+                <span style="margin:auto; display:table; font-size: 15pt;"></span>
+                <h4>HELO ARM</h4>
+                
+                <div style="">
+                    <table class="margin_table slds-table slds-table_bordered slds-table_cell-buffer" style="border: 1px solid #d4d4d4;">
+                        <thead class="margin-table-head" >
+                            <tr class="slds-text-title_caps" style="text-align: left;background-color: #2081bf;color:white; ">
+                                <th scope="row" data-label="Select" class="tbody_td" 
+                                    style="background-color: #2081bf;">                                    
+                                </th>
+                                <th scope="row" data-label="Margin" data-type="fixed" class="tbody_td" 
+                                    style="background-color: #2081bf;width: 13%;">
+                                    <div class="slds-truncate customFontMargin" title="Rate" style="text-align:center;color: #fff;">
+                                        Rate
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabhead">
+                                    <div class="slds-truncate customFont17" title="Principal Limit"
+                                         style="text-align:center;">
+                                        Principal Limit
+                                        <lightning:helptext content="Total Amount Available" />
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabhead">
+                                    <div class="slds-truncate customFont17" title="Cash At Close"  style="text-align:center;">
+                                        {!v.typeOfFunds}
+                                        <aura:if isTrue="{! v.typeOfFunds == 'Cash at close'}">
+                                            <lightning:helptext content="Maximum Cash Available at Close" />
+                                            <aura:set attribute="else">
+                                                <lightning:helptext content="This is the amount your client will need to bring to close" /><!--Maximum Cash Available at Close-->
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                </th>                           
+                                <th scope="col" class="tabhead">
+                                    <div class="slds-truncate customFont17" title="Unpaid Principal Balance" style="text-align:center;">
+                                        Unpaid Principal Balance
+                                        <lightning:helptext content="Maximum Initial Loan Amount" />
+                                    </div>
+                                </th>
+                                <th scope="col" class="tabhead">
+                                    <div class="slds-truncate customFont17" title="Servicing Fee"  style="text-align:center;">
+                                        Servicing Fee</div>
+                                </th>
+                                <th scope="col" class="tabhead">
+                                    <div class="slds-truncate customFont17" title="Compensation"  style="text-align:center;">
+                                        Total Compensation
+                                        <lightning:helptext content=" This includes your backend compensation." />
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.FHA_Hecm_HeloMargin_Arm}" var="obj" indexVar="indx">
+                                <tr class="{!'each_row row_heloarm_'+indx}">
+                                    <th scope="row" data-MFD="{!obj.MFD}"  data-label="Margin" class="slds-box" style="    background-color: #2081bf;">
+                                        <div data-type="heloarm" data-MFD="{!obj.MFD}"  title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">                                                 
+                                            <button id="{!indx}" data-type="heloarm" data-MFD="{!obj.MFD}" style="color:white; background-color:#13547c" class="slds-button slds-button--inverse " onclick="{!c.get_loanFor_margin}" >Select</button>                            
+                                        </div>
+                                    </th><!--Bala -->
+                                    <th scope="row" data-MFD="{!obj.MFD}"  data-label="Margin" data-type="heloarm" class="tbody_td" style="    background-color: #2081bf;">
+                                        <div data-type="heloarm" data-MFD="{!obj.MFD}" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">                                                 
+                                            <span data-type="heloarm" data-MFD="{!obj.MFD}" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="color:white;" >{#obj.InterestRate} </span>
+                                        </div>
+                                    </th>
+                                    <td data-label="" class="tbody_td" data-type="heloarm" data-MFD="{!obj.MFD}">
+                                        <div data-MFD="{!obj.MFD}" data-type="heloarm" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">
+                                            <span data-MFD="{!obj.MFD}" data-type="heloarm" id="{!indx}" onclick="{!c.get_loanFor_margin}" >
+                                               <aura:if isTrue="{!obj.PrincipalLimit >= 4000000}"> <!--265 -->
+                                                    $4,000,000.00
+                                                    <aura:set attribute="else">
+                                                        <lightning:formattedNumber value="{!obj.PrincipalLimit}" style="currency" />
+                                                    </aura:set>
+                                                </aura:if> 
+                                            </span>
+                                        </div>
+                                    </td>
+                                                                     
+                                    <td data-label="" class="tbody_td" data-type="heloarm">
+                                        <div data-MFD="{!obj.MFD}" data-type="heloarm" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">
+                                            <span data-MFD="{!obj.MFD}" data-type="heloarm" id="{!indx}" onclick="{!c.get_loanFor_margin}" >                                                
+                                                <aura:if isTrue="{! obj.CC >= 0}">
+                                                    	<ui:outputCurrency value="{!obj.CC}" format=""  /> 
+													<aura:set attribute="else">
+                                                    	<div style="color:red;">
+                                                    		- <ui:outputCurrency value="{!obj.CC}" format=""  />
+                                                    	</div>
+                                                    </aura:set>
+                                                </aura:if>                                                
+                                            </span>   
+                                        </div>
+                                    </td> 
+                                    
+                                    <td data-MFD="{!obj.MFD}" data-type="heloarm" data-label="" class="tbody_td">
+                                        <div data-MFD="{!obj.MFD}"  data-type="heloarm" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">
+                                            <span data-MFD="{!obj.MFD}" data-type="heloarm" id="{!indx}" onclick="{!c.get_loanFor_margin}" >    
+                                                    <aura:if isTrue="{!obj.UPB >= 4000000}">  <!--265_new --> 
+                                                            $4,000,000.00
+                                                            <aura:set attribute="else">
+                                                                <lightning:formattedNumber value="{!obj.UPB}" style="currency" />
+                                                            </aura:set>
+                                                    </aura:if>                                                                                           
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td data-MFD="{!obj.MFD}" data-type="heloarm" data-label="" class="tbody_td">
+                                        <div data-MFD="{!obj.MFD}"  data-type="heloarm" class="slds-truncate" title=""  id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">
+                                            <span data-MFD="{!obj.MFD}" data-type="heloarm" id="{!indx}" onclick="{!c.get_loanFor_margin}" >                                               
+                                                 
+                                                <lightning:formattedNumber value="{!obj.SF}" style="currency" />  
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td data-MFD="{!obj.MFD}" data-type="heloarm" data-label="" class="tbody_td">
+                                        <div data-MFD="{!obj.MFD}"  data-type="heloarm" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">  
+                                            <span data-MFD="{!obj.MFD}" data-type="heloarm" id="{!indx}" onclick="{!c.get_loanFor_margin}" >
+                                                <lightning:formattedNumber value="{!obj.TC}" style="currency" />
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+		    </aura:if><!--SFDC - 379-->
+                </aura:set><!--SFDC - 379-->
+            </aura:if>
+            <br/>
+
+
+
+            <aura:if isTrue="{!!v.isTraditional}">
+            <aura:set attribute="else"><!--end SFDC-379-->
             <aura:if isTrue="{!v.isDisplayHelo}">
+                   
                 <span style="margin:auto; display:table; font-size: 15pt;"></span>
                 <h4>HELO FIXED Jumbo</h4>
                 
@@ -648,8 +789,7 @@
                                                 <td data-label="HV">
                                                     <div class="slds-truncate customFont16">
                                                         <b>
-                                                            <aura:if isTrue="{!v.isTraditional}">    
-                                                                
+                                                            <aura:if isTrue="{!v.isTraditional}">   
                                                                 Home Value
                                                                 <aura:set attribute="else">
                                                                     Purchase price
@@ -789,18 +929,6 @@
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <!-- SFDC_480 <tr>                                        
-                                        <td data-label="RAC">
-                                            <div class="slds-truncate customFont16">
-                                                <b>
-                                                    {!$Label.c.Scenario_Header5}
-                                                </b></div>
-                                        </td>
-                                        <td data-label="RAC">
-                                            <div class="slds-truncate  slds-text-align_right customFont16">
-                                                {!v.Index}%</div>
-                                        </td>                                        
-                                        </tr> -->
                                         
                                         <tr>                                    
                                             <td data-label="MIP">
@@ -1018,14 +1146,7 @@
                                                 <span class="slds-assistive-text">Remove</span>
                                             </button>
                                         </span>
-                                    </div>
-                                    
-                                    <!--      <div aura:id="lookupField" class="slds-show">
-                                        <ui:inputText updateOn="keyup,change" keyup="{!c.keyPressController}"
-                                                      class="slds-lookup__search-input slds-input " 
-                                                      value="{!v.SearchKeyWord}" placeholder="search.."/>
-                                    </div> --> 
-                                    
+                                    </div>                                    
                                 </div>
                             </div>
                             <!--This part is for Display typehead lookup result List-->  
@@ -1098,6 +1219,12 @@
                                     </aura:if>
                                     <aura:if isTrue='{!v.stateZip5}'>
                                             <h6 style="color:red;">We do not offer the HECM for Refinance in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip6}'>
+                                            <h6 style="color:red;">We do not offer the HELO ARM for Refinance in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip7}'>
+                                            <h6 style="color:red;">We do not offer the HELO ARM for Purchase in this state.</h6>
                                     </aura:if>
                                     <!--SFDC-363-->
                                 </div>
@@ -1220,10 +1347,6 @@
                                                           onclick="{!c.shw_capacityPopup}" class="senario_button" />
                                         &nbsp;
                                         
-                                       <!-- SFDC-487 <lightning:button aura:id="outputButton3" variant="brand" 
-                                                          label="Print" 
-                                                          onclick="{!c.printDocument}" class="senario_button" /> -->                                                          
-                                        
                                     </aura:if>  
                                     <aura:if isTrue="{!v.Environment!='Community'}">                                       
                                         
@@ -1235,9 +1358,6 @@
                                             </aura:if>
                                         </span>
                                     </aura:if>
-                                    <!--        <ui:outputURL value="{!v.myURL}"   
-                                          label="Start a Loan" />      -->                  
-                                    
                                     
                                 </div>
                                 <div class="slds-form-element slds-size_1-of-2"  >

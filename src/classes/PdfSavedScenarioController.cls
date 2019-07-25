@@ -136,8 +136,8 @@ public without sharing class PdfSavedScenarioController {
             Decimal calc = equityReserves - (scenario.MIP__c + scenario.Line_of_Credit__c + financingFees + cashAtClose + scenario.Current_Mortgage_Balance__c);
 
             if(scenario.Scenario_Type__c=='FHA Traditional HECM'){ 
-                if(Scenario.RateType__c == 'Helo'){
-                    equityReserves = heloEquity;
+                if(Scenario.RateType__c == 'Helo' || Scenario.RateType__c == 'HeloArm'){
+                    equityReserves = heloEquity; 
                 }
                 else{
                     if(calc < 0 ) { 

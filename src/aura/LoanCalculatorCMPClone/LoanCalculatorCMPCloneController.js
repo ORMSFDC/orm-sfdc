@@ -106,6 +106,7 @@
     
     //Validate Required Field
     Validations: function(component, event, helper) {
+    debugger;
         console.log('validations method');
         component.set('v.Show_table',true);
         
@@ -228,12 +229,15 @@
         if(component.get("v.Show_FHA_Hecm")  || component.get("v.Show_FHA_Purchase")){ 
             if(component.get("v.EHV") >= 250000){
                 component.set("v.displayHelo", true);
+                component.set("v.displayHeloArm", true);
             }else{
                 component.set("v.displayHelo", false);
+                component.set("v.displayHeloArm", false);
             }
         } 
     },
     get_loanFor_margin:function(component,event,helper){
+        debugger;
         component.set("v.ClientDiv",true);
         
         var selectedItem = event.currentTarget;
@@ -249,6 +253,7 @@
     
     //Validate Required Field
     ValidationsNew: function(component, event, helper) {
+        debugger;
         console.log('validationsnew method');
         var isValidatePP = false;
         try{
@@ -281,11 +286,11 @@
             console.log('show fha Purchase',component.get("v.Show_FHA_Purchase"));
             //alert('init'+component.get("v.EHV"));
             if(component.get("v.EHV") >= 250000){
-                console.log(' displayHelo above 250k');
                 component.set("v.displayHelo", true);
+                component.set("v.displayHeloArm", true);
             } else{
-                console.log(' displayHelo below 250k');
                 component.set("v.displayHelo", false);
+                component.set("v.displayHeloArm", false);
             }
         } 
         //   alert();

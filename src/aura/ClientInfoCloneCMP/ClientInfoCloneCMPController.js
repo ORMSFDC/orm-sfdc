@@ -2,6 +2,7 @@
     doinit:function(component, event, helper) { //Helo fix  		  
     },
     scriptsLoaded: function(component, event, helper) {
+        debugger;
 		//alert('scipts loaded');
         var action = component.get("c.get_metadataValues");
         action.setParams({ //Bala
@@ -17,7 +18,8 @@
                 
                 component.set("v.metadatavalues",storeResponse[0]);
                 component.set("v.metadatavaluesFixed",storeResponse[1]);
-                component.set("v.metadatavaluesHelo",storeResponse[2]); //Helo                
+                component.set("v.metadatavaluesHelo",storeResponse[2]); //Helo    
+                component.set("v.metadatavaluesHeloArm",storeResponse[3]);            
                 helper.getserviceData(component, event, helper);
             }           
         });
@@ -120,39 +122,16 @@
         evt.fire();
     },
     //Assign value to get in ClientCMP
-    getValueFromLoanCalculator: function(cmp, event, helper) {        
+   /* getValueFromLoanCalculator: function(cmp, event, helper) {        
         helper.getserviceData(cmp, event, helper);
-    },
+    },*/
     //For New Scenario
     reset: function(component, event, helper) {   
         //   alert('ClientInfo cmp reset');
         //  alert();
         $A.get('e.force:refreshView').fire();
     },
-    //For Request Package  SFDC - 487 commented this
-    /*sendmailrequest: function (component, event, helper) {
-        component.set('v.showSpinner',true); //Helo fix
-        var ScenarioID = component.get("v.ScenarioID")
-        var action2 = component.get("c.SendMailTMP");
-        console.log('email sent');
-        action2.setParams({
-            "ScenarioID": ScenarioID
-        });        
-        action2.setCallback(this, function(data) {
-            component.set("v.Messages", "Request sent successfully and will be emailed to you within 5 minutes. If you do not receive it, please check your junk and spam folders. If you cannot locate your scenario package, please contact your AE.");
-            component.set("v.showAlert", true);            
-            document.getElementById("requestbtn").style.display = "None";
-            component.set('v.showSpinner',false); //Helo fix
-        });
-        $A.enqueueAction(action2);
-        
-        //Task for AE, added by Bala
-        var action = component.get("c.createAETask");
-        action.setCallback(this,function(){          
-        });       
-        $A.enqueueAction(action);
-        
-    }, */  
+
     //Validate Form and SAve Scenario
     Save: function(component, event, helper) {        
         var msg = "";
@@ -219,7 +198,9 @@
             var sZip3=component.get('v.stateZip3'); //Helo Purchase error
             var sZip4=component.get('v.stateZip4'); //HECM Purchase error
             var sZip5=component.get('v.stateZip5'); //HECM Refi error
-            if(sZip==false && sZip2==false && sZip3==false && sZip4 ==false && sZip5 ==false)
+            var sZip6=component.get('v.stateZip6'); //Helo ARM Refi Error
+            var sZip7=component.get('v.stateZip7'); //Helo ARM Purchase error
+            if(sZip==false && sZip2==false && sZip3==false && sZip4 ==false && sZip5 ==false && sZip6 ==false && sZip7 ==false )
             {
                 helper.SaveScenario(component,event,helper);
             }
@@ -240,7 +221,7 @@
         helper.RestrictZeroInPhoneFirstTime(component, event, helper,inz);     
     },  
     get_loanFor_margin :function(component, event, helper){
-        //   debugger;
+           debugger;
         component.set("v.rerender_section",false);
         component.set("v.showAlert", false);                
         component.set("v.selectedRecord.FirstName","");
@@ -250,18 +231,21 @@
         component.set("v.selectedRecord.PostalCode","");
         component.set("v.selectedRecord.Email","");
 	//SFDC-363
-	component.set("v.stateZip",false);
+	    component.set("v.stateZip",false);
         component.set("v.stateZip2",false);
         component.set("v.stateZip3",false);
         component.set("v.stateZip4",false);
         component.set("v.stateZip5",false);
+        component.set("v.stateZip6",false);
+        component.set("v.stateZip7",false);
         // Code Added by Dev4 for ORMSFDC-1447
         component.set("v.selectedRecord.State","");
         component.set("v.showError",false);
         //Code Ended by Dev4 for ORMSFDC-1447
         var selectedItem = event.currentTarget;
+        console.log('selectedItem-----',selectedItem);
         var recId = selectedItem.dataset.type.toLowerCase();
-        
+        console.log('recId-----',selectedItem.dataset.type);
         console.log('recId ', component.get('v.recId'));
         component.set('v.downPyt',selectedItem.dataset.mfd);
         var selId = event.currentTarget.id;
@@ -275,7 +259,8 @@
         var AdjustMargins = component.get('v.FHA_Hecm_AdjustableMargin');
         var FixedMargins = component.get('v.FHA_Hecm_FixedMargin');
         var HeloMargins = component.get('v.FHA_Hecm_HeloMargin'); //Bala 7_15
-        
+        var HeloArmMargins = component.get('v.FHA_Hecm_HeloMargin_Arm');
+
         if(recId == 'adjust'){   
             component.set('v.selectedRowIs',AdjustMargins[selId]);//BalaC1
             				console.log('adjust sel row',AdjustMargins[selId]);
@@ -326,7 +311,7 @@
             component.set('v.CF5MA',component.get('v.MMP')*(5*12));
             component.set('v.CF10MA',component.get('v.MMP')*(10*12));
         }
-       else {         //Helo onClick events              
+        else if(recId == 'helo') {         //Helo onClick events              
            component.set('v.selectedRowIs',HeloMargins[selId]);
            console.log('Helo SelectedRow',component.get('v.selectedRowIs'));
            component.set('v.LRateType','Helo');
@@ -410,7 +395,92 @@
            component.set('v.CF5MA',component.get('v.MMP')*(5*12));
            component.set('v.CF10MA',component.get('v.MMP')*(10*12));
         }
-         debugger; 
+
+        else if(recId == 'heloarm') {         //Helo arm onClick events              
+            component.set('v.selectedRowIs',HeloArmMargins[selId]);
+            console.log('Helo SelectedRow',component.get('v.selectedRowIs'));
+            component.set('v.LRateType','HeloArm');
+            component.set('v.MarginTypeiS','HeloArm');
+            component.set('v.MarginType','Rate');  //Helo Interst Rate
+            component.set("v.Index", HeloArmMargins[selId].Index);  //Helo Index  
+            component.set("v.MIP", 0); //There is no MIP for Helo
+            component.set("v.HeloArmMargin",HeloArmMargins[selId].Margin); //Helo Margin new
+            var heloArmValues = component.get('v.metadatavaluesHeloArm');
+            console.log('Helo arm values',heloArmValues);            
+            var t =  HeloArmMargins[selId].InterestRate; 
+            var rate = heloArmValues.HeloArm_rate[t];
+            component.set("v.Margin",rate); //Helo Interst Rate
+            var pricing = heloArmValues.HeloArm_orm[t];  
+            console.log('pricing helo val', pricing );
+            var ADOVal = component.get('v.ADO'); // Desired Origination Value
+            console.log('ADOVal Helo Arm', ADOVal);
+            component.set("v.TotalAmountAvailableLoc", 0);   
+            var EhvVal = component.get('v.EHV'); 
+            
+            //use upb local variable for all HELO calcs because it has a cap of 4000000 SFDC-265_new
+            var upb1 = HeloArmMargins[selId].UPB;
+            var upb = 0;
+            if(upb1 >= 4000000){
+                var upb = 4000000;
+            }else{
+                var upb = HeloArmMargins[selId].UPB;
+            }
+ 
+            //Origination to ORM calc
+            var origToOrm = ((upb * pricing)/100) ;
+            console.log('oorm', origToOrm );
+            component.set("v.EOF",origToOrm);           
+            component.set("v.typeOfEOF",'Origination to One Reverse Mortgage, LLC');
+            console.log('estimated Origination for fixed ', component.get('v.EOF'));
+            //end of OORM calc
+            
+            //Other Estimated closing costs calc
+            var ecc = ((0.25 * EhvVal)/100);  
+            console.log('ecc',ecc);
+            var ecc1 = 0;
+            if(ecc >= 2500 && ecc <= 10000){ //.5% of Home value or purchase price with a floor of $2,500 and a cap of $15,000
+                component.set("v.ECC",ecc);  
+                var ecc1 = ecc;
+            }
+            else if(ecc < 2500){
+                component.set("v.ECC",2500);
+                var ecc1 = 2500;
+            }
+            else{
+                component.set("v.ECC",10000);    
+                var ecc1 = 10000;
+            }
+            //end of ECC calc
+            
+            //Helo Amount Available after Lien payoff & Funds needed to close calc
+            var cmb = component.get("v.CMB"); //current mortgage balance
+            var amtAvail = upb - cmb - origToOrm - ecc1;
+            if (amtAvail < 0){
+                component.set("v.FirstAmount",0);
+                var amtAvail1 = amtAvail*-1;
+                component.set("v.cashToClose",amtAvail1);
+                console.log('@@@',amtAvail1);
+            }
+            else{
+                component.set("v.FirstAmount",amtAvail);
+                component.set("v.cashToClose",0);
+            }           
+            //end of amt avail calc
+            
+            //use Principal limit local variable for all HELO calcs because it has a cap of 4000000 SFDC-265
+            var pl1 = HeloArmMargins[selId].PrincipalLimit;
+            var pl = 0;
+            if(pl1 >= 4000000){
+                var pl = 4000000;
+            }else{
+                var pl = pl1;
+            }
+            component.set("v.TotalAmountAvailable",pl); //265
+            component.set('v.CF1MA',component.get('v.MMP')*(1*12));
+            component.set('v.CF5MA',component.get('v.MMP')*(5*12));
+            component.set('v.CF10MA',component.get('v.MMP')*(10*12));
+         }
+         
         //Funds needed to Close calculations
         //for traditional loan
         if(component.get('v.isTraditional')){ //SFDC-232
@@ -447,7 +517,13 @@
                 component.set('v.cashToClose',pfnc);
                 console.log('pfnc fixed',pfnc);
             }
-            else { //Helo
+            else if(recId == 'Helo'){ //Helo
+                component.set('v.PrincipalLimitIs',pl); //265
+                var pfnc = ((ecc1 + origToOrm) + EhvVal) - upb;
+                component.set('v.cashToClose',pfnc);
+                console.log('pfnc Helo',pfnc);
+            }
+            else if(recId == 'HeloArm'){ //Helo Arm
                 component.set('v.PrincipalLimitIs',pl); //265
                 var pfnc = ((ecc1 + origToOrm) + EhvVal) - upb;
                 component.set('v.cashToClose',pfnc);
@@ -465,25 +541,6 @@
         var offset = p.offset();
         var yaxis=offset.top-200;
         window.scroll(0, yaxis);
-        //  var selectedMargin = component.get("v.Margins")[parseInt(selId)];
-        // alert('selectedMargin-->'+selectedMargin);
-        //console.log(selectedMargin);
-        //   console.log('selectedMargin---Controller--> ',selectedMargin.initialPrincipalLimit);
-        /* var ini  =selectedMargin.initialLOC;
-        if(ini<0){
-            ini = 0;
-        }
-        component.set("v.FirstAmount",ini);
-        
-        var lien = selectedMargin.initialLOC;//prsn
-        var initPri = parseFloat(selectedMargin.initialPrincipalLimit.replace(',','').replace(',','').replace(',',''));
-        component.set("v.TotalAmountAvailable",initPri);
-        console.log('initPri---',initPri);
-        
-        var almis = ''+selectedMargin.lendersMargin;
-        component.set('v.Scenarioindex',alm);//prsn
-        helper.hlperscriptsLoaded(component, event, helper,almis,lien);//prsn
-        */
     },
     shw_capacityPopup : function(component, event, helper){
         //    alert('ClientInfo cmp shw_capacityPopup');
@@ -871,6 +928,14 @@
                     else if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){ 
                         var action1 = component.get("c.get_helostatesRefi");
                     }
+                    //Helo ARM Purchase states
+                    if (rateType == 'HeloArm' && mortType == 'HECM for Purchase'){ 
+                        var action1 = component.get("c.get_heloArmStatesPur");                         
+                    }
+                    //Helo ARM Refinance States
+                    else if (rateType == 'HeloArm' && mortType == 'FHA Traditional HECM'){ 
+                        var action1 = component.get("c.get_heloArmStatesRefi");
+                    }
                     //ARM and Fixed Purchase states
                     else if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){ 
                         var action1 = component.get("c.get_statesPur");
@@ -899,6 +964,8 @@
                                 component.set("v.stateZip3",false);
                                 component.set("v.stateZip4",false);
                                 component.set("v.stateZip5",false);
+                                component.set("v.stateZip6",false);
+                                component.set("v.stateZip7",false);
                                 break;
                             }else{                                
                                 component.set("v.selectedRecord.State","");
@@ -919,6 +986,12 @@
                                 else if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){
                                     component.set("v.stateZip5",true);
                                     component.set("v.stateZip",false);
+                                }else if (rateType == 'HeloArm' && mortType == 'FHA Traditional HECM'){
+                                    component.set("v.stateZip6",true);
+                                    component.set("v.stateZip",false);
+                                }else if (rateType == 'HeloArm' && mortType == 'HECM for Purchase'){ 
+                                    component.set("v.stateZip7",true);
+                                    component.set("v.stateZip",false);
                                 }
                                 //SFDC-363
                             }
@@ -934,7 +1007,9 @@
                     component.set("v.stateZip2",false);
                     component.set("v.stateZip3",false);
                     component.set("v.stateZip4",false);
-                    component.set("v.stateZip5",false);                    
+                    component.set("v.stateZip5",false);
+                    component.set("v.stateZip6",false);
+                    component.set("v.stateZip7",false);                    
                 }
                 
             });
@@ -948,6 +1023,8 @@
             component.set("v.stateZip3",false);
             component.set("v.stateZip4",false);
             component.set("v.stateZip5",false);
+            component.set("v.stateZip6",false);
+            component.set("v.stateZip7",false);
         }
     },
     share_popup:function(component, event, helper){

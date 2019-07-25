@@ -25,6 +25,7 @@ global class ScenarioExportUtil {
 
         Scenario__c loanlead1 = [SELECT  RateType__c,
         HeloMargin__c,
+        HeloArmMargin__c,
         Margin__c,
         Estimated_home_value__c,
         PartnerId__c,
@@ -52,8 +53,10 @@ global class ScenarioExportUtil {
         }     //Helo Fix
         else if(loanlead1.RateType__c == 'Fixed') { 
             Loanrate = '9'; 
-        }else{
+        }else if(loanlead1.RateType__c == 'Helo'){
             Loanrate = '162';
+        }else{
+            Loanrate = '164';
         }
         
         ScenarioExport.BayDocs.put('LoanType', Loanrate);
@@ -83,6 +86,8 @@ global class ScenarioExportUtil {
         //Helo margin fix
         if(loanlead1.RateType__c == 'Helo'){
             ScenarioExport.loanlead.put('Margin', loanlead1.HeloMargin__c);
+        }else if(loanlead1.RateType__c == 'HeloArm'){
+            ScenarioExport.loanlead.put('Margin', loanlead1.HeloArmMargin__c);
         }else{
             ScenarioExport.loanlead.put('Margin', loanlead1.Margin__c);            
         }
@@ -294,7 +299,6 @@ global class ScenarioExportUtil {
     };
 
 
-    //Added by Ravi
     private static final Map<String, String> BAYDOC_FIELDS = new Map<String, String>{
 
             'UserID' => '4738',
@@ -302,7 +306,6 @@ global class ScenarioExportUtil {
             'SubmitOrderForProcessing' => 'true',
             'WaitForPDF' => 'true',
             'LenderID' => '2364',
-            //   'LoanType'                  => '103',
             'PackageType' => '430'
 
 
