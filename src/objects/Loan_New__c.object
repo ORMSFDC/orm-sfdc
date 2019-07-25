@@ -6460,8 +6460,8 @@ IF(
         <externalId>false</externalId>
         <formula>IF( 
 ISBLANK(LoanNumber__c ), 
-HYPERLINK("http://documentviewer/documentviewerbeta/#/", ''), 
-HYPERLINK("http://documentviewer/documentviewerbeta/#/"&amp; LoanNumber__c , 'Please click here to view the documents') 
+HYPERLINK("http://documentviewerbeta/documentviewer/#/", ''), 
+HYPERLINK("http://documentviewerbeta/documentviewer/#/"&amp; LoanNumber__c , 'Please click here to view the documents') 
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>This link cannot be edited - "it is built using the Loan Number value from the field above. If you have an issue viewing this page, please contact a SalesForce Administrator for support".</inlineHelpText>
