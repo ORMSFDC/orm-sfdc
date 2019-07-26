@@ -396,7 +396,7 @@
            component.set('v.CF10MA',component.get('v.MMP')*(10*12));
         }
 
-        else if(recId == 'heloarm') {         //Helo arm onClick events              
+        else {         //Helo arm onClick events              
             component.set('v.selectedRowIs',HeloArmMargins[selId]);
             console.log('Helo SelectedRow',component.get('v.selectedRowIs'));
             component.set('v.LRateType','HeloArm');
@@ -523,7 +523,7 @@
                 component.set('v.cashToClose',pfnc);
                 console.log('pfnc Helo',pfnc);
             }
-            else if(recId == 'HeloArm'){ //Helo Arm
+            else{ //Helo Arm
                 component.set('v.PrincipalLimitIs',pl); //265
                 var pfnc = ((ecc1 + origToOrm) + EhvVal) - upb;
                 component.set('v.cashToClose',pfnc);
