@@ -199,6 +199,7 @@ public without sharing class lookUpController {
         objScenario.Age__c = sce.Age__c;        
         objScenario.Origination_to_orm__c = sce.Origination_to_orm__c;        
         objScenario.HeloMargin__c = sce.HeloMargin__c;
+        objScenario.HeloArmMargin__c = sce.HeloArmMargin__c;
         //End fields Bala 
         insert objScenario;
         Logger.Pop();
@@ -528,6 +529,7 @@ public without sharing class lookUpController {
         String MetaDataTable = '';
         String MetaDataTableFixed = '';
         String MetaDataTableHelo = '';
+        String MetaDataTableHeloArm = '';
 
         boolean isCommunityUser = true;
         user u = [select id,ContactId from user where id = :userinfo.getUserId()];
@@ -542,32 +544,30 @@ public without sharing class lookUpController {
             //Start SFDC - 289
             String partnerType = [select id,Contact.AccountId,Contact.Account.Partner_Type__c from user where id=:userinfo.getUserId()].Contact.Account.Partner_Type__c;
             if(partnerType == 'Non Premier'){
-                MetaDataTable = 'Tier1__mdt';                MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';                MetaDataTableHelo = 'Proprietary_Tier_1__mdt';
+                MetaDataTable = 'Tier1__mdt';   MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';  MetaDataTableHelo = 'Proprietary_Tier_1__mdt';  MetaDataTableHeloArm = 'HELO_ARM_1__mdt';
             }
             else if(partnerType == 'Premier'){
-                MetaDataTable = 'Tier2__mdt';                MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';                MetaDataTableHelo = 'Proprietary_Tier_2__mdt';
+                MetaDataTable = 'Tier2__mdt';   MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';  MetaDataTableHelo = 'Proprietary_Tier_2__mdt';  MetaDataTableHeloArm = 'HELO_ARM_2__mdt';
             }
             else if(partnerType == 'Premier Plus'){
-                MetaDataTable = 'Tier3__mdt';                MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';                MetaDataTableHelo = 'Proprietary_Tier_3__mdt';
+                MetaDataTable = 'Tier3__mdt';   MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';  MetaDataTableHelo = 'Proprietary_Tier_3__mdt';  MetaDataTableHeloArm = 'HELO_ARM_3__mdt';
             }
         } else {
             //new 9/20 need to update tier 3 in the backend calc ToDo
             if(Tieris == 'Tier1'){
-                MetaDataTable = 'Tier1__mdt';
-                MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';
-                MetaDataTableHelo = 'Proprietary_Tier_1__mdt';
+                MetaDataTable = 'Tier1__mdt';   MetaDataTableFixed = 'Fixed_Price_Tier1__mdt';  MetaDataTableHelo = 'Proprietary_Tier_1__mdt';  MetaDataTableHeloArm = 'HELO_ARM_1__mdt';
             }
             else if(Tieris == 'Tier2'){
-                MetaDataTable = 'Tier2__mdt';                MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';                MetaDataTableHelo = 'Proprietary_Tier_2__mdt';
+                MetaDataTable = 'Tier2__mdt';   MetaDataTableFixed = 'Fixed_Price_Tier2__mdt';  MetaDataTableHelo = 'Proprietary_Tier_2__mdt';  MetaDataTableHeloArm = 'HELO_ARM_2__mdt';
             }
             else if(Tieris == 'Tier3'){
-                MetaDataTable = 'Tier3__mdt';                MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';                MetaDataTableHelo = 'Proprietary_Tier_3__mdt';
+                MetaDataTable = 'Tier3__mdt';   MetaDataTableFixed = 'Fixed_Price_Tier3__mdt';  MetaDataTableHelo = 'Proprietary_Tier_3__mdt';  MetaDataTableHeloArm = 'HELO_ARM_3__mdt';
             }
         }//end SFDC - 289
         data.add(get_metadata.get_tierData(MetaDataTable));
         data.add(get_metadata.get_tierData_fixed(MetaDataTableFixed));
-        system.debug('helo metadata ' + get_metadata.get_tierData_Helo(MetaDataTableHelo));
         data.add(get_metadata.get_tierData_Helo(MetaDataTableHelo));
+        data.add(get_metadata.get_tierData_HeloARM(MetaDataTableHeloArm));
         Logger.pop();
         return data;
     }
@@ -618,6 +618,27 @@ public without sharing class lookUpController {
         system.debug('helo2');
         list<String> states = new list<String>();
         for (HeloState__mdt each : [SELECT MasterLabel FROM HeloState__mdt 
+                                    WHERE isActive__c=:true and isPurchase__c=:true]) {
+            states.add(each.MasterLabel);
+        }
+        return states;
+    }
+
+    @AuraEnabled
+    public static list<String> get_heloArmStatesRefi() {        
+        list<String> states = new list<String>();
+        for (HeloArmState__mdt each : [SELECT MasterLabel FROM HeloArmState__mdt
+                                    WHERE isActive__c=:true and isRefinance__c=:true]) {
+            states.add(each.MasterLabel);
+        }
+        return states;
+    }
+
+    @AuraEnabled
+    public static list<String> get_heloArmStatesPur() {
+        system.debug('helo2');
+        list<String> states = new list<String>();
+        for (HeloArmState__mdt each : [SELECT MasterLabel FROM HeloArmState__mdt 
                                     WHERE isActive__c=:true and isPurchase__c=:true]) {
             states.add(each.MasterLabel);
         }

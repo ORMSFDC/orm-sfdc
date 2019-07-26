@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>HELO_Rate__c</field>
-        <value xsi:type="xsd:double">5.875</value>
+        <value xsi:type="xsd:double">5.375</value>
     </values>
     <values>
         <field>HELO_Servicing_Fee__c</field>
@@ -20,10 +20,10 @@
     </values>
     <values>
         <field>HeloArmMargin__c</field>
-        <value xsi:type="xsd:double">3.5</value>
+        <value xsi:type="xsd:double">3.25</value>
     </values>
     <values>
         <field>HeloPrice__c</field>
-        <value xsi:type="xsd:double">2.5</value>
+        <value xsi:type="xsd:double">101.5</value>
     </values>
 </CustomMetadata>

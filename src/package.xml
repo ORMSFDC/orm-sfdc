@@ -998,6 +998,7 @@
     <members>HELO_ARM_1__mdt</members>
     <members>HELO_ARM_2__mdt</members>
     <members>HELO_ARM_3__mdt</members>
+    <members>HeloArmState__mdt</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -1174,6 +1175,7 @@
     <members>HELO_ARM_1__mdt-HELO_ARM Layout</members>
     <members>HELO_ARM_2__mdt-HELO_ARM_2 Layout</members>
     <members>HELO_ARM_3__mdt-HELO_ARM_3 Layout</members>
+    <members>HeloArmState__mdt-HeloArmState Layout</members>
     <name>Layout</name>
   </types>
   <types>
@@ -6881,6 +6883,24 @@
     <members>HELO_ARM_3.X1</members>
     <members>HELO_ARM_3.X2</members>
     <members>HELO_ARM_3.X3</members>
+    <members>HELO_ARM_1.X4</members>
+    <members>HELO_ARM_1.X5</members>
+    <members>HELO_ARM_1.X6</members>
+    <members>HELO_ARM_1.X7</members>
+    <members>HELO_ARM_1.X8</members>
+    <members>HELO_ARM_2.X4</members>
+    <members>HELO_ARM_2.X5</members>
+    <members>HELO_ARM_2.X6</members>
+    <members>HELO_ARM_2.X7</members>
+    <members>HELO_ARM_2.X8</members>
+    <members>HELO_ARM_3.X4</members>
+    <members>HELO_ARM_3.X5</members>
+    <members>HELO_ARM_3.X6</members>
+    <members>HELO_ARM_3.X7</members>
+    <members>HELO_ARM_3.X8</members>
+    <members>HeloArmState.California</members>
+    <members>HeloArmState.DoNotChange</members>
+    <members>HeloArmState.New_York</members>
     <name>CustomMetadata</name>
   </types>
   <types>

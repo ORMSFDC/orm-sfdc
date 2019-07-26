@@ -27,6 +27,7 @@
         // enqueue the Action  
         $A.enqueueAction(action);        
     },
+    
     //Pie Graph Populate
     hlperscriptsLoaded: function(component, event, helper,almis,lien) {  
         //CashFlow Method called 
@@ -341,6 +342,7 @@
         });
         $A.enqueueAction(action1);
     },
+
     getProfileName : function(component, event, helper) {
         var action = component.get("c.getLoggedInProfile");
         action.setCallback(this,function(response){
@@ -388,20 +390,6 @@
                 component.set('v.'+fieldBooleans[i],false);
             }
         }
-        /*  for (var i = 0; i < aura_id.length; i++) {
-            var inputCmp = component.find(aura_id[i]);
-            var value = inputCmp.get("v.value");
-            var isValid = false;            
-            if (typeof regex[i] != "string") {                
-                isValid = regex[i](value);
-            }             
-            if (isValid) {
-                inputCmp.set("v.errors", null); 
-            } else {
-                inputCmp.set("v.errors", [{ message: msg[i]   }]);              
-                flag = true;                
-            }
-        }*/
         return flag;
     },
     //Validate Zip
@@ -502,6 +490,7 @@
 
     //Save Scenario
     SaveScenario: function(component, event, helper) {   
+        debugger;
         component.set('v.showSpinner',true);
         var FName, LName, Address, Zip, Phone = '',
             errorlbl, EmailVal = '';
@@ -532,35 +521,6 @@
             
             component.set('v.isTraditional',false);
         }
-        //    alert(component.get('v.cashToClose'));
-        console.log( "objClient",ClientInfoval);
-        console.log(  "hv", component.get("v.EHV")==''?0.00:component.get("v.EHV"));
-        console.log("Dob", DobVal);
-        console.log("HV10yr", 0.00);
-        console.log("mb", component.get("v.CMB"));
-        console.log("mp", component.get("v.MMP"));
-        console.log("ir", component.get("v.CMIR"));
-        console.log("Index", component.get("v.Index"));
-        console.log("Margin", component.get("v.Margin"));
-        console.log("MIP", component.get("v.MIP"));
-        console.log("IGR", component.get("v.IGR"));
-        console.log("AGR", component.get("v.AGR"));
-        console.log("Priority", component.get("v.Priority"));
-        console.log("CF12MA", component.get("v.CF12MA")==''?0.00:component.get("v.CF12MA"));
-        console.log("CF60MA", component.get("v.CF60MA")==''?0.00:component.get("v.CF60MA"));
-        console.log("CFRMA", component.get("v.CFRMA")==''?0.00:component.get("v.CFRMA"));
-        console.log("CFRM", component.get("v.CFRM") ==''?0.00:component.get("v.CFRM"));
-        console.log("secMN", component.get("v.secMN") ==''?0.00:component.get("v.secMN")); 
-        console.log( "P_Limit",ttl_amt==''?0.00:ttl_amt);
-        console.log( "lineOfCredit" , lineOfCredit==''?0.00:lineOfCredit);
-        //  console.log("ScenarioType",sceType);
-        //  console.log( "Scenario_Response",component.get('v.senResp'));
-        console.log(  'cash1',''+component.get('v.CF1MA'));
-        console.log( 'cash5',''+component.get('v.CF5MA'));
-        console.log(   'cash10',''+component.get('v.CF10MA'));
-        console.log(   'CaC',''+component.get('v.cashToClose'));
-        console.log(   'MarginType',component.get('v.MarginTypeiS'));
-        console.log('EOF save scenario -> ', component.get('v.EOF'));        
         var cmIRis = 0.00;
         if(component.get("v.CMIR")){
             cmIRis   = component.get("v.CMIR");
@@ -590,6 +550,14 @@
                     sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.UPB);      
                 }            	
             }
+            else if(marginType == 'HeloArm'){
+                var upb1 = parseFloat(selRec_is.UPB);                
+                if(upb1 >= 4000000 ){
+                    sceis['Unpaid_Principal_Balance__c'] = parseFloat(4000000);
+                }else{
+                    sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.UPB);      
+                }  
+            }
             else{
                 sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.MaxInitialUPB);            	
             }        	
@@ -599,7 +567,8 @@
             sceis['Funds_Needed_to_Close__c'] = parseFloat(component.get('v.cashToClose'));            
             sceis['Funds_to_Close__c'] = parseFloat(component.get('v.cashToClose'));
         	sceis['Origination_to_orm__c'] = parseFloat(component.get('v.EOF'));
-        	sceis['HeloMargin__c'] = parseFloat(component.get('v.HeloMargin'));//Helo New field
+            sceis['HeloMargin__c'] = parseFloat(component.get('v.HeloMargin'));//Helo New field
+            sceis['HeloArmMargin__c'] = parseFloat(component.get('v.HeloArmMargin'));
         console.log('sceis>>>> ',sceis);
         //BalaC1
         action.setParams({
@@ -624,8 +593,7 @@
             "PieChartResponse":PieChartResponse, 
             "BarChartResponse":BarChartResponse,
             "P_Limit":ttl_amt==''?0.00:ttl_amt,
-            "lineOfCredit" : lineOfCredit==''?0.00:parseFloat(lineOfCredit), //BalaC1
-            //BalaC1 "lineOfCredit" : lineOfCredit==''?0.00:lineOfCredit,
+            "lineOfCredit" : lineOfCredit==''?0.00:parseFloat(lineOfCredit), 
             "ScenarioType":sceType,
             "Scenario_Response":component.get('v.senResp'),
             'cash1':''+component.get('v.CF1MA'),
@@ -809,6 +777,7 @@
         $A.enqueueAction(action);
         
     },
+    
     applyCSS: function(component, event, helper,ControlId) {
         var cmpTotalCapacity = component.find(ControlId);
         $A.util.removeClass(cmpTotalCapacity,'TextColor_green');
@@ -854,7 +823,8 @@
             'Tieris':component.get('v.Tier_Value') //SFDC - 289 Added this for 3rd tier backend calculator 
         });
         
-        action.setCallback(this,function(data){            
+        action.setCallback(this,function(data){ 
+        
             console.log('ADO Value  from getserviceData1-->', component.get('v.ADO'));
             //   var ADOVal =   component.get('v.ADO');
             var Adjmetadatavalues = component.get('v.metadatavalues');
@@ -867,26 +837,35 @@
             console.log('data >> ',JSON.parse(data.getReturnValue()));
             //Helo fix
             var ParseddataHelo =[];
+            var ParseddataHeloArm =[];
             var wsData = data.getReturnValue();
             var wsJson = JSON.parse(wsData);
+            console.log('asdfsf',wsJson);            
             wsJson.LoanPrograms.forEach(function(item){
-                if(item.ProgramName == 'Home Equity Loan Optimizer'){
-                 		component.set('v.isDisplayHelo',true);
-            			ParseddataHelo = item.margins;
+                console.log('item.programname-2-',item.ProgramName);                 
+                if(item.ProgramName == 'Home Equity Loan Optimizer' || item.ProgramName == 'Home Equity Loan Optimizer Adjustable' ){
+                    console.log('item.programname--',item.ProgramName);
+                        component.set('v.isDisplayHelo',true);
+                        component.set('v.isDisplayHeloArm',true); 
+                        ParseddataHelo = JSON.parse(data.getReturnValue()).LoanPrograms[5].margins;
+                        ParseddataHeloArm = JSON.parse(data.getReturnValue()).LoanPrograms[6].margins;
                 }
                 else{
+                    console.log('item.programname--3',item.ProgramName);
                     component.set('v.isDisplayHelo',false);
+                    component.set('v.isDisplayHeloArm',false);
                 }
             });
-            console.log('ParseddataHelo -> ',JSON.parse(JSON.stringify(ParseddataHelo)));             
+            
+            console.log('ParseddataHelo --- ',JSON.parse(JSON.stringify(ParseddataHelo)));        
+            console.log('ParseddataHeloArm --- ',JSON.parse(JSON.stringify(ParseddataHeloArm)));             
             var AdjustableParseddata = JSON.parse(data.getReturnValue()).LoanPrograms[2].margins;
             for(var i=0;i<AdjustableParseddata.length;i++){
                 console.log('>>>> ' + parseFloat(AdjustableParseddata[i].Margin).toFixed(3));
                 try{
                     
                     AdjustableParseddata[i].Margin =  parseFloat(AdjustableParseddata[i].Margin).toFixed(3);
-                }catch(err){
-                    
+                }catch(err){                    
                     console.log('errr1 ',err);
                 }
                 console.log('>>>>>>>>>>>>>>>>>>');
@@ -898,8 +877,7 @@
                     console.log(Adjmetadatavalues,AdjustableParseddata[i].Margin);
                     pricingValuesfromMetadata =    Adjmetadatavalues[AdjustableParseddata[i].Margin];
                     AdjustableParseddata[i].No_Margin = pricingValuesfromMetadata; //SFDC-377
-                }catch(err){
-                    
+                }catch(err){                    
                     console.log('errr ',err);
                 }
                 //   console.log('pricingValuesfromMetadata ', JSON.parse(JSON.stringify(pricingValuesfromMetadata)));
@@ -927,9 +905,6 @@
                 
                 if(component.get('v.ScenarioType')!='FHA Traditional HECM'){
                     //MaxAdditionalFirstYearDraw
-                    //        AdjustableParseddata[i].TC = (((pricing-100)*0.01)*AdjustableParseddata[i].MaxInitialUPB) + AdjustableParseddata[i].MaxOrigFee; 
-                    //	AdjustableParseddata[i].MFD  = (component.get('v.EHV') - AdjustableParseddata[i].PrincipalLimit)+10000;
-                    // AdjustableParseddata[i].MFD = (component.get('v.EHV') - AdjustableParseddata[i].PrincipalLimit) + 10000;
                     AdjustableParseddata[i].MFD = (component.get('v.EHV') - AdjustableParseddata[i].PrincipalLimit) + AdjustableParseddata[i].IMIP+ADOVal+3000;
                     AdjustableParseddata[i].MFD = AdjustableParseddata[i].CashFromBorrower;
                     component.set("v.downPyt",AdjustableParseddata[i].MFD );
@@ -937,7 +912,6 @@
                 }else{
                     
                     AdjustableParseddata[i].MFD    = AdjustableParseddata[i].MaxAdditionalFirstYearDraw;
-                    //   component.set("v.downPyt",AdjustableParseddata[i].MFD );
                     console.log('down payment trad', component.get("v.downPyt"));                    
                 }
             }
@@ -999,7 +973,7 @@
             //Helo calculations
             for(var i=0;i<ParseddataHelo.length;i++){
                 var each = ParseddataHelo[i];
-                console.log('Parseddata  -->'+ ParseddataHelo[i]);
+                console.log('Parseddata helo  -->'+ ParseddataHelo[i]);
                 ParseddataHelo[i].InterestRate =  parseFloat(ParseddataHelo[i].InterestRate).toFixed(3);
                 ParseddataHelo[i].UPB = parseFloat(ParseddataHelo[i].UPB).toFixed(3);
                         console.log('Parseddata[i].InterestRate  -->'+ ParseddataHelo[i].InterestRate);
@@ -1077,11 +1051,94 @@
                     console.log('down payment parse helo ', component.get('v.downPyt'));
                 }
             }
+
+            //HELO ARM CALCULATIONS
+            for(var i=0;i<ParseddataHeloArm.length;i++){
+                var each = ParseddataHeloArm[i];
+                console.log('Parseddata heloarm -->'+ ParseddataHeloArm[i]);
+                ParseddataHeloArm[i].InterestRate =  parseFloat(ParseddataHeloArm[i].InterestRate).toFixed(3);
+                ParseddataHeloArm[i].UPB = parseFloat(ParseddataHeloArm[i].UPB).toFixed(3);
+                        console.log('Parseddata[i].InterestRate  -->'+ ParseddataHeloArm[i].InterestRate);
+                        console.log('Parseddata[i].upb  -->'+ ParseddataHeloArm[i].UPB);  
+                var pricing = 0;
+                var pricing1 = 0;
+                var pricing2 = 0;
+                var heloValues = component.get('v.metadatavaluesHeloArm');
+                        console.log('heloValues ',JSON.stringify(heloValues));
+                var t =  ParseddataHeloArm[i].InterestRate;
+                 
+                //use upb local variable for all HELO calcs because it has a cap of 4000000 SFDC-265_new
+                var upb1 = ParseddataHeloArm[i].UPB;                
+                var upb = 0;
+                if(upb1 >= 4000000){
+                    var upb = 4000000;
+                }
+                else{
+                    var upb = ParseddataHeloArm[i].UPB;
+                } 
+
+                //TC calculation -> Displaying in the Helo table Total Compensation
+                pricing = heloValues.HeloArmPrice[t]; //Broker comp price__c
+                pricing2 = pricing - 100;
+                if(!pricing){
+                    pricing = 0
+                }else{
+                    pricing = ((pricing2 * upb)/100)-100; // calculation for TC = BrokerComp% * UPB
+                            console.log('fixed tc helo cal pricing ',pricing);
+                }                
+                ParseddataHeloArm[i].TC = pricing; 
+				//end TC calculation
+				pricing1 = parseFloat(heloValues.HeloArm_orm[t]);
+                var cmb = component.get("v.CMB"); //current mortgage balance                 
+                var EhvVal = component.get('v.EHV');//estimated home value
+                var origToOrm = ((pricing1 * upb)/100); //Origination to One Reverse Mortgage, LLC
+                var ecc = ((0.25 * EhvVal)/100);  //estimated closing cost calculation
+                console.log('ecc',ecc);
+                var ecc1=0;
+                if(ecc >= 2500 && ecc <= 10000){ 
+                    var ecc1 = ecc;  
+                }
+                else if(ecc < 2500){
+                    var ecc1 = 2500;
+                }
+                else{
+                    var ecc1 = 10000;    
+                } 
+                
+                //Cash at Close calculation -> Helo table Cash At Close/Funds to Close
+                if(component.get('v.ScenarioType')=='FHA Traditional HECM'){			
+                                 
+                    var cashatclose = upb - cmb - origToOrm - ecc1;                    
+                    ParseddataHeloArm[i].CC = cashatclose; 
+                }else{                    
+                    var fundstoclose = ((ecc1 + origToOrm) + EhvVal) - upb;
+                 	ParseddataHeloArm[i].CC = fundstoclose;
+                }
+                
+				//end cash at close calculation
+				
+                //Fetch Service Fee from Metadata table and display on Helo table
+                var serviceFee = heloValues.HeloArm_service[t];
+                ParseddataHeloArm[i].SF = serviceFee;
+				//end service fee            
+                
+                if(component.get('v.ScenarioType')!='FHA Traditional HECM'){
+                    ParseddataHeloArm[i].MFD = (component.get('v.EHV') - upb) +pricing1+ 3000;
+                    ParseddataHeloArm[i].MFD = ParseddataHeloArm[i].CashToBorrower;
+                                     console.log('MFD 2',ParseddataHeloArm[i].CashToBorrower);
+                    component.set("v.downPyt",ParseddataHeloArm[i].MFD);
+                }else{
+                    ParseddataHeloArm[i].MFD    = 0;
+                    console.log('down payment parse helo ', component.get('v.downPyt'));
+                }
+            }
+
             try{
                 console.log('Parseddata>> ',Parseddata);
                 console.log('AdjustableParseddata>> ',AdjustableParseddata);
                 component.set("v.FHA_Hecm_FixedMargin",Parseddata);
                 component.set("v.FHA_Hecm_HeloMargin",ParseddataHelo);
+                component.set("v.FHA_Hecm_HeloMargin_Arm",ParseddataHeloArm);
                 component.set("v.FHA_Hecm_AdjustableMargin",AdjustableParseddata);
                 component.set("v.Show_FHA_Hecm_FixedMargin",true);
             }catch(err){
@@ -1094,8 +1151,7 @@
     },
     
     generate_pieChart:function(component,event,helper){
-        //var downPyt =component.get('v.downPyt');
-        //  alert('>>>> '+downPyt);
+        debugger;
         var labels = ['a','b','c'];
         var insuranceFees = component.get('v.MIP');
         var eof = component.get("v.EOF"); //Origination to ORM
@@ -1107,6 +1163,9 @@
             var financingFees = eof + heloEcc;  //financing fee for Helo for both refinance and purchase
             var downPyt = component.get('v.cashToClose'); //Down payment for Helo for Purchase
             console.log('helo dwn py',downPyt );
+        }else if(marginType == 'HeloArm'){
+            var financingFees = eof + heloEcc;  //financing fee for Helo for both refinance and purchase
+            var downPyt = component.get('v.cashToClose'); //Down payment for Helo for Purchase
         }
         else{
         	var financingFees = (Math.round(eof * 100) / 100)+2500;//Math.round((2500 + eof));
@@ -1184,6 +1243,8 @@
             if(marginType == 'Helo'){ //Equity Reserve calc for helo
             	equity = EhvVal - (eof + heloEcc) - cashAtClose;
                 console.log('helo equity', equity);
+            }else if(marginType == 'HeloArm'){
+                equity = EhvVal - (eof + heloEcc) - cashAtClose;
             }else{
             	equity  =(EhvVal -(insuranceFees + lineOfCredit + financingFees+cashAtClose+CmbVal ));       
             }

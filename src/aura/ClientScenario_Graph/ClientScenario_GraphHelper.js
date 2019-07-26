@@ -62,9 +62,13 @@
                     component.set('v.MarginIs', 'Rate');
                     component.set('v.LRateType', 'Fixed');
                 }
-                else { //Helo Fix
+                else if(result.RateType__c == 'Helo'){ //Helo Fix
                     component.set('v.MarginIs', 'Rate');
                     component.set('v.LRateType', 'Helo');
+                }
+                else{
+                    component.set('v.MarginIs', 'Rate');
+                    component.set('v.LRateType', 'HeloArm');                    
                 }
 
                 //alert(component.get('v.ScenarioType'));
@@ -128,7 +132,7 @@
             console.log('finalEOF is ', finalEOF);
 
             component.set("v.EOF", finalEOF);
-            if (lrateType == 'Helo') { //Helo, Financing Fee for Pie
+            if (lrateType == 'Helo' || lrateType == 'HeloArm') { //Helo, Financing Fee for Pie
                 component.set("v.EOF",origOrm); //Helo Origination to ORM 8/2
                 financingFees = origOrm + otherEcc;
                 console.log('helo finfee', financingFees);
@@ -258,7 +262,7 @@
             var labelchange = [];
             if (component.get('v.ScenarioType') == 'FHA Traditional HECM') { //refinance
 
-                if (lrateType == 'Helo') { //Equity Reserve for Piegraph
+                if (lrateType == 'Helo' || lrateType == 'HeloArm' ) { //Equity Reserve for Piegraph
                     equityReserves = EhvVal - (origOrm + otherEcc) - component.get('v.FirstAmount');
                 } else {
 

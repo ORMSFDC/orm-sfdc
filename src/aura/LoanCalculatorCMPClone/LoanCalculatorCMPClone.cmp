@@ -5,6 +5,7 @@
     <aura:attribute name="Show_FHA_Hecm" type="boolean" default="false"/>
     <aura:attribute name="Show_FHA_Purchase" type="boolean" default="false"/>
     <aura:attribute name="displayHelo" type="boolean" default="false"/> <!--Helo-->
+    <aura:attribute name="displayHeloArm" type="boolean" default="false"/>
     <aura:attribute name="FHA_Hecm_data" type="object" />
     <aura:attribute name="ClientDiv" type="boolean" default="false"/>
     <aura:attribute name="ScenarioType" type="String"/>
@@ -230,7 +231,9 @@
                                                           showLoan="{!v.showLoan}" 
                                                           ApplicationDate="{!v.ApplicationDate}" 
                                                           senario_id="{!v.senario_id}"
-                                                          isDisplayHelo="true"/> <!-- Helo fix -->                           
+                                                          isDisplayHelo="true"
+                                                          isDisplayHeloArm="true"/> <!-- Helo fix -->     
+
                                 </div>
                             </aura:if>
                             <!-- Show_table="{!v.Show_table}" -->
