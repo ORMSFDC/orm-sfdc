@@ -65,11 +65,14 @@
                             <h1  id="loc">Scenario Results  <br/>
                                     <div class="customFont28"> 
                                         <aura:if isTrue="{!v.isTraditional}"> 
+                                            <aura:if isTrue="{!v.LRateType == 'HeloArm'}">
+                                                HELO ARM Refinance
+                                            </aura:if>
                                             <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
-                                                HELO Refinance    
-                                                <aura:set attribute="else">   
+                                                HELO Refinance   
+                                            </aura:if> 
+                                            <aura:if isTrue="{!or(v.LRateType == 'ARM',v.LRateType == 'Fixed')}">
                                                 HECM Refinance <ui:outputText value="{!v.LRateType}"></ui:outputText>
-                                                </aura:set>
                                             </aura:if>
                                         <aura:set attribute="else">
                                             <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
