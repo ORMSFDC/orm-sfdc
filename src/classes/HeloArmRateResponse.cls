@@ -10,4 +10,5 @@ public class HeloArmRateResponse {
      @AuraEnabled public string OriginationToPartner{get;set;}
      @AuraEnabled public string CreditToBorrower{get;set;}
      @AuraEnabled public string ServicingFee{get;set;}
+     @AuraEnabled public string Margin{get;set;}
 }

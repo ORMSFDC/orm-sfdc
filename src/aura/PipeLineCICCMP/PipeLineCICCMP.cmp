@@ -211,7 +211,7 @@
                         </td>
                         <td>
                             <div class="slds-col--padded">
-                                <lightning:formattedNumber value="{!CICFeeData.OldAmount}" style="currency" />
+                                <lightning:formattedNumber value="{!CICFeeData.OldAmount}" style="currency"/>
                                 
                             </div>
                         </td>

@@ -314,6 +314,7 @@ public class Pricing {
             ResponseObj.OriginationToPartner=String.valueOf(obj.HELO_Origination_to_partner__c)+'%';
             ResponseObj.CreditToBorrower=String.valueOf(obj.HELO_Credit_to_borrower__c)+'%';
             ResponseObj.ServicingFee=String.valueOf(obj.HELO_Servicing_Fee__c);
+            ResponseObj.Margin=String.valueOf(obj.HeloArmMargin__c);
             PricingResponseList.add(ResponseObj);
         }
         return PricingResponseList;
@@ -332,6 +333,7 @@ public class Pricing {
             ResponseObj.OriginationToPartner=String.valueOf(obj.HELO_Origination_to_partner__c)+'%';
             ResponseObj.CreditToBorrower=String.valueOf(obj.HELO_Credit_to_borrower__c)+'%';
             ResponseObj.ServicingFee=String.valueOf(obj.HELO_Servicing_Fee__c);
+            ResponseObj.Margin=String.valueOf(obj.HeloArmMargin__c);
             PricingResponseList.add(ResponseObj);
         }
         return PricingResponseList;
@@ -350,6 +352,7 @@ public class Pricing {
             ResponseObj.OriginationToPartner=String.valueOf(obj.HELO_Origination_to_partner__c)+'%';
             ResponseObj.CreditToBorrower=String.valueOf(obj.HELO_Credit_to_borrower__c)+'%';
             ResponseObj.ServicingFee=String.valueOf(obj.HELO_Servicing_Fee__c);
+            ResponseObj.Margin=String.valueOf(obj.HeloArmMargin__c);
             PricingResponseList.add(ResponseObj);
         }
         return PricingResponseList;
