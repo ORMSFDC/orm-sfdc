@@ -777,7 +777,7 @@
         $A.enqueueAction(action);
         
     },
-    
+
     applyCSS: function(component, event, helper,ControlId) {
         var cmpTotalCapacity = component.find(ControlId);
         $A.util.removeClass(cmpTotalCapacity,'TextColor_green');
@@ -1064,7 +1064,7 @@
                 var pricing1 = 0;
                 var pricing2 = 0;
                 var heloValues = component.get('v.metadatavaluesHeloArm');
-                        console.log('heloValues ',JSON.stringify(heloValues));
+                        console.log('heloArmValues ',heloValues);
                 var t =  ParseddataHeloArm[i].InterestRate;
                  
                 //use upb local variable for all HELO calcs because it has a cap of 4000000 SFDC-265_new
@@ -1083,7 +1083,7 @@
                 if(!pricing){
                     pricing = 0
                 }else{
-                    pricing = ((pricing2 * upb)/100); // calculation for TC = BrokerComp% * UPB
+                    pricing = ((pricing2 * upb)/100)+ADOVal; // calculation for TC = BrokerComp% * UPB
                             console.log('fixed tc helo cal pricing ',pricing);
                 }                
                 ParseddataHeloArm[i].TC = pricing; 

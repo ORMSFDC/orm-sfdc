@@ -205,7 +205,7 @@
                                 <th scope="row" data-label="Margin" data-type="fixed" class="tbody_td" 
                                     style="background-color: #2081bf;width: 13%;">
                                     <div class="slds-truncate customFontMargin" title="Rate" style="text-align:center;color: #fff;">
-                                        Rate
+                                        LENDER MARGIN
                                     </div>
                                 </th>
                                 <th scope="col" class="tabhead">
@@ -254,7 +254,7 @@
                                     </th><!--Bala -->
                                     <th scope="row" data-MFD="{!obj.MFD}"  data-label="Margin" data-type="heloarm" class="tbody_td" style="    background-color: #2081bf;">
                                         <div data-type="heloarm" data-MFD="{!obj.MFD}" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">                                                 
-                                            <span data-type="heloarm" data-MFD="{!obj.MFD}" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="color:white;" >{#obj.InterestRate} </span>
+                                            <span data-type="heloarm" data-MFD="{!obj.MFD}" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="color:white;" >{#obj.Margin}% </span> 
                                         </div>
                                     </th>
                                     <td data-label="" class="tbody_td" data-type="heloarm" data-MFD="{!obj.MFD}">
