@@ -1083,7 +1083,7 @@
                 if(!pricing){
                     pricing = 0
                 }else{
-                    pricing = ((pricing2 * upb)/100)-100; // calculation for TC = BrokerComp% * UPB
+                    pricing = ((pricing2 * upb)/100); // calculation for TC = BrokerComp% * UPB
                             console.log('fixed tc helo cal pricing ',pricing);
                 }                
                 ParseddataHeloArm[i].TC = pricing; 
