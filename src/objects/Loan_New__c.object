@@ -6731,6 +6731,18 @@ HYPERLINK("http://documentviewerbeta/documentviewer/#/"&amp; LoanNumber__c , 'Pl
             </valueSettings>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>Face_to_Face_Counseling__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Required ONLY for MA Loans when Loan Status changes to IN Processing or in Underwriter Required</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only for MA Loans</inlineHelpText>
+        <label>Face to Face Counseling</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
@@ -7375,6 +7387,13 @@ AND (ISPICKVAL(Rate_Type__c, "Fixed") , ISPICKVAL(Selected_Loan_Payment_Plan__c,
 )</errorConditionFormula>
         <errorDisplayField>Selected_Loan_Payment_Plan__c</errorDisplayField>
         <errorMessage>This value should be Single Lump Sum only for Fixed Rate Type and any other value for ARM Rate Type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Counseling_Required</fullName>
+        <active>true</active>
+        <description>Counseling required for MA when status changes to In Processing or In Underwriting Review</description>
+        <errorConditionFormula>AND( Face_to_Face_Counseling__c = false, ISPICKVAL ( Subject_Property_State__c,"Massachusetts" ),OR( ISPICKVAL( LoanStatus__c, "In Processing" ), ISPICKVAL(LoanStatus__c, "In Underwriting Review") ) )</errorConditionFormula>
+        <errorMessage>Face to Face counseling is required for MA loans. Verify and then select the “Face to Face Counseling” checkbox in the Folder Rec’d tab.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>
