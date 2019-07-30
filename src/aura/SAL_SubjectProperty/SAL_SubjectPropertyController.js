@@ -157,7 +157,7 @@
                 { ar_id: "PropertyHeldId", mes: "Please select a value for this field", reg: validateRequiredField },
                 { ar_id: "RETaxes", mes: "This is a required field", reg: validateRequiredField },
                 { ar_id: "HazardInsuranceId", mes: "This is a required field", reg: validateRequiredField },
-                { ar_id: "SqFootage", mes: "This is a required field" , reg: validateRequiredField},
+                { ar_id: "SqFootage", mes: "This is a required field" , reg: validateRequiredField}, 
                 //{ ar_id: "CondominiumName", mes: "This is a required field" , reg: validateRequiredField},
                 //Code Modified by Dev4 for ORMSFDC-1401
                 { ar_id: "auraPropertyType", mes: "Please select a value for this field", reg: validateRequiredField },
@@ -183,7 +183,8 @@
                 { ar_id: "PropertyHeldId", mes: "Please select a value for this field", reg: validateRequiredField },
                 { ar_id: "RETaxes", mes: "This is a required field", reg: validateRequiredField },
                 { ar_id: "HazardInsuranceId", mes: "This is a required field", reg: validateRequiredField },
-                { ar_id: "SqFootage", mes: "This is a required field" , reg: validateRequiredField},
+                { ar_id: "SqFootage", mes: "This is a required field" , reg: validateRequiredField },
+                
                 //{ ar_id: "CondominiumName", mes: "This is a required field" , reg: validateRequiredField},
                 //Code Modified by Dev4 for ORMSFDC-1401
                 { ar_id: "auraPropertyType", mes: "Please select a value for this field", reg: validateRequiredField },
@@ -197,13 +198,28 @@
                 // { ar_id: "InsTaxesId", mes: "This is a required field", reg: validateRequiredField },
                 //{ ar_id: "NetRentalIncmId", mes: "This is a required field", reg: validateRequiredField },
             ];
-        }
+        }        
         
+        
+        valArrayReq.push ({ar_id: "SolarPanelExistId", mes: "This is a required field" , reg: validateRequiredField}); 
+
         var valArray = [
             { ar_id: "SP_Zip", mes: "Please enter a valid zip number", reg: "(^\\d{5}$)|(^\\d{5}-\\d{4}$)" },
             { ar_id: "NoUnitId", mes: "Unit should be a valid number", reg: "^(?!0*[.,]0*$|[.,]0*$|0*$)\\d+[,.]?\\d{0,2}$" },
             { ar_id: "AccNumberId", mes: "Account Number should be a valid number", reg: "^[1-9]([0-9]{1,45}$)"},
+           
         ]; 
+        /*if  ( (component.get("v.subjectProperty.Solar_Panels_Paid_Off__c") == "No") && 
+                   (component.get("v.subjectProperty.Product_Type__c") == "HECM"       ) ) {     
+                   
+            valArray.push ({ar_id: "SolarPanelPaidId" , mes: "ORM does not allow for leased solar panels on the HECM program.",reg: false});
+            
+        }    */    
+        //else 
+        if ( component.get("v.subjectProperty.Solar_Panels_Exist__c") == "Yes" ){
+             valArrayReq.push ({ar_id: "SolarPanelPaidId" , mes: "This is a required field" , reg: validateRequiredField});
+        }
+            
             ar_ReqId = valArrayReq.map(item => item.ar_id);
             ar_ReqMsg = valArrayReq.map(item => item.mes);
             ar_ReqReg = valArrayReq.map(item => item.reg); 
@@ -215,6 +231,7 @@
             var IsGenericValidate= helper.validateGeneric(component, event, helper);        
             var chkZip=helper.ValidZip(component, event, helper,'SP_Zip');
             var checkFHAapproved=helper.checkCondominiumFHAApproved(component, event, helper);
+            var checkSolarPanel=helper.checkSolarPanelHelp(component, event, helper);
             //var check=helper.checkCondominiumName(component, event, helper);
             
             var val=component.find("SP_Zip").get("v.value");
@@ -249,6 +266,7 @@
             var IsLoanCreatedByProcessor=  component.get("v.IsLoanCreatedByLoanOfficer");
             var ValidateLoanProcessor=false;
             var inputCmp = component.find('loanOfficerID');
+            
             if(IsLoanCreatedByProcessor)
             {
             var getLoanProcessor=component.find("loanOfficerID").get("v.value");
@@ -277,7 +295,8 @@
  inputCmp.set("v.errors", null);
 }
 }
-if (Isrequired || IsRegex || chkZip || IsGenericValidate || IsZIPValidated || IsZIPRequired || IsZIPRequired1 || IsZIPRequired2 || IsZIPRequired3 || IsZIPRequired4 ||checkFHAapproved || ValidateLoanProcessor) { //SFDC-365        
+
+if (Isrequired || IsRegex || chkZip || IsGenericValidate || IsZIPValidated || IsZIPRequired || IsZIPRequired1 || IsZIPRequired2 || IsZIPRequired3 || IsZIPRequired4 ||checkFHAapproved || ValidateLoanProcessor || checkSolarPanel ) { //SFDC-365        
     
     component.set("v.showError", true);
     //What you need to do if there are errors
@@ -321,6 +340,7 @@ else
     });
     $A.enqueueAction(action1); 
 }
+
 },
     
     //Validation for Subject Property Before Saving     
@@ -401,7 +421,7 @@ else
                 { ar_id: "YearBuiltId", mes: "This is a required field", reg: validateRequiredField },
                 { ar_id: "PropertyHeldId", mes: "Please select a value for this field", reg: validateRequiredField },
                 { ar_id: "RETaxes", mes: "This is a required field", reg: validateRequiredField },
-                { ar_id: "HazardInsuranceId", mes: "This is a required field", reg: validateRequiredField },
+                { ar_id: "HazardInsuranceId", mes: "This is a required field", reg: validateRequiredField },  
                 { ar_id: "SqFootage", mes: "This is a required field" , reg: validateRequiredField},
                 //{ ar_id: "CondominiumName", mes: "This is a required field" , reg: validateRequiredField},
                 //Code Modified by Dev4 for ORMSFDC-1401
@@ -434,6 +454,7 @@ else
             var IsGenericValidate= helper.validateGeneric(component, event, helper);        
             var chkZip=helper.ValidZip(component, event, helper,'SP_Zip');  
             var checkFHAapproved=helper.checkCondominiumFHAApproved(component, event, helper);
+            var checkSolarPanel=helper.checkSolarPanelHelp(component, event, helper);
             // var checkCondominiumName=helper.checkCondominiumName(component, event, helper);
             
             var val=component.find("SP_Zip").get("v.value");
@@ -489,7 +510,7 @@ else
     inputCmp.set("v.errors", null);
 }
 }
-if (Isrequired || IsRegex || chkZip || IsGenericValidate || IsZIPValidated || checkFHAapproved ||ValidateLoanProcessor) {
+if (Isrequired || IsRegex || chkZip || IsGenericValidate || IsZIPValidated || checkFHAapproved ||ValidateLoanProcessor || checkSolarPanel) {
     component.set("v.showError", true);
     //What you need to do if there are errors
 } 
@@ -600,4 +621,27 @@ else {
         
         
     },
+    
+    onSolarPanelExistChange: function(component, event, helper) {
+        
+        var selectSlPnl = component.find ("SolarPanelExistId").get("v.value");
+        
+        component.set("v.subjectProperty.Solar_Panels_Exist__c", selectSlPnl);
+        
+        if( selectSlPnl != 'Yes' ){            
+
+           component.set("v.subjectProperty.Solar_Panels_Paid_Off__c", undefined);
+        } 
+    },
+    
+        
+    onSolarPanelPaidChange: function(component, event, helper) {
+        
+        var selectSlPnlPd = component.find ("SolarPanelPaidId").get("v.value");
+        
+        component.set("v.subjectProperty.Solar_Panels_Paid_Off__c", selectSlPnlPd);        
+        
+    }  
+
+        
 })

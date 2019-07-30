@@ -6743,6 +6743,68 @@ HYPERLINK("http://documentviewerbeta/documentviewer/#/"&amp; LoanNumber__c , 'Pl
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <fields>
+        <fullName>Solar_Panels_Exist__c</fullName>
+        <description>This custom field holds the response to whether or not the home has solar panels</description>
+        <externalId>false</externalId>
+        <label>Are there Solar Panels on the Property?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Solar_Panels_Paid_Off__c</fullName>
+        <description>This custom field hold states if the solar panels on the home are owned and completely paid off</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ORM does not allow for leased solar panels on the HECM program.  If you are originating a HELO loan, please reach out to your AE before continuing</inlineHelpText>
+        <label>Are they owned and completely paid off?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Solar_Panels_Exist__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
@@ -7394,6 +7456,33 @@ AND (ISPICKVAL(Rate_Type__c, "Fixed") , ISPICKVAL(Selected_Loan_Payment_Plan__c,
         <description>Counseling required for MA when status changes to In Processing or In Underwriting Review</description>
         <errorConditionFormula>AND( Face_to_Face_Counseling__c = false, ISPICKVAL ( Subject_Property_State__c,"Massachusetts" ),OR( ISPICKVAL( LoanStatus__c, "In Processing" ), ISPICKVAL(LoanStatus__c, "In Underwriting Review") ) )</errorConditionFormula>
         <errorMessage>Face to Face counseling is required for MA loans. Verify and then select the “Face to Face Counseling” checkbox in the Folder Rec’d tab.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>HECM_Solar_Panel_Rule</fullName>
+        <active>true</active>
+        <description>This validation rule alerts user HECM product isn't allowed unless solar panels are paid off.</description>
+        <errorConditionFormula>ISPICKVAL( Solar_Panels_Paid_Off__c , "No" ) &amp;&amp;
+ISPICKVAL( Product_Type__c, "HECM" )</errorConditionFormula>
+        <errorMessage>ORM does not allow for leased solar panels on the HECM program</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Solar_Panel_Exists_Field</fullName>
+        <active>true</active>
+        <description>This Validation Rule ensures Are there Solar Panels on the Property? is answered</description>
+        <errorConditionFormula>( ISPICKVAL(LoanStatus__c, "Application Requested") ||      
+ ( ISPICKVAL(LoanStatus__c, "Waiting for Full Package")  &amp;&amp;  
+   ISBLANK(TEXT(Solar_Panels_Exist__c ) )))</errorConditionFormula>
+        <errorDisplayField>Solar_Panels_Exist__c</errorDisplayField>
+        <errorMessage>This question must be answered.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Solar_Panel_Field</fullName>
+        <active>true</active>
+        <description>This validation rule checks to make sure Solar_Panels_Paid_Off__c is not blank if  Solar_Panels_Exist__c = yes</description>
+        <errorConditionFormula>AND ( ISPICKVAL(Solar_Panels_Exist__c, "Yes"),
+      ISBLANK(TEXT(Solar_Panels_Paid_Off__c)) )</errorConditionFormula>
+        <errorDisplayField>Solar_Panels_Paid_Off__c</errorDisplayField>
+        <errorMessage>Answer this question before saving.</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

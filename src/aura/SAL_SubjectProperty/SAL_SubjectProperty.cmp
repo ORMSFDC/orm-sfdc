@@ -51,6 +51,7 @@
      <aura:attribute name="IsLoanCreatedByLoanOfficer" type="boolean"/>
       <aura:attribute name="LOID" type="string"   />
     <aura:handler name="change" value="{!v.subIncomplete}" action="{!c.FormatValidations}"/>
+    <aura:attribute name="HELOSolar" type="boolean"/>
     <div >
         <div class="slds-form slds-form_compound">
             <fieldset class="slds-form-element">
@@ -227,6 +228,34 @@
                                             format="" class="slds-input" required="true"  />
                             <div id="YearBuiltError" style="font-size:0.75rem;color:rgb(194, 57, 52)"></div>
                         </div>
+
+
+                        <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
+                            <ui:inputSelect label="Are there Solar Panels on the Property?" aura:id="SolarPanelExistId" value="{!v.subjectProperty.Solar_Panels_Exist__c}" required="true" class="slds-input"  change="{!c.onSolarPanelExistChange}">                           
+                                <ui:inputSelectOption value="true" text="" label="---Select option---" />
+                                <ui:inputSelectOption text="Yes" label="Yes" />
+                                <ui:inputSelectOption text="No" label="No" />
+                            </ui:inputSelect>
+                        </div>
+                        
+                        <aura:renderif isTrue="{!(v.subjectProperty.Solar_Panels_Exist__c == 'Yes')}">  
+                        	<div style="margin-bottom:3%; " class="slds-size_1-of-2" >                                    
+                            	<ui:inputSelect label="Are the Solar Panels Owned and Completely Paid Off?" aura:id="SolarPanelPaidId" value="{!v.subjectProperty.Solar_Panels_Paid_Off__c}" required="true" class="slds-input"  change="{!c.onSolarPanelPaidChange}">                           
+                                	<ui:inputSelectOption value="true" text="" label="---Select option---" />
+                                	<ui:inputSelectOption text="Yes" label="Yes" />
+                                    <ui:inputSelectOption text="No" label="No" />                                    
+                                </ui:inputSelect>     
+                                <label id="lbl_SolarPanelPaidId" class="lblRemarkStyle"></label>                           
+                            </div>
+                             
+                        </aura:renderif>
+                       
+                        <aura:renderif isTrue="{!and(v.subjectProperty.Product_Type__c == 'HELO', 
+                                               v.subjectProperty.Solar_Panels_Paid_Off__c == 'No') }">
+                            <h5 style="color:red;">Please reach out to your AE before continuing. </h5>        
+                                                     
+                        </aura:renderif>                                        
+
                         <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
                             <ui:inputText label="Square Footage " required="true"  aura:id="SqFootage" value="{!v.subjectProperty.Square_Footage__c}" class="slds-input" keypress="{!c.validateSquareFootage}" keyup="{!c.validateSquareFootage}" keydown="{!c.validateSquareFootage}"  updateOn="keypress, keyup, keydown"/>
                         </div>
@@ -236,11 +265,9 @@
                                 <ui:inputSelectOption value="true" text="" label="---Select option---"/> 
                                 <ui:inputSelectOption text="Fee Simple" label="Fee Simple"/> 
                                 <ui:inputSelectOption text="Leasehold" label="Leasehold"/> 
-                                <ui:inputSelectOption text="Life Estate" label="Life Estate"/>
-                                <ui:inputSelectOption text="Living Trust" label="Living Trust"/> 
-                                
+                                <ui:inputSelectOption text="Life Estate" label="Life Estate"/> 
+                                <ui:inputSelectOption text="Living Trust" label="Living Trust"/>
                             </ui:inputSelect>
-                            
                         </div>
                         
                         <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
@@ -248,6 +275,7 @@
                                           class="slds-input" />
                         </div>
                         
+
                         <div style="margin-bottom:3%; " class="slds-size_1-of-2" >
                             <ui:inputSelect label="Check If Title is also Held As" aura:id="checkTitleAlsoId" value="{!v.subjectProperty.Check_If_Title_is_also_Held_As__c}" >
                                 <ui:inputSelectOption text="" label="---Select Option---" value="true"/>
