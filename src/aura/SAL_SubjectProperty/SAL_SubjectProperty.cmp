@@ -116,6 +116,11 @@
                                 <h6 style="color:red;">You are not licensed to apply for a loan in this state.
                                     Please contact your Account Executive for more information.</h6>
                             </aura:if>
+                            
+                            <aura:if isTrue="{!v.subjectProperty.Subject_Property_State__c=='Massachusetts'}">
+                            	<h6 style="color:red;">MA requires Face to Face Counseling with a Counselor located in the state of MA</h6>
+                            </aura:if>
+                            
                             <!--<ui:inputSelect label="Subject Property State *" aura:id="State" value="{!v.subjectProperty.Subject_Property_State__c}">
                                 <aura:iteration items="{!v.UsState}" var="pOptions">
                                     <ui:inputSelectOption value="true" text="{!pOptions.text}" label="{!pOptions.text}"/>
