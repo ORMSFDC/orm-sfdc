@@ -1240,6 +1240,9 @@
                                 <div class="slds-form-element slds-size_1-of-2">
                                     <ui:inputText disabled="true" label="State"  maxlength="250" value="{!v.selectedRecord.State}"  aura:id="SelectState" 
                                                   class="slds-input" />
+				    <aura:if isTrue="{!v.selectedRecord.State=='Massachusetts'}">
+                                      	<h6 style="color:red;">MA requires Face to Face Counseling with a Counselor located in the state of MA</h6>
+                                    </aura:if>
                                     
                                 </div>
                                 <!--Code Ended by Dev4 for ORMSFDC-1447-->
