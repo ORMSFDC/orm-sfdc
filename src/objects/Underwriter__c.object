@@ -908,197 +908,6 @@
         <label>All</label>
     </listViews>
     <listViews>
-        <fullName>Aged_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Loan is Aged over 30 Days</value>
-        </filters>
-        <label>Aged Loans</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Final_Goals_Calls</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Underwriter Clear to Close</value>
-        </filters>
-        <label>Final Goals Calls</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Initial_Post_Suspense_Call</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Loan - Conditionally Approved</value>
-        </filters>
-        <label>Initial/Post Suspense Call</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Master_Aged_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Loan is Aged over 30 Days</value>
-        </filters>
-        <label>Master Aged Loans</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Master_Appointments</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>PCS Schedule Follow Up</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Completed</value>
-        </filters>
-        <label>Master Appointments</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>Master_Conditions_Reviewed_by_UW</fullName>
         <columns>NAME</columns>
         <columns>Loan_Number__c</columns>
@@ -1128,86 +937,6 @@
             <value>Underwriter__c.PCS</value>
         </filters>
         <label>Master Conditions Reviewed by UW</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Master_Final_Goals_Calls</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Underwriter Clear to Close</value>
-        </filters>
-        <label>Master Final Goals Calls</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>Master_Initial_Post_Suspense_Call</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>Latest_Status_Change__c</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>Loan - Conditionally Approved</value>
-        </filters>
-        <label>Master Initial/Post Suspense Call</label>
         <sharedTo>
             <role>Client_Care_Specialist</role>
             <role>Client_Care_Specialist_Lead</role>
@@ -1249,39 +978,6 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>My_Conditions_Reviewed_by_Underwriting</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Condition Reviewed,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS</value>
-        </filters>
-        <label>Conditions Reviewed by Underwriting</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>My_PCS_Slept_Items</fullName>
         <columns>NAME</columns>
         <columns>Loan_Number__c</columns>
@@ -1310,39 +1006,6 @@
             <value>Underwriter__c.PCS,Underwriter__c.PCS_Workflow</value>
         </filters>
         <label>PCS Sleeping Tasks</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>My_Appointments</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <filterScope>Mine</filterScope>
-        <filters>
-            <field>Subject__c</field>
-            <operation>equals</operation>
-            <value>PCS Schedule Follow Up</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Completed</value>
-        </filters>
-        <label>My Appointments</label>
         <sharedTo>
             <role>Client_Care_Specialist</role>
             <role>Client_Care_Specialist_Lead</role>
@@ -1381,46 +1044,6 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Master_Priority_Loans</fullName>
-        <columns>NAME</columns>
-        <columns>Loan_Number__c</columns>
-        <columns>Client_Name__c</columns>
-        <columns>LoanStatus__c</columns>
-        <columns>Subject__c</columns>
-        <columns>Status__c</columns>
-        <columns>Days_in_Status__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>Property_State__c</columns>
-        <columns>Anticipated_Closing_Date__c</columns>
-        <columns>PCS_at_Loan_Level__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Status__c</field>
-            <operation>equals</operation>
-            <value>Open,Condition Reviewed,Ordered,Attempted</value>
-        </filters>
-        <filters>
-            <field>Sleep_TaskCheckbox__c</field>
-            <operation>equals</operation>
-            <value>0</value>
-        </filters>
-        <filters>
-            <field>RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>Underwriter__c.PCS_Workflow</value>
-        </filters>
-        <filters>
-            <field>Subject__c</field>
-            <operation>notEqual</operation>
-            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close,PCS Schedule Follow Up</value>
-        </filters>
-        <label>Master Priority Loans</label>
-        <sharedTo>
-            <role>Client_Care_Specialist</role>
-            <role>Client_Care_Specialist_Lead</role>
-        </sharedTo>
-    </listViews>
-    <listViews>
         <fullName>My_Loans_In_Suspense</fullName>
         <columns>NAME</columns>
         <columns>Subject__c</columns>
@@ -1453,7 +1076,184 @@
         </sharedTo>
     </listViews>
     <listViews>
-        <fullName>Priority_Loans</fullName>
+        <fullName>Aged_Loans</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>Property_State__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Loan is Aged over 30 Days</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Denied,Loan Funded,Loan rescinded,Withdrawn</value>
+        </filters>
+        <label>Aged Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Change_in_Circumstance_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>CIC Request</value>
+        </filters>
+        <label>Change in Circumstance Requests</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Docs_Uploaded</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Documents Uploaded</value>
+        </filters>
+        <label>Docs Uploaded</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Final_Goals_Calls</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Final Goals Calls</value>
+        </filters>
+        <label>Final Goals Calls</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Initial_Post_Suspense_Call</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Initial/Post Suspense Call</value>
+        </filters>
+        <label>Initial/Post Suspense Call</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Aged_Loans</fullName>
         <columns>NAME</columns>
         <columns>Loan_Number__c</columns>
         <columns>Client_Name__c</columns>
@@ -1462,6 +1262,349 @@
         <columns>Status__c</columns>
         <columns>Days_in_Status__c</columns>
         <columns>CREATED_DATE</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>Loan is Aged over 30 Days</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Denied,Loan Funded,Loan rescinded,Withdrawn</value>
+        </filters>
+        <label>Master Aged Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Appointments</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>PCS Schedule Follow Up</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>My Appointments</value>
+        </filters>
+        <label>Master Appointments</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Change_in_Circumstance_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>CIC Request</value>
+        </filters>
+        <label>Master Change in Circumstance Requests</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Docs_Uploaded</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Documents Uploaded</value>
+        </filters>
+        <label>Master Docs Uploaded</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Final_Goals_Calls</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Final Goals Calls</value>
+        </filters>
+        <label>Master Final Goals Calls</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Initial_Post_Suspense_Call</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>Latest_Status_Change__c</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Initial/Post Suspense Call</value>
+        </filters>
+        <label>Master Initial/Post Suspense Call</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Notes_Added</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Notes</value>
+        </filters>
+        <label>Master Notes Added</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Master_Priority_Loans</fullName>
+        <booleanFilter>(1 AND 2 AND 3 AND 4 AND 7) AND (5 OR 6)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Property_State__c</columns>
+        <columns>Anticipated_Closing_Date__c</columns>
+        <columns>PCS_at_Loan_Level__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Denied,Loan Funded,Loan rescinded,Withdrawn</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>notEqual</operation>
+            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close,PCS Schedule Follow Up</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Priority Loans</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>notContain</operation>
+            <value>My Appointments,Final Goals Calls,Initial/Post Suspense Call,Documents Uploaded,Notes,Conditions Reviewed By Underwriting,Aged Loans,CIC Request</value>
+        </filters>
+        <label>Master Priority Loans</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Appointments</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>Open_Date__c</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Subject__c</field>
+            <operation>equals</operation>
+            <value>PCS Schedule Follow Up</value>
+        </filters>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>My Appointments</value>
+        </filters>
+        <label>My Appointments</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Conditions_Reviewed_by_Underwriting</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
         <columns>Property_State__c</columns>
         <filterScope>Mine</filterScope>
         <filters>
@@ -1475,14 +1618,96 @@
             <value>0</value>
         </filters>
         <filters>
-            <field>Subject__c</field>
-            <operation>notEqual</operation>
-            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close,PCS Schedule Follow Up</value>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Underwriter__c.PCS</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Conditions Reviewed By Underwriting</value>
+        </filters>
+        <label>Conditions Reviewed by Underwriting</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Notes_Added</fullName>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Notes</value>
+        </filters>
+        <label>Notes Added</label>
+        <sharedTo>
+            <role>Client_Care_Specialist</role>
+            <role>Client_Care_Specialist_Lead</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Priority_Loans</fullName>
+        <booleanFilter>(1 AND 2 AND 3 AND 4 AND 7) AND (5 OR 6)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Loan_Number__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>LoanStatus__c</columns>
+        <columns>Subject__c</columns>
+        <columns>Status__c</columns>
+        <columns>Days_in_Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Property_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Sleep_TaskCheckbox__c</field>
+            <operation>equals</operation>
+            <value>0</value>
         </filters>
         <filters>
             <field>RECORDTYPE</field>
             <operation>equals</operation>
             <value>Underwriter__c.PCS_Workflow</value>
+        </filters>
+        <filters>
+            <field>LoanStatus__c</field>
+            <operation>notEqual</operation>
+            <value>Denied,Loan Funded,Loan rescinded,Withdrawn</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Ordered,Attempted</value>
+        </filters>
+        <filters>
+            <field>Subject__c</field>
+            <operation>notEqual</operation>
+            <value>Conditions Received,Appraisal Received,Title Received,Vendor Items Received,Loan Suspended,New Underwrite,Cooling off letter received,Loan is Aged over 30 Days,Loan - Conditionally Approved,Underwriter Clear to Close,PCS Schedule Follow Up</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>equals</operation>
+            <value>Priority Loans</value>
+        </filters>
+        <filters>
+            <field>PCS_Task_Bucket__c</field>
+            <operation>notEqual</operation>
+            <value>My Appointments,Final Goals Calls,Initial/Post Suspense Call,Documents Uploaded,Notes,Conditions Reviewed By Underwriting,Aged Loans,CIC Request</value>
         </filters>
         <label>Priority Loans</label>
         <sharedTo>
