@@ -27,321 +27,7 @@
         // enqueue the Action  
         $A.enqueueAction(action);        
     },
-    
-    //Pie Graph Populate
-    hlperscriptsLoaded: function(component, event, helper,almis,lien) {  
-        //CashFlow Method called 
-        component.set("v.IsSpinner",true);
-        var selectedMargin = component.get("v.Margin");
-        	console.log('selectedmargin',selectedMargin);
-        var lienAmount = lien;//prsn
-        var eof = component.get("v.EOF");
-        var financingFees = Math.round((2500 + eof));        
-        var insuranceFees = 0;
-        var equityReserves = 0;
-        var cashAtClose = Math.round(selectedMargin.maxCashFirstYear);//prsn
-        var lineOfCredit = Math.round(selectedMargin.initialLOC);//prsn
-        
-        var i, j = "",
-            x = "",
-            y = "",
-            z = "";
-        var myObj = '';
-        var myObjCF = '';
-        var finalHome = '';
-        var ynewStr = '';
-        var DobVal = component.get("v.DOB");
-        // alert(DobVal);
-        var EhvVal = component.get("v.EHV");
-        var CmbVal = component.get("v.CMB");
-        var CFYVal = component.get("v.CFY");
-        //alert('helper CFYVal---'+CFYval);
-        var CmirVal = component.get("v.CMIR");
-        var MmpVal = component.get("v.MMP");
-        var currdate = new Date();
-        var mydate = new Date(DobVal);
-        var timeDiff = Math.abs(currdate.getTime() - mydate.getTime());
-        var diffYr = Math.ceil(timeDiff / (1000 * 3600 * 24 * 365));
-        component.set("v.Ageminus1", diffYr-1);
-        component.set("v.AgeAfter10", diffYr + 10);
-        //alert('CFY value--->'+CFYVal);
-        var ADOVal = component.get('v.ADO'); // 300000
-        console.log('ADOVal helper  --->', ADOVal); 
-        var action = component.get("c.getScenarioResponse");
-        console.log('almis ',almis);
-        action.setParams({
-            "DOB": DobVal,
-            "hv": EhvVal,
-            "mb": CmbVal,
-            "CFY": CFYVal,
-            "mp": MmpVal,
-            "ir": CmirVal,
-            "alm":almis
-        });
-        //   alert('calling action');
-        action.setCallback(this, function(a) {
-            //    alert('in dynamic');rerender_section
-            component.set("v.rerender_section",true);
-            //   component.set("v.rerender_chart",true);
-            var jdata = a.getReturnValue();
-            //    alert('yes');
-            console.log('jdata ',jdata);
-            component.set("v.PieChartResponse",jdata);
-            
-            myObj = JSON.parse(jdata);       
-            console.log('myObj ',myObj);
-            component.set("{!v.apr_is}",myObj.apr);
-            component.set("{!v.libor}",myObj.annualLiborChangeDate);
-            var PriorityGraph = myObj.priority;
-            if (PriorityGraph == 'loc,cashflow') {                
-                component.set("v.Priority", "LOC And CashFlow");
-            }
-            else if (PriorityGraph == 'cashflow') {
-                component.set("v.Priority", "CashFlow");               
-            } else {              
-                component.set("v.Priority", "LOC");}
-            //Pie Graph
-            component.set("v.Index", myObj.annualLibor);
-            component.set("v.Margin", myObj.lendersMargin);
-            component.set("v.MIP", myObj.upfrontMip);
-            insuranceFees = Math.round((myObj.upfrontMip));//prsn
-            component.set("v.IGR", myObj.growthRateInitial);
-            component.set("v.AGR", myObj.growthRateAverage10yr);
-            component.set("v.RESTError", '');
-            component.set("v.cashToClose", myObj.cashToClose);           
-            var eh = parseInt(component.get("v.EHV"));
-            equityReserves = Math.round(eh*100) / 100;//prsn
-            var result = (2 / 100) * eh;
-            component.set("v.EstimatedClosingCosts", result); 
-            var EOFis = EhvVal *0.02;
-            var finalEOF;
-            //  alert('clientinfocmpController CFYVal-->'+CFYVal);
-            
-            debugger;
-            if(EOFis<2500){
-                
-                finalEOF  = 2500;
-            }else if(EOFis>6000) {
-                
-                finalEOF  = 6000;
-            }else{
-                
-                finalEOF = EOFis;
-            }
-            
-            /*   alert('CmbVal-->'+CmbVal);
-                  alert('EhvVal--->'+finalEOF);
-                alert('selectedMargin.initialPrincipalLimi--->t'+selectedMargin.initialPrincipalLimit);
-                alert('selectedMargin.upfrontMip--->'+selectedMargin.upfrontMip);  */
-            var initialP = (selectedMargin.initialPrincipalLimit.replace(',',''));
-            // alert('initialP--->t'+initialP);
-            var frontmip = selectedMargin.upfrontMip;
-            // alert('frontmip--->t'+frontmip);
-            var aalp =(initialP-frontmip-CmbVal-2500-finalEOF);
-            // alert('aalp-->'+aalp);
-            if(aalp<0){
-                aalp = 0;
-            }
-            for (i in myObj.terms) {
-                if (i == 0) {
-                    var FirstAmount = parseInt(myObj.terms[i].loc);
-                    var eh = parseInt(component.get("v.CMB"));   
-                    var TotalAmountAvailable = FirstAmount + eh;
-                }
-                lienAmount = Math.round(lien);//prsn
-                component.set("v.FirstAmount",aalp);
-                if (i == 10) {
-                    component.set("v.TenthAmount", myObj.terms[i].loc)
-                }
-                x += myObj.terms[i].reverseUPB + ',';
-                j += myObj.terms[i].homeValue + ',';
-                z += myObj.terms[i].loc + ',';
-                y += myObj.terms[i].age + ',';
-            }
-            var xnewStr = x.substring(0, x.length - 1);
-            var jnewStr = j.substring(0, j.length - 1);
-            var znewStr = z.substring(0, z.length - 1);
-            ynewStr = y.substring(0, y.length - 1);
-            var strArr = ynewStr.split(',');
-            var intArr = [];
-            //  console.log('CmbVal-->',CmbVal);
-            //  alert('CmbVal-->'+CmbVal);
-            
-            for (i = 0; i < strArr.length; i++){
-                intArr.push(parseInt(strArr[i]));
-                //    console.log('strArr[i] ',strArr[i]);
-            }
-            finalHome = '{"Home Value($) ":[' + jnewStr + '],"Line of Credit($) ":[' + znewStr + '],"Mortgage Balance($) ":[' +  xnewStr + ']}';
-            var colors = [
-                "#000080",
-                "#00CED1",
-                "#B22222"
-            ];
-            var labels = intArr;
-            var datasets = [];
-            var terms = {};
-            var terms1 = JSON.parse(finalHome);
-            var dt = datasets;
-            var i = 0;
-            for (var key in terms1) {
-                //  console.log('key ',terms1[key]);
-                datasets.push({
-                    label: key,
-                    data: terms1[key],
-                    fill: false,
-                    borderWidth: 1.5,
-                    backgroundColor: colors[i],
-                    borderColor: colors[i],
-                    pointBackgroundColor: "#FFFFFF",
-                    pointBorderWidth: 4,
-                    pointHoverRadius: 2,
-                    pointRadius: 1,
-                    pointHitRadius: 10,
-                });
-                i++;
-            }
-            //create graph logic
-            $A.createComponent(
-                "c:DynamicLineChartCMP",
-                {
-                    "labels": [
-                        'Current Mortgage Balance',
-                        'Insurance Fees',
-                        'Financing Fees',
-                        'Equity Reserves',
-                        'Cash At Close',
-                        'Line of Credit'
-                    ],
-                    //  "labels": labels,
-                    //"datasets":datasets
-                    // "datasets": [CmbVal,insuranceFees, (EhvVal -(insuranceFees + lineOfCredit + financingFees+cashAtClose+CmbVal )), cashAtClose, financingFees, lineOfCredit]
-                    "datasets": [CmbVal,insuranceFees,financingFees, (EhvVal -(insuranceFees + lineOfCredit + financingFees+cashAtClose+CmbVal )), cashAtClose,  lineOfCredit]
-                },
-                function(newChartComp, status, errorMessage){
-                    if(status == "SUCCESS"){
-                        var body = component.get("v.body");
-                        body.pop();
-                        body.push(newChartComp);
-                        component.set("v.body", body);
-                        console.log('test  body ',body);
-                        component.set("v.IsSpinner",false);
-                        document.getElementById("GRA").style.display = "BLOCK";
-                        document.getElementById("clientdiv").style.display = "BLOCK";
-                        document.getElementById("CashFlow").style.display = "BLOCK";      
-                        document.getElementById("LOCandCashFlow").style.display = "BLOCK";         
-                    } 
-                }
-            );
-            //end of create graph logic
-            //end Pie Graph
-            //Error MEssage
-            if (Object.values(myObj.errorMessages) != "") {
-                this.cshflow(component,event,helper);
-            }
-            //End Error MEssage
-            this.cshflow(component,event,helper);
-        });
-        
-        $A.enqueueAction(action);        
-    },
-    
-    //Cash Flow Graph
-    cshflow: function(component,event,helper)
-    {       
-        var CmbVal = component.get("v.CMB");
-        var CmirVal = component.get("v.CMIR");
-        var MmpVal = component.get("v.MMP");
-        var action1 = component.get("c.getScenarioCashFlowResponse");
-        action1.setParams({
-            "mb": CmbVal,
-            "mp": MmpVal,
-            "ir": CmirVal
-        });
-        action1.setCallback(this, function(res) {
-            //   alert('cash flow call back ');
-            var jdata = res.getReturnValue();
-            if(jdata){  
-                component.set("v.BarChartResponse",jdata);
-                var myObjCF = JSON.parse(jdata);
-                console.log('myObjCF cashflow', myObjCF);
-                if (Object.values(myObjCF.errorMessages) != "") {
-                    /*  document.getElementById("LOCandCashFlow").style.display = "None";
-                document.getElementById("GRA").style.display = "None";*/
-                    document.getElementById("CashFlowTable").style.display = "None";
-                    /*   document.getElementById("clientdiv").style.display = "None";*/
-                }            
-                var i1, k, j1 = "",
-                    v1 = "",
-                    x1 = "",
-                    y1 = "",
-                    z1 = "";
-                var monthlyPyment = myObjCF.monthlyPayment;
-                var months = ['1 Year']
-                var bar = [monthlyPyment * 12];
-                debugger;
-                component.set("v.CF12MA", monthlyPyment * 12);            
-                var MonthTerm = myObjCF.terms;
-                if (MonthTerm < 60) {
-                    var m = (MonthTerm / 12).toFixed(1);
-                    component.set("v.secMN", m);
-                    months.push(m + ' Years');
-                    for (k in myObjCF.termCashFlowList) {
-                        if (MonthTerm == myObjCF.termCashFlowList[k].month) {
-                            bar.push(myObjCF.termCashFlowList[k].accumulatedSavings);
-                            component.set("v.CF60MA", myObjCF.termCashFlowList[k].accumulatedSavings);
-                        }
-                    }
-                } else {
-                    for (k in myObjCF.termCashFlowList) {
-                        if (60 == myObjCF.termCashFlowList[k].month) {
-                            var m = (60 / 12).toFixed(1);
-                            component.set("v.secMN", m);
-                            months.push(m + ' Years');
-                            bar.push(myObjCF.termCashFlowList[k].accumulatedSavings);
-                            component.set("v.CF60MA", myObjCF.termCashFlowList[k].accumulatedSavings);
-                        }
-                        if (MonthTerm == myObjCF.termCashFlowList[k].month) {
-                            bar.push(myObjCF.termCashFlowList[k].accumulatedSavings);
-                            debugger;
-                            component.set("v.CFRMA", myObjCF.termCashFlowList[k].accumulatedSavings);
-                            component.set("v.CFRMACF", myObjCF.termCashFlowList[k].accumulatedSavings);
-                            
-                            
-                            var m = (MonthTerm / 12).toFixed(1);
-                            months.push(m + ' Years');
-                            component.set("v.CFRM", m);
-                            component.set("v.CFRMCF", m + ' Years Cash Flow Savings');
-                        }
-                    }
-                }
-                var MMPamount = component.get("v.MMP");
-                
-                //loadd dynamic Component
-                $A.createComponent(
-                    "c:DynamicLineCashCMP",
-                    {
-                        "months": months,
-                        "chart":this.chart,
-                        "data":component.get("v.data_is"),
-                        "bar":bar
-                    },
-                    function(newChartComp, status, errorMessage){
-                        if(status == "SUCCESS"){
-                            var body = component.get("v.dynamic_cash");
-                            body.pop();
-                            body.push(newChartComp);
-                            //  alert();
-                            component.set("v.dynamic_cash", body);
-                        } 
-                    }
-                );
-                // document.getElementById("Backtoloan").style.display = "Block";
-                component.set("v.IsSpinner",false);
-                this.getProfileName(component, event, helper);
-            }
-        });
-        $A.enqueueAction(action1);
-    },
+   
 
     getProfileName : function(component, event, helper) {
         var action = component.get("c.getLoggedInProfile");
@@ -494,6 +180,22 @@
         component.set('v.showSpinner',true);
         var FName, LName, Address, Zip, Phone = '',
             errorlbl, EmailVal = '';
+            //different ADO for ARM(min 2500 and max 600)
+            var ADOVal = component.get('v.ADO');            
+            var EhvVal = component.get('v.EHV');
+            var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
+            var armADOVal2 = (HUDeof < 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
+            console.log('armADOVal',armADOVal2);
+            var armADOVal = 0;
+            if(ADOVal > 6000){
+                armADOVal = 6000;
+            }else if(ADOVal < 2500){
+                armADOVal = 2500;
+            }else{
+                armADOVal = armADOVal2;
+            }
+            //end of arm ADO Val
+
         EmailVal = component.get('v.selectedRecord.Email');
         // errorlbl = component.find("ErrorLabel");
         FName = component.get('v.selectedRecord.FirstName');
@@ -540,8 +242,13 @@
         	var marginType = component.get('v.MarginTypeiS');        	
             console.log('selRec_is>>>> ',selRec_is);
             sceis['Age__c'] = parseInt(component.get('v.Ageminus1'));
-            sceis['Desired_Origination_for_Adjustable_Rate__c'] = parseFloat(component.get('v.ADO'));  
-        	sceis['Utilization__c'] = parseFloat(selRec_is.MaxInitialUtilization);          
+            if(marginType == 'Adjust'){
+                sceis['Desired_Origination_for_Adjustable_Rate__c'] = armADOVal;
+            }else{
+                sceis['Desired_Origination_for_Adjustable_Rate__c'] = parseFloat(component.get('v.ADO'));  
+            }
+            
+            sceis['Utilization__c'] = parseFloat(selRec_is.MaxInitialUtilization);          
         	if(marginType == 'Helo'){ //SFDC - 265_new
                 var upb1 = parseFloat(selRec_is.UPB);                
                 if(upb1 >= 4000000 ){
@@ -551,7 +258,7 @@
                 }            	
             }
             else if(marginType == 'HeloArm'){
-                var upb1 = parseFloat(selRec_is.UPB);                
+                var upb1 = parseFloat(selRec_is.UPB);                   
                 if(upb1 >= 4000000 ){
                     sceis['Unpaid_Principal_Balance__c'] = parseFloat(4000000);
                 }else{
@@ -559,7 +266,7 @@
                 }  
             }
             else{
-                sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.MaxInitialUPB);            	
+                sceis['Unpaid_Principal_Balance__c'] = parseFloat(selRec_is.MaxInitialUPB);             	
             }        	
         	sceis['Other_Estimated_Closing_Costs__c'] = parseFloat(component.get('v.ECC'));
             sceis['Total_Compensation__c'] = parseFloat(selRec_is.TC);
@@ -804,6 +511,21 @@
         debugger;
         console.log('ADO Value  from getserviceData-->', component.get('v.ADO'));
         var ADOVal = component.get('v.ADO');
+
+        //different ADO for ARM(min 2500 and max 600)
+        var EhvVal = component.get('v.EHV');
+        var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
+        var armADOVal2 = (HUDeof < 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
+        console.log('armADOVal',armADOVal2);
+        var armADOVal = 0;
+        if(ADOVal > 6000){
+            armADOVal = 6000;
+        }else if(ADOVal < 2500){
+            armADOVal = 2500;
+        }else{
+            armADOVal = armADOVal2;
+        }
+        //end of arm ADO Val
         var dobIs = component.get('v.DOB').replace('-','/').replace('-','/');
         var action = component.get("c.getScenariData");
         if(component.get('v.ScenarioType')=='FHA Traditional HECM'){
@@ -901,11 +623,11 @@
                 console.log('Tc Calculation ',AdjustableParseddata[i].Margin,pricing,AdjustableParseddata[i].MaxInitialUPB,AdjustableParseddata[i].MaxOrigFee);
                 console.log('tc value ',(((pricing-100)*0.01)*AdjustableParseddata[i].MaxInitialUPB) + AdjustableParseddata[i].MaxOrigFee);
                 //  AdjustableParseddata[i].TC = (((pricing-100)*0.01)*AdjustableParseddata[i].MaxInitialUPB) + AdjustableParseddata[i].MaxOrigFee; 
-                AdjustableParseddata[i].TC = (((pricing-100)*0.01)*AdjustableParseddata[i].MaxInitialUPB) + ADOVal; 
+                AdjustableParseddata[i].TC = (((pricing-100)*0.01)*AdjustableParseddata[i].MaxInitialUPB) + armADOVal; 
                 
                 if(component.get('v.ScenarioType')!='FHA Traditional HECM'){
                     //MaxAdditionalFirstYearDraw
-                    AdjustableParseddata[i].MFD = (component.get('v.EHV') - AdjustableParseddata[i].PrincipalLimit) + AdjustableParseddata[i].IMIP+ADOVal+3000;
+                    AdjustableParseddata[i].MFD = (component.get('v.EHV') - AdjustableParseddata[i].PrincipalLimit) + AdjustableParseddata[i].IMIP+ armADOVal +3000;
                     AdjustableParseddata[i].MFD = AdjustableParseddata[i].CashFromBorrower;
                     component.set("v.downPyt",AdjustableParseddata[i].MFD );
                     console.log('down payment not trad', component.get("v.downPyt"));
@@ -1108,10 +830,10 @@
                 //Cash at Close calculation -> Helo table Cash At Close/Funds to Close
                 if(component.get('v.ScenarioType')=='FHA Traditional HECM'){			
                                  
-                    var cashatclose = upb - cmb - origToOrm - ecc1;                    
+                    var cashatclose = upb - cmb - ADOVal - ecc1;                    
                     ParseddataHeloArm[i].CC = cashatclose; 
                 }else{                    
-                    var fundstoclose = ((ecc1 + origToOrm) + EhvVal) - upb;
+                    var fundstoclose = ((ecc1 + ADOVal) + EhvVal) - upb;
                  	ParseddataHeloArm[i].CC = fundstoclose;
                 }
                 
@@ -1155,6 +877,7 @@
         var labels = ['a','b','c'];
         var insuranceFees = component.get('v.MIP');
         var eof = component.get("v.EOF"); //Origination to ORM
+        var ADOVal = component.get('v.ADO');
         console.log('EOF is ',eof);
             var marginType = component.get('v.MarginTypeiS'); //helo        
             var heloEcc = component.get("v.ECC"); //Estimated Closing Costs helo
@@ -1164,7 +887,7 @@
             var downPyt = component.get('v.cashToClose'); //Down payment for Helo for Purchase
             console.log('helo dwn py',downPyt );
         }else if(marginType == 'HeloArm'){
-            var financingFees = eof + heloEcc;  //financing fee for Helo for both refinance and purchase
+            var financingFees = ADOVal + heloEcc;  //financing fee for Helo ARM for both refinance and purchase
             var downPyt = component.get('v.cashToClose'); //Down payment for Helo for Purchase
         }
         else{
@@ -1178,7 +901,7 @@
         if(!CmbVal){
             CmbVal = 0;
         }
-        var mmb = parseInt(component.get("v.CMB"));
+        
         var CFYVal = component.get("v.CFY");
         var cashAtClose = component.get('v.FirstAmount');//Helo Amount available after lien payoff
         		console.log('cashatclose', cashAtClose);
@@ -1242,9 +965,8 @@
         }else{  //Refinance
             if(marginType == 'Helo'){ //Equity Reserve calc for helo
             	equity = EhvVal - (eof + heloEcc) - cashAtClose;
-                console.log('helo equity', equity);
             }else if(marginType == 'HeloArm'){
-                equity = EhvVal - (eof + heloEcc) - cashAtClose;
+                equity = EhvVal - CmbVal - heloEcc - cashAtClose - ADOVal;
             }else{
             	equity  =(EhvVal -(insuranceFees + lineOfCredit + financingFees+cashAtClose+CmbVal ));       
             }

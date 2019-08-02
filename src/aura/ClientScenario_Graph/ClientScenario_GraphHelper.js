@@ -262,9 +262,13 @@
             var labelchange = [];
             if (component.get('v.ScenarioType') == 'FHA Traditional HECM') { //refinance
 
-                if (lrateType == 'Helo' || lrateType == 'HeloArm' ) { //Equity Reserve for Piegraph
+                if (lrateType == 'Helo' ) { //Equity Reserve for Piegraph
                     equityReserves = EhvVal - (origOrm + otherEcc) - component.get('v.FirstAmount');
-                } else {
+                }
+                else if(lrateType == 'HeloArm'){
+                    equityReserves = EhvVal - mmb - origOrm - otherEcc - cashAtClose;
+                } 
+                else {
 
                     if ((equityReserves - (insuranceFees + lineOfCredit + financingFees + cashAtClose + mmb)) < 0) {
                         equityReserves = 0;
