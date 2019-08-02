@@ -260,6 +260,19 @@
         var FixedMargins = component.get('v.FHA_Hecm_FixedMargin');
         var HeloMargins = component.get('v.FHA_Hecm_HeloMargin'); //Bala 7_15
         var HeloArmMargins = component.get('v.FHA_Hecm_HeloMargin_Arm');
+        //different ADO for ARM
+        var ADOVal = component.get('v.ADO'); 
+        var EhvVal = component.get('v.EHV');
+        var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
+        var armADOVal2 = (HUDeof < 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
+        var armADOVal = 0;
+        if(ADOVal > 6000){
+            armADOVal = 6000;
+        }else if(ADOVal < 2500){
+            armADOVal = 2500;
+        }else{
+            armADOVal = armADOVal2;
+        }
 
         if(recId == 'adjust'){   
             component.set('v.selectedRowIs',AdjustMargins[selId]);//BalaC1
@@ -270,7 +283,7 @@
             component.set("v.Index", AdjustMargins[selId].Index);
             component.set("v.Margin", AdjustMargins[selId].Margin);
             component.set("v.MIP", AdjustMargins[selId].IMIP);
-            component.set("v.EOF",AdjustMargins[selId].MaxOrigFee);
+           // component.set("v.EOF",AdjustMargins[selId].MaxOrigFee);
             component.set("v.ECC",AdjustMargins[selId].OtherClosingCosts);
             component.set("v.TotalAmountAvailable",AdjustMargins[selId].PrincipalLimit);
             component.set("v.FirstAmount",AdjustMargins[selId].MaxAdditionalFirstYearDraw);
@@ -278,7 +291,7 @@
             component.set('v.CF5MA',component.get('v.MMP')*(5*12));
             component.set('v.CF10MA',component.get('v.MMP')*(10*12));
             var ADOVal = component.get('v.ADO'); 
-            component.set("v.EOF",ADOVal);
+            component.set("v.EOF",armADOVal);
             component.set("v.TotalAmountAvailableLoc", AdjustMargins[selId].SecondYearAvailableFunds);
             component.set("v.typeOfEOF", 'Desired Origination for Adjustable Rate Product');
             
@@ -426,13 +439,13 @@
                 var upb = HeloArmMargins[selId].UPB;
             }
  
-            //Origination to ORM calc
-            var origToOrm = ((upb * pricing)/100) ;
-            console.log('oorm', origToOrm );
-            component.set("v.EOF",origToOrm);           
-            component.set("v.typeOfEOF",'Origination to One Reverse Mortgage, LLC');
+            //Desired Origination for HELO Adjustable Rate
+           // var origToOrm = ((upb * pricing)/100) ;
+           // console.log('oorm', origToOrm );
+            component.set("v.EOF",ADOVal);           
+            component.set("v.typeOfEOF",'Desired Origination for Adjustable Rate Product');
             console.log('estimated Origination for fixed ', component.get('v.EOF'));
-            //end of OORM calc
+            //end of Desired Origination calc
             
             //Other Estimated closing costs calc
             var ecc = ((0.25 * EhvVal)/100);  
@@ -452,9 +465,9 @@
             }
             //end of ECC calc
             
-            //Helo Amount Available after Lien payoff & Funds needed to close calc
+            //Helo Arm Amount Available after Lien payoff & Funds needed to close calc
             var cmb = component.get("v.CMB"); //current mortgage balance
-            var amtAvail = upb - cmb - origToOrm - ecc1;
+            var amtAvail = upb - cmb - ecc1 - ADOVal ;
             if (amtAvail < 0){
                 component.set("v.FirstAmount",0);
                 var amtAvail1 = amtAvail*-1;

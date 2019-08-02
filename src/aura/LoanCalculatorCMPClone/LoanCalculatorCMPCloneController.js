@@ -33,7 +33,7 @@
         var EhvVal = component.get('v.EHV'); // 300000
         console.log('EhvVal  -->', EhvVal);
         var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
-        var finalEOF1 = (HUDeof < 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
+        var finalEOF1 = (HUDeof < 0) ? 0 : ((HUDeof > 10000) ? 10000 : HUDeof);
         component.set("v.ADO", finalEOF1);
         component.set("v.MaxAdo",finalEOF1);
         
@@ -53,9 +53,7 @@
         var EhvVal = component.get('v.EHV'); // 300000
         console.log('EhvVal  -->', EhvVal);
         var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
-        
-        
-        var finalEOF1 = (HUDeof < 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
+        var finalEOF1 = (HUDeof < 0) ? 0 : ((HUDeof > 10000) ? 10000 : HUDeof);
         component.set("v.ADO", finalEOF1);
         component.set("v.MaxAdo",finalEOF1);
         //  alert('Loan Calculator validateEHV');

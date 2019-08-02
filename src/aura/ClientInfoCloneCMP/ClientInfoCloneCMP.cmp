@@ -254,7 +254,9 @@
                                     </th><!--Bala -->
                                     <th scope="row" data-MFD="{!obj.MFD}"  data-label="Margin" data-type="heloarm" class="tbody_td" style="    background-color: #2081bf;">
                                         <div data-type="heloarm" data-MFD="{!obj.MFD}" class="slds-truncate" title="" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="cursor:pointer;text-align:center;">                                                 
-                                            <span data-type="heloarm" data-MFD="{!obj.MFD}" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="color:white;" >{#obj.Margin}% </span> 
+                                            <span data-type="heloarm" data-MFD="{!obj.MFD}" id="{!indx}" onclick="{!c.get_loanFor_margin}" style="color:white;" > <!--{#obj.Margin}% --> 
+                                                    <ui:outputNumber value="{!obj.Margin}" format=".000"/>%
+                                            </span> 
                                         </div>
                                     </th>
                                     <td data-label="" class="tbody_td" data-type="heloarm" data-MFD="{!obj.MFD}">
@@ -735,7 +737,7 @@
                     <fieldset class="slds-form-element">   
                         <div class="slds-form-element__group"> 
                             <div class="customFont28">     <!--SFDC-375-->                 
-                                Scenario Results   <br/>                                      
+                                Scenario Results   <br/>                                       
                                 <div class="customFont29"> 
                                     <aura:if isTrue="{!v.isTraditional}"> 
                                         <aura:if isTrue="{!v.LRateType == 'HeloArm'}">
@@ -747,6 +749,7 @@
                                         <aura:if isTrue="{!or(v.LRateType == 'ARM',v.LRateType == 'Fixed')}">
                                             HECM Refinance <ui:outputText value="{!v.LRateType}"></ui:outputText>
                                         </aura:if>
+
                                         <aura:set attribute="else">
                                             <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
                                                 HELO Purchase
@@ -1240,7 +1243,7 @@
                                 <div class="slds-form-element slds-size_1-of-2">
                                     <ui:inputText disabled="true" label="State"  maxlength="250" value="{!v.selectedRecord.State}"  aura:id="SelectState" 
                                                   class="slds-input" />
-				    <aura:if isTrue="{!v.selectedRecord.State=='Massachusetts'}">
+                                    <aura:if isTrue="{!v.selectedRecord.State=='Massachusetts'}">
                                       	<h6 style="color:red;">MA requires Face to Face Counseling with a Counselor located in the state of MA</h6>
                                     </aura:if>
                                     
@@ -1352,7 +1355,6 @@
                                                           label="Run Capacity Qualifier" 
                                                           onclick="{!c.shw_capacityPopup}" class="senario_button" />
                                         &nbsp;
-                                        
                                         <lightning:button aura:id="rst1" variant="brand" label="Download Package" onclick="{!c.downloadDocument}" class="senario_button" />
                                     </aura:if>  
                                     <aura:if isTrue="{!v.Environment!='Community'}">                                       
