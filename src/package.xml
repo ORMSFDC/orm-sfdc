@@ -5796,6 +5796,7 @@
     <members>Revisit/Alert_Loan_Withdrawn_w_Criteria</members>
     <members>unfiled$public/H4P</members>
     <members>unfiled$public/Say_HELLO_to_HELO</members>
+    <members>Partner_Notification_Emails/Awaiting_Review_Notification_to_Partner</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -7032,6 +7033,7 @@
   </types>
   <types>
     <members>Pricing</members>
+    <members>Partner_Notification</members>
     <name>Letterhead</name>
   </types>
   <types>

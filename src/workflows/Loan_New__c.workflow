@@ -49,6 +49,17 @@
         <senderType>OrgWideEmailAddress</senderType>
         <template>unfiled$public/Loan_Status_Full_Package_Received</template>
     </alerts>
+    <alerts>
+        <fullName>Loan_Submitted_Awaiting_Review_Notification_to_Partner</fullName>
+        <description>Loan Submitted - Awaiting Review Notification to Partner</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>shivni@orms.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Partner_Notification_Emails/Awaiting_Review_Notification_to_Partner</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Extend_Application_Time</fullName>
         <field>Extend_Application_Time__c</field>
