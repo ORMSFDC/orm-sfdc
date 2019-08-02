@@ -184,7 +184,7 @@
                                                           keydown="{!c.validateADO}" updateOn="keyup" aura:id="inputADO" class="slds-input Datecontrolwidth" required="true"
                                                           />
                                         <aura:if isTrue="{!v.show_MaxAdo}">
-                                            <label  style="color:#c23934;font-size: .75rem;">This should be less than or equal to ${!v.MaxAdo}</label>  
+                                            <label  style="color:#c23934;font-size: .75rem;">This should be less than or equal to 10,000</label>  
                                         </aura:if>
                                     </div>
                                     <div style="position: relative;left: -1.5%;top: -2px;">
