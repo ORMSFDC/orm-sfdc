@@ -253,4 +253,16 @@ public with sharing class lookUpControllerTest {
         lookUpController.getCashFlowData(10,10,10,10,10,[select id from Scenario__c limit 1].id,100);        
         ScenarioResponceUtil.getScenariData('test','test','test');
     }
+
+    @istest static void getAttachmentTest(){
+        Blob FileData = Blob.valueOf('');
+        Attachment ObjAttachment = new Attachment();
+        objAttachment.Name='Dtest';
+        objAttachment.Body = FileData;
+        objAttachment.ParentId = [select id from Scenario__c limit 1].id;
+        objAttachment.contentType = 'Application/PDF';
+        insert objAttachment;
+        string Base64Data = 'test Base64Data'; 
+        lookUpController.getAttachment(ObjAttachment.ParentId);     
+    }
 }

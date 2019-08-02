@@ -39,7 +39,17 @@ public with sharing class SavedScenarioControllerTest {
         
          //Test that Records are Inserted
          scenario__c ScenarioData = savedScenarioController.getScenarioData(ScenarioId);   
-    
+
+        Blob FileData = Blob.valueOf('');
+        Attachment ObjAttachment = new Attachment();
+        objAttachment.Name='Dtest';
+        objAttachment.Body = FileData;
+        objAttachment.ParentId = ScenarioId;
+        objAttachment.contentType = 'Application/PDF';
+        insert objAttachment;
+        string Base64Data = 'test Base64Data'; 
+        savedScenarioController.getAttachment(ObjAttachment.ParentId);
+        
          savedScenarioController.getsearchScenarioList ('{"Address":"","Email":"dhf@asdasd.com","FirstName":"aa","LastName":"asdas","Phone":"(123) 657-2323","DOB":"2017-10-01"}','',1,'CreatedDate','ASC');     
          System.assertEquals(ScenarioInsert.Id,ScenarioData.Id);        
          savedScenarioController.get_searchInstance();

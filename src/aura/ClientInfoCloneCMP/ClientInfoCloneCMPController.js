@@ -1058,5 +1058,53 @@
     optionChanged:function(component, event, helper){
         //    alert('ClientInfo cmp optionChanged');
         //   helper.optionChanged(component, event, helper);
-    }
+    },
+
+    downloadDocument: function(component, event, helper){
+        debugger;
+        var sc = component.get("v.ScenarioID");        
+        var action = component.get("c.getAttachment");
+        action.setParams({
+            scenarioID : sc
+        });        
+        action.setCallback(this,function(response) {
+            var state = response.getState();
+            //alert('state '+state);
+            if (state === "SUCCESS") {
+                var storeResponse = response.getReturnValue();
+                var  contentType = contentType || '';
+  				var sliceSize = sliceSize || 512;
+
+                const byteCharacters = atob(storeResponse.attBlob);
+                //alert('byteCharacters'+byteCharacters);
+                const byteArrays = [];
+                
+                for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                    const slice = byteCharacters.slice(offset, offset + sliceSize);
+                    const byteNumbers = new Array(slice.length);
+                    for (let i = 0; i < slice.length; i++) {
+                        byteNumbers[i] = slice.charCodeAt(i);
+                    }
+                    const byteArray = new Uint8Array(byteNumbers);
+                    byteArrays.push(byteArray);
+                }
+                const blob = new Blob(byteArrays, {type: contentType});
+                //alert('vlob'+blob);
+                var newBlob = new Blob([blob], {type: "application/pdf"});
+                if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                    window.navigator.msSaveOrOpenBlob(newBlob);
+                    return;
+                } 
+                const data = window.URL.createObjectURL(newBlob);
+                var link = document.createElement('a');
+                link.href = data;
+                link.download= storeResponse.attName + ".pdf";
+                link.click();
+                setTimeout(function(){
+                    window.URL.revokeObjectURL(data);
+                }, 100);
+            }
+        }); 
+        $A.enqueueAction(action);
+    },
 })

@@ -1353,6 +1353,7 @@
                                                           onclick="{!c.shw_capacityPopup}" class="senario_button" />
                                         &nbsp;
                                         
+                                        <lightning:button aura:id="rst1" variant="brand" label="Download Package" onclick="{!c.downloadDocument}" class="senario_button" />
                                     </aura:if>  
                                     <aura:if isTrue="{!v.Environment!='Community'}">                                       
                                         

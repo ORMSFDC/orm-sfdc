@@ -516,6 +516,8 @@
                                                   label="Request Scenario Package" 
                                                   onclick="{!c.sendmailrequest}" class="e_btn senario_button" /> </span>&nbsp;
                             
+                            <lightning:button aura:id="rst1" variant="brand" label="Download Package" onclick="{!c.downloadDocument}" class="senario_button" />
+
                         </aura:if>
                         
                         <aura:if isTrue="{!v.isConveted}">

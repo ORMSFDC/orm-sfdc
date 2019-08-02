@@ -12,6 +12,7 @@
  * 11/05/2018: Sahitya -SFDC - 567 SaNL from Run Capacity Qualifier
  * 11/21/2018: Sahitya -SFDC - 584 Production Support - Scenario Package DOB 
  * 11/29/2018: Sahitya -SFDC - 396
+ * 08/01/2019: Sahitya - Download Scenario Package
  */
 public without sharing class lookUpController {
     @AuraEnabled
@@ -762,4 +763,37 @@ public without sharing class lookUpController {
         Logger.pop();
         return null;
     }
+
+    //Download Scenario package
+    public class attchmentWrapper{
+        @AuraEnabled
+        public String attBlob {get;set;}
+        @AuraEnabled
+        public String attName {get;set;}
+        @AuraEnabled
+        public String attId {get;set;}
+        @AuraEnabled
+        public String siteUrl {get;set;}
+    }
+
+    @AuraEnabled
+    public static attchmentWrapper getAttachment(String scenarioID) {
+        system.debug('scenarioID-----'+scenarioID);
+        String baseUrl = URL.getSalesforceBaseUrl().toExternalForm();        
+        attchmentWrapper attWrap = new attchmentWrapper();
+        try{
+          Attachment at = [Select Id, Name, body, ParentId From Attachment Where ParentId = :scenarioID limit 1];
+          system.debug('at-----'+at);
+          attWrap.attBlob = EncodingUtil.base64Encode(at.body);
+          attWrap.attName = at.Name;
+          attWrap.attId = at.Id;
+          attWrap.siteUrl = baseUrl;
+        }catch(exception ex ){
+          system.debug(' no package attached exception'+ex);
+          Exception_log.Log_exception(ex,'savedScenarioController','getAttachment');
+        }
+        return attWrap;
+    }
+    //End Download Scenario package
+
 }
