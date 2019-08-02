@@ -263,15 +263,13 @@
         //different ADO for ARM
         var ADOVal = component.get('v.ADO'); 
         var EhvVal = component.get('v.EHV');
-        var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
-        var armADOVal2 = (HUDeof < 0) ? 0 : ((HUDeof > 6000) ? 6000 : HUDeof);
+        //var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
+        //var armADOVal2 = (HUDeof <= 0) ? 0 : ((HUDeof > 6000) ? 6000 : HUDeof);
         var armADOVal = 0;
         if(ADOVal > 6000){
             armADOVal = 6000;
-        }else if(ADOVal < 0){
-            armADOVal = 0;
         }else{
-            armADOVal = armADOVal2;
+            armADOVal = ADOVal;
         }
 
         if(recId == 'adjust'){   
