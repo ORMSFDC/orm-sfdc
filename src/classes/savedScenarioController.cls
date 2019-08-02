@@ -8,6 +8,7 @@
  * 10/31/2018: Sahitya SFDC - 360 
  * 11/01/2018: Sahitya -SFDC - 566 capture Print button count from saved scenarios
  * 11/28/2018: Sahitya -SFDC - 380
+ * 08/01/2019: Sahitya - Download Scenario Package
  */
 public class savedScenarioController {
     
@@ -157,6 +158,38 @@ public class savedScenarioController {
       {
         lookUpController.createAETask(ScenarioID);
       }
+    
+      //Download Scenario package
+    public class attchmentWrapper{
+        @AuraEnabled
+        public String attBlob {get;set;}
+        @AuraEnabled
+        public String attName {get;set;}
+        @AuraEnabled
+        public String attId {get;set;}
+        @AuraEnabled
+        public String siteUrl {get;set;}
+    }
+
+    @AuraEnabled
+    public static attchmentWrapper getAttachment(String scenarioID) {
+        system.debug('scenarioID-----'+scenarioID);
+        String baseUrl = URL.getSalesforceBaseUrl().toExternalForm();        
+        attchmentWrapper attWrap = new attchmentWrapper();
+        try{
+          Attachment at = [Select Id, Name, body, ParentId From Attachment Where ParentId = :scenarioID limit 1];
+          system.debug('at-----'+at);
+          attWrap.attBlob = EncodingUtil.base64Encode(at.body);
+          attWrap.attName = at.Name;
+          attWrap.attId = at.Id;
+          attWrap.siteUrl = baseUrl;
+        }catch(exception ex ){
+          system.debug(' no package attached exception'+ex);
+          Exception_log.Log_exception(ex,'savedScenarioController','getAttachment');
+        }
+        return attWrap;
+    }
+    //End Download Scenario package
     
       @AuraEnabled
       public static void Senariodelete(List<id> sel_sn){
