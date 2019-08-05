@@ -796,22 +796,15 @@
 
     //New
     checkSolarPanelHelp:  function (component, event, helper) {
-        debugger;
+       
         var checkSolarPanel = false;
         var getSolarPaidOff = component.get('v.subjectProperty.Solar_Panels_Paid_Off__c');
         var productType = component.get('v.subjectProperty.Product_Type__c');
-        
-        console.log('getSolarPaidOff',getSolarPaidOff);
-        console.log('productType',productType);
 
         if(getSolarPaidOff == "No" && productType == "HECM"){
             checkSolarPanel = true;
             document.getElementById("lbl_SolarPanelPaidId").innerText = 'ORM does not allow for leased solar panels on the HECM program.';
         }
-        else{
-            document.getElementById("lbl_SolarPanelPaidId").innerText = '';
-        }
-        console.log('checkSolarPanel',checkSolarPanel);
     return checkSolarPanel;
     },
 
