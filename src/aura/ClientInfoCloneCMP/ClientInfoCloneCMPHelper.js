@@ -181,11 +181,15 @@
         var FName, LName, Address, Zip, Phone = '',
             errorlbl, EmailVal = '';
             //different ADO for ARM(min 0 and max 6000)
-            var ADOVal = component.get('v.ADO');            
+            var ADOVal = component.get('v.ADO'); 
             var EhvVal = component.get('v.EHV');
+            var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
+            var armADOVal2 = (HUDeof <= 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
             var armADOVal = 0;
-            if(ADOVal > 6000){
+            if(armADOVal2 >= 6000){
                 armADOVal = 6000;
+            }else if(armADOVal2 <= 2500) {
+                armADOVal = 2500;
             }else{
                 armADOVal = ADOVal;
             }
@@ -504,14 +508,18 @@
     },
     getserviceData:function(component,event,helper){
         debugger;
-        console.log('ADO Value  from getserviceData-->', component.get('v.ADO'));
-        var ADOVal = component.get('v.ADO');
+        console.log('ADO Value  from getserviceData-->', component.get('v.ADO'));      
 
         //different ADO for ARM(min 0 and max 600)
-        var EhvVal = component.get('v.EHV');        
+        var ADOVal = component.get('v.ADO'); 
+        var EhvVal = component.get('v.EHV');
+        var HUDeof = (EhvVal <= 200000) ? (EhvVal * 0.02) : ((200000 * 0.02) + ((EhvVal - 200000) * 0.01));
+        var armADOVal2 = (HUDeof <= 2500) ? 2500 : ((HUDeof > 6000) ? 6000 : HUDeof);
         var armADOVal = 0;
-        if(ADOVal > 6000){
+        if(armADOVal2 >= 6000){
             armADOVal = 6000;
+        }else if(armADOVal2 <= 2500) {
+            armADOVal = 2500;
         }else{
             armADOVal = ADOVal;
         }
