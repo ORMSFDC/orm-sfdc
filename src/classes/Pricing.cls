@@ -41,7 +41,7 @@ public class Pricing {
         List<PricingResponse> PricingResponseList=new List<PricingResponse>();
         List<Tier2__mdt> lstBrokerPricing = 
             [SELECT   Margin__c,X0_to_10__c,X10_to_20__c,X20_to_30__c,X30_to_40__c,X40_to_50__c,X50_to_60__c,
-             X60_to_70__c,X70_to_80__c,X80_to_90__c,X90_to_100__c from  Tier2__mdt order by Margin__c desc];
+             X60_to_70__c,X70_to_80__c,X80_to_90__c,X90_to_100__c from  Tier2__mdt order by Margin__c asc];
         for(Tier2__mdt obj:lstBrokerPricing )
         {
             PricingResponse  BrokerResponseObj=new PricingResponse();
@@ -66,7 +66,7 @@ public class Pricing {
         List<PricingResponse> PricingResponseList=new List<PricingResponse>();
         List<Tier1__mdt> lstBrokerPricing = 
             [SELECT   Margin__c,X0_to_10__c,X10_to_20__c,X20_to_30__c,X30_to_40__c,X40_to_50__c,X50_to_60__c,
-             X60_to_70__c,X70_to_80__c,X80_to_90__c,X90_to_100__c from  Tier1__mdt order by Margin__c desc];
+             X60_to_70__c,X70_to_80__c,X80_to_90__c,X90_to_100__c from  Tier1__mdt order by Margin__c asc];
         for(Tier1__mdt obj:lstBrokerPricing )
         {
             PricingResponse  BrokerResponseObj=new PricingResponse();
@@ -92,7 +92,7 @@ public class Pricing {
         List<PricingResponse> PricingResponseList=new List<PricingResponse>();
         List<Tier3__mdt> lstBrokerPricing = 
             [SELECT   Margin__c,X0_to_10__c,X10_to_20__c,X20_to_30__c,X30_to_40__c,X40_to_50__c,X50_to_60__c,
-             X60_to_70__c,X70_to_80__c,X80_to_90__c,X90_to_100__c from  Tier3__mdt order by Margin__c desc];
+             X60_to_70__c,X70_to_80__c,X80_to_90__c,X90_to_100__c from  Tier3__mdt order by Margin__c asc];
         for(Tier3__mdt obj:lstBrokerPricing )
         {
             PricingResponse  BrokerResponseObj=new PricingResponse();
@@ -142,7 +142,7 @@ public class Pricing {
     {
         List<FixedRateResponse> PricingResponseList=new List<FixedRateResponse>();
         List<Fixed_Price_Tier2__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_ORM__c,Credit_to_Borrower__c
-                                                from  Fixed_Price_Tier2__mdt order by Rate__c desc ];
+                                                from  Fixed_Price_Tier2__mdt order by Rate__c asc ];
         for(Fixed_Price_Tier2__mdt obj:Pricing )
         {
             FixedRateResponse  ResponseObj=new FixedRateResponse();
@@ -159,7 +159,7 @@ public class Pricing {
     {
         List<FixedRateResponse> PricingResponseList=new List<FixedRateResponse>();
         List<Fixed_Price_Tier1__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_ORM__c,Credit_to_Borrower__c
-                                                from  Fixed_Price_Tier1__mdt order by Rate__c desc ];
+                                                from  Fixed_Price_Tier1__mdt order by Rate__c asc ];
         for(Fixed_Price_Tier1__mdt obj:Pricing )
         {
             FixedRateResponse  ResponseObj=new FixedRateResponse();
@@ -177,7 +177,7 @@ public class Pricing {
     {
         List<FixedRateResponse> PricingResponseList=new List<FixedRateResponse>();
         List<Fixed_Price_Tier3__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_ORM__c,Credit_to_Borrower__c
-                                                from  Fixed_Price_Tier3__mdt order by Rate__c desc ];
+                                                from  Fixed_Price_Tier3__mdt order by Rate__c asc ];
         for(Fixed_Price_Tier3__mdt obj:Pricing )
         {
             FixedRateResponse  ResponseObj=new FixedRateResponse();
@@ -221,7 +221,7 @@ public class Pricing {
     {
         List<HeloRateResponse> PricingResponseList=new List<HeloRateResponse>();
         List<Proprietary_Tier_2__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_Partner__c,Credit_to_Borrower__c,Servicing_Fee__c
-                                                from  Proprietary_Tier_2__mdt order by Rate__c desc ];
+                                                from  Proprietary_Tier_2__mdt order by Rate__c asc ];
         for(Proprietary_Tier_2__mdt obj:Pricing )
         {
             HeloRateResponse  ResponseObj=new HeloRateResponse();
@@ -239,7 +239,7 @@ public class Pricing {
     {
         List<HeloRateResponse> PricingResponseList=new List<HeloRateResponse>();
         List<Proprietary_Tier_1__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_Partner__c,Credit_to_Borrower__c,Servicing_Fee__c
-                                                from  Proprietary_Tier_1__mdt order by Rate__c desc ];
+                                                from  Proprietary_Tier_1__mdt order by Rate__c asc ];
         for(Proprietary_Tier_1__mdt obj:Pricing )
         {
             HeloRateResponse  ResponseObj=new HeloRateResponse();
@@ -258,7 +258,7 @@ public class Pricing {
     {
         List<HeloRateResponse> PricingResponseList=new List<HeloRateResponse>();
         List<Proprietary_Tier_3__mdt> Pricing = [SELECT   Rate__c,Price__c,Origination_to_Partner__c,Credit_to_Borrower__c,Servicing_Fee__c
-                                                from  Proprietary_Tier_3__mdt order by Rate__c desc ];
+                                                from  Proprietary_Tier_3__mdt order by Rate__c asc ];
         for(Proprietary_Tier_3__mdt obj:Pricing )
         {
             HeloRateResponse  ResponseObj=new HeloRateResponse();
@@ -305,7 +305,7 @@ public class Pricing {
     {
         List<HeloArmRateResponse> PricingResponseList=new List<HeloArmRateResponse>();
         List<HELO_ARM_2__mdt> Pricing = [SELECT   HeloPrice__c, HeloArmMargin__c, HELO_Credit_to_borrower__c, HELO_Origination_to_partner__c, HELO_Rate__c, HELO_Servicing_Fee__c
-                                                from  HELO_ARM_2__mdt order by HELO_Rate__c desc ];
+                                                from  HELO_ARM_2__mdt order by HELO_Rate__c asc ];
         for(	HELO_ARM_2__mdt obj:Pricing )
         {
             HeloArmRateResponse  ResponseObj=new HeloArmRateResponse();
@@ -324,7 +324,7 @@ public class Pricing {
     {
         List<HeloArmRateResponse> PricingResponseList=new List<HeloArmRateResponse>();
         List<HELO_ARM_1__mdt> Pricing = [SELECT   HeloPrice__c, HeloArmMargin__c, HELO_Credit_to_borrower__c, HELO_Origination_to_partner__c, HELO_Rate__c, HELO_Servicing_Fee__c
-                                                from  HELO_ARM_1__mdt order by HELO_Rate__c desc ];
+                                                from  HELO_ARM_1__mdt order by HELO_Rate__c asc ];
         for(HELO_ARM_1__mdt obj:Pricing )
         {
             HeloArmRateResponse  ResponseObj=new HeloArmRateResponse();
@@ -343,7 +343,7 @@ public class Pricing {
     {
         List<HeloArmRateResponse> PricingResponseList=new List<HeloArmRateResponse>();
         List<HELO_ARM_3__mdt> Pricing = [SELECT   HeloPrice__c, HeloArmMargin__c, HELO_Credit_to_borrower__c, HELO_Origination_to_partner__c, HELO_Rate__c, HELO_Servicing_Fee__c
-                                                from  HELO_ARM_3__mdt order by HELO_Rate__c desc ];
+                                                from  HELO_ARM_3__mdt order by HELO_Rate__c asc ];
         for(HELO_ARM_3__mdt obj:Pricing )
         {
             HeloArmRateResponse  ResponseObj=new HeloArmRateResponse();
