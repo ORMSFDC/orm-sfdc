@@ -44,7 +44,7 @@
             isAdoValid = false;
         }else{
             var maxAdo = component.get('v.MaxAdo');
-            if(inz > 10000){
+            if(inz > 10000 || inz < 0){
                 component.set('v.show_MaxAdo',true);
                 isAdoValid = false;
             }else{
