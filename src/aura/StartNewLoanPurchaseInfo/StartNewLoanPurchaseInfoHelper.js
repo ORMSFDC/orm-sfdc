@@ -108,6 +108,7 @@
         }
 
         if ('ARM' != rtype) {
+            console.log('unsetting here--');
             ['Margin__c','Loan_Origination_Fee_Calculation__c'].forEach(function(f){
                 helper.unsetFields(component,'v.NewLoan.'+f);
             });
@@ -196,8 +197,10 @@
         action1.setCallback(this, function (data) {
             var result = data.getReturnValue();
             var rtype = result.Rate_Type__c;
+            var ptype = result.Product_Type__c;
             var Rate = result.Rate__c;
-
+            var heloArmMargin = result.Margin__c;
+            
             if (result.Children_Under_the_age_of_6_living_in_th__c == "" || result.Children_Under_the_age_of_6_living_in_th__c == undefined || 
                 result.Children_Under_the_age_of_6_living_in_th__c == null) {
                 result.Children_Under_the_age_of_6_living_in_th__c = 'No';
@@ -262,17 +265,38 @@
                     setTimeout($A.getCallback(setRateFunction), 1500, component, ratePer3);
                 }
             }
+
+            if('HELO' === ptype && 'Fixed' === rtype){
+                var action = component.get('c.getHeloRate');
+                action.setCallback(this, function (data) {
+                    var result = data.getReturnValue();
+                    component.set("v.HeloRateList", result);
+                });
+                $A.enqueueAction(action);
+            }else if('HELO' === ptype && 'ARM' === rtype){
+                var action = component.get('c.getHeloArmRate');
+                action.setCallback(this, function (data) {
+                    var result = data.getReturnValue();
+                    component.set("v.HeloArmRateList", result);
+                    if(heloArmMargin != undefined || heloArmMargin != null){
+                        component.set("v.NewLoan.Margin__c", heloArmMargin);
+                    }
+                });
+                $A.enqueueAction(action);
+            } 
+
+
         });
         $A.enqueueAction(action1);
 	
-	var action = component.get('c.getHeloRate');
+	      /*  var action = component.get('c.getHeloRate');
             action.setCallback(this, function (data) {
                 var result = data.getReturnValue();
-                var resultLength = result.length;
                 component.set("v.HeloRateList", result);
             });
-            $A.enqueueAction(action);
+            $A.enqueueAction(action);*/
     },
+
     interviewdatevalidation: function (component, event, helper) {
         var isValid = false;
         var inputCmp = component.find('ApplicationDate');
@@ -467,6 +491,7 @@
             component.set(compId, inz.substring(0, inz.length - 1));
         }
     },
+    //HECM ARM
     calculate_fee: function (component, event, helper) {
         var amountIs = component.find("LoanEstimateAppVal").get("v.value");
         var amount = parseInt(amountIs);
@@ -506,11 +531,46 @@
                 } else {
                     component.set('v.NewLoan.Loan_Origination_Fee__c', 0);
                 }
-
             }
-
         }
     },
+    //HELO ARM
+    calculate_fee2: function (component, event, helper) {
+        debugger;
+        var amountIs = component.find("LoanEstimateAppVal").get("v.value");
+        var amount = parseInt(amountIs);
+        if (!isNaN(amount) && amount != 0) {
+            component.set("v.newSelectlistdisable", false);
+        } else {
+            component.set("v.show_originate_fee", false);
+            component.set("v.newSelectlistdisable", true);
+        }
+        if (amount <= 200000) {
+            var loanfee = amount * 0.02;
+            if (loanfee >= 10000) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', 10000);
+            } else {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', Math.round(loanfee));
+            }
+        } else {
+            var initialAmount = 200000;
+            var remaining = amount - initialAmount;
+            var loanfeeonInitial = initialAmount * 0.02;
+            var loanfeeonRemaining = remaining * 0.01;
+            var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
+            var totalLoanFee = Math.round(totalLoanFee1);
+            if (totalLoanFee <= 10000) {
+                component.set('v.NewLoan.Loan_Origination_Fee__c', totalLoanFee);
+            } else if (totalLoanFee > 10000) {
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 10000);
+                } else {
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', 0);
+                }
+            } 
+        }
+    },
+
     calculateFromPurchasePrice: function (component, event, helper) {
         var amountIs = component.find("PurchasePrice").get("v.value");
         var amount = parseInt(amountIs);
@@ -589,6 +649,38 @@
             }
         }
     },
+
+    //HELO ARM
+    calculate_feeforCustomValueHelo: function (component, event, helper, cmpId) {
+        var amountIs = component.find(cmpId).get("v.value");
+        var amount = parseInt(amountIs);
+       /* if (amount <= 200000) {
+            var loanfee = amount * 0.02;
+            if (loanfee >= 10000) {
+                component.set('v.PropertyValue', 10000); 
+            } else {
+                component.set('v.PropertyValue', Math.round(loanfee));
+            }
+        } else {*/
+            var initialAmount = 200000;
+            var remaining = amount - initialAmount;
+            var loanfeeonInitial = initialAmount * 0.02;
+            var loanfeeonRemaining = remaining * 0.01;
+            var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
+            var totalLoanFee = Math.round(totalLoanFee1);
+            if (totalLoanFee <= 10000) { 
+                component.set('v.PropertyValue', totalLoanFee);
+            } else if (totalLoanFee > 10000) {
+                if (!isNaN(amount) && amount != 0) {
+                    component.set('v.PropertyValue', 10000);
+                } else {
+                    component.set('v.PropertyValue', 0);
+                }
+            }             
+        //}
+    },
+
+
     Relationship_to_Alternative_Contact__Check: function (component, event, helper) {
         var inputCmp = component.find('othRlsnshp');
         var value = inputCmp.get("v.value");
@@ -657,6 +749,50 @@
         }
         return finalFlg;
     },
+
+    calculate_fee_Value2: function (component, event, helper) {
+        var finalFlg = false;
+        var inputCmp = component.find("LoanOriginationFee");
+        var mortgageAppliedFor = component.find("LoanMortgageAppliedFor").get("v.value");
+        if (mortgageAppliedFor.includes('Purchase')) {
+            var amountIs = component.find("PurchasePrice").get("v.value");
+        }
+        else {
+            var amountIs = component.find("LoanEstimateAppVal").get("v.value");
+        }
+
+        var amountEntered = component.find("LoanOriginationFee").get("v.value");
+        var amount = parseInt(amountIs);
+        if (!isNaN(amountEntered) && amountEntered > 0) {
+            var initialAmount = 200000;
+            var remaining = amount - initialAmount;
+            var loanfeeonInitial = initialAmount * 0.02;
+            var loanfeeonRemaining = remaining * 0.01;
+            var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
+            //var totalLoanFee = Math.round(totalLoanFee1);
+            if (amountEntered >= 10000) {
+                var msg = 'Loan origination fee is capped at $10,000.00.';
+                inputCmp.set("v.errors", [{ message: msg }]);
+                finalFlg = true;
+            } else {
+                inputCmp.set("v.errors", null);
+                finalFlg = false;
+            }           
+        }
+        else {
+            if (isNaN(amountEntered) || amountEntered == 0 || amountEntered == null) {
+                inputCmp.set("v.errors", [{ message: 'This is a required field.' }]);
+                finalFlg = true;
+            }
+            else {
+                inputCmp.set("v.errors", [{ message: 'Please enter a valid number (non negative).' }]);
+                finalFlg = true;
+            }
+        }
+        return finalFlg;
+    },
+
+
     ValidationForPills: function (component, event, helper) {
         var LoanId = component.get('v.LoanId');
         var action1 = component.get("c.TabsValidatedData");
@@ -695,33 +831,45 @@
     
     //SFDC-237
     PopulateRate: function (component, event, helper) { 
-        
+        debugger;
        var loanType = component.find("LoanType").get("v.value");
-       if (loanType == 'HECM') {
+       var rateType = component.find("RateType").get("v.value");
+       if (loanType == 'HECM' && rateType == 'Fixed') {
             var action = component.get('c.getRateFixProduct');
             action.setCallback(this, function (data) {
                 var result = data.getReturnValue();
-                var resultLength = result.length;
                 component.set("v.RateList", result);
             });
             $A.enqueueAction(action);
-        } else if (loanType == 'HELO') { 
+        } else if (loanType == 'HELO' && rateType == 'Fixed') { 
             var action = component.get('c.getHeloRate');
             action.setCallback(this, function (data) {
                 var result = data.getReturnValue();
-                var resultLength = result.length;
                 component.set("v.HeloRateList", result);
+            });
+            $A.enqueueAction(action);
+        } else if (loanType == 'HELO' && rateType == 'ARM') { 
+            var action = component.get('c.getHeloArmRate');
+            action.setCallback(this, function (data) {
+                var result = data.getReturnValue();
+                component.set("v.HeloArmRateList", result);
+            });
+            $A.enqueueAction(action);
+        } else {
+            var action = component.get('c.getARMRate');
+            action.setCallback(this, function (data) {
+                var result = data.getReturnValue();
+                component.set("v.ArmRateList", result);
             });
             $A.enqueueAction(action);
         }
 	//SFDC-377
-        var action2 = component.get('c.getARMRate');
+        /*var action2 = component.get('c.getARMRate');
         action2.setCallback(this, function (data) {
             var result = data.getReturnValue();
-            var resultLength = result.length;
             component.set("v.ArmRateList", result);
         });
-        $A.enqueueAction(action2);
+        $A.enqueueAction(action2);*/
     },
 
     getORMOrigination: function (component, event, helper, Rate) {
@@ -873,8 +1021,36 @@
                 component.set("v.show_msg", false);
             }
         }
-
     },
+
+    fee_changeHelperHelo: function (component, event, helper, cmpId) {
+        debugger;
+        var cmp = component.find(cmpId);
+        var amountIs = event.getSource().get('v.value');
+        var amount = parseFloat(amountIs).toFixed(2);
+        var mortgageAppliedFor = component.find("LoanMortgageAppliedFor").get("v.value");
+        if (mortgageAppliedFor.includes('Purchase')) {
+            helper.calculate_feeforCustomValueHelo(component, event, helper, 'PurchasePrice');
+        }
+        else {
+            helper.calculate_feeforCustomValueHelo(component, event, helper, 'LoanEstimateAppVal');
+        }
+        var FormulaCalculatedamt = component.get("v.PropertyValue");
+        if (!isNaN(amount)) {
+
+            if(amount > 10000){
+                component.set("v.show_msg2", false);
+                component.set('v.NewLoan.Loan_Origination_Fee__c', 10000);
+                cmp.set("v.errors", [{
+                    message: "Loan origination fee is capped at $10,000 based on 2% of the first $200,000 of your home's value plus 1% of the amount over $200,000."
+                }]);
+            }else{
+                cmp.set("v.errors", null);
+                component.set("v.show_msg2", false);
+            }            
+        }
+    },
+
     ValidateDateFormat: function (component, event, helper, controlID) {
         var flag = false;
         var contractDate = component.find(controlID);
@@ -955,7 +1131,9 @@
     },
     
     feecaluculationHelper: function (component, event, helper, selvalueis) {
+        debugger;
         var rtype = component.get("v.NewLoan.Rate_Type__c");
+        var productType = component.get("v.NewLoan.Product_Type__c");
 
         if ('Fixed' === rtype) {
             //Commenting this part as we do not display calculate max fee field for Fixed Rate - SFDC - 360
@@ -979,7 +1157,7 @@
             } else {
                 component.set("v.show_originate_fee", false);
             }*/
-        } else if ('ARM' === rtype) {
+        } else if ('ARM' === rtype && 'HECM' === productType) {
             var cmp = component.find('LoanOriginationFee');
             var selVal = '';
             try {
@@ -1014,6 +1192,42 @@
                     component.set("v.show_originate_fee_disable", false);
                 }
             }
+        } 
+        
+        else if ('ARM' === rtype && 'HELO' === productType){
+            var cmp = component.find('LoanOriginationFee');
+            var selVal = '';
+            try {
+                selVal = event.getSource().get('v.value');
+            } catch (err) {
+                console.log('err ', err);
+            }
+            if (!selVal) {
+                selVal = component.get('v.NewLoan.Loan_Origination_Fee_Calculation__c');
+            }
+
+            if (selvalueis != 'init') {
+                selVal = event.getSource().get('v.value');
+            } else {
+                if (selVal != 'Enter Fee Value ($0 - $10,000)') {
+                    selVal = 'Calculate Maximum Fee';
+                }
+            }
+            if (selVal != '') {
+                if (selVal == 'Calculate Maximum Fee') {
+                    component.set("v.show_originate_fee_disable", true);
+                    helper.calculate_fee2(component, event, helper);
+                    component.set("v.show_msg2", false);
+                    cmp.set("v.errors", null);
+                }
+                else {
+                    var amountIs = component.find("LoanOriginationFee").get("v.value");
+                    var amount = parseInt(amountIs);
+                    component.set('v.NewLoan.Loan_Origination_Fee__c', amount);
+                    component.set("v.show_originate_fee_disable", false);
+                }
+            }
         }
+
     }
 })
