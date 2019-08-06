@@ -513,10 +513,10 @@
                             
                             <span id="requestbtn">&nbsp;&nbsp;&nbsp;
                                 <lightning:button aura:id="outputButton1" variant="brand" 
-                                                  label="Request Scenario Package" 
+                                                  label="Email Scenario Package" 
                                                   onclick="{!c.sendmailrequest}" class="e_btn senario_button" /> </span>&nbsp;
 
-                            <lightning:button aura:id="rst1" variant="brand" label="Download Package" onclick="{!c.downloadDocument}" class="senario_button" />
+                            <lightning:button aura:id="rst1" variant="brand" label="Download Scenario Package" onclick="{!c.downloadDocument}" class="senario_button" />
                             
                         </aura:if>
                         
