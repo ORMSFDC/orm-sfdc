@@ -6829,6 +6829,19 @@ HYPERLINK("http://documentviewerbeta/documentviewer/#/"&amp; LoanNumber__c , 'Pl
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Waiting_for_Package_to_Close__c</fullName>
+        <externalId>false</externalId>
+        <formula>Closing_Date__c - DATEVALUE( Waiting_for_Full_Package_Date0__c )</formula>
+        <label>Waiting for Package to Close</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
