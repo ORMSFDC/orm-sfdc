@@ -425,8 +425,14 @@
             component.set("v.Margin",rate); //Helo Interst Rate
             var pricing = heloArmValues.HeloArm_orm[t];  
             console.log('pricing helo val', pricing );
-            var ADOVal = component.get('v.ADO'); // Desired Origination Value
-            console.log('ADOVal Helo Arm', ADOVal);
+            var ADOVal2 = component.get('v.ADO'); // Desired Origination Value
+            var ADOVal = 0;
+            if(ADOVal2 >= 10000){
+                ADOVal = 10000
+            }else{
+                ADOVal = ADOVal2
+            }
+
             component.set("v.TotalAmountAvailableLoc", 0);   
             var EhvVal = component.get('v.EHV'); 
             
@@ -442,6 +448,7 @@
             //Desired Origination for HELO Adjustable Rate
            // var origToOrm = ((upb * pricing)/100) ;
            // console.log('oorm', origToOrm );
+            
             component.set("v.EOF",ADOVal);           
             component.set("v.typeOfEOF",'Desired Origination for Adjustable Rate Product');
             console.log('estimated Origination for fixed ', component.get('v.EOF'));

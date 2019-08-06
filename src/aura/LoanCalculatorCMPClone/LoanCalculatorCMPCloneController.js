@@ -205,11 +205,12 @@
         }catch(err){}
         //    alert(5);
         var adoError= false;
+        var maxAdoErr = false;
         try{            
-            adoError = helper.validateAdo(component, event, helper);
+            adoError = helper.validateAdo(component, event, helper);            
         }catch(err){}
         //      alert(6);
-        if (Isrequired || IsCurrenyWorng || isdateworng || IsInterestrateWorng || adoError || bothFilled) {            
+        if (Isrequired || IsCurrenyWorng || isdateworng || IsInterestrateWorng || adoError || bothFilled ) {            
             //          alert(7);
             console.log('Isrequired || IsCurrenyWorng || isdateworng || IsInterestrateWorng || adoError || bothFilled',Isrequired , IsCurrenyWorng , isdateworng,IsInterestrateWorng,adoError,bothFilled)
             component.set("v.showError", true);            
