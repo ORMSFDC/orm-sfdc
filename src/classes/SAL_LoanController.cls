@@ -68,6 +68,7 @@ public with sharing class SAL_LoanController {
         Loan_New__c objLoan = new Loan_New__c();  
         try
         {
+            system.debug(' getLoanById----Exception---'+RecordId);
             //Code Added by Dev4 for ORMSFDC-1423
             objLoan   = [SELECT Subject_Property_Type__c,IsSubjectPropertyFilled_Flag__c,Is_Loan_Created_Manually__c,IsDeclarationFilled_Flag__c
                          ,IsClientFilled_Flag__c,Id,Margin__c, Loan_Origination_Fee_Calculation__c,Relationship_to_Alternative_Contact__c,Other_Relationship_Alternative_Contact__c,Mortgage_Applied_for__c,Subject_Property_Address__c, Subject_Property_City__c, Subject_Property_State__c, Subject_Property_County__c, Subject_Property_Zip_Code__c, Legal_Description_of_Property__c,Loan_Origination_Company_Identifier__c,Household_Members__c,
@@ -402,6 +403,16 @@ public with sharing class SAL_LoanController {
     public static list<HeloState__mdt> get_heloStatesRefi() {
         return [Select MasterLabel from HeloState__mdt where isActive__c=:true and isRefinance__c=:true];                
     }
+
+    @AuraEnabled
+    public static list<HeloArmState__mdt> get_heloArmStatesRefi() {
+        return [Select MasterLabel from HeloArmState__mdt where isActive__c=:true and isRefinance__c=:true];                
+    }
+
+    @AuraEnabled
+    public static list<HeloArmState__mdt> get_heloArmStatesPur() {
+        return [Select MasterLabel from HeloArmState__mdt where isActive__c=:true and isPurchase__c=:true];                
+    }
     //SFDC - 275 end
 
     
@@ -456,6 +467,29 @@ public with sharing class SAL_LoanController {
             system.debug('getRateFixProduct .....'+ ex.getMessage());
         }
         return HeloRateList;        
+    }
+
+
+    @AuraEnabled
+    public static list<string>getHeloArmRate()
+    {
+        List<string>HeloArmRateList=new List<string>();
+        String partnerType;
+        system.debug('getHeloArmRate-->');
+            Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+            //SFDC-289
+            partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+            if(partnerType == 'Premier'){
+                HeloArmRateList= getHeloArmRateTier2(); 
+            }
+            else if(partnerType == 'Non Premier'){
+                HeloArmRateList= getHeloArmRateTier1();
+            }  
+            else if(partnerType == 'Premier Plus'){
+                HeloArmRateList= getHeloArmRateTier3();
+            } 
+            system.debug('HeloArmRateList-->'+HeloArmRateList);
+        return HeloArmRateList;        
     }
     
     //SFDC-377
@@ -528,22 +562,44 @@ public with sharing class SAL_LoanController {
         }
         return HeloOrigination;        
     }
+
+    @AuraEnabled
+    public static string getHeloArmOrigination(string rate)
+    {
+        decimal ratevalue=decimal.valueOf(rate);
+        string HeloArmOrigination;
+        try{
+           HeloArmOrigination= getHeloArmOrigination(ratevalue);            
+        } 
+        catch(Exception ex)
+        {
+            system.debug('getOrigination .....'+ ex.getMessage());
+        }
+        return HeloArmOrigination;        
+    }
     
     //fetch helo margin
     @AuraEnabled
     public static string getHeloMargin(string rate)
     {
         decimal ratevalue=decimal.valueOf(rate);
-        string HeloMargin;
-        try{
-           HeloMargin= getHeloMargin(ratevalue);            
-        } 
-        catch(Exception ex)
-        {
-            system.debug('getOrigination .....'+ ex.getMessage());
-        }        
+        string HeloMargin;        
+        HeloMargin= getHeloMargin(ratevalue);   
         return HeloMargin;        
     }
+
+    //fetch helo Arm margin
+    @AuraEnabled
+    public static string getHeloArmMargin(string rate)
+    {
+        system.debug('HeloArmMargin----->'+rate);
+        decimal ratevalue=decimal.valueOf(rate);
+        string HeloArmMargin;
+        HeloArmMargin= getHeloArmMargin(ratevalue);  
+        system.debug('HeloArmMargin----->'+HeloArmMargin);
+        return HeloArmMargin;        
+    }
+
 
     @AuraEnabled
     public static string getBorrower(string rate)
@@ -654,6 +710,47 @@ public with sharing class SAL_LoanController {
             string value= string.valueOf( rt.Rate__c);
             allrate.add(value);
         }
+        return allrate; 
+    }
+
+    public static list<string>getHeloArmRateTier1()
+    {
+        List<string> allrate=new List<string>();
+        list<HELO_ARM_1__mdt> lstPriceT1=new list<HELO_ARM_1__mdt>();
+        lstPriceT1=[Select  HeloArmMargin__c from HELO_ARM_1__mdt order by HeloArmMargin__c ];
+        for(HELO_ARM_1__mdt rt:lstPriceT1)
+        {
+            string value= string.valueOf( rt.HeloArmMargin__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+    
+    //SFDC-237
+    public static list<string>getHeloArmRateTier2()
+    {
+        List<string>allrate=new List<string>();
+        list<HELO_ARM_2__mdt> lstPriceT2=new list<HELO_ARM_2__mdt>();
+        lstPriceT2=[Select  HeloArmMargin__c from HELO_ARM_2__mdt order by HeloArmMargin__c ];
+        for(HELO_ARM_2__mdt rt:lstPriceT2)
+        {            
+            string value= string.valueOf( rt.HeloArmMargin__c);
+            allrate.add(value);
+        }
+        return allrate;
+    }
+
+    //SFDC-289
+    public static list<string>getHeloArmRateTier3()
+    {
+        List<string>allrate=new List<string>();
+        list<HELO_ARM_3__mdt> lstPriceT2=new list<HELO_ARM_3__mdt>();
+        lstPriceT2=[Select  HeloArmMargin__c from HELO_ARM_3__mdt order by HeloArmMargin__c ];
+        for(HELO_ARM_3__mdt rt:lstPriceT2)
+        {            
+            string value= string.valueOf( rt.HeloArmMargin__c);
+            allrate.add(value);
+        }
         return allrate;
     }
 
@@ -747,6 +844,28 @@ public with sharing class SAL_LoanController {
         origtoorm=string.valueOf( Orignation);
         return origtoorm;
     }
+
+    //HELO Arm origination
+    public static string getHeloArmOrigination(decimal Rate)
+    {
+        string origtoorm;
+        decimal Orignation;
+        String partnerType;       
+        Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+        //SFDC-289
+        partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+        if(partnerType == 'Premier'){
+            Orignation=[Select HELO_Origination_to_partner__c from HELO_ARM_2__mdt where HELO_Rate__c=:Rate].HELO_Origination_to_partner__c;
+        }
+        else if(partnerType == 'Non Premier'){
+            Orignation=[Select HELO_Origination_to_partner__c from HELO_ARM_1__mdt where HELO_Rate__c=:Rate].HELO_Origination_to_partner__c;
+        }  
+        else if(partnerType == 'Premier Plus'){
+            Orignation=[Select HELO_Origination_to_partner__c from HELO_ARM_3__mdt where HELO_Rate__c=:Rate].HELO_Origination_to_partner__c;
+        }   
+        origtoorm=string.valueOf( Orignation);
+        return origtoorm;
+    }
     
     //Fetch Helo Margin
     public static string getHeloMargin(decimal Rate)
@@ -768,6 +887,28 @@ public with sharing class SAL_LoanController {
         }   
         heloMargin=string.valueOf(margin);
         return heloMargin;
+    }
+
+    //Fetch Helo Arm Margin
+    public static string getHeloArmMargin(decimal Rate)
+    {
+        string heloArmMargin;
+        decimal margin;
+        String partnerType;       
+        Id accountID=[select accountId from User where id=:UserInfo.getUserId()].accountId;
+        //SFDC-289
+        partnerType = [select Partner_Type__c from account where id=:accountID].Partner_Type__c; 
+        if(partnerType == 'Premier'){
+            margin=[Select HeloArmMargin__c from HELO_ARM_2__mdt where HELO_Rate__c=:Rate].HeloArmMargin__c;
+        }
+        else if(partnerType == 'Non Premier'){
+            margin=[Select HeloArmMargin__c from HELO_ARM_1__mdt where HELO_Rate__c=:Rate].HeloArmMargin__c;
+        }  
+        else if(partnerType == 'Premier Plus'){
+            margin=[Select HeloArmMargin__c from HELO_ARM_3__mdt where HELO_Rate__c=:Rate].HeloArmMargin__c;
+        }   
+        heloArmMargin=string.valueOf(margin);
+        return heloArmMargin;
     }
     
     public static string getORMBorrowerT1(decimal Rate)

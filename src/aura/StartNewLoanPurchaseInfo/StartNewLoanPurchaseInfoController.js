@@ -36,15 +36,16 @@
     },
 
     onChangeLoanType: function (component, event, helper) {
+        debugger;
         var loanType = component.find("LoanType").get("v.value");
         var mortgageType = component.find("LoanMortgageAppliedFor").get("v.value");
-        helper.PopulateRate(component, event, helper); //SFDC-237
+     //   helper.PopulateRate(component, event, helper); //SFDC-237
 
         if ('HELO' == loanType) {
             //HELO must always be Fixed, and Fixed must always be single lump sum
-            component.set('v.NewLoan.Rate_Type__c', 'Fixed');
-            component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
-                    
+           // component.set('v.NewLoan.Rate_Type__c', 'Fixed');
+           // component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
+                component.set('v.NewLoan.Rate_Type__c', 'ARM'); //set default
             if (mortgageType.includes('HECM')) {    //set default
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'HELO Refinance');
             }
@@ -54,9 +55,12 @@
                // component.set('v.NewLoan.Rate_Type__c', 'ARM'); //SFDC - 592
             }
         }
+
+        helper.PopulateRate(component, event, helper); //SFDC-237
     },
 
     onRateTypeChange: function (component, event, helper) {
+        debugger;
         var rateType = component.find("RateType").get("v.value");        
         if('Fixed' == rateType){
             component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
@@ -64,6 +68,7 @@
         if('ARM' == rateType){
             component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', '');
         }
+        helper.PopulateRate(component, event, helper);
     },
 
     changeSource: function (component, event, helper) {
@@ -121,6 +126,7 @@
         helper.FutureDate(component, event, helper);
     },
     validateandgo: function (component, event, helper) {
+        debugger;
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         var mortgageAppliedFor = component.find("LoanMortgageAppliedFor").get("v.value");
         var loanType = component.find("LoanType").get("v.value");
@@ -291,8 +297,14 @@
         if ('ARM' === rtype) {
             var LoanOriginationFeeCalculationMethod = component.find("newSelectlist").get("v.value");
 
-            if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $6,000)') {
-                isLoFeeInvalid = helper.calculate_fee_Value(component, event, helper);
+            if(loanType == 'HECM'){
+                if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $6,000)') {
+                    isLoFeeInvalid = helper.calculate_fee_Value(component, event, helper);
+                }
+            }else{
+                if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $10,000)') {
+                    isLoFeeInvalid = helper.calculate_fee_Value2(component, event, helper);
+                }                
             }
         }
 
@@ -468,11 +480,20 @@
         }
 
         var isLoFeeInvalid = false;
-
+        var loanType = component.find("LoanType").get("v.value");
         if ('ARM' === rtype) {
             var LoanOriginationFeeCalculationMethod = component.find("newSelectlist").get("v.value");
-            if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $6,000)') {
+           /* if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $6,000)') {
                 isLoFeeInvalid = helper.calculate_fee_Value(component, event, helper);
+            }*/
+            if(loanType == 'HECM'){
+                if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $6,000)') {
+                    isLoFeeInvalid = helper.calculate_fee_Value(component, event, helper);
+                }
+            }else{
+                if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $10,000)') {
+                    isLoFeeInvalid = helper.calculate_fee_Value2(component, event, helper);
+                }                
             }
         }
 
@@ -515,7 +536,8 @@
         if(!component.find('newSelectlist')){
             return; //Not an ARM, so no Loan Origination Fee - Calculation Method
         }
-
+        var rtype = component.get("v.NewLoan.Rate_Type__c");
+        var productType = component.get("v.NewLoan.Product_Type__c");
         var selVal = component.find('newSelectlist').get('v.value');
         var amountIs = component.find("LoanEstimateAppVal").get("v.value");
         var amount = parseInt(amountIs);
@@ -528,7 +550,11 @@
         if (selVal == 'Calculate Maximum Fee') {
             component.set("v.show_originate_fee", true);
             component.set("v.show_originate_fee_disable", true);
-            helper.calculate_fee(component, event, helper);
+            if (rtype == 'ARM' && productType == 'HECM') {
+                helper.calculate_fee(component, event, helper);
+            }else if (rtype == 'ARM' && productType == 'HELO') {
+                helper.calculate_fee2(component, event, helper);
+            }                
         }
     },
     populateFromPurchasePrice: function (component, event, helper) {
@@ -555,9 +581,11 @@
     },
     fee_change: function (component, event, helper) {
         var rtype = component.get("v.NewLoan.Rate_Type__c");
-
-        if (rtype == 'ARM') {
+        var productType = component.get("v.NewLoan.Product_Type__c");
+        if (rtype == 'ARM' && productType == 'HECM') {
             helper.fee_changeHelper(component, event, helper, 'LoanOriginationFee');
+        }else if (rtype == 'ARM' && productType == 'HELO') {
+            helper.fee_changeHelperHelo(component, event, helper, 'LoanOriginationFee');
         }
     },
     marginoption: function (component, event, helper) {
