@@ -7521,6 +7521,13 @@ ISPICKVAL( Product_Type__c, "HECM" )</errorConditionFormula>
         <errorDisplayField>Solar_Panels_Paid_Off__c</errorDisplayField>
         <errorMessage>Answer this question before saving.</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>ORMS_Documents_before_FRC</fullName>
+        <active>true</active>
+        <description>ORMS Documents field must be populated before Loan can be Folder Received (In Underwriting Review)</description>
+        <errorConditionFormula>ISPICKVAL(  LoanStatus__c  , 'In Underwriting Review') &amp;&amp; ISBLANK(  TEXT(ORMS__c)  )</errorConditionFormula>
+        <errorMessage>ORMS Documents Field must be populated to continue</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>
         <availability>online</availability>
