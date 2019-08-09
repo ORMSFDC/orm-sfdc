@@ -8325,6 +8325,15 @@ ISPICKVAL(Reason_for_Not_being_Interested__c,"")
         <errorDisplayField>Reason_for_Not_being_Interested__c</errorDisplayField>
         <errorMessage>You must select one value</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>Qualified_Lead_Status_Requires_AE</fullName>
+        <active>true</active>
+        <description>ORMS AE Name cannot be blank when Lead Status = Qualified</description>
+        <errorConditionFormula>AND(ISPICKVAL( Status ,'Qualified'),
+ISBLANK(Account_Executive_Name__c))</errorConditionFormula>
+        <errorDisplayField>Account_Executive_Name__c</errorDisplayField>
+        <errorMessage>ORM Account Executive Name cannot be blank.</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>
