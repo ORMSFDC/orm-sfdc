@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>pi__Send_Single_Pardot_Email</customButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -71,6 +72,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Attempted_to_Contact_Days__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Account_Executive_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
