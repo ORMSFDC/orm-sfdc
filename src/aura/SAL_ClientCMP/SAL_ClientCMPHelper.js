@@ -246,7 +246,8 @@
     },
 
     CreateClient: function (component, event, helper) {
-        debugger
+        debugger;
+        helper.showSpinner(component);
         var newClient = component.get("v.selectedRecord");
         var POARadioLstValue = newClient.Is_there_a_POA__c;
         if (POARadioLstValue == 'No') {
@@ -283,6 +284,7 @@
             helper.PopulateClientsAfterDelete(component, event, helper);
             this.DelayPrimaryClientNBSY(component, event, helper);
             this.DelayPrimaryClientNBRY(component, event, helper);
+            helper.hideSpinner(component);
         });
         $A.enqueueAction(action2);
     },

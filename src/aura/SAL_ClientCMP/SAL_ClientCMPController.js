@@ -537,7 +537,8 @@
     // To setup the following framework for validations please replicate FormatValidations and 
     // formatErrorMethod to your component's Controller and Helper respectively.
     FormatValidations: function (component, event, helper) {
-
+        debugger;
+        
         var a_id = event.getSource().getLocalId();
         var msg = "";
         var reg = /^(?=[\S\s]{10,8000})[\S\s]*$/;
@@ -615,17 +616,21 @@
 
         var ValidatePOA = false;
         ValidatePOA = helper.POAValidation(component, event, helper);
-
+        
         if (Isrequired || chkClientCurrentZip || IsAgeValidate || chkClientMailingzip || DOBValidation
             || ssnValidation || ValidateinputClientEmail || ValidateinputMailingFields || ValidatePOA
         ) {
+            
             component.set("v.showError", true);
         }
         else {
 
             component.set("v.showError", false);
             // 
+
+            
             helper.CreateClient(component, event, helper);
+            
         }
     },
 

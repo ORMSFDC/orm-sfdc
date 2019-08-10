@@ -883,6 +883,9 @@
                             </aura:if></div>
                         <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Cancel" press="{!c.closeClientModel}"></ui:button>&nbsp;&nbsp;
                         <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" label="Save" press="{!c.FormatValidations}"></ui:button>
+                        <aura:if isTrue="{!v.IsSpinner}">        
+                            <lightning:spinner variant="brand" size="large"/>                         
+                        </aura:if>
                     </div>
                 </div>
             </div>
@@ -912,13 +915,7 @@
     <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addEmployment" label="Save and Continue" press="{!c.next}" />
         </div>
     <!-- <ui:button class="myBtn slds-button slds-button_stateful slds-not-selected slds-button_brand btn" aura:id="addEmployment" label="Test NBS" press="{!c.TestNBS}" />-->
-    <aura:if isTrue="{!v.IsSpinner}">
-                                                        <div class="slds-spinner_container">
-                                                            <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
-                                                                <div class="slds-spinner__dot-a"></div>
-                                                                <div class="slds-spinner__dot-b"></div>
-                                                            </div>
-                                                        </div>
-                                                    </aura:if>
+   
+    
     
 </aura:component>
