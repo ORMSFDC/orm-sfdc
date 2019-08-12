@@ -61,11 +61,13 @@ public with sharing class ClientLoan{
         }
         try{
             for(client__c client : clients){
-                if(clientList.size() > 0 && client.Primary_Client_for_the_Loan__c == true && prevVal == false && client.LoanId__c == LoanId){
-                    String name = clientList[0].Name;
-                    displayString += '‘An existing primary client, ' +name+ ' is marked as the primary client on this loan. Please uncheck the ‘Primary Client’ checkbox for ' +name+ ' in order to make this client the primary client.’ ' ;
-                    client.Primary_Client_for_the_Loan__c.addError(displayString);
-                }                         
+                if( client.Id != clientList[0].Id){
+                    if(clientList.size() > 0 && client.Primary_Client_for_the_Loan__c == true && prevVal == false && client.LoanId__c == LoanId){
+                        String name = clientList[0].Name;
+                        displayString += '‘An existing primary client, ' +name+ ' is marked as the primary client on this loan. Please uncheck the ‘Primary Client’ checkbox for ' +name+ ' in order to make this client the primary client.’ ' ;
+                        client.Primary_Client_for_the_Loan__c.addError(displayString);
+                    }
+                }
             }
         }catch(Exception ex){
             system.debug(' validatePrimaryClient----Exception---'+ex);
