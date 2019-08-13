@@ -39,17 +39,21 @@
         debugger;
         var loanType = component.find("LoanType").get("v.value");
         var mortgageType = component.find("LoanMortgageAppliedFor").get("v.value");
-        var ehVal = component.find("LoanEstimateAppVal").get("v.value");
+        
      //   helper.PopulateRate(component, event, helper); //SFDC-237
 
         if ('HELO' == loanType) {
+            component.set('v.NewLoan.Mortgage_Applied_for__c', 'HELO Refinance'); //set default
             component.set('v.NewLoan.Rate_Type__c', 'ARM'); //set default
             component.set('v.NewLoan.Loan_Origination_Fee_Calculation__c','Calculate Maximum Fee');
+            
             var rateType = component.find("RateType").get("v.value");
             if(rateType == 'ARM'){
                 component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Line of Credit'); 
                 component.set('v.NewLoan.Margin__c', ''); 
+               // component.set('v.NewLoan.Mortgage_Applied_for__c', 'HELO Refinance');
             }
+            var ehVal = component.find("LoanEstimateAppVal").get("v.value");
             if(ehVal != ''){
                 helper.feecaluculationHelper(component, event, helper, 'init');
             }
@@ -62,12 +66,14 @@
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'FHA Traditional HECM');
                 component.set('v.NewLoan.Loan_Origination_Fee_Calculation__c','Calculate Maximum Fee');
                 component.set('v.NewLoan.Loan_Origination_Fee__c','');
+                var ehVal = component.find("LoanEstimateAppVal").get("v.value");
                 if(ehVal != ''){
                     helper.feecaluculationHelper(component, event, helper, 'init');
                 }
                 var rateType = component.find("RateType").get("v.value")
                 if(rateType == 'ARM'){
                     component.set('v.NewLoan.Margin__c', ''); 
+                    component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', '');
                 }
             }
         }        

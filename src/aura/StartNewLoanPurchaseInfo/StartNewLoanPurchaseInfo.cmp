@@ -103,7 +103,7 @@
                             </ui:inputSelect>
                             <lightning:helptext class="inputHelpText" content="Please hold the Ctrl button on the keyboard to select more than one option."/>
                         </div>
-
+                        
                         <aura:if isTrue="{!v.NewLoan.Mortgage_Applied_for__c != 'HECM for Purchase'}">
                             <div style="margin-bottom:3%; " class="slds-size_1-of-2 inputHelpContainer">
                                 <ui:inputSelect aura:id="LoanPayment" required="true" label="Selected Loan Payment Plan " value="{!v.NewLoan.Selected_Loan_Payment_Plan__c }" disabled="{!(v.NewLoan.Rate_Type__c == 'Fixed') ? true  : false}" change="{!c.onchange_action}">
