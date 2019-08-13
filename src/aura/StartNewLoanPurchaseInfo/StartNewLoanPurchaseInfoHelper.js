@@ -1044,7 +1044,7 @@
                 component.set("v.show_msg2", false);
                 component.set('v.NewLoan.Loan_Origination_Fee__c', 10000);
                 cmp.set("v.errors", [{
-                    message: "Loan origination fee is capped at $10,000 based on 2% of the first $200,000 of your home's value plus 1% of the amount over $200,000."
+                    message: "Loan origination fee is capped at $10,000."
                 }]);
             }else{
                 cmp.set("v.errors", null);
