@@ -97,18 +97,9 @@
                 <behavior>Edit</behavior>
                 <field>Notes__c</field>
             </layoutItems>
-        </layoutColumns>
-        <style>OneColumn</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Suspense Information</label>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Suspense_Notes__c</field>
+                <field>More_Notes__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
