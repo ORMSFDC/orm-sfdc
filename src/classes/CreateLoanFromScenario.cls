@@ -86,7 +86,7 @@ public class CreateLoanFromScenario {
     Logger.push('createLoan','CreateLoanFromScenario');   
         Scenario__c se = [SELECT id,BayDocsOrderNumber__c,Client_Lead__c,Client_Lead__r.Street,Client_Lead__r.Postalcode,Client_Lead__r.State,
                                  Client_Lead__r.Email,ClientId__c,Client_Lead__r.DOB__c,Client_Lead__r.FirstName,Client_Lead__r.LastName,Client_Lead__r.Phone,
-                                 Client_Lead__r.city, is_Converted__c,Loan__c,Date_of_birth__c,Estimated_home_value__c,Margin__c,scenario_type__c, RateType__c
+                                 Client_Lead__r.city, is_Converted__c,Loan__c,Date_of_birth__c,Estimated_home_value__c,Margin__c,scenario_type__c, RateType__c,HeloArmMargin__c
                           From Scenario__c 
                           WHERE id=:senarioid];       
      
@@ -116,13 +116,13 @@ public class CreateLoanFromScenario {
         //creating Loan from Scenario fields
         Loan_New__c newLoan = new Loan_New__c(); 
         //SFDC-360
-        if(se.RateType__c == 'Helo'){
+        if(se.RateType__c == 'Helo' || se.RateType__c == 'HeloArm' ){
             newLoan.Product_Type__c = 'HELO';
         }else if(se.RateType__c == 'Adjust' || se.RateType__c == 'Fixed'){
             newLoan.Product_Type__c = 'HECM';
         }
 
-        if(se.RateType__c == 'Helo' && se.Scenario_Type__c == 'FHA Traditional HECM'){
+        if((se.RateType__c == 'Helo' || se.RateType__c == 'HeloArm') && se.Scenario_Type__c == 'FHA Traditional HECM'){
             newLoan.Mortgage_Applied_for__c = 'HELO Refinance';
         }
         else if(se.RateType__c == 'Helo' && se.Scenario_Type__c == 'HECM for Purchase'){
@@ -142,6 +142,10 @@ public class CreateLoanFromScenario {
         }else if(se.RateType__c == 'Adjust' ){
             newLoan.Rate_Type__c = 'ARM';            
             newLoan.Margin__c = String.valueOf(se.Margin__c);
+        }else if(se.RateType__c == 'HeloArm'){
+            newLoan.Rate_Type__c = 'ARM';            
+            newLoan.Margin__c = String.valueOf(se.HeloArmMargin__c);
+            newLoan.Selected_Loan_Payment_Plan__c = 'Line of Credit';
         }
 
         if( se.Scenario_Type__c == 'FHA Traditional HECM'){

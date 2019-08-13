@@ -45,9 +45,11 @@ global class ScenarioChannelClient {
     private static void send(String body, String loanId, String userEmail, String userName) {
 
         Logger.push('send','ScenarioChannelClient');
-
+    
         //    string endPoint =
         HttpRequest request = new HttpRequest();
+        if (body != null) Logger.debug('JSON='+body);
+        system.debug('JSON='+body);
         try {
             request.setEndpoint(EnglishChannelConfig__c.getOrgDefaults().ApiGatewayEndpoint1__c);
         } catch (Exception ex) {
