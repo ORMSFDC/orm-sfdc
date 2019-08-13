@@ -239,7 +239,7 @@
                                 <th scope="col" class="tabhead">
                                     <div class="slds-truncate customFont17" title="Compensation"  style="text-align:center;">
                                         Total Compensation
-                                        <lightning:helptext content=" This includes your backend compensation." />
+                                        <lightning:helptext content=" This includes your backend compensation and your desired origination combined." />
                                     </div>
                                 </th>
                             </tr>
