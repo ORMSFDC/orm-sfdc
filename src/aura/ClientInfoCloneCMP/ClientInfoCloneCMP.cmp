@@ -193,7 +193,7 @@
             <aura:if isTrue="{!v.isDisplayHeloArm}">
                    
                 <span style="margin:auto; display:table; font-size: 15pt;"></span>
-                <h4>HELO ARM</h4>
+                <h4>HELO ARM JUMBO</h4>
                 
                 <div style="">
                     <table class="margin_table slds-table slds-table_bordered slds-table_cell-buffer" style="border: 1px solid #d4d4d4;">
@@ -741,10 +741,10 @@
                                 <div class="customFont29"> 
                                     <aura:if isTrue="{!v.isTraditional}"> 
                                         <aura:if isTrue="{!v.LRateType == 'HeloArm'}">
-                                            HELO ARM Refinance
+                                            HELO ARM JUMBO Refinance
                                         </aura:if>
                                         <aura:if isTrue="{!v.LRateType == 'Helo'}"> 
-                                            HELO Refinance   
+                                            HELO FIXED JUMBO Refinance   
                                         </aura:if> 
                                         <aura:if isTrue="{!or(v.LRateType == 'ARM',v.LRateType == 'Fixed')}">
                                             HECM Refinance <ui:outputText value="{!v.LRateType}"></ui:outputText>

@@ -57,13 +57,12 @@ global class LoanExportUtil {
 
         if (loanRateType.Rate_Type__c=='ARM' && loanRateType.Product_Type__c == 'HECM'){
             loanType = '103';
-            Logger.debug('loanType='+loanType);
         }else if(loanRateType.Rate_Type__c=='FIXED' && loanRateType.Product_Type__c == 'HECM' )  {
-            loanType = '9';
-            Logger.debug('loanType='+loanType); 
-        }else if(loanRateType.Product_Type__c == 'HELO'){
+            loanType = '9'; 
+        }else if(loanRateType.Rate_Type__c=='FIXED' && loanRateType.Product_Type__c == 'HELO'){
             loanType = '162';
-            Logger.debug('loanType='+loanType); 
+        }else{
+            loanType = '164';
         }
         // End
 
