@@ -257,17 +257,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Margin__c</fullName>
-        <externalId>false</externalId>
-        <label>Margin</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Percent</type>
-    </fields>
-    <fields>
         <fullName>Monthly_Mortgage_Payment__c</fullName>
         <externalId>false</externalId>
         <label>Monthly Mortgage Payment</label>
@@ -755,6 +744,17 @@ AND(ISPICKVAL(Scenario_Type__c, "HECM for Purchase"),ISPICKVAL(RateType__c, "Hel
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>Margin__c</fullName>
+        <externalId>false</externalId>
+        <label>Margin/Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
     </fields>
     <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>

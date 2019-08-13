@@ -39,35 +39,67 @@
         debugger;
         var loanType = component.find("LoanType").get("v.value");
         var mortgageType = component.find("LoanMortgageAppliedFor").get("v.value");
+        var ehVal = component.find("LoanEstimateAppVal").get("v.value");
      //   helper.PopulateRate(component, event, helper); //SFDC-237
 
         if ('HELO' == loanType) {
-            //HELO must always be Fixed, and Fixed must always be single lump sum
-           // component.set('v.NewLoan.Rate_Type__c', 'Fixed');
-           // component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
-                component.set('v.NewLoan.Rate_Type__c', 'ARM'); //set default
+            component.set('v.NewLoan.Rate_Type__c', 'ARM'); //set default
+            component.set('v.NewLoan.Loan_Origination_Fee_Calculation__c','Calculate Maximum Fee');
+            var rateType = component.find("RateType").get("v.value");
+            if(rateType == 'ARM'){
+                component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Line of Credit'); 
+                component.set('v.NewLoan.Margin__c', ''); 
+            }
+            if(ehVal != ''){
+                helper.feecaluculationHelper(component, event, helper, 'init');
+            }
             if (mortgageType.includes('HECM')) {    //set default
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'HELO Refinance');
             }
+            
         } else if ('HECM' == loanType) {
             if (mortgageType.includes('HELO')) {    //set default
                 component.set('v.NewLoan.Mortgage_Applied_for__c', 'FHA Traditional HECM');
-               // component.set('v.NewLoan.Rate_Type__c', 'ARM'); //SFDC - 592
+                component.set('v.NewLoan.Loan_Origination_Fee_Calculation__c','Calculate Maximum Fee');
+                component.set('v.NewLoan.Loan_Origination_Fee__c','');
+                if(ehVal != ''){
+                    helper.feecaluculationHelper(component, event, helper, 'init');
+                }
+                var rateType = component.find("RateType").get("v.value")
+                if(rateType == 'ARM'){
+                    component.set('v.NewLoan.Margin__c', ''); 
+                }
             }
-        }
+        }        
 
         helper.PopulateRate(component, event, helper); //SFDC-237
     },
 
     onRateTypeChange: function (component, event, helper) {
         debugger;
+        console.log('margin iption2',component.find("marginoptions").get("v.value"));
         var rateType = component.find("RateType").get("v.value");        
+        var loanType = component.find("LoanType").get("v.value");
+        var ehVal = component.find("LoanEstimateAppVal").get("v.value");
         if('Fixed' == rateType){
             component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Single Lump Sum');
+            if(loanType == 'HELO'){
+                component.set('v.NewLoan.Loan_Origination_Fee__c','');
+                component.set('v.NewLoan.Rate__c','');
+            }
         }
-        if('ARM' == rateType){
-            component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', '');
-        }
+        if('ARM' == rateType){            
+            if(loanType == 'HELO'){
+                component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', 'Line of Credit');                
+                component.set('v.NewLoan.Margin__c', '');
+                component.set('v.NewLoan.Mortgage_Applied_for__c', 'HELO Refinance');
+            }else{
+                component.set('v.NewLoan.Selected_Loan_Payment_Plan__c', '');            
+            }
+                if(ehVal != ''){
+                    helper.feecaluculationHelper(component, event, helper, 'init');
+                }
+            }
         helper.PopulateRate(component, event, helper);
     },
 
@@ -188,7 +220,7 @@
                 valArray.push({ ar_id: "LoanOriginationFee", mes: "This is a required field", reg: validateRequiredField });
             }
         } else if ('ARM' === rtype) {
-            valArray.push(
+            valArray.push(                
                 { ar_id: "marginoptions", mes: "Please select a value for this field", reg: validateRequiredField },
                 { ar_id: "newSelectlist", mes: "This is a required field", reg: validateRequiredField }
             );
@@ -322,6 +354,7 @@
     },
 
     LoanFormatValidations: function (component, event, helper) {
+        debugger;
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         var msg = "";
         var reg = /^(?=[\S\s]{10,8000})[\S\s]*$/;
@@ -380,7 +413,7 @@
             if (component.get("v.show_originate_fee")) {
                 valArray.push({ ar_id: "LoanOriginationFee", mes: "This is a required field", reg: validateRequiredField });
             }
-        } else if ('ARM' === rtype) {
+        } else if ('ARM' === rtype) {           
             valArray.push(
                 { ar_id: "marginoptions", mes: "Please select a value for this field", reg: validateRequiredField },
                 { ar_id: "newSelectlist", mes: "This is a required field", reg: validateRequiredField }
@@ -482,10 +515,7 @@
         var isLoFeeInvalid = false;
         var loanType = component.find("LoanType").get("v.value");
         if ('ARM' === rtype) {
-            var LoanOriginationFeeCalculationMethod = component.find("newSelectlist").get("v.value");
-           /* if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $6,000)') {
-                isLoFeeInvalid = helper.calculate_fee_Value(component, event, helper);
-            }*/
+            var LoanOriginationFeeCalculationMethod = component.find("newSelectlist").get("v.value");           
             if(loanType == 'HECM'){
                 if (LoanOriginationFeeCalculationMethod == 'Enter Fee Value ($0 - $6,000)') {
                     isLoFeeInvalid = helper.calculate_fee_Value(component, event, helper);

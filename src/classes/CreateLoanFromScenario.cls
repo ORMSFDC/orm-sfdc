@@ -13,7 +13,7 @@ public class CreateLoanFromScenario {
     Logger.push('updateSenario','CreateLoanFromScenario');
         Scenario__c se = [SELECT id,ClientId__r.Email_Optional__c,ClientId__c,ClientId__r.State__c,ClientId__r.Street_Address__c,ClientId__r.DOB__c,
                                  ClientId__r.Name,ClientId__r.Last_Name__c,ClientId__r.Phone_Number__c,is_Converted__c,Loan__c,Date_of_birth__c,
-                                 Estimated_home_value__c,Margin__c, scenario_Type__c, RateType__c //SFDC-360 
+                                 Estimated_home_value__c,Margin__c,HeloArmMargin__c, scenario_Type__c, RateType__c //SFDC-360 
                           FROM Scenario__c 
                           WHERE id=:senarioid];        
         se.is_Converted__c = true;
@@ -137,10 +137,10 @@ public class CreateLoanFromScenario {
 
         if(se.RateType__c == 'Helo' || se.RateType__c == 'Fixed'){
             newLoan.Rate_Type__c = 'Fixed';
-            newLoan.Rate__c =  se.Margin__c;
+            newLoan.Rate__c =  se.Margin__c;            
             newLoan.Selected_Loan_Payment_Plan__c = 'Single Lump Sum';
         }else if(se.RateType__c == 'Adjust' ){
-            newLoan.Rate_Type__c = 'ARM';
+            newLoan.Rate_Type__c = 'ARM';            
             newLoan.Margin__c = String.valueOf(se.Margin__c);
         }
 

@@ -1395,31 +1395,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Loan_Origination_Fee_Calculation__c</fullName>
-        <externalId>false</externalId>
-        <label>Loan Origination Fee_Calculation</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Calculate Maximum Fee</fullName>
-                    <default>false</default>
-                    <label>Calculate Maximum Fee</label>
-                </value>
-                <value>
-                    <fullName>Enter Fee Value ($0 - $6,000)</fullName>
-                    <default>false</default>
-                    <label>Enter Fee Value ($0 - $6,000)</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Loan_Origination_Fee__c</fullName>
         <externalId>false</externalId>
         <label>Loan Origination Fee</label>
@@ -6842,6 +6817,36 @@ HYPERLINK("http://documentviewerbeta/documentviewer/#/"&amp; LoanNumber__c , 'Pl
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>Loan_Origination_Fee_Calculation__c</fullName>
+        <externalId>false</externalId>
+        <label>Loan Origination Fee_Calculation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calculate Maximum Fee</fullName>
+                    <default>false</default>
+                    <label>Calculate Maximum Fee</label>
+                </value>
+                <value>
+                    <fullName>Enter Fee Value ($0 - $6,000)</fullName>
+                    <default>false</default>
+                    <label>Enter Fee Value ($0 - $6,000)</label>
+                </value>
+                <value>
+                    <fullName>Enter Fee Value ($0 - $10,000)</fullName>
+                    <default>false</default>
+                    <label>Enter Fee Value ($0 - $10,000)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
@@ -7527,6 +7532,17 @@ ISPICKVAL( Product_Type__c, "HECM" )</errorConditionFormula>
         <description>ORMS Documents field must be populated before Loan can be Folder Received (In Underwriting Review)</description>
         <errorConditionFormula>ISPICKVAL(  LoanStatus__c  , 'In Underwriting Review') &amp;&amp; ISBLANK(  TEXT(ORMS__c)  )</errorConditionFormula>
         <errorMessage>ORMS Documents Field must be populated to continue</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Loan_Origination_fee_product_limit</fullName>
+        <active>true</active>
+        <description>Loan Origination fee limit based on product</description>
+        <errorConditionFormula>OR(
+(ISPICKVAL(Product_Type__c , 'HECM') &amp;&amp; Loan_Origination_Fee__c &gt; 6000),
+(ISPICKVAL(Product_Type__c , 'HELO') &amp;&amp; Loan_Origination_Fee__c &gt; 10000) 
+)</errorConditionFormula>
+        <errorDisplayField>Loan_Origination_Fee__c</errorDisplayField>
+        <errorMessage>Loan origination fee cannot be more than $6000 for HECM and more than $10000 for HELO</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>

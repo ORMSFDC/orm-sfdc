@@ -75,6 +75,7 @@
     },
     SaveLoans: function (component, event, helper) {
         debugger;
+        component.set("v.IsSpinner", true);
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         var loanType = component.get("v.NewLoan.Product_Type__c");
         var mortAppliedFor = component.get("v.NewLoan.Mortgage_Applied_for__c");
@@ -148,6 +149,7 @@
             component.set("v.LoanId", data.getReturnValue());
             this.PopulateLoanName(component, event, helper);
             this.ValidationForPills(component, event, helper);
+            component.set("v.IsSpinner", false);
         });
         $A.enqueueAction(action);
     },
@@ -228,7 +230,7 @@
             }
 
 			var loanCalaculayionType = component.find("newSelectlist").get("v.value");
-            if (loanCalaculayionType == 'Calculate Maximum Fee' || loanCalaculayionType == 'Enter Fee Value ($0 - $6,000)') {
+            if (loanCalaculayionType == 'Calculate Maximum Fee' || loanCalaculayionType == 'Enter Fee Value ($0 - $6,000)' ||  loanCalaculayionType == 'Enter Fee Value ($0 - $10,000)') {
 
                 component.set("v.show_originate_fee", true);
                 if (loanCalaculayionType === 'Calculate Maximum Fee')
@@ -545,14 +547,14 @@
             component.set("v.show_originate_fee", false);
             component.set("v.newSelectlistdisable", true);
         }
-        if (amount <= 200000) {
+      /*  if (amount <= 200000) {
             var loanfee = amount * 0.02;
             if (loanfee >= 10000) {
                 component.set('v.NewLoan.Loan_Origination_Fee__c', 10000);
             } else {
                 component.set('v.NewLoan.Loan_Origination_Fee__c', Math.round(loanfee));
             }
-        } else {
+        } else {*/
             var initialAmount = 200000;
             var remaining = amount - initialAmount;
             var loanfeeonInitial = initialAmount * 0.02;
@@ -568,7 +570,7 @@
                     component.set('v.NewLoan.Loan_Origination_Fee__c', 0);
                 }
             } 
-        }
+       // }
     },
 
     calculateFromPurchasePrice: function (component, event, helper) {
@@ -770,7 +772,7 @@
             var loanfeeonRemaining = remaining * 0.01;
             var totalLoanFee1 = loanfeeonInitial + loanfeeonRemaining;
             //var totalLoanFee = Math.round(totalLoanFee1);
-            if (amountEntered >= 10000) {
+            if (amountEntered > 10000) {
                 var msg = 'Loan origination fee is capped at $10,000.00.';
                 inputCmp.set("v.errors", [{ message: msg }]);
                 finalFlg = true;
