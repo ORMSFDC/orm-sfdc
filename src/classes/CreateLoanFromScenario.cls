@@ -86,7 +86,8 @@ public class CreateLoanFromScenario {
     Logger.push('createLoan','CreateLoanFromScenario');   
         Scenario__c se = [SELECT id,BayDocsOrderNumber__c,Client_Lead__c,Client_Lead__r.Street,Client_Lead__r.Postalcode,Client_Lead__r.State,
                                  Client_Lead__r.Email,ClientId__c,Client_Lead__r.DOB__c,Client_Lead__r.FirstName,Client_Lead__r.LastName,Client_Lead__r.Phone,
-                                 Client_Lead__r.city, is_Converted__c,Loan__c,Date_of_birth__c,Estimated_home_value__c,Margin__c,scenario_type__c, RateType__c,HeloArmMargin__c
+                                 Client_Lead__r.city, is_Converted__c,Loan__c,Date_of_birth__c,Estimated_home_value__c,Margin__c,scenario_type__c, RateType__c,HeloArmMargin__c,
+                                 Desired_Origination_for_Adjustable_Rate__c, EOF__c
                           From Scenario__c 
                           WHERE id=:senarioid];       
      
@@ -141,11 +142,15 @@ public class CreateLoanFromScenario {
             newLoan.Selected_Loan_Payment_Plan__c = 'Single Lump Sum';
         }else if(se.RateType__c == 'Adjust' ){
             newLoan.Rate_Type__c = 'ARM';            
-            newLoan.Margin__c = String.valueOf(se.Margin__c);
+            newLoan.Margin__c = String.valueOf(se.Margin__c); 
+            newLoan.Loan_Origination_Fee_Calculation__c = 'Enter Fee Value ($0 - $6,000)';
+            newLoan.Loan_Origination_Fee__c = se.Desired_Origination_for_Adjustable_Rate__c;
         }else if(se.RateType__c == 'HeloArm'){
             newLoan.Rate_Type__c = 'ARM';            
             newLoan.Margin__c = String.valueOf(se.HeloArmMargin__c);
             newLoan.Selected_Loan_Payment_Plan__c = 'Line of Credit';
+            newLoan.Loan_Origination_Fee_Calculation__c = 'Enter Fee Value ($0 - $10,000)';
+            newLoan.Loan_Origination_Fee__c = se.Desired_Origination_for_Adjustable_Rate__c;
         }
 
         if( se.Scenario_Type__c == 'FHA Traditional HECM'){
