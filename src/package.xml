@@ -5797,6 +5797,7 @@
     <members>unfiled$public/H4P</members>
     <members>unfiled$public/Say_HELLO_to_HELO</members>
     <members>Partner_Notification_Emails/Awaiting_Review_Notification_to_Partner</members>
+    <members>Partner_Notification_Emails/Loan_Submitted_Awaiting_Review_Notification_to_Partner</members>
     <name>EmailTemplate</name>
   </types>
   <types>
@@ -6156,6 +6157,7 @@
     <members>Loan_Status_Change_Date_Field_Update-10</members>
     <members>Loan_Status_Change_Date_Field_Update-11</members>
     <members>Loan_Status_Change_Date_Field_Update-12</members>
+    <members>Update_Loan_officer_and_Processor_Phone_on_Loan-8</members>
     <name>Flow</name>
   </types>
   <types>

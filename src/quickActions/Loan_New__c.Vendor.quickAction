@@ -38,7 +38,7 @@
             <quickActionLayoutItems>
                 <emptySpace>false</emptySpace>
                 <field>Client_Chosen_Title__c</field>
-                <uiBehavior>Edit</uiBehavior>
+                <uiBehavior>Readonly</uiBehavior>
             </quickActionLayoutItems>
             <quickActionLayoutItems>
                 <emptySpace>true</emptySpace>
