@@ -7227,14 +7227,6 @@ $Profile.Name != "System Administrator"
         <errorMessage>This loan has not yet been submitted. Once the application is submitted, the Loan Status will change to Proposal and the loan will become editable.</errorMessage>
     </validationRules>
     <validationRules>
-        <fullName>Loan_Origination_fee_greater_than_6000</fullName>
-        <active>true</active>
-        <description>Loan Origination fee must be less than or equal to  $6000</description>
-        <errorConditionFormula>Loan_Origination_Fee__c &gt; 6000</errorConditionFormula>
-        <errorDisplayField>Loan_Origination_Fee__c</errorDisplayField>
-        <errorMessage>Loan origination fee cannot be more than $6000</errorMessage>
-    </validationRules>
-    <validationRules>
         <fullName>ReDiscloure_Other_Reason_fill_textbox</fullName>
         <active>true</active>
         <description>If 'Other' is selected in the ReDisclosure picklist, then the 'Other ReDisclosure Reason' text box must be filled.</description>
@@ -7543,6 +7535,14 @@ ISPICKVAL( Product_Type__c, "HECM" )</errorConditionFormula>
 )</errorConditionFormula>
         <errorDisplayField>Loan_Origination_Fee__c</errorDisplayField>
         <errorMessage>Loan origination fee cannot be more than $6000 for HECM and more than $10000 for HELO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Loan_Origination_fee_greater_than_6000</fullName>
+        <active>false</active>
+        <description>Loan Origination fee must be less than or equal to  $6000</description>
+        <errorConditionFormula>Loan_Origination_Fee__c &gt; 6000</errorConditionFormula>
+        <errorDisplayField>Loan_Origination_Fee__c</errorDisplayField>
+        <errorMessage>Loan origination fee cannot be more than $6000</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>Export_Excel</fullName>
