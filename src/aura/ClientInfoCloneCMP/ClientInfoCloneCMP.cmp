@@ -239,7 +239,7 @@
                                 <th scope="col" class="tabhead">
                                     <div class="slds-truncate customFont17" title="Compensation"  style="text-align:center;">
                                         Total Compensation
-                                        <lightning:helptext content=" This includes your backend compensation and your desired origination combined." />
+                                        <lightning:helptext content="This includes your backend compensation and your desired origination combined." />
                                     </div>
                                 </th>
                             </tr>
@@ -1308,6 +1308,16 @@
                                     </p>
                                     <p>
                                         ***This scenario is for our HELO Fixed reverse mortgage and is based on the current market rate available to ORM clients based on individual risk-based pricing. The rate is determined by using an interest rate margin, set by ORM, and the daily 10-year LIBOR swap rate; the rate may vary until the loan is scheduled for closing. The Annual Percentage Rate (APR) is %. Results may vary based on the specific criteria of the clients(s).
+                                    </p>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!v.MarginTypeiS=='HeloArm'}">                                
+                                <div style="margin-top:1%" class="slds-form-element slds-size_2-of-2 customFont16">
+                                    <p>
+                                        *Please consult your financial advisor.
+                                    </p>
+                                    <p>
+                                        ***This scenario is for our HELO adjustable rate mortgage and is based on the values you have provided and the 1-year LIBOR index as of today. The index can change at any time. The Annual Percentage Rate (APR) is [APR output]%. The estimated closing costs include an origination fee. The interest rate is variable and may change subject to a 2% adjustment limit at any given adjustment. The interest rate will never increase by more than 5% over the initial rate (Lifetime cap). We use Moody’s Analytics to derive the future interest rates and home price appreciation.
                                     </p>
                                 </div>
                             </aura:if>

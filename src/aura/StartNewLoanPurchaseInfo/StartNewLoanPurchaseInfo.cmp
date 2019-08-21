@@ -265,13 +265,10 @@
                         </aura:if>
                         
                         <div style="margin-bottom:3%; " class="slds-size_1-of-2 inputHelpContainer">
-                            <ui:inputText disabled="{!v.show_originate_fee_disable}" label="{!if(v.NewLoan.Product_Type__c == 'HECM','Loan Origination Fee ($)','Loan Origination Fee (%)')}" required="true" aura:id="LoanOriginationFee"
-                                value="{!v.NewLoan.Loan_Origination_Fee__c}" class="slds-input" size="4"  blur="{!c.fee_change}"/> 
+                            <ui:inputText disabled="{!v.show_originate_fee_disable}" label="Loan Origination Fee ($)" required="true" aura:id="LoanOriginationFee"
+                                value="{!v.NewLoan.Loan_Origination_Fee__c}" class="slds-input" size="4"  blur="{!c.fee_change}"/> <!--label="{!if(v.NewLoan.Product_Type__c == 'HECM','Loan Origination Fee ($)','Loan Origination Fee (%)')}"-->
 
-                            <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HECM',v.NewLoan.Rate_Type__c == 'ARM')}">                                
-                                <lightning:helptext class="inputHelpText" content="The maximum HECM origination is calculated by 2% of the first $200,000 of property’s value and 1% of the amount over $200,000. 
-                                The maximum origination on the HECM loan is $6,000. The maximum HELO origination fee is $10,000.
-                                The total compensation below will reflect the desired origination that is allowable within the guidelines."/>
+                            <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HECM',v.NewLoan.Rate_Type__c == 'ARM')}">                                                                
                                 <aura:if isTrue="{!v.show_msg}">
                                     <li class="form-element__help" style="color:#c23934;font-size:.75rem;margin-top:.5rem;width:100%">The Maximum Allowed Loan Origination Fee is $6,000.</li>                                    
                                 </aura:if>
@@ -279,8 +276,17 @@
                                     <li class="form-element__help" style="color:#c23934;font-size:.75rem;margin-top:.5rem;width:100%">The Maximum Allowed Loan Origination Fee is $10,000.</li>                                    
                                 </aura:if>                                
                             </aura:if>
-                            <aura:if isTrue="{!v.NewLoan.Product_Type__c == 'HELO'}">                                
-                                <lightning:helptext class="inputHelpText" content="Loan Origination is based on % of Unpaid Principal Balance. Origination on the One Reverse HELO is paid to One Reverse Mortgage."/>
+                            <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HELO',v.NewLoan.Rate_Type__c == 'ARM')}">                                
+                                <lightning:helptext class="inputHelpText" content="Loan Origination is determined by and paid to the broker and has a maximum of $10,000."/>
+                            </aura:if>
+                            <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HECM',v.NewLoan.Rate_Type__c == 'ARM')}">                                
+                                <lightning:helptext class="inputHelpText" content="Loan Origination is determined by and paid to the broker. The maximum amount is calculated by 2% of the first $200,000 of the max claim and 1% of the remaining with a cap of $6,000.00."/>
+                            </aura:if>
+                            <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HECM',v.NewLoan.Rate_Type__c == 'Fixed')}">                                
+                                <lightning:helptext class="inputHelpText" content="Loan Origination is based on the rate selected and is paid to ORM. The maximum amount is calculated by 2% of the first 200,000 of the max claim and 1% of the remaining with a cap of $6,000.00."/>
+                            </aura:if>
+                            <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HELO',v.NewLoan.Rate_Type__c == 'Fixed')}">                                
+                                <lightning:helptext class="inputHelpText" content="Loan Origination is based on the rate selected and is paid to ORM. The maximum amount is $10,000.00"/>
                             </aura:if>
                         </div>
 
