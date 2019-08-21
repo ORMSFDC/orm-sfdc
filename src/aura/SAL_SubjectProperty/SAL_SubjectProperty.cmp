@@ -20,12 +20,14 @@
     <aura:attribute name="requiredZip2" type="boolean" default="false"/>
     <aura:attribute name="requiredZip3" type="boolean" default="false"/> 
     <aura:attribute name="requiredZip4" type="boolean" default="false"/> 
+    <aura:attribute name="requiredZip5" type="boolean" default="false"/> 
+    <aura:attribute name="requiredZip6" type="boolean" default="false"/> 
     <!--SFDC - 365-->
     <aura:attribute name="itemsClicked" type="String" />
     
    	<aura:attribute name="prodType" type="String" /> <!--SFDC - 275-->
     <aura:attribute name="rateType" type="String" /> <!--SFDC - 275-->
-    
+    <aura:attribute name="loanType" type="String" />
     <aura:attribute name="myBool" type="Boolean" default="false"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="options" type="List" default="[
@@ -101,6 +103,12 @@
                             </aura:if>
                             <aura:if isTrue='{!v.requiredZip4}'>
                                 <h6 style="color:red;">We do not offer the HELO for Purchase in this state.</h6>
+                            </aura:if>
+                            <aura:if isTrue='{!v.requiredZip5}'>
+                                <h6 style="color:red;">We do not offer the HELO ARM for Refinance in this state.</h6>
+                            </aura:if>
+                            <aura:if isTrue='{!v.requiredZip6}'>
+                                <h6 style="color:red;">We do not offer the HELO ARM for Purchase in this state.</h6>
                             </aura:if>
                         </div>
                         

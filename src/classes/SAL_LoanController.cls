@@ -105,7 +105,7 @@ public with sharing class SAL_LoanController {
                        No_of_Units__c, Year_Built__c,Square_Footage__c, Property_Held_as__c, Property_Title_is_Held_in_These_Names__c,
                        Check_If_Title_is_also_Held_As__c, Real_Estate_Taxes__c, Hazard_Insurance__c, IsActiveFlag__c,HOA_Monthly_Dues__c,
                        Monthly_PUD_Fees_Amount__c,Monthly_Ground_Rents_Amount__c,Monthly_Flood_Insurance_Premium__c,Condominium_FHA_Approved__c,Condominium_Name__c,
-                       Present_Market_Value__c,Mortgage_and_Liens__c,Name_of_Company__c,Account_Number__c,Gross_Rental_Income__c,Monthly_Mortgage_Payment__c
+                       Present_Market_Value__c,Mortgage_and_Liens__c,Name_of_Company__c,Account_Number__c,Gross_Rental_Income__c,Monthly_Mortgage_Payment__c,Rate_Type__c
                        ,Net_Rental_Income__c,Originating_Loan_Officer__c, Product_Type__c,Mortgage_Applied_for__c //SFDC - 275
                        FROM Loan_New__c  where Id=: RecordId];
             //Code Ended by Dev4 for ORMSFDC-1423
@@ -406,7 +406,9 @@ public with sharing class SAL_LoanController {
 
     @AuraEnabled
     public static list<HeloArmState__mdt> get_heloArmStatesRefi() {
-        return [Select MasterLabel from HeloArmState__mdt where isActive__c=:true and isRefinance__c=:true];                
+        system.debug('@@@test');
+        return [Select MasterLabel from HeloArmState__mdt where isActive__c=:true and isRefinance__c=:true];      
+
     }
 
     @AuraEnabled

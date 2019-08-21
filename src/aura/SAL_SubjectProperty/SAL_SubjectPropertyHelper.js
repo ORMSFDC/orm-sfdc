@@ -662,6 +662,7 @@
         $A.enqueueAction(action1);
     },
     getStateCity: function (component, event, helper, ZIP) {
+        debugger;
         //Fetch States based on Product and rate types SFDC - 275 
         var action2 = component.get("c.getSubjectPropertyByLoanId");
         var LoanId = component.get('v.subjectPropertyLoanId');
@@ -672,7 +673,10 @@
             var rateData = data.getReturnValue();                   
             component.set("v.prodType",rateData.Product_Type__c);
             component.set("v.rateType",rateData.Mortgage_Applied_for__c);
+            component.set("v.loanType",rateData.Rate_Type__c);
             console.log('prodtype!',component.get("v.prodType"));
+            console.log('rateType!',component.get("v.rateType"));
+            console.log('loanType!',component.get("v.loanType"));
 
         });
         $A.enqueueAction(action2);
@@ -691,6 +695,7 @@
                 //SFDC-275 start
                 var prodType = component.get('v.prodType'); 
                 var rateType = component.get('v.rateType');
+                var loanType = component.get('v.loanType');
                 console.log('prodtypeinside',prodType); 
                 //HECM Refinance
                 if(prodType == 'HECM' && (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance')){
@@ -701,12 +706,18 @@
                     var action1 = component.get("c.getStatesPur");
                 }
                 //HELO Purchase
-                else if(prodType == 'HELO' && rateType == 'HELO for Purchase'){                    
+                else if(prodType == 'HELO' && rateType == 'HELO for Purchase' && loanType == 'Fixed'){                    
                     var action1 = component.get("c.get_heloStatesPur");
                 }
                 //HELO Refinance
-                else if(prodType == 'HELO' && rateType == 'HELO Refinance'){                    
+                else if(prodType == 'HELO' && rateType == 'HELO Refinance' && loanType == 'Fixed'){                    
                     var action1 = component.get("c.get_heloStatesRefi");
+                }
+                else if(prodType == 'HELO' && rateType == 'HELO Refinance' && loanType == 'ARM'){
+                    var action1 = component.get("c.get_heloArmStatesRefi");
+                }
+                else if(prodType == 'HELO' && rateType == 'HELO for Purchase' && loanType == 'ARM'){
+                    var action1 = component.get("c.get_heloArmStatesPur");
                 }
                 //var action1 = component.get("c.getStates");
                 //SFDC-275 end
@@ -727,6 +738,8 @@
                         component.set("v.requiredZip2",false); //SFDC-365
                         component.set("v.requiredZip3",false);
                         component.set("v.requiredZip4",false);
+                        component.set("v.requiredZip5",false);
+                        component.set("v.requiredZip6",false);
                     }
                     else {
                         component.set("v.requiredZip", true);
@@ -735,7 +748,7 @@
                             component.set("v.requiredZip1", true);
                             component.set("v.requiredZip", false);
                         }    
-                        if(prodType == 'HELO' && rateType == 'HELO Refinance'){
+                        if(prodType == 'HELO' && rateType == 'HELO Refinance' && loanType == 'Fixed'){
                             component.set("v.requiredZip2", true);
                             component.set("v.requiredZip", false);
                         }
@@ -743,8 +756,16 @@
                             component.set("v.requiredZip3", true);
                             component.set("v.requiredZip", false);
                         }
-                        if(prodType == 'HELO' && rateType == 'HELO for Purchase'){
+                        if(prodType == 'HELO' && rateType == 'HELO for Purchase' && loanType == 'Fixed'){
                             component.set("v.requiredZip4", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        if(prodType == 'HELO' && rateType == 'HELO Refinance' && loanType == 'ARM'){
+                            component.set("v.requiredZip5", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        if(prodType == 'HELO' && rateType == 'HELO for Purchase' && loanType == 'ARM'){
+                            component.set("v.requiredZip6", true);
                             component.set("v.requiredZip", false);
                         }
                         //SFDC-365
@@ -796,10 +817,11 @@
 
     //New
     checkSolarPanelHelp:  function (component, event, helper) {
-       
+        debugger;
         var checkSolarPanel = false;
         var getSolarPaidOff = component.get('v.subjectProperty.Solar_Panels_Paid_Off__c');
-        var productType = component.get('v.subjectProperty.Product_Type__c');
+        var productType = component.get('v.subjectProperty.Product_Type__c');        
+        
 
         if(getSolarPaidOff == "No" && productType == "HECM"){
             checkSolarPanel = true;
