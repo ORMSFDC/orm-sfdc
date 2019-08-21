@@ -360,11 +360,16 @@ public without sharing class lookUpController {
         //1st end
 
         //2nd start
-        string FamilySize;
+        string FamilySize;        
         string StateRegion = SAL_CashFlowController.Get_StateRegion(state);
+
+        Scenario__c scData = New Scenario__c();
+        scData = [SELECT Estimated_home_value__c, RateType__c  FROM Scenario__c where iD= : senarioid ];
+        decimal homeValue = scData.Estimated_home_value__c;
+        string productType = scData.RateType__c;
         system.debug('StateRegion' + StateRegion);
         if (Household_Members != null) {
-            if (integer.valueof(Household_Members) > 3) {
+            if (integer.valueof(Household_Members) > 3) { 
                 FamilySize = '4 or more';
             } else {
                 FamilySize = '' + Household_Members;
@@ -375,13 +380,13 @@ public without sharing class lookUpController {
             System.debug('StateRegion ' + StateRegion);
 
             System.debug('FamilySize ' + FamilySize);
-            RequiredCashFlowValue = SAL_CashFlowController.Get_ResidualIncome(StateRegion, FamilySize);
+            RequiredCashFlowValue = SAL_CashFlowController.Get_ResidualIncome(StateRegion, FamilySize, homeValue, productType);
         } else {
             RequiredCashFlowValue = 10;
         }
         //Decimal  RequiredCashFlow= RequiredCashFlowValue==0?1:RequiredCashFlowValue;
         Decimal RequiredCashFlow = RequiredCashFlowValue ;
-        system.debug('RequiredCashFlow' + RequiredCashFlow);
+        system.debug('RequiredCashFlow' + RequiredCashFlow); 
         Responseobj.RequiredCashFlow = RequiredCashFlow;
         //2nd end
 
@@ -795,5 +800,4 @@ public without sharing class lookUpController {
         return attWrap;
     }
     //End Download Scenario package
-
 }

@@ -402,33 +402,35 @@ public class SAL_CashFlowController {
     {    
         Loan_New__c Obj=New Loan_New__c();
         decimal CashFlow=0.00;
+        decimal homeValue=0.00;
         string FamilySize;
+        string productType;
         try
         {
-            Obj = [SELECT Subject_Property_State__c,Household_Members__c  FROM Loan_New__c where iD= : LoanID ];
+            Obj = [SELECT Subject_Property_State__c,Household_Members__c, Estimate_of_Appraised_Value__c,Product_Type__c  FROM Loan_New__c where iD= : LoanID ];
+            system.debug('cashflow data -----> 1' +obj);
             string StateRegion=GetStateRegion(Obj.Subject_Property_State__c);
             system.debug('StateRegion'+StateRegion);
-            if(Obj.Household_Members__c!=null)
-            {
-            if(integer.valueof(Obj.Household_Members__c)>3)
-            {
-                FamilySize='4 or more';     
-            }
-            else
-            {
-                FamilySize=Obj.Household_Members__c;
-            }
-            
-            CashFlow= GetResidualIncome(StateRegion,FamilySize);
-            system.debug(Obj.Subject_Property_State__c);
-            system.debug(StateRegion);
+            if(Obj.Household_Members__c!=null){
+                if(integer.valueof(Obj.Household_Members__c)>3){
+                    FamilySize='4 or more';     
+                }
+                else{
+                    FamilySize=Obj.Household_Members__c;
+                }            
+                homeValue = obj.Estimate_of_Appraised_Value__c;
+                productType = obj.Product_Type__c;
+                system.debug('homeval--->'+homeValue);
+                CashFlow= GetResidualIncome(StateRegion,FamilySize,homeValue,productType);
+                system.debug(Obj.Subject_Property_State__c);
+                system.debug(StateRegion);
             }
         }
         catch(Exception ex)
         {
             system.debug('GetRequiredCashFlow----Exception---'+ex);
         }      
-        system.debug('CashFlow'+CashFlow);
+        system.debug('CashFlow -------?'+CashFlow);
         return CashFlow;
     }
     
@@ -505,19 +507,29 @@ public class SAL_CashFlowController {
         return getStateRegion.get(State);
     }
     
-    public  static decimal  Get_ResidualIncome(string ColoumnName,string FamilySize){
-     return  GetResidualIncome( ColoumnName, FamilySize);
-   
-     }
+    public  static decimal  Get_ResidualIncome(string ColoumnName,string FamilySize, decimal homeValue, string productType){
+        return  GetResidualIncome( ColoumnName, FamilySize, homeValue, productType);        
+    }
+
     //Method to get ResidualIncome
-    Private static decimal  GetResidualIncome(string ColoumnName,string FamilySize){
-        system.debug('FamilySize ColoumnName'+ ColoumnName+ FamilySize);
+    Private static decimal  GetResidualIncome(string ColoumnName,string FamilySize, decimal homeValue, string productType){
+        system.debug('ColoumnName ---> '+ ColoumnName  + 'Family size'+ FamilySize + 'home value' +homeValue + 'productType' +productType);
         string Fsize = FamilySize ;
+        decimal value = 0.00;
         String query = 'select ' + ColoumnName + ' from ResidualIncome__c where Family_Size__c = :Fsize';
         ResidualIncome__c record =new ResidualIncome__c();
-        record=Database.query(query)  ;
-        system.debug('record'+record);
-        decimal value=(decimal)record.get(ColoumnName);
+        record=Database.query(query);
+        system.debug('record -->'+record);
+        decimal value2=(decimal)record.get(ColoumnName);
+        system.debug('value2 -->'+value2);
+
+        if ((homeValue >= 726526 && homeValue <= 2000000) && (productType == 'HELO' || productType == 'Helo' || productType == 'HeloArm' )){
+            value = 1.5 * value2;
+        }else if(homeValue > 2000000 && (productType == 'HELO' || productType == 'Helo' || productType == 'HeloArm' )){
+            value = 2 * value2;
+        }else{
+            value = value2;
+        }
         system.debug(record.get(ColoumnName));
         return value;
     }
