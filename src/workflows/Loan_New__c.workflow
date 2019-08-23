@@ -54,11 +54,16 @@
         <description>Loan Submitted - Awaiting Review Notification to Partner</description>
         <protected>false</protected>
         <recipients>
+            <field>Related_Individual__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
             <recipient>shivni@orms.com</recipient>
             <type>user</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Partner_Notification_Emails/Awaiting_Review_Notification_to_Partner</template>
+        <senderAddress>ormssupport@onereverse.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Partner_Notification_Emails/Loan_Submitted_Awaiting_Review_Notification_to_Partner</template>
     </alerts>
     <fieldUpdates>
         <fullName>Extend_Application_Time</fullName>
