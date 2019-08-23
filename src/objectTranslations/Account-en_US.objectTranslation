@@ -2124,16 +2124,7 @@ Closed loans are those that are in Closed, Awaiting Funding or Funded statuses. 
         <label><!-- GoogleSearch --></label>
         <name>GoogleSearch</name>
     </webLinks>
-    <webLinks>
-        <label><!-- Send_Pardot_Emails --></label>
-        <name>pi__Send_Pardot_Emails</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Send_Single_Pardot_Email --></label>
-        <name>pi__Send_Single_Pardot_Email</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Send_To_Prospect_Insight --></label>
-        <name>pi__Send_To_Prospect_Insight</name>
-    </webLinks>
+    
+    
+    
 </CustomObjectTranslation>

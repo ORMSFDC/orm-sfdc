@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
         <label><!-- Account Approval Sub-Status --></label>
         <name>Account_Approval_Sub_Status__c</name>
@@ -900,10 +900,7 @@
         <label><!-- userLoginId --></label>
         <name>userLoginId__c</name>
     </fields>
-    <fieldSets>
-        <label><!-- Mass Transfer Contacts: Results List Columns --></label>
-        <name>MassTransferContacts_Results_List_Column</name>
-    </fieldSets>
+    
     <layouts>
         <layout>Approved Individuals Layout</layout>
         <sections>
