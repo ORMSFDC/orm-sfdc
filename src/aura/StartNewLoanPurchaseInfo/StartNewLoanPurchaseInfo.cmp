@@ -223,7 +223,7 @@
                             <div class="{!if(v.NewLoan.Rate_Type__c == 'Fixed','slds-show','slds-hide')}">                                
                                 <ui:inputSelect label="Rate (%)" aura:id="Ratedata" required="true" value="{!v.NewLoan.Rate__c}" change="{!c.RateChange}">
                                     <ui:inputSelectOption value="true" text="" label="---Select Option---" />
-                                    <aura:if isTrue="{!v.NewLoan.Product_Type__c == 'HECM'}">
+                                    <aura:if isTrue="{!and(v.NewLoan.Product_Type__c == 'HECM',v.NewLoan.Rate_Type__c == 'Fixed') }">
                                         <aura:iteration items="{!v.RateList}" var="pOptions">
                                         	<ui:inputSelectOption text="{!pOptions}" label="{!pOptions}" disabled="{!v.NewLoan.Product_Type__c == 'HELO'}" />
                                         </aura:iteration>  

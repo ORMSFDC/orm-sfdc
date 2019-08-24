@@ -33,7 +33,7 @@ public class savedScenarioController {
     public static void updateSenario(String senarioid,String loanId){
         Scenario__c se = [select id,ClientId__r.Email_Optional__c,ClientId__c,ClientId__r.State__c,ClientId__r.Street_Address__c,
                                  ClientId__r.DOB__c,ClientId__r.Name,ClientId__r.Last_Name__c,ClientId__r.Phone_Number__c,
-                                 is_Converted__c,Loan__c,Date_of_birth__c,Estimated_home_value__c,Margin__c 
+                                 is_Converted__c,Loan__c,Date_of_birth__c,Estimated_home_value__c,Margin__c,HeloArmMargin__c
                           from Scenario__c 
                           where id=:senarioid];
         
@@ -88,7 +88,7 @@ public class savedScenarioController {
                       Monthly_Mortgage_Payment__c,Current_Mortgage_Balance__c,
                       Current_Mortgage_Interest_Rate__c,Estimated_home_value__c,Date_of_birth__c, CreatedDate,piechartresponse__c,barchartresponse__c,
                       Line_of_Credit__c,Index__c,Margin__c,Scenario_Type__c,CashFlow1__c,CashFlow10__c,
-                      CashFlow5__c,Cash_at_close__c,Cash_to_close__c,EOF__c,Other_Estimated_Closing_Costs__c,Origination_to_orm__c
+                      CashFlow5__c,Cash_at_close__c,Cash_to_close__c,EOF__c,Other_Estimated_Closing_Costs__c,Origination_to_orm__c,HeloArmMargin__c
                       from scenario__c where id=:ScenarioID];
       }
       catch(exception ex ){
@@ -158,8 +158,8 @@ public class savedScenarioController {
       {
         lookUpController.createAETask(ScenarioID);
       }
-    
-      //Download Scenario package
+
+       //Download Scenario package
     public class attchmentWrapper{
         @AuraEnabled
         public String attBlob {get;set;}

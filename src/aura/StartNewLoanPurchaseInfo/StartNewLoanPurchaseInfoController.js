@@ -10,6 +10,7 @@
     },
 
     doInit: function (component, event, helper) {
+        debugger;
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         helper.PopulateRate(component, event, helper);
         window.scrollTo(0, 0);
@@ -616,6 +617,7 @@
         }
     },
     fee_change: function (component, event, helper) {
+        debugger;
         var rtype = component.get("v.NewLoan.Rate_Type__c");
         var productType = component.get("v.NewLoan.Product_Type__c");
         if (rtype == 'ARM' && productType == 'HECM') {
@@ -649,6 +651,7 @@
         }
     },
     RateChange: function (component, event, helper) {
+        debugger;
         var Rate = component.find("Ratedata").get("v.value");
 
         var productType = component.get("v.NewLoan.Product_Type__c");

@@ -2,7 +2,7 @@
     //Pie Graph Populate
     hlperscriptsLoaded: function (component, event, helper) {
         //    component.set("v.IsSpinner",true);
-
+debugger;
         var lienAmount = 0;//prsn
         var evh = 0;
         var financingFees = 0;
@@ -58,17 +58,21 @@
                 if (result.RateType__c == 'Adjust') {
                     component.set('v.LRateType', 'ARM');
                     component.set('v.MarginIs', 'Margin');
+                    component.set("v.Margin", result.Margin__c);
                 } else if (result.RateType__c == 'Fixed') { //Helo Fix
                     component.set('v.MarginIs', 'Rate');
                     component.set('v.LRateType', 'Fixed');
+                    component.set("v.Margin", result.Margin__c);
                 }
                 else if(result.RateType__c == 'Helo'){ //Helo Fix
                     component.set('v.MarginIs', 'Rate');
                     component.set('v.LRateType', 'Helo');
+                    component.set("v.Margin", result.Margin__c);
                 }
                 else{
                     component.set('v.MarginIs', 'Rate');
-                    component.set('v.LRateType', 'HeloArm');                    
+                    component.set('v.LRateType', 'HeloArm');    
+                    component.set("v.Margin", result.HeloArmMargin__c);                                    
                 }
 
                 //alert(component.get('v.ScenarioType'));
@@ -163,7 +167,7 @@
             document.getElementById("CashFlows").style.display = "BLOCK";
             document.getElementById("LOCandCashFlows").style.display = "BLOCK";
             component.set("v.Index", result.Index__c);//myObj.annualLibor);
-            component.set("v.Margin", result.Margin__c);// myObj.lendersMargin);
+            //component.set("v.Margin", result.Margin__c);// myObj.lendersMargin);
             component.set("v.MIP", result.MIP__c);
             insuranceFees = result.MIP__c; //prsn
             insuranceFees = (Math.round(insuranceFees * 100) / 100);

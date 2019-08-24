@@ -155,6 +155,7 @@
     },
 
     PopulateLoanName: function (component, event, helper) {
+        debugger;
         var LoanId;
         if (component.get("v.popupLoanId") == "default") {
             LoanId = component.get("v.LoanId");
@@ -178,6 +179,7 @@
     },
 
     setRate: function (component, rate) {
+        debugger;
         component.set("v.NewLoan.Rate__c", rate);
     },
 
@@ -197,11 +199,14 @@
             "RecordId": LoanId
         });
         action1.setCallback(this, function (data) {
+            debugger;
             var result = data.getReturnValue();
             var rtype = result.Rate_Type__c;
             var ptype = result.Product_Type__c;
             var Rate = result.Rate__c;
             var heloArmMargin = result.Margin__c;
+
+            console.log('Rate@@@',Rate);
             
             if (result.Children_Under_the_age_of_6_living_in_th__c == "" || result.Children_Under_the_age_of_6_living_in_th__c == undefined || 
                 result.Children_Under_the_age_of_6_living_in_th__c == null) {
@@ -275,6 +280,13 @@
                     component.set("v.HeloRateList", result);
                 });
                 $A.enqueueAction(action);
+            }else if('HECM' === ptype && 'Fixed' === rtype){                
+                var action = component.get('c.getRateFixProduct');
+                action.setCallback(this, function (data) {
+                    var result = data.getReturnValue();
+                    component.set("v.RateList", result);
+                });
+                $A.enqueueAction(action);
             }else if('HELO' === ptype && 'ARM' === rtype){
                 var action = component.get('c.getHeloArmRate');
                 action.setCallback(this, function (data) {
@@ -297,6 +309,12 @@
                 component.set("v.HeloRateList", result);
             });
             $A.enqueueAction(action);*/
+            var action = component.get('c.getRateFixProduct');
+                action.setCallback(this, function (data) {
+                    var result = data.getReturnValue();
+                    component.set("v.RateList", result);
+                });
+                $A.enqueueAction(action);
     },
 
     interviewdatevalidation: function (component, event, helper) {
@@ -905,6 +923,7 @@
     
     //send Helo Margin
     getHeloMargin: function (component, event, helper, Rate) {
+        debugger;
         var rateval = Rate;
         var action1 = component.get("c.getHeloMargin");
 
@@ -1110,6 +1129,7 @@
     },
     //SFDC - 360
     originationBorrowerPopup: function(component, event, helper, Rate){
+        debugger;
         var value = Rate;        
         var rate= Number.parseFloat(value).toFixed(3);
         var productType = component.get("v.NewLoan.Product_Type__c");
