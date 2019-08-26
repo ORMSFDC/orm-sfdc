@@ -1390,89 +1390,6 @@ CONTAINS("800:877",LEFT(SUBSTITUTE(Office_Phone__c,"(",""),3)),"Toll Free","Othe
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
-        <fullName>Title__c</fullName>
-        <externalId>false</externalId>
-        <label>Title</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Principal</fullName>
-                    <default>false</default>
-                    <label>Principal</label>
-                </value>
-                <value>
-                    <fullName>Loan Officer</fullName>
-                    <default>false</default>
-                    <label>Loan Officer</label>
-                </value>
-                <value>
-                    <fullName>Processor</fullName>
-                    <default>false</default>
-                    <label>Processor</label>
-                </value>
-                <value>
-                    <fullName>Branch Manager</fullName>
-                    <default>false</default>
-                    <label>Branch Manager</label>
-                </value>
-                <value>
-                    <fullName>Regional Manager</fullName>
-                    <default>false</default>
-                    <label>Regional Manager</label>
-                </value>
-                <value>
-                    <fullName>Secondary Market</fullName>
-                    <default>false</default>
-                    <label>Secondary Market</label>
-                </value>
-                <value>
-                    <fullName>Post close contact</fullName>
-                    <default>false</default>
-                    <label>Post close contact</label>
-                </value>
-                <value>
-                    <fullName>Assistant Loan Officer</fullName>
-                    <default>false</default>
-                    <label>Assistant Loan Officer</label>
-                </value>
-                <value>
-                    <fullName>Processing manager</fullName>
-                    <default>false</default>
-                    <label>Processing manager</label>
-                </value>
-                <value>
-                    <fullName>Third party closer</fullName>
-                    <default>false</default>
-                    <label>Third party closer</label>
-                </value>
-                <value>
-                    <fullName>General</fullName>
-                    <default>false</default>
-                    <label>General</label>
-                </value>
-                <value>
-                    <fullName>Billing Contact</fullName>
-                    <default>false</default>
-                    <label>Billing Contact</label>
-                </value>
-                <value>
-                    <fullName>Owner</fullName>
-                    <default>false</default>
-                    <label>Owner</label>
-                </value>
-                <value>
-                    <fullName>QL Banker</fullName>
-                    <default>false</default>
-                    <label>QL Banker</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Username__c</fullName>
         <externalId>false</externalId>
         <label>Username</label>
@@ -3470,6 +3387,89 @@ FALSE
         <label>Approved Partner</label>
         <trackHistory>false</trackHistory>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Principal</fullName>
+                    <default>false</default>
+                    <label>Principal</label>
+                </value>
+                <value>
+                    <fullName>Loan Officer</fullName>
+                    <default>false</default>
+                    <label>Loan Officer</label>
+                </value>
+                <value>
+                    <fullName>Processor</fullName>
+                    <default>false</default>
+                    <label>Processor</label>
+                </value>
+                <value>
+                    <fullName>Branch Manager</fullName>
+                    <default>false</default>
+                    <label>Branch Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Manager</label>
+                </value>
+                <value>
+                    <fullName>Secondary Market</fullName>
+                    <default>false</default>
+                    <label>Secondary Market</label>
+                </value>
+                <value>
+                    <fullName>Post close contact</fullName>
+                    <default>false</default>
+                    <label>Post close contact</label>
+                </value>
+                <value>
+                    <fullName>Assistant Loan Officer</fullName>
+                    <default>false</default>
+                    <label>Assistant Loan Officer</label>
+                </value>
+                <value>
+                    <fullName>Processing manager</fullName>
+                    <default>false</default>
+                    <label>Processing manager</label>
+                </value>
+                <value>
+                    <fullName>Third party closer</fullName>
+                    <default>false</default>
+                    <label>Third party closer</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Billing Contact</fullName>
+                    <default>false</default>
+                    <label>Billing Contact</label>
+                </value>
+                <value>
+                    <fullName>Owner</fullName>
+                    <default>false</default>
+                    <label>Owner</label>
+                </value>
+                <value>
+                    <fullName>QL Banker</fullName>
+                    <default>false</default>
+                    <label>QL Banker</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
   <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
   <enableEnhancedLookup>true</enableEnhancedLookup>
