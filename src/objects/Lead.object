@@ -1034,69 +1034,6 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <type>Phone</type>
     </fields>
     <fields>
-        <fullName>Primary_Contact_Title__c</fullName>
-        <externalId>false</externalId>
-        <label>Primary Contact Title</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Principal</fullName>
-                    <default>false</default>
-                    <label>Principal</label>
-                </value>
-                <value>
-                    <fullName>Loan Officer</fullName>
-                    <default>false</default>
-                    <label>Loan Officer</label>
-                </value>
-                <value>
-                    <fullName>Processor</fullName>
-                    <default>false</default>
-                    <label>Processor</label>
-                </value>
-                <value>
-                    <fullName>Branch Manager</fullName>
-                    <default>false</default>
-                    <label>Branch Manager</label>
-                </value>
-                <value>
-                    <fullName>Regional Manager</fullName>
-                    <default>false</default>
-                    <label>Regional Manager</label>
-                </value>
-                <value>
-                    <fullName>Secondary Market</fullName>
-                    <default>false</default>
-                    <label>Secondary Market</label>
-                </value>
-                <value>
-                    <fullName>Post Close Contact</fullName>
-                    <default>false</default>
-                    <label>Post Close Contact</label>
-                </value>
-                <value>
-                    <fullName>Assistant Loan Officer</fullName>
-                    <default>false</default>
-                    <label>Assistant Loan Officer</label>
-                </value>
-                <value>
-                    <fullName>Processing Manager</fullName>
-                    <default>false</default>
-                    <label>Processing Manager</label>
-                </value>
-                <value>
-                    <fullName>Third Party Closer</fullName>
-                    <default>false</default>
-                    <label>Third Party Closer</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>Primary_contact_name__c</fullName>
         <externalId>false</externalId>
         <label>Primary contact name</label>
@@ -2923,6 +2860,69 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <fullName>IndividualId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Contact Title</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Principal</fullName>
+                    <default>false</default>
+                    <label>Principal</label>
+                </value>
+                <value>
+                    <fullName>Loan Officer</fullName>
+                    <default>false</default>
+                    <label>Loan Officer</label>
+                </value>
+                <value>
+                    <fullName>Processor</fullName>
+                    <default>false</default>
+                    <label>Processor</label>
+                </value>
+                <value>
+                    <fullName>Branch Manager</fullName>
+                    <default>false</default>
+                    <label>Branch Manager</label>
+                </value>
+                <value>
+                    <fullName>Regional Manager</fullName>
+                    <default>false</default>
+                    <label>Regional Manager</label>
+                </value>
+                <value>
+                    <fullName>Secondary Market</fullName>
+                    <default>false</default>
+                    <label>Secondary Market</label>
+                </value>
+                <value>
+                    <fullName>Post Close Contact</fullName>
+                    <default>false</default>
+                    <label>Post Close Contact</label>
+                </value>
+                <value>
+                    <fullName>Assistant Loan Officer</fullName>
+                    <default>false</default>
+                    <label>Assistant Loan Officer</label>
+                </value>
+                <value>
+                    <fullName>Processing Manager</fullName>
+                    <default>false</default>
+                    <label>Processing Manager</label>
+                </value>
+                <value>
+                    <fullName>Third Party Closer</fullName>
+                    <default>false</default>
+                    <label>Third Party Closer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
   <compactLayoutAssignment>Leads_Custom_Compact_Layout</compactLayoutAssignment>
   <enableFeeds>true</enableFeeds>
