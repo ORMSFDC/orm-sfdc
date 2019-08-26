@@ -531,6 +531,6 @@ public class SAL_CashFlowController {
             value = value2;
         }
         system.debug(record.get(ColoumnName));
-        return value;
+        return value.setScale(0, RoundingMode.CEILING);
     }
 }
