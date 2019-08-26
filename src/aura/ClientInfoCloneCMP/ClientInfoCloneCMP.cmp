@@ -1290,7 +1290,7 @@
                                         *Please consult your financial advisor.
                                     </p>
                                     <p>
-                                        ***This scenario is for our HECM Fixed reverse mortgage and is based on the current market rate available to ORM clients based on individual risk-based pricing. The rate is set based on the application criteria set forth by the Department of Housing & Urban Development (HUD) and ORM.  We honor the available Fixed Rate pricing assuming all other HUD criteria are met. Results vary based on the specific criteria of the client(s).
+                                        ***This scenario is for our HECM Fixed reverse mortgage and is based on the current market rate available to ORM clients based on individual risk-based pricing. The rate is set based on the application criteria set forth by the Department of Housing and Urban Development (HUD) and ORM.  We honor the available Fixed Rate pricing assuming all other HUD criteria are met. Results vary based on the specific criteria of the client(s).
                                     </p>
                                 </div>
                             </aura:if>
