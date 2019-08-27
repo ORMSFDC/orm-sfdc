@@ -164,15 +164,15 @@ After the file review is complete, we will begin ordering services (FHA Case Num
 <br><br> 
 <strong>Title Order Process</strong><br>
 ORMS will order title/open escrow as you requested from:<br>
-{!Loan_New__c.Title_Company__c}<br>
+{!Loan_New__c.Title_Company__c},<br>
 {!Loan_New__c.Contact_Name__c}<br>
-{!Loan_New__c.Contact_Phone_Number_LoanDetails__c}<br>
-{!Loan_New__c.Contact_Email__c}
+{!Loan_New__c.Contact_Phone_Number_LoanDetails__c}, <br>
+{!Loan_New__c.Contact_Email__c}<br>
 
 <br><br> 
 <strong>Appraisal Order Process</strong><br>
 ORMS will order the appraisal through MIS (Mortgage Information Services). <br>
-MIS will locate an appraiser within 24 hours and once an appraiser has been assigned, MIS will email {!Loan_New__c.Preferred_Contact_Name__c} for the appraisal payment.<br>
+MIS will locate an appraiser within 24 hours and once an appraiser has been assigned, MIS will email <strong>{!Loan_New__c.Preferred_Contact_Name_Email_Template__c}</strong> for the appraisal payment.<br>
 Once you make the payment through the link provided, the appraiser will contact the borrower to schedule the inspection.  If {!Loan_New__c.Related_Partner__c} is covering the cost of the appraisal, please save and upload the receipt to Portal so we can get you reimbursed on the HUD-1 settlement.<br>
 <i><strong>Note: CA properties require a carbon monoxide detector and double strapped water heater.  Please ensure your borrower have these set up and installed prior to the appraisal inspection.  This will save your borrower both time and money ($150 re-inspection fee or 1004-D).</strong></i><br>
 

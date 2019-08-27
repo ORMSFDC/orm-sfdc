@@ -6847,6 +6847,24 @@ HYPERLINK("http://documentviewerbeta/documentviewer/#/"&amp; LoanNumber__c , 'Pl
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <fields>
+        <fullName>Preferred_Contact_Name_Email_Template__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISPICKVAL(Preferred_Contact_Type__c, 'Loan Officer'), 
+  LoanOfficer__r.FirstName + " " + LoanOfficer__r.LastName, 
+
+IF( 
+ISPICKVAL(Preferred_Contact_Type__c, 'Loan Processor'), 
+  Loan_Processor__r.FirstName + " " + Loan_Processor__r.LastName,' '))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Preferred Contact Name - Email Template</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
