@@ -164,9 +164,9 @@ After the file review is complete, we will begin ordering services (FHA Case Num
 <br><br> 
 <strong>Title Order Process</strong><br>
 ORMS will order title/open escrow as you requested from:<br>
-{!Loan_New__c.Title_Company__c},<br>
+{!Loan_New__c.Title_Company__c}<br>
 {!Loan_New__c.Contact_Name__c}<br>
-{!Loan_New__c.Contact_Phone_Number_LoanDetails__c}, <br>
+{!Loan_New__c.Contact_Phone_Number_LoanDetails__c}<br>
 {!Loan_New__c.Contact_Email__c}<br>
 
 <br><br> 
