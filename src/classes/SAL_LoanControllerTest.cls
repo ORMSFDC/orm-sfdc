@@ -32,7 +32,9 @@ public class SAL_LoanControllerTest {
                 Company_NMLS_ID__c = '96385',
                 Partner_Lead_Status__c='New');
             insert portalAccount;
+            Id ContactrecordTypeId = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
+                RecordTypeId = ContactrecordTypeId,
                 LastName='LastName', 
                 Title__c='Loan Officer', 
                 Cell__c='1234569874', 
@@ -46,7 +48,7 @@ public class SAL_LoanControllerTest {
             List<Client__c> clientList;
             List<Client__c> clientListReturned;
             
-            Loan_New__c loanInsert = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Waiting for Full Package',
+            Loan_New__c loanInsert = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='In Processing',
                                                      LoanNumber__c = '12345',Appraisal_Received_Date__c=Date.today(),Loan_Originator_Identifier__c = contact.Contact_NMLS__c,                                            
                                                      Preferred_Contact_Type__c = 'Loan Officer',Related_Individual__c = user1.ContactId,
                                                      Related_Partner__c = user1.AccountId);            
@@ -266,22 +268,12 @@ public class SAL_LoanControllerTest {
             objFc.IsLicenseValidated=true;
             Account portalAccount = new Account(
                 Name='portalAccount',
-                Type_of_Institution__c='State charter',
-                Cell__c='1236547410',
-                Main_Phone__c='5414147852',
-                Company_NMLS_ID__c = '1234',
-                Partner_Lead_Status__c='New',
-                partner_type__c = 'Premier');
+                Company_NMLS_ID__c = '1234',                
+                partner_type__c = 'Non Premier');
             insert portalAccount;
             Contact contact = new Contact(
-                LastName='LastName', 
-                Title__c='Processor', 
-                Cell__c='1234569874', 
-                Office_Phone__c='1234569874', 
-                Individual_Lead_source__c='Other', 
-                Email = 'Sam@gmail.com',
-                Contact_NMLS__c = '12345',
-                Source_Name__c='Michael',
+                LastName='LastName',                
+                Contact_NMLS__c = '12345',                
                 AccountId = portalAccount.Id);
             insert contact;        
             List<Client__c> clientList;
@@ -309,12 +301,20 @@ public class SAL_LoanControllerTest {
             
             insert loanInsert;        
             string LoanId = LoanInsert.Id;
+
             Test.startTest();
             String Name =  SAL_LoanController.getLoanName(LoanId);
             List<string> lst1=SAL_LoanController.getZipData('90001');
             List<string> lst2=SAL_LoanController.getRateFixProduct(); 
             List<string> lst3=SAL_LoanController.getHeloRate();           
             List<string> lst4=SAL_LoanController.getARMRate();  //SFDC-377
+            List<string> lst5=SAL_LoanController.getHeloArmRate();
+            String ReturnVal1 = SAL_LoanController.getOrigination('5.060');
+            String ReturnVal2 = SAL_LoanController.getHeloMargin('6.625');
+            String ReturnVal3 = SAL_LoanController.getHeloArmMargin('6.000');
+            String ReturnVal4 = SAL_LoanController.getBorrower('5.060');
+            String ReturnVal5 = SAL_LoanController.getHeloOrigination('5.060');
+            String ReturnVal6 = SAL_LoanController.getHeloArmOrigination('5.060');
             Test.stopTest();
         }
         }
@@ -347,7 +347,7 @@ public class SAL_LoanControllerTest {
                 Partner_Lead_Status__c='New',
                 partner_type__c = 'Premier');
             insert portalAccount;
-            Id ContactrecordTypeId = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('Potential Partner Portal User').getRecordTypeId();
+            Id ContactrecordTypeId = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('Partner Portal User').getRecordTypeId();
             Contact contact = new Contact(
                 RecordTypeId = ContactrecordTypeId,
                 Potential_Portal_User_Status__c = 'Ready',
@@ -405,7 +405,9 @@ public class SAL_LoanControllerTest {
                 List<String> ReturnVal10 = SAL_LoanController.getHeloRateTier2();
                 List<String> ReturnVal14 = SAL_LoanController.getHeloRateTier3();
                 String ReturnVal11 = SAL_LoanController.getHeloOrigination('5.060');
-                String ReturnVal12 = SAL_LoanController.getHeloMargin('3.060');
+                String ReturnVal12 = SAL_LoanController.getHeloArmOrigination('5.060');
+                //String ReturnVal12 = SAL_LoanController.getHeloMargin('6.625');
+               // String ReturnVal12_1 = SAL_LoanController.getHeloMargin(6.625);
                 List<String> ReturnVal02 = SAL_LoanController.getArmRateTier1(); //SFDC-377
                 List<String> ReturnVal03 = SAL_LoanController.getArmRateTier2();
                 List<String> ReturnVal04 = SAL_LoanController.getArmRateTier3();
@@ -420,6 +422,8 @@ public class SAL_LoanControllerTest {
         SAL_LoanController.getStatesPur();
         SAL_LoanController.get_heloStatesPur();
         SAL_LoanController.get_heloStatesRefi();
+        SAL_LoanController.get_heloArmStatesRefi();
+        SAL_LoanController.get_heloArmStatesPur();
         Test.stopTest();
         
     }

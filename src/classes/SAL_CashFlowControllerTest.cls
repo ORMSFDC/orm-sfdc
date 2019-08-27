@@ -38,8 +38,8 @@ public class SAL_CashFlowControllerTest {
             insert contact;       
          Loan_New__c LoanInsert1 = new Loan_New__c(IsActiveFlag__c= true, LoanCompleteFlag__c= true, LoanStatus__c ='In Processing',
                                                    LoanNumber__c = '12345',Appraisal_Received_Date__c= Date.parse('10/10/2017'),
-                                                  Household_Members__c='2', Real_Estate_Taxes__c = 1200.00,
-                                                  Hazard_Insurance__c = 350.00,HOA_PUD_Condo_Fees__c = 400.00,
+                                                  Household_Members__c='2', Real_Estate_Taxes__c = 1200.00, 
+                                                  Hazard_Insurance__c = 350.00,HOA_PUD_Condo_Fees__c = 400.00, Estimate_of_Appraised_Value__c = 800000,
                                                   Square_Footage__c = '2000', Subject_Property_State__c = 'California',Related_Individual__c = contact.Id,
                                                      Related_Partner__c = portalAccount.Id);
          insert LoanInsert1; 

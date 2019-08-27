@@ -312,11 +312,11 @@ public with sharing class PipeLineControllerTest {
             insert contact;
             //Create Loan Suspended
             Loan_New__c LoanInsert1 = new Loan_New__c(
-                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Suspended',LoanNumber__c = '12345'
+                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Suspended',LoanNumber__c = '12345',Suspense_Reason__c ='Aged Loan',Suspense_Notes__c = 'Test'
                 ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             Loan_New__c LoanInsert2 = new Loan_New__c(
-                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Suspended',LoanNumber__c = ''
+                IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Suspended',LoanNumber__c = '',Suspense_Reason__c ='Aged Loan',Suspense_Notes__c = 'Test'
                 ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             list<Loan_New__c> LoanList = new list<Loan_New__c>();
@@ -579,8 +579,8 @@ public with sharing class PipeLineControllerTest {
                 ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
             Loan_New__c LoanInsert2 = new Loan_New__c(
                 IsActiveFlag__c= true, LoanCompleteFlag__c= true,LoanStatus__c ='Withdrawn',Who_Requested_the_Withdraw__c='Test Client',LoanNumber__c = ''
-                ,Appraisal_Received_Date__c=Date.parse('10/11/2017')                                            
-                ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id);
+                ,Appraisal_Received_Date__c=Date.parse('10/11/2017'),Withdrawn_Reason__c = 'Client not Interested', How_was_the_Withdrawn_status_captured__c = 'ORMS Partner'
+                ,Related_Individual__c = contact.Id, Related_Partner__c = portalAccount.Id); 
             list<Loan_New__c> LoanList = new list<Loan_New__c>();
             LoanList.add(LoanInsert1);
             LoanList.add(LoanInsert2);
@@ -1387,7 +1387,7 @@ public with sharing class PipeLineControllerTest {
         testLoans.add(loanAI);
         Loan_New__c loanAR = new Loan_New__c(LoanStatus__c = 'Proposal',LoanNumber__c = '1234445');
         testLoans.add(loanAR);
-        Loan_New__c loanWFFP = new Loan_New__c(LoanStatus__c = 'Waiting for Full Package',LoanNumber__c = '1255345');
+        Loan_New__c loanWFFP = new Loan_New__c(LoanStatus__c = 'Waiting for Full Package',LoanNumber__c = '1255345',Solar_Panels_Exist__c = 'No');
         testLoans.add(loanWFFP); 
         insert testLoans;
         

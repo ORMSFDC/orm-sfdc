@@ -144,7 +144,7 @@ public with sharing class lookUpControllerTest {
                 lookUpController.SendMailTMP(ScenarioList[0].id); 
                 lookUpController.SendMailTMP(ScenarioList[1].id);
                 lookUpController.doUpdateCount(); 
-                lookUpController.createAETask(ScenarioList[0].id);//SFDC_396
+                lookUpController.createAETask(ScenarioList[0].id);//SFDC_396                
             }catch(exception ex){}
             test.stopTest();        
         }        
@@ -165,7 +165,8 @@ public with sharing class lookUpControllerTest {
             QLMS_Account_Executive__c=QLMSAE.ID,
             // Email__c='test@noemail.com',
             Main_Phone__c='5414147852',
-            Partner_Lead_Status__c='New');
+            Partner_Lead_Status__c='New',
+            Partner_Type__c='Premier');
         insert portalAccount;
         
         Profile Objprofile = [select Id, Name from profile where Name = 'System Administrator'];
@@ -189,7 +190,7 @@ public with sharing class lookUpControllerTest {
         insert l;
         Scenario__c scenario = new Scenario__c();
         Test.startTest();
-        
+        lookupController.get_metadataValues('Tier2');
         try{
        id scenerioId1 = lookUpController.SaveScenario(l,date.today().format().replace('/','-'), 10, 10, 14, 20, 1, 13, 
                                                       10, 23, 13, 12, 'High', 12, 14, 7, 10, 12,'abc','xyz',1.0,1.1,'Hecm','Test','123','123','123',123,'Adjust',120,10,new scenario__c());  
@@ -227,7 +228,10 @@ public with sharing class lookUpControllerTest {
         lookupcontroller.get_statesPur();
         lookupcontroller.get_helostatesRefi();
         lookupcontroller.get_heloStatesPur();
+        lookupcontroller.get_heloArmStatesRefi();
+        lookupcontroller.get_heloArmStatesPur();
         lookupController.get_metadataValues('Tier1');
+        lookupController.get_metadataValues('Tier3');
         lookupController.FormatPhone('1234567890');
         lookupController.getScenarioMarginsResponse('10/10/1967',1200,1000,1000,'12');
     }

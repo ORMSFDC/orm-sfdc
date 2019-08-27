@@ -504,7 +504,7 @@ public class PipeLineController {
             objPinew.CPhone=clientObj.Home_Phone__c;
             if(clientObj.DOB__c != null)
             {
-                datetime dt=clientObj.DOB__c;
+                datetime dt=clientObj.DOB__c + 1;
                 objPinew.DOB=dt.date().format();
             }
         }

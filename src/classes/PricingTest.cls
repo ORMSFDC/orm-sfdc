@@ -28,6 +28,10 @@ public class PricingTest {
             List<HeloRateResponse> lst10=  Pricing.HeloRateTier2_Data();
             List<HeloRateResponse> lst11=  Pricing.HeloRateTier1_Data();
             List<HeloRateResponse> lst12=  Pricing.HeloRateTier3_Data();
+            List<HeloArmRateResponse> lst13=  Pricing.getHeloARMRateORM();
+            List<HeloArmRateResponse> lst14= Pricing.HeloArmRateTier1_Data();
+            List<HeloArmRateResponse> lst15= Pricing.HeloArmRateTier2_Data();
+            List<HeloArmRateResponse> lst16= Pricing.HeloArmRateTier3_Data();
             Test.stopTest();
             
         }

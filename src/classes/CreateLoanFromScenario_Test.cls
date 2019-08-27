@@ -89,9 +89,27 @@ public class CreateLoanFromScenario_Test{
                                  Monthly_Mortgage_Payment__c = 400.00, ClientId__c =ClientInsert.Id, priority__c = 'LOC And CashFlow',
                                  Client_Lead__c =leadinsert.id);
         insert ScenarioInsert;
+        Scenario__c ScenarioInsert2 = new Scenario__c(Estimated_home_value__c = 360500.00, Scenario_Type__c='FHA Traditional HECM',RateType__c = 'HeloArm', 
+                                 Current_Mortgage_Balance__c = 200.00, Current_Mortgage_Interest_Rate__c = 300.00, Margin__c = 3.125,
+                                 Monthly_Mortgage_Payment__c = 400.00, ClientId__c =ClientInsert.Id, priority__c = 'LOC And CashFlow',
+                                 Client_Lead__c =leadinsert.id);
+        insert ScenarioInsert2;
+        Scenario__c ScenarioInsert3 = new Scenario__c(Estimated_home_value__c = 360500.00, Scenario_Type__c='FHA Traditional HECM',RateType__c = 'Adjust', 
+                                 Current_Mortgage_Balance__c = 200.00, Current_Mortgage_Interest_Rate__c = 300.00, Margin__c = 3.125,
+                                 Monthly_Mortgage_Payment__c = 400.00, ClientId__c =ClientInsert.Id, priority__c = 'LOC And CashFlow',
+                                 Client_Lead__c =leadinsert.id);
+        insert ScenarioInsert3;
+        Scenario__c ScenarioInsert4 = new Scenario__c(Estimated_home_value__c = 360500.00, Scenario_Type__c='HECM for Purchase',RateType__c = 'Adjust', 
+                                 Current_Mortgage_Balance__c = 200.00, Current_Mortgage_Interest_Rate__c = 300.00, Margin__c = 3.125,
+                                 Monthly_Mortgage_Payment__c = 400.00, ClientId__c =ClientInsert.Id, priority__c = 'LOC And CashFlow',
+                                 Client_Lead__c =leadinsert.id);
+        insert ScenarioInsert4;
         Test.startTest();
         try{
             CreateLoanFromScenario.createLoan(ScenarioInsert.Id);
+            CreateLoanFromScenario.createLoan(ScenarioInsert2.Id);
+            CreateLoanFromScenario.createLoan(ScenarioInsert3.Id);
+            CreateLoanFromScenario.createLoan(ScenarioInsert4.Id);
         }catch(exception ex){}
         try{
             CreateLoanFromScenario.updateSenario(ScenarioInsert.id,null);
