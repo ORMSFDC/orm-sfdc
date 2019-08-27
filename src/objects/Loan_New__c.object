@@ -6865,6 +6865,65 @@ ISPICKVAL(Preferred_Contact_Type__c, 'Loan Processor'),
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>HELO_ARM_Forfeiture_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>PrincipalLimit__c -  InitialUnpaidPrincipalBalance__c -  ProceedsAvailableFirstYear__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HELO ARM Forfeiture Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>HELO_ARM_Min_Cash_Requested_for_50_LOC__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((( PrincipalLimit__c / 2) -  MandatoryObligations__c) &gt; 0, (( PrincipalLimit__c / 2) -  MandatoryObligations__c), 0)</formula>
+        <label>HELO ARM Min Cash Requested for 50% LOC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Draw_of_PL__c</fullName>
+        <externalId>false</externalId>
+        <label>Initial Draw % of PL</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PL_Previous_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>PL Previous Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PL_Under_50_task_created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>PL Under 50% task created</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
   <allowInChatterGroups>true</allowInChatterGroups>
   <compactLayoutAssignment>Loan_Layout</compactLayoutAssignment>
   <deploymentStatus>Deployed</deploymentStatus>
