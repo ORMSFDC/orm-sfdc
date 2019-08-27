@@ -2865,7 +2865,7 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
         <fullName>Primary_Contact_Title__c</fullName>
         <externalId>false</externalId>
         <label>Primary Contact Title</label>
-        <required>true</required>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
         <valueSet>
