@@ -2863,6 +2863,7 @@ if((today()-Last_Activity_Date__c)&lt;15,"Weeks Ago",
     </fields>
     <fields>
         <fullName>Primary_Contact_Title__c</fullName>
+        <description>Title for the primary contact</description>
         <externalId>false</externalId>
         <label>Primary Contact Title</label>
         <required>false</required>
@@ -8333,6 +8334,15 @@ ISPICKVAL(Reason_for_Not_being_Interested__c,"")
 ISBLANK(Account_Executive_Name__c))</errorConditionFormula>
         <errorDisplayField>Account_Executive_Name__c</errorDisplayField>
         <errorMessage>ORM Account Executive Name cannot be blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Title_for_Partner_Record</fullName>
+        <active>true</active>
+        <description>Title field required ONLY for Partner Record types</description>
+        <errorConditionFormula>AND(RecordType.DeveloperName  = "Partner_Lead",
+ISBLANK(TEXT(Primary_Contact_Title__c)))</errorConditionFormula>
+        <errorDisplayField>Primary_Contact_Title__c</errorDisplayField>
+        <errorMessage>Primary Contact Title must be entered</errorMessage>
     </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>
