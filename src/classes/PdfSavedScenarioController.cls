@@ -67,6 +67,7 @@ public without sharing class PdfSavedScenarioController {
                                           CashFlow5__c,
                                           Scenario_Type__c,
                                           RateType__c,
+                                          Origination_to_orm__c,
                                           EOF__c,
                                           Age__c, //SFDC-380
                                           Other_Estimated_Closing_Costs__c //SFDC -269
@@ -136,8 +137,10 @@ public without sharing class PdfSavedScenarioController {
             Decimal calc = equityReserves - (scenario.MIP__c + scenario.Line_of_Credit__c + financingFees + cashAtClose + scenario.Current_Mortgage_Balance__c);
 
             if(scenario.Scenario_Type__c=='FHA Traditional HECM'){ 
-                if(Scenario.RateType__c == 'Helo' || Scenario.RateType__c == 'HeloArm'){
+                if(Scenario.RateType__c == 'Helo' ){ 
                     equityReserves = heloEquity; 
+                }else if(Scenario.RateType__c == 'HeloArm'){
+                    equityReserves = scenario.Estimated_home_value__c - scenario.Current_Mortgage_Balance__c - scenario.Origination_to_orm__c - estClosingcost - cashAtClose;
                 }
                 else{
                     if(calc < 0 ) { 
