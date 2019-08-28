@@ -68,45 +68,6 @@
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Product_Rate_Type__c</fullName>
-        <description>product rate type</description>
-        <externalId>false</externalId>
-        <inlineHelpText>HELO-LIBOR requires the Rate field to be filled out.
-HELO-Broker Comp requires the Rate field to be filled out.
-HELO-Origination Fee requires the Rate1, Rate2, and Rate3 fields to be filled out.</inlineHelpText>
-        <label>Product Rate Type</label>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>HELO-LIBOR</fullName>
-                    <default>false</default>
-                    <label>HELO-LIBOR</label>
-                </value>
-                <value>
-                    <fullName>HELO-BrokerComp</fullName>
-                    <default>false</default>
-                    <label>HELO-Broker Comp</label>
-                </value>
-                <value>
-                    <fullName>HELO-OrigFee</fullName>
-                    <default>false</default>
-                    <label>HELO-Origination Fee</label>
-                </value>
-                <value>
-                    <fullName>HELO-ORIGINATION</fullName>
-                    <default>false</default>
-                    <isActive>false</isActive>
-                    <label>HELO-ORIGINATION</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>RateMargin1__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>If HELO-Orig Fee is the selected product rate type, then enter a value between 0 and 0.05.  The value in Rate 1 is the Orig fee we want to charge for our lowest margin in our HELO pricing table.</inlineHelpText>
@@ -153,6 +114,50 @@ HELO-Origination Fee requires the Rate1, Rate2, and Rate3 fields to be filled ou
         <scale>5</scale>
         <trackTrending>false</trackTrending>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Product_Rate_Type__c</fullName>
+        <description>product rate type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>HELO-LIBOR requires the Rate field to be filled out.
+HELO-Broker Comp requires the Rate field to be filled out.
+HELO-Origination Fee requires the Rate1, Rate2, and Rate3 fields to be filled out.</inlineHelpText>
+        <label>Product Rate Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HELO-LIBOR</fullName>
+                    <default>false</default>
+                    <label>HELO-LIBOR</label>
+                </value>
+                <value>
+                    <fullName>HELO-BrokerComp</fullName>
+                    <default>false</default>
+                    <label>HELO-Broker Comp</label>
+                </value>
+                <value>
+                    <fullName>HELO-OrigFee</fullName>
+                    <default>false</default>
+                    <label>HELO-Origination Fee</label>
+                </value>
+                <value>
+                    <fullName>HELO-ARM-INDEX</fullName>
+                    <default>false</default>
+                    <label>HELO-ARM-INDEX</label>
+                </value>
+                <value>
+                    <fullName>HELO-ORIGINATION</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>HELO-ORIGINATION</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>

@@ -47,10 +47,16 @@ private class DailyProductRateUpdateCalloutTest {
                     Rate__c = 101,
                     Rate_Date__c = Date.newInstance(2018, 2, 17)
             );
+            Daily_Product_Rate__c dpr4 = new Daily_Product_Rate__c(
+                    Product_Rate_Type__c = 'HELO-ARM-INDEX',
+                    Rate__c = 2.25,
+                    Rate_Date__c = Date.newInstance(2019, 2, 17)
+            );
             Test.startTest();
             Database.insert(dpr); //the insert causes DailyProductRate trigger to fire, which inherently tests DailyProductRateUpdateCallout.makeCallout()
             Database.insert(dpr2);
             Database.insert(dpr3);
+            Database.insert(dpr4);
             Test.stopTest();
         }
     }

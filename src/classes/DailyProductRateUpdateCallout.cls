@@ -1,3 +1,10 @@
+/**
+* @description Update Helo product Index, Broker Comp, Originations to BayDocs
+* @author Bala
+* @date 8/30/2018
+* @changlog 
+* Bala 8/28/2019 - Added new libor rate for HELO ARM
+*/
 public with sharing class DailyProductRateUpdateCallout {
     @future(callout=true)
     public static void makeCallout(String productRateAsJson) {
@@ -57,11 +64,16 @@ public with sharing class DailyProductRateUpdateCallout {
             gen.writeStringField('OrigFeeMargin2', pr.RateMargin2__c.toPlainString());
             gen.writeStringField('OrigFeeMargin3', pr.RateMargin3__c.toPlainString());
             gen.writeEndObject();
-//        else if ('HELO-ORIGINATION' == pr.Product_Rate_Type__c) {
-//            //todo
-//            system.debug('Daily product rate type type: ' + pr.Product_Rate_Type__c + ' not yet implemented');
-//            return;
-//        }
+        } else if('HELO-ARM-INDEX' == pr.Product_Rate_Type__c){
+            String namedCredential = esrEntries[0].NamedCredential__c;
+            endpoint = 'callout:' + namedCredential + '/app/lib/integration/OneReverse/HELO/UpdateLIBORmonthly/index.php';
+            gen.writeStartObject();
+            gen.writeStringField('UserCode', esrEntries[0].username__c);
+            gen.writeStringField('PassCode', esrEntries[0].password__c);
+            gen.writeStringField('DateFormat', 'Y-m-d');
+            gen.writeStringField('RateDate', rateDateS);//'2018-08-01');
+            gen.writeStringField('IndexValue', pr.Rate__c.toPlainString());
+            gen.writeEndObject();
         } else {
             system.debug(LoggingLevel.ERROR, 'Invalid daily product rate type type: ' + pr.Product_Rate_Type__c);
             return;
