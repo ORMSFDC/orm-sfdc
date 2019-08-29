@@ -115,8 +115,8 @@
                                                               aura:id="inputADO" class="slds-input Datecontrolwidth"
                                                               required="true" />
                                             <aura:if isTrue="{!v.show_MaxAdo}">
-                                                <label  style="color:#c23934;font-size: 1rem;font-weight : bold;">This should be less than or equal to 10,000.</label><br/>
-                                                <label  style="color:#c23934;font-size: 1rem;font-weight : bold;">Please change the value to proceed further.</label>
+                                                <label  style="color:#c23934;font-size: 1rem;font-weight : bold;">Origination fee cannot be greater than $10,000.00.</label><br/>
+                                                <label  style="color:#c23934;font-size: 1rem;font-weight : bold;">Please lower the value before calculating.</label>
                                             </aura:if>
                                         </div>
                                     </span>
