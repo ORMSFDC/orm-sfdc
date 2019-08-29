@@ -1,0 +1,6 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId">
+<aura:attribute name="ServiceDataList" type="List" />
+    <aura:attribute name="recordId" type="String" />
+    <lightning:button variant="Neutral" label="View Fee Details" onclick="{!c.NavigatetoC1}"  />
+	
+</aura:component>

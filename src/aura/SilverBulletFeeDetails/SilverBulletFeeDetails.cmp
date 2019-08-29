@@ -1,0 +1,26 @@
+<aura:component controller="SilverBulletFeesController" access="global" implements="flexipage:availableForAllPageTypes,force:lightningQuickAction">
+<aura:attribute name="ServiceDataList" type="List" />
+    <aura:attribute name="totalAmount" type="decimal" />
+     <aura:attribute name="loanId" type="string" />
+        <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+        <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+          <thead>
+            <tr class="slds-text-heading_label">
+                <th scope="col"><div class="slds-truncate" title="Name"><b>Fee Description</b></div></th>
+                <th scope="col"><div class="slds-truncate" title="ID"><b>Fee Number</b></div></th>
+              <th scope="col"><div class="slds-truncate" title="Type"><b>Fee Amount</b></div></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <aura:iteration items="{!v.ServiceDataList}" var="serviceData">
+                <tr>
+                    <td><div class="slds-truncate" title="{!serviceData.feeDescription}">{!serviceData.feeDescription}</div></td>
+                    <th scope="row"><div class="slds-truncate" title="{!serviceData.feeNumber}">{!serviceData.feeNumber}</div></th>
+                    <td><div class="slds-truncate" title="{!serviceData.feeAmount}">$ {!serviceData.feeAmount}</div></td>
+                </tr>
+            </aura:iteration>
+              <tr><td></td><td><b>Total Amount</b></td><td><b>{!v.totalAmount}</b></td></tr>
+          </tbody>
+        </table>
+      </aura:component>

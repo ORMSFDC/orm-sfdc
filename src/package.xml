@@ -586,6 +586,7 @@
     <members>ClientLoan</members>
     <members>HeloArmRateResponse</members>
     <members>attachmentTriggerHandler</members>
+    <members>SilverBulletFeesController</members>
     <name>ApexClass</name>
   </types>
   <types>
@@ -823,6 +824,8 @@
     <members>MarketingHub_ORM</members>
     <members>OnBase_Resend</members>
     <members>HeloArmPricingCMP</members>
+    <members>SBFeeDetails</members>
+    <members>SilverBulletFeeDetails</members>
     <name>AuraDefinitionBundle</name>
   </types>
   <types>
