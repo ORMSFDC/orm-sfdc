@@ -14763,6 +14763,15 @@ PRIORVALUE(Check_to_create_a_Prospective_User_Login__c) =true,
         <errorConditionFormula>AND(ISPICKVAL(Individual_lead_Status__c,'Denied'),ISPICKVAL(Partner_Denial_Reasons__c,''))</errorConditionFormula>
         <errorMessage>Please choose the Partner Denial Reason</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>Contact_Title_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( OR(RecordType.DeveloperName  = "Partner_Portal_User", 
+RecordType.DeveloperName  = "Committed_Partner_Portal_User" ),
+ISBLANK(TEXT(Title__c)))</errorConditionFormula>
+        <errorDisplayField>Title__c</errorDisplayField>
+        <errorMessage>Title must be entered</errorMessage>
+    </validationRules>
     <webLinks>
         <fullName>GoogleMaps</fullName>
         <availability>online</availability>
