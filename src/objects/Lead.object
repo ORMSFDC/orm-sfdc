@@ -8337,7 +8337,7 @@ ISBLANK(Account_Executive_Name__c))</errorConditionFormula>
     </validationRules>
     <validationRules>
         <fullName>Title_for_Partner_Record</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>Title field required ONLY for Partner Record types</description>
         <errorConditionFormula>AND(RecordType.DeveloperName  = "Partner_Lead",
 ISBLANK(TEXT(Primary_Contact_Title__c)))</errorConditionFormula>
