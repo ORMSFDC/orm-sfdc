@@ -263,7 +263,8 @@
             var IsZIPRequired4= component.get("v.requiredZip4");
             var IsZIPRequired5= component.get("v.requiredZip5");
             var IsZIPRequired6= component.get("v.requiredZip6");
-
+            var IsZIPRequired7= component.get("v.requiredZip7");
+            var IsZIPRequired8= component.get("v.requiredZip8");
             //SFDC-365
             debugger;
             var IsLoanCreatedByProcessor=  component.get("v.IsLoanCreatedByLoanOfficer");
@@ -299,7 +300,8 @@
 }
 }
 
-if (Isrequired || IsRegex || chkZip || IsGenericValidate || IsZIPValidated || IsZIPRequired || IsZIPRequired1 || IsZIPRequired2 || IsZIPRequired3 || IsZIPRequired4 || IsZIPRequired5 || IsZIPRequired6 || checkFHAapproved || ValidateLoanProcessor || checkSolarPanel ) { //SFDC-365        
+if (Isrequired || IsRegex || chkZip || IsGenericValidate || IsZIPValidated || IsZIPRequired || IsZIPRequired1 || IsZIPRequired2 || IsZIPRequired3 || IsZIPRequired4 || 
+    IsZIPRequired5 || IsZIPRequired6 || IsZIPRequired7 || IsZIPRequired8 || checkFHAapproved || ValidateLoanProcessor || checkSolarPanel ) { //SFDC-365        
     
     component.set("v.showError", true);
     //What you need to do if there are errors
@@ -599,6 +601,8 @@ else {
     component.set("v.requiredZip4",false);
     component.set("v.requiredZip5",false);
     component.set("v.requiredZip6",false);
+    component.set("v.requiredZip7",false);
+    component.set("v.requiredZip8",false);
     component.set("v.LicenseState", false);
     var val=component.find("SP_Zip").get("v.value");
     var lan=val.length;
@@ -619,6 +623,8 @@ else {
         component.set("v.requiredZip4",false);
         component.set("v.requiredZip5",false);
         component.set("v.requiredZip6",false);
+        component.set("v.requiredZip7",false);
+        component.set("v.requiredZip8",false);
         component.set("v.LicenseState", false);
     }
 },

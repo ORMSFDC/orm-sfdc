@@ -697,13 +697,21 @@
                 var rateType = component.get('v.rateType');
                 var loanType = component.get('v.loanType');
                 console.log('prodtypeinside',prodType); 
-                //HECM Refinance
-                if(prodType == 'HECM' && (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance')){
+                //HECM ARM Refinance
+                if(prodType == 'HECM' && (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance') && loanType == 'ARM' ){
                     var action1 = component.get("c.getStates");
                 }
+                //HECM Fixed refinance
+                if(prodType == 'HECM' && (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance') && loanType == 'Fixed' ){
+                    var action1 = component.get("c.get_HecmFixedStates");
+                }
                 //HECM Purchase
-                else if(prodType == 'HECM' && rateType == 'HECM for Purchase'){
+                else if(prodType == 'HECM' && rateType == 'HECM for Purchase' && loanType == 'ARM'){
                     var action1 = component.get("c.getStatesPur");
+                }
+                //HECM FIXED Purchase
+                else if(prodType == 'HECM' && rateType == 'HECM for Purchase' && loanType == 'Fixed'){
+                    var action1 = component.get("c.get_HecmFixedStates_Pur");
                 }
                 //HELO Purchase
                 else if(prodType == 'HELO' && rateType == 'HELO for Purchase' && loanType == 'Fixed'){                    
@@ -740,20 +748,30 @@
                         component.set("v.requiredZip4",false);
                         component.set("v.requiredZip5",false);
                         component.set("v.requiredZip6",false);
+                        component.set("v.requiredZip7",false);
+                        component.set("v.requiredZip8",false);
                     }
                     else {
                         component.set("v.requiredZip", true);
                         //SFDC-365
-                        if((prodType == 'HECM' &&  (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance'))  ){
+                        if((prodType == 'HECM' &&  (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance')) && loanType == 'ARM' ){
                             component.set("v.requiredZip1", true);
                             component.set("v.requiredZip", false);
                         }    
+                        if((prodType == 'HECM' &&  (rateType == 'FHA Traditional HECM' || rateType == 'HECM to HECM Refinance')) && loanType == 'Fixed' ){
+                            component.set("v.requiredZip7", true);
+                            component.set("v.requiredZip", false);
+                        }  
                         if(prodType == 'HELO' && rateType == 'HELO Refinance' && loanType == 'Fixed'){
                             component.set("v.requiredZip2", true);
                             component.set("v.requiredZip", false);
                         }
-                        if(prodType == 'HECM' &&  rateType == 'HECM for Purchase'){
+                        if(prodType == 'HECM' &&  rateType == 'HECM for Purchase' && loanType == 'ARM'){
                             component.set("v.requiredZip3", true);
+                            component.set("v.requiredZip", false);
+                        }
+                        if(prodType == 'HECM' &&  rateType == 'HECM for Purchase' && loanType == 'Fixed'){
+                            component.set("v.requiredZip8", true);
                             component.set("v.requiredZip", false);
                         }
                         if(prodType == 'HELO' && rateType == 'HELO for Purchase' && loanType == 'Fixed'){

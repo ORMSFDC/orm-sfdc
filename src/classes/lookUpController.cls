@@ -609,8 +609,27 @@ public without sharing class lookUpController {
     }
 
     @AuraEnabled
-    public static list<String> get_helostatesRefi() {
-        system.debug('helo1');
+    public static list<String> get_HecmFixedstatesRefi() {
+        list<String> states = new list<String>();
+        for (Hecm_FixedState__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM Hecm_FixedState__mdt
+                                           WHERE isActive__c=:true and isRefinance__c=:true]) {
+            states.add(each.MasterLabel);
+        }
+        return states;
+    }
+
+    @AuraEnabled
+    public static list<String> get_HecmFixedstatesPur() {
+        list<String> states = new list<String>();
+        for (Hecm_FixedState__mdt each : [SELECT Id, DeveloperName, MasterLabel, Label FROM Hecm_FixedState__mdt
+                                           WHERE isActive__c=:true and isPurchase__c=:true]) {
+            states.add(each.MasterLabel);
+        }
+        return states;
+    }
+
+    @AuraEnabled
+    public static list<String> get_helostatesRefi() {        
         list<String> states = new list<String>();
         for (HeloState__mdt each : [SELECT MasterLabel FROM HeloState__mdt
                                     WHERE isActive__c=:true and isRefinance__c=:true]) {
@@ -620,8 +639,7 @@ public without sharing class lookUpController {
     }
 
     @AuraEnabled
-    public static list<String> get_heloStatesPur() {
-        system.debug('helo2');
+    public static list<String> get_heloStatesPur() {        
         list<String> states = new list<String>();
         for (HeloState__mdt each : [SELECT MasterLabel FROM HeloState__mdt 
                                     WHERE isActive__c=:true and isPurchase__c=:true]) {

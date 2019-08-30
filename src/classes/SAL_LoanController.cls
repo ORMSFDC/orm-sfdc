@@ -387,11 +387,21 @@ public with sharing class SAL_LoanController {
     @AuraEnabled
     public static list<AuthorisedStates__mdt> getStates(){        
         return [Select MasterLabel from AuthorisedStates__mdt where isActive__c=:true and isRefinance__c=:true];        
-    }
+    }    
 
     @AuraEnabled
     public static list<AuthorisedStates__mdt> getStatesPur(){        
         return [Select MasterLabel from AuthorisedStates__mdt where isActive__c=:true and isPurchase__c=:true];        
+    }
+
+    @AuraEnabled
+    public static list<Hecm_FixedState__mdt> get_HecmFixedStates(){        
+        return [Select MasterLabel from Hecm_FixedState__mdt where isActive__c=:true and isRefinance__c=:true];        
+    }
+
+    @AuraEnabled
+    public static list<Hecm_FixedState__mdt> get_HecmFixedStates_Pur(){        
+        return [Select MasterLabel from Hecm_FixedState__mdt where isActive__c=:true and isPurchase__c=:true];        
     }
     
     @AuraEnabled
@@ -866,7 +876,7 @@ public with sharing class SAL_LoanController {
             Orignation=[Select HELO_Origination_to_partner__c from HELO_ARM_3__mdt where HELO_Rate__c=:Rate].HELO_Origination_to_partner__c;
         }   
         origtoorm=string.valueOf( Orignation);
-        return origtoorm;
+        return origtoorm; 
     }
     
     //Fetch Helo Margin

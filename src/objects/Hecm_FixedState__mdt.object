@@ -23,17 +23,18 @@
         <label>isRefinance</label>
         <type>Checkbox</type>
     </fields>
-    <label>HeloArmState</label>
-    <pluralLabel>HeloArmStates</pluralLabel>
+    <label>Hecm_FixedState</label>
+    <pluralLabel>Hecm_FixedStates</pluralLabel>
     <visibility>Public</visibility>
     <listViews>
-        <fullName>All_data</fullName>
+        <fullName>All_Data</fullName>
         <columns>MasterLabel</columns>
         <columns>DeveloperName</columns>
+        <columns>NamespacePrefix</columns>
         <columns>isActive__c</columns>
-        <columns>isPurchase__c</columns>
         <columns>isRefinance__c</columns>
+        <columns>isPurchase__c</columns>
         <filterScope>Everything</filterScope>
-        <label>All data</label>
+        <label>All Data</label>
     </listViews>
 </CustomObject>

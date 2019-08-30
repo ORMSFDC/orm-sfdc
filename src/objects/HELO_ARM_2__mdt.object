@@ -68,4 +68,17 @@
     <label>HELO_ARM_2</label>
     <pluralLabel>HELO_ARM_2</pluralLabel>
     <visibility>Public</visibility>
+    <listViews>
+        <fullName>All_Data</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>HeloPrice__c</columns>
+        <columns>HeloArmMargin__c</columns>
+        <columns>HELO_Credit_to_borrower__c</columns>
+        <columns>HELO_Origination_to_partner__c</columns>
+        <columns>HELO_Rate__c</columns>
+        <columns>HELO_Servicing_Fee__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Data</label>
+    </listViews>
 </CustomObject>

@@ -33,6 +33,8 @@
     <aura:attribute name="stateZip5" type="boolean"  default="false"/>
     <aura:attribute name="stateZip6" type="boolean"  default="false"/>
     <aura:attribute name="stateZip7" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip8" type="boolean"  default="false"/>
+    <aura:attribute name="stateZip9" type="boolean"  default="false"/>
     <!--SFDC-363-->
     <aura:attribute name="isDisplayHelo" type="boolean"  default="true"/> <!--Helo-->
     <aura:attribute name="isDisplayHeloArm" type="boolean"  default="true"/>
@@ -1227,6 +1229,12 @@
                                     <aura:if isTrue='{!v.stateZip7}'>
                                             <h6 style="color:red;">We do not offer the HELO ARM for Purchase in this state.</h6>
                                     </aura:if>
+                                    <aura:if isTrue='{!v.stateZip8}'>
+                                            <h6 style="color:red;">We do not offer the HECM FIXED for Refinance in this state.</h6>
+                                    </aura:if>
+                                    <aura:if isTrue='{!v.stateZip9}'>
+                                            <h6 style="color:red;">We do not offer the HELO FIXED for Purchase in this state.</h6>
+                                    </aura:if>
                                     <!--SFDC-363-->
                                 </div>
                             </div>
@@ -1279,9 +1287,9 @@
                                     </p>
                                     <p>
                                         **This scenario is for our annual adjustable HECM Line of Credit and is based on the values you have provided and the 1-Year LIBOR index. The index can change at any time.  The estimated closing costs include an origination fee and there is a 2% MIP fee which is paid to FHA. The unused line of credit funds will compound at the current market growth rate throughout the life of the loan. Results may vary. The interest rate is variable and may change subject to a 2% limit at any one time and it will never increase by more than 5% (Lifetime cap).
-				    </p>
+				                    </p>
                                 </div>
-                            </aura:if>
+                            </aura:if> 
                             <!-- for fixed-->
                             <aura:if isTrue="{!v.MarginTypeiS=='Fixed'}">
                                 

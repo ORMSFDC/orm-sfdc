@@ -200,7 +200,9 @@
             var sZip5=component.get('v.stateZip5'); //HECM Refi error
             var sZip6=component.get('v.stateZip6'); //Helo ARM Refi Error
             var sZip7=component.get('v.stateZip7'); //Helo ARM Purchase error
-            if(sZip==false && sZip2==false && sZip3==false && sZip4 ==false && sZip5 ==false && sZip6 ==false && sZip7 ==false )
+            var sZip8=component.get('v.stateZip8'); //HECM Fixed Refi error
+            var sZip9=component.get('v.stateZip9'); //HECM Fixed Purchase error
+            if(sZip==false && sZip2==false && sZip3==false && sZip4 ==false && sZip5 ==false && sZip6 ==false && sZip7 ==false && sZip8 ==false && sZip9 ==false )
             {
                 helper.SaveScenario(component,event,helper);
             }
@@ -238,6 +240,8 @@
         component.set("v.stateZip5",false);
         component.set("v.stateZip6",false);
         component.set("v.stateZip7",false);
+        component.set("v.stateZip8",false);
+        component.set("v.stateZip9",false);
         // Code Added by Dev4 for ORMSFDC-1447
         component.set("v.selectedRecord.State","");
         component.set("v.showError",false);
@@ -956,13 +960,21 @@
                     else if (rateType == 'HeloArm' && mortType == 'FHA Traditional HECM'){ 
                         var action1 = component.get("c.get_heloArmStatesRefi");
                     }
-                    //ARM and Fixed Purchase states
-                    else if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){ 
+                    //HECM ARM Purchase states
+                    else if(rateType == 'ARM' && mortType == 'HECM for Purchase' ){ 
                         var action1 = component.get("c.get_statesPur");
                     }
-                    //ARM and Fixed Refinance states
-                    else if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){ 
+                    //HECM ARM Refinance states
+                    else if(rateType == 'ARM' && mortType == 'FHA Traditional HECM' ){ 
                         var action1 = component.get("c.get_states");
+                    }
+                    //HECM FIXED Purchase states
+                    else if(rateType == 'Fixed' && mortType == 'HECM for Purchase'){ 
+                        var action1 = component.get("c.get_HecmFixedstatesPur");
+                    }
+                    //HECM FIXED Refinance states
+                    else if(rateType == 'Fixed' && mortType == 'FHA Traditional HECM'){ 
+                        var action1 = component.get("c.get_HecmFixedstatesRefi");
                     }
                     //SFDC-275 end
                     action1.setCallback(this,function(data){
@@ -986,30 +998,36 @@
                                 component.set("v.stateZip5",false);
                                 component.set("v.stateZip6",false);
                                 component.set("v.stateZip7",false);
+                                component.set("v.stateZip8",false);
+                                component.set("v.stateZip9",false);
                                 break;
                             }else{                                
                                 component.set("v.selectedRecord.State","");
                                 component.set("v.selectedRecord.City","");
                                 component.set("v.stateZip",true);
                                 //SFDC-363
-                                if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){
+                                if (rateType == 'Helo' && mortType == 'FHA Traditional HECM'){//HELO Fixed Refi
                                     component.set("v.stateZip2",true);
                                     component.set("v.stateZip",false);
-                                }else if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ 
+                                }else if (rateType == 'Helo' && mortType == 'HECM for Purchase'){ //HELO Fixed Pur
                                     component.set("v.stateZip3",true);
                                     component.set("v.stateZip",false);
-                                }
-                                else if((rateType == 'ARM' && mortType == 'HECM for Purchase') || (rateType == 'Fixed' && mortType == 'HECM for Purchase')){
+                                }else if(rateType == 'ARM' && mortType == 'HECM for Purchase'){ //HECM ARM Purc
                                     component.set("v.stateZip4",true);
                                     component.set("v.stateZip",false);
-                                }
-                                else if((rateType == 'ARM' && mortType == 'FHA Traditional HECM') || (rateType == 'Fixed' && mortType == 'FHA Traditional HECM')){
+                                }else if(rateType == 'ARM' && mortType == 'FHA Traditional HECM'){//HECM ARm Refi
                                     component.set("v.stateZip5",true);
                                     component.set("v.stateZip",false);
-                                }else if (rateType == 'HeloArm' && mortType == 'FHA Traditional HECM'){
+                                }else if(rateType == 'Fixed' && mortType == 'FHA Traditional HECM'){//HECM Fixed Refi
+                                    component.set("v.stateZip8",true);
+                                    component.set("v.stateZip",false);
+                                }else if(rateType == 'Fixed' && mortType == 'HECM for Purchase'){//HECM Fixed Pur
+                                    component.set("v.stateZip9",true);
+                                    component.set("v.stateZip",false);
+                                }else if (rateType == 'HeloArm' && mortType == 'FHA Traditional HECM'){//HELO Arm Refi
                                     component.set("v.stateZip6",true);
                                     component.set("v.stateZip",false);
-                                }else if (rateType == 'HeloArm' && mortType == 'HECM for Purchase'){ 
+                                }else if (rateType == 'HeloArm' && mortType == 'HECM for Purchase'){ //HELO Arm Pur
                                     component.set("v.stateZip7",true);
                                     component.set("v.stateZip",false);
                                 }
@@ -1029,7 +1047,9 @@
                     component.set("v.stateZip4",false);
                     component.set("v.stateZip5",false);
                     component.set("v.stateZip6",false);
-                    component.set("v.stateZip7",false);                    
+                    component.set("v.stateZip7",false);   
+                    component.set("v.stateZip8",false);
+                    component.set("v.stateZip9",false);                 
                 }
                 
             });
@@ -1045,6 +1065,8 @@
             component.set("v.stateZip5",false);
             component.set("v.stateZip6",false);
             component.set("v.stateZip7",false);
+            component.set("v.stateZip8",false);
+            component.set("v.stateZip9",false);
         }
     },
     share_popup:function(component, event, helper){
